@@ -1,0 +1,15 @@
+@startuml
+package demo {
+    class Money {
+        - amount: int
+        - currency: String
+        + this(amount: int, currency: String)
+        + add(that: Money): Money
+        + toString(): String
+    }
+}
+class Main {
+    + {static} main(args: String[])
+}
+Main -- Money
+@enduml
