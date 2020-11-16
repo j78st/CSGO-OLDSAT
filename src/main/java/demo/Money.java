@@ -36,4 +36,8 @@ public class Money {
     public int hashCode() {
         return Objects.hash(amount, currency);
     }
+
+    public void fninutile(){
+
+    }
 }
