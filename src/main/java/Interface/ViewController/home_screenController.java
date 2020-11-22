@@ -1,4 +1,4 @@
-package ViewController;
+package Interface.ViewController;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -11,7 +11,7 @@ import javafx.scene.control.Button;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
-import ScreenLoader.*;
+import Interface.ScreenLoader.*;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -70,6 +70,7 @@ public class home_screenController implements Controller, Initializable {
      * affiche l'ecran d'affichage des meilleurs scores
      * @param event
      */
+    /*
     @FXML
     void display_score_screen(ActionEvent event) throws IOException {
         FXMLLoader loader = new FXMLLoader();
@@ -86,10 +87,13 @@ public class home_screenController implements Controller, Initializable {
         stage.show();
     }
 
+     */
+
     /**
      * affiche l'ecran des paramètres du jeu
      * @param event
      */
+    /*
     @FXML
     void display_settings_screen(ActionEvent event) throws IOException {
         FXMLLoader loader = new FXMLLoader();
@@ -106,6 +110,7 @@ public class home_screenController implements Controller, Initializable {
         stage.setScene(home_screen);
         stage.show();
     }
+    */
 
     // ==========================================================
     // Methodes autres

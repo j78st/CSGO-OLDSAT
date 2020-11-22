@@ -1,4 +1,4 @@
-package ScreenLoader;
+package Interface.ScreenLoader;
 
 import javafx.scene.Scene;
 

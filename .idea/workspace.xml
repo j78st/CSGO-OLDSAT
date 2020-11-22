@@ -42,6 +42,17 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -53,6 +64,7 @@
       <updated>1605684086593</updated>
       <workItem from="1605684088037" duration="992000" />
       <workItem from="1605898084694" duration="1241000" />
+      <workItem from="1606042193644" duration="1926000" />
     </task>
     <servers />
   </component>
@@ -60,10 +72,10 @@
     <option name="version" value="3" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="206" y="135" width="1086" height="784" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1605898106554">
+    <state x="230" y="107" width="1086" height="832" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1606043263437">
       <screen x="0" y="0" width="1500" height="960" />
     </state>
-    <state x="206" y="135" width="1086" height="784" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1500.960@0.0.1500.960" timestamp="1605898106554" />
+    <state x="230" y="107" width="1086" height="832" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1500.960@0.0.1500.960" timestamp="1606043263437" />
     <state x="481" y="283" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1605684826697">
       <screen x="0" y="0" width="1500" height="960" />
     </state>
@@ -88,6 +100,10 @@
       <screen x="0" y="0" width="1500" height="960" />
     </state>
     <state width="1458" height="256" key="GridCell.Tab.0.right/0.0.1500.960@0.0.1500.960" timestamp="1605684855172" />
+    <state x="281" y="135" key="Maven.ArtifactSearchDialog" timestamp="1606043433071">
+      <screen x="0" y="0" width="1500" height="960" />
+    </state>
+    <state x="281" y="135" key="Maven.ArtifactSearchDialog/0.0.1500.960@0.0.1500.960" timestamp="1606043433071" />
     <state x="231" y="55" key="SettingsEditor" timestamp="1605684699969">
       <screen x="0" y="0" width="1500" height="960" />
     </state>

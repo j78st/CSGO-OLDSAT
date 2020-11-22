@@ -1,7 +1,7 @@
-package ViewController;
+package Interface.ViewController;
 
-import ScreenLoader.Controller;
-import ScreenLoader.GenericLoader;
+import Interface.ScreenLoader.Controller;
+import Interface.ScreenLoader.GenericLoader;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;

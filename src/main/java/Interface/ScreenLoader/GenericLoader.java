@@ -1,6 +1,6 @@
-package ScreenLoader;
+package Interface.ScreenLoader;
 
-import ViewController.*;
+import Interface.ViewController.*;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
@@ -48,9 +48,9 @@ public class GenericLoader {
                 loader.setLocation(getClass().getResource("/ViewController/score_screenView.fxml"));
                 parent = loader.load();
                 scene = new Scene(parent);
-                controller = (score_screenController) loader.getController();
+                //controller = (score_screenController) loader.getController();
                 kit.setNext_scene(scene);
-                kit.setNext_controller(controller);
+                //kit.setNext_controller(controller);
 
                 break;
             // écran de lancement de partie =========================

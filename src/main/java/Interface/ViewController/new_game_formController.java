@@ -1,11 +1,10 @@
-package ViewController;
+package Interface.ViewController;
 
-import Ranking.Record;
-import Ranking.RecordListCell;
-import Save.SaveListCell;
-import Save.SaveSlot;
-import ScreenLoader.Controller;
-import ScreenLoader.GenericLoader;
+
+import Interface.Save.SaveListCell;
+import Interface.Save.SaveSlot;
+import Interface.ScreenLoader.Controller;
+import Interface.ScreenLoader.GenericLoader;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -49,7 +48,7 @@ public class new_game_formController implements Controller, Initializable {
         Stage stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
         gl.display_screen_from_id(3,stage);
     }
-
+    /*
     @FXML
     void go_to_settings_menu(ActionEvent event) throws IOException {
         FXMLLoader loader = new FXMLLoader();
@@ -66,6 +65,7 @@ public class new_game_formController implements Controller, Initializable {
         stage.setScene(home_screen);
         stage.show();
     }
+    */
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {

@@ -1,6 +1,5 @@
-package Save;
+package Interface.Save;
 
-import Ranking.Record;
 import javafx.geometry.Insets;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListCell;
