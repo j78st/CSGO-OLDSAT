@@ -1,10 +1,13 @@
-package ViewController;
+package View_Controller;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+
+import java.io.IOException;
 
 public class Main extends Application {
 
@@ -17,6 +20,7 @@ public class Main extends Application {
         Scene home_screen = new Scene(homeParent);
 
         home_screenController controller = loader.getController();
+        controller.init();
 
         primaryStage.setTitle("OLD'SAT");
         primaryStage.setScene(home_screen);
