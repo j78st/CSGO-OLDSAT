@@ -71,18 +71,9 @@ public class home_screenController implements Controller, Initializable {
      */
     @FXML
     void display_score_screen(ActionEvent event) throws IOException {
-        FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(getClass().getResource("score_screenView.fxml"));
-
-        Parent scoreParent = loader.load();
-        Scene score_screen = new Scene(scoreParent);
-
-        score_screenController controller = loader.getController();
-
+        LoadMap gl = new LoadMap();
         Stage stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
-        stage.setTitle("OLD'SAT");
-        stage.setScene(score_screen);
-        stage.show();
+        gl.display_screen_from_id(2,stage);
     }
 
     /**
@@ -92,7 +83,7 @@ public class home_screenController implements Controller, Initializable {
     @FXML
     void display_settings_screen(ActionEvent event) throws IOException {
         FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(getClass().getResource("settings_menuView.fxml"));
+        loader.setLocation(getClass().getResource("/view/settings_menuView.fxml"));
 
         Parent homeParent = loader.load();
         Scene home_screen = new Scene(homeParent);

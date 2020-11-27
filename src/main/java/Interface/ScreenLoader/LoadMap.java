@@ -31,7 +31,7 @@ public class LoadMap {
             case 1:
                 // Creation des objets necessaires au chargement d'un ecran
                 loader = new FXMLLoader();
-                loader.setLocation(getClass().getResource("/ViewController/home_screenView.fxml"));
+                loader.setLocation(getClass().getResource("/view/home_screenView.fxml"));
                 parent = loader.load();
                 scene = new Scene(parent);
                 controller = (home_screenController) loader.getController();
@@ -41,38 +41,49 @@ public class LoadMap {
                 kit.setNext_controller(controller);
 
                 break;
+
             // écran des scores =====================================
             case 2:
                 loader = new FXMLLoader();
-                loader.setLocation(getClass().getResource("/ViewController/score_screenView.fxml"));
+                loader.setLocation(getClass().getResource("/view/score_screenView.fxml"));
                 parent = loader.load();
                 scene = new Scene(parent);
-                //controller = (score_screenController) loader.getController();
+                controller = (score_screenController) loader.getController();
                 kit.setNext_scene(scene);
-                //kit.setNext_controller(controller);
-
+                kit.setNext_controller(controller);
                 break;
+
             // écran de lancement de partie =========================
             case 3:
                 loader = new FXMLLoader();
-                loader.setLocation(getClass().getResource("/ViewController/game_launcherView.fxml"));
+                loader.setLocation(getClass().getResource("/view/game_launcherView.fxml"));
                 parent = loader.load();
                 scene = new Scene(parent);
                 controller = (game_launcherController) loader.getController();
                 kit.setNext_scene(scene);
                 kit.setNext_controller(controller);
-
                 break;
+
             // écran de creation d'une nouvelle partie ==============
             case 4:
                 loader = new FXMLLoader();
-                loader.setLocation(getClass().getResource("/ViewController/new_game_formView.fxml"));
+                loader.setLocation(getClass().getResource("/view/new_game_formView.fxml"));
                 parent = loader.load();
                 scene = new Scene(parent);
                 controller = (new_game_formController) loader.getController();
                 kit.setNext_scene(scene);
                 kit.setNext_controller(controller);
+                break;
 
+            // écran de creation d'une nouvelle partie ==============
+            case 5:
+                loader = new FXMLLoader();
+                loader.setLocation(getClass().getResource("/view/gameView.fxml"));
+                parent = loader.load();
+                scene = new Scene(parent);
+                controller = (gameController) loader.getController();
+                kit.setNext_scene(scene);
+                kit.setNext_controller(controller);
                 break;
         }
         return kit;
