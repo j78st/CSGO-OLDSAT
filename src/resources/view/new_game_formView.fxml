@@ -20,7 +20,7 @@
    <children>
       <ImageView fitHeight="377.0" fitWidth="669.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../pictures/background.jpg" />
+            <Image url="@../../main/java/Interface/pictures/background.jpg" />
          </image>
       </ImageView>
       <AnchorPane layoutX="85.0" layoutY="15.0" prefHeight="340.0" prefWidth="500.0" style="-fx-background-color: #ffffff;" AnchorPane.bottomAnchor="14.0" AnchorPane.topAnchor="14.0">
