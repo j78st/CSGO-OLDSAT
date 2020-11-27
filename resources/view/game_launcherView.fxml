@@ -12,19 +12,19 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="376.0" prefWidth="668.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ViewController.game_launcherController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="376.0" prefWidth="668.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Interface.ViewController.game_launcherController">
    <children>
       <ImageView fitHeight="400.0" fitWidth="668.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <viewport>
             <Rectangle2D />
          </viewport>
          <image>
-            <Image url="@../../main/java/Interface/pictures/background.jpg" />
+            <Image url="@../pictures/background.jpg" />
          </image>
       </ImageView>
       <ImageView fitHeight="75.0" fitWidth="175.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0">
          <image>
-            <Image url="@../../main/java/Interface/pictures/logo_moa.png" />
+            <Image url="@../pictures/logo_moa.png" />
          </image>
       </ImageView>
       <VBox layoutX="214.0" layoutY="38.0" prefHeight="300.0" prefWidth="240.0" spacing="10.0">

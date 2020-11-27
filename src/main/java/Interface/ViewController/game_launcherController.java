@@ -1,7 +1,7 @@
 package Interface.ViewController;
 
 import Interface.ScreenLoader.Controller;
-import Interface.ScreenLoader.GenericLoader;
+import Interface.ScreenLoader.LoadMap;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -35,7 +35,7 @@ public class game_launcherController implements Controller, Initializable {
      */
     @FXML
     void go_back_to_home_screen(ActionEvent event) throws IOException {
-        GenericLoader gl = new GenericLoader();
+        LoadMap gl = new LoadMap();
         Stage stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
         gl.display_screen_from_id(1,stage);
     }
@@ -46,7 +46,7 @@ public class game_launcherController implements Controller, Initializable {
      */
     @FXML
     void display_new_game_form(ActionEvent event) throws IOException {
-        GenericLoader gl = new GenericLoader();
+        LoadMap gl = new LoadMap();
         Stage stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
         gl.display_screen_from_id(4,stage);
     }
@@ -66,7 +66,7 @@ public class game_launcherController implements Controller, Initializable {
      */
     @FXML
     void display_settings_screen(ActionEvent event) throws IOException {
-        GenericLoader gl = new GenericLoader();
+        LoadMap gl = new LoadMap();
         Stage stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
         gl.display_screen_from_id(4,stage);
     }

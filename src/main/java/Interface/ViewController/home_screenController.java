@@ -13,7 +13,6 @@ import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 import Interface.ScreenLoader.*;
 
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -52,9 +51,9 @@ public class home_screenController implements Controller, Initializable {
      */
     @FXML
     void display_game_launcher(ActionEvent event) throws IOException {
-        GenericLoader gl = new GenericLoader();
+        LoadMap gl = new LoadMap();
         Stage stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
-        gl.display_screen_from_id(3,stage);
+        gl.display_screen_from_id(5,stage);
     }
 
     /**
@@ -70,7 +69,6 @@ public class home_screenController implements Controller, Initializable {
      * affiche l'ecran d'affichage des meilleurs scores
      * @param event
      */
-    /*
     @FXML
     void display_score_screen(ActionEvent event) throws IOException {
         FXMLLoader loader = new FXMLLoader();
@@ -87,13 +85,10 @@ public class home_screenController implements Controller, Initializable {
         stage.show();
     }
 
-     */
-
     /**
      * affiche l'ecran des paramètres du jeu
      * @param event
      */
-    /*
     @FXML
     void display_settings_screen(ActionEvent event) throws IOException {
         FXMLLoader loader = new FXMLLoader();
@@ -110,7 +105,6 @@ public class home_screenController implements Controller, Initializable {
         stage.setScene(home_screen);
         stage.show();
     }
-    */
 
     // ==========================================================
     // Methodes autres
