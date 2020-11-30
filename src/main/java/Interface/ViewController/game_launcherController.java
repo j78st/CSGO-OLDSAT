@@ -56,8 +56,10 @@ public class game_launcherController implements Controller, Initializable {
      * @param event
      */
     @FXML
-    void display_save_loader(ActionEvent event) {
-
+    void display_save_loader(ActionEvent event) throws IOException {
+        LoadMap gl = new LoadMap();
+        Stage stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
+        gl.display_screen_from_id(6,stage);
     }
 
     /**

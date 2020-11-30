@@ -85,6 +85,18 @@ public class LoadMap {
                 kit.setNext_scene(scene);
                 kit.setNext_controller(controller);
                 break;
+
+            // écran de chargement d'une sauvegarde ==============
+            case 6:
+                loader = new FXMLLoader();
+                loader.setLocation(getClass().getResource("/view/load_saveView.fxml"));
+                parent = loader.load();
+                scene = new Scene(parent);
+                controller = (load_saveController) loader.getController();
+                kit.setNext_scene(scene);
+                kit.setNext_controller(controller);
+                break;
+
         }
         return kit;
     }

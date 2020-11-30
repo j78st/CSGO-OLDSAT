@@ -5,11 +5,16 @@
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
 <AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="844.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Interface.ViewController.gameController">
    <children>
@@ -121,7 +126,7 @@
                            </HBox.margin>
                         </GridPane>
                         <ComboBox fx:id="action_list" minWidth="492.0" prefHeight="29.0" prefWidth="492.0" promptText="choisir action" />
-                        <Button mnemonicParsing="false" onAction="#pause_game" text="pause">
+                        <Button fx:id="pause_btn" mnemonicParsing="false" onAction="#pause_game" text="pause" >
                            <HBox.margin>
                               <Insets left="10.0" right="10.0" />
                            </HBox.margin>
@@ -132,5 +137,46 @@
             </AnchorPane>
          </children>
       </VBox>
+      <AnchorPane fx:id="background_menu" opacity="0.75" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #000000;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+      <BorderPane fx:id="vbox_menu" layoutX="224.0" layoutY="48.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <center>
+            <VBox alignment="CENTER" prefHeight="300.0" prefWidth="240.0" spacing="10.0">
+               <children>
+                  <Text fx:id="timer_pause" strokeType="OUTSIDE" strokeWidth="0.0" text="Timer">
+                     <font>
+                        <Font name="Eras Light ITC" size="64.0" />
+                     </font>
+                     <fill>
+                        <LinearGradient endX="0.5357142857142857" endY="1.0" startX="0.5214285714285715">
+                           <stops>
+                              <Stop color="#2a2525" />
+                              <Stop color="#00ffbb" offset="1.0" />
+                           </stops>
+                        </LinearGradient>
+                     </fill>
+                     <VBox.margin>
+                        <Insets bottom="50.0" />
+                     </VBox.margin>
+                  </Text>
+                  <Button mnemonicParsing="false" onAction="#keep_playing" prefHeight="40.0" prefWidth="180.0" text="Reprendre">
+                     <VBox.margin>
+                        <Insets left="30.0" right="30.0" />
+                     </VBox.margin>
+                  </Button>
+                  <Button mnemonicParsing="false" onAction="#save_game" prefHeight="40.0" prefWidth="180.0" text="Sauvegarder">
+                     <VBox.margin>
+                        <Insets left="30.0" right="30.0" />
+                     </VBox.margin>
+                  </Button>
+                  <Button mnemonicParsing="false" onAction="#go_to_home_screen" prefHeight="40.0" prefWidth="180.0" text="Retour  à l'accueil">
+                     <VBox.margin>
+                        <Insets left="30.0" right="30.0" />
+                     </VBox.margin>
+                  </Button>
+                  <Button layoutX="40.0" layoutY="249.0" mnemonicParsing="false" onAction="#exit_app" prefHeight="40.0" prefWidth="180.0" text="Quitter l'application" />
+               </children>
+            </VBox>
+         </center>
+      </BorderPane>
    </children>
 </AnchorPane>
