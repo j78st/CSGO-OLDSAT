@@ -140,6 +140,11 @@
                   </Group>
                </children>
             </HBox>
+            <Button fx:id="save_btn" mnemonicParsing="false" onAction="#save_settings" prefHeight="32.0" prefWidth="142.0" text="Valider">
+               <VBox.margin>
+                  <Insets top="30.0" />
+               </VBox.margin>
+            </Button>
          </children>
       </VBox>
       <Button layoutX="473.0" layoutY="364.0" mnemonicParsing="false" onAction="#go_back_to_previous_screen" text="retour" AnchorPane.bottomAnchor="14.0" AnchorPane.rightAnchor="14.0" />

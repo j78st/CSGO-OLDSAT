@@ -2,29 +2,28 @@ package Interface.ViewController;
 
 import Interface.ScreenLoader.Controller;
 import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
-import javafx.fxml.Initializable;
-import javafx.scene.Scene;
-import javafx.scene.control.*;
-import javafx.scene.input.*;
+import javafx.scene.control.Button;
+import javafx.scene.control.ComboBox;
+import javafx.scene.control.Label;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyCodeCombination;
+import javafx.scene.input.KeyCombination;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 import java.io.IOException;
-import java.net.URL;
-import java.util.Optional;
-import java.util.ResourceBundle;
 
-import static java.lang.Thread.sleep;
-
-public class gameController implements Controller, Initializable {
+public class gameController implements Controller {
 
     // ==========================================================
-    // Objets FXML
+    // Déclaration objets
     // ==========================================================
+
+    boolean gamePaused = false;
+
     // zones de l'écran -----------------------------------------
     @FXML
     private AnchorPane story_pane;
@@ -63,9 +62,12 @@ public class gameController implements Controller, Initializable {
     @FXML
     private ComboBox<?> action_list;
 
-    // gestion menu pause ---------------------------------------
     @FXML
     private Button pause_btn;
+
+    // gestion menu pause ---------------------------------------
+    @FXML
+    private Button resume_btn;
 
     @FXML
     private AnchorPane background_menu;
@@ -119,7 +121,7 @@ public class gameController implements Controller, Initializable {
      * @param event
      */
     @FXML
-    void keep_playing(ActionEvent event) {
+    void resume_game(ActionEvent event) {
 
         // masquage du menu pause et desactivation des boutons
         background_menu.toBack();
@@ -165,10 +167,28 @@ public class gameController implements Controller, Initializable {
     // Methodes autres
     // ==========================================================
 
-    @Override
-    public void initialize(URL url, ResourceBundle resourceBundle) {
+    /**
+     * initialisation dela scene avant affichage lors du chargement
+     */
+    public void initialize () {
         // masquage du menu pause et desactivation des boutons
         background_menu.toBack();
         vbox_menu.toBack();
+    }
+
+    @Override
+    public void setShortcut() {
+        // Ouverture/fermeture menu pause via ESC
+        KeyCombination kc = new KeyCodeCombination(KeyCode.ESCAPE, KeyCombination.SHIFT_ANY);
+        Runnable rn = ()-> {
+            if (!gamePaused) {
+                pause_game(new ActionEvent());
+                gamePaused = true;
+            } else {
+                resume_game(new ActionEvent());
+                gamePaused = false;
+            }
+        };
+        pause_btn.getScene().getAccelerators().put(kc, rn);;
     }
 }

@@ -1,29 +1,26 @@
 package Interface.ViewController;
 
+import Interface.Ranking.Record;
+import Interface.Ranking.RecordListCell;
 import Interface.ScreenLoader.Controller;
 import Interface.ScreenLoader.LoadMap;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.fxml.Initializable;
 import javafx.scene.Node;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyCodeCombination;
+import javafx.scene.input.KeyCombination;
 import javafx.stage.Stage;
-import Interface.Ranking.Record;
-import Interface.Ranking.RecordListCell;
 
 import java.io.IOException;
-import java.net.URL;
-import java.util.ResourceBundle;
 
-public class score_screenController implements Controller, Initializable {
+public class score_screenController implements Controller {
 
     // ==========================================================
     // Classement et autres objets
@@ -53,7 +50,7 @@ public class score_screenController implements Controller, Initializable {
     void go_back_to_home_screen(ActionEvent event) throws IOException {
         LoadMap gl = new LoadMap();
         Stage stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
-        gl.display_screen_from_id(1,stage);
+        gl.display_screen_from_id(LoadMap.HOME,stage);
     }
 
     /**
@@ -63,19 +60,9 @@ public class score_screenController implements Controller, Initializable {
      */
     @FXML
     void display_settings_screen(ActionEvent event) throws IOException {
-        FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(getClass().getResource("settings_menuView.fxml"));
-
-        Parent homeParent = loader.load();
-        Scene home_screen = new Scene(homeParent);
-
-        settings_menuController controller = loader.getController();
-        controller.init(2);
-
+        LoadMap gl = new LoadMap();
         Stage stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
-        stage.setTitle("OLD'SAT");
-        stage.setScene(home_screen);
-        stage.show();
+        gl.display_settings_menu(LoadMap.SCORES,stage);
     }
 
     // ==========================================================
@@ -85,8 +72,7 @@ public class score_screenController implements Controller, Initializable {
     /**
      * initialise la vue lors de l'appel de la methode @display_screen_from_id
      */
-    @Override
-    public void initialize (URL url, ResourceBundle resourceBundle) {
+    public void initialize () {
         // icone paramètre
         Image settings_icon = new Image("pictures/settings_icon.png");
         ImageView settingsIconView = new ImageView(settings_icon);
@@ -104,4 +90,14 @@ public class score_screenController implements Controller, Initializable {
         score_list.setCellFactory(param -> new RecordListCell());
     }
 
+    /**
+     * Définition et intégration des raccourcis possibles sur la scene
+     */
+    @Override
+    public void setShortcut() {
+        // Acces au paramètres via ESC
+        KeyCombination kc = new KeyCodeCombination(KeyCode.ESCAPE, KeyCombination.SHIFT_ANY);
+        Runnable rn = ()-> settings_btn.fire();
+        settings_btn.getScene().getAccelerators().put(kc, rn);;
+    }
 }

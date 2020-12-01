@@ -8,23 +8,19 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.fxml.Initializable;
 import javafx.scene.Node;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyCodeCombination;
+import javafx.scene.input.KeyCombination;
 import javafx.stage.Stage;
 
 import java.io.IOException;
-import java.net.URL;
-import java.util.ResourceBundle;
 
-public class load_saveController implements Controller, Initializable {
-
+public class load_saveController implements Controller {
     // ==========================================================
     // Déclaration des objets
     // ==========================================================
@@ -50,7 +46,7 @@ public class load_saveController implements Controller, Initializable {
     void go_back_to_launch_screen(ActionEvent event) throws IOException {
         LoadMap gl = new LoadMap();
         Stage stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
-        gl.display_screen_from_id(3,stage);
+        gl.display_screen_from_id(LoadMap.LAUNCHER,stage);
     }
 
     /**
@@ -59,19 +55,9 @@ public class load_saveController implements Controller, Initializable {
      */
     @FXML
     void go_to_settings_menu(ActionEvent event) throws IOException {
-        FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(getClass().getResource("settings_menuView.fxml"));
-
-        Parent homeParent = loader.load();
-        Scene home_screen = new Scene(homeParent);
-
-        settings_menuController controller = (settings_menuController)loader.getController();
-        controller.init(4); // ID de l'écran d'où on appelle les paramètres
-
+        LoadMap gl = new LoadMap();
         Stage stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
-        stage.setTitle("OLD'SAT");
-        stage.setScene(home_screen);
-        stage.show();
+        gl.display_settings_menu(LoadMap.LOAD_SAVE,stage);
     }
 
     /**
@@ -88,7 +74,7 @@ public class load_saveController implements Controller, Initializable {
     // ==========================================================
 
     @Override
-    public void initialize(URL url, ResourceBundle resourceBundle) {
+    public void initialize() {
         // image du bouton paramètre
         Image settings_icon = new Image("pictures/settings_icon.png");
         ImageView settingsIconView = new ImageView(settings_icon);
@@ -107,4 +93,14 @@ public class load_saveController implements Controller, Initializable {
         save_list.setCellFactory(param -> new SaveListCell());
     }
 
+    /**
+     * Définition et intégration des raccourcis possibles sur la scene
+     */
+    @Override
+    public void setShortcut() {
+        // Acces au paramètres via ESC
+        KeyCombination kc = new KeyCodeCombination(KeyCode.ESCAPE, KeyCombination.SHIFT_ANY);
+        Runnable rn = ()-> settings_btn.fire();
+        settings_btn.getScene().getAccelerators().put(kc, rn);;
+    }
 }

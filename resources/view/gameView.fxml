@@ -126,7 +126,7 @@
                            </HBox.margin>
                         </GridPane>
                         <ComboBox fx:id="action_list" minWidth="492.0" prefHeight="29.0" prefWidth="492.0" promptText="choisir action" />
-                        <Button fx:id="pause_btn" mnemonicParsing="false" onAction="#pause_game" text="pause" >
+                        <Button fx:id="pause_btn" mnemonicParsing="false" onAction="#pause_game" text="pause">
                            <HBox.margin>
                               <Insets left="10.0" right="10.0" />
                            </HBox.margin>
@@ -158,7 +158,7 @@
                         <Insets bottom="50.0" />
                      </VBox.margin>
                   </Text>
-                  <Button mnemonicParsing="false" onAction="#keep_playing" prefHeight="40.0" prefWidth="180.0" text="Reprendre">
+                  <Button fx:id="resume_btn" mnemonicParsing="false" onAction="#resume_game" prefHeight="40.0" prefWidth="180.0" text="Reprendre">
                      <VBox.margin>
                         <Insets left="30.0" right="30.0" />
                      </VBox.margin>
