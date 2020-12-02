@@ -1,22 +1,30 @@
+/* ============================================ */
+/* Design de l'ecran d'accueil de l'application */
+/* ============================================ */
+
+/* ====== Design bouton ====== */
+
 .button {
+    /* --- forme et couleur --- */
     -fx-background-color: #2C3E50;
+    -fx-background-radius: 20;
+
+    /* --- bordure du bouton --- */
     -fx-border-width: 2;
     -fx-border-radius: 20;
     -fx-border-color: #FF931F;
-    -fx-background-radius: 20;
+
+    /* --- texte du bouton --- */
     -fx-text-alignment: center;
     -fx-text-fill: white;
+}
 
-    /*
-    text-align: center;
-    color: white;
-    transition-duration: 0.4s;
-    */
-}
 .button:hover {
-    background-color: #FF931F;
-    color: white;
+    -fx-background-color: #FF931F;
+    -fx-text-fill: white;
 }
+
+/* ====== Design arrière plan ====== */
 
 .Pane{
     -fx-background-color: #1C2833;
