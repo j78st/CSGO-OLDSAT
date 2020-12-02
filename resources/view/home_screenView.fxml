@@ -45,7 +45,7 @@
             </VBox>
          </center>
       </BorderPane>
-      <Button fx:id="settings_btn" layoutX="502.0" layoutY="16.0" mnemonicParsing="false" onAction="#display_settings_screen" style="-fx-background-image: url(pictures/settings_icon.png);" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="14.0" />
+      <Button fx:id="settings_btn" layoutX="502.0" layoutY="16.0" mnemonicParsing="false" onAction="#display_settings_screen" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="14.0" />
       <Button layoutX="463.0" layoutY="354.0" mnemonicParsing="false" onAction="#close_app" text="quitter application" AnchorPane.bottomAnchor="14.0" AnchorPane.rightAnchor="14.0" />
    </children>
 </AnchorPane>
