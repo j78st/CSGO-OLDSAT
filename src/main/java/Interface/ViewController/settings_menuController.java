@@ -25,6 +25,9 @@ public class settings_menuController implements Controller {
     @FXML
     private Button save_btn;
 
+    @FXML
+    private Button resume_btn;
+
     // ==========================================================
     // Methodes gestion logiciel
     // ==========================================================
@@ -78,13 +81,7 @@ public class settings_menuController implements Controller {
     public void setShortcut() {
         // Fermeture paramètre via ESC
         KeyCombination kc = new KeyCodeCombination(KeyCode.ESCAPE, KeyCombination.SHIFT_ANY);
-        Runnable rn = ()-> {
-            try {
-                go_back_to_previous_screen(new ActionEvent());
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        };
-        save_btn.getScene().getAccelerators().put(kc, rn);;
+        Runnable rn = ()-> {resume_btn.fire();};
+        save_btn.getScene().getAccelerators().put(kc, rn);
     }
 }

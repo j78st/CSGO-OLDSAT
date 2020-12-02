@@ -145,6 +145,7 @@ public class LoadMap {
 
         settings_menuController controller = loader.getController();
         controller.provide_current_screen_id(previous_id); // ID de l'écran ou on appelle les paramètres
+        controller.setShortcut();
 
         stage.setTitle("OLD'SAT");
         stage.setScene(home_screen);

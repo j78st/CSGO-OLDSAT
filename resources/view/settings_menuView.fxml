@@ -147,6 +147,6 @@
             </Button>
          </children>
       </VBox>
-      <Button layoutX="473.0" layoutY="364.0" mnemonicParsing="false" onAction="#go_back_to_previous_screen" text="retour" AnchorPane.bottomAnchor="14.0" AnchorPane.rightAnchor="14.0" />
+      <Button fx:id="resume_btn" layoutX="473.0" layoutY="364.0" mnemonicParsing="false" onAction="#go_back_to_previous_screen" text="retour" AnchorPane.bottomAnchor="14.0" AnchorPane.rightAnchor="14.0" />
    </children>
 </AnchorPane>
