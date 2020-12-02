@@ -1,6 +1,5 @@
 package Interface.ViewController;
 
-
 import Interface.ScreenLoader.Controller;
 import Interface.ScreenLoader.LoadMap;
 import javafx.event.ActionEvent;

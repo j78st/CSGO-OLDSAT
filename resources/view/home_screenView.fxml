@@ -1,65 +1,51 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
-<?import javafx.geometry.Rectangle2D?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.VBox?>
-<?import javafx.scene.paint.LinearGradient?>
-<?import javafx.scene.paint.Stop?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="376.0" prefWidth="668.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Interface.ViewController.home_screenController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="400.0" minWidth="600.0" prefHeight="500.0" prefWidth="800.0" styleClass="Pane" stylesheets="@../CSS/home_screen.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Interface.ViewController.home_screenController">
    <children>
-      <ImageView fitHeight="400.0" fitWidth="668.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-         <viewport>
-            <Rectangle2D />
-         </viewport>
-         <image>
-            <Image url="@../pictures/background.jpg" />
-         </image>
-      </ImageView>
       <ImageView fitHeight="75.0" fitWidth="175.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0">
          <image>
             <Image url="@../pictures/logo_moa.png" />
          </image>
       </ImageView>
-      <VBox alignment="CENTER" layoutX="214.0" layoutY="38.0" prefHeight="300.0" prefWidth="240.0" spacing="10.0">
-         <children>
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="OLD'SAT">
-               <font>
-                  <Font name="Eras Light ITC" size="64.0" />
-               </font>
-               <fill>
-                  <LinearGradient endX="0.5357142857142857" endY="1.0" startX="0.5214285714285715">
-                     <stops>
-                        <Stop color="#2a2525" />
-                        <Stop color="#00ffbb" offset="1.0" />
-                     </stops>
-                  </LinearGradient>
-               </fill>
-            </Text>
-            <Button mnemonicParsing="false" onAction="#display_game_launcher" prefHeight="75.0" prefWidth="180.0" text="JOUER">
-               <VBox.margin>
-                  <Insets left="30.0" right="30.0" />
-               </VBox.margin>
-            </Button>
-            <Button mnemonicParsing="false" onAction="#display_multiplayer_mode" prefHeight="40.0" prefWidth="180.0" text="Multijoueur">
-               <VBox.margin>
-                  <Insets left="30.0" right="30.0" />
-               </VBox.margin>
-            </Button>
-            <Button mnemonicParsing="false" onAction="#display_score_screen" prefHeight="40.0" prefWidth="180.0" text="Scores">
-               <VBox.margin>
-                  <Insets left="30.0" right="30.0" />
-               </VBox.margin>
-            </Button>
-         </children>
-      </VBox>
-      <Button fx:id="settings_btn" layoutX="502.0" layoutY="16.0" mnemonicParsing="false" onAction="#display_settings_screen" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="14.0" />
+      <BorderPane layoutX="214.0" layoutY="38.0" prefHeight="456.0" prefWidth="743.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <center>
+            <VBox alignment="CENTER" prefHeight="300.0" prefWidth="240.0" spacing="10.0">
+               <children>
+                  <Text fill="#ff931f" strokeType="OUTSIDE" strokeWidth="0.0" text="OLD'SAT">
+                     <font>
+                        <Font size="64.0" />
+                     </font>
+                  </Text>
+                  <Button mnemonicParsing="false" onAction="#display_game_launcher" prefHeight="75.0" prefWidth="180.0" text="JOUER">
+                     <VBox.margin>
+                        <Insets left="30.0" right="30.0" />
+                     </VBox.margin>
+                  </Button>
+                  <Button mnemonicParsing="false" onAction="#display_multiplayer_mode" prefHeight="40.0" prefWidth="180.0" text="Multijoueur">
+                     <VBox.margin>
+                        <Insets left="30.0" right="30.0" />
+                     </VBox.margin>
+                  </Button>
+                  <Button mnemonicParsing="false" onAction="#display_score_screen" prefHeight="40.0" prefWidth="180.0" text="Scores">
+                     <VBox.margin>
+                        <Insets left="30.0" right="30.0" />
+                     </VBox.margin>
+                  </Button>
+               </children>
+            </VBox>
+         </center>
+      </BorderPane>
+      <Button fx:id="settings_btn" layoutX="502.0" layoutY="16.0" mnemonicParsing="false" onAction="#display_settings_screen" style="-fx-background-image: url(pictures/settings_icon.png);" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="14.0" />
       <Button layoutX="463.0" layoutY="354.0" mnemonicParsing="false" onAction="#close_app" text="quitter application" AnchorPane.bottomAnchor="14.0" AnchorPane.rightAnchor="14.0" />
    </children>
 </AnchorPane>
