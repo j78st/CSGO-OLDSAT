@@ -70,11 +70,11 @@ public class TinySound {
 	 */
 	public static final AudioFormat FORMAT = new AudioFormat(
 			AudioFormat.Encoding.PCM_SIGNED, //linear signed PCM
-			44100, //44.1kHz sampling rate
+			44100, //44.1kHz sampling rate 44100
 			16, //16-bit
 			2, //2 channels fool
 			4, //frame size 4 bytes (16-bit, 2 channel)
-			44100, //same as sampling rate
+			44100, //same as sampling rate 44100
 			false //little-endian
 			);
 	

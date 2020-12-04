@@ -7,10 +7,10 @@ import java.util.HashMap;
 import Music.TinySound.Music;
 import Music.TinySound.TinySound;
 
-public class WorldBoxDisc {
+public class WorldBoxDisc extends Thread {
     public static ArrayList<Disc> worldBoxMusic = new ArrayList<>();
     public static HashMap<String, Integer> idWorldBoxMusic = new HashMap<>();
-    public static double defaultSoundVolume = 10;
+    public static double defaultSoundVolume = 5;
     public static int total = -1; //Nb total de piste à charger
 
     /**
@@ -19,7 +19,15 @@ public class WorldBoxDisc {
     public static void init(){
         //Le format mp3 ne marche pas
         TinySound.init(); //initialise le systeme TinySound
-        
+
+        /*
+        Le fichier wav doit absolument avoir comme paramètre :
+         -encoder à une résolution de 16 bits
+         -un échantillonage à 44100 kHz
+         -2-chaine (stereo)
+         -linear PCM
+         */
+
         //musique de jeu
         File windF = new File("resourses/musics/windSoundEffect.wav");
         Music windM = TinySound.loadMusic(windF);
@@ -27,19 +35,45 @@ public class WorldBoxDisc {
         add(wind);
 
         //sons effets speciaux
-        File opinelF = new File("resourses/fxmusics/bladeSound.wav");
-        Music opinelM = TinySound.loadMusic(opinelF);
-        Disc opinel = new Disc(opinelM, "opinel", true);
-        add(opinel);
+        File opinel1F = new File("resourses/fxmusics/opinel/opinel1.wav");
+        Music opinel1M = TinySound.loadMusic(opinel1F);
+        Disc opinel1 = new Disc(opinel1M, "opinel1", false);
+        add(opinel1);
+
+        File opinel2F = new File("resourses/fxmusics/opinel/opinel2.wav");
+        Music opinel2M = TinySound.loadMusic(opinel2F);
+        Disc opinel2 = new Disc(opinel2M, "opinel2", false);
+        add(opinel2);
+
+        File humanHeartF = new File("resourses/fxmusics/paranormal/human_heart_beat.wav");
+        Music humanHeartM = TinySound.loadMusic(humanHeartF);
+        Disc humanHeart = new Disc(humanHeartM, "coeur", true);
+        add(humanHeart);
+
+        File errorF = new File("resourses/fxmusics/ui/error.wav");
+        Music errorM = TinySound.loadMusic(errorF);
+        Disc error = new Disc(errorM, "erreur", false);
+        add(error);
+
+        File validationF = new File("resourses/fxmusics/ui/validation.wav");
+        Music validationM = TinySound.loadMusic(validationF);
+        Disc validation = new Disc(validationM, "valid", false);
+        add(validation);
 
         File porteDebloqueF = new File("resourses/fxmusics/doorOpeningSound.wav");
         Music porteDebloqueM = TinySound.loadMusic(porteDebloqueF);
-        Disc porteDebloque = new Disc(porteDebloqueM, "porteDebloque", true);
+        Disc porteDebloque = new Disc(porteDebloqueM, "porteDebloque", false);
         add(porteDebloque);
+
+        File screamF = new File("resourses/fxmusics/paranormal/scream1.wav");
+        Music screamM = TinySound.loadMusic(screamF);
+        Disc scream = new Disc(screamM, "cris1", false);
+        add(scream);
 
 
 
     }
+
 
     //Operation d'ajout special de la classe WorldBoxDisc
     public static void add(Disc aDisc){
