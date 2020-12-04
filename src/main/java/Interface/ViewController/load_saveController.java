@@ -9,7 +9,8 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
-import javafx.scene.control.*;
+import javafx.scene.control.Button;
+import javafx.scene.control.ListView;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
@@ -19,16 +20,12 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class new_game_formController implements Controller {
+public class load_saveController implements Controller {
+    // ==========================================================
+    // Déclaration des objets
+    // ==========================================================
 
     private ObservableList<SaveSlot> saveObservableList;
-    private ObservableList<String> difficulty;
-
-    @FXML
-    private TextField name_selector;
-
-    @FXML
-    private ComboBox difficulty_selector;
 
     @FXML
     private ListView<SaveSlot> save_list;
@@ -36,6 +33,15 @@ public class new_game_formController implements Controller {
     @FXML
     private Button settings_btn;
 
+    // ==========================================================
+    // Méthodes FXML
+    // ==========================================================
+
+    /**
+     *  affiche l'ecran de lancement de partir
+     * @param event
+     * @throws IOException
+     */
     @FXML
     void go_back_to_launch_screen(ActionEvent event) throws IOException {
         LoadMap gl = new LoadMap();
@@ -43,79 +49,48 @@ public class new_game_formController implements Controller {
         gl.display_screen_from_id(LoadMap.LAUNCHER,stage);
     }
 
+    /**
+     * affiche le menu des paramètres
+     * @param event
+     */
     @FXML
     void go_to_settings_menu(ActionEvent event) throws IOException {
         LoadMap gl = new LoadMap();
         Stage stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
-        gl.display_settings_menu(LoadMap.NEW_GAME_FORM,stage);
+        gl.display_settings_menu(LoadMap.LOAD_SAVE,stage);
     }
-
 
     /**
-     * Crée une nouvelle partie sur l'emplacement de sauvegarde sélectionné
-     * avec le pseudo et difficulté sélectionnés.
+     *  relance la partie sélectionnée
      * @param event
-     * @throws IOException
      */
     @FXML
-    void create_game(ActionEvent event) throws IOException {
-        String pseudo = "";
-        String difficulty;
-        SaveSlot save = new SaveSlot();
-
-        // récupère le pseudo si il est renseigné et teste sa validité
-        try {
-            pseudo = name_selector.getText();
-        } catch (Exception e) {
-            Alert alert = new Alert(Alert.AlertType.WARNING, "Inscrivez votre nom !", ButtonType.OK);
-            alert.showAndWait();
-        }
-
-        // récupère la difficulté de la nouvelle partie
-        difficulty = difficulty_selector.getPromptText();
-
-        // récupère l'emplacement de sauvegarde pour stocker la partie
-        try {
-            save = save_list.getSelectionModel().getSelectedItem();
-        } catch (Exception e) {
-            Alert alert = new Alert(Alert.AlertType.WARNING, "Selectionnez un emplacement de sauvegarde !", ButtonType.OK);
-            alert.showAndWait();
-        }
-
-        // vvv REMPLACEMENT DU FICHIER DE SAUVEGARDE ICI   vvv
-
-        // vvv LANCEMENT DE LA PARTIE ICI vvv
-        LoadMap gl = new LoadMap();
-        Stage stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
-        gl.display_screen_from_id(LoadMap.GAME,stage);
+    void launch_game(ActionEvent event) {
 
     }
+
+    // ==========================================================
+    // Autre méthodes
+    // ==========================================================
 
     @Override
     public void initialize() {
-
         // image du bouton paramètre
         Image settings_icon = new Image("pictures/settings_icon.png");
         ImageView settingsIconView = new ImageView(settings_icon);
         settings_btn.setGraphic(settingsIconView);
 
-        // mise en place selection difficulté
-        difficulty = FXCollections.observableArrayList("Facile", "Normal", "Difficile");
-        difficulty_selector.setItems(difficulty);
-        difficulty_selector.setValue("Normal");
-
         // mise en place de la liste des sauvegarde
         saveObservableList = FXCollections.observableArrayList();
 
-            // ======= vvv /!\ LISTE DE SAUVEGARDE TEST vvv =======
-            for (int i = 0; i<10; i++) {
-                saveObservableList.add(new SaveSlot(i,"pseudo "+i));
-            }
-            // ====================================================
+        // ======= vvv /!\ LISTE DE SAUVEGARDE TEST vvv =======
+        for (int i = 0; i<10; i++) {
+            saveObservableList.add(new SaveSlot(i,"pseudo "+i));
+        }
+        // ====================================================
 
         save_list.setItems(saveObservableList);
         save_list.setCellFactory(param -> new SaveListCell());
-
     }
 
     /**

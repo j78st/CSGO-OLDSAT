@@ -1,11 +1,16 @@
 package Interface.ViewController;
 
+import Interface.Ranking.Record;
+import Interface.Ranking.RecordListCell;
 import Interface.ScreenLoader.Controller;
 import Interface.ScreenLoader.LoadMap;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
 import javafx.scene.control.Button;
+import javafx.scene.control.ListView;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
@@ -15,7 +20,13 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class game_launcherController implements Controller {
+public class score_screenController implements Controller {
+
+    // ==========================================================
+    // Classement et autres objets
+    // ==========================================================
+
+    private ObservableList<Record> recordObservableList;
 
     // ==========================================================
     // Objets FXML
@@ -24,14 +35,16 @@ public class game_launcherController implements Controller {
     @FXML
     private Button settings_btn;
 
+    @FXML
+    private ListView<Record> score_list;
+
     // ==========================================================
     // Methodes FXML
     // ==========================================================
 
     /**
-     * Affiche le menu d'accueil de l'application
+     * affiche l'ecran d'accueil de l'application
      * @param event
-     * @throws IOException
      */
     @FXML
     void go_back_to_home_screen(ActionEvent event) throws IOException {
@@ -41,36 +54,15 @@ public class game_launcherController implements Controller {
     }
 
     /**
-     * Affiche le formulaire de creation d'une partie
+     * Affiche le menu des paramètre depuis la fenetre courante
      * @param event
-     */
-    @FXML
-    void display_new_game_form(ActionEvent event) throws IOException {
-        LoadMap gl = new LoadMap();
-        Stage stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
-        gl.display_screen_from_id(LoadMap.NEW_GAME_FORM,stage);
-    }
-
-    /**
-     * Affiche l'ecran de chargement des sauvegardes existantes
-     * @param event
-     */
-    @FXML
-    void display_save_loader(ActionEvent event) throws IOException {
-        LoadMap gl = new LoadMap();
-        Stage stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
-        gl.display_screen_from_id(LoadMap.LOAD_SAVE,stage);
-    }
-
-    /**
-     * Affiche le menu des paramètres
-     * @param event
+     * @throws IOException
      */
     @FXML
     void display_settings_screen(ActionEvent event) throws IOException {
         LoadMap gl = new LoadMap();
         Stage stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
-        gl.display_settings_menu(LoadMap.LAUNCHER,stage);
+        gl.display_settings_menu(LoadMap.SCORES,stage);
     }
 
     // ==========================================================
@@ -78,15 +70,25 @@ public class game_launcherController implements Controller {
     // ==========================================================
 
     /**
-     * Initialise la scène lors de l'appel
+     * initialise la vue lors de l'appel de la methode @display_screen_from_id
      */
-    @Override
     public void initialize () {
+        // icone paramètre
         Image settings_icon = new Image("pictures/settings_icon.png");
         ImageView settingsIconView = new ImageView(settings_icon);
         settings_btn.setGraphic(settingsIconView);
-    }
 
+        // chargement du classement
+        recordObservableList = FXCollections.observableArrayList();
+
+        // vvv /!\ classement de test ici vvv
+        for (int i = 0; i<20; i++) {
+            recordObservableList.add(new Record(i+1, "pseudo "+i, 100+i));
+        }
+
+        score_list.setItems(recordObservableList);
+        score_list.setCellFactory(param -> new RecordListCell());
+    }
 
     /**
      * Définition et intégration des raccourcis possibles sur la scene
@@ -98,5 +100,4 @@ public class game_launcherController implements Controller {
         Runnable rn = ()-> settings_btn.fire();
         settings_btn.getScene().getAccelerators().put(kc, rn);;
     }
-
 }

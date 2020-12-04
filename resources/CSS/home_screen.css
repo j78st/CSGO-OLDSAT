@@ -1,0 +1,23 @@
+.button {
+    -fx-background-color: #2C3E50;
+    -fx-border-width: 2;
+    -fx-border-radius: 20;
+    -fx-border-color: #FF931F;
+    -fx-background-radius: 20;
+    -fx-text-alignment: center;
+    -fx-text-fill: white;
+
+    /*
+    text-align: center;
+    color: white;
+    transition-duration: 0.4s;
+    */
+}
+.button:hover {
+    background-color: #FF931F;
+    color: white;
+}
+
+.Pane{
+    -fx-background-color: #1C2833;
+}
