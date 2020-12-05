@@ -16,6 +16,7 @@ public class WorldBoxDisc extends Thread {
     /**
      * Initialise les musique du jeu
      */
+
     public static void init(){
         //Le format mp3 ne marche pas
         TinySound.init(); //initialise le systeme TinySound
@@ -86,6 +87,7 @@ public class WorldBoxDisc extends Thread {
     public static void play(String name){
         Disc discToPlay = worldBoxMusic.get(idWorldBoxMusic.get(name));
         discToPlay.aMusic.play(discToPlay.loop);
+        discToPlay.aMusic.rewind();
     }
 
     //Arrete une piste
@@ -126,6 +128,29 @@ public class WorldBoxDisc extends Thread {
         }
     }
 
+    public static void testAllSound(){
+        for(int i = 0; i < worldBoxMusic.size(); i++){
+            try {
+                sleep(2000);
+                System.out.println("Now playing :" + worldBoxMusic.get(i).name);
+                worldBoxMusic.get(i).aMusic.play(false);
+            } catch (InterruptedException e){
+                e.printStackTrace();
+            }
+        }
+    }
+
+    public static void repeatSound(String nom, int n, int ms){
+        for(int i = 0; i < n; i++){
+            try {
+                sleep(ms);
+                System.out.println("Now playing " + nom +": "+i);
+                WorldBoxDisc.play(nom);
+            } catch (InterruptedException e){
+                e.printStackTrace();
+            }
+        }
+    }
 
     //TODO ajouter methode qui repere les musiques en cours d'excution pour changer en même temps leurs volumes
     //TODO peut etre creer divers label de son pour gerer le changement des niveaux de sons separements
