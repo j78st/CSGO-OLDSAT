@@ -20,7 +20,6 @@ public class Ranking {
                 this.ranking[i] = score;
                 added = true;
             }
-
         }
      }
 }
