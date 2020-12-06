@@ -5,11 +5,11 @@ import java.io.Writer;
 
 import com.google.gson.*; //Importation de la bibliotheque GSON
 
-import ParcDeLocation.*;
+
 
 //La classe Read va effectuer la serialisation du fichier "data.json" en une instance ParcDeLocation
 public class Write {
-    public Write(ParcDeLocation unParcDeLocation){
+    /*public Write(ParcDeLocation unParcDeLocation){
 		//Création d'un objet GSON de serialisation
     	Gson jsonObject = new GsonBuilder().enableComplexMapKeySerialization().setPrettyPrinting().create();	
     	
@@ -20,5 +20,5 @@ public class Write {
 			e.printStackTrace();
 		}    	
         
-    }
+    }*/
 }

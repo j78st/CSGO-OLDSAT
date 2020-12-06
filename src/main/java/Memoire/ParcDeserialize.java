@@ -2,14 +2,12 @@ package Memoire;
 
 import com.google.gson.*;
 import java.lang.reflect.Type;
-
-import ParcDeLocation.*;
-
-public class ParcDeserialize implements JsonDeserializer<Vehicule> {
+ public class ParcDeserialize{
+ // public class ParcDeserialize implements JsonDeserializer<> {
     /*
         Classe permettant la differenciation des types de vehicules
         lors de la deserialisation
-    */
+
     @Override
 	public Vehicule deserialize(JsonElement json, Type typeOfT, JsonDeserializationContext context)
 		throws JsonParseException {
@@ -23,5 +21,5 @@ public class ParcDeserialize implements JsonDeserializer<Vehicule> {
 		} else { // Il ne reste que les motos dans le JSON qui n'ont pas ete traites
 			return context.deserialize(json, Moto.class);
 		}
-	}
+	} */
 }
