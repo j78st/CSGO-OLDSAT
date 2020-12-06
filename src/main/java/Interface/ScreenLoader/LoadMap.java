@@ -4,6 +4,7 @@ import Interface.ViewController.*;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -140,15 +141,15 @@ public class LoadMap {
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(getClass().getResource("/view/settings_menuView.fxml"));
 
-        Parent homeParent = loader.load();
-        Scene home_screen = new Scene(homeParent);
+        Parent parent = loader.load();
+        Scene scene = new Scene(parent);
 
         settings_menuController controller = loader.getController();
         controller.provide_current_screen_id(previous_id); // ID de l'écran ou on appelle les paramètres
         controller.setShortcut();
 
         stage.setTitle("OLD'SAT");
-        stage.setScene(home_screen);
+        stage.setScene(scene);
         stage.show();
     }
 
