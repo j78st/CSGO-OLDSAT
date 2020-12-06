@@ -61,7 +61,7 @@ public class WorldBoxDisc extends Thread {
         Disc validation = new Disc(validationM, "valid", false);
         add(validation);
 
-        File porteDebloqueF = new File("resourses/fxmusics/doorOpeningSound.wav");
+        File porteDebloqueF = new File("resourses/fxmusics/rooms/doorOpeningSound.wav");
         Music porteDebloqueM = TinySound.loadMusic(porteDebloqueF);
         Disc porteDebloque = new Disc(porteDebloqueM, "porteDebloque", false);
         add(porteDebloque);
@@ -71,7 +71,55 @@ public class WorldBoxDisc extends Thread {
         Disc scream = new Disc(screamM, "cris1", false);
         add(scream);
 
+        File chatMsgF = new File("resourses/fxmusics/ui/chatMsg.wav");
+        Music chatMsgM = TinySound.loadMusic(chatMsgF);
+        Disc chatMsg = new Disc(chatMsgM, "msgChat", false);
+        add(chatMsg);
 
+        File paraWords1F = new File("resourses/fxmusics/paranormal/paranormalWords1.wav");
+        Music paraWords1M = TinySound.loadMusic(paraWords1F);
+        Disc paraWords1 = new Disc(paraWords1M, "paraMot1", false);
+        add(paraWords1);
+
+        File paraWords2F = new File("resourses/fxmusics/paranormal/paranormalWords2.wav");
+        Music paraWords2M = TinySound.loadMusic(paraWords2F);
+        Disc paraWords2 = new Disc(paraWords2M, "paraMot2", false);
+        add(paraWords2);
+
+        File disappearF = new File("resourses/fxmusics/paranormal/disappearFx.wav");
+        Music disappearM = TinySound.loadMusic(disappearF);
+        Disc disappear = new Disc(disappearM, "disparaitre", false);
+        add(disappear);
+
+        File owlF = new File("resourses/fxmusics/ambiant/owl.wav");
+        Music owlM = TinySound.loadMusic(owlF);
+        Disc owl = new Disc(owlM, "hibou", false);
+        add(owl);
+
+        File splashF = new File("resourses/fxmusics/ambiant/Splash_0.wav");
+        Music splashM = TinySound.loadMusic(splashF);
+        Disc splash = new Disc(splashM, "splash", false);
+        add(splash);
+
+        File thunder0F = new File("resourses/fxmusics/ambiant/Thunder_0.wav");
+        Music thunder0M = TinySound.loadMusic(thunder0F);
+        Disc thunder0 = new Disc(thunder0M, "eclair0", false);
+        add(thunder0);
+
+        File thunder1F = new File("resourses/fxmusics/ambiant/Thunder_1.wav");
+        Music thunder1M = TinySound.loadMusic(thunder1F);
+        Disc thunder1 = new Disc(thunder1M, "eclair1", false);
+        add(thunder1);
+
+        File thunder2F = new File("resourses/fxmusics/ambiant/Thunder_2.wav");
+        Music thunder2M = TinySound.loadMusic(thunder2F);
+        Disc thunder2 = new Disc(thunder2M, "eclair2", false);
+        add(thunder2);
+
+        File thunder3F = new File("resourses/fxmusics/ambiant/Thunder_3.wav");
+        Music thunder3M = TinySound.loadMusic(thunder3F);
+        Disc thunder3 = new Disc(thunder3M, "eclair3", false);
+        add(thunder3);
 
     }
 
