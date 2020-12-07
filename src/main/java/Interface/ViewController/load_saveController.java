@@ -56,7 +56,7 @@ public class load_saveController implements Controller {
     void go_to_settings_menu(ActionEvent event) throws IOException {
         LoadMap gl = new LoadMap();
         Stage stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
-        gl.display_settings_menu(LoadMap.LOAD_SAVE,stage);
+        gl.display_settings_menu(LoadMap.LOAD_SAVE);
     }
 
     /**

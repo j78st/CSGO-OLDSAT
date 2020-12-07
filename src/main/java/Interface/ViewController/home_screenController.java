@@ -82,7 +82,7 @@ public class home_screenController implements Controller {
     void display_settings_screen(ActionEvent event) throws IOException {
         LoadMap gl = new LoadMap();
         Stage stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
-        gl.display_settings_menu(LoadMap.HOME, stage);
+        gl.display_settings_menu(LoadMap.HOME);
     }
 
     // ==========================================================

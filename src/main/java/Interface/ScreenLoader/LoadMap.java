@@ -34,7 +34,6 @@ public class LoadMap {
 
         FXMLLoader loader;
         Parent root;
-        Scene scene;
         Controller controller;
         LoadKit kit = new LoadKit();
 
@@ -112,7 +111,6 @@ public class LoadMap {
     /**
      * L'appel a cette fonction affiche l'ecran d'identifiant "ID" sur le stage.
      * @param nextID
-     * @param stage
      * @throws IOException
      */
     public void display_screen_from_id (int nextID) throws IOException {
@@ -134,22 +132,19 @@ public class LoadMap {
     /**
      * méthode à utiliser pour afficher le menu des paramètres
      * @param previous_id l'id de l'écran d'où on affiche les paramètres
-     * @param stage fenêtre d'affichage du menu
      * @throws IOException
      */
-    public void display_settings_menu(int previous_id,Stage stage) throws IOException {
+    public void display_settings_menu(int previous_id) throws IOException {
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(getClass().getResource("/view/settings_menuView.fxml"));
 
         Parent parent = loader.load();
-        //Scene scene = new Scene(parent);
 
         settings_menuController controller = loader.getController();
         controller.provide_current_screen_id(previous_id); // ID de l'écran ou on appelle les paramètres
         controller.setShortcut();
 
         stage.setTitle("OLD'SAT");
-        //stage.setScene(scene);
         stage.getScene().setRoot(parent);
         stage.show();
     }
