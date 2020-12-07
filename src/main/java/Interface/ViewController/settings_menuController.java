@@ -6,6 +6,8 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
 import javafx.scene.control.Button;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyCodeCombination;
 import javafx.scene.input.KeyCombination;
@@ -69,7 +71,7 @@ public class settings_menuController implements Controller {
      */
     @Override
     public void initialize() {
-        // rien a init
+        resume_btn.setGraphic(new ImageView(new Image( "/pictures/return.png")));
     }
 
     /**

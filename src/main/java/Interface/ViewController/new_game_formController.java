@@ -37,6 +37,9 @@ public class new_game_formController implements Controller {
     private Button settings_btn;
 
     @FXML
+    private Button return_btn;
+
+    @FXML
     void go_back_to_launch_screen(ActionEvent event) throws IOException {
         LoadMap gl = new LoadMap();
         gl.display_screen_from_id(LoadMap.LAUNCHER);
@@ -93,9 +96,8 @@ public class new_game_formController implements Controller {
     public void initialize() {
 
         // image du bouton paramètre
-        Image settings_icon = new Image("pictures/settings_icon.png");
-        ImageView settingsIconView = new ImageView(settings_icon);
-        settings_btn.setGraphic(settingsIconView);
+        settings_btn.setGraphic(new ImageView(new Image("pictures/settings_icon.png")));
+        return_btn.setGraphic(new ImageView(new Image("pictures/return.png")));
 
         // mise en place selection difficulté
         difficulty = FXCollections.observableArrayList("Facile", "Normal", "Difficile");

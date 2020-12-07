@@ -93,9 +93,7 @@ public class home_screenController implements Controller {
      * initialise la scene
      */
     public void initialize () {
-        Image settings_icon = new Image("pictures/settings_icon.png");
-        ImageView settingsIconView = new ImageView(settings_icon);
-        settings_btn.setGraphic(settingsIconView);
+        settings_btn.setGraphic(new ImageView(new Image("pictures/settings_icon.png")));
     }
 
     /**

@@ -36,6 +36,9 @@ public class score_screenController implements Controller {
     private Button settings_btn;
 
     @FXML
+    private Button return_btn;
+
+    @FXML
     private ListView<Record> score_list;
 
     // ==========================================================
@@ -73,9 +76,9 @@ public class score_screenController implements Controller {
      */
     public void initialize () {
         // icone paramètre
-        Image settings_icon = new Image("pictures/settings_icon.png");
-        ImageView settingsIconView = new ImageView(settings_icon);
-        settings_btn.setGraphic(settingsIconView);
+        // image du bouton paramètre
+        settings_btn.setGraphic(new ImageView(new Image("pictures/settings_icon.png")));
+        return_btn.setGraphic(new ImageView(new Image("pictures/return.png")));
 
         // chargement du classement
         recordObservableList = FXCollections.observableArrayList();

@@ -10,7 +10,7 @@ import java.io.IOException;
 
 public class LoadMap {
 
-    // Déclaration fenêtre/scène utlisées
+    // Déclaration fenêtre/scène utlisées (uniques)
     public static Stage stage;
     public static Scene scene;
 
@@ -43,7 +43,7 @@ public class LoadMap {
             case HOME:
                 // Creation des objets necessaires au chargement d'un ecran
                 loader = new FXMLLoader();
-                loader.setLocation(getClass().getResource("/view/home_screenView.fxml"));
+                loader.setLocation(getClass().getResource("/fxml/home_screenView.fxml"));
 
                 root = loader.load(); // récupération de la racine
                 controller = (home_screenController) loader.getController(); // récupération du controlleur associé
@@ -57,7 +57,7 @@ public class LoadMap {
             // écran des scores =====================================
             case SCORES:
                 loader = new FXMLLoader();
-                loader.setLocation(getClass().getResource("/view/score_screenView.fxml"));
+                loader.setLocation(getClass().getResource("/fxml/score_screenView.fxml"));
                 root = loader.load();
                 controller = (score_screenController) loader.getController();
                 kit.setNext_root(root);
@@ -67,7 +67,7 @@ public class LoadMap {
             // écran de lancement de partie =========================
             case LAUNCHER:
                 loader = new FXMLLoader();
-                loader.setLocation(getClass().getResource("/view/game_launcherView.fxml"));
+                loader.setLocation(getClass().getResource("/fxml/game_launcherView.fxml"));
                 root = loader.load();
                 controller = (game_launcherController) loader.getController();
                 kit.setNext_root(root);
@@ -77,7 +77,7 @@ public class LoadMap {
             // écran de creation d'une nouvelle partie ==============
             case NEW_GAME_FORM:
                 loader = new FXMLLoader();
-                loader.setLocation(getClass().getResource("/view/new_game_formView.fxml"));
+                loader.setLocation(getClass().getResource("/fxml/new_game_formView.fxml"));
                 root = loader.load();
                 controller = (new_game_formController) loader.getController();
                 kit.setNext_root(root);
@@ -87,7 +87,7 @@ public class LoadMap {
             // écran de creation d'une nouvelle partie ==============
             case GAME:
                 loader = new FXMLLoader();
-                loader.setLocation(getClass().getResource("/view/gameView.fxml"));
+                loader.setLocation(getClass().getResource("/fxml/gameView.fxml"));
                 root = loader.load();
                 controller = (gameController) loader.getController();
                 kit.setNext_root(root);
@@ -97,7 +97,7 @@ public class LoadMap {
             // écran de chargement d'une sauvegarde ==============
             case LOAD_SAVE:
                 loader = new FXMLLoader();
-                loader.setLocation(getClass().getResource("/view/load_saveView.fxml"));
+                loader.setLocation(getClass().getResource("/fxml/load_saveView.fxml"));
                 root = loader.load();
                 controller = (load_saveController) loader.getController();
                 kit.setNext_root(root);
@@ -136,7 +136,7 @@ public class LoadMap {
      */
     public void display_settings_menu(int previous_id) throws IOException {
         FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(getClass().getResource("/view/settings_menuView.fxml"));
+        loader.setLocation(getClass().getResource("/fxml/settings_menuView.fxml"));
 
         Parent parent = loader.load();
 

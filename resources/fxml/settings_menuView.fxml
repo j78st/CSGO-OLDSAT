@@ -12,7 +12,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane minHeight="400.0" minWidth="600.0" prefHeight="500.0" prefWidth="800.0" styleClass="Pane" stylesheets="@../CSS/home_screen.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Interface.ViewController.settings_menuController">
+<AnchorPane minHeight="400.0" minWidth="600.0" prefHeight="500.0" prefWidth="800.0" styleClass="Pane" stylesheets="@../CSS/background.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Interface.ViewController.settings_menuController">
    <children>
       <BorderPane layoutX="93.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <center>
@@ -124,6 +124,6 @@
             </VBox>
          </center>
       </BorderPane>
-      <Button fx:id="resume_btn" layoutX="473.0" layoutY="364.0" mnemonicParsing="false" onAction="#go_back_to_previous_screen" text="retour" AnchorPane.bottomAnchor="14.0" AnchorPane.rightAnchor="14.0" />
+      <Button fx:id="resume_btn" layoutX="473.0" layoutY="364.0" mnemonicParsing="false" onAction="#go_back_to_previous_screen" AnchorPane.bottomAnchor="14.0" AnchorPane.rightAnchor="14.0" />
    </children>
 </AnchorPane>
