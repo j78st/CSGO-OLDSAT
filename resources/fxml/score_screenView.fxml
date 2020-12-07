@@ -23,7 +23,7 @@
                         <Insets />
                      </VBox.margin>
                   </Text>
-                  <ListView fx:id="score_list" editable="true" maxWidth="500.0">
+                  <ListView fx:id="score_list" editable="true" maxWidth="500.0" styleClass="list" stylesheets="@../CSS/listView.css">
                      <VBox.margin>
                         <Insets />
                      </VBox.margin>

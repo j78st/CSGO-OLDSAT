@@ -75,8 +75,7 @@ public class score_screenController implements Controller {
      * initialise la vue lors de l'appel de la methode @display_screen_from_id
      */
     public void initialize () {
-        // icone paramètre
-        // image du bouton paramètre
+        // icones
         settings_btn.setGraphic(new ImageView(new Image("pictures/settings_icon.png")));
         return_btn.setGraphic(new ImageView(new Image("pictures/return.png")));
 

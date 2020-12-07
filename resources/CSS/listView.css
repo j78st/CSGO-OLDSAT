@@ -1,0 +1,31 @@
+/* ============================================ */
+/*              Design des listes               */
+/* ============================================ */
+
+/* --- Apparence générale de la liste --- */
+.list-view{
+    -fx-background-color: #2C3E50;
+    -fx-background-radius: 5;
+    -fx-border-color: #ff931f;
+    -fx-border-width: 3;
+    -fx-border-radius: 5;
+}
+
+/* --- Apparence cellule paire --- */
+.list-cell:even {
+    -fx-background-color: #3b4651;
+}
+/* --- Apparence cellule impaire --- */
+.list-cell:odd {
+    -fx-background-color: #333c45;
+}
+
+/* --- Apparence en survol d'une cellule --- */
+.list-cell:filled:hover {
+    -fx-background-color: #ffab53;
+}
+
+/* --- Apparence cellule sélectionnée --- */
+.list-cell:filled:selected:focused, .list-cell:filled:selected {
+    -fx-background-color: #ff931f;
+}

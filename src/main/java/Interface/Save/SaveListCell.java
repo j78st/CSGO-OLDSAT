@@ -16,11 +16,15 @@ public class SaveListCell extends ListCell<SaveSlot> {
         super();
 
         // taille du conteneur
-        hbox.setPrefSize(370, 20);
+        hbox.setPrefSize(360, 20);
 
         // parametrage des tailles des labels
         ln.setPrefSize(100, 10);
         lp.setPrefSize(150, 10);
+
+        // couleur du texte
+        ln.setStyle("-fx-text-fill: white;");
+        lp.setStyle("-fx-text-fill: white;");
 
         // parametrage du placement hortizontal
         hbox.setMargin(ln, new Insets(0, 0, 0, 0));

@@ -17,7 +17,12 @@ public class RecordListCell extends ListCell<Record> {
         super();
 
         // instanciation de la Hbox
-        hbox.setPrefSize(470, 20);
+        hbox.setPrefSize(460, 20);
+
+        // couleur du texte
+        lr.setStyle("-fx-text-fill: white;");
+        lp.setStyle("-fx-text-fill: white;");
+        ls.setStyle("-fx-text-fill: white;");
 
         // parametrage des tailles des labels
         lr.setPrefSize(40, 10);

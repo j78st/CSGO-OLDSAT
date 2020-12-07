@@ -57,7 +57,7 @@
                         <Insets top="5.0" />
                      </VBox.margin>
                   </HBox>
-                  <ListView fx:id="save_list" maxHeight="150.0" maxWidth="400.0">
+                  <ListView fx:id="save_list" maxHeight="150.0" maxWidth="400.0" stylesheets="@../CSS/listView.css">
                      <VBox.margin>
                         <Insets />
                      </VBox.margin>
