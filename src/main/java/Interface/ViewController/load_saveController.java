@@ -45,8 +45,7 @@ public class load_saveController implements Controller {
     @FXML
     void go_back_to_launch_screen(ActionEvent event) throws IOException {
         LoadMap gl = new LoadMap();
-        Stage stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
-        gl.display_screen_from_id(LoadMap.LAUNCHER,stage);
+        gl.display_screen_from_id(LoadMap.LAUNCHER);
     }
 
     /**
@@ -101,6 +100,6 @@ public class load_saveController implements Controller {
         // Acces au paramètres via ESC
         KeyCombination kc = new KeyCodeCombination(KeyCode.ESCAPE, KeyCombination.SHIFT_ANY);
         Runnable rn = ()-> settings_btn.fire();
-        settings_btn.getScene().getAccelerators().put(kc, rn);;
+        LoadMap.scene.getAccelerators().put(kc, rn);;
     }
 }

@@ -1,6 +1,7 @@
 package Interface.ViewController;
 
 import Interface.ScreenLoader.Controller;
+import Interface.ScreenLoader.LoadMap;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -147,9 +148,14 @@ public class gameController implements Controller {
      */
     @FXML
     void go_to_home_screen(ActionEvent event) throws InterruptedException, IOException {
+        // Message d'alerte sur la sauvegarde
         UnsaveAlert alert = new UnsaveAlert();
         Stage stage = (Stage)((Button)event.getSource()).getScene().getWindow();
         alert.homeScreen(stage);
+
+        // Redirection vers écran principal
+        LoadMap gl = new LoadMap();
+        gl.display_screen_from_id(LoadMap.HOME);
     }
 
     /**
@@ -159,8 +165,7 @@ public class gameController implements Controller {
     @FXML
     void exit_app(ActionEvent event) throws InterruptedException {
         UnsaveAlert alert = new UnsaveAlert();
-        Stage stage = (Stage)((Button)event.getSource()).getScene().getWindow();
-        alert.exitGame(stage);
+        alert.exitGame();
     }
 
     // ==========================================================
@@ -189,6 +194,6 @@ public class gameController implements Controller {
                 gamePaused = false;
             }
         };
-        pause_btn.getScene().getAccelerators().put(kc, rn);;
+        LoadMap.scene.getAccelerators().put(kc, rn);;
     }
 }

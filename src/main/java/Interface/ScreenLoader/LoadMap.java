@@ -4,12 +4,15 @@ import Interface.ViewController.*;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
 import java.io.IOException;
 
 public class LoadMap {
+
+    // Déclaration fenêtre/scène utlisées
+    public static Stage stage;
+    public static Scene scene;
 
     // Mapping des vue via constantes globales
     public static final int HOME = 1;
@@ -30,7 +33,7 @@ public class LoadMap {
     public LoadKit loaderMap(int loaderId) throws IOException {
 
         FXMLLoader loader;
-        Parent parent;
+        Parent root;
         Scene scene;
         Controller controller;
         LoadKit kit = new LoadKit();
@@ -42,12 +45,12 @@ public class LoadMap {
                 // Creation des objets necessaires au chargement d'un ecran
                 loader = new FXMLLoader();
                 loader.setLocation(getClass().getResource("/view/home_screenView.fxml"));
-                parent = loader.load();
-                scene = new Scene(parent);
-                controller = (home_screenController) loader.getController();
+
+                root = loader.load(); // récupération de la racine
+                controller = (home_screenController) loader.getController(); // récupération du controlleur associé
 
                 // chargement du kit
-                kit.setNext_scene(scene);
+                kit.setNext_root(root);
                 kit.setNext_controller(controller);
 
                 break;
@@ -56,10 +59,9 @@ public class LoadMap {
             case SCORES:
                 loader = new FXMLLoader();
                 loader.setLocation(getClass().getResource("/view/score_screenView.fxml"));
-                parent = loader.load();
-                scene = new Scene(parent);
+                root = loader.load();
                 controller = (score_screenController) loader.getController();
-                kit.setNext_scene(scene);
+                kit.setNext_root(root);
                 kit.setNext_controller(controller);
                 break;
 
@@ -67,10 +69,9 @@ public class LoadMap {
             case LAUNCHER:
                 loader = new FXMLLoader();
                 loader.setLocation(getClass().getResource("/view/game_launcherView.fxml"));
-                parent = loader.load();
-                scene = new Scene(parent);
+                root = loader.load();
                 controller = (game_launcherController) loader.getController();
-                kit.setNext_scene(scene);
+                kit.setNext_root(root);
                 kit.setNext_controller(controller);
                 break;
 
@@ -78,10 +79,9 @@ public class LoadMap {
             case NEW_GAME_FORM:
                 loader = new FXMLLoader();
                 loader.setLocation(getClass().getResource("/view/new_game_formView.fxml"));
-                parent = loader.load();
-                scene = new Scene(parent);
+                root = loader.load();
                 controller = (new_game_formController) loader.getController();
-                kit.setNext_scene(scene);
+                kit.setNext_root(root);
                 kit.setNext_controller(controller);
                 break;
 
@@ -89,10 +89,9 @@ public class LoadMap {
             case GAME:
                 loader = new FXMLLoader();
                 loader.setLocation(getClass().getResource("/view/gameView.fxml"));
-                parent = loader.load();
-                scene = new Scene(parent);
+                root = loader.load();
                 controller = (gameController) loader.getController();
-                kit.setNext_scene(scene);
+                kit.setNext_root(root);
                 kit.setNext_controller(controller);
                 break;
 
@@ -100,10 +99,9 @@ public class LoadMap {
             case LOAD_SAVE:
                 loader = new FXMLLoader();
                 loader.setLocation(getClass().getResource("/view/load_saveView.fxml"));
-                parent = loader.load();
-                scene = new Scene(parent);
+                root = loader.load();
                 controller = (load_saveController) loader.getController();
-                kit.setNext_scene(scene);
+                kit.setNext_root(root);
                 kit.setNext_controller(controller);
                 break;
 
@@ -112,22 +110,24 @@ public class LoadMap {
     }
 
     /**
-     * L'appel a cette fonction affiche l'ecran d'identifiant "ID" sur le stage souhaité.
+     * L'appel a cette fonction affiche l'ecran d'identifiant "ID" sur le stage.
      * @param nextID
      * @param stage
      * @throws IOException
      */
-    public void display_screen_from_id (int nextID,Stage stage) throws IOException {
+    public void display_screen_from_id (int nextID) throws IOException {
+        // récupération du kit de chargement
         LoadMap gl = new LoadMap();
         LoadKit kit = gl.loaderMap(nextID);
-        Scene scene = kit.getNext_scene();
 
+        // initialisation de la nouvelle vue
         Controller controller = kit.getNext_controller();
         controller.initialize();
         controller.setShortcut();
 
+        // affichage
         stage.setTitle("OLD'SAT");
-        stage.setScene(scene);
+        stage.getScene().setRoot(kit.getNext_root());
         stage.show();
     }
 
@@ -142,14 +142,15 @@ public class LoadMap {
         loader.setLocation(getClass().getResource("/view/settings_menuView.fxml"));
 
         Parent parent = loader.load();
-        Scene scene = new Scene(parent);
+        //Scene scene = new Scene(parent);
 
         settings_menuController controller = loader.getController();
         controller.provide_current_screen_id(previous_id); // ID de l'écran ou on appelle les paramètres
         controller.setShortcut();
 
         stage.setTitle("OLD'SAT");
-        stage.setScene(scene);
+        //stage.setScene(scene);
+        stage.getScene().setRoot(parent);
         stage.show();
     }
 

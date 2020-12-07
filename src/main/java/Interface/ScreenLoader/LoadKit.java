@@ -1,10 +1,11 @@
 package Interface.ScreenLoader;
 
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 
 public class LoadKit {
 
-    private Scene next_scene;
+    private Parent next_root;
     private Controller next_controller;
 
     // constructeurs
@@ -13,15 +14,15 @@ public class LoadKit {
 
     }
 
-    public LoadKit (Scene s, Controller c) {
-        this.next_scene = s;
+    public LoadKit (Parent s, Controller c) {
+        this.next_root = s;
         this.next_controller = c;
     }
 
     // getter
 
-    public Scene getNext_scene () {
-        return next_scene;
+    public Parent getNext_root () {
+        return next_root;
     }
 
     public Controller getNext_controller () {
@@ -34,7 +35,7 @@ public class LoadKit {
         this.next_controller = next_controller;
     }
 
-    public void setNext_scene(Scene next_scene) {
-        this.next_scene = next_scene;
+    public void setNext_root(Parent next_scene) {
+        this.next_root = next_scene;
     }
 }

@@ -51,8 +51,7 @@ public class home_screenController implements Controller {
     @FXML
     void display_game_launcher(ActionEvent event) throws IOException {
         LoadMap gl = new LoadMap();
-        Stage stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
-        gl.display_screen_from_id(LoadMap.LAUNCHER,stage);
+        gl.display_screen_from_id(LoadMap.LAUNCHER);
     }
 
     /**
@@ -62,8 +61,7 @@ public class home_screenController implements Controller {
     @FXML
     void display_multiplayer_mode(ActionEvent event) throws IOException {
         LoadMap gl = new LoadMap();
-        Stage stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
-        gl.display_screen_from_id(LoadMap.GAME,stage);
+        gl.display_screen_from_id(LoadMap.GAME);
     }
 
     /**
@@ -73,8 +71,7 @@ public class home_screenController implements Controller {
     @FXML
     void display_score_screen(ActionEvent event) throws IOException {
         LoadMap gl = new LoadMap();
-        Stage stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
-        gl.display_screen_from_id(LoadMap.SCORES,stage);
+        gl.display_screen_from_id(LoadMap.SCORES);
     }
 
     /**
@@ -85,7 +82,7 @@ public class home_screenController implements Controller {
     void display_settings_screen(ActionEvent event) throws IOException {
         LoadMap gl = new LoadMap();
         Stage stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
-        gl.display_settings_menu(LoadMap.HOME,stage);
+        gl.display_settings_menu(LoadMap.HOME, stage);
     }
 
     // ==========================================================
@@ -109,7 +106,7 @@ public class home_screenController implements Controller {
         // Acces au paramètres via ESC
         KeyCombination kc = new KeyCodeCombination(KeyCode.ESCAPE, KeyCombination.SHIFT_ANY);
         Runnable rn = ()-> settings_btn.fire();
-        settings_btn.getScene().getAccelerators().put(kc, rn);;
+        LoadMap.scene.getAccelerators().put(kc, rn);;
     }
 
 }

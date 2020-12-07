@@ -39,8 +39,7 @@ public class settings_menuController implements Controller {
     @FXML
     void go_back_to_previous_screen(ActionEvent event) throws IOException {
         LoadMap gl = new LoadMap();
-        Stage stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
-        gl.display_screen_from_id(previous_screen_ID,stage);
+        gl.display_screen_from_id(previous_screen_ID);
     }
 
     /**
@@ -81,6 +80,6 @@ public class settings_menuController implements Controller {
         // Fermeture paramètre via ESC
         KeyCombination kc = new KeyCodeCombination(KeyCode.ESCAPE, KeyCombination.SHIFT_ANY);
         Runnable rn = ()-> {resume_btn.fire();};
-        save_btn.getScene().getAccelerators().put(kc, rn);
+        LoadMap.scene.getAccelerators().put(kc, rn);
     }
 }
