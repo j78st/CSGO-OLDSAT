@@ -2,10 +2,15 @@ package Interface.ViewController;
 
 import Interface.ScreenLoader.Controller;
 import Interface.ScreenLoader.LoadMap;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
 import javafx.scene.control.Button;
+import javafx.scene.control.RadioButton;
+import javafx.scene.control.Toggle;
+import javafx.scene.control.ToggleGroup;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
@@ -21,6 +26,8 @@ public class settings_menuController implements Controller {
     // Declaration objets
     // ==========================================================
 
+    ToggleGroup themeGroup = new ToggleGroup();
+
     int previous_screen_ID;
 
     @FXML
@@ -28,6 +35,15 @@ public class settings_menuController implements Controller {
 
     @FXML
     private Button resume_btn;
+
+    @FXML
+    private RadioButton theme1_btn;
+
+    @FXML
+    private RadioButton theme2_btn;
+
+    @FXML
+    private RadioButton theme3_btn;
 
     // ==========================================================
     // Methodes gestion logiciel
@@ -71,7 +87,31 @@ public class settings_menuController implements Controller {
      */
     @Override
     public void initialize() {
+        // icone de retour
         resume_btn.setGraphic(new ImageView(new Image( "/pictures/return.png")));
+
+        // paramètre du thème utilisé
+        theme1_btn.setToggleGroup(themeGroup);
+        theme2_btn.setToggleGroup(themeGroup);
+        theme3_btn.setToggleGroup(themeGroup);
+
+        //listener
+        themeGroup.selectedToggleProperty().addListener(
+            new ChangeListener<Toggle>() {
+                public void changed(ObservableValue<? extends Toggle> ob, Toggle o, Toggle n){
+                    RadioButton rb = (RadioButton)themeGroup.getSelectedToggle();
+                    if (rb != null) {
+
+                        // set corresponding theme
+                        String theme = rb.getText();
+                        LoadMap.scene.getStylesheets().clear();
+                        LoadMap.scene.getStylesheets().add("/CSS/"+ theme +".css");
+                    }
+                }
+            }
+        );
+
+
     }
 
     /**

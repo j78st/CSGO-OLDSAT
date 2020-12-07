@@ -10,6 +10,8 @@ import java.io.IOException;
 
 public class LoadMap {
 
+    public static String theme = "blue";
+
     // Déclaration fenêtre/scène utlisées (uniques)
     public static Stage stage;
     public static Scene scene;

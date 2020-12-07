@@ -12,13 +12,13 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="400.0" minWidth="600.0" prefHeight="500.0" prefWidth="800.0" styleClass="Pane" stylesheets="@../CSS/background.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Interface.ViewController.new_game_formController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="400.0" minWidth="600.0" prefHeight="500.0" prefWidth="800.0" styleClass="Pane" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Interface.ViewController.new_game_formController">
    <children>
-      <BorderPane AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <BorderPane styleClass="BackPane" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <center>
-            <VBox alignment="CENTER" maxHeight="500.0" maxWidth="700.0" minHeight="340.0" minWidth="480.0" spacing="10.0" styleClass="Pane" stylesheets="@../CSS/upper_layer.css" BorderPane.alignment="CENTER">
+            <VBox alignment="CENTER" maxHeight="500.0" maxWidth="700.0" minHeight="340.0" minWidth="480.0" spacing="10.0" styleClass="UpperLayerPane" BorderPane.alignment="CENTER">
                <children>
-                  <Text boundsType="LOGICAL_VERTICAL_CENTER" fill="#ff931f" strokeWidth="0.0" text="Nouvelle partie" textAlignment="CENTER" textOrigin="CENTER" wrappingWidth="242.615234375">
+                  <Text boundsType="LOGICAL_VERTICAL_CENTER" strokeWidth="0.0" styleClass="Text" text="Nouvelle partie" textAlignment="CENTER" textOrigin="CENTER" wrappingWidth="242.615234375">
                      <font>
                         <Font name="Symbol" size="36.0" />
                      </font>
@@ -28,7 +28,7 @@
                   </Text>
                   <HBox alignment="CENTER">
                      <children>
-                        <Text fill="#ff931f" strokeType="OUTSIDE" strokeWidth="0.0" text="Nom joueur :">
+                        <Text fill="#ff931f" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Text" text="Nom joueur :">
                            <HBox.margin>
                               <Insets top="5.0" />
                            </HBox.margin>
@@ -42,7 +42,7 @@
                   </HBox>
                   <HBox alignment="CENTER" prefHeight="50.0" prefWidth="400.0">
                      <children>
-                        <Text fill="#ff931f" strokeType="OUTSIDE" strokeWidth="0.0" text="Difficulté :">
+                        <Text fill="#ff931f" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Text" text="Difficulté :">
                            <HBox.margin>
                               <Insets top="5.0" />
                            </HBox.margin>
@@ -57,7 +57,7 @@
                         <Insets top="5.0" />
                      </VBox.margin>
                   </HBox>
-                  <ListView fx:id="save_list" maxHeight="150.0" maxWidth="400.0" stylesheets="@../CSS/listView.css">
+                  <ListView fx:id="save_list" maxHeight="150.0" maxWidth="400.0" styleClass="List">
                      <VBox.margin>
                         <Insets />
                      </VBox.margin>

@@ -12,13 +12,13 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane minHeight="400.0" minWidth="600.0" prefHeight="500.0" prefWidth="800.0" styleClass="Pane" stylesheets="@../CSS/background.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Interface.ViewController.settings_menuController">
+<AnchorPane minHeight="400.0" minWidth="600.0" prefHeight="500.0" prefWidth="800.0" styleClass="BackPane" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Interface.ViewController.settings_menuController">
    <children>
       <BorderPane layoutX="93.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <center>
-            <VBox alignment="CENTER" maxHeight="450.0" maxWidth="600.0" prefHeight="376.0" prefWidth="480.0" spacing="10.0" styleClass="Pane" stylesheets="@../CSS/upper_layer.css" BorderPane.alignment="CENTER">
+            <VBox alignment="CENTER" maxHeight="450.0" maxWidth="600.0" prefHeight="376.0" prefWidth="480.0" spacing="10.0" styleClass="UpperLayerPane" BorderPane.alignment="CENTER">
                <children>
-                  <Text boundsType="LOGICAL_VERTICAL_CENTER" fill="#ff931f" strokeType="OUTSIDE" strokeWidth="0.0" text="Paramètres" textOrigin="CENTER" wrappingWidth="184.115234375">
+                  <Text boundsType="LOGICAL_VERTICAL_CENTER" fill="#ff931f" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Text" text="Paramètres" textOrigin="CENTER" wrappingWidth="184.115234375">
                      <font>
                         <Font size="36.0" />
                      </font>
@@ -33,12 +33,12 @@
                               <Insets top="10.0" />
                            </HBox.margin>
                            <children>
-                              <Line endX="100.0" fill="#ff931f" startX="-100.0" stroke="#ff931f" strokeLineCap="ROUND" AnchorPane.rightAnchor="0.0" />
+                              <Line endX="100.0" fill="#ff931f" startX="-100.0" stroke="#ff931f" strokeLineCap="ROUND" styleClass="Text" AnchorPane.rightAnchor="0.0" />
                            </children>
                         </AnchorPane>
                         <BorderPane prefHeight="40.0" prefWidth="70.0">
                            <center>
-                              <Text fill="#ff931f" strokeType="OUTSIDE" strokeWidth="0.0" text="Audio" />
+                              <Text fill="#ff931f" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Text" text="Audio" />
                            </center>
                         </BorderPane>
                         <AnchorPane prefHeight="30.0" prefWidth="225.0">
@@ -46,7 +46,7 @@
                               <Insets top="10.0" />
                            </HBox.margin>
                            <children>
-                              <Line endX="100.0" startX="-100.0" stroke="#ff931f" AnchorPane.leftAnchor="0.0" />
+                              <Line endX="100.0" startX="-100.0" stroke="#ff931f" styleClass="Text" AnchorPane.leftAnchor="0.0" />
                            </children>
                         </AnchorPane>
                      </children>
@@ -58,7 +58,7 @@
                      <children>
                         <BorderPane>
                            <center>
-                              <Text fill="#ff931f" strokeType="OUTSIDE" strokeWidth="0.0" text="Paramètre 1" />
+                              <Text fill="#ff931f" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Text" text="Paramètre 1" />
                            </center>
                         </BorderPane>
                         <Group>
@@ -79,10 +79,10 @@
                               <Insets top="10.0" />
                            </HBox.margin>
                            <children>
-                              <Line endX="100.0" fill="#ff931f" startX="-100.0" stroke="#ff931f" strokeLineCap="ROUND" AnchorPane.rightAnchor="10.0" />
+                              <Line endX="100.0" fill="#ff931f" startX="-100.0" stroke="#ff931f" strokeLineCap="ROUND" styleClass="Text" AnchorPane.rightAnchor="10.0" />
                            </children>
                         </AnchorPane>
-                        <BorderPane prefWidth="70.0">
+                        <BorderPane prefWidth="70.0" styleClass="Text">
                            <center>
                               <Text fill="#ff931f" strokeType="OUTSIDE" strokeWidth="0.0" text="Luminosité" BorderPane.alignment="CENTER" />
                            </center>
@@ -92,7 +92,7 @@
                               <Insets top="10.0" />
                            </HBox.margin>
                            <children>
-                              <Line endX="100.0" startX="-100.0" stroke="#ff931f" AnchorPane.leftAnchor="10.0" />
+                              <Line endX="100.0" startX="-100.0" stroke="#ff931f" styleClass="Text" AnchorPane.leftAnchor="10.0" />
                            </children>
                         </AnchorPane>
                      </children>
@@ -101,18 +101,19 @@
                      <children>
                         <BorderPane>
                            <center>
-                              <Text fill="#ff931f" strokeType="OUTSIDE" strokeWidth="0.0" text="Paramètre 2" />
+                              <Text fill="#ff931f" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Text" text="Thème : " />
                            </center>
                         </BorderPane>
-                        <Group>
+                        <HBox>
                            <children>
-                              <RadioButton mnemonicParsing="false" prefHeight="50.0" prefWidth="70.0" text="Non" />
-                              <RadioButton layoutX="100.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="70.0" text="Oui " />
+                              <RadioButton fx:id="theme1_btn" contentDisplay="TOP" mnemonicParsing="false" prefHeight="50.0" prefWidth="80.0" text="blue" HBox.hgrow="ALWAYS" />
+                              <RadioButton fx:id="theme2_btn" mnemonicParsing="false" prefHeight="50.0" prefWidth="80.0" text="green" HBox.hgrow="ALWAYS" />
+                              <RadioButton fx:id="theme3_btn" contentDisplay="TOP" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="80.0" text="red" />
                            </children>
                            <HBox.margin>
-                              <Insets left="200.0" />
+                              <Insets left="150.0" />
                            </HBox.margin>
-                        </Group>
+                        </HBox>
                      </children>
                   </HBox>
                   <Button fx:id="save_btn" mnemonicParsing="false" onAction="#save_settings" prefHeight="40.0" prefWidth="150.0" text="Valider">

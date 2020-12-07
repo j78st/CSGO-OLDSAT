@@ -9,13 +9,13 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="400.0" minWidth="600.0" prefHeight="500.0" prefWidth="800.0" styleClass="Pane" stylesheets="@../CSS/background.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Interface.ViewController.score_screenController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="400.0" minWidth="600.0" prefHeight="500.0" prefWidth="800.0" styleClass="BackPane" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Interface.ViewController.score_screenController">
    <children>
       <BorderPane layoutX="84.0" layoutY="14.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <center>
             <VBox alignment="CENTER" prefHeight="344.0" prefWidth="500.0" spacing="10.0" BorderPane.alignment="CENTER">
                <children>
-                  <Text boundsType="LOGICAL_VERTICAL_CENTER" fill="#ff931f" strokeType="OUTSIDE" strokeWidth="0.0" text="classement" textOrigin="CENTER" wrappingWidth="176.115234375">
+                  <Text boundsType="LOGICAL_VERTICAL_CENTER" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Text" text="classement" textOrigin="CENTER" wrappingWidth="176.115234375">
                      <font>
                         <Font size="36.0" />
                      </font>
@@ -23,7 +23,7 @@
                         <Insets />
                      </VBox.margin>
                   </Text>
-                  <ListView fx:id="score_list" editable="true" maxWidth="500.0" styleClass="list" stylesheets="@../CSS/listView.css">
+                  <ListView fx:id="score_list" editable="true" maxWidth="500.0" styleClass="List">
                      <VBox.margin>
                         <Insets />
                      </VBox.margin>

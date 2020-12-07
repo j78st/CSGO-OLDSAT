@@ -27,6 +27,8 @@ public class Main extends Application {
         controller.initialize();
         controller.setShortcut();
 
+        LoadMap.scene.getStylesheets().add("/CSS/"+ LoadMap.theme +".css");
+
         primaryStage.setScene(LoadMap.scene);
         primaryStage.show();
     }
