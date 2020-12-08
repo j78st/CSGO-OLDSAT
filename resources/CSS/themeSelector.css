@@ -1,0 +1,28 @@
+/* ====== Design des radio button ====== */
+.BlueRadio{
+    -fx-text-fill: white;
+}
+.BlueRadio .radio {
+    -fx-background-color: #6ecfff;
+    -fx-background-radius: 130;
+    -fx-border-color: white;
+    -fx-border-radius: 130;
+}
+.GreenRadio{
+    -fx-text-fill: white;
+}
+.GreenRadio .radio {
+    -fx-background-color: #b2ff6e;
+    -fx-background-radius: 130;
+    -fx-border-color: white;
+    -fx-border-radius: 130;
+}
+.RedRadio{
+    -fx-text-fill: white;
+}
+.RedRadio .radio {
+    -fx-background-color: #ff6e6e;
+    -fx-background-radius: 130;
+    -fx-border-color: white;
+    -fx-border-radius: 130;
+}
