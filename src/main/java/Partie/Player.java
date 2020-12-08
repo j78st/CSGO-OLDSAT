@@ -9,8 +9,11 @@ public class Player {
     public Player(String pseudo, int feature){
         this.pseudo = pseudo;
         this.inventory =  new Object[3];
-        this.position = 0;
+        this.position = 101;
         this.feature = feature;
     }
 
+    public void move(int destination){
+        this.position=destination;
+    }
 }

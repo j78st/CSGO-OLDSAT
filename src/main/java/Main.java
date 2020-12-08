@@ -11,10 +11,9 @@ public class Main {
             r.ranking[i]=new Score("---",0);
         }
 
-        Map mamap = new Map();
-        Room r1 = new Room(1,true,mamap,2,-1,-1,3);
-        Room r2 = new Room(2,false,mamap,-1,-1,1,-1);
-        Room r3 = new Room(3,false,mamap,-1,1,-1,-1);
+        Room r1 = new Room(101,true,102,-1,-1,103);
+        Room r2 = new Room(102,false,-1,-1,101,-1);
+        Room r3 = new Room(103,false,-1,101,-1,-1);
 
         Score s1 = new Score ("pseudo1",10);
         Score s2 = new Score ("pseudo2",100);

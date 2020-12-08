@@ -1,10 +1,7 @@
 package Score;
 
-import java.util.Arrays;
-
 public class Ranking {
     public Score[] ranking = new Score[10];
-
 
     public Ranking(){}
 

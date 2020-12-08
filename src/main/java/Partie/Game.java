@@ -1,8 +1,8 @@
 package Partie;
 
 public class Game {
-    Player player;
-    Map map;
+    public static Player player;
+    public static Map map;
     int difficulty;
     int timer;
 
