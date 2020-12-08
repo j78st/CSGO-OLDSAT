@@ -13,7 +13,7 @@
    <children>
       <BorderPane AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <center>
-            <AnchorPane styleClass="UpperLayerPane" BorderPane.alignment="CENTER">
+            <AnchorPane maxHeight="500.0" maxWidth="700.0" styleClass="UpperLayerPane" BorderPane.alignment="CENTER">
                <BorderPane.margin>
                   <Insets />
                </BorderPane.margin>
@@ -28,7 +28,7 @@
                               <Insets bottom="20.0" />
                            </VBox.margin>
                         </Text>
-                        <ListView fx:id="save_list" maxHeight="238.0" maxWidth="400.0" prefHeight="232.0" prefWidth="400.0" styleClass="list">
+                        <ListView fx:id="save_list" maxHeight="238.0" maxWidth="400.0" prefHeight="232.0" prefWidth="400.0" styleClass="List">
                            <VBox.margin>
                               <Insets />
                            </VBox.margin>

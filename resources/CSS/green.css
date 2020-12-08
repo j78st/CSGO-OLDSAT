@@ -97,5 +97,5 @@
 
 /* ====== Design des lignes ====== */
 .Line {
-    -fx-fill: #aeef55;
+    -fx-stroke: #aeef55;
 }
