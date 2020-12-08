@@ -34,15 +34,15 @@
 
 .GamePane {
     /* --- couleur --- */
-    -fx-background-color: #473a31;
+    -fx-background-color: #1C2833;
 
     /* --- bordure --- */
-    -fx-border-color: #281600;
+    -fx-border-color: #FF931F;
 }
 
 .GameButton {
     /* --- forme et couleur --- */
-    -fx-background-color: #484848;
+    -fx-background-color: #2C3E50;
     -fx-background-radius: 20;
 
     /* --- bordure du bouton --- */
