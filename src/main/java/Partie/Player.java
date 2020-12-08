@@ -2,13 +2,13 @@ package Partie;
 
 public class Player {
     String pseudo;
-    Object[] inventory;
+    Gear[] inventory;
     int position;
     int feature;
 
     public Player(String pseudo, int feature){
         this.pseudo = pseudo;
-        this.inventory =  new Object[3];
+        this.inventory =  new Gear[3];
         this.position = 101;
         this.feature = feature;
     }

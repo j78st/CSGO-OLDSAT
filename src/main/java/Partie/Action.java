@@ -1,35 +1,59 @@
 package Partie;
 
 public class Action {
+    int id;
     String text;
     int consequence;
+    int arg_consequence;
+    boolean doable;
 
 
-    public Action(String text, int consequence) {
+    public Action(int id,String text, int consequence, int arg_consequence, Room room, boolean doable) {
+        this.id=id;
         this.text = text;
         this.consequence = consequence;
+        this.arg_consequence = arg_consequence;
+        this.doable = doable;
+        room.add_action(this);
+        Game.actions.add(this);
     }
 
-    public void move(int destination){
-        Game.player.move(destination);
+    public Action(int id,String text, int consequence, int arg_consequence, Room room, Gear gear) {
+        this.id=id;
+        this.text = text;
+        this.consequence = consequence;
+        this.arg_consequence = arg_consequence;
+        this.doable = false;
+        room.add_action(this);
+        Game.actions.add(this);
+        gear.actions.add(this);
+    }
+
+    public void setDoable(boolean doable) {
+        this.doable = doable;
     }
 
     public void Consequence(){
         switch (this.consequence) {
-            case 1:
-                move(Game.map.get_room(Game.player.position).neighbours[0]);
+            case 1: // mouvement vers la salle arg_conséquence
+                Game.player.move(this.arg_consequence);
                 break;
-            case 2:
-                move(Game.map.get_room(Game.player.position).neighbours[1]);
+            case 2: // dévérouillage d'une action
+                Game.search_action(this.arg_consequence).setDoable(true);
                 break;
-            case 3:
-                move(Game.map.get_room(Game.player.position).neighbours[2]);
+            case 3: // vérouillage d'une action
+                Game.search_action(this.arg_consequence).setDoable(false);
                 break;
-            case 4:
-                move(Game.map.get_room(Game.player.position).neighbours[3]);
+            case 4: // ajout de l'objet arg_consequence à l'inventaire
+                break;
+            case 5: // suppression de l'objet arg_consequence de l'inventaire
+                break;
+            case 6: // résultat d'une énigme
                 break;
         }
     }
+
+
 
 
     /* texte = table + porte = 2 actions
