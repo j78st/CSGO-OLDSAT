@@ -1,43 +1,50 @@
 /* ============================================ */
-/*               green theme design              */
+/*               red theme design               */
 /* ============================================ */
 
-/* ====== Design des bouton ====== */
+/* ====== Design arrière plan ====== */
+.BackPane{
+    -fx-background-color: #2f2f2f;
+}
 
+/* ====== Design des couches supérieures ====== */
+.UpperLayerPane{
+    /* --- forme et couleur --- */
+    -fx-background-color: #4D5656;
+    -fx-background-radius: 10;
+    /* --- bordure --- */
+    -fx-border-color: #E74C3C;
+    -fx-border-radius: 10;
+}
+
+/* ====== Design interface de jeu ====== */
+.GamePane {
+    /* --- couleur --- */
+    -fx-background-color: #424949;
+
+    /* --- bordure --- */
+    -fx-border-color: #CD6155;
+}
+
+/* ====== Design des bouton ====== */
 .button {
     /* --- forme et couleur --- */
-    -fx-background-color: #d07070;
+    -fx-background-color: #CD6155;
     -fx-background-radius: 20;
 
     /* --- bordure du bouton --- */
     -fx-border-width: 2;
     -fx-border-radius: 20;
-    -fx-border-color: #e50a0a;
+    -fx-border-color: #ff2020;
 
     /* --- texte du bouton --- */
     -fx-text-alignment: center;
-    -fx-text-fill: black;
+    -fx-text-fill: white;
 }
 
 .button:hover {
-    -fx-background-color: #ff6c50;
+    -fx-background-color: #ff2020;
     -fx-text-fill: black;
-}
-
-/* ====== Design arrière plan ====== */
-
-.BackPane{
-    -fx-background-color: #3b1a1a;
-}
-
-/* ====== Design interface de jeu ====== */
-
-.GamePane {
-    /* --- couleur --- */
-    -fx-background-color: #473a31;
-
-    /* --- bordure --- */
-    -fx-border-color: #281600;
 }
 
 .GameButton {
@@ -48,52 +55,42 @@
     /* --- bordure du bouton --- */
     -fx-border-width: 2;
     -fx-border-radius: 20;
-    -fx-border-color: #e50a0a;
+    -fx-border-color: #ff2020;
 
     /* --- texte du bouton --- */
     -fx-text-alignment: center;
-    -fx-text-fill: black;
-}
-/* ====== Design des couches supérieures ====== */
-
-.UpperLayerPane{
-    /* --- forme et couleur --- */
-    -fx-background-color: #661e1e;
-    -fx-background-radius: 10;
-    /* --- bordure --- */
-    -fx-border-color: #e50a0a;
-    -fx-border-radius: 10;
+    -fx-text-fill: white;
 }
 
 /* ====== Design des listes ====== */
 .List{
-    -fx-background-color: #661e1e;
+    -fx-background-color: #4D5656;
     -fx-background-radius: 5;
-    -fx-border-color: #e50a0a;
+    -fx-border-color: #ff2020;
     -fx-border-width: 3;
     -fx-border-radius: 5;
 }
 
 /* --- Apparence cellule paire --- */
 .list-cell:even {
-    -fx-background-color: #584343;
+    -fx-background-color: #403232;
 }
 /* --- Apparence cellule impaire --- */
 .list-cell:odd {
-    -fx-background-color: #856767;
+    -fx-background-color: #342b2b;
 }
 
 /* --- Apparence en survol d'une cellule --- */
 .list-cell:filled:hover {
-    -fx-background-color: #8d5555;
+    -fx-background-color: #dd7e7e;
 }
 
 /* --- Apparence cellule sélectionnée --- */
 .list-cell:filled:selected:focused, .list-cell:filled:selected {
-    -fx-background-color: #e50a0a;
+    -fx-background-color: #ff2020;
 }
 
 /* ====== Design des textes ====== */
 .Text {
-    -fx-fill: #e50a0a;
+    -fx-fill: #ff2020;
 }
