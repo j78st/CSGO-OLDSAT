@@ -12,7 +12,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane minHeight="400.0" minWidth="600.0" prefHeight="500.0" prefWidth="800.0" styleClass="BackPane" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Interface.ViewController.settings_menuController">
+<AnchorPane minHeight="400.0" minWidth="600.0" prefHeight="500.0" prefWidth="800.0" styleClass="BackPane" stylesheets="@../CSS/blue.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Interface.ViewController.settings_menuController">
    <children>
       <BorderPane layoutX="93.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <center>
@@ -33,7 +33,7 @@
                               <Insets top="10.0" />
                            </HBox.margin>
                            <children>
-                              <Line endX="100.0" fill="#ff931f" startX="-100.0" stroke="#ff931f" strokeLineCap="ROUND" styleClass="Text" AnchorPane.rightAnchor="0.0" />
+                              <Line endX="100.0" fill="#ff931f" startX="-100.0" stroke="#ff931f" strokeLineCap="ROUND" styleClass="Line" AnchorPane.rightAnchor="0.0" />
                            </children>
                         </AnchorPane>
                         <BorderPane prefHeight="40.0" prefWidth="70.0">
@@ -46,7 +46,7 @@
                               <Insets top="10.0" />
                            </HBox.margin>
                            <children>
-                              <Line endX="100.0" startX="-100.0" stroke="#ff931f" styleClass="Text" AnchorPane.leftAnchor="0.0" />
+                              <Line endX="100.0" startX="-100.0" stroke="#ff931f" styleClass="Line" AnchorPane.leftAnchor="0.0" />
                            </children>
                         </AnchorPane>
                      </children>
@@ -79,7 +79,7 @@
                               <Insets top="10.0" />
                            </HBox.margin>
                            <children>
-                              <Line endX="100.0" fill="#ff931f" startX="-100.0" stroke="#ff931f" strokeLineCap="ROUND" styleClass="Text" AnchorPane.rightAnchor="10.0" />
+                              <Line endX="100.0" fill="#ff931f" startX="-100.0" stroke="#ff931f" strokeLineCap="ROUND" styleClass="Line" AnchorPane.rightAnchor="10.0" />
                            </children>
                         </AnchorPane>
                         <BorderPane prefWidth="70.0" styleClass="Text">
@@ -92,7 +92,7 @@
                               <Insets top="10.0" />
                            </HBox.margin>
                            <children>
-                              <Line endX="100.0" startX="-100.0" stroke="#ff931f" styleClass="Text" AnchorPane.leftAnchor="10.0" />
+                              <Line endX="100.0" startX="-100.0" stroke="#ff931f" styleClass="Line" AnchorPane.leftAnchor="10.0" />
                            </children>
                         </AnchorPane>
                      </children>

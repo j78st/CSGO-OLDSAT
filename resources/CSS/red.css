@@ -94,3 +94,8 @@
 .Text {
     -fx-fill: #ff2020;
 }
+
+/* ====== Design des lignes ====== */
+.Line {
+    -fx-fill: #ff2020;
+}
