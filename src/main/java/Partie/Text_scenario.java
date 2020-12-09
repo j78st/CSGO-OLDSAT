@@ -7,6 +7,7 @@ public class Text_scenario {
     public Text_scenario(int id_text, String text) {
         this.id_text = id_text;
         this.text = text;
+        Game.scenario.add(this);
     }
 
     public int getId_text() {
