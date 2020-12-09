@@ -13,7 +13,6 @@ public class Main {
     }
 
 
-
     public static void main(String[] args) {
         WorldBoxDisc.init(); //Initialise toutes les pistes
         sleep(5000); //Temps d'attente pour le chargement des musiques
@@ -30,17 +29,25 @@ public class Main {
         */
 
         //WorldBoxDisc.showLoadedAudioFiles();
-        /*
-        WorldBoxDisc.toogleSoundFx();
-        WorldBoxDisc.allFxSounds(MusicType.SoundFx);
-        sleep(1000);
-        WorldBoxDisc.testAllSound();
-        */
 
+        //WorldBoxDisc.toogleSoundFx();
+        //WorldBoxDisc.allTypeSounds(MusicType.SoundFx);
+        //sleep(1000);
+        //WorldBoxDisc.testAllSound();
+
+
+
+        /*
         WorldBoxDisc.play("wind");
-        sleep(5000);
-        WorldBoxDisc.toogleSoundBackground();
+        sleep(6000);
+        WorldBoxDisc.setSoundBackground(15);
+        sleep(6000);
+        WorldBoxDisc.setSoundBackground(5);
         WorldBoxDisc.statusSounds();
+        WorldBoxDisc.allTypeSounds(MusicType.SoundFx);
+        WorldBoxDisc.allTypeSounds(MusicType.Background);
+        */
+        WorldBoxDisc.testAllSound();
         while(true);
     }
 }
