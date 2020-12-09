@@ -12,11 +12,11 @@ public class Game {
     int timer;
 
     public Game(Player player, int difficulty) {
-        player = player;
-        map = new ArrayList<Room>();
-        actions = new ArrayList<Action>();
-        gears = new ArrayList<Gear>();
-        enigmas = new ArrayList<Enigma>();
+        Game.player = player;
+        map = new ArrayList<>();
+        actions = new ArrayList<>();
+        gears = new ArrayList<>();
+        enigmas = new ArrayList<>();
         this.difficulty = difficulty;
         this.timer = 0;
     }
