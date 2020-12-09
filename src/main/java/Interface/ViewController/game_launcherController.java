@@ -2,6 +2,7 @@ package Interface.ViewController;
 
 import Interface.ScreenLoader.Controller;
 import Interface.ScreenLoader.LoadMap;
+import Interface.Settings.Settings;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
@@ -82,8 +83,8 @@ public class game_launcherController implements Controller {
      */
     @Override
     public void initialize () {
-        settings_btn.setGraphic(new ImageView(new Image("pictures/settings_icon.png")));
-        return_btn.setGraphic(new ImageView(new Image("pictures/return.png")));
+        settings_btn.setGraphic(new ImageView(new Image("icons/"+ Settings.icon_color +"/settings_icon.png")));
+        return_btn.setGraphic(new ImageView(new Image("icons/"+ Settings.icon_color +"/return.png")));
     }
 
 

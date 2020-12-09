@@ -5,6 +5,7 @@
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.ListView?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
@@ -26,8 +27,13 @@
                         <Insets bottom="20.0" />
                      </VBox.margin>
                   </Text>
-                  <HBox alignment="CENTER">
+                  <HBox alignment="CENTER" minHeight="40.0">
                      <children>
+                        <ImageView fx:id="profile_icon" fitHeight="30.0" fitWidth="33.0" pickOnBounds="true" preserveRatio="true">
+                           <HBox.margin>
+                              <Insets right="10.0" top="5.0" />
+                           </HBox.margin>
+                        </ImageView>
                         <Text fill="#ff931f" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Text" text="Nom joueur :">
                            <HBox.margin>
                               <Insets top="5.0" />
@@ -40,8 +46,13 @@
                         </TextField>
                      </children>
                   </HBox>
-                  <HBox alignment="CENTER" prefHeight="50.0" prefWidth="400.0">
+                  <HBox alignment="CENTER" minHeight="50.0" prefHeight="50.0" prefWidth="400.0">
                      <children>
+                        <ImageView fx:id="difficulty_icon" fitHeight="19.0" fitWidth="33.0" pickOnBounds="true" preserveRatio="true">
+                           <HBox.margin>
+                              <Insets right="10.0" top="5.0" />
+                           </HBox.margin>
+                        </ImageView>
                         <Text fill="#ff931f" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Text" text="Difficulté :">
                            <HBox.margin>
                               <Insets top="5.0" />

@@ -2,9 +2,9 @@ package Interface.ViewController;
 
 import Interface.ScreenLoader.Controller;
 import Interface.ScreenLoader.LoadMap;
+import Interface.Settings.Settings;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.geometry.Insets;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
@@ -186,16 +186,16 @@ public class gameController implements Controller {
         vbox_menu.toBack();
 
         // icone d'inventaire
-        Image bag_icon = new Image("pictures/bag.png");
+        Image bag_icon = new Image("icons/"+ Settings.icon_color +"/bag.png");
         item_slot_1.setGraphic(new ImageView(bag_icon));
         item_slot_2.setGraphic(new ImageView(bag_icon));
         item_slot_3.setGraphic(new ImageView(bag_icon));
 
         //icone mouvement
-        down_move_btn.setGraphic(new ImageView(new Image("/pictures/arrow_down.png")));
-        left_move_btn.setGraphic(new ImageView(new Image("/pictures/arrow_left.png")));
-        up_move_btn.setGraphic(new ImageView(new Image("/pictures/arrow_up.png")));
-        right_move_btn.setGraphic(new ImageView(new Image("/pictures/arrow_right.png")));
+        down_move_btn.setGraphic(new ImageView(new Image("/icons/"+ Settings.icon_color +"/arrow_down.png")));
+        left_move_btn.setGraphic(new ImageView(new Image("/icons/"+ Settings.icon_color +"/arrow_left.png")));
+        up_move_btn.setGraphic(new ImageView(new Image("/icons/"+ Settings.icon_color +"/arrow_up.png")));
+        right_move_btn.setGraphic(new ImageView(new Image("/icons/"+ Settings.icon_color +"/arrow_right.png")));
 
         //image d'illustration
         

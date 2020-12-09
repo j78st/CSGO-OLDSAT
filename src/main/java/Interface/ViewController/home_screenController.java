@@ -2,12 +2,10 @@ package Interface.ViewController;
 
 import Interface.ScreenLoader.Controller;
 import Interface.ScreenLoader.LoadMap;
+import Interface.Settings.Settings;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -93,7 +91,7 @@ public class home_screenController implements Controller {
      * initialise la scene
      */
     public void initialize () {
-        settings_btn.setGraphic(new ImageView(new Image("pictures/settings_icon.png")));
+        settings_btn.setGraphic(new ImageView(new Image("icons/"+ Settings.icon_color +"/settings_icon.png")));
     }
 
     /**

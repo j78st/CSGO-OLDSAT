@@ -2,11 +2,11 @@ package Interface.ViewController;
 
 import Interface.ScreenLoader.Controller;
 import Interface.ScreenLoader.LoadMap;
+import Interface.Settings.Settings;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.Toggle;
@@ -16,19 +16,26 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyCodeCombination;
 import javafx.scene.input.KeyCombination;
-import javafx.stage.Stage;
 
 import java.io.IOException;
 
 public class settings_menuController implements Controller {
 
     // ==========================================================
-    // Declaration objets
+    // Paramètres tampon
     // ==========================================================
 
-    ToggleGroup themeGroup = new ToggleGroup();
+    private Double fx_volume;
+    private Double bg_volume;
+    private String theme;
+    private String icon_color;
+
+    // ==========================================================
+    // Déclaration objets
+    // ==========================================================
 
     int previous_screen_ID;
+    ToggleGroup themeGroup = new ToggleGroup();
 
     @FXML
     private Button save_btn;
@@ -46,7 +53,7 @@ public class settings_menuController implements Controller {
     private RadioButton theme3_btn;
 
     // ==========================================================
-    // Methodes gestion logiciel
+    // Méthodes gestion logiciel
     // ==========================================================
 
     /**
@@ -56,27 +63,40 @@ public class settings_menuController implements Controller {
      */
     @FXML
     void go_back_to_previous_screen(ActionEvent event) throws IOException {
+        // restauration des derniers paramètres sauvegardés
+        Settings.theme = theme;
+        Settings.icon_color = icon_color;
+        Settings.fx_volume = fx_volume;
+        Settings.bg_volume = bg_volume;
+
+        LoadMap.scene.getStylesheets().clear();
+        LoadMap.scene.getStylesheets().add("/CSS/"+ theme +".css");
+
+        // retour sur l'écran précédent
         LoadMap gl = new LoadMap();
         gl.display_screen_from_id(previous_screen_ID);
     }
 
     /**
-     * Sauvegarde les paramètres enregistrés lors de l'appui sur le bouton
+     * Sauvegarde les paramètres enregistrés lors de l'appui sur le bouton "valider"
      * @param event
      */
     @FXML
     void save_settings(ActionEvent event) {
-
+        icon_color = Settings.icon_color;
+        theme = Settings.theme;
+        fx_volume = Settings.fx_volume;
+        bg_volume = Settings.bg_volume;
     }
 
     // ==========================================================
-    // Methodes d'initialisation
+    // Méthodes d'initialisation
     // ==========================================================
 
     /**
      * Méthode appllée lors du chargement du menu paramètre
-     * Elle permet de récuperer le numéro de la scnène précédente pour y revenir lors de la fermeture du menu.
-     * @param previous_ID
+     * Elle permet de récuperer le numéro de la scène précédente pour y revenir lors de la fermeture du menu.
+     * @param previous_ID id du précédent écran
      */
     public void provide_current_screen_id(int previous_ID) {
         previous_screen_ID = previous_ID;
@@ -88,7 +108,13 @@ public class settings_menuController implements Controller {
     @Override
     public void initialize() {
         // icone de retour
-        resume_btn.setGraphic(new ImageView(new Image( "/pictures/return.png")));
+        resume_btn.setGraphic(new ImageView(new Image("/icons/"+ Settings.icon_color +"/return.png")));
+
+        // sauvegarde des paramètres avant changement
+        fx_volume = Settings.fx_volume;
+        bg_volume = Settings.bg_volume;
+        theme = Settings.theme;
+        icon_color = Settings.icon_color;
 
         // paramètre du thème utilisé
         theme1_btn.setToggleGroup(themeGroup);
@@ -102,16 +128,23 @@ public class settings_menuController implements Controller {
                     RadioButton rb = (RadioButton)themeGroup.getSelectedToggle();
                     if (rb != null) {
 
-                        // set corresponding theme
-                        String theme = rb.getText();
+                        // changement du theme appliqué
+                        String t = rb.getText();
                         LoadMap.scene.getStylesheets().clear();
-                        LoadMap.scene.getStylesheets().add("/CSS/"+ theme +".css");
+                        LoadMap.scene.getStylesheets().add("/CSS/"+ t +".css");
+
+                        // liste des themes qui necessitent des icones blanches
+                        if (t.equals("blue")
+                                ||t.equals("green")
+                                ||t.equals("red")) {
+                            Settings.icon_color = "white";
+                        } else {
+                            Settings.icon_color = "black";
+                        }
                     }
                 }
             }
         );
-
-
     }
 
     /**

@@ -4,6 +4,7 @@ import Interface.Ranking.Record;
 import Interface.Ranking.RecordListCell;
 import Interface.ScreenLoader.Controller;
 import Interface.ScreenLoader.LoadMap;
+import Interface.Settings.Settings;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -41,6 +42,9 @@ public class score_screenController implements Controller {
     @FXML
     private ListView<Record> score_list;
 
+    @FXML
+    private ImageView rank_icon;
+
     // ==========================================================
     // Methodes FXML
     // ==========================================================
@@ -76,8 +80,9 @@ public class score_screenController implements Controller {
      */
     public void initialize () {
         // icones
-        settings_btn.setGraphic(new ImageView(new Image("pictures/settings_icon.png")));
-        return_btn.setGraphic(new ImageView(new Image("pictures/return.png")));
+        settings_btn.setGraphic(new ImageView(new Image("icons/"+ Settings.icon_color +"/settings_icon.png")));
+        return_btn.setGraphic(new ImageView(new Image("icons/"+ Settings.icon_color +"/return.png")));
+        rank_icon.setImage(new Image("icons/"+ Settings.icon_color+ "/ranking.png"));
 
         // chargement du classement
         recordObservableList = FXCollections.observableArrayList();

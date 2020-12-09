@@ -4,6 +4,7 @@ import Interface.Save.SaveListCell;
 import Interface.Save.SaveSlot;
 import Interface.ScreenLoader.Controller;
 import Interface.ScreenLoader.LoadMap;
+import Interface.Settings.Settings;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -38,6 +39,12 @@ public class new_game_formController implements Controller {
 
     @FXML
     private Button return_btn;
+
+    @FXML
+    private ImageView difficulty_icon;
+
+    @FXML
+    private ImageView profile_icon;
 
     @FXML
     void go_back_to_launch_screen(ActionEvent event) throws IOException {
@@ -95,9 +102,11 @@ public class new_game_formController implements Controller {
     @Override
     public void initialize() {
 
-        // image du bouton paramètre
-        settings_btn.setGraphic(new ImageView(new Image("pictures/settings_icon.png")));
-        return_btn.setGraphic(new ImageView(new Image("pictures/return.png")));
+        // mise en place des icones
+        settings_btn.setGraphic(new ImageView(new Image("icons/"+ Settings.icon_color +"/settings_icon.png")));
+        return_btn.setGraphic(new ImageView(new Image("icons/"+ Settings.icon_color +"/return.png")));
+        profile_icon.setImage(new Image("icons/"+ Settings.icon_color+ "/profile.png"));
+        difficulty_icon.setImage(new Image("icons/"+ Settings.icon_color+ "/shield.png"));
 
         // mise en place selection difficulté
         difficulty = FXCollections.observableArrayList("Facile", "Normal", "Difficile");

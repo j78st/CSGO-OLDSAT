@@ -30,6 +30,13 @@
                      <VBox.margin>
                         <Insets left="30.0" right="30.0" />
                      </VBox.margin>
+                     <graphic>
+                        <ImageView fitHeight="28.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../icons/white/arcade.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
                   </Button>
                   <Button mnemonicParsing="false" onAction="#display_multiplayer_mode" prefHeight="40.0" prefWidth="180.0" text="Multijoueur">
                      <VBox.margin>

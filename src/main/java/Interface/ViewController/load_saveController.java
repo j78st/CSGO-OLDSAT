@@ -4,6 +4,7 @@ import Interface.Save.SaveListCell;
 import Interface.Save.SaveSlot;
 import Interface.ScreenLoader.Controller;
 import Interface.ScreenLoader.LoadMap;
+import Interface.Settings.Settings;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -78,8 +79,8 @@ public class load_saveController implements Controller {
     @Override
     public void initialize() {
         // image du bouton paramètre
-        settings_btn.setGraphic(new ImageView(new Image("pictures/settings_icon.png")));
-        return_btn.setGraphic(new ImageView(new Image("pictures/return.png")));
+        settings_btn.setGraphic(new ImageView(new Image("icons/"+ Settings.icon_color +"/settings_icon.png")));
+        return_btn.setGraphic(new ImageView(new Image("icons/"+ Settings.icon_color +"/return.png")));
 
         // mise en place de la liste des sauvegarde
         saveObservableList = FXCollections.observableArrayList();
