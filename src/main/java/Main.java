@@ -1,5 +1,7 @@
 
+import Music.Systems.MusicType;
 import Music.Systems.WorldBoxDisc;
+
 
 public class Main {
     public static void sleep(int n){
@@ -16,7 +18,6 @@ public class Main {
         WorldBoxDisc.init(); //Initialise toutes les pistes
         sleep(5000); //Temps d'attente pour le chargement des musiques
 
-        WorldBoxDisc.testAllSound(); //test de tout les sons chargé
         //WorldBoxDisc.repeatSound("erreur", 10, 500); //Un meme son peut desormais repete autant de fois que l'on veut, a l'intervalle que l'on veut
         /*
         WorldBoxDisc.play("eclair0");
@@ -29,6 +30,17 @@ public class Main {
         */
 
         //WorldBoxDisc.showLoadedAudioFiles();
+        /*
+        WorldBoxDisc.toogleSoundFx();
+        WorldBoxDisc.allFxSounds(MusicType.SoundFx);
+        sleep(1000);
+        WorldBoxDisc.testAllSound();
+        */
+
+        WorldBoxDisc.play("wind");
+        sleep(5000);
+        WorldBoxDisc.toogleSoundBackground();
+        WorldBoxDisc.statusSounds();
         while(true);
     }
 }
