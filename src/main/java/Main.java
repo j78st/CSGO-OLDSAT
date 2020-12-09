@@ -24,8 +24,6 @@ public class Main extends Application {
 
         Parent root = loader.load();
 
-
-
         // Déclaration de la scène utlisée pour l'application
         LoadMap.scene = new Scene(root);
 

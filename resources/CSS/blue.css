@@ -103,5 +103,24 @@
     -fx-stroke: #ff931f;
 }
 
+/* ====== Design des sliders =======*/
+.slider {
+    -fx-show-tick-labels: true;
+    -fx-show-tick-marks: true;
+}
+
+.slider .track {
+    -fx-pref-height:5;
+}
+
+.slider .thumb {
+    -fx-pref-height: 20;
+    -fx-pref-width: 5;
+}
+
+.slider .axis {
+    -fx-tick-label-fill: white;
+}
+
 
 

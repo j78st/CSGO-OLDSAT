@@ -7,10 +7,7 @@ import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.RadioButton;
-import javafx.scene.control.Toggle;
-import javafx.scene.control.ToggleGroup;
+import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
@@ -20,15 +17,6 @@ import javafx.scene.input.KeyCombination;
 import java.io.IOException;
 
 public class settings_menuController implements Controller {
-
-    // ==========================================================
-    // Paramètres tampon
-    // ==========================================================
-
-    private Double fx_volume;
-    private Double bg_volume;
-    private String theme;
-    private String icon_color;
 
     // ==========================================================
     // Déclaration objets
@@ -52,6 +40,12 @@ public class settings_menuController implements Controller {
     @FXML
     private RadioButton theme3_btn;
 
+    @FXML
+    private Slider fx_slider;
+
+    @FXML
+    private Slider bg_slider;
+
     // ==========================================================
     // Méthodes gestion logiciel
     // ==========================================================
@@ -63,16 +57,6 @@ public class settings_menuController implements Controller {
      */
     @FXML
     void go_back_to_previous_screen(ActionEvent event) throws IOException {
-        // restauration des derniers paramètres sauvegardés
-        Settings.theme = theme;
-        Settings.icon_color = icon_color;
-        Settings.fx_volume = fx_volume;
-        Settings.bg_volume = bg_volume;
-
-        LoadMap.scene.getStylesheets().clear();
-        LoadMap.scene.getStylesheets().add("/CSS/"+ theme +".css");
-
-        // retour sur l'écran précédent
         LoadMap gl = new LoadMap();
         gl.display_screen_from_id(previous_screen_ID);
     }
@@ -83,10 +67,6 @@ public class settings_menuController implements Controller {
      */
     @FXML
     void save_settings(ActionEvent event) {
-        icon_color = Settings.icon_color;
-        theme = Settings.theme;
-        fx_volume = Settings.fx_volume;
-        bg_volume = Settings.bg_volume;
     }
 
     // ==========================================================
@@ -110,12 +90,6 @@ public class settings_menuController implements Controller {
         // icone de retour
         resume_btn.setGraphic(new ImageView(new Image("/icons/"+ Settings.icon_color +"/return.png")));
 
-        // sauvegarde des paramètres avant changement
-        fx_volume = Settings.fx_volume;
-        bg_volume = Settings.bg_volume;
-        theme = Settings.theme;
-        icon_color = Settings.icon_color;
-
         // paramètre du thème utilisé
         theme1_btn.setToggleGroup(themeGroup);
         theme2_btn.setToggleGroup(themeGroup);
@@ -129,14 +103,13 @@ public class settings_menuController implements Controller {
                     if (rb != null) {
 
                         // changement du theme appliqué
-                        String t = rb.getText();
+                        Settings.theme = rb.getText();
                         LoadMap.scene.getStylesheets().clear();
-                        LoadMap.scene.getStylesheets().add("/CSS/"+ t +".css");
+                        LoadMap.scene.getStylesheets().add("/CSS/"+ Settings.theme +".css");
 
                         // liste des themes qui necessitent des icones blanches
-                        if (t.equals("blue")
-                                ||t.equals("green")
-                                ||t.equals("red")) {
+                        if (Settings.theme.equals("blue")
+                                ||Settings.theme.equals("green")) {
                             Settings.icon_color = "white";
                         } else {
                             Settings.icon_color = "black";
@@ -145,6 +118,35 @@ public class settings_menuController implements Controller {
                 }
             }
         );
+
+        // Création des listener pour les volumes sonores
+        fx_slider.valueProperty().addListener(new ChangeListener<Number>() {
+            public void changed(ObservableValue<? extends Number> ov, Number old_val, Number new_val) {
+
+                System.out.println(new_val.doubleValue());
+
+            }
+        });
+        bg_slider.valueProperty().addListener(new ChangeListener<Number>() {
+            public void changed(ObservableValue<? extends Number> ov, Number old_val, Number new_val) {
+
+                System.out.println(new_val.doubleValue());
+
+            }
+        });
+
+        // restauration des paramètres courants
+        // volumes
+        fx_slider.setValue(Settings.fx_volume);
+        bg_slider.setValue(Settings.bg_volume);
+        // theme
+        if (theme1_btn.getText().equals(Settings.theme)){
+            theme1_btn.setSelected(true);
+        } else if (theme2_btn.getText().equals(Settings.theme)){
+            theme2_btn.setSelected(true);
+        } else {
+            theme3_btn.setSelected(true);
+        }
     }
 
     /**

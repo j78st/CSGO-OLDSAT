@@ -18,11 +18,11 @@
     -fx-border-radius: 130;
 }
 .RedRadio{
-    -fx-text-fill: white;
+    -fx-text-fill: #d4d4d4;
 }
 .RedRadio .radio {
-    -fx-background-color: #ff6e6e;
+    -fx-background-color: #ffffff;
     -fx-background-radius: 130;
-    -fx-border-color: white;
+    -fx-border-color: blue;
     -fx-border-radius: 130;
 }

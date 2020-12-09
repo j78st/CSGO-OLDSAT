@@ -1,5 +1,6 @@
 package Interface.Save;
 
+import Interface.Settings.Settings;
 import javafx.geometry.Insets;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListCell;
@@ -23,8 +24,13 @@ public class SaveListCell extends ListCell<SaveSlot> {
         lp.setPrefSize(150, 10);
 
         // couleur du texte
-        ln.setStyle("-fx-text-fill: white;");
-        lp.setStyle("-fx-text-fill: white;");
+        if (Settings.icon_color.equals("white")){
+            ln.setStyle("-fx-text-fill: white;");
+            lp.setStyle("-fx-text-fill: white;");
+        } else {
+            ln.setStyle("-fx-text-fill: black;");
+            lp.setStyle("-fx-text-fill: black;");
+        }
 
         // parametrage du placement hortizontal
         hbox.setMargin(ln, new Insets(0, 0, 0, 0));

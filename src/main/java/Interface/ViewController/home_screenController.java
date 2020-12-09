@@ -25,6 +25,9 @@ public class home_screenController implements Controller {
     @FXML
     private Button settings_btn;
 
+    @FXML
+    private ImageView game_icon;
+
     // ==========================================================
     // Methodes FXML
     // ==========================================================
@@ -84,7 +87,7 @@ public class home_screenController implements Controller {
     }
 
     // ==========================================================
-    // Methodes autres
+    // Methodes d'initialisation
     // ==========================================================
 
     /**
@@ -92,6 +95,7 @@ public class home_screenController implements Controller {
      */
     public void initialize () {
         settings_btn.setGraphic(new ImageView(new Image("icons/"+ Settings.icon_color +"/settings_icon.png")));
+        game_icon.setImage(new Image("icons/"+ Settings.icon_color +"/arcade.png"));
     }
 
     /**

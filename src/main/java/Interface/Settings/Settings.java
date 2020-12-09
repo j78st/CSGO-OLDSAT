@@ -18,7 +18,7 @@ public class Settings {
         // Récupération via mémoire.read
 
         // simulation :
-        fx_volume = (double)10;
+        fx_volume = (double)50;
         bg_volume = (double)10;
 
         icon_color = "white";

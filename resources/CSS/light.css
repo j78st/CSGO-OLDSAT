@@ -4,43 +4,43 @@
 
 /* ====== Design arrière plan ====== */
 .BackPane{
-    -fx-background-color: #2f2f2f;
+    -fx-background-color: #d9d9d9;
 }
 
 /* ====== Design des couches supérieures ====== */
 .UpperLayerPane{
     /* --- forme et couleur --- */
-    -fx-background-color: #4D5656;
+    -fx-background-color: #ffffff;
     -fx-background-radius: 10;
     /* --- bordure --- */
-    -fx-border-color: #E74C3C;
+    -fx-border-color: #00ecff;
     -fx-border-radius: 10;
 }
 
 /* ====== Design interface de jeu ====== */
 .GamePane {
     /* --- couleur --- */
-    -fx-background-color: #424949;
+    -fx-background-color: #ffffff;
     /* --- bordure --- */
-    -fx-border-color: #CD6155;
+    -fx-border-color: #005364;
 }
 
 /* ====== Design des bouton ====== */
 .button {
     /* --- forme et couleur --- */
-    -fx-background-color: #CD6155;
+    -fx-background-color: #ffffff;
     -fx-background-radius: 20;
     /* --- bordure du bouton --- */
     -fx-border-width: 2;
     -fx-border-radius: 20;
-    -fx-border-color: #ff2020;
+    -fx-border-color: #00c1ff;
     /* --- texte du bouton --- */
     -fx-text-alignment: center;
-    -fx-text-fill: white;
+    -fx-text-fill: black;
 }
 
 .button:hover {
-    -fx-background-color: #ff2020;
+    -fx-background-color: #00c1ff;
     -fx-text-fill: black;
 }
 
@@ -51,7 +51,7 @@
     /* --- bordure du bouton --- */
     -fx-border-width: 2;
     -fx-border-radius: 20;
-    -fx-border-color: #ff2020;
+    -fx-border-color: #00c1ff;
     /* --- texte du bouton --- */
     -fx-text-alignment: center;
     -fx-text-fill: white;
@@ -61,36 +61,56 @@
 .List{
     -fx-background-color: #4D5656;
     -fx-background-radius: 5;
-    -fx-border-color: #ff2020;
+    -fx-border-color: #00c1ff;
     -fx-border-width: 3;
     -fx-border-radius: 5;
 }
 
 /* --- Apparence cellule paire --- */
 .list-cell:even {
-    -fx-background-color: #403232;
+    -fx-background-color: #ffffff;
 }
 /* --- Apparence cellule impaire --- */
 .list-cell:odd {
-    -fx-background-color: #342b2b;
+    -fx-background-color: #d9d9d9;
 }
 
 /* --- Apparence en survol d'une cellule --- */
 .list-cell:filled:hover {
-    -fx-background-color: #dd7e7e;
+    -fx-background-color: #93d2ff;
 }
 
 /* --- Apparence cellule sélectionnée --- */
 .list-cell:filled:selected:focused, .list-cell:filled:selected {
-    -fx-background-color: #ff2020;
+    -fx-background-color: #00c1ff;
 }
 
 /* ====== Design des textes ====== */
 .Text {
-    -fx-fill: #ff2020;
+    -fx-fill: #00c1ff;
 }
 
 /* ====== Design des lignes ====== */
 .Line {
-    -fx-stroke: #ff2020;
+    -fx-stroke: #00c1ff;
 }
+
+/* ====== Design des sliders =======*/
+.slider {
+    -fx-show-tick-labels: true;
+    -fx-show-tick-marks: true;
+}
+
+.slider .track {
+    -fx-pref-height:5;
+}
+
+.slider .thumb {
+    -fx-pref-height: 20;
+    -fx-pref-width: 5;
+}
+
+.slider .axis {
+    -fx-tick-label-fill: black;
+}
+

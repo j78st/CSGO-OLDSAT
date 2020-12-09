@@ -67,7 +67,6 @@ public class score_screenController implements Controller {
     @FXML
     void display_settings_screen(ActionEvent event) throws IOException {
         LoadMap gl = new LoadMap();
-        Stage stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
         gl.display_settings_menu(LoadMap.SCORES);
     }
 

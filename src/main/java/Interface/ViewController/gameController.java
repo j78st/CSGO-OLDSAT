@@ -143,8 +143,9 @@ public class gameController implements Controller {
      * @param event
      */
     @FXML
-    void save_game(ActionEvent event) {
-
+    void display_settings_menu(ActionEvent event) throws IOException {
+        LoadMap gl = new LoadMap();
+        gl.display_settings_menu(LoadMap.GAME);
     }
 
     /**
@@ -174,7 +175,7 @@ public class gameController implements Controller {
     }
 
     // ==========================================================
-    // Methodes autres
+    // Methodes d'initialisation
     // ==========================================================
 
     /**
@@ -201,6 +202,10 @@ public class gameController implements Controller {
         
     }
 
+
+    /**
+     * Création des raccourcis
+     */
     @Override
     public void setShortcut() {
         // Ouverture/fermeture menu pause via ESC
