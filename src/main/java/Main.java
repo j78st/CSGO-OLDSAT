@@ -1,11 +1,46 @@
-import Score.*;
-import Partie.*;
+import Score.Ranking;
+import Score.Score;
+import Serialization.Memoire;
+import Serialization.ObjetB;
 
-
+import java.io.File;
+import java.io.IOException;
+import java.util.Random;
 
 public class Main {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
+
+        Memoire m = new Memoire();
+        File rank_file = new File("test.json");
+        Random r = new Random();
+
+        ObjetB ob = new ObjetB("bob", 45);
+        ObjetB new_ob = new ObjetB();
+
+        Ranking classement = new Ranking();
+        Ranking ranking_from_file = new Ranking();
+
+        for (int i = 0; i < 10; i++) {
+            classement.ranking[i] = new Score("pseudo "+i, r.nextInt(100));
+        }
+
+        // ecriture
+        m.write_data(classement, rank_file);
+        System.out.println("ecriture ok");
+
+        //lecture
+        ranking_from_file = (Ranking) m.read_data(rank_file);
+
+        for (int i = 0; i < 10; i++) {
+            System.out.println(classement.ranking[i].pseudo + " " + classement.ranking[i].value );
+            System.out.println(ranking_from_file.ranking[i].pseudo + " " + ranking_from_file.ranking[i].value );
+            System.out.println("\n");
+        }
+
+
+        //===========================================//
+        /*
         Ranking r = new Ranking();
         for(int i=0;i<10;i++){
             r.ranking[i]=new Score("---",0);
@@ -37,6 +72,6 @@ public class Main {
 
         for(int i = 0;i<10;i++){
             System.out.println(i+1+"e = " + r.ranking[i].pseudo + " avec un score de " + r.ranking[i].value + " à la date " + r.ranking[i].dateformat.format(r.ranking[i].date));
-        }
+        }*/
     }
 }
