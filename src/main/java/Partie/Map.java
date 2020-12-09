@@ -2,7 +2,7 @@ package Partie;
 
 import java.util.ArrayList;
 
-public class Map {
+public class Map { //Inutile pour le moment
     ArrayList<Room> map;
     //image?
 
