@@ -1,9 +1,16 @@
 package Score;
 
-public class Ranking {
+import Serialization.Data;
+
+import java.io.Serializable;
+
+public class Ranking implements Serializable {
+
     public Score[] ranking = new Score[10];
 
-    public Ranking(){}
+    public Ranking(){
+
+    }
 
     /**
      *
