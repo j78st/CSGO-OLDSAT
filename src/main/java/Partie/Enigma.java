@@ -7,8 +7,8 @@ public class Enigma extends Room{
     ArrayList<int[]> consequence; // liste de couples définissant les conséquence de la rsolution de l'énigme, forme (type de conséquence, argument nécessaire à la réalisation de cette conséquence)
 
 
-    public Enigma(String path_txt, String path_image, int nb, int origin_room, int solution, ArrayList<int[]> consequence, ArrayList<String> sounds){
-        super(path_txt,path_image,nb,origin_room,sounds);
+    public Enigma(int id_txt, String path_image, int nb, int origin_room, int solution, ArrayList<int[]> consequence, ArrayList<String> sounds){
+        super(id_txt,path_image,nb,origin_room,sounds);
         this.solution=solution;
         this.consequence=consequence;
         Game.enigmas.add(this); // ajoute l'énigme à la liste de toutes les énigmes du jeu

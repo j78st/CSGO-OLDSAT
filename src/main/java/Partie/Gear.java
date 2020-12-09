@@ -5,15 +5,15 @@ import java.util.ArrayList;
 public class Gear {
     int id; // numéro d'identification de l'objet
     String name; // nom de l'objet
-    String path_description; // url de la description liée à la salle
+    String description; // url de la description liée à la salle
     int max_usage; // nombre max d'usage de l'objet (-1 si infini)
     int current_usage; // nombre d'usage déjà fait de l'objet
     ArrayList<Action> actions; // liste des actions nécessitant l'objet pour être effectuées
 
-    public Gear(int id,String name,String path_description,int max_usage){
+    public Gear(int id,String name,String description,int max_usage){
         this.id = id;
         this.name = name;
-        this.path_description = path_description;
+        this.description = description;
         this.max_usage = max_usage;
         this.current_usage = 0;
         this.actions = new ArrayList<Action>();

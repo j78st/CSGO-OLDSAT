@@ -3,15 +3,15 @@ package Partie;
 import java.util.ArrayList;
 
 public class Room {
-    String path_txt; // url du texte lié à la salle
+    String txt; // url du texte lié à la salle
     String path_image; // url de l'image liée à la salle
     int nb; // le chiffre des centaines vaut 1 si c'est une salle, 2 si c'est un lieu d'interaction
     int[] neighbours = new int [4]; // salles voisines à la salle
     ArrayList<Action> actions; // actions rélisables dans cette salle
     ArrayList<String> sounds; // nom des sons joués dans la salle
 
-    public Room(String path_txt, String path_image, int nb, int neighbour_north, int neighbour_east, int neighbour_south, int neighbour_west, ArrayList<String> sounds){
-        this.path_txt = path_txt;
+    public Room(int id_txt, String path_image, int nb, int neighbour_north, int neighbour_east, int neighbour_south, int neighbour_west, ArrayList<String> sounds){
+        this.txt = Game.search_txt(id_txt);
         this.path_image = path_image;
         this.nb = nb;
         this.neighbours[0] = neighbour_north;
@@ -23,8 +23,8 @@ public class Room {
         Game.map.add(this); // ajoute la salle à la liste des salles/sous-salles/énigmes disponibles dans le jeu
     }
 
-    public Room(String path_txt, String path_image, int nb, int origin_room, ArrayList<String> sounds){ //"Sous-salle", càd entité dans une (sous-)salle, ex : table inspectable ou énigme
-        this.path_txt = path_txt;
+    public Room(int id_txt, String path_image, int nb, int origin_room, ArrayList<String> sounds){ //"Sous-salle", càd entité dans une (sous-)salle, ex : table inspectable ou énigme
+        this.txt = Game.search_txt(id_txt);
         this.path_image = path_image;
         this.nb=nb;
         this.neighbours[0]=-1;
@@ -50,5 +50,9 @@ public class Room {
             }
         }
         return action;
+    }
+
+    public void txt_evolve(String more_txt){ // rajoute du texte au texte à afficher avec la salle
+        this.txt = this.txt + more_txt;
     }
 }

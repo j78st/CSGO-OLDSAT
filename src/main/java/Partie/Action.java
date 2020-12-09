@@ -9,23 +9,23 @@ public class Action {
     ArrayList<int[]> consequence; // liste de couples définissant les conséquence de l'action, forme (type de conséquence, argument nécessaire à la réalisation de cette conséquence)
 
 
-    public Action(int id,String text, ArrayList<int[]> consequence, Room room, boolean doable) { //Action "générale", doable à false pour les déplacement vers salle vérouillées au départ par exemple
+    public Action(int id,String text, ArrayList<int[]> consequence, int room, boolean doable) { //Action "générale", doable à false pour les déplacement vers salle vérouillées au départ par exemple
         this.id=id;
         this.text = text;
         this.consequence=consequence;
         this.doable = doable;
-        room.add_action(this); // ajoute l'action à la liste des actions réalisables dans la salle à laquelle elle est liée
+        Game.search_room(room).add_action(this); // ajoute l'action à la liste des actions réalisables dans la salle à laquelle elle est liée
         Game.actions.add(this); // ajoute l'action à la liste des actions du jeu
     }
 
-    public Action(int id,String text, ArrayList<int[]> consequence, Room room, Gear gear) { //Action liée à un objet
+    public Action(int id,String text, ArrayList<int[]> consequence, int room, int id_gear) { //Action liée à un objet
         this.id=id;
         this.text = text;
         this.consequence = consequence;
         this.doable = false;
-        room.add_action(this); // ajoute l'action à la liste des actions réalisables dans la salle à laquelle elle est liée
+        Game.search_room(room).add_action(this); // ajoute l'action à la liste des actions réalisables dans la salle à laquelle elle est liée
         Game.actions.add(this); // ajoute l'action à la liste des actions du jeu
-        gear.actions.add(this); // ajoute l'action à la liste des actions nécessitant l'objet renseigné
+        Game.search_gear(id_gear).actions.add(this); // ajoute l'action à la liste des actions nécessitant l'objet renseigné
     }
 
     public void setDoable(boolean doable) { // rend une action réalisable par le joueur
@@ -63,7 +63,10 @@ public class Action {
                     }else {
                         // mauvaise solution -> effet visuel / msg
                     }
-                        break;
+                    break;
+                case 8: // affichage d'un nouveau texte (fonctionne aussi pour la demande d'indice)
+                    Game.search_room(Game.player.position).txt_evolve(Game.search_txt(this.consequence.get(i)[1])); // fait évoluer le texte de la salle dans laquelle le joueur se trouve en lui ajoutant le texte ayant pour id le code renseigné
+                    break;
              }
         }
     }

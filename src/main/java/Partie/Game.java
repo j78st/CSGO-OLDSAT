@@ -8,6 +8,7 @@ public class Game {
     public static ArrayList<Enigma> enigmas; //liste de toutes les énigmes du jeu
     public static ArrayList<Action> actions; // liste de toutes les actions du jeu
     public static ArrayList<Gear> gears; // liste de tous les objets du jeu
+    public static ArrayList<Text_scenario> scenario; // liste de tous les textes utilisés dans le jeu
     int difficulty; // difficulté choisie pour la partie => action sur le temps?
     int timer;
 
@@ -17,6 +18,7 @@ public class Game {
         actions = new ArrayList<>();
         gears = new ArrayList<>();
         enigmas = new ArrayList<>();
+        scenario = new ArrayList<>();
         this.difficulty = difficulty;
         this.timer = 0;
     }
@@ -51,5 +53,13 @@ public class Game {
             i++;
         }
         return enigmas.get(i);
+    }
+
+    public static String search_txt(int id){ // recherche une salle à partir de son numéro d'identification
+        int i=0;
+        while(scenario.get(i).id_text!=id){
+            i++;
+        }
+        return scenario.get(i).text;
     }
 }
