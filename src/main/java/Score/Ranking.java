@@ -1,7 +1,5 @@
 package Score;
 
-import Serialization.Data;
-
 import java.io.Serializable;
 
 public class Ranking implements Serializable {

@@ -1,7 +1,7 @@
 import Score.Ranking;
 import Score.Score;
 import Serialization.Memoire;
-import Serialization.ObjetB;
+import com.google.gson.JsonParser;
 
 import java.io.File;
 import java.io.IOException;
@@ -12,11 +12,10 @@ public class Main {
     public static void main(String[] args) throws IOException {
 
         Memoire m = new Memoire();
-        File rank_file = new File("test.json");
-        Random r = new Random();
 
-        ObjetB ob = new ObjetB("bob", 45);
-        ObjetB new_ob = new ObjetB();
+        File rank_file = new File("resources/json/test.json");
+
+        Random r = new Random();
 
         Ranking classement = new Ranking();
         Ranking ranking_from_file = new Ranking();
@@ -27,7 +26,6 @@ public class Main {
 
         // ecriture
         m.write_data(classement, rank_file);
-        System.out.println("ecriture ok");
 
         //lecture
         ranking_from_file = (Ranking) m.read_data(rank_file);
@@ -58,8 +56,6 @@ public class Main {
         Score s6 = new Score ("pseudo6",20);
         Score s7 = new Score ("pseudo7",30);
         Score s8 = new Score ("pseudo8",75);
-
-
 
         r.add_score(s1);
         r.add_score(s2);

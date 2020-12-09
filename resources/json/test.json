@@ -1,0 +1,54 @@
+{
+  "ranking": [
+    {
+      "pseudo": "pseudo 0",
+      "time_left": 41,
+      "value": 410
+    },
+    {
+      "pseudo": "pseudo 1",
+      "time_left": 83,
+      "value": 830
+    },
+    {
+      "pseudo": "pseudo 2",
+      "time_left": 2,
+      "value": 20
+    },
+    {
+      "pseudo": "pseudo 3",
+      "time_left": 56,
+      "value": 560
+    },
+    {
+      "pseudo": "pseudo 4",
+      "time_left": 50,
+      "value": 500
+    },
+    {
+      "pseudo": "pseudo 5",
+      "time_left": 14,
+      "value": 140
+    },
+    {
+      "pseudo": "pseudo 6",
+      "time_left": 65,
+      "value": 650
+    },
+    {
+      "pseudo": "pseudo 7",
+      "time_left": 78,
+      "value": 780
+    },
+    {
+      "pseudo": "pseudo 8",
+      "time_left": 3,
+      "value": 30
+    },
+    {
+      "pseudo": "pseudo 9",
+      "time_left": 97,
+      "value": 970
+    }
+  ]
+}
