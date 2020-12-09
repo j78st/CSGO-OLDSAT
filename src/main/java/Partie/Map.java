@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 public class Map {
     ArrayList<Room> map;
+    //image?
 
     public Map(){
         this.map= new ArrayList<Room>();

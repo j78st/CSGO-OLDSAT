@@ -8,7 +8,7 @@ public class Action {
     boolean doable;
 
 
-    public Action(int id,String text, int consequence, int arg_consequence, Room room, boolean doable) {
+    public Action(int id,String text, int consequence, int arg_consequence, Room room, boolean doable) { //Action "générale", doable à false pour les déplacement vers salle vérouillées au départ par exemple
         this.id=id;
         this.text = text;
         this.consequence = consequence;
@@ -18,7 +18,7 @@ public class Action {
         Game.actions.add(this);
     }
 
-    public Action(int id,String text, int consequence, int arg_consequence, Room room, Gear gear) {
+    public Action(int id,String text, int consequence, int arg_consequence, Room room, Gear gear) { //Action liée à un objet
         this.id=id;
         this.text = text;
         this.consequence = consequence;
@@ -45,10 +45,15 @@ public class Action {
                 Game.search_action(this.arg_consequence).setDoable(false);
                 break;
             case 4: // ajout de l'objet arg_consequence à l'inventaire
+                Game.player.add_inventory(Game.search_gear(arg_consequence));
                 break;
             case 5: // suppression de l'objet arg_consequence de l'inventaire
+                Game.player.remove_inventory(Game.search_gear(arg_consequence));
                 break;
-            case 6: // résultat d'une énigme
+            case 6: // utilisation de l'objet arg_consequence
+                Game.search_gear(arg_consequence).use_gear();
+                break;
+            case 7: // résultat d'une énigme
                 break;
         }
     }

@@ -6,6 +6,7 @@ public class Game {
     public static Player player;
     public static Map map;
     public static ArrayList<Action> actions;
+    public static ArrayList<Gear> gears;
     int difficulty;
     int timer;
 
@@ -13,6 +14,7 @@ public class Game {
         Game.player = player;
         Game.map = map;
         actions = new ArrayList<Action>();
+        gears = new ArrayList<Gear>();
         this.difficulty = difficulty;
         this.timer = 0;
     }
@@ -23,5 +25,13 @@ public class Game {
             i++;
         }
         return actions.get(i);
+    }
+
+    public static Gear search_gear(int id){
+        int i=0;
+        while(gears.get(i).id!=id){
+            i++;
+        }
+        return gears.get(i);
     }
 }
