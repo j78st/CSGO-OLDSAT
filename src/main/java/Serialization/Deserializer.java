@@ -1,5 +1,7 @@
 package Serialization;
 
+import Partie.Game;
+import Partie.Map;
 import Score.Ranking;
 import com.google.gson.JsonDeserializationContext;
 import com.google.gson.JsonDeserializer;
@@ -25,13 +27,13 @@ public class Deserializer implements JsonDeserializer<Serializable> {
         }
 
         // Récupération des paramètres
-        else if (json.getAsJsonObject().has("age")) {
-            return context.deserialize(json, ObjetB.class);
+        else if (json.getAsJsonObject().has("difficulty")) {
+            return context.deserialize(json, Game.class);
         }
 
         // Récupération d'un autre truc
         else {
-            return context.deserialize(json, ObjetA.class);
+            return context.deserialize(json, Map.class);
         }
     }
 }
