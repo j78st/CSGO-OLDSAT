@@ -1,16 +1,16 @@
 package Partie;
 
+import java.util.ArrayList;
+
 public class Player {
     String pseudo;
-    Gear[] inventory;
-    int nb_objet;
+    ArrayList<Gear> inventory;
     int position;
     int feature;
 
     public Player(String pseudo, int feature){
         this.pseudo = pseudo;
-        this.inventory =  new Gear[3];
-        this.nb_objet = 0;
+        this.inventory =  new ArrayList<Gear>();
         this.position = 101;
         this.feature = feature;
     }
@@ -19,25 +19,19 @@ public class Player {
         this.position=destination;
     }
 
-    public void add_inventory(Gear gear){
-        if(this.nb_objet < 3){
-            this.inventory[nb_objet] = gear;
-            this.nb_objet++;
+    public boolean add_inventory(Gear gear){
+        if(this.inventory.size()< 3){
+            this.inventory.add(gear);
+            gear.set_actions_doable(true);
+            return true;
         }else{
             // message "Inventaire plein"??
+            return false;
         }
     }
 
     public void remove_inventory(Gear gear){
-        if(this.inventory[0]==gear){
-            this.inventory[0]=this.inventory[1];
-            this.inventory[1]=this.inventory[2];
-            this.nb_objet--;
-        }else if(this.inventory[1]==gear){
-            this.inventory[1]=this.inventory[2];
-            this.nb_objet--;
-        }else if(this.inventory[2]==gear){
-            this.nb_objet--;
-        }
+        this.inventory.remove(gear);
+        gear.set_actions_doable(false);
     }
 }
