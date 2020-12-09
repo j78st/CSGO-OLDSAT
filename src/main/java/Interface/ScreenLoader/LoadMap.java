@@ -24,12 +24,13 @@ public class LoadMap {
     public static final int LOAD_SAVE = 5;
     public static final int NEW_GAME_FORM = 6;
     public static final int GAME = 7;
+    public static final int END_GAME = 8;
 
     /**
      * L'appel a cette fonction permet d'avoir une structure "LoaderKit" qui correspond a l'ecran que l'on souhaite afficher.
      * Elle prend en paramètre l'identifiant de l'ecran a afficher.
-     * @param loaderId
-     * @return
+     * @param loaderId Id de l'écran vers lequel on va
+     * @return retourne le kit nécéssaire au chargement de l'écran
      * @throws IOException
      */
     public LoadKit loaderMap(int loaderId) throws IOException {
@@ -100,6 +101,16 @@ public class LoadMap {
             case LOAD_SAVE:
                 loader = new FXMLLoader();
                 loader.setLocation(getClass().getResource("/fxml/load_saveView.fxml"));
+                root = loader.load();
+                controller = (load_saveController) loader.getController();
+                kit.setNext_root(root);
+                kit.setNext_controller(controller);
+                break;
+
+            // écran de chargement d'une sauvegarde ==============
+            case END_GAME:
+                loader = new FXMLLoader();
+                loader.setLocation(getClass().getResource("/fxml/end_gameView.fxml"));
                 root = loader.load();
                 controller = (load_saveController) loader.getController();
                 kit.setNext_root(root);
