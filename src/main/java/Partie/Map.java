@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 public class Map {
     ArrayList<Room> map;
+    //image?
 
     public Map(){
         this.map= new ArrayList<Room>();
@@ -12,7 +13,7 @@ public class Map {
         this.map.add(room);
     }
 
-    public Room get_room(int nb){
+    public Room search_room(int nb){
         int i=0;
         while(this.map.get(i).nb!=nb){
             i++;
