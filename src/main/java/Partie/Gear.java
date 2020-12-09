@@ -28,4 +28,10 @@ public class Gear {
         }
     }
 
+    public void set_actions_doable(boolean bool){
+        for(int i =0;i<this.actions.size();i++){
+            this.actions.get(i).setDoable(bool);
+        }
+    }
+
 }

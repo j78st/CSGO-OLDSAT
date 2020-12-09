@@ -15,8 +15,8 @@ public class Room {
         this.neighbours[1]=neighbour_east;
         this.neighbours[2]=neighbour_south;
         this.neighbours[3]=neighbour_west;
-        Game.map.add_room(this);
         this.actions = new ArrayList<Action>();
+        Game.map.add(this);
     }
 
     public Room(int nb, int origin_room){ //"Sous-salle", càd entité dans une (sous-)salle, ex : table inspectable ou énigme
@@ -26,9 +26,22 @@ public class Room {
         this.neighbours[2]=origin_room;
         this.neighbours[3]=-1;
         this.actions = new ArrayList<Action>();
+        Game.map.add(this);
     }
 
     public void add_action(Action action){
         this.actions.add(action);
+    }
+
+    public Action search_access_enigma(int nb){
+        Action action = null;
+        for(int i = 0; i< this.actions.size();i++){
+            for(int j = 0; j< this.actions.get(i).consequence.size();i++){
+              if(this.actions.get(i).consequence.get(j)[0] == 1 && this.actions.get(i).consequence.get(j)[1] == nb){
+                  action =  this.actions.get(i);
+              }
+            }
+        }
+        return action;
     }
 }
