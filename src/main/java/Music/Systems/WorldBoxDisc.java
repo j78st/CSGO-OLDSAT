@@ -348,20 +348,10 @@ public class WorldBoxDisc extends Thread {
      * @param value
      */
     public static void setSoundFx(double value){
-        if(soundFx){
-            for (int i = 0; i < worldBoxMusic.size(); i++) {
-                if (worldBoxMusic.get(i).type == MusicType.SoundFx) {
-                    worldBoxMusic.get(i).aMusic.setVolume(value);
-                }
+        for (int i = 0; i < worldBoxMusic.size(); i++) {
+            if (worldBoxMusic.get(i).type == MusicType.SoundFx) {
+                worldBoxMusic.get(i).aMusic.setVolume(value);
             }
-            soundFx = false;
-        } else {
-            for (int i = 0; i < worldBoxMusic.size(); i++) {
-                if (worldBoxMusic.get(i).type == MusicType.SoundFx) {
-                    worldBoxMusic.get(i).aMusic.setVolume(defaultSoundVolume);
-                }
-            }
-            soundFx = true;
         }
     }
 
@@ -370,20 +360,10 @@ public class WorldBoxDisc extends Thread {
      * @param value
      */
     public static void setSoundBackground(double value){
-        if(soundBackground){
-            for (int i = 0; i < worldBoxMusic.size(); i++) {
-                if (worldBoxMusic.get(i).type == MusicType.Background) {
-                    worldBoxMusic.get(i).aMusic.setVolume(value); //Les musiques seront joue avec un niveau de 0, ce qui permet de reprendre la où elles sont en train de jouer
-                }
+        for (int i = 0; i < worldBoxMusic.size(); i++) {
+            if (worldBoxMusic.get(i).type == MusicType.Background) {
+                worldBoxMusic.get(i).aMusic.setVolume(value); //Les musiques seront joue avec un niveau de 0, ce qui permet de reprendre la où elles sont en train de jouer
             }
-            soundBackground = false;
-        } else {
-            for (int i = 0; i < worldBoxMusic.size(); i++) {
-                if (worldBoxMusic.get(i).type == MusicType.Background) {
-                    worldBoxMusic.get(i).aMusic.setVolume(defaultSoundVolume);
-                }
-            }
-            soundBackground = true;
         }
     }
 
