@@ -361,20 +361,20 @@ public class gameController implements Controller {
 
     public void refreshInventory() {
         ArrayList<Gear> objects = game.player.getInventory();
-        if (objects.get(0) != null){
+        if (objects.size()>0){
             item_slot_1.setGraphic(new ImageView(new Image(objects.get(0).getURL_image())));
         } else {
-            item_slot_1.setGraphic(new ImageView(new Image("icons"+Settings.icon_color+"/bag.png")));
+            item_slot_1.setGraphic(new ImageView(new Image("icons/"+Settings.icon_color+"/bag.png")));
         }
-        if (objects.get(1) != null){
+        if (objects.size()>1){
             item_slot_2.setGraphic(new ImageView(new Image(objects.get(1).getURL_image())));
         } else {
-            item_slot_2.setGraphic(new ImageView(new Image("/icons"+Settings.icon_color+"/bag.png")));
+            item_slot_2.setGraphic(new ImageView(new Image("/icons/"+Settings.icon_color+"/bag.png")));
         }
-        if (objects.get(2) != null){
+        if (objects.size()>2){
             item_slot_3.setGraphic(new ImageView(new Image(objects.get(2).getURL_image())));
         } else {
-            item_slot_3.setGraphic(new ImageView(new Image("/icons"+Settings.icon_color+"/bag.png")));
+            item_slot_3.setGraphic(new ImageView(new Image("/icons/"+Settings.icon_color+"/bag.png")));
         }
     }
 }
