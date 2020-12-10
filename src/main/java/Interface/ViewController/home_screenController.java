@@ -34,6 +34,7 @@ public class home_screenController implements Controller {
     // ==========================================================
 
     /**
+     * Lors de l'appui sur le bouton QUITTER L'APPLICATION
      * L'appel à cette fonction ferme la fenetre contenant le bouton
      * @param event
      */
@@ -47,19 +48,19 @@ public class home_screenController implements Controller {
     }
 
     /**
+     * Lors de l'appui sur le bouton JOUER
      * affiche l'ecran de lancement de partie
-     * Appui sur bouton JOUER
      * @param event
      */
     @FXML
     void display_game_launcher(ActionEvent event) throws IOException {
-        WorldBoxDisc.play("menuOpen");
-
         LoadMap gl = new LoadMap();
         gl.display_screen_from_id(LoadMap.LAUNCHER);
+        WorldBoxDisc.play("menuOpen");
     }
 
     /**
+     * Lors de l'appui sur le bouton MULTIJOUEUR
      * affiche l'ecran du mode multijouer
      * @param event
      */
@@ -70,6 +71,7 @@ public class home_screenController implements Controller {
     }
 
     /**
+     * Lors de l'appui sur le bouton SCORES
      * affiche l'ecran d'affichage des meilleurs scores
      * @param event
      */
@@ -80,6 +82,7 @@ public class home_screenController implements Controller {
     }
 
     /**
+     * Lors de l'appui sur le bouton PARAMETRES
      * affiche l'ecran des paramètres du jeu
      * @param event
      */

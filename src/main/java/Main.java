@@ -35,14 +35,17 @@ public class Main extends Application {
         primaryStage.show();
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
 
         // Récupération des paramètres
         Settings.setSettingsFromFile();
+
         //Initialise le systeme de son
         WorldBoxDisc.init();
-        WorldBoxDisc.setSoundFx(Settings.fx_volume);
-        WorldBoxDisc.setSoundBackground(Settings.bg_volume);
+        Thread.sleep(3000);
+
+        //WorldBoxDisc.setSoundFx(Settings.fx_volume);
+        //WorldBoxDisc.setSoundBackground(Settings.bg_volume);
 
         launch(args);
 

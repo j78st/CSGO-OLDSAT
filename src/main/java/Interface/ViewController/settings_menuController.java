@@ -52,6 +52,7 @@ public class settings_menuController implements Controller {
     // ==========================================================
 
     /**
+     * Lors de l'appui sur le bouton RETOUR :
      * Permet de revenir à l'écran d'où a été affiché le menu.
      * @param event
      * @throws IOException
@@ -60,14 +61,6 @@ public class settings_menuController implements Controller {
     void go_back_to_previous_screen(ActionEvent event) throws IOException {
         LoadMap gl = new LoadMap();
         gl.display_screen_from_id(previous_screen_ID);
-    }
-
-    /**
-     * Sauvegarde les paramètres enregistrés lors de l'appui sur le bouton "valider"
-     * @param event
-     */
-    @FXML
-    void save_settings(ActionEvent event) {
     }
 
     // ==========================================================
@@ -84,7 +77,7 @@ public class settings_menuController implements Controller {
     }
 
     /**
-     * Initalise la scène lors de son chargement
+     * Initalise la scène
      */
     @Override
     public void initialize() {
@@ -124,15 +117,16 @@ public class settings_menuController implements Controller {
         fx_slider.valueProperty().addListener(new ChangeListener<Number>() {
             public void changed(ObservableValue<? extends Number> ov, Number old_val, Number new_val) {
 
-                WorldBoxDisc.setSoundFx(new_val.doubleValue());
-                WorldBoxDisc.play("menuOpen");
+                Settings.fx_volume = new_val.doubleValue();
+                WorldBoxDisc.setSoundFx(Settings.fx_volume);
 
             }
         });
         bg_slider.valueProperty().addListener(new ChangeListener<Number>() {
             public void changed(ObservableValue<? extends Number> ov, Number old_val, Number new_val) {
 
-                System.out.println(new_val.doubleValue());
+                Settings.bg_volume = new_val.doubleValue();
+                WorldBoxDisc.setSoundBackground(Settings.bg_volume);
 
             }
         });
@@ -152,7 +146,7 @@ public class settings_menuController implements Controller {
     }
 
     /**
-     * Définition et intégration des raccourcis possibles sur la scene
+     * Définition et intégration des raccourcis possibles sur la scène
      */
     @Override
     public void setShortcut() {
