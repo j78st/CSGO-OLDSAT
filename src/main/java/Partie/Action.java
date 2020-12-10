@@ -1,5 +1,6 @@
 package Partie;
 
+import Interface.Settings.Engine;
 import Interface.ViewController.gameController;
 
 import java.util.ArrayList;
@@ -42,9 +43,6 @@ public class Action {
     }
 
     public void Consequence(){
-
-        gameController engine = new gameController();
-
         for(int i =0;i<consequence.size();i++){
             switch (this.consequence.get(i)[0]) {
                 case 1: // mouvement vers la salle de numéro d'identification arg_conséquence
@@ -52,11 +50,11 @@ public class Action {
                     break;
                 case 2: // dévérouillage d'une action de numéro d'identification arg_conséquence
                     Game.search_action(this.consequence.get(i)[1]).setDoable(true);
-                    engine.refreshAction();
+                    Engine.engine.refreshAction();
                     break;
                 case 3: // vérouillage d'une action de numéro d'identification arg_conséquence
                     Game.search_action(this.consequence.get(i)[1]).setDoable(false);
-                    engine.refreshAction();
+                    Engine.engine.refreshAction();
                     break;
                 case 4: // ajout de l'objet de numéro d'identification arg_consequence à l'inventaire
                     if(Game.player.add_inventory(Game.search_gear(this.consequence.get(i)[1]))){ // Si l'ajout à l'inventaire se passe bien (il reste de la place dans l'inventaire)

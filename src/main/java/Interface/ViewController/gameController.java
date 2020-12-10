@@ -249,9 +249,6 @@ public class gameController implements Controller {
         left_move_btn.setGraphic(new ImageView(new Image("/icons/"+ Settings.icon_color +"/arrow_left.png")));
         up_move_btn.setGraphic(new ImageView(new Image("/icons/"+ Settings.icon_color +"/arrow_up.png")));
         right_move_btn.setGraphic(new ImageView(new Image("/icons/"+ Settings.icon_color +"/arrow_right.png")));
-
-        // init visuel
-        refreshRoom();
     }
 
     /**
@@ -259,6 +256,9 @@ public class gameController implements Controller {
      */
     @Override
     public void setShortcut() {
+        // init visuel (pas question svp)
+        refreshRoom();
+
         // Ouverture/fermeture menu pause via ESC
         KeyCombination esc = new KeyCodeCombination(KeyCode.ESCAPE, KeyCombination.SHIFT_ANY);
         Runnable rn = ()-> {
@@ -293,44 +293,29 @@ public class gameController implements Controller {
     }
 
     public void refreshRoom(){
+
         if(Game.search_room(Game.search_room(game.player.position).getNeighbours()[0]) == null
                 || !Game.search_room(Game.search_room(game.player.position).getNeighbours()[0]).isAccess()){
-            up_move_btn.getStylesheets().clear();
-            up_move_btn.getStylesheets().add("CSS/unclickable.css");
             up_move_btn.setDisable(true);
         } else {
-            up_move_btn.getStylesheets().clear();
-            up_move_btn.getStylesheets().add("CSS/"+Settings.theme+"/.css");
             up_move_btn.setDisable(false);
         }
         if(Game.search_room(Game.search_room(game.player.position).getNeighbours()[1]) == null
                 || !Game.search_room(Game.search_room(game.player.position).getNeighbours()[1]).isAccess()){
-            right_move_btn.getStylesheets().clear();
-            right_move_btn.getStylesheets().add("CSS/unclickable.css");
             right_move_btn.setDisable(true);
         } else {
-            right_move_btn.getStylesheets().clear();
-            right_move_btn.getStylesheets().add("CSS/"+Settings.theme+"/.css");
             right_move_btn.setDisable(false);
         }
         if(Game.search_room(Game.search_room(game.player.position).getNeighbours()[2]) == null
                 || !Game.search_room(Game.search_room(game.player.position).getNeighbours()[2]).isAccess()){
-            down_move_btn.getStylesheets().clear();
-            down_move_btn.getStylesheets().add("CSS/unclickable.css");
             down_move_btn.setDisable(true);
         } else {
-            down_move_btn.getStylesheets().clear();
-            down_move_btn.getStylesheets().add("CSS/"+Settings.theme+"/.css");
             down_move_btn.setDisable(false);
         }
         if(Game.search_room(Game.search_room(game.player.position).getNeighbours()[3]) == null
                 || !Game.search_room(Game.search_room(game.player.position).getNeighbours()[3]).isAccess()){
-            left_move_btn.getStylesheets().clear();
-            left_move_btn.getStylesheets().add("CSS/unclickable.css");
             left_move_btn.setDisable(true);
         } else {
-            left_move_btn.getStylesheets().clear();
-            left_move_btn.getStylesheets().add("CSS/"+Settings.theme+"/.css");
             left_move_btn.setDisable(false);
         }
 

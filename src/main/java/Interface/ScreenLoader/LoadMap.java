@@ -1,5 +1,6 @@
 package Interface.ScreenLoader;
 
+import Interface.Settings.Engine;
 import Interface.ViewController.*;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -85,12 +86,12 @@ public class LoadMap {
                 kit.setNext_controller(controller);
                 break;
 
-            // écran de creation d'une nouvelle partie ==============
+            // écran de la partie ==============
             case GAME:
                 loader = new FXMLLoader();
                 loader.setLocation(getClass().getResource("/fxml/gameView.fxml"));
-                root = loader.load();
-                controller = (gameController) loader.getController();
+                root = Engine.game_root;
+                controller = Engine.engine;
                 kit.setNext_root(root);
                 kit.setNext_controller(controller);
                 break;

@@ -1,5 +1,6 @@
 
 import Interface.ScreenLoader.LoadMap;
+import Interface.Settings.Engine;
 import Interface.Settings.Settings;
 import Interface.ViewController.home_screenController;
 import Music.Systems.WorldBoxDisc;
@@ -46,6 +47,8 @@ public class Main extends Application {
         //Initialise le systeme de son
         WorldBoxDisc.init();
         Thread.sleep(1000);
+
+        Engine oui = new Engine();
 
         //WorldBoxDisc.setSoundFx(Settings.fx_volume);
         //WorldBoxDisc.setSoundBackground(Settings.bg_volume);

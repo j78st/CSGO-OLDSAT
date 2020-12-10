@@ -1,5 +1,6 @@
 package Partie;
 
+import Interface.Settings.Engine;
 import Interface.ViewController.gameController;
 
 import java.util.ArrayList;
@@ -85,8 +86,7 @@ public class Room {
 
     public void txt_evolve(String more_txt){ // rajoute du texte au texte à afficher avec la salle
         this.txt = this.txt + more_txt;
-        gameController engine = new gameController();
-        engine.refreshText();
+        Engine.engine.refreshText();
     }
 
     public void setAccess(boolean access){

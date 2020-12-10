@@ -1,5 +1,6 @@
 package Partie;
 
+import Interface.Settings.Engine;
 import Interface.ViewController.gameController;
 
 import java.util.ArrayList;
@@ -16,17 +17,15 @@ public class Player {
     }
 
     public void move(int destination){ // bouge le joueur vers un nouvel écran (salle/sous-salle/énigme)
-        gameController engine = new gameController();
         this.position=destination;
-        engine.refreshRoom();
+        Engine.engine.refreshRoom();
     }
 
     public boolean add_inventory(Gear gear){ // Ajoute un objet à l'inventaire du joueur
         if(this.inventory.size()< 3){
             this.inventory.add(gear);
             gear.set_actions_doable(true);
-            gameController engine = new gameController();
-            engine.refreshInventory();
+            Engine.engine.refreshInventory();
             return true;
         }else{
             // message "Inventaire plein revenez plus tard" : popup
@@ -37,8 +36,7 @@ public class Player {
     public void remove_inventory(Gear gear){ // Supprime un objet de l'inventaire du joueur
         this.inventory.remove(gear);
         gear.set_actions_doable(false);
-        gameController engine = new gameController();
-        engine.refreshInventory();
+        Engine.engine.refreshInventory();
     }
 
     public String getPseudo() {
