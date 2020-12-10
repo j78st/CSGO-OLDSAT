@@ -162,6 +162,8 @@ public class new_game_formController implements Controller {
         Player player1 = new Player("joueur_test");
         Game game_test = new Game(player1,0);
 
+        Scenario scenar = new Scenario();
+
         ArrayList<String> sounds_test = new ArrayList<>();
 
         Room room1 = new Room(1011,"url1",101,102,-1,-1,-1,sounds_test, true); //première salle
@@ -215,6 +217,7 @@ public class new_game_formController implements Controller {
 
         ArrayList<int[]> consequences_action2022 = new ArrayList<>();
         consequences_action2022.add(new int[]{7,2022});
+        consequences_action2022.add(new int[]{3,2022});
         Action action2022 = new Action(2022,"Essayer d'enfoncer la porte", consequences_action2022, 202, true); //mise à jour du texte
 
         ArrayList<int[]> consequences_action2023 = new ArrayList<>();
@@ -236,6 +239,7 @@ public class new_game_formController implements Controller {
 
         ArrayList<int[]> consequences_action3011 = new ArrayList<>();
         consequences_action3011.add(new int[]{7,3012});
+        consequences_action3011.add(new int[]{3,3011});
         Action action3011 = new Action(3011,"Demander un indice", consequences_action3011, 301, true); //mise à jour du texte
 
         gameController.game = game_test;

@@ -76,7 +76,7 @@ public class Game {
         if (!scenario.isEmpty()){
             for(int i=0;i<scenario.size();i++){
                 if(scenario.get(i).id_text == id) {
-                    res = scenario.get(i).text;
+                    res = scenario.get(i).getText();
                 }
             }
         }

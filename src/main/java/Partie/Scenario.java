@@ -36,7 +36,7 @@ public class Scenario {
     public static Text_scenario room_301_1 = new Text_scenario(3011,"Sur le bas du tableau il y a un mécanisme" +
             " similaire à celui d'un cadenas à code. 4 chiffres semblent nécessaire. \n" +
             "Au centre du tableau vous pouvez lire : \"Si votre but est de sortir d'ici, une simple connaissance vous " +
-            "est nécessaire : quelle promo de l'enssat est nécessairement la meilleure?\"");
+            "est nécessaire : quelle promo de l'ENSSAT est nécessairement la meilleure?\"\n");
     public static Text_scenario room_301_2 = new Text_scenario(3012,"Indice : S'ils n'ont pas redoublé, " +
             "ils sont nés en 1999");
 
