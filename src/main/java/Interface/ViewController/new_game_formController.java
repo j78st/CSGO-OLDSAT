@@ -180,7 +180,7 @@ public class new_game_formController implements Controller {
 
 //Création des objets
 
-        Gear objet1 = new Gear(1,"clef","Clef ancienne, sert probablement pour déverouiller une serrure",1, "resources/objects/key.png");
+        Gear objet1 = new Gear(1,"clef","Clef ancienne, sert probablement pour déverouiller une serrure",1, "objects/key.png");
 
 
 //Actions de la salle 101
