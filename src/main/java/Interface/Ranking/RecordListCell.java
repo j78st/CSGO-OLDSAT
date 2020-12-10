@@ -1,5 +1,6 @@
 package Interface.Ranking;
 
+import Interface.Settings.Settings;
 import javafx.geometry.Insets;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListCell;
@@ -17,7 +18,17 @@ public class RecordListCell extends ListCell<Record> {
         super();
 
         // instanciation de la Hbox
-        hbox.setPrefSize(470, 20);
+        hbox.setPrefSize(460, 20);
+
+        if (Settings.icon_color.equals("white")){
+            lr.setStyle("-fx-text-fill: white;");
+            lp.setStyle("-fx-text-fill: white;");
+            ls.setStyle("-fx-text-fill: white;");
+        } else {
+            lr.setStyle("-fx-text-fill: black;");
+            lp.setStyle("-fx-text-fill: black;");
+            ls.setStyle("-fx-text-fill: black;");
+        }
 
         // parametrage des tailles des labels
         lr.setPrefSize(40, 10);

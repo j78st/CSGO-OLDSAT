@@ -6,39 +6,29 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.VBox?>
-<?import javafx.scene.paint.LinearGradient?>
-<?import javafx.scene.paint.Stop?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="376.0" prefWidth="668.0" style="-fx-background-image: url('pictures/background.jpg'); -fx-background-size: 100%100%;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Interface.ViewController.load_saveController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="400.0" minWidth="600.0" prefHeight="500.0" prefWidth="800.0" styleClass="BackPane" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Interface.ViewController.load_saveController">
    <children>
       <BorderPane AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <center>
-            <AnchorPane BorderPane.alignment="CENTER">
+            <AnchorPane maxHeight="500.0" maxWidth="700.0" styleClass="UpperLayerPane" BorderPane.alignment="CENTER">
                <BorderPane.margin>
                   <Insets />
                </BorderPane.margin>
                <children>
-                  <VBox alignment="CENTER" maxHeight="500.0" maxWidth="700.0" minHeight="340.0" minWidth="480.0" style="-fx-background-border: 20 20 20 20; -fx-background-color: #D5DBDB;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                  <VBox alignment="CENTER" maxHeight="500.0" maxWidth="700.0" minHeight="340.0" minWidth="480.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                      <children>
-                        <Text boundsType="LOGICAL_VERTICAL_CENTER" strokeWidth="0.0" text="Charger partie" textAlignment="CENTER" textOrigin="CENTER" wrappingWidth="242.615234375">
+                        <Text boundsType="LOGICAL_VERTICAL_CENTER" strokeWidth="0.0" styleClass="Text" text="Charger partie" textAlignment="CENTER" textOrigin="CENTER" wrappingWidth="242.615234375">
                            <font>
-                              <Font name="Symbol" size="36.0" />
+                              <Font size="36.0" />
                            </font>
-                           <fill>
-                              <LinearGradient endX="0.5357142857142857" endY="1.0" startX="0.5214285714285715">
-                                 <stops>
-                                    <Stop color="#2a2525" />
-                                    <Stop color="#00ffbb" offset="1.0" />
-                                 </stops>
-                              </LinearGradient>
-                           </fill>
                            <VBox.margin>
                               <Insets bottom="20.0" />
                            </VBox.margin>
                         </Text>
-                        <ListView fx:id="save_list" maxHeight="238.0" maxWidth="400.0" prefHeight="232.0" prefWidth="400.0">
+                        <ListView fx:id="save_list" maxHeight="238.0" maxWidth="400.0" prefHeight="232.0" prefWidth="400.0" styleClass="List">
                            <VBox.margin>
                               <Insets />
                            </VBox.margin>
@@ -61,7 +51,7 @@
             <Insets bottom="10.0" left="100.0" right="100.0" top="10.0" />
          </padding>
       </BorderPane>
-      <Button layoutX="610.0" layoutY="336.0" mnemonicParsing="false" onAction="#go_back_to_launch_screen" text="retour" AnchorPane.bottomAnchor="14.0" AnchorPane.rightAnchor="14.0" />
+      <Button fx:id="return_btn" layoutX="610.0" layoutY="336.0" mnemonicParsing="false" onAction="#go_back_to_launch_screen" AnchorPane.bottomAnchor="14.0" AnchorPane.rightAnchor="14.0" />
       <Button fx:id="settings_btn" layoutX="600.0" layoutY="14.0" mnemonicParsing="false" onAction="#go_to_settings_menu" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="14.0" />
    </children>
 </AnchorPane>

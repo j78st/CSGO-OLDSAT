@@ -4,6 +4,7 @@ import Interface.Ranking.Record;
 import Interface.Ranking.RecordListCell;
 import Interface.ScreenLoader.Controller;
 import Interface.ScreenLoader.LoadMap;
+import Interface.Settings.Settings;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -36,7 +37,13 @@ public class score_screenController implements Controller {
     private Button settings_btn;
 
     @FXML
+    private Button return_btn;
+
+    @FXML
     private ListView<Record> score_list;
+
+    @FXML
+    private ImageView rank_icon;
 
     // ==========================================================
     // Methodes FXML
@@ -49,8 +56,7 @@ public class score_screenController implements Controller {
     @FXML
     void go_back_to_home_screen(ActionEvent event) throws IOException {
         LoadMap gl = new LoadMap();
-        Stage stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
-        gl.display_screen_from_id(LoadMap.HOME,stage);
+        gl.display_screen_from_id(LoadMap.HOME);
     }
 
     /**
@@ -61,8 +67,7 @@ public class score_screenController implements Controller {
     @FXML
     void display_settings_screen(ActionEvent event) throws IOException {
         LoadMap gl = new LoadMap();
-        Stage stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
-        gl.display_settings_menu(LoadMap.SCORES,stage);
+        gl.display_settings_menu(LoadMap.SCORES);
     }
 
     // ==========================================================
@@ -73,10 +78,10 @@ public class score_screenController implements Controller {
      * initialise la vue lors de l'appel de la methode @display_screen_from_id
      */
     public void initialize () {
-        // icone paramètre
-        Image settings_icon = new Image("pictures/settings_icon.png");
-        ImageView settingsIconView = new ImageView(settings_icon);
-        settings_btn.setGraphic(settingsIconView);
+        // icones
+        settings_btn.setGraphic(new ImageView(new Image("icons/"+ Settings.icon_color +"/settings_icon.png")));
+        return_btn.setGraphic(new ImageView(new Image("icons/"+ Settings.icon_color +"/return.png")));
+        rank_icon.setImage(new Image("icons/"+ Settings.icon_color+ "/ranking.png"));
 
         // chargement du classement
         recordObservableList = FXCollections.observableArrayList();
@@ -98,6 +103,6 @@ public class score_screenController implements Controller {
         // Acces au paramètres via ESC
         KeyCombination kc = new KeyCodeCombination(KeyCode.ESCAPE, KeyCombination.SHIFT_ANY);
         Runnable rn = ()-> settings_btn.fire();
-        settings_btn.getScene().getAccelerators().put(kc, rn);;
+        LoadMap.scene.getAccelerators().put(kc, rn);
     }
 }

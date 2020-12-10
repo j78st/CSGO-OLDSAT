@@ -4,6 +4,7 @@ import Interface.Save.SaveListCell;
 import Interface.Save.SaveSlot;
 import Interface.ScreenLoader.Controller;
 import Interface.ScreenLoader.LoadMap;
+import Interface.Settings.Settings;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -37,17 +38,25 @@ public class new_game_formController implements Controller {
     private Button settings_btn;
 
     @FXML
+    private Button return_btn;
+
+    @FXML
+    private ImageView difficulty_icon;
+
+    @FXML
+    private ImageView profile_icon;
+
+    @FXML
     void go_back_to_launch_screen(ActionEvent event) throws IOException {
         LoadMap gl = new LoadMap();
-        Stage stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
-        gl.display_screen_from_id(LoadMap.LAUNCHER,stage);
+        gl.display_screen_from_id(LoadMap.LAUNCHER);
     }
 
     @FXML
     void go_to_settings_menu(ActionEvent event) throws IOException {
         LoadMap gl = new LoadMap();
         Stage stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
-        gl.display_settings_menu(LoadMap.NEW_GAME_FORM,stage);
+        gl.display_settings_menu(LoadMap.NEW_GAME_FORM);
     }
 
 
@@ -86,18 +95,18 @@ public class new_game_formController implements Controller {
 
         // vvv LANCEMENT DE LA PARTIE ICI vvv
         LoadMap gl = new LoadMap();
-        Stage stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
-        gl.display_screen_from_id(LoadMap.GAME,stage);
+        gl.display_screen_from_id(LoadMap.GAME);
 
     }
 
     @Override
     public void initialize() {
 
-        // image du bouton paramètre
-        Image settings_icon = new Image("pictures/settings_icon.png");
-        ImageView settingsIconView = new ImageView(settings_icon);
-        settings_btn.setGraphic(settingsIconView);
+        // mise en place des icones
+        settings_btn.setGraphic(new ImageView(new Image("icons/"+ Settings.icon_color +"/settings_icon.png")));
+        return_btn.setGraphic(new ImageView(new Image("icons/"+ Settings.icon_color +"/return.png")));
+        profile_icon.setImage(new Image("icons/"+ Settings.icon_color+ "/profile.png"));
+        difficulty_icon.setImage(new Image("icons/"+ Settings.icon_color+ "/shield.png"));
 
         // mise en place selection difficulté
         difficulty = FXCollections.observableArrayList("Facile", "Normal", "Difficile");
@@ -126,6 +135,6 @@ public class new_game_formController implements Controller {
         // Acces au paramètres via ESC
         KeyCombination kc = new KeyCodeCombination(KeyCode.ESCAPE, KeyCombination.SHIFT_ANY);
         Runnable rn = ()-> settings_btn.fire();
-        settings_btn.getScene().getAccelerators().put(kc, rn);;
+        LoadMap.scene.getAccelerators().put(kc, rn);
     }
 }

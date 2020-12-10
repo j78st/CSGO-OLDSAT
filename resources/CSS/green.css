@@ -1,0 +1,120 @@
+/* ============================================ */
+/*               green theme design             */
+/* ============================================ */
+
+/* ====== Design arrière plan ====== */
+.BackPane{
+    -fx-background-color: #2f2f2f;
+}
+
+/* ====== Design des couches supérieures ====== */
+.UpperLayerPane{
+    /* --- forme et couleur --- */
+    -fx-background-color: #4D5656;
+    -fx-background-radius: 10;
+    /* --- bordure --- */
+    -fx-border-color: #88ee00;
+    -fx-border-radius: 10;
+}
+
+/* ====== Design interface de jeu ====== */
+.GamePane {
+    /* --- couleur --- */
+    -fx-background-color: #424949;
+
+    /* --- bordure --- */
+    -fx-border-color: #ABEBC6;
+}
+
+/* ====== Design des bouton ====== */
+.button {
+    /* --- forme et couleur --- */
+    -fx-background-color: #1f924e;
+    -fx-background-radius: 20;
+
+    /* --- bordure du bouton --- */
+    -fx-border-width: 2;
+    -fx-border-radius: 20;
+    -fx-border-color: #aeef55;
+
+    /* --- texte du bouton --- */
+    -fx-text-alignment: center;
+    -fx-text-fill: white;
+}
+
+.button:hover {
+    -fx-background-color: #aeef55;
+    -fx-text-fill: black;
+}
+
+.GameButton {
+    /* --- forme et couleur --- */
+    -fx-background-color: #484848;
+    -fx-background-radius: 20;
+
+    /* --- bordure du bouton --- */
+    -fx-border-width: 2;
+    -fx-border-radius: 20;
+    -fx-border-color: #aeef55;
+
+    /* --- texte du bouton --- */
+    -fx-text-alignment: center;
+    -fx-text-fill: white;
+}
+
+/* ====== Design des listes ====== */
+.List{
+    -fx-background-color: #4D5656;
+    -fx-background-radius: 5;
+    -fx-border-color: #aeef55;
+    -fx-border-width: 3;
+    -fx-border-radius: 5;
+}
+
+/* --- Apparence cellule paire --- */
+.list-cell:even {
+    -fx-background-color: #324036;
+}
+/* --- Apparence cellule impaire --- */
+.list-cell:odd {
+    -fx-background-color: #2b342f;
+}
+
+/* --- Apparence en survol d'une cellule --- */
+.list-cell:filled:hover {
+    -fx-background-color: #b4dd7e;
+}
+
+/* --- Apparence cellule sélectionnée --- */
+.list-cell:filled:selected:focused, .list-cell:filled:selected {
+    -fx-background-color: #aeef55;
+}
+
+/* ====== Design des textes ====== */
+.Text {
+    -fx-fill: #aeef55;
+}
+
+/* ====== Design des lignes ====== */
+.Line {
+    -fx-stroke: #aeef55;
+}
+
+/* ====== Design des sliders =======*/
+.slider {
+    -fx-show-tick-labels: true;
+    -fx-show-tick-marks: true;
+}
+
+.slider .track {
+    -fx-pref-height:5;
+}
+
+.slider .thumb {
+    -fx-pref-height: 20;
+    -fx-pref-width: 5;
+}
+
+.slider .axis {
+    -fx-tick-label-fill: white;
+}

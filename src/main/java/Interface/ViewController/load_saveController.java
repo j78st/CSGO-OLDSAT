@@ -4,6 +4,7 @@ import Interface.Save.SaveListCell;
 import Interface.Save.SaveSlot;
 import Interface.ScreenLoader.Controller;
 import Interface.ScreenLoader.LoadMap;
+import Interface.Settings.Settings;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -33,6 +34,9 @@ public class load_saveController implements Controller {
     @FXML
     private Button settings_btn;
 
+    @FXML
+    private Button return_btn;
+
     // ==========================================================
     // Méthodes FXML
     // ==========================================================
@@ -45,8 +49,7 @@ public class load_saveController implements Controller {
     @FXML
     void go_back_to_launch_screen(ActionEvent event) throws IOException {
         LoadMap gl = new LoadMap();
-        Stage stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
-        gl.display_screen_from_id(LoadMap.LAUNCHER,stage);
+        gl.display_screen_from_id(LoadMap.LAUNCHER);
     }
 
     /**
@@ -57,7 +60,7 @@ public class load_saveController implements Controller {
     void go_to_settings_menu(ActionEvent event) throws IOException {
         LoadMap gl = new LoadMap();
         Stage stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
-        gl.display_settings_menu(LoadMap.LOAD_SAVE,stage);
+        gl.display_settings_menu(LoadMap.LOAD_SAVE);
     }
 
     /**
@@ -76,9 +79,8 @@ public class load_saveController implements Controller {
     @Override
     public void initialize() {
         // image du bouton paramètre
-        Image settings_icon = new Image("pictures/settings_icon.png");
-        ImageView settingsIconView = new ImageView(settings_icon);
-        settings_btn.setGraphic(settingsIconView);
+        settings_btn.setGraphic(new ImageView(new Image("icons/"+ Settings.icon_color +"/settings_icon.png")));
+        return_btn.setGraphic(new ImageView(new Image("icons/"+ Settings.icon_color +"/return.png")));
 
         // mise en place de la liste des sauvegarde
         saveObservableList = FXCollections.observableArrayList();
@@ -101,6 +103,6 @@ public class load_saveController implements Controller {
         // Acces au paramètres via ESC
         KeyCombination kc = new KeyCodeCombination(KeyCode.ESCAPE, KeyCombination.SHIFT_ANY);
         Runnable rn = ()-> settings_btn.fire();
-        settings_btn.getScene().getAccelerators().put(kc, rn);;
+        LoadMap.scene.getAccelerators().put(kc, rn);;
     }
 }

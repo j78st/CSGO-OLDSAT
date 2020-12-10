@@ -2,6 +2,7 @@ package Interface.ViewController;
 
 import Interface.ScreenLoader.Controller;
 import Interface.ScreenLoader.LoadMap;
+import Interface.Settings.Settings;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
@@ -24,6 +25,9 @@ public class game_launcherController implements Controller {
     @FXML
     private Button settings_btn;
 
+    @FXML
+    private Button return_btn;
+
     // ==========================================================
     // Methodes FXML
     // ==========================================================
@@ -36,8 +40,7 @@ public class game_launcherController implements Controller {
     @FXML
     void go_back_to_home_screen(ActionEvent event) throws IOException {
         LoadMap gl = new LoadMap();
-        Stage stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
-        gl.display_screen_from_id(LoadMap.HOME,stage);
+        gl.display_screen_from_id(LoadMap.HOME);
     }
 
     /**
@@ -47,8 +50,7 @@ public class game_launcherController implements Controller {
     @FXML
     void display_new_game_form(ActionEvent event) throws IOException {
         LoadMap gl = new LoadMap();
-        Stage stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
-        gl.display_screen_from_id(LoadMap.NEW_GAME_FORM,stage);
+        gl.display_screen_from_id(LoadMap.NEW_GAME_FORM);
     }
 
     /**
@@ -58,8 +60,7 @@ public class game_launcherController implements Controller {
     @FXML
     void display_save_loader(ActionEvent event) throws IOException {
         LoadMap gl = new LoadMap();
-        Stage stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
-        gl.display_screen_from_id(LoadMap.LOAD_SAVE,stage);
+        gl.display_screen_from_id(LoadMap.LOAD_SAVE);
     }
 
     /**
@@ -70,7 +71,7 @@ public class game_launcherController implements Controller {
     void display_settings_screen(ActionEvent event) throws IOException {
         LoadMap gl = new LoadMap();
         Stage stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
-        gl.display_settings_menu(LoadMap.LAUNCHER,stage);
+        gl.display_settings_menu(LoadMap.LAUNCHER);
     }
 
     // ==========================================================
@@ -82,9 +83,8 @@ public class game_launcherController implements Controller {
      */
     @Override
     public void initialize () {
-        Image settings_icon = new Image("pictures/settings_icon.png");
-        ImageView settingsIconView = new ImageView(settings_icon);
-        settings_btn.setGraphic(settingsIconView);
+        settings_btn.setGraphic(new ImageView(new Image("icons/"+ Settings.icon_color +"/settings_icon.png")));
+        return_btn.setGraphic(new ImageView(new Image("icons/"+ Settings.icon_color +"/return.png")));
     }
 
 
@@ -96,7 +96,7 @@ public class game_launcherController implements Controller {
         // Acces au paramètres via ESC
         KeyCombination kc = new KeyCodeCombination(KeyCode.ESCAPE, KeyCombination.SHIFT_ANY);
         Runnable rn = ()-> settings_btn.fire();
-        settings_btn.getScene().getAccelerators().put(kc, rn);;
+        LoadMap.scene.getAccelerators().put(kc, rn);
     }
 
 }

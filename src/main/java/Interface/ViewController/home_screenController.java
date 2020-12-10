@@ -2,12 +2,10 @@ package Interface.ViewController;
 
 import Interface.ScreenLoader.Controller;
 import Interface.ScreenLoader.LoadMap;
+import Interface.Settings.Settings;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -26,6 +24,9 @@ public class home_screenController implements Controller {
 
     @FXML
     private Button settings_btn;
+
+    @FXML
+    private ImageView game_icon;
 
     // ==========================================================
     // Methodes FXML
@@ -51,8 +52,7 @@ public class home_screenController implements Controller {
     @FXML
     void display_game_launcher(ActionEvent event) throws IOException {
         LoadMap gl = new LoadMap();
-        Stage stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
-        gl.display_screen_from_id(LoadMap.LAUNCHER,stage);
+        gl.display_screen_from_id(LoadMap.LAUNCHER);
     }
 
     /**
@@ -62,8 +62,7 @@ public class home_screenController implements Controller {
     @FXML
     void display_multiplayer_mode(ActionEvent event) throws IOException {
         LoadMap gl = new LoadMap();
-        Stage stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
-        gl.display_screen_from_id(LoadMap.GAME,stage);
+        gl.display_screen_from_id(LoadMap.GAME);
     }
 
     /**
@@ -73,8 +72,7 @@ public class home_screenController implements Controller {
     @FXML
     void display_score_screen(ActionEvent event) throws IOException {
         LoadMap gl = new LoadMap();
-        Stage stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
-        gl.display_screen_from_id(LoadMap.SCORES,stage);
+        gl.display_screen_from_id(LoadMap.SCORES);
     }
 
     /**
@@ -85,20 +83,19 @@ public class home_screenController implements Controller {
     void display_settings_screen(ActionEvent event) throws IOException {
         LoadMap gl = new LoadMap();
         Stage stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
-        gl.display_settings_menu(LoadMap.HOME,stage);
+        gl.display_settings_menu(LoadMap.HOME);
     }
 
     // ==========================================================
-    // Methodes autres
+    // Methodes d'initialisation
     // ==========================================================
 
     /**
      * initialise la scene
      */
     public void initialize () {
-        Image settings_icon = new Image("pictures/settings_icon.png");
-        ImageView settingsIconView = new ImageView(settings_icon);
-        settings_btn.setGraphic(settingsIconView);
+        settings_btn.setGraphic(new ImageView(new Image("icons/"+ Settings.icon_color +"/settings_icon.png")));
+        game_icon.setImage(new Image("icons/"+ Settings.icon_color +"/arcade.png"));
     }
 
     /**
@@ -109,7 +106,7 @@ public class home_screenController implements Controller {
         // Acces au paramètres via ESC
         KeyCombination kc = new KeyCodeCombination(KeyCode.ESCAPE, KeyCombination.SHIFT_ANY);
         Runnable rn = ()-> settings_btn.fire();
-        settings_btn.getScene().getAccelerators().put(kc, rn);;
+        LoadMap.scene.getAccelerators().put(kc, rn);;
     }
 
 }

@@ -20,10 +20,9 @@ public class UnsaveAlert {
 
     /**
      * Pop up demandant si le joueur veut sauvegarder sa partie avant de quitter l'application
-     * @param stage
      * @throws InterruptedException
      */
-    public void exitGame(Stage stage) throws InterruptedException {
+    public void exitGame() throws InterruptedException {
         alert.setTitle("OLD'SAT");
         alert.setHeaderText("Vous allez quittez l'application.\nSouhaitez vous sauvegarder ?");
 
@@ -43,7 +42,7 @@ public class UnsaveAlert {
             }
 
             // fermeture de l'application
-            stage.close();
+            LoadMap.stage.close();
         }
     }
 
@@ -73,7 +72,7 @@ public class UnsaveAlert {
 
             // retour écran accueil
             LoadMap gl = new LoadMap();
-            gl.display_screen_from_id(1,stage);
+            gl.display_screen_from_id(LoadMap.HOME);
         }
     }
 }
