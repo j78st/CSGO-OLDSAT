@@ -3,6 +3,7 @@ package Interface.ViewController;
 import Interface.ScreenLoader.Controller;
 import Interface.ScreenLoader.LoadMap;
 import Interface.Settings.Settings;
+import Music.Systems.WorldBoxDisc;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
@@ -47,10 +48,13 @@ public class home_screenController implements Controller {
 
     /**
      * affiche l'ecran de lancement de partie
+     * Appui sur bouton JOUER
      * @param event
      */
     @FXML
     void display_game_launcher(ActionEvent event) throws IOException {
+        WorldBoxDisc.play("menuOpen");
+
         LoadMap gl = new LoadMap();
         gl.display_screen_from_id(LoadMap.LAUNCHER);
     }

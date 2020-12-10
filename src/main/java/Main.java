@@ -15,9 +15,6 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception{
 
-        // Récupération des paramètres
-        Settings.setSettingsFromFile();
-
         // Déclaration de la fenêtre utilisée pour l'application
         LoadMap.stage = primaryStage;
         FXMLLoader loader = new FXMLLoader();
@@ -39,8 +36,16 @@ public class Main extends Application {
     }
 
     public static void main(String[] args) {
-        WorldBoxDisc.init(); //Initialise le systeme de son
+
+        // Récupération des paramètres
+        Settings.setSettingsFromFile();
+        //Initialise le systeme de son
+        WorldBoxDisc.init();
+        WorldBoxDisc.setSoundFx(Settings.fx_volume);
+        WorldBoxDisc.setSoundBackground(Settings.bg_volume);
+
         launch(args);
+
     }
 
 }

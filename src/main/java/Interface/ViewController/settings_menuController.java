@@ -3,6 +3,7 @@ package Interface.ViewController;
 import Interface.ScreenLoader.Controller;
 import Interface.ScreenLoader.LoadMap;
 import Interface.Settings.Settings;
+import Music.Systems.WorldBoxDisc;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
@@ -123,7 +124,8 @@ public class settings_menuController implements Controller {
         fx_slider.valueProperty().addListener(new ChangeListener<Number>() {
             public void changed(ObservableValue<? extends Number> ov, Number old_val, Number new_val) {
 
-                System.out.println(new_val.doubleValue());
+                WorldBoxDisc.setSoundFx(new_val.doubleValue());
+                WorldBoxDisc.play("menuOpen");
 
             }
         });
