@@ -55,18 +55,20 @@ public class Action {
                 case 6: // utilisation de l'objet de numéro d'identification arg_consequence
                     Game.search_gear(this.consequence.get(i)[1]).use_gear();
                     break;
-                case 7: // résultat de l'énigme liée à la position du joueur
-                    if(Game.search_enigma(Game.player.position).check_solution(this.consequence.get(i)[1])) { // Si la solution proposée est la bonne
+                case 7: // affichage d'un nouveau texte (fonctionne aussi pour la demande d'indice)
+                    Game.search_room(Game.player.position).txt_evolve(Game.search_txt(this.consequence.get(i)[1])); // fait évoluer le texte de la salle dans laquelle le joueur se trouve en lui ajoutant le texte ayant pour id le code renseigné
+                    break;
+
+                    //case 8: // résultat de l'énigme liée à la position du joueur /!\ Les conséquences de l'énigme sont maintenant gérées dans la classe énigme
+                    /*if(Game.search_enigma(Game.player.position).check_solution(this.consequence.get(i)[1])) { // Si la solution proposée est la bonne
                        Game.search_enigma(Game.player.position).consequence(); // appelle les conséquences liées à la résolution de cette énigme
                        Game.search_room(Game.search_enigma(Game.player.position).neighbours[2]).search_access_enigma(Game.player.position).setDoable(false); // rend l'accès à cette énigme impossible
                        Game.player.move(Game.search_enigma(Game.player.position).neighbours[2]); // renvoie le joueur à l'écran précédent l'énigme
                     }else {
                         // mauvaise solution -> effet visuel / msg
                     }
-                    break;
-                case 8: // affichage d'un nouveau texte (fonctionne aussi pour la demande d'indice)
-                    Game.search_room(Game.player.position).txt_evolve(Game.search_txt(this.consequence.get(i)[1])); // fait évoluer le texte de la salle dans laquelle le joueur se trouve en lui ajoutant le texte ayant pour id le code renseigné
-                    break;
+                    break;*/
+
              }
         }
     }

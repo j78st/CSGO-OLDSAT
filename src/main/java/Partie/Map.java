@@ -39,7 +39,7 @@ Room room1_1_1 = new Room(2031,"url13",203,201,sounds_test); //vase sur table da
 //Enigme de la salle 102
 
 ArrayList<int[]> consequences_enigme1 = new ArrayList<>;
-consequences_enigme1 = {{4,0}};
+consequences_enigme1 = {{7,0}}; //où 7 code l'affichage de l'écran de endgame
 Enigma enigme1 = new Enigma(3011,"url13",301,102,2022,consequences_enigme1,sounds_test);
 
 
@@ -88,7 +88,7 @@ consequences_action2021 = {{1,101}};
 Action action2021 = new Action(2021,"On s'en fout du texte ici car flèche", consequences_action2021, 202, true); //retour à la salle 101
 
 ArrayList<int[]> consequences_action2022 = new ArrayList<>;
-consequences_action2022 = {{8,2022}};
+consequences_action2022 = {{7,2022}};
 Action action2022 = new Action(2022,"Essayer d'enfoncer la porte", consequences_action2022, 202, true); //mise à jour du texte
 
 ArrayList<int[]> consequences_action2023 = new ArrayList<>;
@@ -109,7 +109,7 @@ Action action1022 = new Action(1022,"Examiner le tableau", consequences_action10
 //Actions de l'énigme 301
 
 ArrayList<int[]> consequences_action3011 = new ArrayList<>;
-consequences_action3011 = {{8,3012}};
+consequences_action3011 = {{7,3012}};
 Action action3011 = new Action(3011,"Demander un indice", consequences_action3011, 301, true); //mise à jour du texte
 
 // /!\ Action de proposition à gérer /!\

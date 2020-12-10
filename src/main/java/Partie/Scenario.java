@@ -39,4 +39,12 @@ public class Scenario {
             "est nécessaire : quelle promo de l'enssat est nécessairement la meilleure?\"");
     public static Text_scenario room_301_2 = new Text_scenario(3012,"Indice : S'ils n'ont pas redoublé, " +
             "ils sont nés en 1999");
+
+    //Texte mauvaise réponse
+    public static Text_scenario erreur_404 = new Text_scenario(404,"Il semblerait que votre solution précédemment" +
+            "proposée ne soit pas la bonne");
+
+    //Texte proposition indice
+    public static Text_scenario erreur_405 = new Text_scenario(405,"Il semblerait que vous rencontriez quelques" +
+            "difficultés...peut être devriez-vous priez les dieux de l'ENSSAT pour obtenir un indice");
 }
