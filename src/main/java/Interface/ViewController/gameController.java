@@ -293,37 +293,45 @@ public class gameController implements Controller {
     }
 
     public void refreshRoom(){
-        if(Game.search_room(Game.search_room(game.player.position).getNeighbours()[1]) == null
+        if(Game.search_room(Game.search_room(game.player.position).getNeighbours()[0]) == null
                 || !Game.search_room(Game.search_room(game.player.position).getNeighbours()[0]).isAccess()){
             up_move_btn.getStylesheets().clear();
-            up_move_btn.getStylesheets().add("resources/CSS/unclickable.css");
+            up_move_btn.getStylesheets().add("CSS/unclickable.css");
+            up_move_btn.setDisable(true);
         } else {
             up_move_btn.getStylesheets().clear();
-            up_move_btn.getStylesheets().add("resources/CSS/"+Settings.theme+"/.css");
+            up_move_btn.getStylesheets().add("CSS/"+Settings.theme+"/.css");
+            up_move_btn.setDisable(false);
         }
         if(Game.search_room(Game.search_room(game.player.position).getNeighbours()[1]) == null
                 || !Game.search_room(Game.search_room(game.player.position).getNeighbours()[1]).isAccess()){
             right_move_btn.getStylesheets().clear();
-            right_move_btn.getStylesheets().add("resources/CSS/unclickable.css");
+            right_move_btn.getStylesheets().add("CSS/unclickable.css");
+            right_move_btn.setDisable(true);
         } else {
             right_move_btn.getStylesheets().clear();
-            right_move_btn.getStylesheets().add("resources/CSS/"+Settings.theme+"/.css");
+            right_move_btn.getStylesheets().add("CSS/"+Settings.theme+"/.css");
+            right_move_btn.setDisable(false);
         }
-        if(Game.search_room(Game.search_room(game.player.position).getNeighbours()[1]) == null
+        if(Game.search_room(Game.search_room(game.player.position).getNeighbours()[2]) == null
                 || !Game.search_room(Game.search_room(game.player.position).getNeighbours()[2]).isAccess()){
             down_move_btn.getStylesheets().clear();
-            down_move_btn.getStylesheets().add("resources/CSS/unclickable.css");
+            down_move_btn.getStylesheets().add("CSS/unclickable.css");
+            down_move_btn.setDisable(true);
         } else {
             down_move_btn.getStylesheets().clear();
-            down_move_btn.getStylesheets().add("resources/CSS/"+Settings.theme+"/.css");
+            down_move_btn.getStylesheets().add("CSS/"+Settings.theme+"/.css");
+            down_move_btn.setDisable(false);
         }
-        if(Game.search_room(Game.search_room(game.player.position).getNeighbours()[1]) == null
+        if(Game.search_room(Game.search_room(game.player.position).getNeighbours()[3]) == null
                 || !Game.search_room(Game.search_room(game.player.position).getNeighbours()[3]).isAccess()){
             left_move_btn.getStylesheets().clear();
-            left_move_btn.getStylesheets().add("resources/CSS/unclickable.css");
+            left_move_btn.getStylesheets().add("CSS/unclickable.css");
+            left_move_btn.setDisable(true);
         } else {
             left_move_btn.getStylesheets().clear();
-            left_move_btn.getStylesheets().add("resources/CSS/"+Settings.theme+"/.css");
+            left_move_btn.getStylesheets().add("CSS/"+Settings.theme+"/.css");
+            left_move_btn.setDisable(false);
         }
 
         // refresh du texte
@@ -355,7 +363,7 @@ public class gameController implements Controller {
      */
     public void refreshPicture(){
         String URL = Game.search_room(game.player.position).getPath_image();
-        illustration.setImage(new Image("resources/objects/key.png"));
+        illustration.setImage(new Image("objects/key.png"));
     }
 
     /**
@@ -371,17 +379,17 @@ public class gameController implements Controller {
         if (objects.get(0) != null){
             item_slot_1.setGraphic(new ImageView(new Image(objects.get(0).getURL_image())));
         } else {
-            item_slot_1.setGraphic(new ImageView(new Image("resources/icons"+Settings.icon_color+"/bag.png")));
+            item_slot_1.setGraphic(new ImageView(new Image("icons"+Settings.icon_color+"/bag.png")));
         }
         if (objects.get(1) != null){
             item_slot_2.setGraphic(new ImageView(new Image(objects.get(1).getURL_image())));
         } else {
-            item_slot_2.setGraphic(new ImageView(new Image("/resources/icons"+Settings.icon_color+"/bag.png")));
+            item_slot_2.setGraphic(new ImageView(new Image("/icons"+Settings.icon_color+"/bag.png")));
         }
         if (objects.get(2) != null){
             item_slot_3.setGraphic(new ImageView(new Image(objects.get(2).getURL_image())));
         } else {
-            item_slot_3.setGraphic(new ImageView(new Image("/resources/icons"+Settings.icon_color+"/bag.png")));
+            item_slot_3.setGraphic(new ImageView(new Image("/icons"+Settings.icon_color+"/bag.png")));
         }
     }
 }
