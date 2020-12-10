@@ -9,7 +9,7 @@ public class Player {
 
     public Player(String pseudo){
         this.pseudo = pseudo;
-        this.inventory =  new ArrayList<Gear>();
+        this.inventory = new ArrayList<>();
         this.position = 101;
     }
 
@@ -22,9 +22,10 @@ public class Player {
         if(this.inventory.size()< 3){
             this.inventory.add(gear);
             gear.set_actions_doable(true);
+            // màj affichage inventaire -> apparition de l'objet dans l'inventaire
             return true;
         }else{
-            // message "Inventaire plein"??
+            // message "Inventaire plein revenez plus tard" : popup
             return false;
         }
     }
@@ -32,5 +33,6 @@ public class Player {
     public void remove_inventory(Gear gear){ // Supprime un objet de l'inventaire du joueur
         this.inventory.remove(gear);
         gear.set_actions_doable(false);
+        // màj affichage inventaire -> disparition de l'objet dans l'inventaire
     }
 }

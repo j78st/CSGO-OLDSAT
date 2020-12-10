@@ -18,7 +18,7 @@ public class Room {
         this.neighbours[1] = neighbour_east;
         this.neighbours[2] = neighbour_south;
         this.neighbours[3] = neighbour_west;
-        this.actions = new ArrayList<Action>();
+        this.actions = new ArrayList<>();
         this.sounds = sounds;
         Game.map.add(this); // ajoute la salle à la liste des salles/sous-salles/énigmes disponibles dans le jeu
     }
@@ -31,7 +31,7 @@ public class Room {
         this.neighbours[1]=-1;
         this.neighbours[2]=origin_room; // un seul voisin qui est la salle depuis laquelle cette sous-salle est accessible
         this.neighbours[3]=-1;
-        this.actions = new ArrayList<Action>();
+        this.actions = new ArrayList<>();
         this.sounds = sounds;
         Game.map.add(this); // ajoute la salle à la liste des salles/sous-salles/énigmes disponibles dans le jeu
     }
@@ -54,5 +54,6 @@ public class Room {
 
     public void txt_evolve(String more_txt){ // rajoute du texte au texte à afficher avec la salle
         this.txt = this.txt + more_txt;
+        // refresh texte
     }
 }

@@ -27,7 +27,7 @@ public class Scenario {
             " d'enfoncer cette porte... \n");
 
     // Texte salle 102
-    public static Text_scenario room_102_1 = new Text_scenario(1021,"Éclairée par un puit de lumière, " +
+    public static Text_scenario room_102_1 = new Text_scenario(1021,"Éclairée par un puits de lumière, " +
             "cette salle est moins lugubre que la précédente " +
             "mais étonnamment vous vous y sentez plus mal, comme si quelqu'un ou quelque chose vous observait. \n" +
             "La pièce est presque vide. Il n'y a qu'un tableau ornant le mur face à vous et la porte dans votre dos");

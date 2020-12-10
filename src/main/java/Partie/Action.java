@@ -40,9 +40,11 @@ public class Action {
                     break;
                 case 2: // dévérouillage d'une action de numéro d'identification arg_conséquence
                     Game.search_action(this.consequence.get(i)[1]).setDoable(true);
+                    //refresh visuel action dispo
                     break;
                 case 3: // vérouillage d'une action de numéro d'identification arg_conséquence
                     Game.search_action(this.consequence.get(i)[1]).setDoable(false);
+                    //refresh visuel action dispo
                     break;
                 case 4: // ajout de l'objet de numéro d'identification arg_consequence à l'inventaire
                     if(Game.player.add_inventory(Game.search_gear(this.consequence.get(i)[1]))){ // Si l'ajout à l'inventaire se passe bien (il reste de la place dans l'inventaire)
