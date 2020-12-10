@@ -16,7 +16,7 @@ public class Gear {
         this.description = description;
         this.max_usage = max_usage;
         this.current_usage = 0;
-        this.actions = new ArrayList<Action>();
+        this.actions = new ArrayList<>();
         Game.gears.add(this); // ajoute l'objet à la liste des objets disponibles dans le jeu
     }
 

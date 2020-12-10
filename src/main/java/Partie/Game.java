@@ -24,42 +24,52 @@ public class Game {
     }
 
     public static Action search_action(int id){ // recherche une action à partir de son numéro d'identification
-        int i=0;
-        while(actions.get(i).id!=id){
-            i++;
+        Action res = null;
+        for(int i=0;i<actions.size();i++){
+            if(actions.get(i).id == id) {
+                res = actions.get(i);
+            }
         }
-        return actions.get(i);
+        return res;
     }
 
     public static Gear search_gear(int id){ // recherche un objet à partir de son numéro d'identification
-        int i=0;
-        while(gears.get(i).id!=id){
-            i++;
+        Gear res = null;
+        for(int i=0;i<gears.size();i++){
+            if(gears.get(i).id == id) {
+                res = gears.get(i);
+            }
         }
-        return gears.get(i);
+        return res;
     }
 
     public static Room search_room(int nb){ // recherche une salle à partir de son numéro d'identification
-        int i=0;
-        while(map.get(i).nb!=nb){
-            i++;
+        Room res = null;
+        for(int i=0;i<map.size();i++){
+            if(map.get(i).nb == nb) {
+                res = map.get(i);
+            }
         }
-        return map.get(i);
+        return res;
     }
 
     public static Enigma search_enigma(int nb){ // recherche une énigme à partir de son numéro d'identification
-        int i=0;
-        while(enigmas.get(i).nb!=nb){
-            i++;
+        Enigma res = null;
+        for(int i=0;i<enigmas.size();i++){
+            if(enigmas.get(i).nb == nb) {
+                res = enigmas.get(i);
+            }
         }
-        return enigmas.get(i);
+        return res;
     }
 
     public static String search_txt(int id){ // recherche une salle à partir de son numéro d'identification
-        int i=0;
-        while(scenario.get(i).id_text!=id){
-            i++;
+        String res = null;
+        for(int i=0;i<scenario.size();i++){
+            if(scenario.get(i).id_text == id) {
+                res = scenario.get(i).text;
+            }
         }
-        return scenario.get(i).text;
+        return res;
     }
 }
