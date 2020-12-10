@@ -1,5 +1,7 @@
 package Partie;
 
+import Interface.ViewController.gameController;
+
 import java.util.ArrayList;
 
 public class Action {
@@ -35,7 +37,14 @@ public class Action {
         this.doable = doable;
     }
 
+    public boolean getDoable() {
+        return doable;
+    }
+
     public void Consequence(){
+
+        gameController engine = new gameController();
+
         for(int i =0;i<consequence.size();i++){
             switch (this.consequence.get(i)[0]) {
                 case 1: // mouvement vers la salle de numéro d'identification arg_conséquence
@@ -43,11 +52,11 @@ public class Action {
                     break;
                 case 2: // dévérouillage d'une action de numéro d'identification arg_conséquence
                     Game.search_action(this.consequence.get(i)[1]).setDoable(true);
-                    //refresh visuel action dispo
+                    engine.refreshAction();
                     break;
                 case 3: // vérouillage d'une action de numéro d'identification arg_conséquence
                     Game.search_action(this.consequence.get(i)[1]).setDoable(false);
-                    //refresh visuel action dispo
+                    engine.refreshAction();
                     break;
                 case 4: // ajout de l'objet de numéro d'identification arg_consequence à l'inventaire
                     if(Game.player.add_inventory(Game.search_gear(this.consequence.get(i)[1]))){ // Si l'ajout à l'inventaire se passe bien (il reste de la place dans l'inventaire)
@@ -63,16 +72,12 @@ public class Action {
                 case 7: // affichage d'un nouveau texte (fonctionne aussi pour la demande d'indice)
                     Game.search_room(Game.player.position).txt_evolve(Game.search_txt(this.consequence.get(i)[1])); // fait évoluer le texte de la salle dans laquelle le joueur se trouve en lui ajoutant le texte ayant pour id le code renseigné
                     break;
-
-                    //case 8: résultat de l'énigme liée à la position du joueur /!\ Les conséquences de l'énigme sont maintenant gérées dans la classe énigme
-                    /*if(Game.search_enigma(Game.player.position).check_solution(this.consequence.get(i)[1])) { // Si la solution proposée est la bonne
-                       Game.search_enigma(Game.player.position).consequence(); // appelle les conséquences liées à la résolution de cette énigme
-                       Game.search_room(Game.search_enigma(Game.player.position).neighbours[2]).search_access_enigma(Game.player.position).setDoable(false); // rend l'accès à cette énigme impossible
-                       Game.player.move(Game.search_enigma(Game.player.position).neighbours[2]); // renvoie le joueur à l'écran précédent l'énigme
-                    }else {
-                        // mauvaise solution -> effet visuel / msg
-                    }
-                    break;*/
+                case 8: // rend une salle inaccessible
+                    Game.search_room(this.consequence.get(i)[1]).setAccess(false);
+                    break;
+                case 9: // rend une salle accessible
+                    Game.search_room(this.consequence.get(i)[1]).setAccess(true);
+                break;
 
              }
         }

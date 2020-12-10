@@ -49,7 +49,7 @@ public class Game {
 
     public static Room search_room(int nb){ // recherche une salle à partir de son numéro d'identification
         Room res = null;
-        if (!map.isEmpty()){
+        if (!map.isEmpty() && nb != -1){
             for(int i=0;i<map.size();i++){
                 if(map.get(i).nb == nb) {
                     res = map.get(i);

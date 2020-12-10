@@ -8,6 +8,8 @@ import Interface.Settings.Settings;
 import Music.Systems.Son;
 import Music.Systems.WorldBoxDisc;
 import Partie.Action;
+import Partie.Game;
+import Partie.Gear;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -25,6 +27,7 @@ import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 public class gameController implements Controller {
 
@@ -32,6 +35,7 @@ public class gameController implements Controller {
     // Déclaration objets
     // ==========================================================
 
+    public static Game game;
     private ObservableList<Action> actionObservableList;
     private boolean gamePaused = false;
 
@@ -44,6 +48,9 @@ public class gameController implements Controller {
 
     @FXML
     private ImageView illustration;
+
+    @FXML
+    private Text scenario;
 
     // inventaire -----------------------------------------------
     @FXML
@@ -102,7 +109,7 @@ public class gameController implements Controller {
      */
     @FXML
     void go_down(ActionEvent event) {
-        System.out.println("bas");
+        game.player.move(Game.search_room(game.player.position).getNeighbours()[2]);
     }
 
     /**
@@ -111,7 +118,7 @@ public class gameController implements Controller {
      */
     @FXML
     void go_left(ActionEvent event) {
-        System.out.println("gauche");
+        game.player.move(Game.search_room(game.player.position).getNeighbours()[3]);
     }
 
     /**
@@ -120,7 +127,7 @@ public class gameController implements Controller {
      */
     @FXML
     void go_right(ActionEvent event) {
-        System.out.println("droite");
+        game.player.move(Game.search_room(game.player.position).getNeighbours()[1]);;
     }
 
     /**
@@ -129,16 +136,17 @@ public class gameController implements Controller {
      */
     @FXML
     void go_up(ActionEvent event) {
-        System.out.println("haut");
+        game.player.move(Game.search_room(game.player.position).getNeighbours()[0]);
     }
 
     /**
+     * Lors de l'appui sur le bouton VALIDER ACTION
      * Execute l'action selectionnée
      * @param event
      */
     @FXML
     void do_selected_action(ActionEvent event) {
-
+        action_list.getSelectionModel().getSelectedItem().Consequence();
     }
 
     /**
@@ -242,16 +250,8 @@ public class gameController implements Controller {
         up_move_btn.setGraphic(new ImageView(new Image("/icons/"+ Settings.icon_color +"/arrow_up.png")));
         right_move_btn.setGraphic(new ImageView(new Image("/icons/"+ Settings.icon_color +"/arrow_right.png")));
 
-        // chargement des actions
-        actionObservableList = FXCollections.observableArrayList();
-
-        // vvv /!\ action de test ici vvv
-        for (int i = 0; i<3; i++) {
-            //actionObservableList.add("description action");
-        }
-
-        action_list.setItems(actionObservableList);
-        action_list.setCellFactory(param -> new ActionListCell());
+        // init visuel
+        refreshRoom();
     }
 
     /**
@@ -292,5 +292,96 @@ public class gameController implements Controller {
 
     }
 
+    public void refreshRoom(){
+        if(Game.search_room(Game.search_room(game.player.position).getNeighbours()[1]) == null
+                || !Game.search_room(Game.search_room(game.player.position).getNeighbours()[0]).isAccess()){
+            up_move_btn.getStylesheets().clear();
+            up_move_btn.getStylesheets().add("resources/CSS/unclickable.css");
+        } else {
+            up_move_btn.getStylesheets().clear();
+            up_move_btn.getStylesheets().add("resources/CSS/"+Settings.theme+"/.css");
+        }
+        if(Game.search_room(Game.search_room(game.player.position).getNeighbours()[1]) == null
+                || !Game.search_room(Game.search_room(game.player.position).getNeighbours()[1]).isAccess()){
+            right_move_btn.getStylesheets().clear();
+            right_move_btn.getStylesheets().add("resources/CSS/unclickable.css");
+        } else {
+            right_move_btn.getStylesheets().clear();
+            right_move_btn.getStylesheets().add("resources/CSS/"+Settings.theme+"/.css");
+        }
+        if(Game.search_room(Game.search_room(game.player.position).getNeighbours()[1]) == null
+                || !Game.search_room(Game.search_room(game.player.position).getNeighbours()[2]).isAccess()){
+            down_move_btn.getStylesheets().clear();
+            down_move_btn.getStylesheets().add("resources/CSS/unclickable.css");
+        } else {
+            down_move_btn.getStylesheets().clear();
+            down_move_btn.getStylesheets().add("resources/CSS/"+Settings.theme+"/.css");
+        }
+        if(Game.search_room(Game.search_room(game.player.position).getNeighbours()[1]) == null
+                || !Game.search_room(Game.search_room(game.player.position).getNeighbours()[3]).isAccess()){
+            left_move_btn.getStylesheets().clear();
+            left_move_btn.getStylesheets().add("resources/CSS/unclickable.css");
+        } else {
+            left_move_btn.getStylesheets().clear();
+            left_move_btn.getStylesheets().add("resources/CSS/"+Settings.theme+"/.css");
+        }
 
+        // refresh du texte
+        refreshText();
+        // refresh de l'image
+        refreshPicture();
+        // refresh des actions
+        refreshAction();
+    }
+
+    /**
+     * Rafraichit la liste des actions disponibles
+     */
+    public void refreshAction(){
+        // chargement des actions
+        ArrayList<Action> list = Game.search_room(game.player.position).getActions();
+        actionObservableList = FXCollections.observableArrayList();
+        for (int i = 0; i<list.size(); i++) {
+            if (list.get(i).getDoable()) {
+                actionObservableList.add(list.get(i));
+            }
+        }
+        action_list.setItems(actionObservableList);
+        action_list.setCellFactory(param -> new ActionListCell());
+    }
+
+    /**
+     * Rafraichit l'image associée à la salle
+     */
+    public void refreshPicture(){
+        String URL = Game.search_room(game.player.position).getPath_image();
+        illustration.setImage(new Image("resources/objects/key.png"));
+    }
+
+    /**
+     * Rafraichit le texte à afficher
+     */
+    public void refreshText(){
+        String room_text = Game.search_room(game.player.position).getTxt();
+        scenario.setText(room_text);
+    }
+
+    public void refreshInventory() {
+        ArrayList<Gear> objects = game.player.getInventory();
+        if (objects.get(0) != null){
+            item_slot_1.setGraphic(new ImageView(new Image(objects.get(0).getURL_image())));
+        } else {
+            item_slot_1.setGraphic(new ImageView(new Image("resources/icons"+Settings.icon_color+"/bag.png")));
+        }
+        if (objects.get(1) != null){
+            item_slot_2.setGraphic(new ImageView(new Image(objects.get(1).getURL_image())));
+        } else {
+            item_slot_2.setGraphic(new ImageView(new Image("/resources/icons"+Settings.icon_color+"/bag.png")));
+        }
+        if (objects.get(2) != null){
+            item_slot_3.setGraphic(new ImageView(new Image(objects.get(2).getURL_image())));
+        } else {
+            item_slot_3.setGraphic(new ImageView(new Image("/resources/icons"+Settings.icon_color+"/bag.png")));
+        }
+    }
 }

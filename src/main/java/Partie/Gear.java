@@ -9,8 +9,10 @@ public class Gear {
     int max_usage; // nombre max d'usage de l'objet (-1 si infini)
     int current_usage; // nombre d'usage déjà fait de l'objet
     ArrayList<Action> actions; // liste des actions nécessitant l'objet pour être effectuées
+    String URL_image;
 
-    public Gear(int id,String name,String description,int max_usage){
+    public Gear(int id,String name,String description,int max_usage, String url_image){
+        this.URL_image = url_image;
         this.id = id;
         this.name = name;
         this.description = description;
@@ -24,7 +26,6 @@ public class Gear {
         this.current_usage++;
         if(current_usage == max_usage){
             Game.player.remove_inventory(this);
-            //message "vous avez perdu l'objet ..." ??
         }
     }
 
@@ -32,6 +33,34 @@ public class Gear {
         for(int i =0;i<this.actions.size();i++){
             this.actions.get(i).setDoable(bool);
         }
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public int getMax_usage() {
+        return max_usage;
+    }
+
+    public int getCurrent_usage() {
+        return current_usage;
+    }
+
+    public ArrayList<Action> getActions() {
+        return actions;
+    }
+
+    public String getURL_image() {
+        return URL_image;
     }
 
 }

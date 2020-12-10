@@ -1,0 +1,14 @@
+.button {
+    /* --- forme et couleur --- */
+    -fx-background-color: #2C3E50;
+    -fx-background-radius: 20;
+
+    /* --- bordure du bouton --- */
+    -fx-border-width: 2;
+    -fx-border-radius: 20;
+    -fx-border-color: #2C3E50;
+
+    /* --- texte du bouton --- */
+    -fx-text-alignment: center;
+    -fx-text-fill: #2C3E50;
+}

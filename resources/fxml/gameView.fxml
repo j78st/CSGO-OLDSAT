@@ -63,6 +63,11 @@
                <children>
                   <AnchorPane fx:id="story_pane" styleClass="GamePane">
                      <children>
+                        <BorderPane layoutY="-12.369791030883789" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <center>
+                              <Text fx:id="scenario" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+                           </center>
+                        </BorderPane>
                         <HBox alignment="CENTER" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
                            <children>
                               <HBox alignment="CENTER" prefHeight="100.0" prefWidth="350.0" spacing="20.0">

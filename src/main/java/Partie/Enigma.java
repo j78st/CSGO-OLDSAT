@@ -43,14 +43,20 @@ public class Enigma extends Room{
                 case 3: // vérouillage d'une action de numéro d'identification consequence[1]
                     Game.search_action(this.consequence.get(i)[1]).setDoable(false);
                     break;
-                case 4: // suppression de l'objet de numéro d'identification consequence[1] de l'inventaire
+                case 5: // suppression de l'objet de numéro d'identification consequence[1] de l'inventaire
                     Game.player.remove_inventory(Game.search_gear(this.consequence.get(i)[1]));
                     break;
-                case 5: // utilisation de l'objet de numéro d'identification consequence[1]
+                case 6: // utilisation de l'objet de numéro d'identification consequence[1]
                     Game.search_gear(this.consequence.get(i)[1]).use_gear();
                     break;
-                case 6: // affichage d'un nouveau texte consequence[i][1] dans la salle consequence[i][2]
+                case 7: // affichage d'un nouveau texte consequence[i][1] dans la salle consequence[i][2]
                     Game.search_room(this.consequence.get(i)[2]).txt_evolve(Game.search_txt(this.consequence.get(i)[1]));
+                    break;
+                case 8: // rend une salle inaccessible
+                    Game.search_room(this.consequence.get(i)[1]).setAccess(false);
+                    break;
+                case 9: // rend une salle accessible
+                    Game.search_room(this.consequence.get(i)[1]).setAccess(true);
                     break;
             }
         }
