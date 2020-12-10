@@ -4,8 +4,8 @@ import java.io.File;
 
 public class SaveSlot {
 
-    int number;
-    String pseudo;
+    public int number;
+    public String pseudo;
     File file;
 
     public SaveSlot() {

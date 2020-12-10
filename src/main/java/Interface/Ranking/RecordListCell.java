@@ -1,12 +1,13 @@
 package Interface.Ranking;
 
 import Interface.Settings.Settings;
+import Score.Score;
 import javafx.geometry.Insets;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListCell;
 import javafx.scene.layout.HBox;
 
-public class RecordListCell extends ListCell<Record> {
+public class RecordListCell extends ListCell<Score> {
 
     HBox hbox = new HBox();
     Label lr = new Label(); // label avec le rang du joueur au classement
@@ -45,7 +46,7 @@ public class RecordListCell extends ListCell<Record> {
 
     }
 
-    public void updateItem (Record record, boolean empty) {
+    public void updateItem (Score record, boolean empty) {
 
         super.updateItem(record, empty);
 
@@ -55,7 +56,7 @@ public class RecordListCell extends ListCell<Record> {
         if (record != null && !empty) {
             lr.setText(record.rank + " - ");
             lp.setText(record.pseudo);
-            ls.setText(String.valueOf(record.score));
+            ls.setText(String.valueOf(record.value));
             setGraphic(hbox);
         }
 

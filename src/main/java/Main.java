@@ -9,6 +9,8 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
+import java.io.IOException;
+
 public class Main extends Application {
 
 
@@ -32,21 +34,23 @@ public class Main extends Application {
         LoadMap.scene.getStylesheets().add("/CSS/"+ Settings.theme +".css");
 
         primaryStage.setScene(LoadMap.scene);
+        primaryStage.setTitle("OLD'SAT");
         primaryStage.show();
     }
 
-    public static void main(String[] args) throws InterruptedException {
+    public static void main(String[] args) throws InterruptedException, IOException {
 
         // Récupération des paramètres
         Settings.setSettingsFromFile();
 
         //Initialise le systeme de son
         WorldBoxDisc.init();
-        Thread.sleep(3000);
+        Thread.sleep(1000);
 
         //WorldBoxDisc.setSoundFx(Settings.fx_volume);
         //WorldBoxDisc.setSoundBackground(Settings.bg_volume);
 
+        // lancement application
         launch(args);
 
     }

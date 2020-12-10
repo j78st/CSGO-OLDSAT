@@ -3,6 +3,8 @@ package Interface.ViewController;
 import Interface.ScreenLoader.Controller;
 import Interface.ScreenLoader.LoadMap;
 import Interface.Settings.Settings;
+import Music.Systems.Son;
+import Music.Systems.WorldBoxDisc;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
@@ -33,6 +35,7 @@ public class game_launcherController implements Controller {
     // ==========================================================
 
     /**
+     * Lors de l'appui sur le bouton RETOUR
      * Affiche le menu d'accueil de l'application
      * @param event
      * @throws IOException
@@ -41,9 +44,11 @@ public class game_launcherController implements Controller {
     void go_back_to_home_screen(ActionEvent event) throws IOException {
         LoadMap gl = new LoadMap();
         gl.display_screen_from_id(LoadMap.HOME);
+        WorldBoxDisc.play(Son.menuClose);
     }
 
     /**
+     * Lors de l'appui sur le bouton NOUVELLE PARTIE
      * Affiche le formulaire de creation d'une partie
      * @param event
      */
@@ -51,9 +56,11 @@ public class game_launcherController implements Controller {
     void display_new_game_form(ActionEvent event) throws IOException {
         LoadMap gl = new LoadMap();
         gl.display_screen_from_id(LoadMap.NEW_GAME_FORM);
+        WorldBoxDisc.play(Son.menuOpen);
     }
 
     /**
+     * Lors de l'appui sur le bouton CHARGEMENT PARTIE
      * Affiche l'ecran de chargement des sauvegardes existantes
      * @param event
      */
@@ -61,17 +68,19 @@ public class game_launcherController implements Controller {
     void display_save_loader(ActionEvent event) throws IOException {
         LoadMap gl = new LoadMap();
         gl.display_screen_from_id(LoadMap.LOAD_SAVE);
+        WorldBoxDisc.play(Son.menuOpen);
     }
 
     /**
+     * Lors de l'appui sur le bouton PARAMETRES
      * Affiche le menu des paramètres
      * @param event
      */
     @FXML
     void display_settings_screen(ActionEvent event) throws IOException {
         LoadMap gl = new LoadMap();
-        Stage stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
         gl.display_settings_menu(LoadMap.LAUNCHER);
+        WorldBoxDisc.play(Son.menuOpen);
     }
 
     // ==========================================================

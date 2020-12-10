@@ -1,15 +1,16 @@
 package Interface.ViewController;
 
-import Interface.Save.SaveListCell;
+import Interface.Ranking.SaveListCell;
 import Interface.Save.SaveSlot;
 import Interface.ScreenLoader.Controller;
 import Interface.ScreenLoader.LoadMap;
 import Interface.Settings.Settings;
+import Music.Systems.Son;
+import Music.Systems.WorldBoxDisc;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
 import javafx.scene.image.Image;
@@ -17,7 +18,6 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyCodeCombination;
 import javafx.scene.input.KeyCombination;
-import javafx.stage.Stage;
 
 import java.io.IOException;
 
@@ -42,6 +42,7 @@ public class load_saveController implements Controller {
     // ==========================================================
 
     /**
+     * Lors de l'appui sur le bouton RETOUR
      *  affiche l'ecran de lancement de partir
      * @param event
      * @throws IOException
@@ -50,17 +51,19 @@ public class load_saveController implements Controller {
     void go_back_to_launch_screen(ActionEvent event) throws IOException {
         LoadMap gl = new LoadMap();
         gl.display_screen_from_id(LoadMap.LAUNCHER);
+        WorldBoxDisc.play(Son.menuClose);
     }
 
     /**
+     * Lors de l'appui sur le bouton PARAMETRES
      * affiche le menu des paramètres
      * @param event
      */
     @FXML
     void go_to_settings_menu(ActionEvent event) throws IOException {
         LoadMap gl = new LoadMap();
-        Stage stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
         gl.display_settings_menu(LoadMap.LOAD_SAVE);
+        WorldBoxDisc.play(Son.menuOpen);
     }
 
     /**
@@ -69,7 +72,7 @@ public class load_saveController implements Controller {
      */
     @FXML
     void launch_game(ActionEvent event) {
-
+        WorldBoxDisc.play(Son.valid);
     }
 
     // ==========================================================

@@ -3,6 +3,7 @@ package Interface.ViewController;
 import Interface.ScreenLoader.Controller;
 import Interface.ScreenLoader.LoadMap;
 import Interface.Settings.Settings;
+import Music.Systems.Son;
 import Music.Systems.WorldBoxDisc;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
@@ -61,6 +62,7 @@ public class settings_menuController implements Controller {
     void go_back_to_previous_screen(ActionEvent event) throws IOException {
         LoadMap gl = new LoadMap();
         gl.display_screen_from_id(previous_screen_ID);
+        WorldBoxDisc.play(Son.menuClose);
     }
 
     // ==========================================================
@@ -117,7 +119,7 @@ public class settings_menuController implements Controller {
         fx_slider.valueProperty().addListener(new ChangeListener<Number>() {
             public void changed(ObservableValue<? extends Number> ov, Number old_val, Number new_val) {
 
-                Settings.fx_volume = new_val.doubleValue();
+                Settings.fx_volume = new_val.doubleValue()/20;
                 WorldBoxDisc.setSoundFx(Settings.fx_volume);
 
             }
@@ -125,7 +127,7 @@ public class settings_menuController implements Controller {
         bg_slider.valueProperty().addListener(new ChangeListener<Number>() {
             public void changed(ObservableValue<? extends Number> ov, Number old_val, Number new_val) {
 
-                Settings.bg_volume = new_val.doubleValue();
+                Settings.bg_volume = new_val.doubleValue()/20;
                 WorldBoxDisc.setSoundBackground(Settings.bg_volume);
 
             }

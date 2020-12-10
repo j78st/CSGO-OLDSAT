@@ -4,10 +4,13 @@ import java.util.ArrayList;
 
 public class Action {
     int id; // numéro d'identification de l'action
-    String text; // description textuelle de l'action
+    public String text; // description textuelle de l'action
     boolean doable; // action accessible pour le joueur ou non, à analyser pour savoir si l'action doit être affichée ou non
     ArrayList<int[]> consequence; // liste de couples définissant les conséquence de l'action, forme (type de conséquence, argument nécessaire à la réalisation de cette conséquence)
 
+    public String getText() {
+        return text;
+    }
 
     public Action(int id,String text, ArrayList<int[]> consequence, int room, boolean doable) { //Action "générale", doable à false pour les déplacement vers salle vérouillées au départ par exemple
         this.id=id;

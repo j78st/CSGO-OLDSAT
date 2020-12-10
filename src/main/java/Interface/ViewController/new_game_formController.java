@@ -1,22 +1,22 @@
 package Interface.ViewController;
 
-import Interface.Save.SaveListCell;
+import Interface.Ranking.SaveListCell;
 import Interface.Save.SaveSlot;
 import Interface.ScreenLoader.Controller;
 import Interface.ScreenLoader.LoadMap;
 import Interface.Settings.Settings;
+import Music.Systems.Son;
+import Music.Systems.WorldBoxDisc;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.Node;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyCodeCombination;
 import javafx.scene.input.KeyCombination;
-import javafx.stage.Stage;
 
 import java.io.IOException;
 
@@ -46,21 +46,33 @@ public class new_game_formController implements Controller {
     @FXML
     private ImageView profile_icon;
 
+    /**
+     * Lors de l'appui sur le bouton RETOUR
+     * @param event
+     * @throws IOException
+     */
     @FXML
     void go_back_to_launch_screen(ActionEvent event) throws IOException {
         LoadMap gl = new LoadMap();
         gl.display_screen_from_id(LoadMap.LAUNCHER);
+        WorldBoxDisc.play(Son.menuClose);
     }
 
+    /**
+     * Lors de l'appui sur le bouton PARAMETRES
+     * @param event
+     * @throws IOException
+     */
     @FXML
     void go_to_settings_menu(ActionEvent event) throws IOException {
         LoadMap gl = new LoadMap();
-        Stage stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
         gl.display_settings_menu(LoadMap.NEW_GAME_FORM);
+        WorldBoxDisc.play(Son.menuOpen);
     }
 
 
     /**
+     * Lors de l'appui sur le bouton CREER PARTIE
      * Crée une nouvelle partie sur l'emplacement de sauvegarde sélectionné
      * avec le pseudo et difficulté sélectionnés.
      * @param event
@@ -96,6 +108,7 @@ public class new_game_formController implements Controller {
         // vvv LANCEMENT DE LA PARTIE ICI vvv
         LoadMap gl = new LoadMap();
         gl.display_screen_from_id(LoadMap.GAME);
+        WorldBoxDisc.play(Son.valid);
 
     }
 

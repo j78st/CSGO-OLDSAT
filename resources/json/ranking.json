@@ -1,0 +1,64 @@
+{
+  "ranking": [
+    {
+      "rank": 1,
+      "pseudo": "oui",
+      "time_left": 100,
+      "value": 1000
+    },
+    {
+      "rank": 2,
+      "pseudo": "pseudo 0",
+      "time_left": 98,
+      "value": 980
+    },
+    {
+      "rank": 3,
+      "pseudo": "pseudo 4",
+      "time_left": 98,
+      "value": 980
+    },
+    {
+      "rank": 4,
+      "pseudo": "oui",
+      "time_left": 90,
+      "value": 900
+    },
+    {
+      "rank": 5,
+      "pseudo": "pseudo 5",
+      "time_left": 79,
+      "value": 790
+    },
+    {
+      "rank": 6,
+      "pseudo": "pseudo 9",
+      "time_left": 72,
+      "value": 720
+    },
+    {
+      "rank": 7,
+      "pseudo": "oui",
+      "time_left": 70,
+      "value": 700
+    },
+    {
+      "rank": 8,
+      "pseudo": "oui",
+      "time_left": 40,
+      "value": 400
+    },
+    {
+      "rank": 9,
+      "pseudo": "pseudo 7",
+      "time_left": 26,
+      "value": 260
+    },
+    {
+      "rank": 10,
+      "pseudo": "pseudo 3",
+      "time_left": 19,
+      "value": 190
+    }
+  ]
+}

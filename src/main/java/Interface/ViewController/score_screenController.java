@@ -1,15 +1,17 @@
 package Interface.ViewController;
 
-import Interface.Ranking.Record;
 import Interface.Ranking.RecordListCell;
 import Interface.ScreenLoader.Controller;
 import Interface.ScreenLoader.LoadMap;
 import Interface.Settings.Settings;
+import Music.Systems.Son;
+import Music.Systems.WorldBoxDisc;
+import Score.Score;
+import Serialization.Memoire;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
 import javafx.scene.image.Image;
@@ -17,8 +19,9 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyCodeCombination;
 import javafx.scene.input.KeyCombination;
-import javafx.stage.Stage;
+import Score.Ranking;
 
+import java.io.File;
 import java.io.IOException;
 
 public class score_screenController implements Controller {
@@ -27,7 +30,7 @@ public class score_screenController implements Controller {
     // Classement et autres objets
     // ==========================================================
 
-    private ObservableList<Record> recordObservableList;
+    private ObservableList<Score> recordObservableList;
 
     // ==========================================================
     // Objets FXML
@@ -40,7 +43,7 @@ public class score_screenController implements Controller {
     private Button return_btn;
 
     @FXML
-    private ListView<Record> score_list;
+    private ListView<Score> score_list;
 
     @FXML
     private ImageView rank_icon;
@@ -50,6 +53,7 @@ public class score_screenController implements Controller {
     // ==========================================================
 
     /**
+     * Lors de l'appui sur le bouton RETOUR
      * affiche l'ecran d'accueil de l'application
      * @param event
      */
@@ -57,9 +61,11 @@ public class score_screenController implements Controller {
     void go_back_to_home_screen(ActionEvent event) throws IOException {
         LoadMap gl = new LoadMap();
         gl.display_screen_from_id(LoadMap.HOME);
+        WorldBoxDisc.play(Son.menuClose);
     }
 
     /**
+     * Lors de l'appui sur le bouton PARAMETRES
      * Affiche le menu des paramètre depuis la fenetre courante
      * @param event
      * @throws IOException
@@ -68,6 +74,7 @@ public class score_screenController implements Controller {
     void display_settings_screen(ActionEvent event) throws IOException {
         LoadMap gl = new LoadMap();
         gl.display_settings_menu(LoadMap.SCORES);
+        WorldBoxDisc.play(Son.menuOpen);
     }
 
     // ==========================================================
@@ -75,7 +82,7 @@ public class score_screenController implements Controller {
     // ==========================================================
 
     /**
-     * initialise la vue lors de l'appel de la methode @display_screen_from_id
+     * initialise de la scene + memoristaion ancien écran
      */
     public void initialize () {
         // icones
@@ -83,14 +90,17 @@ public class score_screenController implements Controller {
         return_btn.setGraphic(new ImageView(new Image("icons/"+ Settings.icon_color +"/return.png")));
         rank_icon.setImage(new Image("icons/"+ Settings.icon_color+ "/ranking.png"));
 
-        // chargement du classement
+
+        // Récupération du classement depuis les fichiers
+        Ranking ranking = new Ranking();
+        Memoire m = new Memoire();
+        ranking = (Ranking) m.read_data(new File("resources/json/ranking.json"));
+
+        // affichage du classement
         recordObservableList = FXCollections.observableArrayList();
-
-        // vvv /!\ classement de test ici vvv
-        for (int i = 0; i<20; i++) {
-            recordObservableList.add(new Record(i+1, "pseudo "+i, 100+i));
+        for (int i = 0; i<10; i++) {
+            recordObservableList.add(ranking.ranking[i]);
         }
-
         score_list.setItems(recordObservableList);
         score_list.setCellFactory(param -> new RecordListCell());
     }

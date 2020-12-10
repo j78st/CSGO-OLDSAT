@@ -3,6 +3,7 @@ package Interface.ViewController;
 import Interface.ScreenLoader.Controller;
 import Interface.ScreenLoader.LoadMap;
 import Interface.Settings.Settings;
+import Music.Systems.Son;
 import Music.Systems.WorldBoxDisc;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -16,6 +17,7 @@ import javafx.scene.input.KeyCombination;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+
 
 public class home_screenController implements Controller {
 
@@ -56,7 +58,7 @@ public class home_screenController implements Controller {
     void display_game_launcher(ActionEvent event) throws IOException {
         LoadMap gl = new LoadMap();
         gl.display_screen_from_id(LoadMap.LAUNCHER);
-        WorldBoxDisc.play("menuOpen");
+        WorldBoxDisc.play(Son.menuOpen);
     }
 
     /**
@@ -68,6 +70,7 @@ public class home_screenController implements Controller {
     void display_multiplayer_mode(ActionEvent event) throws IOException {
         LoadMap gl = new LoadMap();
         gl.display_screen_from_id(LoadMap.GAME);
+        WorldBoxDisc.play(Son.menuOpen);
     }
 
     /**
@@ -79,6 +82,7 @@ public class home_screenController implements Controller {
     void display_score_screen(ActionEvent event) throws IOException {
         LoadMap gl = new LoadMap();
         gl.display_screen_from_id(LoadMap.SCORES);
+        WorldBoxDisc.play(Son.menuOpen);
     }
 
     /**
@@ -91,6 +95,7 @@ public class home_screenController implements Controller {
         LoadMap gl = new LoadMap();
         Stage stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
         gl.display_settings_menu(LoadMap.HOME);
+        WorldBoxDisc.play(Son.menuOpen);
     }
 
     // ==========================================================

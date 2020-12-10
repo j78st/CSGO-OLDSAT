@@ -1,13 +1,20 @@
 package Interface.ViewController;
 
+import Interface.Ranking.ActionListCell;
+import Interface.Ranking.RecordListCell;
 import Interface.ScreenLoader.Controller;
 import Interface.ScreenLoader.LoadMap;
 import Interface.Settings.Settings;
+import Music.Systems.Son;
+import Music.Systems.WorldBoxDisc;
+import Partie.Action;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
-import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
+import javafx.scene.control.ListView;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
@@ -25,7 +32,8 @@ public class gameController implements Controller {
     // Déclaration objets
     // ==========================================================
 
-    boolean gamePaused = false;
+    private ObservableList<Action> actionObservableList;
+    private boolean gamePaused = false;
 
     // zones de l'écran -----------------------------------------
     @FXML
@@ -66,7 +74,7 @@ public class gameController implements Controller {
 
     // affichage actions posibles -------------------------------
     @FXML
-    private ComboBox<?> action_list;
+    private ListView<Action> action_list;
 
     @FXML
     private Button pause_btn;
@@ -88,26 +96,56 @@ public class gameController implements Controller {
     // Methodes liées au déroulement du jeu
     // ==========================================================
 
+    /**
+     * Lors de l'appui sur le bouton ALLER EN BAS
+     * @param event
+     */
     @FXML
     void go_down(ActionEvent event) {
         System.out.println("bas");
     }
 
+    /**
+     * Lors de l'appui sur le bouton ALLER A GAUCHE
+     * @param event
+     */
     @FXML
     void go_left(ActionEvent event) {
         System.out.println("gauche");
     }
 
+    /**
+     * Lors de l'appui sur le bouton ALLER A DROITE
+     * @param event
+     */
     @FXML
     void go_right(ActionEvent event) {
         System.out.println("droite");
     }
 
+    /**
+     * Lors de l'appui sur le bouton ALLER EN HAUT
+     * @param event
+     */
     @FXML
     void go_up(ActionEvent event) {
         System.out.println("haut");
     }
 
+    /**
+     * Execute l'action selectionnée
+     * @param event
+     */
+    @FXML
+    void do_selected_action(ActionEvent event) {
+
+    }
+
+    /**
+     * Lors de l'appui sur le bouton ECHAPE/PAUSE
+     * Mets en pause la partie en cours et affiche le menu de pause
+     * @param event
+     */
     @FXML
     void pause_game(ActionEvent event) {
         // démasquage du menu pause et activation des boutons
@@ -123,6 +161,7 @@ public class gameController implements Controller {
     // ==========================================================
 
     /**
+     * Lors de l'appui sur le bouton REPRENDRE
      * enlève le menu pause et relance la partie
      * @param event
      */
@@ -139,6 +178,7 @@ public class gameController implements Controller {
     }
 
     /**
+     * Lors de l'appui sur le bouton PARAMETRES
      * sauvegarde la partie en cours dans l'emplacement attribué
      * @param event
      */
@@ -146,9 +186,11 @@ public class gameController implements Controller {
     void display_settings_menu(ActionEvent event) throws IOException {
         LoadMap gl = new LoadMap();
         gl.display_settings_menu(LoadMap.GAME);
+        WorldBoxDisc.play(Son.menuOpen);
     }
 
     /**
+     * Lors de l'appui sur le bouton REVENIR A L'ACCUEIL
      * quitte la partie et revient au menu d'accueil. Propose une sauvegarde de la partiie en cours
      * @param event
      */
@@ -162,9 +204,11 @@ public class gameController implements Controller {
         // Redirection vers écran principal
         LoadMap gl = new LoadMap();
         gl.display_screen_from_id(LoadMap.HOME);
+        WorldBoxDisc.play(Son.valid);
     }
 
     /**
+     * Lors de l'appui sur le bouton QUITTER L'APPLICATION
      * ferme l'application. Propose une sauvegarde de la partie en cours
      * @param event
      */
@@ -198,10 +242,17 @@ public class gameController implements Controller {
         up_move_btn.setGraphic(new ImageView(new Image("/icons/"+ Settings.icon_color +"/arrow_up.png")));
         right_move_btn.setGraphic(new ImageView(new Image("/icons/"+ Settings.icon_color +"/arrow_right.png")));
 
-        //image d'illustration
-        
-    }
+        // chargement des actions
+        actionObservableList = FXCollections.observableArrayList();
 
+        // vvv /!\ action de test ici vvv
+        for (int i = 0; i<3; i++) {
+            //actionObservableList.add("description action");
+        }
+
+        action_list.setItems(actionObservableList);
+        action_list.setCellFactory(param -> new ActionListCell());
+    }
 
     /**
      * Création des raccourcis
