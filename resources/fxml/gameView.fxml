@@ -67,7 +67,7 @@
                            <center>
                               <AnchorPane BorderPane.alignment="CENTER">
                                  <children>
-                                    <Label fx:id="narration" prefHeight="362.0" prefWidth="356.0" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="15.0" />
+                                    <Label fx:id="narration" alignment="TOP_LEFT" prefHeight="362.0" prefWidth="356.0" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="15.0" />
                                  </children>
                               </AnchorPane>
                            </center>
