@@ -6,6 +6,8 @@ import Interface.Settings.Engine;
 import Interface.Settings.Settings;
 import Music.Systems.Son;
 import Music.Systems.WorldBoxDisc;
+import Serialization.Memoire;
+import Serialization.Serial_settings;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
@@ -17,6 +19,7 @@ import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyCodeCombination;
 import javafx.scene.input.KeyCombination;
 
+import java.io.File;
 import java.io.IOException;
 
 public class settings_menuController implements Controller {
@@ -61,6 +64,9 @@ public class settings_menuController implements Controller {
      */
     @FXML
     void go_back_to_previous_screen(ActionEvent event) throws IOException {
+        Memoire m = new Memoire();
+        m.write_data(new Serial_settings(), new File("resources/json/settings.json"));
+
         LoadMap gl = new LoadMap();
         gl.display_screen_from_id(previous_screen_ID);
         WorldBoxDisc.play(Son.menuClose);

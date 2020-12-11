@@ -46,17 +46,16 @@ public class Main extends Application {
 
     public static void main(String[] args) throws InterruptedException, IOException {
 
-        // Récupération des paramètres
-        Settings.setSettingsFromFile();
-
         //Initialise le systeme de son
         WorldBoxDisc.init();
         Thread.sleep(1000);
 
-        Engine oui = new Engine();
+        // Récupération des paramètres
+        Settings.setSettingsFromFile();
+        WorldBoxDisc.setSoundFx(Settings.fx_volume);
+        WorldBoxDisc.setSoundBackground(Settings.bg_volume);
 
-        //WorldBoxDisc.setSoundFx(Settings.fx_volume);
-        //WorldBoxDisc.setSoundBackground(Settings.bg_volume);
+        Engine oui = new Engine();
 
         // lancement application
         launch(args);

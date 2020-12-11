@@ -31,7 +31,7 @@ public class Deserializer implements JsonDeserializer<Serializable> {
 
         // Récupération des paramètres
         else if (json.getAsJsonObject().has("t")) {
-            return context.deserialize(json, Settings.class);
+            return context.deserialize(json, Serial_settings.class);
         }
 
         // Récupération des sauvegardes
