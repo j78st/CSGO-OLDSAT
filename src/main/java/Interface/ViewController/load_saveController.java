@@ -5,6 +5,7 @@ import Interface.Save.SaveSlot;
 import Interface.Save.Saves;
 import Interface.ScreenLoader.Controller;
 import Interface.ScreenLoader.LoadMap;
+import Interface.Settings.Engine;
 import Interface.Settings.Settings;
 import Music.Systems.Son;
 import Music.Systems.WorldBoxDisc;
@@ -14,7 +15,9 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.control.ButtonType;
 import javafx.scene.control.ListView;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -76,14 +79,28 @@ public class load_saveController implements Controller {
      */
     @FXML
     void launch_game(ActionEvent event) throws IOException {
-        SaveSlot save_to_load = save_list.getSelectionModel().getSelectedItem();
-        Serial_game srg = save_to_load.srgame;
-        srg.setGameFromMemory();
+        boolean saveSlotSelected = false;
+        SaveSlot save_to_load = null;
+        
+        // Récupère l'emplacement de sauvegarde pour stocker la partie
+        if (save_list.getSelectionModel().getSelectedItem()!=null) {
+            save_to_load = save_list.getSelectionModel().getSelectedItem();
+            saveSlotSelected = true;
+        } else {
+            Alert alert = new Alert(Alert.AlertType.WARNING, "Selectionnez une partie à charger !", ButtonType.OK);
+            alert.showAndWait();
+        }
+        if (saveSlotSelected) {
+            Serial_game srg = save_to_load.srgame;
+            gameController.game =  srg.createGameFromMemory();
+            Engine.engine.refreshRoom();
 
-        // lancement
-        LoadMap gl = new LoadMap();
-        gl.display_screen_from_id(LoadMap.GAME);
-        WorldBoxDisc.play(Son.valid);
+            // lancement
+            LoadMap gl = new LoadMap();
+            gl.display_screen_from_id(LoadMap.GAME);
+            WorldBoxDisc.play(Son.valid);
+        }
+        
     }
 
     // ==========================================================

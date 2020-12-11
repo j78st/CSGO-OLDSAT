@@ -86,18 +86,22 @@ public class new_game_formController implements Controller {
      */
     @FXML
     void create_game(ActionEvent event) throws IOException {
+        boolean saveSlotSelected = false;
+        boolean nameWritten = false;
+
         String pseudo = "";
         int difficulty;
         SaveSlot save = new SaveSlot();
 
         // récupère le pseudo si il est renseigné et teste sa validité
-        try {
-            pseudo = name_selector.getText();
-        } catch (Exception e) {
-            Alert alert = new Alert(Alert.AlertType.WARNING, "Inscrivez votre nom !", ButtonType.OK);
-            alert.showAndWait();
+        pseudo = name_selector.getText();
+        if (pseudo.equals("")) {
+            nameWritten = false;
+            Alert nameAlert = new Alert(Alert.AlertType.WARNING, "Inscrivez votre nom !", ButtonType.OK);
+            nameAlert.showAndWait();
+        } else {
+            nameWritten = true;
         }
-
 
         // récupère la difficulté de la nouvelle partie
         switch ((String)difficulty_selector.getValue()) {
@@ -111,31 +115,32 @@ public class new_game_formController implements Controller {
         // Récupère l'emplacement de sauvegarde pour stocker la partie
         if (save_list.getSelectionModel().getSelectedItem()!=null) {
             save = save_list.getSelectionModel().getSelectedItem();
+            saveSlotSelected = true;
         } else {
+            saveSlotSelected = false;
             Alert alert = new Alert(Alert.AlertType.WARNING, "Selectionnez un emplacement de sauvegarde !", ButtonType.OK);
             alert.showAndWait();
         }
 
-        // Création de la partie
-        Game game = creer_partie(pseudo, difficulty);
-        gameController.game = game;
+        // SI le formulaire est correcte on crée la partie, SINON rien tant que pas correct
+        if ( nameWritten && saveSlotSelected) {
+            // === Création de la partie === //
+            Game game = creer_partie(pseudo, difficulty);
+            gameController.game = game;
+            Engine.engine.refreshRoom();
 
+            // === Sauvegarde de la partie === //
+            Memoire m = new Memoire();
+            Saves saves = (Saves) m.read_data(new File("resources/json/saves.json"));
+            save.srgame = new Serial_game();
+            saves.setSave(save.no,save);
+            m.write_data(saves, new File("resources/json/saves.json"));
 
-
-        Engine.engine.refreshRoom();
-
-        // Sauvegarde de la partie
-        Memoire m = new Memoire();
-        Saves saves = (Saves) m.read_data(new File("resources/json/saves.json"));
-        save.srgame = new Serial_game();
-        saves.setSave(save.no,save);
-        m.write_data(saves, new File("resources/json/saves.json"));
-
-        // Lancement de la partie
-        LoadMap gl = new LoadMap();
-        gl.display_screen_from_id(LoadMap.GAME);
-        WorldBoxDisc.play(Son.valid);
-
+            // === Lancement de la partie === //
+            LoadMap gl = new LoadMap();
+            gl.display_screen_from_id(LoadMap.GAME);
+            WorldBoxDisc.play(Son.valid);
+        }
     }
 
     @Override
@@ -192,20 +197,17 @@ public class new_game_formController implements Controller {
         Room room1_1_1 = new Room(2031,"pictures/Vase.png",203,201,sounds_test); //vase sur table dans salle 1
 
 
-//Enigme de la salle 102
-
+        //Enigme de la salle 102
         ArrayList<int[]> consequences_enigme1 = new ArrayList<>();
         consequences_enigme1.add(new int[]{10}); // fin de partie
         Enigma enigme1 = new Enigma(3011,"pictures/Tableau.png",301,102,2022,consequences_enigme1,sounds_test);
 
 
-//Création des objets
-
+        //Création des objets
         Gear objet1 = new Gear(1,"clef","Clef ancienne, sert probablement pour déverouiller une serrure",1, "objects/key.png");
 
 
-//Actions de la salle 101
-
+        //Actions de la salle 101
         ArrayList<int[]> consequences_action1012 = new ArrayList<>();
         consequences_action1012.add(new int[]{1,201});
         Action action1012 = new Action(1012,"Examiner la table", consequences_action1012, 101, true); //déplacement vers table, 101 à 201
@@ -215,15 +217,13 @@ public class new_game_formController implements Controller {
         Action action1013 = new Action(1013,"Examiner la porte", consequences_action1013, 101, true); //déplacement vers la porte, 101 à 202
 
 
-//Actions de la salle 201 (table)
-
+        //Actions de la salle 201 (table)
         ArrayList<int[]> consequences_action2012 = new ArrayList<>();
         consequences_action2012.add(new int[]{1,203});
         Action action2012 = new Action(2012,"Examiner le vase", consequences_action2012, 201, true); //déplacement vers le vase, 201 à 203
 
 
-//Actions de la salle 203 (vase)
-
+        //Actions de la salle 203 (vase)
         ArrayList<int[]> consequences_action2031 = new ArrayList<>();
         consequences_action2031.add(new int[]{4,1});
         consequences_action2031.add(new int[]{3,2012});
@@ -232,8 +232,7 @@ public class new_game_formController implements Controller {
         Action action2031 = new Action(2031,"Récupérer la clef", consequences_action2031, 203, true); // ajout de la clef à l'inventaire, déplacement vers salle précédente (201) puis mise à jour du texte de cette salle  et verrouillage de l'action permettant d'examiner le vase
 
 
-//Actions de la salle 202 (porte)
-
+        //Actions de la salle 202 (porte)
         ArrayList<int[]> consequences_action2022 = new ArrayList<>();
         consequences_action2022.add(new int[]{7,2022});
         consequences_action2022.add(new int[]{3,2022});
@@ -248,20 +247,19 @@ public class new_game_formController implements Controller {
         Action action2023 = new Action(2023,"Utiliser la clef", consequences_action2023, 202, 1); //ajoute une utilisation à la clef, dévérouille l'action permetant d'accéder à 102 depuis 101, bloque action d'examiner la porte depuis 101, ajoute texte à salle 101, retour dans 101
 
 
-//Actions de la salle 102
-
+        //Actions de la salle 102
         ArrayList<int[]> consequences_action1022 = new ArrayList<>();
         consequences_action1022.add(new int[]{1,301});
         consequences_action1022.add(new int[]{10});
         Action action1022 = new Action(1022,"Examiner le tableau", consequences_action1022, 102, true); //déplacement vers table, 102 à 301
 
-//Actions de l'énigme 301
-
+        //Actions de l'énigme 301
         ArrayList<int[]> consequences_action3011 = new ArrayList<>();
         consequences_action3011.add(new int[]{7,3012});
         consequences_action3011.add(new int[]{3,3011});
         Action action3011 = new Action(3011,"Demander un indice", consequences_action3011, 301, true); //mise à jour du texte
 
+        // Son ambiance
         WorldBoxDisc.pause(Son.feu);
         WorldBoxDisc.play(Son.wind);
 

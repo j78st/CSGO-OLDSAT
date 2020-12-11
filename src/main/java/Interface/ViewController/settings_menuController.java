@@ -141,9 +141,10 @@ public class settings_menuController implements Controller {
         });
 
         // restauration des paramètres courants
+        Settings.setSettingsFromFile();
         // volumes
-        fx_slider.setValue(Settings.fx_volume);
-        bg_slider.setValue(Settings.bg_volume);
+        fx_slider.setValue(Settings.fx_volume*20);
+        bg_slider.setValue(Settings.bg_volume*20);
         // theme
         if (theme1_btn.getText().equals(Settings.theme)){
             theme1_btn.setSelected(true);

@@ -1,5 +1,6 @@
 package Interface.Settings;
 
+import Music.Systems.WorldBoxDisc;
 import Serialization.Memoire;
 import Serialization.Serial_settings;
 
@@ -32,5 +33,9 @@ public class Settings {
         bg_volume = settings.getBg_volume();
         icon_color = settings.getIcon_color();
         theme = settings.getTheme();
+
+        // application correctif son
+        WorldBoxDisc.setSoundBackground(bg_volume);
+        WorldBoxDisc.setSoundFx(fx_volume);
     }
 }

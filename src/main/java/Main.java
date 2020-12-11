@@ -52,8 +52,6 @@ public class Main extends Application {
 
         // Récupération des paramètres
         Settings.setSettingsFromFile();
-        WorldBoxDisc.setSoundFx(Settings.fx_volume);
-        WorldBoxDisc.setSoundBackground(Settings.bg_volume);
 
         Engine oui = new Engine();
 

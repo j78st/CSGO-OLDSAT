@@ -25,14 +25,16 @@ public class Serial_game {
         this.timer = Game.timer;
     }
 
-    public void setGameFromMemory() {
-        Game.player = player;
-        Game.map = map;
-        Game.enigmas = enigmas;
-        Game.actions = actions;
-        Game.gears = gears;
-        Game.scenario = scenario;
-        Game.difficulty = difficulty;
-        Game.timer = timer;
+    public Game createGameFromMemory() {
+        Game game = new Game();
+        game.player = player;
+        game.map = map;
+        game.enigmas = enigmas;
+        game.actions = actions;
+        game.gears = gears;
+        game.scenario = scenario;
+        game.difficulty = difficulty;
+        game.timer = timer;
+        return game;
     }
 }

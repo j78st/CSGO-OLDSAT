@@ -225,13 +225,7 @@ public class gameController implements Controller {
     void go_to_home_screen(ActionEvent event) throws InterruptedException, IOException {
         // Message d'alerte sur la sauvegarde
         UnsaveAlert alert = new UnsaveAlert();
-        Stage stage = (Stage)((Button)event.getSource()).getScene().getWindow();
-        alert.homeScreen(stage);
-
-        // Redirection vers écran principal
-        LoadMap gl = new LoadMap();
-        gl.display_screen_from_id(LoadMap.HOME);
-        WorldBoxDisc.play(Son.valid);
+        alert.homeScreen();
     }
 
     /**
@@ -240,7 +234,7 @@ public class gameController implements Controller {
      * @param event
      */
     @FXML
-    void exit_app(ActionEvent event) throws InterruptedException {
+    void exit_app(ActionEvent event) throws InterruptedException, IOException {
         UnsaveAlert alert = new UnsaveAlert();
         alert.exitGame();
     }
@@ -283,6 +277,8 @@ public class gameController implements Controller {
      */
     @Override
     public void setShortcut() {
+        refreshInventory();
+
         // Clear shortcut
         LoadMap.scene.getAccelerators().clear();
 

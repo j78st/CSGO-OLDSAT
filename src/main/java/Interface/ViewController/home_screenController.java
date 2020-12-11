@@ -8,7 +8,9 @@ import Music.Systems.WorldBoxDisc;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.control.ButtonType;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
@@ -68,9 +70,9 @@ public class home_screenController implements Controller {
      */
     @FXML
     void display_multiplayer_mode(ActionEvent event) throws IOException {
-        LoadMap gl = new LoadMap();
-        gl.display_screen_from_id(LoadMap.GAME);
-        WorldBoxDisc.play(Son.menuOpen);
+        Alert alert = new Alert(Alert.AlertType.WARNING, "Work in progress", ButtonType.OK);
+        alert.showAndWait();
+        WorldBoxDisc.play(Son.erreur);
     }
 
     /**
