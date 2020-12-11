@@ -1,6 +1,6 @@
 package Interface.ViewController;
 
-import Interface.Ranking.RecordListCell;
+import Interface.CellRenderer.RecordListCell;
 import Interface.ScreenLoader.Controller;
 import Interface.ScreenLoader.LoadMap;
 import Interface.Settings.Settings;

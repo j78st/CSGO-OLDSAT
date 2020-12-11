@@ -1,4 +1,4 @@
-package Interface.Ranking;
+package Interface.CellRenderer;
 
 import Interface.Save.SaveSlot;
 import Interface.Settings.Settings;
@@ -51,8 +51,13 @@ public class SaveListCell extends ListCell<SaveSlot> {
         setGraphic(null);
 
         if (save != null && !empty) {
-            ln.setText("Emplacement " + save.number + " : ");
-            lp.setText(save.pseudo);
+            ln.setText("Emplacement " + save.no + " : ");
+            if (save.srgame!=null) {
+                lp.setText(save.srgame.player.getPseudo());
+            } else {
+                lp.setText("Vide");
+            }
+
             setGraphic(hbox);
         }
 

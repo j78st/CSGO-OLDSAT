@@ -1,12 +1,15 @@
 package Interface.ViewController;
 
-import Interface.Ranking.SaveListCell;
+import Interface.CellRenderer.SaveListCell;
 import Interface.Save.SaveSlot;
+import Interface.Save.Saves;
 import Interface.ScreenLoader.Controller;
 import Interface.ScreenLoader.LoadMap;
 import Interface.Settings.Settings;
 import Music.Systems.Son;
 import Music.Systems.WorldBoxDisc;
+import Serialization.Memoire;
+import Serialization.Serial_game;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -19,6 +22,7 @@ import javafx.scene.input.KeyCodeCombination;
 import javafx.scene.input.KeyCombination;
 import Partie.*;
 
+import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 
@@ -83,7 +87,7 @@ public class new_game_formController implements Controller {
     @FXML
     void create_game(ActionEvent event) throws IOException {
         String pseudo = "";
-        String difficulty;
+        int difficulty;
         SaveSlot save = new SaveSlot();
 
         // récupère le pseudo si il est renseigné et teste sa validité
@@ -94,8 +98,15 @@ public class new_game_formController implements Controller {
             alert.showAndWait();
         }
 
+
         // récupère la difficulté de la nouvelle partie
-        difficulty = difficulty_selector.getPromptText();
+        switch ((String)difficulty_selector.getValue()) {
+            case "Facile": difficulty = 0; break;
+            case "Normal" : difficulty = 1; break;
+            case "Difficile" : difficulty = 2; break;
+            default:
+                throw new IllegalStateException("Unexpected value: " + difficulty_selector.getPromptText());
+        }
 
         // récupère l'emplacement de sauvegarde pour stocker la partie
         try {
@@ -105,13 +116,18 @@ public class new_game_formController implements Controller {
             alert.showAndWait();
         }
 
-        // vvv REMPLACEMENT DU FICHIER DE SAUVEGARDE ICI   vvv
-
         // Création de la partie
+        Game game = creer_partie(pseudo, difficulty);
+        gameController.game = game;
+        save.srgame = new Serial_game(game.getDifficulty(), game.getTimer());
 
-        creer_partie();
+        // Sauvegarde de la partie
+        Memoire m = new Memoire();
+        Saves saves = (Saves) m.read_data(new File("resources/json/saves.json"));
+        saves.setSave(save.no,save);
+        m.write_data(saves, new File("resources/json/saves.json"));
 
-        // vvv LANCEMENT DE LA PARTIE ICI vvv
+        // Lancement de la partie
         LoadMap gl = new LoadMap();
         gl.display_screen_from_id(LoadMap.GAME);
         WorldBoxDisc.play(Son.valid);
@@ -137,7 +153,7 @@ public class new_game_formController implements Controller {
 
             // ======= vvv /!\ LISTE DE SAUVEGARDE TEST vvv =======
             for (int i = 0; i<10; i++) {
-                saveObservableList.add(new SaveSlot(i,"pseudo "+i));
+                saveObservableList.add(new SaveSlot());
             }
             // ====================================================
 
@@ -156,11 +172,11 @@ public class new_game_formController implements Controller {
         Runnable rn = ()-> settings_btn.fire();
         LoadMap.scene.getAccelerators().put(kc, rn);
     }
+    
+    public Game creer_partie(String pseudo, int difficulty){
 
-    public void creer_partie(){
-
-        Player player1 = new Player("joueur_test");
-        Game game_test = new Game(player1,0);
+        Player player1 = new Player(pseudo);
+        Game game_test = new Game(player1,difficulty);
 
         Scenario scenar = new Scenario();
 
@@ -242,7 +258,7 @@ public class new_game_formController implements Controller {
         consequences_action3011.add(new int[]{3,3011});
         Action action3011 = new Action(3011,"Demander un indice", consequences_action3011, 301, true); //mise à jour du texte
 
-        gameController.game = game_test;
+        return game_test;
     }
 
 }

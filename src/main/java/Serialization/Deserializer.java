@@ -1,5 +1,7 @@
 package Serialization;
 
+import Interface.Save.SaveSlot;
+import Interface.Save.Saves;
 import Interface.Settings.Settings;
 import Partie.Game;
 import Score.Ranking;
@@ -10,6 +12,7 @@ import com.google.gson.JsonParseException;
 
 import java.io.Serializable;
 import java.lang.reflect.Type;
+import java.util.ArrayList;
 
 public class Deserializer implements JsonDeserializer<Serializable> {
 
@@ -27,13 +30,13 @@ public class Deserializer implements JsonDeserializer<Serializable> {
         }
 
         // Récupération des paramètres
-        else if (json.getAsJsonObject().has("difficulty")) {
-            return context.deserialize(json, Game.class);
+        else if (json.getAsJsonObject().has("t")) {
+            return context.deserialize(json, Settings.class);
         }
 
-        // Récupération d'un autre truc
+        // Récupération des sauvegardes
         else {
-            return context.deserialize(json, Settings.class);
+            return context.deserialize(json, Saves.class);
         }
     }
 }

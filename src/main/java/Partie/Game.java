@@ -9,8 +9,12 @@ public class Game {
     public static ArrayList<Action> actions; // liste de toutes les actions du jeu
     public static ArrayList<Gear> gears; // liste de tous les objets du jeu
     public static ArrayList<Text_scenario> scenario; // liste de tous les textes utilisés dans le jeu
-    int difficulty; // difficulté choisie pour la partie => action sur le temps?
-    int timer;
+    public static int difficulty; // difficulté choisie pour la partie => action sur le temps?
+    public static int timer;
+
+    public Game(){
+
+    }
 
     public Game(Player player, int difficulty) {
         Game.player = player;
@@ -81,5 +85,37 @@ public class Game {
             }
         }
         return res;
+    }
+
+    public static Player getPlayer() {
+        return player;
+    }
+
+    public static ArrayList<Room> getMap() {
+        return map;
+    }
+
+    public static ArrayList<Enigma> getEnigmas() {
+        return enigmas;
+    }
+
+    public static ArrayList<Action> getActions() {
+        return actions;
+    }
+
+    public static ArrayList<Gear> getGears() {
+        return gears;
+    }
+
+    public static ArrayList<Text_scenario> getScenario() {
+        return scenario;
+    }
+
+    public int getDifficulty() {
+        return difficulty;
+    }
+
+    public int getTimer() {
+        return timer;
     }
 }

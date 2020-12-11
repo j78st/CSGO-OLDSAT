@@ -1,12 +1,15 @@
 package Interface.ViewController;
 
-import Interface.Ranking.SaveListCell;
+import Interface.CellRenderer.SaveListCell;
 import Interface.Save.SaveSlot;
+import Interface.Save.Saves;
 import Interface.ScreenLoader.Controller;
 import Interface.ScreenLoader.LoadMap;
 import Interface.Settings.Settings;
 import Music.Systems.Son;
 import Music.Systems.WorldBoxDisc;
+import Serialization.Memoire;
+import Serialization.Serial_game;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -19,6 +22,7 @@ import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyCodeCombination;
 import javafx.scene.input.KeyCombination;
 
+import java.io.File;
 import java.io.IOException;
 
 public class load_saveController implements Controller {
@@ -71,7 +75,14 @@ public class load_saveController implements Controller {
      * @param event
      */
     @FXML
-    void launch_game(ActionEvent event) {
+    void launch_game(ActionEvent event) throws IOException {
+        SaveSlot save_to_load = save_list.getSelectionModel().getSelectedItem();
+        Serial_game srg = save_to_load.srgame;
+        srg.setGameFromMemory();
+
+        // lancement
+        LoadMap gl = new LoadMap();
+        gl.display_screen_from_id(LoadMap.GAME);
         WorldBoxDisc.play(Son.valid);
     }
 
@@ -87,12 +98,12 @@ public class load_saveController implements Controller {
 
         // mise en place de la liste des sauvegarde
         saveObservableList = FXCollections.observableArrayList();
+        Memoire m = new Memoire();
+        Saves saves = (Saves) m.read_data(new File("resources/json/saves.json"));
 
-        // ======= vvv /!\ LISTE DE SAUVEGARDE TEST vvv =======
         for (int i = 0; i<10; i++) {
-            saveObservableList.add(new SaveSlot(i,"pseudo "+i));
+            saveObservableList.add(saves.getSave(i));
         }
-        // ====================================================
 
         save_list.setItems(saveObservableList);
         save_list.setCellFactory(param -> new SaveListCell());

@@ -1,20 +1,21 @@
 package Interface.Save;
 
-import java.io.File;
+
+import Partie.Game;
+import Serialization.Serial_game;
 
 public class SaveSlot {
 
-    public int number;
-    public String pseudo;
-    File file;
+    public int no;
+    public Serial_game srgame;
 
     public SaveSlot() {
 
     }
 
-    public SaveSlot(int n, String pseudo) {
-        this.number = n;
-        this.pseudo = pseudo;
+    public SaveSlot(int no, Serial_game game) {
+       this.srgame = game;
+       this.no = no;
     }
 
 

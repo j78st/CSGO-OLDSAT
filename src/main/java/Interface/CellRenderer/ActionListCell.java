@@ -1,4 +1,4 @@
-package Interface.Ranking;
+package Interface.CellRenderer;
 
 import Interface.Settings.Settings;
 import Partie.Action;
