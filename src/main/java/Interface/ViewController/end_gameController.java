@@ -64,7 +64,6 @@ public class end_gameController implements Controller {
 
     @Override
     public void setShortcut() {
-        // Clear shortcut
-        LoadMap.scene.getAccelerators().clear();
+
     }
 }
