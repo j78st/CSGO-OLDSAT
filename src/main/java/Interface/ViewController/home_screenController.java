@@ -108,6 +108,8 @@ public class home_screenController implements Controller {
     public void initialize () {
         settings_btn.setGraphic(new ImageView(new Image("icons/"+ Settings.icon_color +"/settings_icon.png")));
         game_icon.setImage(new Image("icons/"+ Settings.icon_color +"/arcade.png"));
+        WorldBoxDisc.play(Son.feu);
+        WorldBoxDisc.pause(Son.wind);
     }
 
     /**

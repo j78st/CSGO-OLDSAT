@@ -262,6 +262,9 @@ public class new_game_formController implements Controller {
         consequences_action3011.add(new int[]{3,3011});
         Action action3011 = new Action(3011,"Demander un indice", consequences_action3011, 301, true); //mise à jour du texte
 
+        WorldBoxDisc.pause(Son.feu);
+        WorldBoxDisc.play(Son.wind);
+
         return game_test;
     }
 
