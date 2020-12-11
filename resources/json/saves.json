@@ -12,7 +12,7 @@
           {
             "access": true,
             "txt": "Vous vous tenez au milieu d\u0027une salle. L\u0027atmosphère y est pesante. Il n\u0027y a aucune fenêtre et vous n\u0027êtes éclairé que par une lueur mystérieuse dont vous ne parvenez pas à déterminer la provenance. \nA votre droite se trouve une table sur laquelle vous pouvez distinguer un vase et un bout de papier. Face à vous, il y a une porte. \n",
-            "path_image": "url1",
+            "path_image": "pictures/Salle1.png",
             "nb": 101,
             "neighbours": [
               102,
@@ -49,7 +49,7 @@
           {
             "access": false,
             "txt": "Éclairée par un puits de lumière, cette salle est moins lugubre que la précédente mais étonnamment vous vous y sentez plus mal, comme si quelqu\u0027un ou quelque chose vous observait. \nLa pièce est presque vide. Il n\u0027y a qu\u0027un tableau ornant le mur face à vous et la porte dans votre dos",
-            "path_image": "url2",
+            "path_image": "pictures/Salle2.png",
             "nb": 102,
             "neighbours": [
               -1,
@@ -75,7 +75,7 @@
           {
             "access": true,
             "txt": "Vous voyez une note sur la table. Dessus, une main tremblotante a écrit : \"Sortez vite de là, ils arrivent et ils ne veulent pas de vous ici...\" \nAu centre de la table, il y a un vase bleu clair semblant très ancien. \n",
-            "path_image": "url11",
+            "path_image": "pictures/Table.png",
             "nb": 201,
             "neighbours": [
               -1,
@@ -101,7 +101,7 @@
           {
             "access": true,
             "txt": "La porte est fermée à double tour. \nElle semble cependant ancienne, peut-être ne résistera-t-elle pas à votre épaule \n",
-            "path_image": "url12",
+            "path_image": "pictures/Porte.png",
             "nb": 202,
             "neighbours": [
               -1,
@@ -158,7 +158,7 @@
           {
             "access": true,
             "txt": "Vous regardez dans le vase, vous voyez une clef au fond de celui-ci.",
-            "path_image": "url13",
+            "path_image": "pictures/Vase.png",
             "nb": 203,
             "neighbours": [
               -1,
@@ -496,6 +496,489 @@
       "srgame": {
         "player": {
           "pseudo": "Alex",
+          "inventory": [],
+          "position": 101
+        },
+        "map": [
+          {
+            "access": true,
+            "txt": "Vous vous tenez au milieu d\u0027une salle. L\u0027atmosphère y est pesante. Il n\u0027y a aucune fenêtre et vous n\u0027êtes éclairé que par une lueur mystérieuse dont vous ne parvenez pas à déterminer la provenance. \nA votre droite se trouve une table sur laquelle vous pouvez distinguer un vase et un bout de papier. Face à vous, il y a une porte. \n",
+            "path_image": "url1",
+            "nb": 101,
+            "neighbours": [
+              102,
+              -1,
+              -1,
+              -1
+            ],
+            "actions": [
+              {
+                "id": 1012,
+                "text": "Examiner la table",
+                "doable": true,
+                "consequence": [
+                  [
+                    1,
+                    201
+                  ]
+                ]
+              },
+              {
+                "id": 1013,
+                "text": "Examiner la porte",
+                "doable": true,
+                "consequence": [
+                  [
+                    1,
+                    202
+                  ]
+                ]
+              }
+            ],
+            "sounds": []
+          },
+          {
+            "access": false,
+            "txt": "Éclairée par un puits de lumière, cette salle est moins lugubre que la précédente mais étonnamment vous vous y sentez plus mal, comme si quelqu\u0027un ou quelque chose vous observait. \nLa pièce est presque vide. Il n\u0027y a qu\u0027un tableau ornant le mur face à vous et la porte dans votre dos",
+            "path_image": "url2",
+            "nb": 102,
+            "neighbours": [
+              -1,
+              -1,
+              101,
+              -1
+            ],
+            "actions": [
+              {
+                "id": 1022,
+                "text": "Examiner le tableau",
+                "doable": true,
+                "consequence": [
+                  [
+                    1,
+                    301
+                  ]
+                ]
+              }
+            ],
+            "sounds": []
+          },
+          {
+            "access": true,
+            "txt": "Vous voyez une note sur la table. Dessus, une main tremblotante a écrit : \"Sortez vite de là, ils arrivent et ils ne veulent pas de vous ici...\" \nAu centre de la table, il y a un vase bleu clair semblant très ancien. \n",
+            "path_image": "url11",
+            "nb": 201,
+            "neighbours": [
+              -1,
+              -1,
+              101,
+              -1
+            ],
+            "actions": [
+              {
+                "id": 2012,
+                "text": "Examiner le vase",
+                "doable": true,
+                "consequence": [
+                  [
+                    1,
+                    203
+                  ]
+                ]
+              }
+            ],
+            "sounds": []
+          },
+          {
+            "access": true,
+            "txt": "La porte est fermée à double tour. \nElle semble cependant ancienne, peut-être ne résistera-t-elle pas à votre épaule \n",
+            "path_image": "url12",
+            "nb": 202,
+            "neighbours": [
+              -1,
+              -1,
+              101,
+              -1
+            ],
+            "actions": [
+              {
+                "id": 2022,
+                "text": "Essayer d\u0027enfoncer la porte",
+                "doable": true,
+                "consequence": [
+                  [
+                    7,
+                    2022
+                  ],
+                  [
+                    3,
+                    2022
+                  ]
+                ]
+              },
+              {
+                "id": 2023,
+                "text": "Utiliser la clef",
+                "doable": false,
+                "consequence": [
+                  [
+                    6,
+                    1
+                  ],
+                  [
+                    9,
+                    102
+                  ],
+                  [
+                    3,
+                    1013
+                  ],
+                  [
+                    7,
+                    1012
+                  ],
+                  [
+                    1,
+                    101
+                  ]
+                ]
+              }
+            ],
+            "sounds": []
+          },
+          {
+            "access": true,
+            "txt": "Vous regardez dans le vase, vous voyez une clef au fond de celui-ci.",
+            "path_image": "url13",
+            "nb": 203,
+            "neighbours": [
+              -1,
+              -1,
+              201,
+              -1
+            ],
+            "actions": [
+              {
+                "id": 2031,
+                "text": "Récupérer la clef",
+                "doable": true,
+                "consequence": [
+                  [
+                    4,
+                    1
+                  ],
+                  [
+                    3,
+                    2012
+                  ],
+                  [
+                    1,
+                    201
+                  ],
+                  [
+                    7,
+                    2012
+                  ]
+                ]
+              }
+            ],
+            "sounds": []
+          },
+          {
+            "access": true,
+            "txt": "Sur le bas du tableau il y a un mécanisme similaire à celui d\u0027un cadenas à code. 4 chiffres semblent nécessaire. \nAu centre du tableau vous pouvez lire : \"Si votre but est de sortir d\u0027ici, une simple connaissance vous est nécessaire : quelle promo de l\u0027ENSSAT est nécessairement la meilleure?\"\n",
+            "path_image": "url13",
+            "nb": 301,
+            "neighbours": [
+              -1,
+              -1,
+              102,
+              -1
+            ],
+            "actions": [
+              {
+                "id": 3011,
+                "text": "Demander un indice",
+                "doable": true,
+                "consequence": [
+                  [
+                    7,
+                    3012
+                  ],
+                  [
+                    3,
+                    3011
+                  ]
+                ]
+              }
+            ],
+            "sounds": []
+          }
+        ],
+        "enigmas": [
+          {
+            "solution": 2022,
+            "consequence": [
+              [
+                7,
+                0
+              ]
+            ],
+            "error_done": 0,
+            "access": true,
+            "txt": "Sur le bas du tableau il y a un mécanisme similaire à celui d\u0027un cadenas à code. 4 chiffres semblent nécessaire. \nAu centre du tableau vous pouvez lire : \"Si votre but est de sortir d\u0027ici, une simple connaissance vous est nécessaire : quelle promo de l\u0027ENSSAT est nécessairement la meilleure?\"\n",
+            "path_image": "url13",
+            "nb": 301,
+            "neighbours": [
+              -1,
+              -1,
+              102,
+              -1
+            ],
+            "actions": [
+              {
+                "id": 3011,
+                "text": "Demander un indice",
+                "doable": true,
+                "consequence": [
+                  [
+                    7,
+                    3012
+                  ],
+                  [
+                    3,
+                    3011
+                  ]
+                ]
+              }
+            ],
+            "sounds": []
+          }
+        ],
+        "actions": [
+          {
+            "id": 1012,
+            "text": "Examiner la table",
+            "doable": true,
+            "consequence": [
+              [
+                1,
+                201
+              ]
+            ]
+          },
+          {
+            "id": 1013,
+            "text": "Examiner la porte",
+            "doable": true,
+            "consequence": [
+              [
+                1,
+                202
+              ]
+            ]
+          },
+          {
+            "id": 2012,
+            "text": "Examiner le vase",
+            "doable": true,
+            "consequence": [
+              [
+                1,
+                203
+              ]
+            ]
+          },
+          {
+            "id": 2031,
+            "text": "Récupérer la clef",
+            "doable": true,
+            "consequence": [
+              [
+                4,
+                1
+              ],
+              [
+                3,
+                2012
+              ],
+              [
+                1,
+                201
+              ],
+              [
+                7,
+                2012
+              ]
+            ]
+          },
+          {
+            "id": 2022,
+            "text": "Essayer d\u0027enfoncer la porte",
+            "doable": true,
+            "consequence": [
+              [
+                7,
+                2022
+              ],
+              [
+                3,
+                2022
+              ]
+            ]
+          },
+          {
+            "id": 2023,
+            "text": "Utiliser la clef",
+            "doable": false,
+            "consequence": [
+              [
+                6,
+                1
+              ],
+              [
+                9,
+                102
+              ],
+              [
+                3,
+                1013
+              ],
+              [
+                7,
+                1012
+              ],
+              [
+                1,
+                101
+              ]
+            ]
+          },
+          {
+            "id": 1022,
+            "text": "Examiner le tableau",
+            "doable": true,
+            "consequence": [
+              [
+                1,
+                301
+              ]
+            ]
+          },
+          {
+            "id": 3011,
+            "text": "Demander un indice",
+            "doable": true,
+            "consequence": [
+              [
+                7,
+                3012
+              ],
+              [
+                3,
+                3011
+              ]
+            ]
+          }
+        ],
+        "gears": [
+          {
+            "id": 1,
+            "name": "clef",
+            "description": "Clef ancienne, sert probablement pour déverouiller une serrure",
+            "max_usage": 1,
+            "current_usage": 0,
+            "actions": [
+              {
+                "id": 2023,
+                "text": "Utiliser la clef",
+                "doable": false,
+                "consequence": [
+                  [
+                    6,
+                    1
+                  ],
+                  [
+                    9,
+                    102
+                  ],
+                  [
+                    3,
+                    1013
+                  ],
+                  [
+                    7,
+                    1012
+                  ],
+                  [
+                    1,
+                    101
+                  ]
+                ]
+              }
+            ],
+            "URL_image": "objects/key.png"
+          }
+        ],
+        "scenario": [
+          {
+            "id_text": 1011,
+            "text": "Vous vous tenez au milieu d\u0027une salle. L\u0027atmosphère y est pesante. Il n\u0027y a aucune fenêtre et vous n\u0027êtes éclairé que par une lueur mystérieuse dont vous ne parvenez pas à déterminer la provenance. \nA votre droite se trouve une table sur laquelle vous pouvez distinguer un vase et un bout de papier. Face à vous, il y a une porte. \n"
+          },
+          {
+            "id_text": 1012,
+            "text": "La porte est ouverte."
+          },
+          {
+            "id_text": 2011,
+            "text": "Vous voyez une note sur la table. Dessus, une main tremblotante a écrit : \"Sortez vite de là, ils arrivent et ils ne veulent pas de vous ici...\" \nAu centre de la table, il y a un vase bleu clair semblant très ancien. \n"
+          },
+          {
+            "id_text": 2012,
+            "text": "Vous avez récupéré la clef dans le vase."
+          },
+          {
+            "id_text": 2031,
+            "text": "Vous regardez dans le vase, vous voyez une clef au fond de celui-ci."
+          },
+          {
+            "id_text": 2021,
+            "text": "La porte est fermée à double tour. \nElle semble cependant ancienne, peut-être ne résistera-t-elle pas à votre épaule \n"
+          },
+          {
+            "id_text": 2022,
+            "text": "Vous vous êtes fait mal en essayant d\u0027enfoncer cette porte... \n"
+          },
+          {
+            "id_text": 1021,
+            "text": "Éclairée par un puits de lumière, cette salle est moins lugubre que la précédente mais étonnamment vous vous y sentez plus mal, comme si quelqu\u0027un ou quelque chose vous observait. \nLa pièce est presque vide. Il n\u0027y a qu\u0027un tableau ornant le mur face à vous et la porte dans votre dos"
+          },
+          {
+            "id_text": 3011,
+            "text": "Sur le bas du tableau il y a un mécanisme similaire à celui d\u0027un cadenas à code. 4 chiffres semblent nécessaire. \nAu centre du tableau vous pouvez lire : \"Si votre but est de sortir d\u0027ici, une simple connaissance vous est nécessaire : quelle promo de l\u0027ENSSAT est nécessairement la meilleure?\"\n"
+          },
+          {
+            "id_text": 3012,
+            "text": "Indice : S\u0027ils n\u0027ont pas redoublé, ils sont nés en 1999"
+          },
+          {
+            "id_text": 404,
+            "text": "Il semblerait que votre solution précédemmentproposée ne soit pas la bonne"
+          },
+          {
+            "id_text": 405,
+            "text": "Il semblerait que vous rencontriez quelquesdifficultés...peut être devriez-vous priez les dieux de l\u0027ENSSAT pour obtenir un indice"
+          }
+        ],
+        "difficulty": 1,
+        "timer": 0
+      }
+    },
+    {
+      "no": 0,
+      "srgame": {
+        "player": {
+          "pseudo": "",
           "inventory": [],
           "position": 101
         },

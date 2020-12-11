@@ -355,7 +355,7 @@ public class gameController implements Controller {
      */
     public void refreshPicture(){
         String URL = Game.search_room(game.player.position).getPath_image();
-        illustration.setImage(new Image("objects/key.png"));
+        illustration.setImage(new Image(URL));
     }
 
     /**

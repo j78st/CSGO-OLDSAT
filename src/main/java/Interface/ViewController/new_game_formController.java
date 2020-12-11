@@ -182,11 +182,11 @@ public class new_game_formController implements Controller {
 
         ArrayList<String> sounds_test = new ArrayList<>();
 
-        Room room1 = new Room(1011,"url1",101,102,-1,-1,-1,sounds_test, true); //première salle
-        Room room2 = new Room(1021,"url2",102,-1,-1,101,-1,sounds_test, false); //deuxième salle
-        Room room1_1 = new Room(2011,"url11",201,101,sounds_test); //table dans salle 1
-        Room room1_2 = new Room(2021,"url12",202,101,sounds_test); //porte dans salle 1
-        Room room1_1_1 = new Room(2031,"url13",203,201,sounds_test); //vase sur table dans salle 1
+        Room room1 = new Room(1011,"pictures/Salle1.png",101,102,-1,-1,-1,sounds_test, true); //première salle
+        Room room2 = new Room(1021,"pictures/Salle2.png",102,-1,-1,101,-1,sounds_test, false); //deuxième salle
+        Room room1_1 = new Room(2011,"pictures/Table.png",201,101,sounds_test); //table dans salle 1
+        Room room1_2 = new Room(2021,"pictures/Porte.png",202,101,sounds_test); //porte dans salle 1
+        Room room1_1_1 = new Room(2031,"pictures/Vase.png",203,201,sounds_test); //vase sur table dans salle 1
 
 
 //Enigme de la salle 102
