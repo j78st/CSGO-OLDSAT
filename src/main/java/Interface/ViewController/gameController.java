@@ -16,6 +16,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
+import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
@@ -44,6 +45,9 @@ public class gameController implements Controller {
 
     @FXML
     private AnchorPane picture_pane;
+
+    @FXML
+    private AnchorPane answerBox;
 
     @FXML
     private ImageView illustration;
@@ -84,6 +88,9 @@ public class gameController implements Controller {
 
     @FXML
     private Button pause_btn;
+
+    @FXML
+    private TextField answer_prompt;
 
     // gestion menu pause ---------------------------------------
     @FXML
@@ -146,6 +153,19 @@ public class gameController implements Controller {
     @FXML
     void do_selected_action(ActionEvent event) {
         action_list.getSelectionModel().getSelectedItem().Consequence();
+    }
+
+    /**
+     * Lors de l'appui sur le bouton VALIDER
+     * Vérifie la réponse donnée par le joueur à une énigme
+     * @param event
+     */
+    @FXML
+    void check_answer(ActionEvent event) throws IOException {
+
+        int ans = Integer.parseInt(answer_prompt.getText());
+        Game.search_enigma(Game.player.position).check_solution(ans);
+
     }
 
     /**
@@ -264,7 +284,7 @@ public class gameController implements Controller {
     @Override
     public void setShortcut() {
         // init visuel (pas question svp)
-        refreshRoom();
+        //refreshRoom();
 
         // Ouverture/fermeture menu pause via ESC
         KeyCombination esc = new KeyCodeCombination(KeyCode.ESCAPE, KeyCombination.SHIFT_ANY);
@@ -332,6 +352,8 @@ public class gameController implements Controller {
         refreshPicture();
         // refresh des actions
         refreshAction();
+        // efface la boite de dialogue
+        answer_box_visible(false);
     }
 
     /**
@@ -382,6 +404,14 @@ public class gameController implements Controller {
             item_slot_3.setGraphic(new ImageView(new Image(objects.get(2).getURL_image())));
         } else {
             item_slot_3.setGraphic(new ImageView(new Image("/icons/"+Settings.icon_color+"/bag.png")));
+        }
+    }
+
+    public void answer_box_visible(boolean visible) {
+        if (visible) {
+            answerBox.toFront();
+        } else {
+            answerBox.toBack();
         }
     }
 }

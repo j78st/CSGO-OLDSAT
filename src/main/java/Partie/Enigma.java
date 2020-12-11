@@ -1,5 +1,10 @@
 package Partie;
 
+import Interface.ScreenLoader.LoadMap;
+import Music.Systems.Son;
+import Music.Systems.WorldBoxDisc;
+
+import java.io.IOException;
 import java.util.ArrayList;
 
 public class Enigma extends Room{
@@ -15,7 +20,7 @@ public class Enigma extends Room{
         Game.enigmas.add(this); // ajoute l'énigme à la liste de toutes les énigmes du jeu
     }
 
-    public void check_solution(int suggestion){ // vérifie si la suggestion donnée correspond ou non au résultat attend ude l'énigme
+    public void check_solution(int suggestion) throws IOException { // vérifie si la suggestion donnée correspond ou non au résultat attend ude l'énigme
         if (this.solution==suggestion){
             Game.search_room(this.neighbours[2]).search_access_enigma(this.nb).setDoable(false); // rend l'accès à cette énigme impossible
             Game.player.move(this.neighbours[2]); // renvoie le joueur à l'écran précédent l'énigme
@@ -25,13 +30,13 @@ public class Enigma extends Room{
             error_done++;
             if(error_done == 1){
                 this.txt_evolve(Game.search_txt(404)); // fait évoluer le texte de l'énigme pour que le joueur sâche que sa solution n'est pas la bonne
-            }else if(error_done >= 3){
+            }else if(error_done == 3){
                 this.txt_evolve(Game.search_txt(405)); // propose au joueur de prendre un indice
             }
         }
     }
 
-    public void consequence(){ // conséquences liées à la résolution de l'énigme
+    public void consequence() throws IOException { // conséquences liées à la résolution de l'énigme
         for(int i =0;i<consequence.size();i++) {
             switch (this.consequence.get(i)[0]) {
                 case 1: // mouvement vers la salle de numéro d'identification consequence[1]
@@ -57,6 +62,12 @@ public class Enigma extends Room{
                     break;
                 case 9: // rend une salle accessible
                     Game.search_room(this.consequence.get(i)[1]).setAccess(true);
+                    break;
+                case 10: // affiche écran fin de partie
+                    LoadMap gl = new LoadMap();
+                    gl.display_screen_from_id(LoadMap.END_GAME);
+                    WorldBoxDisc.play(Son.hibou);
+                    WorldBoxDisc.play(Son.valid);
                     break;
             }
         }

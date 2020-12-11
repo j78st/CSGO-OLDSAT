@@ -66,6 +66,9 @@
                   [
                     1,
                     301
+                  ],
+                  [
+                    10
                   ]
                 ]
               }
@@ -197,14 +200,13 @@
             "solution": 2022,
             "consequence": [
               [
-                7,
-                0
+                10
               ]
             ],
             "error_done": 0,
             "access": true,
             "txt": "Sur le bas du tableau il y a un mécanisme similaire à celui d\u0027un cadenas à code. 4 chiffres semblent nécessaire. \nAu centre du tableau vous pouvez lire : \"Si votre but est de sortir d\u0027ici, une simple connaissance vous est nécessaire : quelle promo de l\u0027ENSSAT est nécessairement la meilleure?\"\n",
-            "path_image": "url13",
+            "path_image": "pictures/Tableau.png",
             "nb": 301,
             "neighbours": [
               -1,
@@ -237,14 +239,13 @@
             "solution": 2022,
             "consequence": [
               [
-                7,
-                0
+                10
               ]
             ],
             "error_done": 0,
             "access": true,
             "txt": "Sur le bas du tableau il y a un mécanisme similaire à celui d\u0027un cadenas à code. 4 chiffres semblent nécessaire. \nAu centre du tableau vous pouvez lire : \"Si votre but est de sortir d\u0027ici, une simple connaissance vous est nécessaire : quelle promo de l\u0027ENSSAT est nécessairement la meilleure?\"\n",
-            "path_image": "url13",
+            "path_image": "pictures/Tableau.png",
             "nb": 301,
             "neighbours": [
               -1,
@@ -379,6 +380,9 @@
               [
                 1,
                 301
+              ],
+              [
+                10
               ]
             ]
           },
@@ -476,15 +480,15 @@
           },
           {
             "id_text": 3012,
-            "text": "Indice : S\u0027ils n\u0027ont pas redoublé, ils sont nés en 1999"
+            "text": "Indice : S\u0027ils n\u0027ont pas redoublé, ils sont nés en 1999\n"
           },
           {
             "id_text": 404,
-            "text": "Il semblerait que votre solution précédemmentproposée ne soit pas la bonne"
+            "text": "Il semblerait que votre solution précédemment proposée ne soit pas la bonne\n"
           },
           {
             "id_text": 405,
-            "text": "Il semblerait que vous rencontriez quelquesdifficultés...peut être devriez-vous priez les dieux de l\u0027ENSSAT pour obtenir un indice"
+            "text": "Il semblerait que vous rencontriez quelques difficultés...peut être devriez-vous priez les dieux de l\u0027ENSSAT pour obtenir un indice\n"
           }
         ],
         "difficulty": 1,

@@ -111,7 +111,7 @@ public class LoadMap {
                 loader = new FXMLLoader();
                 loader.setLocation(getClass().getResource("/fxml/end_gameView.fxml"));
                 root = loader.load();
-                controller = (load_saveController) loader.getController();
+                controller = (end_gameController) loader.getController();
                 kit.setNext_root(root);
                 kit.setNext_controller(controller);
                 break;
@@ -155,6 +155,8 @@ public class LoadMap {
         settings_menuController controller = loader.getController();
         controller.provide_current_screen_id(previous_id); // ID de l'écran ou on appelle les paramètres
         controller.setShortcut();
+        Engine.engine.refreshText();
+        Engine.engine.refreshAction();
 
         stage.setTitle("OLD'SAT");
         stage.getScene().setRoot(parent);

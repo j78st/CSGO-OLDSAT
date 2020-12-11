@@ -5,6 +5,7 @@ import Interface.Save.SaveSlot;
 import Interface.Save.Saves;
 import Interface.ScreenLoader.Controller;
 import Interface.ScreenLoader.LoadMap;
+import Interface.Settings.Engine;
 import Interface.Settings.Settings;
 import Music.Systems.Son;
 import Music.Systems.WorldBoxDisc;
@@ -121,6 +122,8 @@ public class new_game_formController implements Controller {
         gameController.game = game;
         save.srgame = new Serial_game();
 
+        Engine.engine.refreshRoom();
+
         // Sauvegarde de la partie
         Memoire m = new Memoire();
         Saves saves = (Saves) m.read_data(new File("resources/json/saves.json"));
@@ -192,8 +195,8 @@ public class new_game_formController implements Controller {
 //Enigme de la salle 102
 
         ArrayList<int[]> consequences_enigme1 = new ArrayList<>();
-        consequences_enigme1.add(new int[]{7,0}); //où 7 code l'affichage de l'écran de endgame
-        Enigma enigme1 = new Enigma(3011,"url13",301,102,2022,consequences_enigme1,sounds_test);
+        consequences_enigme1.add(new int[]{10}); // fin de partie
+        Enigma enigme1 = new Enigma(3011,"pictures/Tableau.png",301,102,2022,consequences_enigme1,sounds_test);
 
 
 //Création des objets
@@ -249,6 +252,7 @@ public class new_game_formController implements Controller {
 
         ArrayList<int[]> consequences_action1022 = new ArrayList<>();
         consequences_action1022.add(new int[]{1,301});
+        consequences_action1022.add(new int[]{10});
         Action action1022 = new Action(1022,"Examiner le tableau", consequences_action1022, 102, true); //déplacement vers table, 102 à 301
 
 //Actions de l'énigme 301

@@ -51,6 +51,15 @@ public class end_gameController implements Controller {
     public void initialize() {
         // icones
         star_icon.setImage(new Image("icons/"+ Settings.icon_color+ "/star.png"));
+
+        // affichage donnée partie
+        player_name_lbl.setText(gameController.game.player.getPseudo());
+        score_lbl.setText("1900");
+        switch (gameController.game.getDifficulty()) {
+            case 0 : difficulty_lbl.setText("Facile");
+            case 1 : difficulty_lbl.setText("Normal");
+            case 2 : difficulty_lbl.setText("Difficile");
+        }
     }
 
     @Override

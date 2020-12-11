@@ -75,8 +75,10 @@ public class Action {
                     break;
                 case 9: // rend une salle accessible
                     Game.search_room(this.consequence.get(i)[1]).setAccess(true);
-                break;
-
+                    break;
+                case 10: // affiche la boite à réponses
+                    Engine.engine.answer_box_visible(true);
+                    break;
              }
         }
     }

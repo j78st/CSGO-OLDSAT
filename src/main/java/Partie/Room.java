@@ -75,7 +75,7 @@ public class Room {
     public Action search_access_enigma(int nb){ // recherche l'action qui donne accès à l'énigme numéro nb
         Action action = null;
         for(int i = 0; i< this.actions.size();i++){
-            for(int j = 0; j< this.actions.get(i).consequence.size();i++){
+            for(int j = 0; j< this.actions.get(i).consequence.size();j++){
               if(this.actions.get(i).consequence.get(j)[0] == 1 && this.actions.get(i).consequence.get(j)[1] == nb){
                   action =  this.actions.get(i);
               }

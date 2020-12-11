@@ -62,7 +62,6 @@ public class settings_menuController implements Controller {
     @FXML
     void go_back_to_previous_screen(ActionEvent event) throws IOException {
         LoadMap gl = new LoadMap();
-        Engine.engine.refreshRoom();
         gl.display_screen_from_id(previous_screen_ID);
         WorldBoxDisc.play(Son.menuClose);
     }
