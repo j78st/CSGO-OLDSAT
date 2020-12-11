@@ -14,15 +14,15 @@ public class Serial_game {
     public int difficulty;
     public int timer;
 
-    public Serial_game(int dif, int timer) {
+    public Serial_game() {
         player = Game.player;
         map = Game.map;
         enigmas = Game.enigmas;
         actions = Game.actions;
         gears = Game.gears;
         scenario = Game.scenario;
-        difficulty = dif;
-        this.timer = timer;
+        difficulty = Game.difficulty;
+        this.timer = Game.timer;
     }
 
     public void setGameFromMemory() {

@@ -65,7 +65,11 @@
                      <children>
                         <BorderPane layoutY="-12.369791030883789" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                            <center>
-                              <Text fx:id="scenario" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+                              <AnchorPane BorderPane.alignment="CENTER">
+                                 <children>
+                                    <Label fx:id="narration" prefHeight="362.0" prefWidth="356.0" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="15.0" />
+                                 </children>
+                              </AnchorPane>
                            </center>
                         </BorderPane>
                         <HBox alignment="CENTER" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">

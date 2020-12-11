@@ -49,7 +49,7 @@ public class gameController implements Controller {
     private ImageView illustration;
 
     @FXML
-    private Text scenario;
+    private Label narration;
 
     // inventaire -----------------------------------------------
     @FXML
@@ -248,6 +248,14 @@ public class gameController implements Controller {
         left_move_btn.setGraphic(new ImageView(new Image("/icons/"+ Settings.icon_color +"/arrow_left.png")));
         up_move_btn.setGraphic(new ImageView(new Image("/icons/"+ Settings.icon_color +"/arrow_up.png")));
         right_move_btn.setGraphic(new ImageView(new Image("/icons/"+ Settings.icon_color +"/arrow_right.png")));
+
+        // Mise en place du texte narratif
+        narration.setWrapText(true);
+        if (Settings.icon_color.equals("white")){
+            narration.setStyle("-fx-text-fill: white;");
+        } else {
+            narration.setStyle("-fx-text-fill: black;");
+        }
     }
 
     /**
@@ -355,7 +363,7 @@ public class gameController implements Controller {
      */
     public void refreshText(){
         String room_text = Game.search_room(game.player.position).getTxt();
-        scenario.setText(room_text);
+        narration.setText(room_text);
     }
 
     public void refreshInventory() {

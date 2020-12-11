@@ -109,9 +109,9 @@ public class new_game_formController implements Controller {
         }
 
         // récupère l'emplacement de sauvegarde pour stocker la partie
-        try {
+        if (save_list.getSelectionModel().getSelectedItem()!=null) {
             save = save_list.getSelectionModel().getSelectedItem();
-        } catch (Exception e) {
+        } else {
             Alert alert = new Alert(Alert.AlertType.WARNING, "Selectionnez un emplacement de sauvegarde !", ButtonType.OK);
             alert.showAndWait();
         }
@@ -119,7 +119,7 @@ public class new_game_formController implements Controller {
         // Création de la partie
         Game game = creer_partie(pseudo, difficulty);
         gameController.game = game;
-        save.srgame = new Serial_game(game.getDifficulty(), game.getTimer());
+        save.srgame = new Serial_game();
 
         // Sauvegarde de la partie
         Memoire m = new Memoire();
