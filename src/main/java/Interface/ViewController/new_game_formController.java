@@ -77,7 +77,6 @@ public class new_game_formController implements Controller {
         WorldBoxDisc.play(Son.menuOpen);
     }
 
-
     /**
      * Lors de l'appui sur le bouton CREER PARTIE
      * Crée une nouvelle partie sur l'emplacement de sauvegarde sélectionné
@@ -103,13 +102,13 @@ public class new_game_formController implements Controller {
         // récupère la difficulté de la nouvelle partie
         switch ((String)difficulty_selector.getValue()) {
             case "Facile": difficulty = 0; break;
-            case "Normal" : difficulty = 1; break;
+            case "Normale" : difficulty = 1; break;
             case "Difficile" : difficulty = 2; break;
             default:
                 throw new IllegalStateException("Unexpected value: " + difficulty_selector.getPromptText());
         }
 
-        // récupère l'emplacement de sauvegarde pour stocker la partie
+        // Récupère l'emplacement de sauvegarde pour stocker la partie
         if (save_list.getSelectionModel().getSelectedItem()!=null) {
             save = save_list.getSelectionModel().getSelectedItem();
         } else {
@@ -120,13 +119,15 @@ public class new_game_formController implements Controller {
         // Création de la partie
         Game game = creer_partie(pseudo, difficulty);
         gameController.game = game;
-        save.srgame = new Serial_game();
+
+
 
         Engine.engine.refreshRoom();
 
         // Sauvegarde de la partie
         Memoire m = new Memoire();
         Saves saves = (Saves) m.read_data(new File("resources/json/saves.json"));
+        save.srgame = new Serial_game();
         saves.setSave(save.no,save);
         m.write_data(saves, new File("resources/json/saves.json"));
 
@@ -147,22 +148,21 @@ public class new_game_formController implements Controller {
         difficulty_icon.setImage(new Image("icons/"+ Settings.icon_color+ "/shield.png"));
 
         // mise en place selection difficulté
-        difficulty = FXCollections.observableArrayList("Facile", "Normal", "Difficile");
+        difficulty = FXCollections.observableArrayList("Facile", "Normale", "Difficile");
         difficulty_selector.setItems(difficulty);
-        difficulty_selector.setValue("Normal");
+        difficulty_selector.setValue("Normale");
 
         // mise en place de la liste des sauvegarde
         saveObservableList = FXCollections.observableArrayList();
+        Memoire m = new Memoire();
+        Saves saves = (Saves) m.read_data(new File("resources/json/saves.json"));
 
-            // ======= vvv /!\ LISTE DE SAUVEGARDE TEST vvv =======
-            for (int i = 0; i<10; i++) {
-                saveObservableList.add(new SaveSlot());
-            }
-            // ====================================================
+        for (int i = 0; i<10; i++) {
+            saveObservableList.add(saves.getSave(i));
+        }
 
         save_list.setItems(saveObservableList);
         save_list.setCellFactory(param -> new SaveListCell());
-
     }
 
     /**

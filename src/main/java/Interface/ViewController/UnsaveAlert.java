@@ -62,6 +62,7 @@ public class UnsaveAlert {
         // traitement de la réponse
         Optional<ButtonType> option = alert.showAndWait();
         if (option.get() != undo) {
+
             if (option.get() == yes) {
 
                 // VVV sauvegarde VVV
