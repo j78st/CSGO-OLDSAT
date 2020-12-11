@@ -56,14 +56,15 @@ public class end_gameController implements Controller {
         player_name_lbl.setText(gameController.game.player.getPseudo());
         score_lbl.setText("1900");
         switch (gameController.game.getDifficulty()) {
-            case 0 : difficulty_lbl.setText("Facile");
-            case 1 : difficulty_lbl.setText("Normal");
-            case 2 : difficulty_lbl.setText("Difficile");
+            case 0 : difficulty_lbl.setText("Facile"); break;
+            case 1 : difficulty_lbl.setText("Normal"); break;
+            case 2 : difficulty_lbl.setText("Difficile"); break;
         }
     }
 
     @Override
     public void setShortcut() {
-        // Pas de raccourci sur cette vue
+        // Clear shortcut
+        LoadMap.scene.getAccelerators().clear();
     }
 }

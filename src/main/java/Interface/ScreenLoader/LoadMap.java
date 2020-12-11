@@ -155,8 +155,10 @@ public class LoadMap {
         settings_menuController controller = loader.getController();
         controller.provide_current_screen_id(previous_id); // ID de l'écran ou on appelle les paramètres
         controller.setShortcut();
-        Engine.engine.refreshText();
-        Engine.engine.refreshAction();
+        if (gameController.game != null){
+            Engine.engine.refreshText();
+            Engine.engine.refreshAction();
+        }
 
         stage.setTitle("OLD'SAT");
         stage.getScene().setRoot(parent);

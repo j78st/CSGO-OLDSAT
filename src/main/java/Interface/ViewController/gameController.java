@@ -283,11 +283,11 @@ public class gameController implements Controller {
      */
     @Override
     public void setShortcut() {
-        // init visuel (pas question svp)
-        //refreshRoom();
+        // Clear shortcut
+        LoadMap.scene.getAccelerators().clear();
 
         // Ouverture/fermeture menu pause via ESC
-        KeyCombination esc = new KeyCodeCombination(KeyCode.ESCAPE, KeyCombination.SHIFT_ANY);
+        KeyCombination esc = new KeyCodeCombination(KeyCode.ESCAPE);
         Runnable rn = ()-> {
             if (!gamePaused) {
                 pause_game(new ActionEvent());
@@ -317,6 +317,22 @@ public class gameController implements Controller {
         LoadMap.scene.getAccelerators().put(moveDown, md);
         LoadMap.scene.getAccelerators().put(moveLeft, ml);
 
+        // validation réponse
+        KeyCombination valid_answer = new KeyCodeCombination(KeyCode.ENTER);
+        Runnable vr = ()-> {
+            try {
+                check_answer(new ActionEvent());
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        };
+        LoadMap.scene.getAccelerators().put(valid_answer, vr);
+
+        // validation exécution action
+        KeyCombination valid_action = new KeyCodeCombination(KeyCode.SPACE);
+        Runnable va = ()-> { do_selected_action(new ActionEvent()); };
+
+        LoadMap.scene.getAccelerators().put(valid_action, va);
     }
 
     public void refreshRoom(){
