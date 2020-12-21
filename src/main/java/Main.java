@@ -57,7 +57,6 @@ public class Main extends Application {
 
         // lancement application
         launch(args);
-
     }
 
 }
