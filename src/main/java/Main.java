@@ -46,7 +46,7 @@ public class Main extends Application {
 
     public static void main(String[] args) throws InterruptedException, IOException {
 
-        //Initialise le systeme de son
+        //Initialise le système de son
         WorldBoxDisc.init();
         Thread.sleep(1000);
 
