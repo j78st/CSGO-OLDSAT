@@ -12,6 +12,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
 import javafx.scene.image.Image;
@@ -98,7 +99,7 @@ public class score_screenController implements Controller {
 
         // affichage du classement
         recordObservableList = FXCollections.observableArrayList();
-        for (int i = 0; i<10; i++) {
+        for (int i = 0; i<Ranking.RANKING_SIZE; i++) {
             recordObservableList.add(ranking.ranking[i]);
         }
         score_list.setItems(recordObservableList);
@@ -114,5 +115,12 @@ public class score_screenController implements Controller {
         KeyCombination kc = new KeyCodeCombination(KeyCode.ESCAPE, KeyCombination.SHIFT_ANY);
         Runnable rn = ()-> settings_btn.fire();
         LoadMap.scene.getAccelerators().put(kc, rn);
+    }
+
+    @Override
+    public void apply_settings() {
+        for (Node n: LoadMap.scene.getRoot().lookupAll(".Custom_label")) {
+            n.setStyle("-fx-font-size: " + Settings.fontSize + "px;");
+        }
     }
 }

@@ -112,6 +112,7 @@ public class home_screenController implements Controller {
         game_icon.setImage(new Image("icons/"+ Settings.icon_color +"/arcade.png"));
         WorldBoxDisc.play(Son.feu);
         WorldBoxDisc.pause(Son.wind);
+
     }
 
     /**
@@ -122,7 +123,15 @@ public class home_screenController implements Controller {
         // Acces au paramètres via ESC
         KeyCombination kc = new KeyCodeCombination(KeyCode.ESCAPE, KeyCombination.SHIFT_ANY);
         Runnable rn = ()-> settings_btn.fire();
-        LoadMap.scene.getAccelerators().put(kc, rn);;
+        LoadMap.scene.getAccelerators().put(kc, rn);
+    }
+
+    // Applique les valeurs enregistrées dans les paramètres aux éléments de la page
+    @Override
+    public void apply_settings() {
+        for (Node n: LoadMap.scene.getRoot().lookupAll(".Custom_label")) {
+            n.setStyle("-fx-font-size: " + Settings.fontSize + "px;");
+        }
     }
 
 }

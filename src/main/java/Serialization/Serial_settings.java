@@ -10,6 +10,7 @@ public class Serial_settings implements Serializable {
     private String i;
     private Double f;
     private Double b;
+    private int s;
 
 
     public Serial_settings() {
@@ -17,6 +18,7 @@ public class Serial_settings implements Serializable {
         i = Settings.icon_color;
         f = Settings.fx_volume;
         b = Settings.bg_volume;
+        s = Settings.fontSize;
     }
 
     public Double getBg_volume() {
@@ -35,4 +37,7 @@ public class Serial_settings implements Serializable {
         return t;
     }
 
+    public int getS() {
+        return s;
+    }
 }

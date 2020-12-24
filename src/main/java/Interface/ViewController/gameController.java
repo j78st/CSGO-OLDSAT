@@ -13,6 +13,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
@@ -240,6 +241,111 @@ public class gameController implements Controller {
     }
 
     // ==========================================================
+    // Methodes de gestion de la partie
+    // ==========================================================
+
+    /**
+     * Rafraichit l'ensemble de la salle
+     */
+    public void refreshRoom(){
+
+        if(Game.search_room(Game.search_room(game.player.position).getNeighbours()[0]) == null
+                || !Game.search_room(Game.search_room(game.player.position).getNeighbours()[0]).isAccess()){
+            up_move_btn.setDisable(true);
+        } else {
+            up_move_btn.setDisable(false);
+        }
+        if(Game.search_room(Game.search_room(game.player.position).getNeighbours()[1]) == null
+                || !Game.search_room(Game.search_room(game.player.position).getNeighbours()[1]).isAccess()){
+            right_move_btn.setDisable(true);
+        } else {
+            right_move_btn.setDisable(false);
+        }
+        if(Game.search_room(Game.search_room(game.player.position).getNeighbours()[2]) == null
+                || !Game.search_room(Game.search_room(game.player.position).getNeighbours()[2]).isAccess()){
+            down_move_btn.setDisable(true);
+        } else {
+            down_move_btn.setDisable(false);
+        }
+        if(Game.search_room(Game.search_room(game.player.position).getNeighbours()[3]) == null
+                || !Game.search_room(Game.search_room(game.player.position).getNeighbours()[3]).isAccess()){
+            left_move_btn.setDisable(true);
+        } else {
+            left_move_btn.setDisable(false);
+        }
+
+        // refresh du texte
+        refreshText();
+        // refresh de l'image
+        refreshPicture();
+        // refresh des actions
+        refreshAction();
+        // efface la boite de dialogue
+        answer_box_visible(false);
+    }
+
+
+    /**
+     * Rafraichit la liste des actions disponibles
+     */
+    public void refreshAction(){
+        // chargement des actions
+        ArrayList<Action> list = Game.search_room(game.player.position).getActions();
+        actionObservableList = FXCollections.observableArrayList();
+        for (int i = 0; i<list.size(); i++) {
+            if (list.get(i).getDoable()) {
+                actionObservableList.add(list.get(i));
+            }
+        }
+        action_list.setItems(actionObservableList);
+        action_list.setCellFactory(param -> new ActionListCell());
+    }
+
+    /**
+     * Rafraichit l'image associée à la salle
+     */
+    public void refreshPicture(){
+        String URL = Game.search_room(game.player.position).getPath_image();
+        illustration.setImage(new Image(URL));
+    }
+
+    /**
+     * Rafraichit le texte à afficher
+     */
+    public void refreshText(){
+        String room_text = Game.search_room(game.player.position).getTxt();
+        narration.setText(room_text);
+    }
+
+    public void refreshInventory() {
+        ArrayList<Gear> objects = game.player.getInventory();
+        if (objects.size()>0){
+            item_slot_1.setGraphic(new ImageView(new Image(objects.get(0).getURL_image())));
+        } else {
+            item_slot_1.setGraphic(new ImageView(new Image("icons/"+Settings.icon_color+"/bag.png")));
+        }
+        if (objects.size()>1){
+            item_slot_2.setGraphic(new ImageView(new Image(objects.get(1).getURL_image())));
+        } else {
+            item_slot_2.setGraphic(new ImageView(new Image("/icons/"+Settings.icon_color+"/bag.png")));
+        }
+        if (objects.size()>2){
+            item_slot_3.setGraphic(new ImageView(new Image(objects.get(2).getURL_image())));
+        } else {
+            item_slot_3.setGraphic(new ImageView(new Image("/icons/"+Settings.icon_color+"/bag.png")));
+        }
+    }
+
+    public void answer_box_visible(boolean visible) {
+        if (visible) {
+            answerBox.toFront();
+        } else {
+            answerBox.toBack();
+        }
+    }
+
+
+    // ==========================================================
     // Methodes d'initialisation
     // ==========================================================
 
@@ -331,99 +437,10 @@ public class gameController implements Controller {
         LoadMap.scene.getAccelerators().put(valid_action, va);
     }
 
-    public void refreshRoom(){
-
-        if(Game.search_room(Game.search_room(game.player.position).getNeighbours()[0]) == null
-                || !Game.search_room(Game.search_room(game.player.position).getNeighbours()[0]).isAccess()){
-            up_move_btn.setDisable(true);
-        } else {
-            up_move_btn.setDisable(false);
-        }
-        if(Game.search_room(Game.search_room(game.player.position).getNeighbours()[1]) == null
-                || !Game.search_room(Game.search_room(game.player.position).getNeighbours()[1]).isAccess()){
-            right_move_btn.setDisable(true);
-        } else {
-            right_move_btn.setDisable(false);
-        }
-        if(Game.search_room(Game.search_room(game.player.position).getNeighbours()[2]) == null
-                || !Game.search_room(Game.search_room(game.player.position).getNeighbours()[2]).isAccess()){
-            down_move_btn.setDisable(true);
-        } else {
-            down_move_btn.setDisable(false);
-        }
-        if(Game.search_room(Game.search_room(game.player.position).getNeighbours()[3]) == null
-                || !Game.search_room(Game.search_room(game.player.position).getNeighbours()[3]).isAccess()){
-            left_move_btn.setDisable(true);
-        } else {
-            left_move_btn.setDisable(false);
-        }
-
-        // refresh du texte
-        refreshText();
-        // refresh de l'image
-        refreshPicture();
-        // refresh des actions
-        refreshAction();
-        // efface la boite de dialogue
-        answer_box_visible(false);
-    }
-
-    /**
-     * Rafraichit la liste des actions disponibles
-     */
-    public void refreshAction(){
-        // chargement des actions
-        ArrayList<Action> list = Game.search_room(game.player.position).getActions();
-        actionObservableList = FXCollections.observableArrayList();
-        for (int i = 0; i<list.size(); i++) {
-            if (list.get(i).getDoable()) {
-                actionObservableList.add(list.get(i));
-            }
-        }
-        action_list.setItems(actionObservableList);
-        action_list.setCellFactory(param -> new ActionListCell());
-    }
-
-    /**
-     * Rafraichit l'image associée à la salle
-     */
-    public void refreshPicture(){
-        String URL = Game.search_room(game.player.position).getPath_image();
-        illustration.setImage(new Image(URL));
-    }
-
-    /**
-     * Rafraichit le texte à afficher
-     */
-    public void refreshText(){
-        String room_text = Game.search_room(game.player.position).getTxt();
-        narration.setText(room_text);
-    }
-
-    public void refreshInventory() {
-        ArrayList<Gear> objects = game.player.getInventory();
-        if (objects.size()>0){
-            item_slot_1.setGraphic(new ImageView(new Image(objects.get(0).getURL_image())));
-        } else {
-            item_slot_1.setGraphic(new ImageView(new Image("icons/"+Settings.icon_color+"/bag.png")));
-        }
-        if (objects.size()>1){
-            item_slot_2.setGraphic(new ImageView(new Image(objects.get(1).getURL_image())));
-        } else {
-            item_slot_2.setGraphic(new ImageView(new Image("/icons/"+Settings.icon_color+"/bag.png")));
-        }
-        if (objects.size()>2){
-            item_slot_3.setGraphic(new ImageView(new Image(objects.get(2).getURL_image())));
-        } else {
-            item_slot_3.setGraphic(new ImageView(new Image("/icons/"+Settings.icon_color+"/bag.png")));
-        }
-    }
-
-    public void answer_box_visible(boolean visible) {
-        if (visible) {
-            answerBox.toFront();
-        } else {
-            answerBox.toBack();
+    @Override
+    public void apply_settings() {
+        for (Node n: LoadMap.scene.getRoot().lookupAll(".Custom_label")) {
+            n.setStyle("-fx-font-size: " + Settings.fontSize + "px;");
         }
     }
 }

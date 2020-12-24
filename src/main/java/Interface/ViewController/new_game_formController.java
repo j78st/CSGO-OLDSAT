@@ -15,6 +15,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.Node;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -180,7 +181,14 @@ public class new_game_formController implements Controller {
         Runnable rn = ()-> settings_btn.fire();
         LoadMap.scene.getAccelerators().put(kc, rn);
     }
-    
+
+    @Override
+    public void apply_settings() {
+        for (Node n: LoadMap.scene.getRoot().lookupAll(".Custom_label")) {
+            n.setStyle("-fx-font-size: " + Settings.fontSize + "px;");
+        }
+    }
+
     public Game creer_partie(String pseudo, int difficulty){
 
         Player player1 = new Player(pseudo);
@@ -265,5 +273,6 @@ public class new_game_formController implements Controller {
 
         return game_test;
     }
+
 
 }

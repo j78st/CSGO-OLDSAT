@@ -27,7 +27,7 @@
                               <Insets right="20.0" />
                            </HBox.margin>
                         </ImageView>
-                        <Text boundsType="LOGICAL_VERTICAL_CENTER" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Text" text="classement" textOrigin="CENTER" wrappingWidth="176.115234375">
+                        <Text boundsType="LOGICAL_VERTICAL_CENTER" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Title" text="classement" textOrigin="CENTER" wrappingWidth="176.115234375">
                            <font>
                               <Font size="36.0" />
                            </font>

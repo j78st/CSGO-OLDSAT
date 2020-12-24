@@ -17,6 +17,7 @@ public class Settings {
     // Apparence
     public static String icon_color; // couleur des icones -> "black" ou "white"
     public static String theme; // thème sélectionné
+    public static int fontSize; // taille de la police des textes a afficher
 
 
     /** Cette méthode va récupérer les paramètre de l'application
@@ -33,6 +34,7 @@ public class Settings {
         bg_volume = settings.getBg_volume();
         icon_color = settings.getIcon_color();
         theme = settings.getTheme();
+        fontSize = settings.getS();
 
         // application correctif son
         WorldBoxDisc.setSoundBackground(bg_volume);

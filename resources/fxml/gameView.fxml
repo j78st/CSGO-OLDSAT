@@ -16,14 +16,14 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Interface.ViewController.gameController">
+<AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="800.0" stylesheets="@../CSS/blue.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Interface.ViewController.gameController">
    <children>
       <AnchorPane fx:id="background_menu" opacity="0.75" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #000000;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
       <BorderPane fx:id="vbox_menu" layoutX="224.0" layoutY="48.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <center>
             <VBox alignment="CENTER" prefHeight="300.0" prefWidth="240.0" spacing="10.0">
                <children>
-                  <Text fx:id="timer_pause" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Text" text="Timer">
+                  <Text fx:id="timer_pause" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Title" text="Timer">
                      <font>
                         <Font size="64.0" />
                      </font>
@@ -68,7 +68,7 @@
                            <center>
                               <AnchorPane BorderPane.alignment="CENTER">
                                  <children>
-                                    <Label fx:id="narration" alignment="TOP_LEFT" prefHeight="362.0" prefWidth="356.0" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="15.0" />
+                                    <Label fx:id="narration" alignment="TOP_LEFT" prefHeight="362.0" prefWidth="356.0" styleClass="Narration_text" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="15.0" />
                                  </children>
                               </AnchorPane>
                            </center>
@@ -110,7 +110,7 @@
                                  <center>
                                     <HBox alignment="CENTER" spacing="10.0" BorderPane.alignment="CENTER">
                                        <children>
-                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Text" text="Votre réponse : " HBox.hgrow="ALWAYS" />
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Custom_text" text="Votre réponse : " HBox.hgrow="ALWAYS" />
                                           <TextField fx:id="answer_prompt" prefHeight="26.0" prefWidth="176.0" HBox.hgrow="ALWAYS" />
                                           <Button mnemonicParsing="false" onAction="#check_answer" text="valider" HBox.hgrow="NEVER" />
                                        </children>
@@ -122,7 +122,7 @@
                               </BorderPane>
                            </children>
                         </AnchorPane>
-                        <Label fx:id="timer_lbl" alignment="CENTER" contentDisplay="CENTER" layoutX="337.0" layoutY="452.0" prefHeight="70.0" prefWidth="120.0" text="TIMER" textAlignment="RIGHT" textFill="WHITE" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="15.0" />
+                        <Label fx:id="timer_lbl" alignment="CENTER" contentDisplay="CENTER" layoutX="337.0" layoutY="452.0" prefHeight="70.0" prefWidth="120.0" styleClass="Custom_text" text="TIMER" textAlignment="RIGHT" textFill="WHITE" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="15.0" />
                         <ImageView fx:id="illustration" fitHeight="150.0" fitWidth="200.0" layoutX="100.0" layoutY="125.0" pickOnBounds="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
                      </children>
                   </AnchorPane>

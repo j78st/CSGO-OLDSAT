@@ -135,9 +135,13 @@ public class LoadMap {
         controller.initialize();
         controller.setShortcut();
 
+
         // affichage
         stage.setTitle("OLD'SAT");
         stage.getScene().setRoot(kit.getNext_root());
+
+        controller.apply_settings();
+
         stage.show();
     }
 
@@ -155,6 +159,7 @@ public class LoadMap {
         settings_menuController controller = loader.getController();
         controller.provide_current_screen_id(previous_id); // ID de l'écran ou on appelle les paramètres
         controller.setShortcut();
+
         if (gameController.game != null){
             Engine.engine.refreshText();
             Engine.engine.refreshAction();
@@ -162,6 +167,9 @@ public class LoadMap {
 
         stage.setTitle("OLD'SAT");
         stage.getScene().setRoot(parent);
+
+        controller.apply_settings();
+
         stage.show();
     }
 

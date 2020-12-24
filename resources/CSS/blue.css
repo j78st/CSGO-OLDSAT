@@ -94,8 +94,20 @@
 }
 
 /* ====== Design des textes ====== */
-.Text {
+.Title {
     -fx-fill: #ff931f;
+}
+
+.Custom_text {
+    -fx-fill: #ff931f;
+}
+
+.Custom_label {
+    -fx-text-fill: white ;
+}
+
+.Narration_text {
+    -fx-text-fill: white ;
 }
 
 /* ====== Design des lignes ====== */

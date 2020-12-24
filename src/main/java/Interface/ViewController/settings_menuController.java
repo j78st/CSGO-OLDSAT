@@ -12,12 +12,14 @@ import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.Node;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyCodeCombination;
 import javafx.scene.input.KeyCombination;
+import javafx.scene.text.Text;
 
 import java.io.File;
 import java.io.IOException;
@@ -52,9 +54,29 @@ public class settings_menuController implements Controller {
     @FXML
     private Slider bg_slider;
 
+    @FXML
+    private TextField text_size_prompt;
+
     // ==========================================================
     // Méthodes gestion logiciel
     // ==========================================================
+
+    /**
+     * applique la taille de texte inscrite dans le champ associé des paramètres
+     * @param event
+     */
+    @FXML
+    void apply_new_font_size(ActionEvent event) {
+        // Inscrit la nouvelle taille de texte dans les paramètres
+        Settings.fontSize = Integer.parseInt(text_size_prompt.getText());
+
+        // applique le changement de style sur les Custom_text
+        for (Node n: LoadMap.scene.getRoot().lookupAll(".Custom_label")) {
+            n.setStyle("-fx-font-size: " + Settings.fontSize + "px;");
+        }
+
+    }
+
 
     /**
      * Lors de l'appui sur le bouton RETOUR :
@@ -64,6 +86,8 @@ public class settings_menuController implements Controller {
      */
     @FXML
     void go_back_to_previous_screen(ActionEvent event) throws IOException {
+
+        // Ecriture memoire des nouveaux paramètres
         Memoire m = new Memoire();
         m.write_data(new Serial_settings(), new File("resources/json/settings.json"));
 
@@ -153,6 +177,10 @@ public class settings_menuController implements Controller {
         } else {
             theme3_btn.setSelected(true);
         }
+
+        // restauration de la taille de caractère
+        text_size_prompt.setText(String.valueOf(Settings.fontSize));
+
     }
 
     /**
@@ -165,4 +193,15 @@ public class settings_menuController implements Controller {
         Runnable rn = ()-> {resume_btn.fire();};
         LoadMap.scene.getAccelerators().put(kc, rn);
     }
+
+    /**
+     *  Applique les valeurs enregistrées dans les paramètres aux éléments de la page
+     */
+    @Override
+    public void apply_settings() {
+        for (Node n: LoadMap.scene.getRoot().lookupAll(".Custom_label")) {
+            n.setStyle("-fx-font-size: " + Settings.fontSize + "px;");
+        }
+    }
+
 }
