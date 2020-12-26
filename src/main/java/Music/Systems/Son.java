@@ -29,5 +29,7 @@ public class Son {
     public static final String glassSound = "glassSound";
     public static final String feu = "feu";
     public static final String prendre = "prendre";
-
+    public static final String tick = "tick";
+    public static final String errorEnigma = "errorEnigma";
+    public static final String bonusTime = "bonusTime";
 }

@@ -10,7 +10,7 @@ import Music.TinySound.TinySound;
 public class WorldBoxDisc extends Thread {
     public static ArrayList<Disc> worldBoxMusic = new ArrayList<>();
     public static HashMap<String, Integer> idWorldBoxMusic = new HashMap<>();
-    public static double defaultSoundVolume = 5; //Niveau sonore par défaut
+    public static double defaultSoundVolume = 2; //Niveau sonore par défaut
     public static int total = -1; //Nb total de piste chargée
     private static boolean soundFx; //Autorise la lecture d'effets sonores
     private static boolean soundBackground; //Autorise la lecture de fonds sonores
@@ -180,6 +180,21 @@ public class WorldBoxDisc extends Thread {
         Disc grabObject = new Disc(grabObjectM, "prendre", false, MusicType.Background);
         add(grabObject);
 
+        //Son sprint 2
+        File tickF = new File("resources/sounds/ambiant/clock-ticking.wav");
+        Music tickM = TinySound.loadMusic(tickF);
+        Disc tick = new Disc(tickM, "tick", false, MusicType.SoundFx);
+        add(tick);
+
+        File errorEnigmaF = new File("resources/sounds/rooms/errorEnigma.wav");
+        Music errorEnigmaM = TinySound.loadMusic(errorEnigmaF);
+        Disc errorEnigma = new Disc(errorEnigmaM, "errorEnigma", false, MusicType.SoundFx);
+        add(errorEnigma);
+
+        File bonusTimeF = new File("resources/sounds/rooms/bonusTime.wav");
+        Music bonusTimeM = TinySound.loadMusic(bonusTimeF);
+        Disc bonusTime = new Disc(bonusTimeM, "bonusTime", false, MusicType.SoundFx);
+        add(bonusTime);
     }
 
 
@@ -188,7 +203,11 @@ public class WorldBoxDisc extends Thread {
      * @param aDisc
      */
     public static void add(Disc aDisc){
-        aDisc.aMusic.setVolume(defaultSoundVolume); //MAJ du niveau sonore au moment du chargement des pistes
+        if(aDisc.name != "tick") {
+            aDisc.aMusic.setVolume(defaultSoundVolume); //MAJ du niveau sonore au moment du chargement des pistes
+        } else {
+            aDisc.aMusic.setVolume(0.5);
+        }
         idWorldBoxMusic.put(aDisc.name,++total);
         worldBoxMusic.add(aDisc);
     }
