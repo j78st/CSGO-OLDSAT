@@ -5,11 +5,15 @@ import Serialization.Memoire;
 import Serialization.Serial_settings;
 
 import java.io.File;
-import java.io.Serializable;
 
 public class Settings {
 
-    // variables globales
+    // Constantes globales
+    public static final int SMALL = 10;
+    public static final int MEDIUM = 15;
+    public static final int BIG = 20;
+
+    // Variables globales
     // Volume
     public static Double fx_volume; // volume des effets sonores
     public static Double bg_volume; // volume musique de fond

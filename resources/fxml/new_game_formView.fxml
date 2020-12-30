@@ -59,7 +59,7 @@
                               <Insets top="5.0" />
                            </padding>
                         </Label>
-                        <ComboBox fx:id="difficulty_selector" prefWidth="150.0" visibleRowCount="3">
+                        <ComboBox fx:id="difficulty_selector" prefWidth="150.0" styleClass="ComboBox" visibleRowCount="3">
                            <HBox.margin>
                               <Insets left="35.0" right="150.0" />
                            </HBox.margin>

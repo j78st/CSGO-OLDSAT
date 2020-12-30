@@ -106,6 +106,9 @@ public class gameController implements Controller {
     @FXML
     private Text timer_pause;
 
+    @FXML
+    private GridPane map;
+
     // ==========================================================
     // Methodes liées au déroulement du jeu
     // ==========================================================
@@ -372,10 +375,13 @@ public class gameController implements Controller {
         // Mise en place du texte narratif
         narration.setWrapText(true);
         if (Settings.icon_color.equals("white")){
-            narration.setStyle("-fx-text-fill: white;");
+            narration.setStyle("-fx-text-fill: white; -fx-font-size: " + Settings.fontSize + "px;");
         } else {
-            narration.setStyle("-fx-text-fill: black;");
+            narration.setStyle("-fx-text-fill: black; -fx-font-size: " + Settings.fontSize + "px;");
         }
+
+        // mini map
+        map.getStyleClass().add("Line");
     }
 
     /**
