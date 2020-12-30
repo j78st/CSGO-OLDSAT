@@ -1,18 +1,18 @@
-#README
+# README
 
-##Compilation
+## Compilation
 ``
 mvn package
 ``
-##Execution
+## Execution
 ``
 mvn exec:java
 ``
 
-##Genération de la documentation
+## Genération de la documentation
 ``
 mvn javadoc:javadoc
 ``
 
-##Installation
+## Installation
 [a completer]
