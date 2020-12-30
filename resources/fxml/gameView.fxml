@@ -16,7 +16,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="800.0" stylesheets="@../CSS/blue.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Interface.ViewController.gameController">
+<AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Interface.ViewController.gameController">
    <children>
       <AnchorPane fx:id="background_menu" opacity="0.75" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #000000;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
       <BorderPane fx:id="vbox_menu" layoutX="224.0" layoutY="48.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
@@ -101,9 +101,16 @@
                         </HBox>
                      </children>
                   </AnchorPane>
-                  <AnchorPane fx:id="picture_pane" prefHeight="205.0" prefWidth="333.0" styleClass="GamePane" GridPane.columnIndex="1">
+                  <AnchorPane prefHeight="205.0" prefWidth="333.0" styleClass="GamePane" GridPane.columnIndex="1">
                      <children>
-                        <AnchorPane prefHeight="200.0" prefWidth="200.0" styleClass="GamePane" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                        <AnchorPane prefHeight="200.0" prefWidth="200.0" styleClass="GamePane" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <BorderPane fx:id="picture_pane" layoutX="14.0" layoutY="14.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                 <center>
+                                    <ImageView fx:id="illustration" fitHeight="373.0" fitWidth="369.0" pickOnBounds="true" styleClass="Illustration" />
+                                 </center>
+                              </BorderPane>
+                           </children></AnchorPane>
                         <AnchorPane fx:id="answerBox" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" styleClass="GamePane" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0">
                            <children>
                               <BorderPane layoutX="183.0" layoutY="187.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
@@ -128,7 +135,6 @@
                               <Button fx:id="pause_btn" minHeight="30.0" minWidth="30.0" mnemonicParsing="false" onAction="#pause_game" styleClass="GameButton" text="| |" />
                            </children>
                         </HBox>
-                        <ImageView fx:id="illustration" fitHeight="150.0" fitWidth="200.0" layoutX="100.0" layoutY="125.0" pickOnBounds="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
                      </children>
                   </AnchorPane>
                </children>

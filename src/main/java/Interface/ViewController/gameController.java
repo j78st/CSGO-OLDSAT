@@ -44,7 +44,7 @@ public class gameController implements Controller {
     private AnchorPane story_pane;
 
     @FXML
-    private AnchorPane picture_pane;
+    private BorderPane picture_pane;
 
     @FXML
     private AnchorPane answerBox;
@@ -308,7 +308,12 @@ public class gameController implements Controller {
      */
     public void refreshPicture(){
         String URL = Game.search_room(game.player.position).getPath_image();
-        illustration.setImage(new Image(URL));
+        picture_pane.setBackground(new Background(new BackgroundImage(
+                new Image(URL,true),
+                BackgroundRepeat.NO_REPEAT,
+                BackgroundRepeat.NO_REPEAT,
+                BackgroundPosition.DEFAULT,
+                new BackgroundSize(1.0, 1.0, true, true, false, false))));
     }
 
     /**
@@ -378,9 +383,6 @@ public class gameController implements Controller {
         } else {
             narration.setStyle("-fx-text-fill: black; -fx-font-size: " + Settings.fontSize + "px;");
         }
-
-        // mini map
-        map.getStyleClass().add("Line");
     }
 
     /**

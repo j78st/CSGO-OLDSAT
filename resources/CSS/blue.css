@@ -155,6 +155,10 @@
     -fx-stroke: #ff931f;
 }
 
+.Illustration {
+    -fx-background-size: cover;
+}
+
 
 
 
