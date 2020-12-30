@@ -4,28 +4,102 @@ import java.util.ArrayList;
 
 public class Game {
     public static Player player; // informations liées au joueur
-    public static ArrayList<Room> map; // liste de toutes les salles/sous-salles/énigmes du jeu
-    public static ArrayList<Enigma> enigmas; //liste de toutes les énigmes du jeu
-    public static ArrayList<Action> actions; // liste de toutes les actions du jeu
-    public static ArrayList<Gear> gears; // liste de tous les objets du jeu
-    public static ArrayList<Text_scenario> scenario; // liste de tous les textes utilisés dans le jeu
-    public static int difficulty; // difficulté choisie pour la partie => action sur le temps?
+    public static ArrayList<Room> map; // liste de toutes les salles
+    public static ArrayList<Interactive_place> interactive_places; // Liste de tous les lieux d'interaction
+    public static ArrayList<Action> actions; // liste de toutes les actions
+    public static ArrayList<Enigma> enigmas; //liste de toutes les énigmes
+    public static ArrayList<Item> items; // liste de tous les objets
+    public static ArrayList<Text_scenario> scenario; // liste de tous les textes
+    public static int difficulty; // difficulté choisie pour la partie
     public static int timer;
 
-    public Game(){
-
-    }
 
     public Game(Player player, int difficulty) {
         Game.player = player;
         map = new ArrayList<>();
+        interactive_places = new ArrayList<>();
         actions = new ArrayList<>();
-        gears = new ArrayList<>();
         enigmas = new ArrayList<>();
+        items = new ArrayList<>();
         scenario = new ArrayList<>();
-        this.difficulty = difficulty;
-        this.timer = 0;
+        Game.difficulty = difficulty;
+        timer = 0;
     }
+
+
+    public static Player getPlayer() {
+        return player;
+    }
+
+    public static ArrayList<Room> getMap() {
+        return map;
+    }
+
+    public static ArrayList<Interactive_place> getInteractive_places() {
+        return interactive_places;
+    }
+
+    public static ArrayList<Action> getActions() {
+        return actions;
+    }
+
+    public static ArrayList<Enigma> getEnigmas() {
+        return enigmas;
+    }
+
+    public static ArrayList<Item> getItems() {
+        return items;
+    }
+
+    public static ArrayList<Text_scenario> getScenario() {
+        return scenario;
+    }
+
+    public int getDifficulty() {
+        return difficulty;
+    }
+
+    public int getTimer() {
+        return timer;
+    }
+
+
+    public static void setPlayer(Player player) {
+        Game.player = player;
+    }
+
+    public static void setMap(ArrayList<Room> map) {
+        Game.map = map;
+    }
+
+    public static void setInteractive_places(ArrayList<Interactive_place> interactive_places) {
+        Game.interactive_places = interactive_places;
+    }
+
+    public static void setActions(ArrayList<Action> actions) {
+        Game.actions = actions;
+    }
+
+    public static void setEnigmas(ArrayList<Enigma> enigmas) {
+        Game.enigmas = enigmas;
+    }
+
+    public static void setItems(ArrayList<Item> items) {
+        Game.items = items;
+    }
+
+    public static void setScenario(ArrayList<Text_scenario> scenario) {
+        Game.scenario = scenario;
+    }
+
+    public static void setDifficulty(int difficulty) {
+        Game.difficulty = difficulty;
+    }
+
+    public static void setTimer(int timer) {
+        Game.timer = timer;
+    }
+
 
     public static Action search_action(int id){ // recherche une action à partir de son numéro d'identification
         Action res = null;
@@ -39,12 +113,12 @@ public class Game {
         return res;
     }
 
-    public static Gear search_gear(int id){ // recherche un objet à partir de son numéro d'identification
-        Gear res = null;
-        if (!gears.isEmpty()){
-            for(int i=0;i<gears.size();i++){
-                if(gears.get(i).id == id) {
-                    res = gears.get(i);
+    public static Item search_gear(int id){ // recherche un objet à partir de son numéro d'identification
+        Item res = null;
+        if (!items.isEmpty()){
+            for(int i=0;i<items.size();i++){
+                if(items.get(i).id == id) {
+                    res = items.get(i);
                 }
             }
         }
@@ -85,37 +159,8 @@ public class Game {
             }
         }
         return res;
-    }
 
-    public static Player getPlayer() {
-        return player;
-    }
 
-    public static ArrayList<Room> getMap() {
-        return map;
-    }
-
-    public static ArrayList<Enigma> getEnigmas() {
-        return enigmas;
-    }
-
-    public static ArrayList<Action> getActions() {
-        return actions;
-    }
-
-    public static ArrayList<Gear> getGears() {
-        return gears;
-    }
-
-    public static ArrayList<Text_scenario> getScenario() {
-        return scenario;
-    }
-
-    public int getDifficulty() {
-        return difficulty;
-    }
-
-    public int getTimer() {
-        return timer;
     }
 }
+

@@ -2,7 +2,7 @@ package Partie;
 
 import java.util.ArrayList;
 
-public class Gear {
+public class Item {
     int id; // numéro d'identification de l'objet
     String name; // nom de l'objet
     String description; // url de la description liée à la salle
@@ -11,7 +11,7 @@ public class Gear {
     ArrayList<Action> actions; // liste des actions nécessitant l'objet pour être effectuées
     String URL_image;
 
-    public Gear(int id,String name,String description,int max_usage, String url_image){
+    public Item(int id, String name, String description, int max_usage, String url_image){
         this.URL_image = url_image;
         this.id = id;
         this.name = name;
@@ -19,7 +19,7 @@ public class Gear {
         this.max_usage = max_usage;
         this.current_usage = 0;
         this.actions = new ArrayList<>();
-        Game.gears.add(this); // ajoute l'objet à la liste des objets disponibles dans le jeu
+        Game.items.add(this); // ajoute l'objet à la liste des objets disponibles dans le jeu
     }
 
     public void use_gear(){ // ajoute un usage à l'objet et vérifie s'il doit être détruit

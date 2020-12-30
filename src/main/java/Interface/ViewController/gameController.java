@@ -8,7 +8,7 @@ import Music.Systems.Son;
 import Music.Systems.WorldBoxDisc;
 import Partie.Action;
 import Partie.Game;
-import Partie.Gear;
+import Partie.Item;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -25,7 +25,6 @@ import javafx.scene.input.KeyCodeCombination;
 import javafx.scene.input.KeyCombination;
 import javafx.scene.layout.*;
 import javafx.scene.text.Text;
-import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -321,7 +320,7 @@ public class gameController implements Controller {
     }
 
     public void refreshInventory() {
-        ArrayList<Gear> objects = game.player.getInventory();
+        ArrayList<Item> objects = game.player.getInventory();
         if (objects.size()>0){
             item_slot_1.setGraphic(new ImageView(new Image(objects.get(0).getURL_image())));
         } else {
