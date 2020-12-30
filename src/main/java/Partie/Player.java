@@ -1,13 +1,12 @@
 package Partie;
 
 import Interface.Settings.Engine;
-import Interface.ViewController.gameController;
 
 import java.util.ArrayList;
 
 public class Player {
-    String pseudo;
-    ArrayList<Gear> inventory; // liste des objets possédés par le joueur
+    String pseudo; // le pseudo du joueur
+    ArrayList<Item> inventory; // liste des objets possédés par le joueur
     public int position; // numéro de la salle/sous-salle/énigme affichée au joueur
 
     public Player(String pseudo){
@@ -21,7 +20,7 @@ public class Player {
         Engine.engine.refreshRoom();
     }
 
-    public boolean add_inventory(Gear gear){ // Ajoute un objet à l'inventaire du joueur
+    public boolean add_inventory(Item gear){ // Ajoute un objet à l'inventaire du joueur
         if(this.inventory.size()< 3){
             this.inventory.add(gear);
             gear.set_actions_doable(true);
@@ -33,7 +32,7 @@ public class Player {
         }
     }
 
-    public void remove_inventory(Gear gear){ // Supprime un objet de l'inventaire du joueur
+    public void remove_inventory(Item gear){ // Supprime un objet de l'inventaire du joueur
         this.inventory.remove(gear);
         gear.set_actions_doable(false);
         Engine.engine.refreshInventory();
@@ -43,7 +42,7 @@ public class Player {
         return pseudo;
     }
 
-    public ArrayList<Gear> getInventory() {
+    public ArrayList<Item> getInventory() {
         return inventory;
     }
 
