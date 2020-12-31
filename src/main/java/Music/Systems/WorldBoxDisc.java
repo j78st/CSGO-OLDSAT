@@ -54,7 +54,7 @@ public class WorldBoxDisc extends Thread {
          */
 
         //musique de jeu
-        File windF = new File("resources/sounds/ambiant/wind.wav");
+        File windF = new File("resources/sounds/ambiant/wind2.wav");
         Music windM = TinySound.loadMusic(windF);
         Disc wind = new Disc(windM, "wind", true, MusicType.Background);
         add(wind);
