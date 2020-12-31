@@ -9,8 +9,8 @@
     <version>1.0-SNAPSHOT</version>
     <name>GenieLogiciel</name>
     <properties>
-        <maven.compiler.source>11</maven.compiler.source> <!--JAVA version 11-->
-        <maven.compiler.target>11</maven.compiler.target>
+        <maven.compiler.source>14</maven.compiler.source> <!--JAVA version 14-->
+        <maven.compiler.target>14</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
