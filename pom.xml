@@ -14,8 +14,14 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
-    <!--Pour ajouter le nom de la class main-->
+
     <build>
+        <resources>
+            <resource>
+                <directory>resources</directory> <!--Precise le lieu du fichier de ressources : important pour github-->
+            </resource>
+        </resources>
+
         <plugins>
 
             <plugin>
@@ -23,7 +29,7 @@
                 <artifactId>exec-maven-plugin</artifactId>
                 <version>1.6.0</version>
                 <configuration>
-                    <mainClass>Main</mainClass>
+                    <mainClass>Main</mainClass> <!--Pour ajouter le nom de la class main de l'application-->
                 </configuration>
             </plugin>
 
