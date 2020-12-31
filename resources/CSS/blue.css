@@ -155,8 +155,12 @@
     -fx-stroke: #ff931f;
 }
 
-.Illustration {
-    -fx-background-size: cover;
+.Item_description {
+    -fx-background-color: black;
+    -fx-background-radius: 10;
+
+    -fx-border-color: #ff931f;
+    -fx-border-radius: 10;
 }
 
 

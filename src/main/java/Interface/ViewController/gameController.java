@@ -23,6 +23,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyCodeCombination;
 import javafx.scene.input.KeyCombination;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.*;
 import javafx.scene.text.Text;
 
@@ -41,16 +42,10 @@ public class gameController implements Controller {
 
     // zones de l'écran -----------------------------------------
     @FXML
-    private AnchorPane story_pane;
-
-    @FXML
     private BorderPane picture_pane;
 
     @FXML
     private AnchorPane answerBox;
-
-    @FXML
-    private ImageView illustration;
 
     @FXML
     private Label narration;
@@ -64,6 +59,12 @@ public class gameController implements Controller {
 
     @FXML
     private Button item_slot_3;
+
+    @FXML
+    private AnchorPane item_description;
+
+    @FXML
+    private Label description_label;
 
     // affichage timer ------------------------------------------
     @FXML
@@ -184,6 +185,31 @@ public class gameController implements Controller {
 
         // ---- vvv suspendre timer vvv -----
 
+    }
+
+    /**
+     * Affiche la description de l'objet survolé avec la souris
+     */
+    @FXML
+    void show_description(MouseEvent event) throws InterruptedException {
+        if (item_slot_1.equals(event.getSource())) {
+            description_label.setText("item 1");
+        } else if (item_slot_2.equals(event.getSource())) {
+            description_label.setText("item 2");
+        } else if (item_slot_3.equals(event.getSource())) {
+            description_label.setText("item 3");
+        }
+        item_description.setVisible(true);
+        description_label.setVisible(true);
+    }
+
+    /**
+     * Cache la description de lorsque l'objet n'est plus survolé
+     */
+    @FXML
+    void hide_description(MouseEvent event) {
+        item_description.setVisible(false);
+        description_label.setVisible(false);
     }
 
     // ==========================================================
@@ -308,12 +334,13 @@ public class gameController implements Controller {
      */
     public void refreshPicture(){
         String URL = Game.search_room(game.player.position).getPath_image();
-        picture_pane.setBackground(new Background(new BackgroundImage(
+        Background bg = new Background(new BackgroundImage(
                 new Image(URL,true),
                 BackgroundRepeat.NO_REPEAT,
                 BackgroundRepeat.NO_REPEAT,
                 BackgroundPosition.DEFAULT,
-                new BackgroundSize(1.0, 1.0, true, true, false, false))));
+                new BackgroundSize(1.0, 1.0, true, true, false, false)));
+        picture_pane.setBackground(bg);
     }
 
     /**
@@ -363,6 +390,10 @@ public class gameController implements Controller {
         // masquage du menu pause et desactivation des boutons
         background_menu.toBack();
         vbox_menu.toBack();
+
+        // masquage par defaut de la description des objets
+        item_description.setVisible(false);
+        description_label.setVisible(false);
 
         // icone d'inventaire
         Image bag_icon = new Image("icons/"+ Settings.icon_color +"/bag.png");
