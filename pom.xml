@@ -46,7 +46,7 @@
             </plugin>
 
             <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
+                <groupId>org.apache.maven.plugins</groupId> <!-- Génére la javadoc au moment de la compilation maven-->
                 <artifactId>maven-javadoc-plugin</artifactId>
                 <configuration>
                     <javadocExecutable>${java.home}/bin/javadoc</javadocExecutable>
