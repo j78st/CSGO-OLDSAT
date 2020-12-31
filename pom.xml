@@ -7,7 +7,7 @@
     <groupId>org.example</groupId>
     <artifactId>UltimateJavaProject</artifactId>
     <version>1.0-SNAPSHOT</version>
-    <name>GenieLogiciel</name>
+    <name>CSGO-OLDSAT</name>
     <properties>
         <maven.compiler.source>14</maven.compiler.source> <!--JAVA version 14-->
         <maven.compiler.target>14</maven.compiler.target>
@@ -16,14 +16,17 @@
 
 
     <build>
+        <finalName>CSGO-OLDSAT</finalName>
         <resources>
             <resource>
                 <directory>resources</directory> <!--Precise le lieu du fichier de ressources : important pour github-->
             </resource>
+            <resource>
+                <directory>target/classes</directory>
+            </resource>
         </resources>
 
         <plugins>
-
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>exec-maven-plugin</artifactId>

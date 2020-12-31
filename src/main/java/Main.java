@@ -60,6 +60,7 @@ public class Main extends Application {
         launch(args);
         */
 
+        /*
         WorldBoxDisc.init();
         Thread.sleep(5000);
         TimerController timerController = new TimerController(70);
@@ -71,7 +72,7 @@ public class Main extends Application {
             Thread.sleep(500);
             System.out.println(timerController.getRemainingTime());
         }
-
+        */
 
         /*
         Timer.sleep(5000);
