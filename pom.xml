@@ -21,10 +21,13 @@
             <resource>
                 <directory>resources</directory> <!--Precise le lieu du fichier de ressources : important pour github-->
             </resource>
-            <resource>
-                <directory>target/classes</directory>
-            </resource>
         </resources>
+
+        <testResources>
+            <testResource>
+                <directory>resources</directory> <!--Precise le lieu du fichier de ressources : important pour github-->
+            </testResource>
+        </testResources>
 
         <plugins>
             <plugin>
@@ -86,6 +89,15 @@
             <artifactId>junit</artifactId>
             <version>4.9</version>
             <scope>test</scope>
+
+
+        </dependency>
+
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter</artifactId>
+            <version>RELEASE</version>
+            <scope>test</scope>
         </dependency>
 
         <dependency>
@@ -105,11 +117,6 @@
             <artifactId>gson</artifactId>
             <version>2.8.6</version>
         </dependency>
-        <dependency>
-            <groupId>org.junit.jupiter</groupId>
-            <artifactId>junit-jupiter</artifactId>
-            <version>RELEASE</version>
-            <scope>test</scope>
-        </dependency>
+
     </dependencies>
 </project>
