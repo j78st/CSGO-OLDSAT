@@ -18,14 +18,20 @@
     <build>
         <finalName>CSGO-OLDSAT</finalName>
         <resources>
-            <resource>
-                <directory>resources</directory> <!--Precise le lieu du fichier de ressources : important pour github-->
+            <resource> <!--Precise le lieu du fichier de ressources : important pour github-->
+                <directory>${project.basedir}</directory>  <!-- un cran au dessus du fichier ressource -->
+                <includes>
+                    <include>ressources/*.*</include>
+                </includes>
             </resource>
         </resources>
 
         <testResources>
             <testResource>
-                <directory>resources</directory> <!--Precise le lieu du fichier de ressources : important pour github-->
+                <directory>${project.basedir}</directory>  <!-- un cran au dessus du fichier ressource -->
+                <includes>
+                    <include>ressources/*.*</include>
+                </includes>
             </testResource>
         </testResources>
 
