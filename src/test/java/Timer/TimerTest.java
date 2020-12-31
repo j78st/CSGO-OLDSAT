@@ -17,8 +17,7 @@ public class TimerTest {
     /**
      * Initialise les données nécessaires aux tests. Ici, les pistes sonores avant le début de tous les tests.
      */
-    @Before
-    public void init() {
+    static {
         WorldBoxDisc.init();
         Timer.sleep(2000);
     }
