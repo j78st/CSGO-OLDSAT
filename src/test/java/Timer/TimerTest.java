@@ -3,7 +3,7 @@ package Timer;
 import Music.Systems.WorldBoxDisc;
 import org.junit.Before;
 import org.junit.Test;
-import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.*;
 
 import java.util.Random;
 
@@ -12,26 +12,26 @@ import static org.junit.Assert.*;
 /**
  * Classe de test de la classe Timer
  */
+@TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 public class TimerTest {
 
     /**
      * Initialise les données nécessaires aux tests. Ici, les pistes sonores avant le début de tous les tests.
      */
-    /*
-    static {
+
+    @Test
+    @Order(1)
+    public void init() {
         WorldBoxDisc.init();
         Timer.sleep(2000);
     }
-    */
 
     /**
      * Teste l'ajout de temps à un timer
      */
     @Test
+    @Order(2)
     public void testAddTime(){
-        WorldBoxDisc.init();
-        Timer.sleep(2000);
-
         TimerController timer1 = new TimerController(60);
         TimerController oracle = new TimerController(120);
         timer1.bonusTime(60);
@@ -43,10 +43,8 @@ public class TimerTest {
      * Teste la diminution de temps à un timer
      */
     @Test
+    @Order(3)
     public void testSubTime(){
-        WorldBoxDisc.init();
-        Timer.sleep(2000);
-
         TimerController timer1 = new TimerController(60);
         TimerController oracle = new TimerController(30);
         timer1.penaltyTime(30);
@@ -57,10 +55,8 @@ public class TimerTest {
      * Teste qu'au bout d'un certain temps aléatoire, le timer est terminé
      */
     @Test
+    @Order(4)
     public void testTimeRemaining(){
-        WorldBoxDisc.init();
-        Timer.sleep(2000);
-
         Random generator = new Random();
         int clockTime = generator.nextInt(3)+3; //Temps de l'horloge varie entre 5 et 3s
         TimerController timer1 = new TimerController(clockTime+10);
@@ -69,7 +65,6 @@ public class TimerTest {
         timer1.start();
         Timer.sleep(clockTime*1000 + 1000);
         assertEquals("Cette méthode devrait montrer qu'il reste 10s au temps du timer.", timer1.getTimeFullSeconds(), oracle.getTimeFullSeconds());
-        WorldBoxDisc.showLoadedAudioFiles();
     }
 
 }
