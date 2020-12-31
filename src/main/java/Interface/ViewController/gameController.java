@@ -192,15 +192,28 @@ public class gameController implements Controller {
      */
     @FXML
     void show_description(MouseEvent event) throws InterruptedException {
+        ArrayList<Item> objects = game.player.getInventory();
+
         if (item_slot_1.equals(event.getSource())) {
-            description_label.setText("item 1");
+            if (objects.size()>0){
+                description_label.setText("item 1");
+                item_description.setVisible(true);
+                description_label.setVisible(true);
+            }
         } else if (item_slot_2.equals(event.getSource())) {
-            description_label.setText("item 2");
+            if (objects.size()>1){
+                description_label.setText("item 2");
+                item_description.setVisible(true);
+                description_label.setVisible(true);
+            }
         } else if (item_slot_3.equals(event.getSource())) {
-            description_label.setText("item 3");
+            if (objects.size()>2){
+                description_label.setText("item 3");
+                item_description.setVisible(true);
+                description_label.setVisible(true);
+            }
         }
-        item_description.setVisible(true);
-        description_label.setVisible(true);
+
     }
 
     /**
