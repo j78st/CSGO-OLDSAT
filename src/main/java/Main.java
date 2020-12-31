@@ -61,18 +61,28 @@ public class Main extends Application {
         */
 
         WorldBoxDisc.init();
-        Thread.sleep(1000);
-        TimerController timerController = new TimerController(60);
+        Thread.sleep(5000);
+        TimerController timerController = new TimerController(70);
         timerController.start();
+
+
+        //Exemple de récupération du temps
+        while (timerController.isAlive()){
+            Thread.sleep(500);
+            System.out.println(timerController.getRemainingTime());
+        }
+
+
+        /*
         Timer.sleep(5000);
         timerController.bonusTime(120);
         timerController.toogleTimer();
         Timer.sleep(9000);
         timerController.toogleTimer();
-        timerController.penaltyTime(40);
-
-
+        timerController.penaltyTime(120);
+        */
     }
+
 
 
 }

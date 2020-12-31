@@ -1,5 +1,8 @@
 package Music.Systems;
 
+/**
+ * Cette classe centralise le nom de toutes les pistes sonores
+ */
 public class Son {
     public static final String wind = "wind";
     public static final String opinel1 = "opinel1";

@@ -2,15 +2,30 @@ package Timer;
 
 import Music.Systems.Son;
 import Music.Systems.WorldBoxDisc;
+/**
+ * Cette classe représente le controler du timer.
+ */
 
 public class TimerController extends Thread {
+    /**
+     * Représente l'objet timer qui sera controllé
+     */
     private volatile Timer timer;
-    private volatile boolean stateTimer;
+
+    /**
+     * Objet bloquant commun au timer et son controller
+     */
     private volatile Lock lock;
+
+    /**
+     * Temps initial total du timer
+     */
+    private int timeSeconds;
 
     public TimerController(int secondes){
         this.lock = new Lock();
-        timer = new Timer(secondes, this.lock);
+        this.timeSeconds = secondes;
+        timer = new Timer(this.timeSeconds, this.lock);
     }
 
     @Override
@@ -77,10 +92,18 @@ public class TimerController extends Thread {
     }
 
     /**
-     * Modifie le seuil de tick limite, i.e. la limite de secondes à partir duquelle on entends les ticks de l'horloge
+     * Modifie le seuil de tick limite, i.e. la limite de secondes à partir duquelle on entend les ticks de l'horloge
      * @param inTickTime
      */
     public void setTickLimit(int inTickTime){
         timer.setTickTime(inTickTime);
+    }
+
+    /**
+     * Modifie le seuil de tick limite, i.e. la limite de secondes à partir duquelle on entend les battements de coeur
+     * @param inHeartBeatTickLimit
+     */
+    public void setHeartBeatTickLimit(int inHeartBeatTickLimit){
+        timer.setHeartbeatTickTime(inHeartBeatTickLimit);
     }
 }

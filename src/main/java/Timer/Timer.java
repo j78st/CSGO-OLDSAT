@@ -2,21 +2,50 @@ package Timer;
 
 import Music.Systems.Son;
 import Music.Systems.WorldBoxDisc;
-import com.sun.javafx.animation.TickCalculation;
+import java.util.Random;
 
+
+/**
+ * Cette classe représente le timer.
+ */
 public class Timer extends Thread {
-    private int tempsSecondes; //donne en seconde
+    /** Représente le temps totale en seconde du timer
+     */
+    private int tempsSecondes;
+    /**
+     * Représente l'état du timer : arrêt/marche
+     */
     private volatile boolean stateTimer;
+    /**
+     * Objet permettant de bloquer le thread
+     */
     private volatile Lock lock;
+    /**
+     * Répresente le seuil de déclenchement des ticks de l'horloge
+     */
     private int tickTime;
+    /**
+     * Répresente le seuil de déclenchement des battements du coeur
+     */
+    private int heartbeatTickTime;
+    /**
+     * Réprésente l'activation du son de battement du coeur
+     */
+    private boolean heartBeat;
 
     public Timer(int tempsSecondes, Lock inLock){
         this.tempsSecondes = tempsSecondes;
         this.stateTimer = false; //par défaut, le timer est a l'arret
         this.lock = inLock;
-        this.tickTime = 60; //par defaut, le son de tick se déclenche sur la dernière minute
+        this.tickTime = 60; //par defaut, le son de tick se déclenche sur les trois dernères minutes
+        this.heartbeatTickTime = 30; //par defaut le battement du coeur se déclenche sur la dernière minute
+        this.heartBeat = false;
     }
 
+    /**
+     * Endort le thread du timer pour x ms
+     * @param ms
+     */
     public static void sleep(int ms){
         try{
             Thread.sleep(ms);
@@ -39,6 +68,9 @@ public class Timer extends Thread {
      */
     public synchronized  void addTime(int secondes){
         this.tempsSecondes += secondes;
+        if(tempsSecondes > heartbeatTickTime){ //En cas d'ajout de temps, le coeur peut n'être plus entendu
+           heartBeat = false;
+        }
     }
 
     /**
@@ -112,12 +144,24 @@ public class Timer extends Thread {
     }
 
     /**
-     * Modifie le seuil de tick limite, i.e. la limite de secondes à partir duquelle on entends les ticks de l'horloge
+     * Modifie le seuil de tick limite, i.e. la limite de secondes à partir de laquelle on entend les ticks de l'horloge
      * @param inTickTime
      */
     public void setTickTime(int inTickTime){
         if(inTickTime >= 10){
             this.tickTime = inTickTime;
+        } else {
+            System.out.println("Niveau de tick trop bas.");
+        }
+    }
+
+    /**
+     * Modifie le seuil de tick limite pour le coeur du joueur, i.e. la limite de secondes à partir de laquelle on entend les battements du coeurs
+     * @param inHeartbeatTickTime
+     */
+    public void setHeartbeatTickTime(int inHeartbeatTickTime) {
+        if(inHeartbeatTickTime >= 10) {
+            this.heartbeatTickTime = heartbeatTickTime;
         } else {
             System.out.println("Niveau de tick trop bas.");
         }
@@ -132,12 +176,32 @@ public class Timer extends Thread {
                 if(this.tempsSecondes < tickTime) { //Passer un certain, on entend un tick signalant que c'est bientot la fin
                     WorldBoxDisc.play(Son.tick);
                 }
-                System.out.println(getRemainingTime()); //a enlever
+
+                if(this.tempsSecondes < this.heartbeatTickTime && !heartBeat){
+                    WorldBoxDisc.play(Son.coeur);
+                    heartBeat = true;
+                }
+
+                System.out.println(getRemainingTime());
             } else {
                 waitTimer(); //bloque le tread pour économiser le cpu
             }
         }
+        WorldBoxDisc.pause(Son.coeur);
+
+        //Randomisation du bruit de fin
+        Random generator = new Random();
+        int value = generator.nextInt(3);
+        //La "mort" a pris le joueur
+        switch (value){
+            case 0: WorldBoxDisc.play(Son.paraMot1);
+            break;
+
+            case 1: WorldBoxDisc.play(Son.paraMot2);
+            break;
+
+            case 2: WorldBoxDisc.play(Son.paraMot3);
+            break;
+        }
     }
-
-
 }

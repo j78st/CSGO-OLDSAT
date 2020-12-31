@@ -1,5 +1,6 @@
 # README
 
+
 ## Compilation
 ``
 mvn package
@@ -11,8 +12,7 @@ mvn exec:java
 
 ## Genération de la documentation
 ``
-mvn javadoc:javadoc
+mvn package && mvn javadoc:javadoc -Dshow=private
 ``
 
-## Installation
-[a completer]
+La génération du javadoc nécessite de recompiler le projet entier.
