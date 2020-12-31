@@ -2,6 +2,8 @@ package Timer;
 
 import Music.Systems.Son;
 import Music.Systems.WorldBoxDisc;
+
+import java.util.Objects;
 import java.util.Random;
 
 
@@ -167,6 +169,24 @@ public class Timer extends Thread {
         }
     }
 
+    /**
+     * Redefinition de la methode equals pour les tests junits
+     * @param o
+     * @return
+     */
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Timer timer = (Timer) o;
+        return tempsSecondes == timer.tempsSecondes && stateTimer == timer.stateTimer && tickTime == timer.tickTime && heartbeatTickTime == timer.heartbeatTickTime && heartBeat == timer.heartBeat;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(tempsSecondes, stateTimer, tickTime, heartbeatTickTime, heartBeat);
+    }
+
     @Override
     public void run() {
         while (this.tempsSecondes > 0){
@@ -182,7 +202,7 @@ public class Timer extends Thread {
                     heartBeat = true;
                 }
 
-                System.out.println(getRemainingTime());
+                //System.out.println(getRemainingTime());
             } else {
                 waitTimer(); //bloque le tread pour économiser le cpu
             }

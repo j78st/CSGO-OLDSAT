@@ -2,6 +2,9 @@ package Timer;
 
 import Music.Systems.Son;
 import Music.Systems.WorldBoxDisc;
+
+import java.util.Objects;
+
 /**
  * Cette classe représente le controler du timer.
  */
@@ -105,5 +108,23 @@ public class TimerController extends Thread {
      */
     public void setHeartBeatTickLimit(int inHeartBeatTickLimit){
         timer.setHeartbeatTickTime(inHeartBeatTickLimit);
+    }
+
+    /**
+     * Redefinition de la methode equals pour les tests junits
+     * @param o
+     * @return
+     */
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        TimerController that = (TimerController) o;
+        return timer.equals(that.timer);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(timer, timeSeconds);
     }
 }
