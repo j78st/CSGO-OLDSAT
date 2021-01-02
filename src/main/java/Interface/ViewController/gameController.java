@@ -13,6 +13,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
@@ -22,6 +23,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyCodeCombination;
 import javafx.scene.input.KeyCombination;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.*;
 import javafx.scene.text.Text;
 
@@ -40,16 +42,10 @@ public class gameController implements Controller {
 
     // zones de l'écran -----------------------------------------
     @FXML
-    private AnchorPane story_pane;
-
-    @FXML
-    private AnchorPane picture_pane;
+    private BorderPane picture_pane;
 
     @FXML
     private AnchorPane answerBox;
-
-    @FXML
-    private ImageView illustration;
 
     @FXML
     private Label narration;
@@ -63,6 +59,12 @@ public class gameController implements Controller {
 
     @FXML
     private Button item_slot_3;
+
+    @FXML
+    private AnchorPane item_description;
+
+    @FXML
+    private Label description_label;
 
     // affichage timer ------------------------------------------
     @FXML
@@ -104,6 +106,9 @@ public class gameController implements Controller {
     @FXML
     private Text timer_pause;
 
+    @FXML
+    private GridPane map;
+
     // ==========================================================
     // Methodes liées au déroulement du jeu
     // ==========================================================
@@ -114,7 +119,7 @@ public class gameController implements Controller {
      */
     @FXML
     void go_down(ActionEvent event) {
-        game.player.move(Game.search_room(game.player.getPosition()).getNeighbours()[2]);
+        Game.player.move(Game.search_room(Game.player.getPosition()).getNeighbours()[2]);
     }
 
     /**
@@ -123,7 +128,7 @@ public class gameController implements Controller {
      */
     @FXML
     void go_left(ActionEvent event) {
-        game.player.move(Game.search_room(game.player.getPosition()).getNeighbours()[3]);
+        Game.player.move(Game.search_room(Game.player.getPosition()).getNeighbours()[3]);
     }
 
     /**
@@ -132,7 +137,7 @@ public class gameController implements Controller {
      */
     @FXML
     void go_right(ActionEvent event) {
-        game.player.move(Game.search_room(game.player.getPosition()).getNeighbours()[1]);;
+        Game.player.move(Game.search_room(Game.player.getPosition()).getNeighbours()[1]);;
     }
 
     /**
@@ -141,7 +146,7 @@ public class gameController implements Controller {
      */
     @FXML
     void go_up(ActionEvent event) {
-        game.player.move(Game.search_room(game.player.getPosition()).getNeighbours()[0]);
+        Game.player.move(Game.search_room(Game.player.getPosition()).getNeighbours()[0]);
     }
 
     /**
@@ -180,6 +185,48 @@ public class gameController implements Controller {
 
         // ---- vvv suspendre timer vvv -----
 
+    }
+
+    /**
+     * Affiche la description de l'objet survolé avec la souris
+     */
+    @FXML
+    void show_description(MouseEvent event) throws InterruptedException {
+        ArrayList<Integer> id_objects = Game.player.getInventory();
+        ArrayList<Item> objects = new ArrayList<>();
+        for(int i =0;i<id_objects.size();i++){
+            objects.add(Game.search_item(id_objects.get(i)));
+        }
+
+        if (item_slot_1.equals(event.getSource())) {
+            if (objects.size()>0){
+                description_label.setText("item 1");
+                item_description.setVisible(true);
+                description_label.setVisible(true);
+            }
+        } else if (item_slot_2.equals(event.getSource())) {
+            if (objects.size()>1){
+                description_label.setText("item 2");
+                item_description.setVisible(true);
+                description_label.setVisible(true);
+            }
+        } else if (item_slot_3.equals(event.getSource())) {
+            if (objects.size()>2){
+                description_label.setText("item 3");
+                item_description.setVisible(true);
+                description_label.setVisible(true);
+            }
+        }
+
+    }
+
+    /**
+     * Cache la description de lorsque l'objet n'est plus survolé
+     */
+    @FXML
+    void hide_description(MouseEvent event) {
+        item_description.setVisible(false);
+        description_label.setVisible(false);
     }
 
     // ==========================================================
@@ -239,6 +286,126 @@ public class gameController implements Controller {
     }
 
     // ==========================================================
+    // Methodes de gestion de la partie
+    // ==========================================================
+
+    /**
+     * Rafraichit l'ensemble de la salle
+     */
+    public void refreshRoom(){
+
+        if(Game.search_room(Game.search_room(Game.player.getPosition()).getNeighbours()[0]) == null
+                || !Game.search_room(Game.search_room(Game.player.getPosition()).getNeighbours()[0]).isAccess()){
+            up_move_btn.setDisable(true);
+        } else {
+            up_move_btn.setDisable(false);
+        }
+        if(Game.search_room(Game.search_room(Game.player.getPosition()).getNeighbours()[1]) == null
+                || !Game.search_room(Game.search_room(Game.player.getPosition()).getNeighbours()[1]).isAccess()){
+            right_move_btn.setDisable(true);
+        } else {
+            right_move_btn.setDisable(false);
+        }
+        if(Game.search_room(Game.search_room(Game.player.getPosition()).getNeighbours()[2]) == null
+                || !Game.search_room(Game.search_room(Game.player.getPosition()).getNeighbours()[2]).isAccess()){
+            down_move_btn.setDisable(true);
+        } else {
+            down_move_btn.setDisable(false);
+        }
+        if(Game.search_room(Game.search_room(Game.player.getPosition()).getNeighbours()[3]) == null
+                || !Game.search_room(Game.search_room(Game.player.getPosition()).getNeighbours()[3]).isAccess()){
+            left_move_btn.setDisable(true);
+        } else {
+            left_move_btn.setDisable(false);
+        }
+
+        // refresh du texte
+        refreshText();
+        // refresh de l'image
+        refreshPicture();
+        // refresh des actions
+        refreshAction();
+        // efface la boite de dialogue
+        answer_box_visible(false);
+    }
+
+
+    /**
+     * Rafraichit la liste des actions disponibles
+     */
+    public void refreshAction(){
+        // chargement des actions
+        ArrayList<Integer> id_list = Game.search_room(Game.player.getPosition()).getId_actions();
+        ArrayList<Action> list = new ArrayList<>();
+        for(int i = 0; i< id_list.size(); i++){
+            list.add(Game.search_action(id_list.get(i)));
+        }
+        actionObservableList = FXCollections.observableArrayList();
+        for (int i = 0; i<list.size(); i++) {
+            if (list.get(i).isAvailable()) {
+                actionObservableList.add(list.get(i));
+            }
+        }
+        action_list.setItems(actionObservableList);
+        action_list.setCellFactory(param -> new ActionListCell());
+    }
+
+    /**
+     * Rafraichit l'image associée à la salle
+     */
+    public void refreshPicture(){
+        String URL = Game.search_room(Game.player.getPosition()).getPath_image();
+        Background bg = new Background(new BackgroundImage(
+                new Image(URL,true),
+                BackgroundRepeat.NO_REPEAT,
+                BackgroundRepeat.NO_REPEAT,
+                BackgroundPosition.DEFAULT,
+                new BackgroundSize(1.0, 1.0, true, true, false, false)));
+        picture_pane.setBackground(bg);
+    }
+
+    /**
+     * Rafraichit le texte à afficher
+     */
+    public void refreshText(){
+        String room_text = Game.search_text(Game.search_room(Game.player.getPosition()).getId_text());
+        narration.setText(room_text);
+    }
+
+    public void refreshInventory() {
+        ArrayList<Integer> id_objects = Game.player.getInventory();
+        ArrayList<Item> objects = new ArrayList<>();
+        for(int i = 0; i< id_objects.size(); i++){
+            objects.add(Game.search_item(id_objects.get(i)));
+        }
+        if (objects.size()>0){
+            item_slot_1.setGraphic(new ImageView(new Image(objects.get(0).getPath_image())));
+        } else {
+            item_slot_1.setGraphic(new ImageView(new Image("icons/"+Settings.icon_color+"/bag.png")));
+        }
+        if (objects.size()>1){
+            item_slot_2.setGraphic(new ImageView(new Image(objects.get(1).getPath_image())));
+        } else {
+            item_slot_2.setGraphic(new ImageView(new Image("/icons/"+Settings.icon_color+"/bag.png")));
+        }
+        if (objects.size()>2){
+            item_slot_3.setGraphic(new ImageView(new Image(objects.get(2).getPath_image())));
+        } else {
+            item_slot_3.setGraphic(new ImageView(new Image("/icons/"+Settings.icon_color+"/bag.png")));
+        }
+    }
+
+
+    public void answer_box_visible(boolean visible) {
+        if (visible) {
+            answerBox.toFront();
+        } else {
+            answerBox.toBack();
+        }
+    }
+
+
+    // ==========================================================
     // Methodes d'initialisation
     // ==========================================================
 
@@ -249,6 +416,10 @@ public class gameController implements Controller {
         // masquage du menu pause et desactivation des boutons
         background_menu.toBack();
         vbox_menu.toBack();
+
+        // masquage par defaut de la description des objets
+        item_description.setVisible(false);
+        description_label.setVisible(false);
 
         // icone d'inventaire
         Image bag_icon = new Image("icons/"+ Settings.icon_color +"/bag.png");
@@ -265,9 +436,9 @@ public class gameController implements Controller {
         // Mise en place du texte narratif
         narration.setWrapText(true);
         if (Settings.icon_color.equals("white")){
-            narration.setStyle("-fx-text-fill: white;");
+            narration.setStyle("-fx-text-fill: white; -fx-font-size: " + Settings.fontSize + "px;");
         } else {
-            narration.setStyle("-fx-text-fill: black;");
+            narration.setStyle("-fx-text-fill: black; -fx-font-size: " + Settings.fontSize + "px;");
         }
     }
 
@@ -330,107 +501,10 @@ public class gameController implements Controller {
         LoadMap.scene.getAccelerators().put(valid_action, va);
     }
 
-    public void refreshRoom(){
-
-        if(Game.search_room(Game.search_room(Game.player.getPosition()).getNeighbours()[0]) == null
-                || !Game.search_room(Game.search_room(Game.player.getPosition()).getNeighbours()[0]).isAccess()){
-            up_move_btn.setDisable(true);
-        } else {
-            up_move_btn.setDisable(false);
-        }
-        if(Game.search_room(Game.search_room(Game.player.getPosition()).getNeighbours()[1]) == null
-                || !Game.search_room(Game.search_room(Game.player.getPosition()).getNeighbours()[1]).isAccess()){
-            right_move_btn.setDisable(true);
-        } else {
-            right_move_btn.setDisable(false);
-        }
-        if(Game.search_room(Game.search_room(Game.player.getPosition()).getNeighbours()[2]) == null
-                || !Game.search_room(Game.search_room(Game.player.getPosition()).getNeighbours()[2]).isAccess()){
-            down_move_btn.setDisable(true);
-        } else {
-            down_move_btn.setDisable(false);
-        }
-        if(Game.search_room(Game.search_room(Game.player.getPosition()).getNeighbours()[3]) == null
-                || !Game.search_room(Game.search_room(Game.player.getPosition()).getNeighbours()[3]).isAccess()){
-            left_move_btn.setDisable(true);
-        } else {
-            left_move_btn.setDisable(false);
-        }
-
-        // refresh du texte
-        refreshText();
-        // refresh de l'image
-        refreshPicture();
-        // refresh des actions
-        refreshAction();
-        // efface la boite de dialogue
-        answer_box_visible(false);
-    }
-
-    /**
-     * Rafraichit la liste des actions disponibles
-     */
-    public void refreshAction(){
-        // chargement des actions
-        ArrayList<Integer> id_list = Game.search_room(Game.player.getPosition()).getId_actions();
-        ArrayList<Action> list = new ArrayList<>();
-        for(int i = 0; i< id_list.size(); i++){
-            list.add(Game.search_action(id_list.get(i)));
-        }
-        actionObservableList = FXCollections.observableArrayList();
-        for (int i = 0; i<list.size(); i++) {
-            if (list.get(i).isAvailable()) {
-                actionObservableList.add(list.get(i));
-            }
-        }
-        action_list.setItems(actionObservableList);
-        action_list.setCellFactory(param -> new ActionListCell());
-    }
-
-    /**
-     * Rafraichit l'image associée à la salle
-     */
-    public void refreshPicture(){
-        String URL = Game.search_room(Game.player.getPosition()).getPath_image();
-        illustration.setImage(new Image(URL));
-    }
-
-    /**
-     * Rafraichit le texte à afficher
-     */
-    public void refreshText(){
-        String room_text = Game.search_text(Game.search_room(Game.player.getPosition()).getId_text());
-        narration.setText(room_text);
-    }
-
-    public void refreshInventory() {
-        ArrayList<Integer> id_objects = Game.player.getInventory();
-        ArrayList<Item> objects = new ArrayList<>();
-        for(int i = 0; i< id_objects.size(); i++){
-            objects.add(Game.search_item(id_objects.get(i)));
-        }
-        if (objects.size()>0){
-            item_slot_1.setGraphic(new ImageView(new Image(objects.get(0).getPath_image())));
-        } else {
-            item_slot_1.setGraphic(new ImageView(new Image("icons/"+Settings.icon_color+"/bag.png")));
-        }
-        if (objects.size()>1){
-            item_slot_2.setGraphic(new ImageView(new Image(objects.get(1).getPath_image())));
-        } else {
-            item_slot_2.setGraphic(new ImageView(new Image("/icons/"+Settings.icon_color+"/bag.png")));
-        }
-        if (objects.size()>2){
-            item_slot_3.setGraphic(new ImageView(new Image(objects.get(2).getPath_image())));
-        } else {
-            item_slot_3.setGraphic(new ImageView(new Image("/icons/"+Settings.icon_color+"/bag.png")));
-        }
-    }
-
-    public void answer_box_visible(boolean visible) {
-        if (visible) {
-            answerBox.toFront();
-        } else {
-            answerBox.toBack();
+    @Override
+    public void apply_settings() {
+        for (Node n: LoadMap.scene.getRoot().lookupAll(".Custom_label")) {
+            n.setStyle("-fx-font-size: " + Settings.fontSize + "px;");
         }
     }
 }
