@@ -9,59 +9,86 @@ import java.util.ArrayList;
 
 public class Enigma extends Room{
     int solution; // solution "encode" le résultat de l'énigme
-    ArrayList<int[]> consequence; // liste de couples définissant les conséquence de la rsolution de l'énigme, forme (type de conséquence, argument nécessaire à la réalisation de cette conséquence)
-    int error_done; //entier pour savoir le nombre d'erreur à avoir été commises, permet de ne pas re-afficher le message d'erreur et de proposer un indice
+    ArrayList<int[]> consequences; // liste de couples définissant les conséquences de la résolution de l'énigme, forme : (type de conséquence, argument nécessaire à la réalisation de cette conséquence)
+    int nb_error; // le nombre d'erreur à avoir été commises
 
-    public Enigma(int id_txt, String path_image, int nb, int origin_room, int solution, ArrayList<int[]> consequence, ArrayList<String> sounds){
-        super(id_txt,path_image,nb,origin_room,sounds);
+    public Enigma(int id, int origin_room, boolean access, int id_text, String path_image, int solution, ArrayList<int[]> consequences){
+        super(id,origin_room,access,id_text,path_image);
         this.solution=solution;
-        this.consequence=consequence;
-        this.error_done = 0;
+        this.consequences=consequences;
+        this.nb_error = 0;
         Game.enigmas.add(this); // ajoute l'énigme à la liste de toutes les énigmes du jeu
     }
 
-    public void check_solution(int suggestion) throws IOException { // vérifie si la suggestion donnée correspond ou non au résultat attend ude l'énigme
-        if (this.solution==suggestion){
-            Game.search_room(this.neighbours[2]).search_access_enigma(this.nb).setDoable(false); // rend l'accès à cette énigme impossible
+
+    public int getSolution() {
+        return solution;
+    }
+
+    public void setSolution(int solution) {
+        this.solution = solution;
+    }
+
+    public ArrayList<int[]> getConsequences() {
+        return consequences;
+    }
+
+
+    public void setConsequences(ArrayList<int[]> consequences) {
+        this.consequences = consequences;
+    }
+
+    public int getNb_error() {
+        return nb_error;
+    }
+
+    public void setNb_error(int nb_error) {
+        this.nb_error = nb_error;
+    }
+
+
+    public void check_solution(int suggestion) throws IOException { // vérifie si la suggestion donnée correspond ou non au résultat attendu de l'énigme
+        if (getSolution()==suggestion){
+            Game.search_room(this.neighbours[2]).search_action_with_enigma(this.getId()).setAvailable(false); // rend l'accès à cette énigme impossible
             Game.player.move(this.neighbours[2]); // renvoie le joueur à l'écran précédent l'énigme
-            this.consequence(); //met en place les conséquences de la résolution de l'énigme
+            this.do_consequences(); // met en place les conséquences de la résolution de l'énigme
         }
         else{
-            error_done++;
-            if(error_done == 1){
-                this.txt_evolve(Game.search_txt(404)); // fait évoluer le texte de l'énigme pour que le joueur sâche que sa solution n'est pas la bonne
-            }else if(error_done == 3){
-                this.txt_evolve(Game.search_txt(405)); // propose au joueur de prendre un indice
+            nb_error++;
+            if(nb_error == 1){
+                this.text_evolve(Game.search_text(4004)); // fait évoluer le texte de l'énigme pour que le joueur sâche que sa solution n'est pas la bonne
+            }else if(nb_error == 3){
+                this.text_evolve(Game.search_text(4005)); // propose au joueur de prendre un indice
             }
         }
     }
 
-    public void consequence() throws IOException { // conséquences liées à la résolution de l'énigme
-        for(int i =0;i<consequence.size();i++) {
-            switch (this.consequence.get(i)[0]) {
+    public void do_consequences() throws IOException { // conséquences liées à la résolution de l'énigme
+        for(int i = 0;i<getConsequences().size();i++) {
+            switch (getConsequences().get(i)[0]) {
                 case 1: // mouvement vers la salle de numéro d'identification consequence[1]
-                    Game.player.move(this.consequence.get(i)[1]);
+                    Game.player.move(getConsequences().get(i)[1]);
                     break;
-                case 2: // dévérouillage d'une action de numéro d'identification consequence[1]
-                    Game.search_action(this.consequence.get(i)[1]).setDoable(true);
+                case 2: // dévérrouillage d'une action de numéro d'identification consequence[1]
+                    Game.search_action(getConsequences().get(i)[1]).setAvailable(true);
                     break;
-                case 3: // vérouillage d'une action de numéro d'identification consequence[1]
-                    Game.search_action(this.consequence.get(i)[1]).setDoable(false);
+                case 3: // vérrouillage d'une action de numéro d'identification consequence[1]
+                    Game.search_action(getConsequences().get(i)[1]).setAvailable(false);
                     break;
                 case 5: // suppression de l'objet de numéro d'identification consequence[1] de l'inventaire
-                    Game.player.remove_inventory(Game.search_gear(this.consequence.get(i)[1]));
+                    Game.player.remove_from_inventory(Game.search_item(getConsequences().get(i)[1]).id);
                     break;
                 case 6: // utilisation de l'objet de numéro d'identification consequence[1]
-                    Game.search_gear(this.consequence.get(i)[1]).use_gear();
+                    Game.search_item(getConsequences().get(i)[1]).use_item();
                     break;
                 case 7: // affichage d'un nouveau texte consequence[i][1] dans la salle consequence[i][2]
-                    Game.search_room(this.consequence.get(i)[2]).txt_evolve(Game.search_txt(this.consequence.get(i)[1]));
+                    Game.search_room(getConsequences().get(i)[2]).text_evolve(Game.search_text(getConsequences().get(i)[1]));
                     break;
                 case 8: // rend une salle inaccessible
-                    Game.search_room(this.consequence.get(i)[1]).setAccess(false);
+                    Game.search_room(getConsequences().get(i)[1]).setAccess(false);
                     break;
                 case 9: // rend une salle accessible
-                    Game.search_room(this.consequence.get(i)[1]).setAccess(true);
+                    Game.search_room(getConsequences().get(i)[1]).setAccess(true);
                     break;
                 case 10: // affiche écran fin de partie
                     LoadMap gl = new LoadMap();

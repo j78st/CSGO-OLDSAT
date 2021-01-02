@@ -8,7 +8,7 @@ import Music.Systems.Son;
 import Music.Systems.WorldBoxDisc;
 import Partie.Action;
 import Partie.Game;
-import Partie.Gear;
+import Partie.Item;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -24,7 +24,6 @@ import javafx.scene.input.KeyCodeCombination;
 import javafx.scene.input.KeyCombination;
 import javafx.scene.layout.*;
 import javafx.scene.text.Text;
-import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -115,7 +114,7 @@ public class gameController implements Controller {
      */
     @FXML
     void go_down(ActionEvent event) {
-        game.player.move(Game.search_room(game.player.position).getNeighbours()[2]);
+        game.player.move(Game.search_room(game.player.getPosition()).getNeighbours()[2]);
     }
 
     /**
@@ -124,7 +123,7 @@ public class gameController implements Controller {
      */
     @FXML
     void go_left(ActionEvent event) {
-        game.player.move(Game.search_room(game.player.position).getNeighbours()[3]);
+        game.player.move(Game.search_room(game.player.getPosition()).getNeighbours()[3]);
     }
 
     /**
@@ -133,7 +132,7 @@ public class gameController implements Controller {
      */
     @FXML
     void go_right(ActionEvent event) {
-        game.player.move(Game.search_room(game.player.position).getNeighbours()[1]);;
+        game.player.move(Game.search_room(game.player.getPosition()).getNeighbours()[1]);;
     }
 
     /**
@@ -142,7 +141,7 @@ public class gameController implements Controller {
      */
     @FXML
     void go_up(ActionEvent event) {
-        game.player.move(Game.search_room(game.player.position).getNeighbours()[0]);
+        game.player.move(Game.search_room(game.player.getPosition()).getNeighbours()[0]);
     }
 
     /**
@@ -152,7 +151,7 @@ public class gameController implements Controller {
      */
     @FXML
     void do_selected_action(ActionEvent event) {
-        action_list.getSelectionModel().getSelectedItem().Consequence();
+        action_list.getSelectionModel().getSelectedItem().do_consequences();
     }
 
     /**
@@ -164,7 +163,7 @@ public class gameController implements Controller {
     void check_answer(ActionEvent event) throws IOException {
 
         int ans = Integer.parseInt(answer_prompt.getText());
-        Game.search_enigma(Game.player.position).check_solution(ans);
+        Game.search_enigma(Game.player.getPosition()).check_solution(ans);
 
     }
 
@@ -333,26 +332,26 @@ public class gameController implements Controller {
 
     public void refreshRoom(){
 
-        if(Game.search_room(Game.search_room(game.player.position).getNeighbours()[0]) == null
-                || !Game.search_room(Game.search_room(game.player.position).getNeighbours()[0]).isAccess()){
+        if(Game.search_room(Game.search_room(Game.player.getPosition()).getNeighbours()[0]) == null
+                || !Game.search_room(Game.search_room(Game.player.getPosition()).getNeighbours()[0]).isAccess()){
             up_move_btn.setDisable(true);
         } else {
             up_move_btn.setDisable(false);
         }
-        if(Game.search_room(Game.search_room(game.player.position).getNeighbours()[1]) == null
-                || !Game.search_room(Game.search_room(game.player.position).getNeighbours()[1]).isAccess()){
+        if(Game.search_room(Game.search_room(Game.player.getPosition()).getNeighbours()[1]) == null
+                || !Game.search_room(Game.search_room(Game.player.getPosition()).getNeighbours()[1]).isAccess()){
             right_move_btn.setDisable(true);
         } else {
             right_move_btn.setDisable(false);
         }
-        if(Game.search_room(Game.search_room(game.player.position).getNeighbours()[2]) == null
-                || !Game.search_room(Game.search_room(game.player.position).getNeighbours()[2]).isAccess()){
+        if(Game.search_room(Game.search_room(Game.player.getPosition()).getNeighbours()[2]) == null
+                || !Game.search_room(Game.search_room(Game.player.getPosition()).getNeighbours()[2]).isAccess()){
             down_move_btn.setDisable(true);
         } else {
             down_move_btn.setDisable(false);
         }
-        if(Game.search_room(Game.search_room(game.player.position).getNeighbours()[3]) == null
-                || !Game.search_room(Game.search_room(game.player.position).getNeighbours()[3]).isAccess()){
+        if(Game.search_room(Game.search_room(Game.player.getPosition()).getNeighbours()[3]) == null
+                || !Game.search_room(Game.search_room(Game.player.getPosition()).getNeighbours()[3]).isAccess()){
             left_move_btn.setDisable(true);
         } else {
             left_move_btn.setDisable(false);
@@ -373,10 +372,14 @@ public class gameController implements Controller {
      */
     public void refreshAction(){
         // chargement des actions
-        ArrayList<Action> list = Game.search_room(game.player.position).getActions();
+        ArrayList<Integer> id_list = Game.search_room(Game.player.getPosition()).getId_actions();
+        ArrayList<Action> list = new ArrayList<>();
+        for(int i = 0; i< id_list.size(); i++){
+            list.add(Game.search_action(id_list.get(i)));
+        }
         actionObservableList = FXCollections.observableArrayList();
         for (int i = 0; i<list.size(); i++) {
-            if (list.get(i).getDoable()) {
+            if (list.get(i).isAvailable()) {
                 actionObservableList.add(list.get(i));
             }
         }
@@ -388,7 +391,7 @@ public class gameController implements Controller {
      * Rafraichit l'image associée à la salle
      */
     public void refreshPicture(){
-        String URL = Game.search_room(game.player.position).getPath_image();
+        String URL = Game.search_room(Game.player.getPosition()).getPath_image();
         illustration.setImage(new Image(URL));
     }
 
@@ -396,24 +399,28 @@ public class gameController implements Controller {
      * Rafraichit le texte à afficher
      */
     public void refreshText(){
-        String room_text = Game.search_room(game.player.position).getTxt();
+        String room_text = Game.search_text(Game.search_room(Game.player.getPosition()).getId_text());
         narration.setText(room_text);
     }
 
     public void refreshInventory() {
-        ArrayList<Gear> objects = game.player.getInventory();
+        ArrayList<Integer> id_objects = Game.player.getInventory();
+        ArrayList<Item> objects = new ArrayList<>();
+        for(int i = 0; i< id_objects.size(); i++){
+            objects.add(Game.search_item(id_objects.get(i)));
+        }
         if (objects.size()>0){
-            item_slot_1.setGraphic(new ImageView(new Image(objects.get(0).getURL_image())));
+            item_slot_1.setGraphic(new ImageView(new Image(objects.get(0).getPath_image())));
         } else {
             item_slot_1.setGraphic(new ImageView(new Image("icons/"+Settings.icon_color+"/bag.png")));
         }
         if (objects.size()>1){
-            item_slot_2.setGraphic(new ImageView(new Image(objects.get(1).getURL_image())));
+            item_slot_2.setGraphic(new ImageView(new Image(objects.get(1).getPath_image())));
         } else {
             item_slot_2.setGraphic(new ImageView(new Image("/icons/"+Settings.icon_color+"/bag.png")));
         }
         if (objects.size()>2){
-            item_slot_3.setGraphic(new ImageView(new Image(objects.get(2).getURL_image())));
+            item_slot_3.setGraphic(new ImageView(new Image(objects.get(2).getPath_image())));
         } else {
             item_slot_3.setGraphic(new ImageView(new Image("/icons/"+Settings.icon_color+"/bag.png")));
         }

@@ -185,79 +185,77 @@ public class new_game_formController implements Controller {
 
         Player player1 = new Player(pseudo);
         Game game_test = new Game(player1,difficulty);
-
         Scenario scenar = new Scenario();
 
-        ArrayList<String> sounds_test = new ArrayList<>();
 
-        Room room1 = new Room(1011,"pictures/Salle1.png",101,102,-1,-1,-1,sounds_test, true); //première salle
-        Room room2 = new Room(1021,"pictures/Salle2.png",102,-1,-1,101,-1,sounds_test, false); //deuxième salle
-        Room room1_1 = new Room(2011,"pictures/Table.png",201,101,sounds_test); //table dans salle 1
-        Room room1_2 = new Room(2021,"pictures/Porte.png",202,101,sounds_test); //porte dans salle 1
-        Room room1_1_1 = new Room(2031,"pictures/Vase.png",203,201,sounds_test); //vase sur table dans salle 1
+        Room room1 = new Room(1001,1002,-1,-1,-1,true,10011,"pictures/Salle1.png"); //première salle
+        Room room2 = new Room(1002,-1,-1,1001,-1, false,10021,"pictures/Salle2.png"); //deuxième salle
+        Room room1_1 = new Room(2001,1001,true,20011,"pictures/Table.png"); //table dans salle 1
+        Room room1_2 = new Room(2002,1001,true,20021,"pictures/Porte.png"); //porte dans salle 1
+        Room room1_1_1 = new Room(2003,2001,true,20031,"pictures/Vase.png"); //vase sur table dans salle 1
 
 
         //Enigme de la salle 102
         ArrayList<int[]> consequences_enigme1 = new ArrayList<>();
         consequences_enigme1.add(new int[]{10}); // fin de partie
-        Enigma enigme1 = new Enigma(3011,"pictures/Tableau.png",301,102,2022,consequences_enigme1,sounds_test);
+        Enigma enigme1 = new Enigma(3001,1002,true,30011,"pictures/Tableau.png",2022,consequences_enigme1);
 
 
         //Création des objets
-        Gear objet1 = new Gear(1,"clef","Clef ancienne, sert probablement pour déverouiller une serrure",1, "objects/key.png");
+        Item objet1 = new Item(1,"clef","Clef ancienne, sert probablement pour déverouiller une serrure",1, "objects/key.png");
 
 
-        //Actions de la salle 101
-        ArrayList<int[]> consequences_action1012 = new ArrayList<>();
-        consequences_action1012.add(new int[]{1,201});
-        Action action1012 = new Action(1012,"Examiner la table", consequences_action1012, 101, true); //déplacement vers table, 101 à 201
+        //Actions de la salle 1001
+        ArrayList<int[]> consequences_action1001_1 = new ArrayList<>();
+        consequences_action1001_1.add(new int[]{1,2001});
+        Action action1001_1 = new Action(10011,true,"Examiner la table", consequences_action1001_1, 1001); //déplacement vers table, 1001 à 2001
 
-        ArrayList<int[]> consequences_action1013 = new ArrayList<>();
-        consequences_action1013.add(new int[]{1,202});
-        Action action1013 = new Action(1013,"Examiner la porte", consequences_action1013, 101, true); //déplacement vers la porte, 101 à 202
-
-
-        //Actions de la salle 201 (table)
-        ArrayList<int[]> consequences_action2012 = new ArrayList<>();
-        consequences_action2012.add(new int[]{1,203});
-        Action action2012 = new Action(2012,"Examiner le vase", consequences_action2012, 201, true); //déplacement vers le vase, 201 à 203
+        ArrayList<int[]> consequences_action1001_2 = new ArrayList<>();
+        consequences_action1001_2.add(new int[]{1,2002});
+        Action action1001_2 = new Action(10012,true,"Examiner la porte", consequences_action1001_2, 1001); //déplacement vers la porte, 1001 à 2002
 
 
-        //Actions de la salle 203 (vase)
-        ArrayList<int[]> consequences_action2031 = new ArrayList<>();
-        consequences_action2031.add(new int[]{4,1});
-        consequences_action2031.add(new int[]{3,2012});
-        consequences_action2031.add(new int[]{1,201});
-        consequences_action2031.add(new int[]{7,2012});
-        Action action2031 = new Action(2031,"Récupérer la clef", consequences_action2031, 203, true); // ajout de la clef à l'inventaire, déplacement vers salle précédente (201) puis mise à jour du texte de cette salle  et verrouillage de l'action permettant d'examiner le vase
+        //Actions de la salle 2001 (table)
+        ArrayList<int[]> consequences_action2001_1 = new ArrayList<>();
+        consequences_action2001_1.add(new int[]{1,2003});
+        Action action2001_1 = new Action(20011,true,"Examiner le vase", consequences_action2001_1, 2001); //déplacement vers le vase, 2001 à 2003
 
 
-        //Actions de la salle 202 (porte)
-        ArrayList<int[]> consequences_action2022 = new ArrayList<>();
-        consequences_action2022.add(new int[]{7,2022});
-        consequences_action2022.add(new int[]{3,2022});
-        Action action2022 = new Action(2022,"Essayer d'enfoncer la porte", consequences_action2022, 202, true); //mise à jour du texte
-
-        ArrayList<int[]> consequences_action2023 = new ArrayList<>();
-        consequences_action2023.add(new int[]{6,1});
-        consequences_action2023.add(new int[]{9,102});
-        consequences_action2023.add(new int[]{3,1013});
-        consequences_action2023.add(new int[]{7,1012});
-        consequences_action2023.add(new int[]{1,101});
-        Action action2023 = new Action(2023,"Utiliser la clef", consequences_action2023, 202, 1); //ajoute une utilisation à la clef, dévérouille l'action permetant d'accéder à 102 depuis 101, bloque action d'examiner la porte depuis 101, ajoute texte à salle 101, retour dans 101
+        //Actions de la salle 2003 (vase)
+        ArrayList<int[]> consequences_action2003_1 = new ArrayList<>();
+        consequences_action2003_1.add(new int[]{4,1});
+        consequences_action2003_1.add(new int[]{3,20011});
+        consequences_action2003_1.add(new int[]{1,2001});
+        consequences_action2003_1.add(new int[]{7,20012});
+        Action action2003_1 = new Action(20031,true,"Récupérer la clef", consequences_action2003_1, 2003); // ajout de la clef à l'inventaire, déplacement vers salle précédente (201) puis mise à jour du texte de cette salle  et verrouillage de l'action permettant d'examiner le vase
 
 
-        //Actions de la salle 102
-        ArrayList<int[]> consequences_action1022 = new ArrayList<>();
-        consequences_action1022.add(new int[]{1,301});
-        consequences_action1022.add(new int[]{10});
-        Action action1022 = new Action(1022,"Examiner le tableau", consequences_action1022, 102, true); //déplacement vers table, 102 à 301
+        //Actions de la salle 2002 (porte)
+        ArrayList<int[]> consequences_action2002_1 = new ArrayList<>();
+        consequences_action2002_1.add(new int[]{7,20022});
+        consequences_action2002_1.add(new int[]{3,20021});
+        Action action2002_1 = new Action(20021,true,"Essayer d'enfoncer la porte", consequences_action2002_1, 2002); //mise à jour du texte
 
-        //Actions de l'énigme 301
-        ArrayList<int[]> consequences_action3011 = new ArrayList<>();
-        consequences_action3011.add(new int[]{7,3012});
-        consequences_action3011.add(new int[]{3,3011});
-        Action action3011 = new Action(3011,"Demander un indice", consequences_action3011, 301, true); //mise à jour du texte
+        ArrayList<int[]> consequences_action2002_2 = new ArrayList<>();
+        consequences_action2002_2.add(new int[]{6,1});
+        consequences_action2002_2.add(new int[]{9,1002});
+        consequences_action2002_2.add(new int[]{3,10012});
+        consequences_action2002_2.add(new int[]{1,1001});
+        consequences_action2002_2.add(new int[]{7,10012});
+        Action action2002_2 = new Action(20022,"Utiliser la clef", consequences_action2002_2, 2002, 1); //ajoute une utilisation à la clef, dévérouille l'action permetant d'accéder à 102 depuis 101, bloque action d'examiner la porte depuis 101, ajoute texte à salle 101, retour dans 101
+
+
+        //Actions de la salle 1002
+        ArrayList<int[]> consequences_action1002_1 = new ArrayList<>();
+        consequences_action1002_1.add(new int[]{1,3001});
+        consequences_action1002_1.add(new int[]{10});
+        Action action1002_1 = new Action(10021,true,"Examiner le tableau", consequences_action1002_1, 1002); //déplacement vers table, 102 à 301
+
+        //Actions de l'énigme 3001
+        ArrayList<int[]> consequences_action3001_1 = new ArrayList<>();
+        consequences_action3001_1.add(new int[]{7,30012});
+        consequences_action3001_1.add(new int[]{3,30011});
+        Action action3001_1 = new Action(30011,true,"Demander un indice", consequences_action3001_1, 3001); //mise à jour du texte
 
         // Son ambiance
         WorldBoxDisc.pause(Son.feu);

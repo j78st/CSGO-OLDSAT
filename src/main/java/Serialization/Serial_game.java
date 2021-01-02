@@ -6,34 +6,32 @@ import java.util.ArrayList;
 
 public class Serial_game {
     public Player player;
-    public ArrayList<Room> map;
-    public ArrayList<Enigma> enigmas;
+    public ArrayList<Room> rooms;
     public ArrayList<Action> actions;
-    public ArrayList<Gear> gears;
-    public ArrayList<Text_scenario> scenario;
+    public ArrayList<Enigma> enigmas;
+    public ArrayList<Item> items;
+    public ArrayList<Text_scenario> texts;
     public int difficulty;
     public int timer;
 
     public Serial_game() {
         player = Game.player;
-        map = Game.map;
-        enigmas = Game.enigmas;
+        rooms = Game.rooms;
         actions = Game.actions;
-        gears = Game.gears;
-        scenario = Game.scenario;
+        enigmas = Game.enigmas;
+        items = Game.items;
+        texts = Game.texts;
         difficulty = Game.difficulty;
         this.timer = Game.timer;
     }
 
     public Game createGameFromMemory() {
-        Game game = new Game();
-        game.player = player;
-        game.map = map;
-        game.enigmas = enigmas;
+        Game game = new Game(player,difficulty);
+        game.rooms = rooms;
         game.actions = actions;
-        game.gears = gears;
-        game.scenario = scenario;
-        game.difficulty = difficulty;
+        game.enigmas = enigmas;
+        game.items = items;
+        game.texts = texts;
         game.timer = timer;
         return game;
     }

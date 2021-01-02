@@ -1,20 +1,28 @@
 package Partie;
 
 public class Text_scenario {
-    int id_text; // id de la forme numéro de salle + numéro du texte dans la salle (ex 1er texte de la salle 101 : 1011)
+    int id; // id de la forme : numéro de salle + numéro du texte dans la salle (ex 1er texte de la salle 1001 : 10011)
     String text;
 
-    public Text_scenario(int id_text, String text) {
-        this.id_text = id_text;
+    public Text_scenario(int id, String text) {
+        this.id = id;
         this.text = text;
-        Game.scenario.add(this);
+        Game.texts.add(this);
     }
 
-    public int getId_text() {
-        return id_text;
+    public int getId() {
+        return id;
     }
 
     public String getText() {
         return text;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public void setText(String text) {
+        this.text = text;
     }
 }
