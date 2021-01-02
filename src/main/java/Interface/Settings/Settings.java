@@ -5,11 +5,15 @@ import Serialization.Memoire;
 import Serialization.Serial_settings;
 
 import java.io.File;
-import java.io.Serializable;
 
 public class Settings {
 
-    // variables globales
+    // Constantes globales
+    public static final int SMALL = 10;
+    public static final int MEDIUM = 15;
+    public static final int BIG = 20;
+
+    // Variables globales
     // Volume
     public static Double fx_volume; // volume des effets sonores
     public static Double bg_volume; // volume musique de fond
@@ -17,6 +21,7 @@ public class Settings {
     // Apparence
     public static String icon_color; // couleur des icones -> "black" ou "white"
     public static String theme; // thème sélectionné
+    public static int fontSize; // taille de la police des textes a afficher
 
 
     /** Cette méthode va récupérer les paramètre de l'application
@@ -33,6 +38,7 @@ public class Settings {
         bg_volume = settings.getBg_volume();
         icon_color = settings.getIcon_color();
         theme = settings.getTheme();
+        fontSize = settings.getS();
 
         // application correctif son
         WorldBoxDisc.setSoundBackground(bg_volume);

@@ -23,6 +23,7 @@ public class Score implements Serializable {
         this.value = 10 * time_left;
     }
 
+
     public Score(String pseudo, int time_left, int rank) {
         this.rank = rank;
         this.pseudo = pseudo;

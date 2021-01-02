@@ -1,7 +1,6 @@
 package Partie;
 
 import Interface.Settings.Engine;
-import Interface.ViewController.gameController;
 
 import java.util.ArrayList;
 

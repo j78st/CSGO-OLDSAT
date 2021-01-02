@@ -20,7 +20,7 @@
                <children>
                   <VBox alignment="CENTER" maxHeight="500.0" maxWidth="700.0" minHeight="340.0" minWidth="480.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                      <children>
-                        <Text boundsType="LOGICAL_VERTICAL_CENTER" strokeWidth="0.0" styleClass="Text" text="Charger partie" textAlignment="CENTER" textOrigin="CENTER" wrappingWidth="242.615234375">
+                        <Text boundsType="LOGICAL_VERTICAL_CENTER" strokeWidth="0.0" styleClass="Title" text="Charger partie" textAlignment="CENTER" textOrigin="CENTER" wrappingWidth="242.615234375">
                            <font>
                               <Font size="36.0" />
                            </font>

@@ -21,7 +21,7 @@
          <center>
             <VBox alignment="CENTER" prefHeight="300.0" prefWidth="240.0" spacing="10.0">
                <children>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Text" text="OLD'SAT">
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Custom_text" text="OLD'SAT">
                      <font>
                         <Font size="64.0" />
                      </font>

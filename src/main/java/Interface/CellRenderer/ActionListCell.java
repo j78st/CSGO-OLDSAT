@@ -13,9 +13,9 @@ public class ActionListCell extends ListCell<Action> {
         super();
         // couleur du texte
         if (Settings.icon_color.equals("white")){
-            action_title.setStyle("-fx-text-fill: white;");
+            action_title.setStyle("-fx-text-fill: white; -fx-font-size: " + Settings.fontSize + "px;");
         } else {
-            action_title.setStyle("-fx-text-fill: black;");
+            action_title.setStyle("-fx-text-fill: black; -fx-font-size: " + Settings.fontSize + "px;");
         }
     }
 

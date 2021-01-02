@@ -4,7 +4,9 @@ import java.io.Serializable;
 
 public class Ranking implements Serializable {
 
-    public Score[] ranking = new Score[10];
+    public static final int RANKING_SIZE = 10;
+
+    public Score[] ranking = new Score[RANKING_SIZE];
 
     public Ranking(){
 

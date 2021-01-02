@@ -2,7 +2,6 @@ package Interface.ViewController;
 
 import Interface.ScreenLoader.Controller;
 import Interface.ScreenLoader.LoadMap;
-import Interface.Settings.Engine;
 import Interface.Settings.Settings;
 import Music.Systems.Son;
 import Music.Systems.WorldBoxDisc;
@@ -10,8 +9,11 @@ import Serialization.Memoire;
 import Serialization.Serial_settings;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.Node;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -52,6 +54,10 @@ public class settings_menuController implements Controller {
     @FXML
     private Slider bg_slider;
 
+    @FXML
+    private ComboBox<String> text_size_prompt;
+
+
     // ==========================================================
     // Méthodes gestion logiciel
     // ==========================================================
@@ -64,6 +70,8 @@ public class settings_menuController implements Controller {
      */
     @FXML
     void go_back_to_previous_screen(ActionEvent event) throws IOException {
+
+        // Ecriture memoire des nouveaux paramètres
         Memoire m = new Memoire();
         m.write_data(new Serial_settings(), new File("resources/json/settings.json"));
 
@@ -140,6 +148,33 @@ public class settings_menuController implements Controller {
             }
         });
 
+        // Choix de la taille des caractères
+        ObservableList<String> sizes = FXCollections.observableArrayList("petit", "normal", "gros");
+        text_size_prompt.setItems(sizes);
+        text_size_prompt.valueProperty().addListener(new ChangeListener<String>() {
+            @Override
+            public void changed(ObservableValue<? extends String> observableValue, String old_value, String new_value) {
+
+                // Inscrit la nouvelle taille de texte dans les paramètres
+                String value = text_size_prompt.getValue();
+                if ("petit".equals(value)) {
+                    Settings.fontSize = Settings.SMALL;
+                } else if ("normal".equals(value)) {
+                    Settings.fontSize = Settings.MEDIUM;
+                } else if ("gros".equals(value)) {
+                    Settings.fontSize = Settings.BIG;
+                } else {
+                    throw new IllegalStateException("Unexpected value: " + text_size_prompt.getValue());
+                }
+
+                // applique le changement de style sur les textes modifiables
+                for (Node n: LoadMap.scene.getRoot().lookupAll(".Custom_label")) {
+                    n.setStyle("-fx-font-size: " + Settings.fontSize + "px;");
+                }
+
+            }
+        });
+
         // restauration des paramètres courants
         Settings.setSettingsFromFile();
         // volumes
@@ -153,6 +188,16 @@ public class settings_menuController implements Controller {
         } else {
             theme3_btn.setSelected(true);
         }
+        // taille texte
+        switch (Settings.fontSize) {
+            case Settings.SMALL :
+                text_size_prompt.setValue("petit"); break;
+            case Settings.MEDIUM :
+                text_size_prompt.setValue("normal"); break;
+            case Settings.BIG :
+                text_size_prompt.setValue("gros"); break;
+        }
+
     }
 
     /**
@@ -165,4 +210,15 @@ public class settings_menuController implements Controller {
         Runnable rn = ()-> {resume_btn.fire();};
         LoadMap.scene.getAccelerators().put(kc, rn);
     }
+
+    /**
+     *  Applique les valeurs enregistrées dans les paramètres aux éléments de la page
+     */
+    @Override
+    public void apply_settings() {
+        for (Node n: LoadMap.scene.getRoot().lookupAll(".Custom_label")) {
+            n.setStyle("-fx-font-size: " + Settings.fontSize + "px;");
+        }
+    }
+
 }

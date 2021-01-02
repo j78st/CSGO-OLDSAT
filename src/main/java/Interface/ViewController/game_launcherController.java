@@ -108,4 +108,10 @@ public class game_launcherController implements Controller {
         LoadMap.scene.getAccelerators().put(kc, rn);
     }
 
+    @Override
+    public void apply_settings() {
+        for (Node n: LoadMap.scene.getRoot().lookupAll(".Custom_label")) {
+            n.setStyle("-fx-font-size: " + Settings.fontSize + "px;");
+        }
+    }
 }

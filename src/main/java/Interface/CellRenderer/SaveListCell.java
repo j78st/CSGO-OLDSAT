@@ -26,11 +26,11 @@ public class SaveListCell extends ListCell<SaveSlot> {
 
         // couleur du texte
         if (Settings.icon_color.equals("white")){
-            ln.setStyle("-fx-text-fill: white;");
-            lp.setStyle("-fx-text-fill: white;");
+            ln.setStyle("-fx-text-fill: white; -fx-font-size: " + Settings.fontSize + "px;");
+            lp.setStyle("-fx-text-fill: white; -fx-font-size: " + Settings.fontSize + "px;");
         } else {
-            ln.setStyle("-fx-text-fill: black;");
-            lp.setStyle("-fx-text-fill: black;");
+            ln.setStyle("-fx-text-fill: black; -fx-font-size: " + Settings.fontSize + "px;");
+            lp.setStyle("-fx-text-fill: black; -fx-font-size: " + Settings.fontSize + "px;");
         }
 
         // parametrage du placement hortizontal

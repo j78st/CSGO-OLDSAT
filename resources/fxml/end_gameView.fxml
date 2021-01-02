@@ -2,39 +2,50 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ListView?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
-
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="400.0" minWidth="600.0" prefHeight="500.0" prefWidth="800.0" styleClass="BackPane" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Interface.ViewController.end_gameController">
    <children>
       <BorderPane layoutX="10.0" layoutY="10.0" styleClass="BackPane" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <center>
-            <BorderPane styleClass="UpperLayerPane" BorderPane.alignment="CENTER">
-               <BorderPane.margin>
-                  <Insets />
-               </BorderPane.margin>
-               <center>
-                  <VBox alignment="CENTER_LEFT" minHeight="340.0" minWidth="480.0" spacing="10.0" BorderPane.alignment="CENTER">
+            <GridPane alignment="CENTER" maxHeight="500.0" maxWidth="700.0" styleClass="UpperLayerPane" BorderPane.alignment="CENTER">
+               <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="334.5" minWidth="10.0" prefWidth="317.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="283.0" minWidth="10.0" prefWidth="283.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+               </rowConstraints>
+               <children>
+                  <VBox alignment="CENTER" maxHeight="500.0" maxWidth="700.0" prefHeight="458.0" prefWidth="326.0" spacing="10.0">
                      <children>
-                        <HBox alignment="CENTER" prefHeight="30.0">
+                        <Text boundsType="LOGICAL_VERTICAL_CENTER" strokeWidth="0.0" styleClass="Title" text="Partie terminée" textAlignment="CENTER" textOrigin="CENTER" wrappingWidth="242.615234375">
+                           <font>
+                              <Font name="Symbol" size="36.0" />
+                           </font>
+                        </Text>
+                        <Region prefHeight="55.0" prefWidth="297.0" />
+                        <HBox alignment="CENTER_LEFT" prefHeight="30.0" spacing="20.0">
                            <children>
-                              <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Text" text="Nom joueur :">
+                              <ImageView fx:id="player_icon" fitHeight="28.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
                                  <HBox.margin>
-                                    <Insets top="5.0" />
+                                    <Insets left="25.0" />
                                  </HBox.margin>
-                                 <font>
-                                    <Font size="24.0" />
-                                 </font>
-                              </Text>
-                              <Text fx:id="player_name_lbl" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0">
+                              </ImageView>
+                              <Text fx:id="player_name_lbl" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Custom_label">
                                  <HBox.margin>
-                                    <Insets left="20.0" top="5.0" />
+                                    <Insets />
                                  </HBox.margin>
                                  <font>
                                     <Font size="24.0" />
@@ -45,19 +56,16 @@
                               <Insets />
                            </VBox.margin>
                         </HBox>
-                        <HBox alignment="CENTER" prefHeight="30.0" prefWidth="400.0">
+                        <HBox alignment="CENTER_LEFT" prefHeight="30.0" spacing="20.0">
                            <children>
-                              <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Text" text="Difficulté :">
+                              <ImageView fx:id="diff_icon" fitHeight="28.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
                                  <HBox.margin>
-                                    <Insets top="5.0" />
+                                    <Insets left="25.0" />
                                  </HBox.margin>
-                                 <font>
-                                    <Font size="24.0" />
-                                 </font>
-                              </Text>
-                              <Text fx:id="difficulty_lbl" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0">
+                              </ImageView>
+                              <Text fx:id="difficulty_lbl" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Custom_label">
                                  <HBox.margin>
-                                    <Insets left="20.0" top="5.0" />
+                                    <Insets />
                                  </HBox.margin>
                                  <font>
                                     <Font size="24.0" />
@@ -65,55 +73,58 @@
                               </Text>
                            </children>
                            <VBox.margin>
-                              <Insets top="5.0" />
+                              <Insets />
                            </VBox.margin>
                         </HBox>
-                        <HBox alignment="CENTER" prefHeight="30.0">
+                        <HBox alignment="CENTER_LEFT" prefHeight="30.0" spacing="20.0">
                            <children>
-                              <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Text" text="Score : ">
+                              <ImageView fx:id="trophy_icon" fitHeight="28.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
                                  <HBox.margin>
-                                    <Insets top="5.0" />
-                                 </HBox.margin>
-                                 <font>
-                                    <Font size="36.0" />
-                                 </font>
-                              </Text>
-                              <Text fx:id="score_lbl" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0">
-                                 <HBox.margin>
-                                    <Insets left="20.0" top="5.0" />
-                                 </HBox.margin>
-                                 <font>
-                                    <Font size="36.0" />
-                                 </font>
-                              </Text>
-                              <ImageView fx:id="star_icon" fitHeight="37.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
-                                 <HBox.margin>
-                                    <Insets left="20.0" top="5.0" />
+                                    <Insets left="25.0" />
                                  </HBox.margin>
                               </ImageView>
+                              <Text fx:id="score_lbl" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Custom_label">
+                                 <HBox.margin>
+                                    <Insets />
+                                 </HBox.margin>
+                                 <font>
+                                    <Font size="24.0" />
+                                 </font>
+                              </Text>
                            </children>
                         </HBox>
+                        <Region prefHeight="28.0" prefWidth="297.0" />
+                        <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="216.0" prefHeight="30.0" spacing="20.0">
+                           <children>
+                              <ImageView fx:id="rank_icon" fitHeight="28.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
+                                 <HBox.margin>
+                                    <Insets left="25.0" />
+                                 </HBox.margin>
+                              </ImageView>
+                              <Text fx:id="rank_lbl" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Custom_label">
+                                 <HBox.margin>
+                                    <Insets />
+                                 </HBox.margin>
+                                 <font>
+                                    <Font size="24.0" />
+                                 </font>
+                              </Text>
+                           </children>
+                        </HBox>
+                        <Region prefHeight="45.0" prefWidth="297.0" />
+                        <Button fx:id="OK" alignment="CENTER" mnemonicParsing="false" onAction="#go_to_home_screen" text="OK" />
                      </children>
+                     <GridPane.margin>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </GridPane.margin>
                   </VBox>
-               </center>
-               <top>
-                  <Text boundsType="LOGICAL_VERTICAL_CENTER" strokeWidth="0.0" styleClass="Text" text="Partie terminée" textAlignment="CENTER" textOrigin="CENTER" wrappingWidth="242.615234375" BorderPane.alignment="CENTER">
-                     <font>
-                        <Font name="Symbol" size="36.0" />
-                     </font>
-                     <BorderPane.margin>
-                        <Insets top="10.0" />
-                     </BorderPane.margin>
-                  </Text>
-               </top>
-               <bottom>
-                  <Button fx:id="OK" mnemonicParsing="false" onAction="#go_to_home_screen" text="OK" BorderPane.alignment="CENTER">
-                     <BorderPane.margin>
-                        <Insets bottom="10.0" />
-                     </BorderPane.margin>
-                  </Button>
-               </bottom>
-            </BorderPane>
+                  <ListView fx:id="ranking_list" prefHeight="480.0" prefWidth="293.0" styleClass="List" GridPane.columnIndex="1">
+                     <GridPane.margin>
+                        <Insets bottom="30.0" left="10.0" right="20.0" top="30.0" />
+                     </GridPane.margin>
+                  </ListView>
+               </children>
+            </GridPane>
          </center>
          <padding>
             <Insets bottom="10.0" left="100.0" right="100.0" top="10.0" />
