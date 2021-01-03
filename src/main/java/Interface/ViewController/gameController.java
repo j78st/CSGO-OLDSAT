@@ -200,19 +200,19 @@ public class gameController implements Controller {
 
         if (item_slot_1.equals(event.getSource())) {
             if (objects.size()>0){
-                description_label.setText("item 1");
+                description_label.setText(Game.search_item(objects.get(0).getId()).getDescription());
                 item_description.setVisible(true);
                 description_label.setVisible(true);
             }
         } else if (item_slot_2.equals(event.getSource())) {
             if (objects.size()>1){
-                description_label.setText("item 2");
+                description_label.setText(Game.search_item(objects.get(1).getId()).getDescription());
                 item_description.setVisible(true);
                 description_label.setVisible(true);
             }
         } else if (item_slot_3.equals(event.getSource())) {
             if (objects.size()>2){
-                description_label.setText("item 3");
+                description_label.setText(Game.search_item(objects.get(2).getId()).getDescription());
                 item_description.setVisible(true);
                 description_label.setVisible(true);
             }
@@ -440,6 +440,9 @@ public class gameController implements Controller {
         } else {
             narration.setStyle("-fx-text-fill: black; -fx-font-size: " + Settings.fontSize + "px;");
         }
+
+        // Mise en place des textes de description d'item
+        description_label.setWrapText(true);
     }
 
     /**
