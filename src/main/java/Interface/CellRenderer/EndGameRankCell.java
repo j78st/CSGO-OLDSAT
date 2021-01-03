@@ -32,9 +32,9 @@ public class EndGameRankCell extends ListCell<Score> {
         }
 
         // parametrage des tailles des labels
-        lr.setPrefSize(50, 10);
-        lp.setPrefSize(100, 10);
-        ls.setPrefSize(70, 10);
+        lr.setPrefSize(100, 10);
+        lp.setPrefSize(150, 10);
+        ls.setPrefSize(100, 10);
 
         // parametrage du placement hortizontal
         hbox.setMargin(lp, new Insets(0, 80, 0, 0));

@@ -13,6 +13,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -48,7 +49,7 @@ public class end_gameController implements Controller {
     private ImageView rank_icon;
 
     @FXML
-    private Text rank_lbl;
+    private Label rank_lbl;
 
     @FXML
     private Button OK;
@@ -113,6 +114,7 @@ public class end_gameController implements Controller {
             }
         }
 
+        rank_lbl.setWrapText(true);
         // si classé
         if (rank != -1) {
             ranking.add_score(new Score(player_name_lbl.getText(),score/10));
