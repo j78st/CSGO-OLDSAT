@@ -7,18 +7,38 @@ import java.util.HashMap;
 import Music.TinySound.Music;
 import Music.TinySound.TinySound;
 
+/**
+ * Cette classe représente le système de musique.
+ */
 public class WorldBoxDisc extends Thread {
+    /**
+     * Correspond à la collection de disque de piste sonore
+     */
     public static ArrayList<Disc> worldBoxMusic = new ArrayList<>();
+    /**
+     * Correspond à un dictionnaire effectuant le lien entre piste sonore et un identifiant unique
+     */
     public static HashMap<String, Integer> idWorldBoxMusic = new HashMap<>();
-    public static double defaultSoundVolume = 5; //Niveau sonore par défaut
-    public static int total = -1; //Nb total de piste chargée
-    private static boolean soundFx; //Autorise la lecture d'effets sonores
-    private static boolean soundBackground; //Autorise la lecture de fonds sonores
+    /**
+     * Niveau sonore par défaut
+     */
+    public static double defaultSoundVolume = 2;
+    /**
+     * Nombre total de pistes chargées
+     */
+    public static int total = -1;
+    /**
+     * Booléen autorisant la lecture d'effets sonores
+     */
+    private static boolean soundFx;
+    /**
+     * Booléen autorisant la lecture de fonds sonores
+     */
+    private static boolean soundBackground;
 
     /**
-     * Initialise les musique du jeu
+     * Initialise les pistes sonores
      */
-
     public static void init(){
         soundFx = true; //Par défaut, les effets sonores sont activés
         soundBackground = true; //Par défaut, les fonds sonores sont activés
@@ -180,21 +200,40 @@ public class WorldBoxDisc extends Thread {
         Disc grabObject = new Disc(grabObjectM, "prendre", false, MusicType.Background);
         add(grabObject);
 
+        //Son sprint 2
+        File tickF = new File("resources/sounds/ambiant/clock-ticking.wav");
+        Music tickM = TinySound.loadMusic(tickF);
+        Disc tick = new Disc(tickM, "tick", false, MusicType.SoundFx);
+        add(tick);
+
+        File errorEnigmaF = new File("resources/sounds/rooms/errorEnigma.wav");
+        Music errorEnigmaM = TinySound.loadMusic(errorEnigmaF);
+        Disc errorEnigma = new Disc(errorEnigmaM, "errorEnigma", false, MusicType.SoundFx);
+        add(errorEnigma);
+
+        File bonusTimeF = new File("resources/sounds/rooms/bonusTime.wav");
+        Music bonusTimeM = TinySound.loadMusic(bonusTimeF);
+        Disc bonusTime = new Disc(bonusTimeM, "bonusTime", false, MusicType.SoundFx);
+        add(bonusTime);
     }
 
 
     /**
-     * Operation d'ajout special de la classe WorldBoxDisc
+     * Operation d'ajout special de disque de la classe WorldBoxDisc
      * @param aDisc
      */
     public static void add(Disc aDisc){
-        aDisc.aMusic.setVolume(defaultSoundVolume); //MAJ du niveau sonore au moment du chargement des pistes
+        if(aDisc.name != "tick") {
+            aDisc.aMusic.setVolume(defaultSoundVolume); //MAJ du niveau sonore au moment du chargement des pistes
+        } else {
+            aDisc.aMusic.setVolume(0.5);
+        }
         idWorldBoxMusic.put(aDisc.name,++total);
         worldBoxMusic.add(aDisc);
     }
 
     /**
-     * Demarre une piste sonore
+     * Lecture d'une piste sonore
      * @param name
      */
     public static void play(String name){
@@ -207,7 +246,7 @@ public class WorldBoxDisc extends Thread {
     }
 
     /**
-     * Arrete une piste sonore
+     * Arret d'une piste sonore
      * @param name
      */
     public static void stop(String name){
@@ -236,7 +275,7 @@ public class WorldBoxDisc extends Thread {
     /**
      * Donne le niveau sonore d'une piste
      * @param name
-     * @return
+     * @return Integer
      */
     public static double getVolume(String name){
         Disc discToTest = worldBoxMusic.get(idWorldBoxMusic.get(name));
@@ -244,7 +283,7 @@ public class WorldBoxDisc extends Thread {
     }
 
     /**
-     * //Change le son d'une piste
+     * Change le niveau du son d'une piste sonore
      * @param name
      * @param value
      */
@@ -266,9 +305,9 @@ public class WorldBoxDisc extends Thread {
     }
 
 
-    /*
-    * Permet de jouer une meme piste autant de fois que l'on veut et avec l'intervalle que l'on veut
-    * */
+    /**
+    * Permet de jouer une meme piste sonore autant de fois que l'on veut et avec l'intervalle de temps désiré
+    */
     public static void repeatSound(String nom, int n, int ms){
         for(int i = 0; i < n; i++){
             try {
@@ -282,7 +321,7 @@ public class WorldBoxDisc extends Thread {
     }
 
     /**
-     * Affiche les musiques d'un type donne
+     * Affiche les musiques d'un type donné
      * @param type [SoundFx/Background]
      */
     public static void allTypeSounds(MusicType type){
@@ -300,9 +339,9 @@ public class WorldBoxDisc extends Thread {
     }
 
 
-    /*
+    /**
     * Desactive/Active les effets sonores
-    * */
+    */
     public static void toogleSoundFx(){
         if(soundFx) {
             for (int i = 0; i < worldBoxMusic.size(); i++) {
@@ -321,9 +360,9 @@ public class WorldBoxDisc extends Thread {
         }
     }
 
-    /*
+    /**
     * Desactive/Active les fonds sonores
-    * */
+    */
     public static void toogleSoundBackground(){
         if(soundBackground) {
             for (int i = 0; i < worldBoxMusic.size(); i++) {

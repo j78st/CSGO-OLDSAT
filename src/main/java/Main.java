@@ -7,6 +7,7 @@ import Interface.Settings.Settings;
 import Interface.ViewController.home_screenController;
 import Music.Systems.WorldBoxDisc;
 import Serialization.Memoire;
+import Timer.*;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -45,7 +46,6 @@ public class Main extends Application {
     }
 
     public static void main(String[] args) throws InterruptedException, IOException {
-
         //Initialise le système de son
         WorldBoxDisc.init();
         Thread.sleep(1000);
