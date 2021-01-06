@@ -145,6 +145,10 @@ public class new_game_formController implements Controller {
 
             // son validation
             WorldBoxDisc.play(Son.valid);
+
+            // lancement timer
+            Engine.chrono = new TimerController(70);
+            Engine.chrono.start();
         }
     }
 

@@ -454,10 +454,6 @@ public class gameController implements Controller {
         // Mise en place des textes de description d'item
         description_label.setWrapText(true);
 
-        // initialisation du timer
-        // lancement timer
-        Engine.chrono = new TimerController(70);
-        Engine.chrono.start();
     }
 
     /**
