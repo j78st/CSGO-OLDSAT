@@ -133,7 +133,8 @@ public class TimerController extends Thread {
      * Tue le chronometre et renvoit le temps restant en secondes
      */
     public int killTimer(){
-        timer.finish();
-        return timer.getTimeFullSeconds();
+            timer.finish();
+            return timer.getTimeFullSeconds();
     }
+
 }

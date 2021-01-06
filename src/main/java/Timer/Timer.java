@@ -28,20 +28,20 @@ public class Timer extends Thread {
     /**
      * Représente le seuil de déclenchement des ticks de l'horloge
      */
-    private int tickTime;
+    private volatile int tickTime;
     /**
      * Représente le seuil de déclenchement des battements du coeur
      */
-    private int heartbeatTickTime;
+    private volatile int heartbeatTickTime;
     /**
      * Représente l'activation du son de battement du coeur
      */
-    private boolean heartBeat;
+    private volatile boolean heartBeat;
 
     /**
      * Booleen representant l'état du thread du timer
      */
-    private boolean done = false;
+    private volatile boolean done = false;
 
     public Timer(int tempsSecondes, Lock inLock){
         this.tempsSecondes = tempsSecondes;
@@ -50,6 +50,14 @@ public class Timer extends Thread {
         this.tickTime = 60; //par defaut, le son de tick se déclenche sur les trois dernières minutes
         this.heartbeatTickTime = 30; //par defaut le battement du coeur se déclenche sur la dernière minute
         this.heartBeat = false;
+    }
+
+    /**
+     * Indique si le timer est actif
+     * @return
+     */
+    public boolean isDone() {
+        return done;
     }
 
     /**
