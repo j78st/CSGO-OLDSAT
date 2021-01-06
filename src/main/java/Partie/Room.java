@@ -32,13 +32,13 @@ public class Room {
     }
 
     public Room(int id, int origin_room,
-                boolean access, int id_text, String path_image/*, ArrayList<String> sounds*/){
+                int id_text, String path_image/*, ArrayList<String> sounds*/){
         this.id = id;
         this.neighbours[0] = -1;
         this.neighbours[1] = -1;
         this.neighbours[2] = origin_room;
         this.neighbours[3] = -1;
-        this.access = access;
+        this.access = true;
         this.id_text = id_text;
         this.path_image = path_image;
         this.id_actions = new ArrayList<>();
