@@ -38,6 +38,11 @@ public class Timer extends Thread {
      */
     private boolean heartBeat;
 
+    /**
+     * Booleen representant l'état du thread du timer
+     */
+    private boolean done = false;
+
     public Timer(int tempsSecondes, Lock inLock){
         this.tempsSecondes = tempsSecondes;
         this.stateTimer = false; //par défaut, le timer est à l'arret
@@ -120,8 +125,10 @@ public class Timer extends Thread {
     public synchronized void toogleTimer(){
         if(stateTimer){
             stateTimer = false;
+            WorldBoxDisc.pause(Son.coeur);
         } else {
             stateTimer = true;
+            heartBeat = false; //Pour redemarrer le son
             goTimer();
         }
     }
@@ -190,46 +197,58 @@ public class Timer extends Thread {
         return Objects.hash(tempsSecondes, stateTimer, tickTime, heartbeatTickTime, heartBeat);
     }
 
+    /**
+     * Termine le thread du timer
+     */
+    public void finish(){
+        done = true;
+    }
+
     @Override
     public void run() {
-        while (this.tempsSecondes > 0){
+        while (this.tempsSecondes > 0 && !done){
             if(stateTimer) {
-                sleep(1000);
-                substractTime(1);
-
                 // Update affichage GUI
                 Platform.runLater(() -> Engine.engine.timer_lbl.setText(getRemainingTime()));
 
+
                 // Déclenchement tick horloge (3 min restantes)
-                if(this.tempsSecondes < tickTime) {
+                if(this.tempsSecondes < tickTime && stateTimer) {
                     WorldBoxDisc.play(Son.tick);
                 }
 
                 // Déclenchement battement coeur (1 min restantes)
-                if(this.tempsSecondes < this.heartbeatTickTime && !heartBeat){
+                if(this.tempsSecondes < this.heartbeatTickTime && !heartBeat && stateTimer){
                     WorldBoxDisc.play(Son.coeur);
                     heartBeat = true;
                 }
 
+                sleep(1000); //Deplacement de la soustraction pour régler des problèmes de synchronisation entre écrans paramètres et de jeu
+                substractTime(1);
             } else {
                 waitTimer(); //bloque le tread pour économiser le cpu
             }
         }
         WorldBoxDisc.pause(Son.coeur);
 
-        //Randomisation du bruit de fin
-        Random generator = new Random();
-        int value = generator.nextInt(3);
-        //La "mort" a pris le joueur
-        switch (value){
-            case 0: WorldBoxDisc.play(Son.paraMot1);
-            break;
+        if(!done) { //Sortit lie à la terminaison du timer
+            //Randomisation du bruit de fin
+            Random generator = new Random();
+            int value = generator.nextInt(3);
+            //La "mort" a pris le joueur
+            switch (value) {
+                case 0:
+                    WorldBoxDisc.play(Son.paraMot1);
+                    break;
 
-            case 1: WorldBoxDisc.play(Son.paraMot2);
-            break;
+                case 1:
+                    WorldBoxDisc.play(Son.paraMot2);
+                    break;
 
-            case 2: WorldBoxDisc.play(Son.paraMot3);
-            break;
+                case 2:
+                    WorldBoxDisc.play(Son.paraMot3);
+                    break;
+            }
         }
     }
 }
