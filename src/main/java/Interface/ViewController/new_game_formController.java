@@ -202,9 +202,9 @@ public class new_game_formController implements Controller {
 
         Room room1 = new Room(1001,1002,-1,-1,-1,true,10011,"pictures/Salle1.png"); //première salle
         Room room2 = new Room(1002,-1,-1,1001,-1, false,10021,"pictures/Salle2.png"); //deuxième salle
-        Room room1_1 = new Room(2001,1001,true,20011,"pictures/Table.png"); //table dans salle 1
-        Room room1_2 = new Room(2002,1001,true,20021,"pictures/Porte.png"); //porte dans salle 1
-        Room room1_1_1 = new Room(2003,2001,true,20031,"pictures/Vase.png"); //vase sur table dans salle 1
+        Room room1_1 = new Room(2001,1001,20011,"pictures/Table.png"); //table dans salle 1
+        Room room1_2 = new Room(2002,1001,20021,"pictures/Porte.png"); //porte dans salle 1
+        Room room1_1_1 = new Room(2003,2001,20031,"pictures/Vase.png"); //vase sur table dans salle 1
 
 
         //Enigme de la salle 102
