@@ -206,7 +206,7 @@ public class new_game_formController implements Controller {
         //Enigme de la salle 102
         ArrayList<int[]> consequences_enigme1 = new ArrayList<>();
         consequences_enigme1.add(new int[]{10}); // fin de partie
-        Enigma enigme1 = new Enigma(3001,1002,true,30011,"pictures/Tableau.png",2022,consequences_enigme1);
+        Enigma enigme1 = new Enigma(3001,1002,30011,"pictures/Tableau.png",2022,consequences_enigme1);
 
 
         //Création des objets

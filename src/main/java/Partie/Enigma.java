@@ -12,8 +12,8 @@ public class Enigma extends Room{
     ArrayList<int[]> consequences; // liste de couples définissant les conséquences de la résolution de l'énigme, forme : (type de conséquence, argument nécessaire à la réalisation de cette conséquence)
     int nb_error; // le nombre d'erreur à avoir été commises
 
-    public Enigma(int id, int origin_room, boolean access, int id_text, String path_image, int solution, ArrayList<int[]> consequences){
-        super(id,origin_room,access,id_text,path_image);
+    public Enigma(int id, int origin_room, int id_text, String path_image, int solution, ArrayList<int[]> consequences){
+        super(id,origin_room,id_text,path_image);
         this.solution=solution;
         this.consequences=consequences;
         this.nb_error = 0;
