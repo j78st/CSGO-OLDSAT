@@ -11,6 +11,7 @@ import Music.Systems.Son;
 import Music.Systems.WorldBoxDisc;
 import Serialization.Memoire;
 import Serialization.Serial_game;
+import Timer.TimerController;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -138,8 +139,11 @@ public class new_game_formController implements Controller {
             m.write_data(saves, new File("resources/json/saves.json"));
 
             // === Lancement de la partie === //
+            // affichage jeu
             LoadMap gl = new LoadMap();
             gl.display_screen_from_id(LoadMap.GAME);
+
+            // son validation
             WorldBoxDisc.play(Son.valid);
         }
     }

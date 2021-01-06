@@ -1,8 +1,11 @@
 package Timer;
 
+import Interface.Settings.Engine;
 import Music.Systems.Son;
 import Music.Systems.WorldBoxDisc;
+import javafx.application.Platform;
 
+import java.io.IOException;
 import java.util.Objects;
 import java.util.Random;
 
@@ -11,7 +14,7 @@ import java.util.Random;
  * Cette classe représente le timer.
  */
 public class Timer extends Thread {
-    /** Représente le temps totale en seconde du timer
+    /** Représente le temps total en seconde du timer
      */
     private int tempsSecondes;
     /**
@@ -23,23 +26,23 @@ public class Timer extends Thread {
      */
     private volatile Lock lock;
     /**
-     * Répresente le seuil de déclenchement des ticks de l'horloge
+     * Représente le seuil de déclenchement des ticks de l'horloge
      */
     private int tickTime;
     /**
-     * Répresente le seuil de déclenchement des battements du coeur
+     * Représente le seuil de déclenchement des battements du coeur
      */
     private int heartbeatTickTime;
     /**
-     * Réprésente l'activation du son de battement du coeur
+     * Représente l'activation du son de battement du coeur
      */
     private boolean heartBeat;
 
     public Timer(int tempsSecondes, Lock inLock){
         this.tempsSecondes = tempsSecondes;
-        this.stateTimer = false; //par défaut, le timer est a l'arret
+        this.stateTimer = false; //par défaut, le timer est à l'arret
         this.lock = inLock;
-        this.tickTime = 60; //par defaut, le son de tick se déclenche sur les trois dernères minutes
+        this.tickTime = 60; //par defaut, le son de tick se déclenche sur les trois dernières minutes
         this.heartbeatTickTime = 30; //par defaut le battement du coeur se déclenche sur la dernière minute
         this.heartBeat = false;
     }
@@ -193,16 +196,21 @@ public class Timer extends Thread {
             if(stateTimer) {
                 sleep(1000);
                 substractTime(1);
-                if(this.tempsSecondes < tickTime) { //Passer un certain, on entend un tick signalant que c'est bientot la fin
+
+                // Update affichage GUI
+                Platform.runLater(() -> Engine.engine.timer_lbl.setText(getRemainingTime()));
+
+                // Déclenchement tick horloge (3 min restantes)
+                if(this.tempsSecondes < tickTime) {
                     WorldBoxDisc.play(Son.tick);
                 }
 
+                // Déclenchement battement coeur (1 min restantes)
                 if(this.tempsSecondes < this.heartbeatTickTime && !heartBeat){
                     WorldBoxDisc.play(Son.coeur);
                     heartBeat = true;
                 }
 
-                //System.out.println(getRemainingTime());
             } else {
                 waitTimer(); //bloque le tread pour économiser le cpu
             }

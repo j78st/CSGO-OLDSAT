@@ -4,9 +4,9 @@
       "no": 0,
       "srgame": {
         "player": {
-          "pseudo": "aa",
+          "pseudo": "oui",
           "inventory": [],
-          "position": 3001
+          "position": 1001
         },
         "rooms": [
           {
@@ -33,7 +33,7 @@
               1001,
               -1
             ],
-            "access": true,
+            "access": false,
             "id_text": 10021,
             "path_image": "pictures/Salle2.png",
             "id_actions": [
@@ -87,6 +87,13 @@
             ]
           },
           {
+            "solution": 2022,
+            "consequences": [
+              [
+                10
+              ]
+            ],
+            "nb_error": 0,
             "id": 3001,
             "neighbours": [
               -1,
@@ -116,7 +123,7 @@
           },
           {
             "id": 10012,
-            "available": false,
+            "available": true,
             "text": "Examiner la porte",
             "consequences": [
               [
@@ -127,7 +134,7 @@
           },
           {
             "id": 20011,
-            "available": false,
+            "available": true,
             "text": "Examiner le vase",
             "consequences": [
               [
@@ -138,7 +145,7 @@
           },
           {
             "id": 20031,
-            "available": false,
+            "available": true,
             "text": "Récupérer la clef",
             "consequences": [
               [
@@ -262,7 +269,7 @@
             "description": "Clef ancienne, sert probablement pour déverouiller une serrure",
             "path_image": "objects/key.png",
             "max_usage": 1,
-            "current_usage": 1,
+            "current_usage": 0,
             "id_actions": [
               20022
             ]
@@ -271,7 +278,7 @@
         "texts": [
           {
             "id": 10011,
-            "text": "Vous vous tenez au milieu d\u0027une salle. L\u0027atmosphère y est pesante. Il n\u0027y a aucune fenêtre et vous n\u0027êtes éclairé que par une lueur mystérieuse dont vous ne parvenez pas à déterminer la provenance. \nA votre droite se trouve une table sur laquelle vous pouvez distinguer un vase et un bout de papier. Face à vous, il y a une porte. \nLa porte est ouverte."
+            "text": "Vous vous tenez au milieu d\u0027une salle. L\u0027atmosphère y est pesante. Il n\u0027y a aucune fenêtre et vous n\u0027êtes éclairé que par une lueur mystérieuse dont vous ne parvenez pas à déterminer la provenance. \nA votre droite se trouve une table sur laquelle vous pouvez distinguer un vase et un bout de papier. Face à vous, il y a une porte. \n"
           },
           {
             "id": 10012,
@@ -279,7 +286,7 @@
           },
           {
             "id": 20011,
-            "text": "Vous voyez une note sur la table. Dessus, une main tremblotante a écrit : \"Sortez vite de là, ils arrivent et ils ne veulent pas de vous ici...\" \nAu centre de la table, il y a un vase bleu clair semblant très ancien. \nVous avez récupéré la clef dans le vase."
+            "text": "Vous voyez une note sur la table. Dessus, une main tremblotante a écrit : \"Sortez vite de là, ils arrivent et ils ne veulent pas de vous ici...\" \nAu centre de la table, il y a un vase bleu clair semblant très ancien. \n"
           },
           {
             "id": 20012,
@@ -731,13 +738,6 @@
             ]
           },
           {
-            "solution": 2022,
-            "consequences": [
-              [
-                10
-              ]
-            ],
-            "nb_error": 0,
             "id": 3001,
             "neighbours": [
               -1,

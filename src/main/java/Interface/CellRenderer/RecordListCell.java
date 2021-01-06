@@ -14,6 +14,9 @@ public class RecordListCell extends ListCell<Score> {
     Label lp = new Label(); // label avec le pseudo du joueur
     Label ls = new Label(); // label avec le score du joueur
 
+    /**
+     * Constructeur. Paramètre le contenu de la cellule
+     */
     public RecordListCell() {
 
         super();
@@ -46,6 +49,11 @@ public class RecordListCell extends ListCell<Score> {
 
     }
 
+    /**
+     * Mets a jour les données de la cellule
+     * @param record élément dispensé dans la cellule
+     * @param empty booléen indiquant si la case est vide
+     */
     public void updateItem (Score record, boolean empty) {
 
         super.updateItem(record, empty);

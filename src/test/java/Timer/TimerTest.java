@@ -33,7 +33,7 @@ public class TimerTest {
         TimerController oracle = new TimerController(120);
         timer1.bonusTime(60);
 
-        assertEquals("Cette méthode devrait ajouter du temps à un timer.", timer1, oracle); //Il faut redefinir la méthode equals pour que cela marche
+        assertEquals("Cette méthode devrait ajouter du temps à un ti mer.", timer1, oracle); //Il faut redefinir la méthode equals pour que cela marche
     }
 
     /**
