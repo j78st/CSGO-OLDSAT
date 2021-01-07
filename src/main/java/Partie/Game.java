@@ -12,7 +12,11 @@ public class Game {
     public static int difficulty; // difficulté choisie pour la partie
     public static int timer;
 
-
+    /**
+     * Constructeur de la partie
+     * @param player information liées au joueur
+     * @param difficulty la difficulté de la partie, 0 pour facile, 1 pour normale, 2 pour difficile
+     */
     public Game(Player player, int difficulty) {
         Game.player = player;
         rooms = new ArrayList<>();
@@ -27,14 +31,6 @@ public class Game {
 
     public static Player getPlayer() {
         return player;
-    }
-
-    public static ArrayList<Room> getRooms() {
-        return rooms;
-    }
-
-    public static ArrayList<Enigma> getEnigmas() {
-        return enigmas;
     }
 
     public static ArrayList<Action> getActions() {
@@ -62,35 +58,19 @@ public class Game {
         Game.player = player;
     }
 
-    public static void setRooms(ArrayList<Room> rooms) {
-        Game.rooms = rooms;
-    }
-
-    public static void setEnigmas(ArrayList<Enigma> enigmas) {
-        Game.enigmas = enigmas;
-    }
-
     public static void setActions(ArrayList<Action> actions) {
         Game.actions = actions;
-    }
-
-    public static void setItems(ArrayList<Item> items) {
-        Game.items = items;
-    }
-
-    public static void setTexts(ArrayList<Text_scenario> texts) {
-        Game.texts = texts;
-    }
-
-    public static void setDifficulty(int difficulty) {
-        Game.difficulty = difficulty;
     }
 
     public static void setTimer(int timer) {
         Game.timer = timer;
     }
 
-
+    /**
+     * méthode recherchant une salle
+     * @param id l'idendifiant de la salle recherchée
+     * @return retourne la salle recherchée si elle existe, null sinon
+     */
     public static Room search_room(int id){ // recherche une salle à partir de son numéro d'identification
         Room res = null;
         if (!rooms.isEmpty() && id != -1){
@@ -102,19 +82,11 @@ public class Game {
         }
         return res;
     }
-
-    public static int search_place_room(int id){
-        int res = -1;
-        if(!rooms.isEmpty()){
-            for(int i = 0;i<rooms.size();i++){
-                if (rooms.get(i).getId() == id){
-                    res=i;
-                }
-            }
-        }
-        return res;
-    }
-
+    /**
+     * méthode recherchant une énigme
+     * @param id l'idendifiant de l'énigme recherchée
+     * @return retourne l'énigme recherchée si elle existe, null sinon
+     */
     public static Enigma search_enigma(int id){ // recherche une énigme à partir de son numéro d'identification
         Enigma res = null;
         if (!enigmas.isEmpty()){
@@ -126,7 +98,11 @@ public class Game {
         }
         return res;
     }
-
+    /**
+     * méthode recherchant une action
+     * @param id l'idendifiant de l'action recherchée
+     * @return retourne l'action recherchée si elle existe, null sinon
+     */
     public static Action search_action(int id){ // recherche une action à partir de son numéro d'identification
         Action res = null;
         if (!actions.isEmpty()) {
@@ -138,7 +114,11 @@ public class Game {
         }
         return res;
     }
-
+    /**
+     * méthode recherchant un objet
+     * @param id l'idendifiant de l'objet recherché
+     * @return retourne l'objet recherché s'il existe, null sinon
+     */
     public static Item search_item(int id){ // recherche un objet à partir de son numéro d'identification
         Item res = null;
         if (!items.isEmpty()){
@@ -150,7 +130,11 @@ public class Game {
         }
         return res;
     }
-
+    /**
+     * méthode recherchant un texte
+     * @param id l'idendifiant du texte recherchée
+     * @return retourne le texte recherché s'il existe, null sinon
+     */
     public static String search_text(int id){ // recherche une texte à partir de son numéro d'identification
         String res = null;
         if (!texts.isEmpty()){

@@ -8,7 +8,10 @@ public class Player {
     ArrayList<Integer> inventory; // liste des identifiants des objets possédés par le joueur
     int position; // numéro de la salle (ou du lieu d'interaction) dans laquelle se situe le joueur
 
-
+    /**
+     * Constructeur du joueur
+     * @param pseudo le pseudo du joueur
+     */
     public Player(String pseudo){
         this.pseudo = pseudo;
         inventory = new ArrayList<>();
@@ -29,24 +32,24 @@ public class Player {
     }
 
 
-    public void setPseudo(String pseudo) {
-        this.pseudo = pseudo;
-    }
-
-    public void setInventory(ArrayList<Integer> inventory) {
-        this.inventory = inventory;
-    }
-
     public void setPosition(int position) {
         this.position = position;
     }
 
-
+    /**
+     * méthode effectuant le déplacement du joueur
+     * @param destination l'idendifiant de la salle vers laquelle se déplace le joueur
+     */
     public void move(int destination){ // bouge le joueur vers un nouvel écran (salle/sous-salle/énigme)
         Game.player.setPosition(destination);
         Engine.engine.refreshRoom();
     }
 
+    /**
+     * méthode ajoutant un objet à l'inventaire du joueur
+     * @param id_item identifiant de l'objet à ajouter
+     * @return un booléen indiquant si l'opération a réussi (échec en cas d'inventaire déjà plein)
+     */
     public boolean add_to_inventory(int id_item){ // Ajoute un objet à l'inventaire du joueur
         if(getInventory().size()< 3){
             this.inventory.add(id_item);
@@ -59,6 +62,10 @@ public class Player {
         }
     }
 
+    /**
+     * méthode supprimant un objet de l'inventaire
+     * @param id_item identifiant de l'objet à supprimer
+     */
     public void remove_from_inventory(int id_item){ // Supprime un objet de l'inventaire du joueur
         Game.search_item(id_item).set_actions_available(false);
         int i = 0;

@@ -12,6 +12,15 @@ public class Enigma extends Room{
     ArrayList<int[]> consequences; // liste de couples définissant les conséquences de la résolution de l'énigme, forme : (type de conséquence, argument nécessaire à la réalisation de cette conséquence)
     int nb_error; // le nombre d'erreur à avoir été commises
 
+    /**
+     * Constructeur d'énigme
+     * @param id identifiant de l'énigme
+     * @param origin_room identifiant de la salle qui comprote l'énigme
+     * @param id_text texte décrivant l'énigme
+     * @param path_image URL de l'image de l'énigme
+     * @param solution entier encodant la solution de l'énigme
+     * @param consequences tableau des couples de conséquences de l'énigme
+     */
     public Enigma(int id, int origin_room, int id_text, String path_image, int solution, ArrayList<int[]> consequences){
         super(id,origin_room,id_text,path_image);
         this.solution=solution;
@@ -25,10 +34,6 @@ public class Enigma extends Room{
         return solution;
     }
 
-    public void setSolution(int solution) {
-        this.solution = solution;
-    }
-
     public ArrayList<int[]> getConsequences() {
         return consequences;
     }
@@ -38,15 +43,11 @@ public class Enigma extends Room{
         this.consequences = consequences;
     }
 
-    public int getNb_error() {
-        return nb_error;
-    }
-
-    public void setNb_error(int nb_error) {
-        this.nb_error = nb_error;
-    }
-
-
+    /**
+     * méthode appliquant les conséquences d'uné énigme après une proposition du joueur
+     * @param suggestion proposition du joueur comme solution de l'énigme
+     * @throws IOException
+     */
     public void check_solution(int suggestion) throws IOException { // vérifie si la suggestion donnée correspond ou non au résultat attendu de l'énigme
         if (getSolution()==suggestion){
             Game.search_room(this.neighbours[2]).search_action_with_enigma(this.getId()).setAvailable(false); // rend l'accès à cette énigme impossible
@@ -63,6 +64,10 @@ public class Enigma extends Room{
         }
     }
 
+    /**
+     * méthode appliquant les conséquences d'une énigme
+     * @throws IOException
+     */
     public void do_consequences() throws IOException { // conséquences liées à la résolution de l'énigme
         for(int i = 0;i<getConsequences().size();i++) {
             switch (getConsequences().get(i)[0]) {
