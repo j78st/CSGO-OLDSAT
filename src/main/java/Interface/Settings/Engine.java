@@ -12,6 +12,7 @@ public class Engine {
     public static Parent game_root;
     public static gameController engine;
     public static TimerController chrono;
+    public static boolean gamePaused;
 
     public Engine() throws IOException {
         FXMLLoader loader = new FXMLLoader();
@@ -19,6 +20,7 @@ public class Engine {
 
         game_root = loader.load();
         engine = loader.getController();
+        gamePaused = false;
     }
 
 }

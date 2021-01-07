@@ -40,7 +40,6 @@ public class gameController implements Controller {
 
     public static Game game;
     private ObservableList<Action> actionObservableList;
-    private boolean gamePaused = false;
 
     // zones de l'écran -----------------------------------------
     @FXML
@@ -190,8 +189,8 @@ public class gameController implements Controller {
 
         // suspension du timer et récuération du temps restant
         Engine.chrono.toogleTimer();
+        Engine.gamePaused = true;
         timer_pause.setText(Engine.chrono.getRemainingTime());
-
     }
 
     /**
@@ -255,7 +254,7 @@ public class gameController implements Controller {
 
         // reprise du timer
         Engine.chrono.toogleTimer();
-
+        Engine.gamePaused = false;
     }
 
     /**
@@ -280,6 +279,7 @@ public class gameController implements Controller {
         // Message d'alerte sur la sauvegarde
         UnsaveAlert alert = new UnsaveAlert();
         alert.homeScreen();
+        Engine.gamePaused = false; // quitter partie depuis ecran pause demande d'enlever pause
     }
 
     /**
@@ -433,9 +433,14 @@ public class gameController implements Controller {
      * initialisation dela scene avant affichage lors du chargement
      */
     public void initialize () {
-        // masquage du menu pause et desactivation des boutons
-        background_menu.toBack();
-        vbox_menu.toBack();
+        // gestion menu pause
+        if (!Engine.gamePaused) {
+            background_menu.toBack();
+            vbox_menu.toBack();
+        } else {
+            background_menu.toFront();
+            vbox_menu.toFront();
+        }
 
         // masquage par defaut de la description des objets
         item_description.setVisible(false);
@@ -484,12 +489,12 @@ public class gameController implements Controller {
         // Ouverture/fermeture menu pause via ESC
         KeyCombination esc = new KeyCodeCombination(KeyCode.ESCAPE);
         Runnable rn = ()-> {
-            if (!gamePaused) {
+            if (!Engine.gamePaused) {
                 pause_game(new ActionEvent());
-                gamePaused = true;
+                Engine.gamePaused = true;
             } else {
                 resume_game(new ActionEvent());
-                gamePaused = false;
+                Engine.gamePaused = false;
             }
         };
         LoadMap.scene.getAccelerators().put(esc, rn);

@@ -4,7 +4,7 @@
       "no": 0,
       "srgame": {
         "player": {
-          "pseudo": "fin",
+          "pseudo": "zertyuio",
           "inventory": [],
           "position": 101
         },
@@ -493,14 +493,14 @@
           }
         ],
         "difficulty": 1,
-        "timer": 0
+        "timer": 1482
       }
     },
     {
       "no": 1,
       "srgame": {
         "player": {
-          "pseudo": "terminaison",
+          "pseudo": "oui",
           "inventory": [],
           "position": 101
         },
@@ -996,318 +996,492 @@
       "no": 2,
       "srgame": {
         "player": {
-          "pseudo": "a",
+          "pseudo": "Hello",
           "inventory": [],
-          "position": 1001
+          "position": 101
         },
         "rooms": [
           {
-            "id": 1001,
+            "id": 101,
             "neighbours": [
-              1002,
+              102,
               -1,
               -1,
               -1
             ],
             "access": true,
-            "id_text": 10011,
+            "id_text": 1011,
             "path_image": "pictures/Salle1.png",
             "id_actions": [
-              10011,
-              10012
+              1011,
+              1012,
+              1013
             ]
           },
           {
-            "id": 1002,
+            "id": 102,
             "neighbours": [
               -1,
               -1,
-              1001,
+              -1,
               -1
             ],
             "access": false,
-            "id_text": 10021,
+            "id_text": 1021,
             "path_image": "pictures/Salle2.png",
             "id_actions": [
-              10021
+              1021
             ]
           },
           {
-            "id": 2001,
+            "id": 103,
             "neighbours": [
               -1,
               -1,
-              1001,
+              -1,
               -1
             ],
             "access": true,
-            "id_text": 20011,
+            "id_text": 1031,
+            "path_image": "pictures/Salle2.png",
+            "id_actions": [
+              1031,
+              1032,
+              1033,
+              1034
+            ]
+          },
+          {
+            "id": 201,
+            "neighbours": [
+              -1,
+              -1,
+              103,
+              -1
+            ],
+            "access": true,
+            "id_text": 2011,
             "path_image": "pictures/Table.png",
             "id_actions": [
-              20011
+              2011,
+              2012,
+              2013
             ]
           },
           {
-            "id": 2002,
+            "id": 104,
             "neighbours": [
               -1,
               -1,
-              1001,
+              -1,
               -1
             ],
             "access": true,
-            "id_text": 20021,
-            "path_image": "pictures/Porte.png",
+            "id_text": 1041,
+            "path_image": "pictures/Salle2.png",
             "id_actions": [
-              20021,
-              20022
+              1041,
+              1042
             ]
           },
           {
-            "id": 2003,
+            "id": 105,
             "neighbours": [
               -1,
               -1,
-              2001,
+              -1,
               -1
             ],
             "access": true,
-            "id_text": 20031,
-            "path_image": "pictures/Vase.png",
+            "id_text": 1051,
+            "path_image": "pictures/Salle2.png",
             "id_actions": [
-              20031
+              1051,
+              1052
             ]
           },
           {
-            "id": 3001,
+            "id": 106,
             "neighbours": [
               -1,
               -1,
-              1002,
+              -1,
               -1
             ],
             "access": true,
-            "id_text": 30011,
-            "path_image": "pictures/Tableau.png",
+            "id_text": 1061,
+            "path_image": "pictures/Salle2.png",
             "id_actions": [
-              30011
+              1061,
+              1062
             ]
+          },
+          {
+            "id": 107,
+            "neighbours": [
+              -1,
+              -1,
+              -1,
+              -1
+            ],
+            "access": true,
+            "id_text": 1071,
+            "path_image": "pictures/Salle2.png",
+            "id_actions": []
           }
         ],
         "actions": [
           {
-            "id": 10011,
+            "id": 1011,
             "available": true,
-            "text": "Examiner la table",
+            "text": "Regarder autour de vous",
             "consequences": [
               [
-                1,
-                2001
+                7,
+                1012
+              ],
+              [
+                3,
+                1011
               ]
             ]
           },
           {
-            "id": 10012,
+            "id": 1012,
             "available": true,
-            "text": "Examiner la porte",
+            "text": "Demander son chemin",
             "consequences": [
               [
-                1,
-                2002
+                7,
+                1013
+              ],
+              [
+                3,
+                1012
+              ],
+              [
+                2,
+                1013
               ]
             ]
           },
           {
-            "id": 20011,
-            "available": true,
-            "text": "Examiner le vase",
+            "id": 1013,
+            "available": false,
+            "text": "Lire le panneau",
             "consequences": [
               [
-                1,
-                2003
+                7,
+                1014
+              ],
+              [
+                3,
+                1013
+              ],
+              [
+                9,
+                102
               ]
             ]
           },
           {
-            "id": 20031,
+            "id": 1021,
             "available": true,
-            "text": "Récupérer la clef",
+            "text": "Écouter la conférence (Vous n\u0027avez pas vraiment le choix...)",
+            "consequences": [
+              [
+                1,
+                103
+              ]
+            ]
+          },
+          {
+            "id": 1031,
+            "available": true,
+            "text": "Fouiller dans la trousse",
+            "consequences": [
+              [
+                1,
+                201
+              ]
+            ]
+          },
+          {
+            "id": 1032,
+            "available": false,
+            "text": "Se rendre à la cafétaria",
+            "consequences": [
+              [
+                1,
+                104
+              ]
+            ]
+          },
+          {
+            "id": 1033,
+            "available": false,
+            "text": "Sortir de l\u0027ENSSAT",
+            "consequences": [
+              [
+                1,
+                105
+              ]
+            ]
+          },
+          {
+            "id": 1034,
+            "available": false,
+            "text": "Trouver une salle avec un PC",
+            "consequences": [
+              [
+                1,
+                106
+              ]
+            ]
+          },
+          {
+            "id": 2011,
+            "available": true,
+            "text": "Prendre le compas",
+            "consequences": [
+              [
+                4,
+                3
+              ],
+              [
+                1,
+                103
+              ],
+              [
+                3,
+                1031
+              ],
+              [
+                2,
+                1032
+              ],
+              [
+                2,
+                1033
+              ],
+              [
+                2,
+                1034
+              ],
+              [
+                7,
+                1032
+              ]
+            ]
+          },
+          {
+            "id": 2012,
+            "available": true,
+            "text": "Prendre le petit opinel",
             "consequences": [
               [
                 4,
                 1
               ],
               [
+                1,
+                103
+              ],
+              [
                 3,
-                20011
+                1031
+              ],
+              [
+                2,
+                1032
+              ],
+              [
+                2,
+                1033
+              ],
+              [
+                2,
+                1034
+              ],
+              [
+                7,
+                1032
+              ]
+            ]
+          },
+          {
+            "id": 2013,
+            "available": true,
+            "text": "Prendre la petite loupe",
+            "consequences": [
+              [
+                4,
+                2
               ],
               [
                 1,
-                2001
-              ],
-              [
-                7,
-                20012
-              ]
-            ]
-          },
-          {
-            "id": 20021,
-            "available": true,
-            "text": "Essayer d\u0027enfoncer la porte",
-            "consequences": [
-              [
-                7,
-                20022
+                103
               ],
               [
                 3,
-                20021
-              ]
-            ]
-          },
-          {
-            "id": 20022,
-            "available": false,
-            "text": "Utiliser la clef",
-            "consequences": [
-              [
-                6,
-                1
+                1031
               ],
               [
-                9,
-                1002
+                2,
+                1032
               ],
               [
-                3,
-                10012
+                2,
+                1033
               ],
               [
-                1,
-                1001
+                2,
+                1034
               ],
               [
                 7,
-                10012
+                1032
               ]
             ]
           },
           {
-            "id": 10021,
+            "id": 1041,
             "available": true,
-            "text": "Examiner le tableau",
+            "text": "Commencer l\u0027aventure dans l\u0027ENSSAT",
             "consequences": [
               [
                 1,
-                3001
-              ],
-              [
-                10
+                107
               ]
             ]
           },
           {
-            "id": 30011,
+            "id": 1042,
             "available": true,
-            "text": "Demander un indice",
+            "text": "J\u0027ai pas envie, je préfère rester chez moi...",
             "consequences": [
               [
-                7,
-                30012
-              ],
+                11
+              ]
+            ]
+          },
+          {
+            "id": 1051,
+            "available": true,
+            "text": "Commencer l\u0027aventure dans l\u0027ENSSAT",
+            "consequences": [
               [
-                3,
-                30011
+                1,
+                107
+              ]
+            ]
+          },
+          {
+            "id": 1052,
+            "available": true,
+            "text": "J\u0027ai pas envie, je préfère rester chez moi...",
+            "consequences": [
+              [
+                11
+              ]
+            ]
+          },
+          {
+            "id": 1061,
+            "available": true,
+            "text": "Commencer l\u0027aventure dans l\u0027ENSSAT",
+            "consequences": [
+              [
+                1,
+                107
+              ]
+            ]
+          },
+          {
+            "id": 1062,
+            "available": true,
+            "text": "J\u0027ai pas envie, je préfère rester chez moi...",
+            "consequences": [
+              [
+                11
               ]
             ]
           }
         ],
-        "enigmas": [
-          {
-            "solution": 2022,
-            "consequences": [
-              [
-                10
-              ]
-            ],
-            "nb_error": 0,
-            "id": 3001,
-            "neighbours": [
-              -1,
-              -1,
-              1002,
-              -1
-            ],
-            "access": true,
-            "id_text": 30011,
-            "path_image": "pictures/Tableau.png",
-            "id_actions": [
-              30011
-            ]
-          }
-        ],
+        "enigmas": [],
         "items": [
           {
             "id": 1,
-            "name": "clef",
-            "description": "Clef ancienne, sert probablement pour déverouiller une serrure",
+            "name": "Petit opinel",
+            "description": "Petit couteau pouvant être bien pratique",
             "path_image": "objects/key.png",
-            "max_usage": 1,
+            "max_usage": -1,
             "current_usage": 0,
-            "id_actions": [
-              20022
-            ]
+            "id_actions": []
+          },
+          {
+            "id": 2,
+            "name": "Loupe",
+            "description": "Petite loupe pouvant être bien pratique",
+            "path_image": "objects/key.png",
+            "max_usage": -1,
+            "current_usage": 0,
+            "id_actions": []
+          },
+          {
+            "id": 3,
+            "name": "Compas",
+            "description": "Compas pouvant être bien pratique",
+            "path_image": "objects/key.png",
+            "max_usage": -1,
+            "current_usage": 0,
+            "id_actions": []
           }
         ],
         "texts": [
           {
-            "id": 10011,
-            "text": "Vous vous tenez au milieu d\u0027une salle. L\u0027atmosphère y est pesante. Il n\u0027y a aucune fenêtre et vous n\u0027êtes éclairé que par une lueur mystérieuse dont vous ne parvenez pas à déterminer la provenance. \nA votre droite se trouve une table sur laquelle vous pouvez distinguer un vase et un bout de papier. Face à vous, il y a une porte. \n"
+            "id": 1011,
+            "text": "  Enfin, vous venez d’être admis à l’ENSSAT. L’Ecole Nationale Supérieur des Sciences Appliquées et de Technologie. C’est génial n’est-ce pas ? Peu importe, commençons. \n   Vous vous tenez dans le hall d\u0027entrée de l\u0027ENSSAT entouré par un groupe de nouveaux élèves tels que vous. Vous êtes stressé, c\u0027est votre premier jour mais vous êtes forts, vous avez survécu à la prépa, qu\u0027est ce qui pourrait vous arrivez de pire, n\u0027est-ce pas? Quelle naïveté... \n   Par contre vous êtes perdu, vous devez rejoindre une salle libellée 137C mais vous n\u0027avez aucune idée du chemin à suivre. \n    "
           },
           {
-            "id": 10012,
-            "text": "La porte est ouverte."
+            "id": 1012,
+            "text": "Vous regardez autour de vous. Vous identifiez les mêmes stéréotypes d\u0027élèves présents dans toutes les classes.Il y a un petit de groupe de geeks sur votre droite, les gars sûrs d\u0027eux, du moins en façade, devant vous et un groupe de filles sur votre gauche. Vous vous faites plusieurs réflections. D\u0027abord il n\u0027y a pas beaucoup de filles, pire qu\u0027en prépa...quelle idée de choisir une école de geek aussi. Ensuite, altruiste que vous êtes, vous espérez que chacun pourra évoluer au cours de ses années ici...Cependant, cela nous vous aide en rien à trouver votre chemin. \n   "
           },
           {
-            "id": 20011,
-            "text": "Vous voyez une note sur la table. Dessus, une main tremblotante a écrit : \"Sortez vite de là, ils arrivent et ils ne veulent pas de vous ici...\" \nAu centre de la table, il y a un vase bleu clair semblant très ancien. \n"
+            "id": 1013,
+            "text": "Vous demandez votre chemin à l\u0027accueil qui est sur votre droite. Derrière une vitre une jeune femme vous répond gentillement, même si vous pouvez sentir son agacement face à cette question qu\u0027elle a déjà dû beaucoup trop entendre aujourd\u0027hui : \"Suivez simplement les panneaux, ils sont là pour vous.\". Effectivement, il y avait un panneau que vous n\u0027aviez pas vu, caché par la foule. \n    "
           },
           {
-            "id": 20012,
-            "text": "Vous avez récupéré la clef dans le vase."
+            "id": 1014,
+            "text": "Vous lisez le panneau face à vous : \"1A, Amphi 137C\" suivi d\u0027une fléche pointant un couloir face à vous, un peu sur votre gauche.Vous vous dites que 1A ça doit être pour 1ère année...ils ne font quand même pas d\u0027effort avec leur jargon...\n    [Notez que cette action vous a débloqué la flèche de déplacement du haut vous permettant de passer à la salle suivante. Les actions peuvent avoir une multitudes de conséquences comme vous donner accès à de nouveaux lieux ou encore débloquer d\u0027autres actions. Ainsi, pensez à parfois revenir sur vos pas, certaines choses auraient pu se débloquer depuis votre dernier passage.] \n  "
           },
           {
-            "id": 20031,
-            "text": "Vous regardez dans le vase, vous voyez une clef au fond de celui-ci."
+            "id": 1021,
+            "text": "   Vous avez suivi les panneaux, pris un couloir éclairé par des parties vitrées sur votre gauche puis vous avez tourné à droite, puis monté un escalier, puis tourné à gauche pour enfin arriver à cette amphithéâtre...Cette école à l\u0027air d\u0027être un vrai labyrinthe, ça pourrait être intéressant de l\u0027explorer plus tard. \n  Vous vous installez dans les gradins, ni trop bas pour ne pas avoir l\u0027air trop studieux ni trop haut pour ne pas donner l\u0027impression de ne pas être intéressé et donc être repéré par les intervenants. \n  Après votre arrivée la salle se rempli rapidement. Certains ont l\u0027air de déjà se connaître et d\u0027autres sociabilise déjà avec leurs voisins. Vous devriez réussir à vous faire des amis assez rapidement. \n   Les intervenants, déjà présents dans la salle à votre arrivée demande le silence et commence leur présentation."
           },
           {
-            "id": 20021,
-            "text": "La porte est fermée à double tour. \nElle semble cependant ancienne, peut-être ne résistera-t-elle pas à votre épaule \n"
+            "id": 1031,
+            "text": "  Vous voilà arrivé à la fin de la conférence. Rien d\u0027extravagant, des consignes de sécurités, des présentations de locaux, des présentations des différentes formations. C\u0027est exactement ce à quoi vous vous attendiez. \n     Cependant, pendant la conférence vous avez sympathisé avec Maxime, votre voisin. Lui vient de l\u0027IUT de Lannion et connais déjà donc bien la région. C\u0027est exactement ce qu\u0027il vous fallait! \n    Au moment de partir, Maxime s\u0027exclame : \"Hey, c\u0027est à toi la trousse là-bas?\". Vous répondez que non car effectivement ce n\u0027est pas la vôtre. Vous voyez Maxime se servir dedans. \"Fais donc pareil, on ramènera le reste à l\u0027accueil l\u0027air de rien.\" \n     "
           },
           {
-            "id": 20022,
-            "text": "Vous vous êtes fait mal en essayant d\u0027enfoncer cette porte... \n"
+            "id": 1032,
+            "text": "Après vous être servi, Maxime récupère la trousse. Il compte sûrement la ramener à l\u0027accueil. Commencer l\u0027année en volant à un autre élève que vous ne connaissait même pas...Vous vous sentez un peu mal mais bon c\u0027est pas grand chose et puis les fin de mois sont compliquées en ce moment. Peu importe, vous n\u0027avez plus rien aujourd\u0027hui, qu\u0027allez-vous faire? \n    "
           },
           {
-            "id": 10021,
-            "text": "Éclairée par un puits de lumière, cette salle est moins lugubre que la précédente mais étonnamment vous vous y sentez plus mal, comme si quelqu\u0027un ou quelque chose vous observait. \nLa pièce est presque vide. Il n\u0027y a qu\u0027un tableau ornant le mur face à vous et la porte dans votre dos"
+            "id": 2011,
+            "text": "  Vous regardez à l\u0027intérieur de la trousse. Il y a le contenu habituel : quelques stylos, un blanco, une gomme, un compas etc...Mais il y a aussi des choses plus inhabituelles : un petit opinel et une petite loupe. Le propriétaire de cette trousse à l\u0027air bizarre, vous préféreriez ne pas faire sa connaissance."
           },
           {
-            "id": 30011,
-            "text": "Sur le bas du tableau il y a un mécanisme similaire à celui d\u0027un cadenas à code. 4 chiffres semblent nécessaire. \nAu centre du tableau vous pouvez lire : \"Si votre but est de sortir d\u0027ici, une simple connaissance vous est nécessaire : quelle promo de l\u0027ENSSAT est nécessairement la meilleure?\"\n"
+            "id": 1041,
+            "text": "  Vous sortez de la salle, bifurquez à gauche, prenez l’escalier et descendez de un étage. Vous arrivez à sortir du bâtiment sans difficulté. Vous vous dirigez vers la cafétéria de substitution. Dû à une fuite qui s’est transformée en important dégât (le toit s’est écroulé, c’est pour dire !), vous rejoignez la salle de sport transformée en cafétéria.\n   Vous avez réussi à rejoindre une partie de votre classe et sympathisez avec eux jusqu\u0027à une heure avancée de l\u0027après-midi avant de rentrer chez vous.\n   FIN DU PROLOGUE \n     Bon, j’imagine que tu as compris. tu donnes ton choix d’actions dans l’interface de commande, tu lis l\u0027histoire juste au dessus et tu regardes l’image à droite. Utilises les flèches pour te déplacer entre les différentes salles. Et n\u0027oublies que tes actions peuvent avoir des conséquences sur les lieux que tu as déjà visité. Facile non ? Bon alors, ouvre bien tes mireittes et tes écoutilles, parce que voir et écouter c’est le plus important! Fais attention au moindre détail"
           },
           {
-            "id": 30012,
-            "text": "Indice : S\u0027ils n\u0027ont pas redoublé, ils sont nés en 1999\n"
+            "id": 1051,
+            "text": "  Vous sortez de la salle, bifurquez à gauche, prenez l’escalier et descendez de un étage. Vous arrivez à sortir du bâtiment sans difficulté. Vous êtes dehors et vous vous y sentez bien. Il ne fait pas trop froid, il y a du soleil. Vous rentrez chez vous.\n   FIN DU PROLOGUE \n     Bon, j’imagine que tu as compris. tu donnes ton choix d’actions dans l’interface de commande, tu lis l\u0027histoire juste au dessus et tu regardes l’image à droite. Utilises les flèches pour te déplacer entre les différentes salles. Et n\u0027oublies que tes actions peuvent avoir des conséquences sur les lieux que tu as déjà visité. Facile non ? Bon alors, ouvre bien tes mireittes et tes écoutilles, parce que voir et écouter c’est le plus important! Fais attention au moindre détail"
           },
           {
-            "id": 4004,
-            "text": "Il semblerait que votre solution précédemment proposée ne soit pas la bonne\n"
-          },
-          {
-            "id": 4005,
-            "text": "Il semblerait que vous rencontriez quelques difficultés...peut être devriez-vous priez les dieux de l\u0027ENSSAT pour obtenir un indice\n"
+            "id": 1061,
+            "text": "Un vrai geek celui-là. Je laisse tomber, faites votre vie mais méfiez vous quand même. Il paraîtrait qu’il ne vaut mieux pas rester seul dans l’ENSSAT!\n   FIN DU PROLOGUE \n     Bon, j’imagine que tu as compris. tu donnes ton choix d’actions dans l’interface de commande, tu lis l\u0027histoire juste au dessus et tu regardes l’image à droite. Utilises les flèches pour te déplacer entre les différentes salles. Et n\u0027oublies que tes actions peuvent avoir des conséquences sur les lieux que tu as déjà visité. Facile non ? Bon alors, ouvre bien tes mireittes et tes écoutilles, parce que voir et écouter c’est le plus important! Fais attention au moindre détail"
           }
         ],
         "difficulty": 1,
