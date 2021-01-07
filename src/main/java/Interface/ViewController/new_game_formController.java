@@ -203,11 +203,133 @@ public class new_game_formController implements Controller {
         Game game_test = new Game(player1,difficulty);
         Scenario scenar = new Scenario();
 
-        Room room1 = new Room(1001,1002,-1,-1,-1,true,0,"path");
-        Room room2 = new Room(1002,-1,1003,1001,-1,true,0,"path");
-        Room room3 = new Room(1003,-1,-1,-1,1002,true,0,"path");
+        // Prologue
 
-        /* Room room1 = new Room(1001,1002,-1,-1,-1,true,10011,"pictures/Salle1.png"); //première salle
+        Room room1 = new Room(101,102,-1,-1,-1,true,1011,"pictures/Salle1.png"); //Entrée enssat
+        Room room2 = new Room(102,-1,-1,-1,-1, false,1021,"pictures/Salle2.png"); //Amphi
+        Room room3 = new Room(103,-1,-1,-1,-1, true,1031,"pictures/Salle2.png"); //Amphi post-conférence
+        Room room3_1 = new Room(201,103,2011,"pictures/Table.png"); //trousse
+        Room room4 = new Room(104,-1,-1,-1,-1, true,1041,"pictures/Salle2.png"); //Cafétaria
+        Room room5 = new Room(105,-1,-1,-1,-1, true,1051,"pictures/Salle2.png"); //Extérieur
+        Room room6 = new Room(106,-1,-1,-1,-1, true,1061,"pictures/Salle2.png"); //PC
+        Room room7 = new Room(107,-1,-1,-1,-1, true,1071,"pictures/Salle2.png"); //Début aventure
+
+
+        //Création des objets
+        Item opinel = new Item(1,"Petit opinel","Petit couteau pouvant être bien pratique",-1, "objects/key.png");
+        Item loupe = new Item(2,"Loupe","Petite loupe pouvant être bien pratique",-1, "objects/key.png");
+        Item compas = new Item(3,"Compas","Compas pouvant être bien pratique",-1, "objects/key.png");
+
+        //Actions de la salle 101 - Entrée de l'enssat
+
+        ArrayList<int[]> consequences_action101_1 = new ArrayList<>();
+        consequences_action101_1.add(new int[]{7,1012}); //Affichage nouveau texte
+        consequences_action101_1.add(new int[]{3,1011}); //Rend l'action innaccessible (faisable qu'une fois)
+        Action action101_1 = new Action(1011,true,"Regarder autour de vous", consequences_action101_1, 101);
+
+        ArrayList<int[]> consequences_action101_2 = new ArrayList<>();
+        consequences_action101_2.add(new int[]{7,1013}); //Affichage nouveau texte
+        consequences_action101_2.add(new int[]{3,1012}); //Rend l'action innaccessible (faisable qu'une fois)
+        consequences_action101_2.add(new int[]{2,1013}); //Déblocage action
+        Action action101_2 = new Action(1012,true,"Demander son chemin", consequences_action101_2, 101);
+
+        ArrayList<int[]> consequences_action101_3 = new ArrayList<>();
+        consequences_action101_3.add(new int[]{7,1014}); //Affichage nouveau texte
+        consequences_action101_3.add(new int[]{3,1013}); //Rend l'action innaccessible (faisable qu'une fois)
+        consequences_action101_3.add(new int[]{9,102}); //Débloque salle suivante
+        Action action101_3 = new Action(1013,false,"Lire le panneau", consequences_action101_3, 101);
+
+
+        //Actions de la salle 102 - Amphi pré-conférence
+
+        ArrayList<int[]> consequences_action102_1 = new ArrayList<>();
+        consequences_action102_1.add(new int[]{1,103}); //Bouge le joueur dans la salle suivante
+        Action action102_1 = new Action(1021,true,"Écouter la conférence (Vous n'avez pas vraiment le choix...)", consequences_action102_1, 102);
+
+        //Actions de la salle 103 - Amphi post-conférence
+
+        ArrayList<int[]> consequences_action103_1 = new ArrayList<>();
+        consequences_action103_1.add(new int[]{1,201}); //Bouge le joueur dans la salle suivante
+        Action action103_1 = new Action(1031,true,"Fouiller dans la trousse", consequences_action103_1, 103);
+
+        ArrayList<int[]> consequences_action103_2 = new ArrayList<>();
+        consequences_action103_2.add(new int[]{1,104}); //Bouge le joueur dans la salle suivante
+        Action action103_2 = new Action(1032,false,"Se rendre à la cafétaria", consequences_action103_2, 103);
+
+        ArrayList<int[]> consequences_action103_3 = new ArrayList<>();
+        consequences_action103_3.add(new int[]{1,105}); //Bouge le joueur dans la salle suivante
+        Action action103_3 = new Action(1033,false,"Sortir de l'ENSSAT", consequences_action103_3, 103);
+
+        ArrayList<int[]> consequences_action103_4 = new ArrayList<>();
+        consequences_action103_4.add(new int[]{1,106}); //Bouge le joueur dans la salle suivante
+        Action action103_4 = new Action(1034,false,"Trouver une salle avec un PC", consequences_action103_4, 103);
+
+
+        //Actions de la salle 201 - Trousse
+
+        ArrayList<int[]> consequences_action201_1 = new ArrayList<>();
+        consequences_action201_1.add(new int[]{4,3}); //Ajoute l'objet à l'inventaire
+        consequences_action201_1.add(new int[]{1,103}); //Bouge le joueur dans la salle précédente
+        consequences_action201_1.add(new int[]{3,1031}); //Rend l'inspection de la trousse impossible
+        consequences_action201_1.add(new int[]{2,1032}); //Débloque action pour la suite
+        consequences_action201_1.add(new int[]{2,1033}); //Débloque action pour la suite
+        consequences_action201_1.add(new int[]{2,1034}); //Débloque action pour la suite
+        consequences_action201_1.add(new int[]{7,1032}); //Affiche du texte supplémentaire
+        Action action201_1 = new Action(2011,true,"Prendre le compas", consequences_action201_1, 201);
+
+        ArrayList<int[]> consequences_action201_2 = new ArrayList<>();
+        consequences_action201_2.add(new int[]{4,1}); //Ajoute l'objet à l'inventaire
+        consequences_action201_2.add(new int[]{1,103}); //Bouge le joueur dans la salle précédente
+        consequences_action201_2.add(new int[]{3,1031}); //Rend l'inspection de la trousse impossible
+        consequences_action201_2.add(new int[]{2,1032}); //Débloque action pour la suite
+        consequences_action201_2.add(new int[]{2,1033}); //Débloque action pour la suite
+        consequences_action201_2.add(new int[]{2,1034}); //Débloque action pour la suite
+        consequences_action201_2.add(new int[]{7,1032}); //Affiche du texte supplémentaire
+        Action action201_2 = new Action(2012,true,"Prendre le petit opinel", consequences_action201_2, 201);
+
+        ArrayList<int[]> consequences_action201_3 = new ArrayList<>();
+        consequences_action201_3.add(new int[]{4,2}); //Ajoute l'objet à l'inventaire
+        consequences_action201_3.add(new int[]{1,103}); //Bouge le joueur dans la salle précédente
+        consequences_action201_3.add(new int[]{3,1031}); //Rend l'inspection de la trousse impossible
+        consequences_action201_3.add(new int[]{2,1032}); //Débloque action pour la suite
+        consequences_action201_3.add(new int[]{2,1033}); //Débloque action pour la suite
+        consequences_action201_3.add(new int[]{2,1034}); //Débloque action pour la suite
+        consequences_action201_3.add(new int[]{7,1032}); //Affiche du texte supplémentaire
+        Action action201_3 = new Action(2013,true,"Prendre la petite loupe", consequences_action201_3, 201);
+
+
+        //Actions de la salle 104 - Cafétaria
+
+        ArrayList<int[]> consequences_action104_1 = new ArrayList<>();
+        consequences_action104_1.add(new int[]{1,107});
+        Action action104_1 = new Action(1041,true,"Commencer l'aventure dans l'ENSSAT", consequences_action104_1, 104);
+
+        ArrayList<int[]> consequences_action104_2 = new ArrayList<>();
+        consequences_action104_2.add(new int[]{11});
+        Action action104_2 = new Action(1042,true,"J'ai pas envie, je préfère rester chez moi...", consequences_action104_2, 104);
+
+        //Actions de la salle 105 - Extérieur
+
+        ArrayList<int[]> consequences_action105_1 = new ArrayList<>();
+        consequences_action105_1.add(new int[]{1,107});
+        Action action105_1 = new Action(1051,true,"Commencer l'aventure dans l'ENSSAT", consequences_action105_1, 105);
+
+        ArrayList<int[]> consequences_action105_2 = new ArrayList<>();
+        consequences_action105_2.add(new int[]{11});
+        Action action105_2 = new Action(1052,true,"J'ai pas envie, je préfère rester chez moi...", consequences_action105_2, 105);
+
+        //Actions de la salle 106 - PC
+
+        ArrayList<int[]> consequences_action106_1 = new ArrayList<>();
+        consequences_action106_1.add(new int[]{1,107});
+        Action action106_1 = new Action(1061,true,"Commencer l'aventure dans l'ENSSAT", consequences_action106_1, 106);
+
+        ArrayList<int[]> consequences_action106_2 = new ArrayList<>();
+        consequences_action106_2.add(new int[]{11});
+        Action action106_2 = new Action(1062,true,"J'ai pas envie, je préfère rester chez moi...", consequences_action106_2, 106);
+
+       /* // Niveau Test
+        Room room1 = new Room(1001,1002,-1,-1,-1,true,10011,"pictures/Salle1.png"); //première salle
         Room room2 = new Room(1002,-1,-1,1001,-1, false,10021,"pictures/Salle2.png"); //deuxième salle
         Room room1_1 = new Room(2001,1001,20011,"pictures/Table.png"); //table dans salle 1
         Room room1_2 = new Room(2002,1001,20021,"pictures/Porte.png"); //porte dans salle 1
@@ -276,11 +398,9 @@ public class new_game_formController implements Controller {
         consequences_action3001_1.add(new int[]{3,30011});
         Action action3001_1 = new Action(30011,true,"Demander un indice", consequences_action3001_1, 3001); //mise à jour du texte
 
-         */
-
         // Son ambiance
         WorldBoxDisc.pause(Son.feu);
-        WorldBoxDisc.play(Son.wind);
+        WorldBoxDisc.play(Son.wind);µ*/
 
         return game_test;
     }

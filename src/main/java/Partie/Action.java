@@ -1,7 +1,11 @@
 package Partie;
 
+import Interface.ScreenLoader.LoadMap;
 import Interface.Settings.Engine;
+import Music.Systems.Son;
+import Music.Systems.WorldBoxDisc;
 
+import java.io.IOException;
 import java.util.ArrayList;
 
 public class Action {
@@ -10,14 +14,7 @@ public class Action {
     String text; // description textuelle de l'action
     ArrayList<int[]> consequences; // liste de couples définissant les conséquence de l'action, forme : (type de conséquence, argument nécessaire à la réalisation de cette conséquence)
 
-    /**
-     * Constructeur pour une action classique, non liée à un objet
-     * @param id l'identifiant de l'action
-     * @param available indique si l'action est faisable
-     * @param text texte décrivant l'action
-     * @param consequences tableau des couples de conséquences
-     * @param room identifiant de la salle dans laquelle se trouve l'action
-     */
+
     public Action(int id, boolean available, String text, ArrayList<int[]> consequences, int room) { //Action "générale", doable à false pour les déplacement vers salle vérouillées au départ par exemple
         this.id=id;
         this.available = available;
@@ -27,14 +24,6 @@ public class Action {
         Game.actions.add(this); // ajoute l'action à la liste des actions du jeu
     }
 
-    /**
-     * Constructeur pour une action liée à un objet
-     * @param id l'identifiant de l'action
-     * @param text texte décrivant l'action
-     * @param consequences tableau des couples de conséquences
-     * @param room identifiant de la salle dans laquelle se trouve l'action
-     * @param id_item identifiant de l'objet auquel l'action est liée
-     */
     public Action(int id,String text, ArrayList<int[]> consequences, int room, int id_item) { //Action liée à un objet
         this.id=id;
         this.available = false;
@@ -79,10 +68,8 @@ public class Action {
         this.consequences = consequences;
     }
 
-    /**
-     * Méthode appliquant les conséquences de l'action
-     */
-    public void do_consequences(){
+
+    public void do_consequences() throws IOException {
         for(int i =0;i<getConsequences().size();i++){
             switch (getConsequences().get(i)[0]) {
                 case 1: // mouvement vers la salle de numéro d'identification arg_conséquence
@@ -112,12 +99,20 @@ public class Action {
                     break;
                 case 8: // rend une salle inaccessible
                     Game.search_room(getConsequences().get(i)[1]).setAccess(false);
+                    Engine.engine.refreshRoom();
                     break;
                 case 9: // rend une salle accessible
                     Game.search_room(getConsequences().get(i)[1]).setAccess(true);
+                    Engine.engine.refreshRoom();
                     break;
                 case 10: // affiche la boite à réponses
                     Engine.engine.answer_box_visible(true);
+                    break;
+                case 11: // affiche écran fin de partie
+                    LoadMap gl = new LoadMap();
+                    gl.display_screen_from_id(LoadMap.END_GAME);
+                    WorldBoxDisc.play(Son.hibou);
+                    WorldBoxDisc.play(Son.valid);
                     break;
              }
         }
