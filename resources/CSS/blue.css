@@ -151,7 +151,7 @@
 
 .Map {
     -fx-border-color: #ff931f;
-    -fx-background-color: #1C2833 ;
+    -fx-background-color: #1C2833;
     -fx-stroke: #ff931f;
 }
 
@@ -163,7 +163,18 @@
     -fx-border-radius: 10;
 }
 
+/* ====== Design des ScrollPane =======*/
+.scroll-pane {
+    -fx-background-color: transparent;
+}
 
+.scroll-pane .viewport {
+    -fx-background-color: transparent;
+}
+
+.scroll-pane .scroll-bar:vertical {
+    -fx-opacity: 0;
+}
 
 
 

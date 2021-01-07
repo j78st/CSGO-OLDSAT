@@ -5,18 +5,20 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="800.0" styleClass="Custom_label" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Interface.ViewController.gameController">
+<AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="800.0" styleClass="Custom_label" stylesheets="@../CSS/blue.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Interface.ViewController.gameController">
    <children>
       <AnchorPane fx:id="background_menu" opacity="0.75" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #000000;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
       <BorderPane fx:id="vbox_menu" layoutX="224.0" layoutY="48.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
@@ -68,7 +70,7 @@
                            <center>
                               <AnchorPane BorderPane.alignment="CENTER">
                                  <children>
-                                    <Label fx:id="narration" alignment="TOP_LEFT" prefHeight="362.0" prefWidth="356.0" styleClass="Narration_text" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="15.0" />
+                                    <ScrollPane fx:id="scroller" hbarPolicy="NEVER" layoutX="15.0" layoutY="15.0" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="5.0" />
                                  </children>
                               </AnchorPane>
                            </center>
@@ -93,6 +95,7 @@
                               </HBox>
                            </children>
                         </VBox>
+                        <Region fx:id="reference" maxHeight="2.0" prefHeight="80.0" prefWidth="395.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="0.0" />
                      </children>
                   </AnchorPane>
                   <AnchorPane prefHeight="205.0" prefWidth="333.0" styleClass="GamePane" GridPane.columnIndex="1">
@@ -121,7 +124,7 @@
                         </AnchorPane>
                         <HBox alignment="CENTER_RIGHT" layoutX="263.0" layoutY="16.0" spacing="10.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="15.0">
                            <children>
-                              <Label fx:id="timer_lbl" alignment="CENTER" contentDisplay="CENTER" prefHeight="70.0" prefWidth="120.0" text="TIMER" textAlignment="RIGHT" textFill="WHITE">
+                              <Label fx:id="timer_lbl" alignment="CENTER" contentDisplay="CENTER" prefHeight="40.0" prefWidth="100.0" textAlignment="RIGHT" textFill="WHITE">
                                  <styleClass>
                                     <String fx:value="Custom_text" />
                                     <String fx:value="UpperLayerPane" />

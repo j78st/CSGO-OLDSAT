@@ -11,15 +11,15 @@ import Partie.Action;
 import Partie.Game;
 import Partie.Item;
 import Timer.TimerController;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.Group;
 import javafx.scene.Node;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.ListView;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
@@ -49,8 +49,13 @@ public class gameController implements Controller {
     @FXML
     private AnchorPane answerBox;
 
+    private Text narration = new Text();
+
     @FXML
-    private Label narration;
+    private ScrollPane scroller;
+
+    @FXML
+    private Region reference;
 
     // inventaire -----------------------------------------------
     @FXML
@@ -290,39 +295,15 @@ public class gameController implements Controller {
     }
 
     // ==========================================================
-    // Methodes de gestion de la partie
+    // Methodes de rafraichissement des éléments visuels
     // ==========================================================
 
     /**
      * Rafraichit l'ensemble de la salle
      */
     public void refreshRoom(){
-
-        if(Game.search_room(Game.search_room(Game.player.getPosition()).getNeighbours()[0]) == null
-                || !Game.search_room(Game.search_room(Game.player.getPosition()).getNeighbours()[0]).isAccess()){
-            up_move_btn.setDisable(true);
-        } else {
-            up_move_btn.setDisable(false);
-        }
-        if(Game.search_room(Game.search_room(Game.player.getPosition()).getNeighbours()[1]) == null
-                || !Game.search_room(Game.search_room(Game.player.getPosition()).getNeighbours()[1]).isAccess()){
-            right_move_btn.setDisable(true);
-        } else {
-            right_move_btn.setDisable(false);
-        }
-        if(Game.search_room(Game.search_room(Game.player.getPosition()).getNeighbours()[2]) == null
-                || !Game.search_room(Game.search_room(Game.player.getPosition()).getNeighbours()[2]).isAccess()){
-            down_move_btn.setDisable(true);
-        } else {
-            down_move_btn.setDisable(false);
-        }
-        if(Game.search_room(Game.search_room(Game.player.getPosition()).getNeighbours()[3]) == null
-                || !Game.search_room(Game.search_room(Game.player.getPosition()).getNeighbours()[3]).isAccess()){
-            left_move_btn.setDisable(true);
-        } else {
-            left_move_btn.setDisable(false);
-        }
-
+        // refresh des mouvements
+        refreshMoveButton();
         // refresh du texte
         refreshText();
         // refresh de l'image
@@ -374,6 +355,7 @@ public class gameController implements Controller {
     public void refreshText(){
         String room_text = Game.search_text(Game.search_room(Game.player.getPosition()).getId_text());
         narration.setText(room_text);
+        scroller.setContent(narration);
     }
 
     /**
@@ -403,6 +385,36 @@ public class gameController implements Controller {
     }
 
     /**
+     * Actualise la disponibilité des boutons de mouvement
+     */
+    public void refreshMoveButton () {
+        if(Game.search_room(Game.search_room(Game.player.getPosition()).getNeighbours()[0]) == null
+                || !Game.search_room(Game.search_room(Game.player.getPosition()).getNeighbours()[0]).isAccess()){
+            up_move_btn.setDisable(true);
+        } else {
+            up_move_btn.setDisable(false);
+        }
+        if(Game.search_room(Game.search_room(Game.player.getPosition()).getNeighbours()[1]) == null
+                || !Game.search_room(Game.search_room(Game.player.getPosition()).getNeighbours()[1]).isAccess()){
+            right_move_btn.setDisable(true);
+        } else {
+            right_move_btn.setDisable(false);
+        }
+        if(Game.search_room(Game.search_room(Game.player.getPosition()).getNeighbours()[2]) == null
+                || !Game.search_room(Game.search_room(Game.player.getPosition()).getNeighbours()[2]).isAccess()){
+            down_move_btn.setDisable(true);
+        } else {
+            down_move_btn.setDisable(false);
+        }
+        if(Game.search_room(Game.search_room(Game.player.getPosition()).getNeighbours()[3]) == null
+                || !Game.search_room(Game.search_room(Game.player.getPosition()).getNeighbours()[3]).isAccess()){
+            left_move_btn.setDisable(true);
+        } else {
+            left_move_btn.setDisable(false);
+        }
+    }
+
+    /**
      * Affiche une boite de réponse pour répondre à une enigme
      * @param visible Boite de dialogue visible ou non
      */
@@ -413,7 +425,6 @@ public class gameController implements Controller {
             answerBox.toBack();
         }
     }
-
 
     // ==========================================================
     // Methodes d'initialisation
@@ -444,15 +455,20 @@ public class gameController implements Controller {
         right_move_btn.setGraphic(new ImageView(new Image("/icons/"+ Settings.icon_color +"/arrow_right.png")));
 
         // Mise en place du texte narratif
-        narration.setWrapText(true);
+        narration.wrappingWidthProperty().bind(reference.widthProperty());
+        narration.getStyleClass().add("Custom_label");
         if (Settings.icon_color.equals("white")){
-            narration.setStyle("-fx-text-fill: white; -fx-font-size: " + Settings.fontSize + "px;");
+            narration.setStyle("-fx-fill: white; -fx-font-size: " + Settings.fontSize + "px;");
         } else {
-            narration.setStyle("-fx-text-fill: black; -fx-font-size: " + Settings.fontSize + "px;");
+            narration.setStyle("-fx-fill: black; -fx-font-size: " + Settings.fontSize + "px;");
         }
 
         // Mise en place des textes de description d'item
         description_label.setWrapText(true);
+
+        // Mise en place scroller
+        scroller.setFitToWidth(true);
+        scroller.setContent(narration);
 
     }
 
@@ -521,7 +537,11 @@ public class gameController implements Controller {
     @Override
     public void apply_settings() {
         for (Node n: LoadMap.scene.getRoot().lookupAll(".Custom_label")) {
-            n.setStyle("-fx-font-size: " + Settings.fontSize + "px;");
+            if (Settings.icon_color.equals("white")){
+                narration.setStyle("-fx-fill: white; -fx-font-size: " + Settings.fontSize + "px;");
+            } else {
+                narration.setStyle("-fx-fill: black; -fx-font-size: " + Settings.fontSize + "px;");
+            }
         }
     }
 
