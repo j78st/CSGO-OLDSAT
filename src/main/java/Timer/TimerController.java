@@ -6,7 +6,7 @@ import Music.Systems.WorldBoxDisc;
 import java.util.Objects;
 
 /**
- * Cette classe représente le controler du timer.
+ * Cette classe représente le controller du timer.
  */
 
 public class TimerController extends Thread {
@@ -29,6 +29,7 @@ public class TimerController extends Thread {
         this.lock = new Lock();
         this.timeSeconds = secondes;
         timer = new Timer(this.timeSeconds, this.lock);
+        this.setDaemon(true); // termine le thread quand l'application est quittée
     }
 
     @Override
@@ -127,4 +128,13 @@ public class TimerController extends Thread {
     public int hashCode() {
         return Objects.hash(timer, timeSeconds);
     }
+
+    /**
+     * Tue le chronometre et renvoit le temps restant en secondes
+     */
+    public int killTimer(){
+            timer.finish();
+            return timer.getTimeFullSeconds();
+    }
+
 }

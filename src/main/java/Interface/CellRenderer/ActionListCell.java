@@ -9,6 +9,9 @@ public class ActionListCell extends ListCell<Action> {
 
     Label action_title = new Label(); // label avec la description de l'action
 
+    /**
+     * Constructeur. Paramètre le contenu de la cellule
+     */
     public ActionListCell() {
         super();
         // couleur du texte
@@ -19,6 +22,11 @@ public class ActionListCell extends ListCell<Action> {
         }
     }
 
+    /**
+     * Mets a jour les données de la cellule
+     * @param action élément dispensé dans la cellule
+     * @param empty booléen indiquant si la case est vide
+     */
     @Override
     public void updateItem (Action action, boolean empty) {
 

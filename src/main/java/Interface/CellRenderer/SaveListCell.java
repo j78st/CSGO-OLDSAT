@@ -13,6 +13,9 @@ public class SaveListCell extends ListCell<SaveSlot> {
     Label ln = new Label(); // label avec le numero de l'emplacement de sauvegarde
     Label lp = new Label(); // label avec le pseudo du joueur
 
+    /**
+     * Constructeur. Paramètre le contenu de la cellule
+     */
     public SaveListCell() {
 
         super();
@@ -21,7 +24,7 @@ public class SaveListCell extends ListCell<SaveSlot> {
         hbox.setPrefSize(360, 20);
 
         // parametrage des tailles des labels
-        ln.setPrefSize(100, 10);
+        ln.setPrefSize(120, 10);
         lp.setPrefSize(150, 10);
 
         // couleur du texte
@@ -42,6 +45,11 @@ public class SaveListCell extends ListCell<SaveSlot> {
 
     }
 
+    /**
+     * Mets a jour les données de la cellule
+     * @param save élément dispensé dans la cellule
+     * @param empty booléen indiquant si la case est vide
+     */
     @Override
     public void updateItem (SaveSlot save, boolean empty) {
 

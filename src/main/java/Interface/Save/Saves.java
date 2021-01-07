@@ -5,11 +5,15 @@ import java.util.ArrayList;
 
 public class Saves implements Serializable {
 
+    /**
+     * Listes des sauvegardes enregistrées
+     */
     ArrayList<SaveSlot> saves;
 
     public Saves() {
         saves = new ArrayList<>();
     }
+
 
     public ArrayList<SaveSlot> getSaves() { return saves; }
 

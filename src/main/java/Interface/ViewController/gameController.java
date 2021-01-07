@@ -3,12 +3,14 @@ package Interface.ViewController;
 import Interface.CellRenderer.ActionListCell;
 import Interface.ScreenLoader.Controller;
 import Interface.ScreenLoader.LoadMap;
+import Interface.Settings.Engine;
 import Interface.Settings.Settings;
 import Music.Systems.Son;
 import Music.Systems.WorldBoxDisc;
 import Partie.Action;
 import Partie.Game;
 import Partie.Item;
+import Timer.TimerController;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -68,7 +70,7 @@ public class gameController implements Controller {
 
     // affichage timer ------------------------------------------
     @FXML
-    private Label timer_lbl;
+    public Label timer_lbl;
 
     // déplacement ----------------------------------------------
     @FXML
@@ -115,7 +117,7 @@ public class gameController implements Controller {
 
     /**
      * Lors de l'appui sur le bouton ALLER EN BAS
-     * @param event
+     * @param event ev
      */
     @FXML
     void go_down(ActionEvent event) {
@@ -124,7 +126,7 @@ public class gameController implements Controller {
 
     /**
      * Lors de l'appui sur le bouton ALLER A GAUCHE
-     * @param event
+     * @param event ev
      */
     @FXML
     void go_left(ActionEvent event) {
@@ -133,7 +135,7 @@ public class gameController implements Controller {
 
     /**
      * Lors de l'appui sur le bouton ALLER A DROITE
-     * @param event
+     * @param event ev
      */
     @FXML
     void go_right(ActionEvent event) {
@@ -142,7 +144,7 @@ public class gameController implements Controller {
 
     /**
      * Lors de l'appui sur le bouton ALLER EN HAUT
-     * @param event
+     * @param event ev
      */
     @FXML
     void go_up(ActionEvent event) {
@@ -152,7 +154,7 @@ public class gameController implements Controller {
     /**
      * Lors de l'appui sur le bouton VALIDER ACTION
      * Execute l'action selectionnée
-     * @param event
+     * @param event ev
      */
     @FXML
     void do_selected_action(ActionEvent event) {
@@ -162,20 +164,18 @@ public class gameController implements Controller {
     /**
      * Lors de l'appui sur le bouton VALIDER
      * Vérifie la réponse donnée par le joueur à une énigme
-     * @param event
+     * @param event ev
      */
     @FXML
     void check_answer(ActionEvent event) throws IOException {
-
         int ans = Integer.parseInt(answer_prompt.getText());
         Game.search_enigma(Game.player.getPosition()).check_solution(ans);
-
     }
 
     /**
      * Lors de l'appui sur le bouton ECHAPE/PAUSE
      * Mets en pause la partie en cours et affiche le menu de pause
-     * @param event
+     * @param event ev
      */
     @FXML
     void pause_game(ActionEvent event) {
@@ -183,12 +183,15 @@ public class gameController implements Controller {
         background_menu.toFront();
         vbox_menu.toFront();
 
-        // ---- vvv suspendre timer vvv -----
+        // suspension du timer et récuération du temps restant
+        Engine.chrono.toogleTimer();
+        timer_pause.setText(Engine.chrono.getRemainingTime());
 
     }
 
     /**
      * Affiche la description de l'objet survolé avec la souris
+     * @param event ev
      */
     @FXML
     void show_description(MouseEvent event) throws InterruptedException {
@@ -222,6 +225,7 @@ public class gameController implements Controller {
 
     /**
      * Cache la description de lorsque l'objet n'est plus survolé
+     * @param event ev
      */
     @FXML
     void hide_description(MouseEvent event) {
@@ -236,7 +240,7 @@ public class gameController implements Controller {
     /**
      * Lors de l'appui sur le bouton REPRENDRE
      * enlève le menu pause et relance la partie
-     * @param event
+     * @param event ev
      */
     @FXML
     void resume_game(ActionEvent event) {
@@ -253,7 +257,7 @@ public class gameController implements Controller {
     /**
      * Lors de l'appui sur le bouton PARAMETRES
      * sauvegarde la partie en cours dans l'emplacement attribué
-     * @param event
+     * @param event ev
      */
     @FXML
     void display_settings_menu(ActionEvent event) throws IOException {
@@ -265,7 +269,7 @@ public class gameController implements Controller {
     /**
      * Lors de l'appui sur le bouton REVENIR A L'ACCUEIL
      * quitte la partie et revient au menu d'accueil. Propose une sauvegarde de la partiie en cours
-     * @param event
+     * @param event ev
      */
     @FXML
     void go_to_home_screen(ActionEvent event) throws InterruptedException, IOException {
@@ -277,7 +281,7 @@ public class gameController implements Controller {
     /**
      * Lors de l'appui sur le bouton QUITTER L'APPLICATION
      * ferme l'application. Propose une sauvegarde de la partie en cours
-     * @param event
+     * @param event ev
      */
     @FXML
     void exit_app(ActionEvent event) throws InterruptedException, IOException {
@@ -372,6 +376,9 @@ public class gameController implements Controller {
         narration.setText(room_text);
     }
 
+    /**
+     * Rafraiciht l'affichage de l'inventaire de l'inventaire
+     */
     public void refreshInventory() {
         ArrayList<Integer> id_objects = Game.player.getInventory();
         ArrayList<Item> objects = new ArrayList<>();
@@ -395,7 +402,10 @@ public class gameController implements Controller {
         }
     }
 
-
+    /**
+     * Affiche une boite de réponse pour répondre à une enigme
+     * @param visible Boite de dialogue visible ou non
+     */
     public void answer_box_visible(boolean visible) {
         if (visible) {
             answerBox.toFront();
@@ -443,6 +453,7 @@ public class gameController implements Controller {
 
         // Mise en place des textes de description d'item
         description_label.setWrapText(true);
+
     }
 
     /**
@@ -504,10 +515,14 @@ public class gameController implements Controller {
         LoadMap.scene.getAccelerators().put(valid_action, va);
     }
 
+    /**
+     * Application des paramètres enregistrés de l'application sur l'écran
+     */
     @Override
     public void apply_settings() {
         for (Node n: LoadMap.scene.getRoot().lookupAll(".Custom_label")) {
             n.setStyle("-fx-font-size: " + Settings.fontSize + "px;");
         }
     }
+
 }

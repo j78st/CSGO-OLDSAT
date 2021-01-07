@@ -1,8 +1,11 @@
 package Timer;
 
+import Interface.Settings.Engine;
 import Music.Systems.Son;
 import Music.Systems.WorldBoxDisc;
+import javafx.application.Platform;
 
+import java.io.IOException;
 import java.util.Objects;
 import java.util.Random;
 
@@ -11,7 +14,7 @@ import java.util.Random;
  * Cette classe représente le timer.
  */
 public class Timer extends Thread {
-    /** Représente le temps totale en seconde du timer
+    /** Représente le temps total en seconde du timer
      */
     private int tempsSecondes;
     /**
@@ -23,25 +26,38 @@ public class Timer extends Thread {
      */
     private volatile Lock lock;
     /**
-     * Répresente le seuil de déclenchement des ticks de l'horloge
+     * Représente le seuil de déclenchement des ticks de l'horloge
      */
-    private int tickTime;
+    private volatile int tickTime;
     /**
-     * Répresente le seuil de déclenchement des battements du coeur
+     * Représente le seuil de déclenchement des battements du coeur
      */
-    private int heartbeatTickTime;
+    private volatile int heartbeatTickTime;
     /**
-     * Réprésente l'activation du son de battement du coeur
+     * Représente l'activation du son de battement du coeur
      */
-    private boolean heartBeat;
+    private volatile boolean heartBeat;
+
+    /**
+     * Booleen representant l'état du thread du timer
+     */
+    private volatile boolean done = false;
 
     public Timer(int tempsSecondes, Lock inLock){
         this.tempsSecondes = tempsSecondes;
-        this.stateTimer = false; //par défaut, le timer est a l'arret
+        this.stateTimer = false; //par défaut, le timer est à l'arret
         this.lock = inLock;
-        this.tickTime = 60; //par defaut, le son de tick se déclenche sur les trois dernères minutes
+        this.tickTime = 60; //par defaut, le son de tick se déclenche sur les trois dernières minutes
         this.heartbeatTickTime = 30; //par defaut le battement du coeur se déclenche sur la dernière minute
         this.heartBeat = false;
+    }
+
+    /**
+     * Indique si le timer est actif
+     * @return
+     */
+    public boolean isDone() {
+        return done;
     }
 
     /**
@@ -117,8 +133,10 @@ public class Timer extends Thread {
     public synchronized void toogleTimer(){
         if(stateTimer){
             stateTimer = false;
+            WorldBoxDisc.pause(Son.coeur);
         } else {
             stateTimer = true;
+            heartBeat = false; //Pour redemarrer le son
             goTimer();
         }
     }
@@ -187,41 +205,58 @@ public class Timer extends Thread {
         return Objects.hash(tempsSecondes, stateTimer, tickTime, heartbeatTickTime, heartBeat);
     }
 
+    /**
+     * Termine le thread du timer
+     */
+    public void finish(){
+        done = true;
+    }
+
     @Override
     public void run() {
-        while (this.tempsSecondes > 0){
+        while (this.tempsSecondes > 0 && !done){
             if(stateTimer) {
-                sleep(1000);
-                substractTime(1);
-                if(this.tempsSecondes < tickTime) { //Passer un certain, on entend un tick signalant que c'est bientot la fin
+                // Update affichage GUI
+                Platform.runLater(() -> Engine.engine.timer_lbl.setText(getRemainingTime()));
+
+
+                // Déclenchement tick horloge (3 min restantes)
+                if(this.tempsSecondes < tickTime && stateTimer) {
                     WorldBoxDisc.play(Son.tick);
                 }
 
-                if(this.tempsSecondes < this.heartbeatTickTime && !heartBeat){
+                // Déclenchement battement coeur (1 min restantes)
+                if(this.tempsSecondes < this.heartbeatTickTime && !heartBeat && stateTimer){
                     WorldBoxDisc.play(Son.coeur);
                     heartBeat = true;
                 }
 
-                //System.out.println(getRemainingTime());
+                sleep(1000); //Deplacement de la soustraction pour régler des problèmes de synchronisation entre écrans paramètres et de jeu
+                substractTime(1);
             } else {
                 waitTimer(); //bloque le tread pour économiser le cpu
             }
         }
         WorldBoxDisc.pause(Son.coeur);
 
-        //Randomisation du bruit de fin
-        Random generator = new Random();
-        int value = generator.nextInt(3);
-        //La "mort" a pris le joueur
-        switch (value){
-            case 0: WorldBoxDisc.play(Son.paraMot1);
-            break;
+        if(!done) { //Sortit lie à la terminaison du timer
+            //Randomisation du bruit de fin
+            Random generator = new Random();
+            int value = generator.nextInt(3);
+            //La "mort" a pris le joueur
+            switch (value) {
+                case 0:
+                    WorldBoxDisc.play(Son.paraMot1);
+                    break;
 
-            case 1: WorldBoxDisc.play(Son.paraMot2);
-            break;
+                case 1:
+                    WorldBoxDisc.play(Son.paraMot2);
+                    break;
 
-            case 2: WorldBoxDisc.play(Son.paraMot3);
-            break;
+                case 2:
+                    WorldBoxDisc.play(Son.paraMot3);
+                    break;
+            }
         }
     }
 }
