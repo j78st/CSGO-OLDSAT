@@ -1,5 +1,5 @@
 /**
- * Ce package met en place le système de logique interne.
+ * Ce package met en place le système de logique interne du jeu.
  */
 package Partie;
 

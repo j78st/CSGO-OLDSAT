@@ -362,6 +362,328 @@
               1001,
               -1
             ],
+            "access": true,
+            "id_text": 10021,
+            "path_image": "pictures/Salle2.png",
+            "id_actions": [
+              10021
+            ]
+          },
+          {
+            "id": 2001,
+            "neighbours": [
+              -1,
+              -1,
+              1001,
+              -1
+            ],
+            "access": true,
+            "id_text": 20011,
+            "path_image": "pictures/Table.png",
+            "id_actions": [
+              20011
+            ]
+          },
+          {
+            "id": 2002,
+            "neighbours": [
+              -1,
+              -1,
+              1001,
+              -1
+            ],
+            "access": true,
+            "id_text": 20021,
+            "path_image": "pictures/Porte.png",
+            "id_actions": [
+              20021,
+              20022
+            ]
+          },
+          {
+            "id": 2003,
+            "neighbours": [
+              -1,
+              -1,
+              2001,
+              -1
+            ],
+            "access": true,
+            "id_text": 20031,
+            "path_image": "pictures/Vase.png",
+            "id_actions": [
+              20031
+            ]
+          },
+          {
+            "id": 3001,
+            "neighbours": [
+              -1,
+              -1,
+              1002,
+              -1
+            ],
+            "access": true,
+            "id_text": 30011,
+            "path_image": "pictures/Tableau.png",
+            "id_actions": [
+              30011
+            ]
+          }
+        ],
+        "actions": [
+          {
+            "id": 10011,
+            "available": true,
+            "text": "Examiner la table",
+            "consequences": [
+              [
+                1,
+                2001
+              ]
+            ]
+          },
+          {
+            "id": 10012,
+            "available": false,
+            "text": "Examiner la porte",
+            "consequences": [
+              [
+                1,
+                2002
+              ]
+            ]
+          },
+          {
+            "id": 20011,
+            "available": false,
+            "text": "Examiner le vase",
+            "consequences": [
+              [
+                1,
+                2003
+              ]
+            ]
+          },
+          {
+            "id": 20031,
+            "available": false,
+            "text": "Récupérer la clef",
+            "consequences": [
+              [
+                4,
+                1
+              ],
+              [
+                3,
+                20011
+              ],
+              [
+                1,
+                2001
+              ],
+              [
+                7,
+                20012
+              ]
+            ]
+          },
+          {
+            "id": 20021,
+            "available": true,
+            "text": "Essayer d\u0027enfoncer la porte",
+            "consequences": [
+              [
+                7,
+                20022
+              ],
+              [
+                3,
+                20021
+              ]
+            ]
+          },
+          {
+            "id": 20022,
+            "available": false,
+            "text": "Utiliser la clef",
+            "consequences": [
+              [
+                6,
+                1
+              ],
+              [
+                9,
+                1002
+              ],
+              [
+                3,
+                10012
+              ],
+              [
+                1,
+                1001
+              ],
+              [
+                7,
+                10012
+              ]
+            ]
+          },
+          {
+            "id": 10021,
+            "available": true,
+            "text": "Examiner le tableau",
+            "consequences": [
+              [
+                1,
+                3001
+              ],
+              [
+                10
+              ]
+            ]
+          },
+          {
+            "id": 30011,
+            "available": true,
+            "text": "Demander un indice",
+            "consequences": [
+              [
+                7,
+                30012
+              ],
+              [
+                3,
+                30011
+              ]
+            ]
+          }
+        ],
+        "enigmas": [
+          {
+            "solution": 2022,
+            "consequences": [
+              [
+                10
+              ]
+            ],
+            "nb_error": 0,
+            "id": 3001,
+            "neighbours": [
+              -1,
+              -1,
+              1002,
+              -1
+            ],
+            "access": true,
+            "id_text": 30011,
+            "path_image": "pictures/Tableau.png",
+            "id_actions": [
+              30011
+            ]
+          }
+        ],
+        "items": [
+          {
+            "id": 1,
+            "name": "clef",
+            "description": "Clef ancienne, sert probablement pour déverouiller une serrure",
+            "path_image": "objects/key.png",
+            "max_usage": 1,
+            "current_usage": 1,
+            "id_actions": [
+              20022
+            ]
+          }
+        ],
+        "texts": [
+          {
+            "id": 10011,
+            "text": "Vous vous tenez au milieu d\u0027une salle. L\u0027atmosphère y est pesante. Il n\u0027y a aucune fenêtre et vous n\u0027êtes éclairé que par une lueur mystérieuse dont vous ne parvenez pas à déterminer la provenance. \nA votre droite se trouve une table sur laquelle vous pouvez distinguer un vase et un bout de papier. Face à vous, il y a une porte. \nLa porte est ouverte."
+          },
+          {
+            "id": 10012,
+            "text": "La porte est ouverte."
+          },
+          {
+            "id": 20011,
+            "text": "Vous voyez une note sur la table. Dessus, une main tremblotante a écrit : \"Sortez vite de là, ils arrivent et ils ne veulent pas de vous ici...\" \nAu centre de la table, il y a un vase bleu clair semblant très ancien. \nVous avez récupéré la clef dans le vase."
+          },
+          {
+            "id": 20012,
+            "text": "Vous avez récupéré la clef dans le vase."
+          },
+          {
+            "id": 20031,
+            "text": "Vous regardez dans le vase, vous voyez une clef au fond de celui-ci."
+          },
+          {
+            "id": 20021,
+            "text": "La porte est fermée à double tour. \nElle semble cependant ancienne, peut-être ne résistera-t-elle pas à votre épaule \n"
+          },
+          {
+            "id": 20022,
+            "text": "Vous vous êtes fait mal en essayant d\u0027enfoncer cette porte... \n"
+          },
+          {
+            "id": 10021,
+            "text": "Éclairée par un puits de lumière, cette salle est moins lugubre que la précédente mais étonnamment vous vous y sentez plus mal, comme si quelqu\u0027un ou quelque chose vous observait. \nLa pièce est presque vide. Il n\u0027y a qu\u0027un tableau ornant le mur face à vous et la porte dans votre dos"
+          },
+          {
+            "id": 30011,
+            "text": "Sur le bas du tableau il y a un mécanisme similaire à celui d\u0027un cadenas à code. 4 chiffres semblent nécessaire. \nAu centre du tableau vous pouvez lire : \"Si votre but est de sortir d\u0027ici, une simple connaissance vous est nécessaire : quelle promo de l\u0027ENSSAT est nécessairement la meilleure?\"\n"
+          },
+          {
+            "id": 30012,
+            "text": "Indice : S\u0027ils n\u0027ont pas redoublé, ils sont nés en 1999\n"
+          },
+          {
+            "id": 4004,
+            "text": "Il semblerait que votre solution précédemment proposée ne soit pas la bonne\n"
+          },
+          {
+            "id": 4005,
+            "text": "Il semblerait que vous rencontriez quelques difficultés...peut être devriez-vous priez les dieux de l\u0027ENSSAT pour obtenir un indice\n"
+          }
+        ],
+        "difficulty": 1,
+        "timer": 0
+      }
+    },
+    {
+      "no": 2,
+      "srgame": {
+        "player": {
+          "pseudo": "a",
+          "inventory": [],
+          "position": 1001
+        },
+        "rooms": [
+          {
+            "id": 1001,
+            "neighbours": [
+              1002,
+              -1,
+              -1,
+              -1
+            ],
+            "access": true,
+            "id_text": 10011,
+            "path_image": "pictures/Salle1.png",
+            "id_actions": [
+              10011,
+              10012
+            ]
+          },
+          {
+            "id": 1002,
+            "neighbours": [
+              -1,
+              -1,
+              1001,
+              -1
+            ],
             "access": false,
             "id_text": 10021,
             "path_image": "pictures/Salle2.png",
