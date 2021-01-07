@@ -1,5 +1,6 @@
 package Serialization;
 
+import Interface.Settings.Engine;
 import Partie.*;
 
 import java.util.ArrayList;
@@ -22,7 +23,10 @@ public class Serial_game {
         items = Game.items;
         texts = Game.texts;
         difficulty = Game.difficulty;
-        this.timer = Game.timer;
+        if (Engine.chrono != null) {
+            timer = Engine.chrono.getTimeFullSeconds();
+        }
+
     }
 
     public Game createGameFromMemory() {

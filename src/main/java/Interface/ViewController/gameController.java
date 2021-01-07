@@ -249,13 +249,12 @@ public class gameController implements Controller {
      */
     @FXML
     void resume_game(ActionEvent event) {
-
         // masquage du menu pause et desactivation des boutons
         background_menu.toBack();
         vbox_menu.toBack();
 
-        // ---- vvv reprise timer vvv -----
-
+        // reprise du timer
+        Engine.chrono.toogleTimer();
 
     }
 

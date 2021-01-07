@@ -9,8 +9,10 @@ import Interface.Settings.Engine;
 import Interface.Settings.Settings;
 import Music.Systems.Son;
 import Music.Systems.WorldBoxDisc;
+import Partie.Game;
 import Serialization.Memoire;
 import Serialization.Serial_game;
+import Timer.TimerController;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -100,6 +102,10 @@ public class load_saveController implements Controller {
             LoadMap gl = new LoadMap();
             gl.display_screen_from_id(LoadMap.GAME);
             WorldBoxDisc.play(Son.valid);
+
+            // init chrono
+            Engine.chrono = new TimerController(Game.timer);
+            Engine.chrono.start();
         }
         
     }
