@@ -10,7 +10,14 @@ public class Action {
     String text; // description textuelle de l'action
     ArrayList<int[]> consequences; // liste de couples définissant les conséquence de l'action, forme : (type de conséquence, argument nécessaire à la réalisation de cette conséquence)
 
-
+    /**
+     * Constructeur pour une action classique, non liée à un objet
+     * @param id l'identifiant de l'action
+     * @param available indique si l'action est faisable
+     * @param text texte décrivant l'action
+     * @param consequences tableau des couples de conséquences
+     * @param room identifiant de la salle dans laquelle se trouve l'action
+     */
     public Action(int id, boolean available, String text, ArrayList<int[]> consequences, int room) { //Action "générale", doable à false pour les déplacement vers salle vérouillées au départ par exemple
         this.id=id;
         this.available = available;
@@ -20,6 +27,14 @@ public class Action {
         Game.actions.add(this); // ajoute l'action à la liste des actions du jeu
     }
 
+    /**
+     * Constructeur pour une action liée à un objet
+     * @param id l'identifiant de l'action
+     * @param text texte décrivant l'action
+     * @param consequences tableau des couples de conséquences
+     * @param room identifiant de la salle dans laquelle se trouve l'action
+     * @param id_item identifiant de l'objet auquel l'action est liée
+     */
     public Action(int id,String text, ArrayList<int[]> consequences, int room, int id_item) { //Action liée à un objet
         this.id=id;
         this.available = false;
@@ -64,7 +79,9 @@ public class Action {
         this.consequences = consequences;
     }
 
-
+    /**
+     * Méthode appliquant les conséquences de l'action
+     */
     public void do_consequences(){
         for(int i =0;i<getConsequences().size();i++){
             switch (getConsequences().get(i)[0]) {

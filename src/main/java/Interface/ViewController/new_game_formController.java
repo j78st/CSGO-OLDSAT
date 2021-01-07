@@ -203,8 +203,11 @@ public class new_game_formController implements Controller {
         Game game_test = new Game(player1,difficulty);
         Scenario scenar = new Scenario();
 
+        Room room1 = new Room(1001,1002,-1,-1,-1,true,0,"path");
+        Room room2 = new Room(1002,-1,1003,1001,-1,true,0,"path");
+        Room room3 = new Room(1003,-1,-1,-1,1002,true,0,"path");
 
-        Room room1 = new Room(1001,1002,-1,-1,-1,true,10011,"pictures/Salle1.png"); //première salle
+        /* Room room1 = new Room(1001,1002,-1,-1,-1,true,10011,"pictures/Salle1.png"); //première salle
         Room room2 = new Room(1002,-1,-1,1001,-1, false,10021,"pictures/Salle2.png"); //deuxième salle
         Room room1_1 = new Room(2001,1001,20011,"pictures/Table.png"); //table dans salle 1
         Room room1_2 = new Room(2002,1001,20021,"pictures/Porte.png"); //porte dans salle 1
@@ -272,6 +275,8 @@ public class new_game_formController implements Controller {
         consequences_action3001_1.add(new int[]{7,30012});
         consequences_action3001_1.add(new int[]{3,30011});
         Action action3001_1 = new Action(30011,true,"Demander un indice", consequences_action3001_1, 3001); //mise à jour du texte
+
+         */
 
         // Son ambiance
         WorldBoxDisc.pause(Son.feu);
