@@ -12,7 +12,7 @@ public class Player {
     public Player(String pseudo){
         this.pseudo = pseudo;
         inventory = new ArrayList<>();
-        position = 1001; // le joueur débute dans la salle 1001
+        position = 101; // le joueur débute dans la salle 1001
     }
 
 

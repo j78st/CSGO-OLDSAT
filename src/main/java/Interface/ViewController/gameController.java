@@ -157,7 +157,7 @@ public class gameController implements Controller {
      * @param event ev
      */
     @FXML
-    void do_selected_action(ActionEvent event) {
+    void do_selected_action(ActionEvent event) throws IOException {
         action_list.getSelectionModel().getSelectedItem().do_consequences();
     }
 
@@ -510,7 +510,13 @@ public class gameController implements Controller {
 
         // validation exécution action
         KeyCombination valid_action = new KeyCodeCombination(KeyCode.SPACE);
-        Runnable va = ()-> { do_selected_action(new ActionEvent()); };
+        Runnable va = ()-> {
+            try {
+                do_selected_action(new ActionEvent());
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        };
 
         LoadMap.scene.getAccelerators().put(valid_action, va);
     }

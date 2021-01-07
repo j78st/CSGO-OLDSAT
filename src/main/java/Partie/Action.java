@@ -1,7 +1,11 @@
 package Partie;
 
+import Interface.ScreenLoader.LoadMap;
 import Interface.Settings.Engine;
+import Music.Systems.Son;
+import Music.Systems.WorldBoxDisc;
 
+import java.io.IOException;
 import java.util.ArrayList;
 
 public class Action {
@@ -65,7 +69,7 @@ public class Action {
     }
 
 
-    public void do_consequences(){
+    public void do_consequences() throws IOException {
         for(int i =0;i<getConsequences().size();i++){
             switch (getConsequences().get(i)[0]) {
                 case 1: // mouvement vers la salle de numéro d'identification arg_conséquence
@@ -95,12 +99,20 @@ public class Action {
                     break;
                 case 8: // rend une salle inaccessible
                     Game.search_room(getConsequences().get(i)[1]).setAccess(false);
+                    Engine.engine.refreshRoom();
                     break;
                 case 9: // rend une salle accessible
                     Game.search_room(getConsequences().get(i)[1]).setAccess(true);
+                    Engine.engine.refreshRoom();
                     break;
                 case 10: // affiche la boite à réponses
                     Engine.engine.answer_box_visible(true);
+                    break;
+                case 11: // affiche écran fin de partie
+                    LoadMap gl = new LoadMap();
+                    gl.display_screen_from_id(LoadMap.END_GAME);
+                    WorldBoxDisc.play(Son.hibou);
+                    WorldBoxDisc.play(Son.valid);
                     break;
              }
         }
