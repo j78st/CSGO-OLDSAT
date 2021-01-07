@@ -1,5 +1,6 @@
 package Timer;
 
+import Interface.ScreenLoader.LoadMap;
 import Interface.Settings.Engine;
 import Music.Systems.Son;
 import Music.Systems.WorldBoxDisc;
@@ -219,7 +220,6 @@ public class Timer extends Thread {
                 // Update affichage GUI
                 Platform.runLater(() -> Engine.engine.timer_lbl.setText(getRemainingTime()));
 
-
                 // Déclenchement tick horloge (3 min restantes)
                 if(this.tempsSecondes < tickTime && stateTimer) {
                     WorldBoxDisc.play(Son.tick);
@@ -240,6 +240,17 @@ public class Timer extends Thread {
         WorldBoxDisc.pause(Son.coeur);
 
         if(!done) { //Sortit lie à la terminaison du timer
+            // affichage écran de fin
+            Platform.runLater(() -> {
+                try {
+                    LoadMap gl = new LoadMap();
+                    gl.display_screen_from_id(LoadMap.END_GAME);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            });
+
+
             //Randomisation du bruit de fin
             Random generator = new Random();
             int value = generator.nextInt(3);
