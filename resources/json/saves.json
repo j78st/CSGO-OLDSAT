@@ -4,7 +4,7 @@
       "no": 0,
       "srgame": {
         "player": {
-          "pseudo": "zertyuio",
+          "pseudo": "test",
           "inventory": [],
           "position": 101
         },
@@ -493,7 +493,7 @@
           }
         ],
         "difficulty": 1,
-        "timer": 1482
+        "timer": 1445
       }
     },
     {

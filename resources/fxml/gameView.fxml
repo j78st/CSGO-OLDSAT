@@ -70,7 +70,7 @@
                            <center>
                               <AnchorPane BorderPane.alignment="CENTER">
                                  <children>
-                                    <ScrollPane fx:id="scroller" hbarPolicy="NEVER" layoutX="15.0" layoutY="15.0" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="5.0" />
+                                    <ScrollPane fx:id="scroller" hbarPolicy="NEVER" layoutX="15.0" layoutY="15.0" AnchorPane.bottomAnchor="120.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="5.0" />
                                  </children>
                               </AnchorPane>
                            </center>
