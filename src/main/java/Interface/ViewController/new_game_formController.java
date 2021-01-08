@@ -95,7 +95,7 @@ public class new_game_formController implements Controller {
         int difficulty;
         SaveSlot save = new SaveSlot();
 
-        // récupère le pseudo si il est renseigné et teste sa validité
+        // récupère le pseudo s'il est renseigné et teste sa validité
         pseudo = name_selector.getText();
         if (pseudo.equals("")) {
             nameWritten = false;
@@ -205,20 +205,20 @@ public class new_game_formController implements Controller {
 
         // Prologue
 
-        Room room1 = new Room(101,102,-1,-1,-1,true,1011,"pictures/Salle1.png"); //Entrée enssat
-        Room room2 = new Room(102,-1,-1,-1,-1, false,1021,"pictures/Salle2.png"); //Amphi
-        Room room3 = new Room(103,-1,-1,-1,-1, true,1031,"pictures/Salle2.png"); //Amphi post-conférence
-        Room room3_1 = new Room(201,103,2011,"pictures/Table.png"); //trousse
-        Room room4 = new Room(104,-1,-1,-1,-1, true,1041,"pictures/Salle2.png"); //Cafétaria
-        Room room5 = new Room(105,-1,-1,-1,-1, true,1051,"pictures/Salle2.png"); //Extérieur
-        Room room6 = new Room(106,-1,-1,-1,-1, true,1061,"pictures/Salle2.png"); //PC
-        Room room7 = new Room(107,-1,-1,-1,-1, true,1071,"pictures/Salle2.png"); //Début aventure
+        Room room1 = new Room(101,102,-1,-1,-1,true,1011,"pictures/Entree.png"); //Entrée enssat
+        Room room2 = new Room(102,-1,-1,-1,-1, false,1021,"pictures/Amphi.png"); //Amphi
+        Room room3 = new Room(103,-1,-1,-1,-1, true,1031,"pictures/Amphi.png"); //Amphi post-conférence
+        Room room3_1 = new Room(201,103,2011,"pictures/Trousse.png"); //trousse
+        Room room4 = new Room(104,-1,-1,-1,-1, true,1041,"pictures/Cafeteria.png"); //Cafétaria
+        Room room5 = new Room(105,-1,-1,-1,-1, true,1051,"pictures/Exterieur.png"); //Extérieur
+        Room room6 = new Room(106,-1,-1,-1,-1, true,1061,"pictures/PC.png"); //PC
+        Room room7 = new Room(107,-1,-1,-1,-1, true,1071,"pictures/Bibliotheque.png"); //Début aventure
 
 
         //Création des objets
-        Item opinel = new Item(1,"Petit opinel","Petit couteau pouvant être bien pratique",-1, "objects/key.png");
-        Item loupe = new Item(2,"Loupe","Petite loupe pouvant être bien pratique",-1, "objects/key.png");
-        Item compas = new Item(3,"Compas","Compas pouvant être bien pratique",-1, "objects/key.png");
+        Item opinel = new Item(1,"Petit opinel","Petit couteau pouvant être bien pratique",-1, "objects/Opinel.png");
+        Item loupe = new Item(2,"Loupe","Petite loupe pouvant être bien pratique",-1, "objects/Loupe.png");
+        Item compas = new Item(3,"Compas","Compas pouvant être bien pratique",-1, "objects/Compas.png");
 
         //Actions de la salle 101 - Entrée de l'enssat
 
@@ -396,11 +396,11 @@ public class new_game_formController implements Controller {
         ArrayList<int[]> consequences_action3001_1 = new ArrayList<>();
         consequences_action3001_1.add(new int[]{7,30012});
         consequences_action3001_1.add(new int[]{3,30011});
-        Action action3001_1 = new Action(30011,true,"Demander un indice", consequences_action3001_1, 3001); //mise à jour du texte
+        Action action3001_1 = new Action(30011,true,"Demander un indice", consequences_action3001_1, 3001); //mise à jour du texte */
 
         // Son ambiance
         WorldBoxDisc.pause(Son.feu);
-        WorldBoxDisc.play(Son.wind);µ*/
+        WorldBoxDisc.play(Son.wind);
 
         return game_test;
     }

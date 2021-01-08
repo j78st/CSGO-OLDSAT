@@ -1,9 +1,6 @@
 package Score;
 
 import java.io.Serializable;
-import java.util.Date;
-import java.text.DateFormat;
-
 
 public class Score implements Serializable {
     public int rank;

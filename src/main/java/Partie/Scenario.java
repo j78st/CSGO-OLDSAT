@@ -12,7 +12,7 @@ public class Scenario {
             "   Par contre vous êtes perdu, vous devez rejoindre une salle libellée 137C mais vous n'avez aucune idée du " +
             "chemin à suivre. \n    ");
     public static Text_scenario room_101_2 = new Text_scenario(1012, "Vous regardez autour de vous. " +
-            "Vous identifiez les mêmes stéréotypes d'élèves présents dans toutes les classes." +
+            "Vous identifiez les mêmes stéréotypes d'élèves présents dans toutes les classes. " +
             "Il y a un petit de groupe de geeks sur votre droite, les gars sûrs d'eux, du moins en façade, devant vous " +
             "et un groupe de filles sur votre gauche. Vous vous faites plusieurs réflections. D'abord il n'y a pas beaucoup " +
             "de filles, pire qu'en prépa...quelle idée de choisir une école de geek aussi. Ensuite, altruiste que vous " +
@@ -27,7 +27,7 @@ public class Scenario {
             "\"1A, Amphi 137C\" suivi d'une fléche pointant un couloir face à vous, un peu sur votre gauche." +
             "Vous vous dites que 1A ça doit être pour 1ère année...ils ne font quand même pas d'effort avec leur jargon...\n    " +
             "[Notez que cette action vous a débloqué la flèche de déplacement du haut vous permettant de passer à la " +
-            "salle suivante. Les actions peuvent avoir une multitudes de conséquences comme vous donner accès à de nouveaux " +
+            "salle suivante. Les actions peuvent avoir une multitude de conséquences comme vous donner accès à de nouveaux " +
             "lieux ou encore débloquer d'autres actions. Ainsi, pensez à parfois revenir sur vos pas, certaines choses " +
             "auraient pu se débloquer depuis votre dernier passage.] \n  ");
 
@@ -95,7 +95,7 @@ public class Scenario {
 
 
     //Texte PC
-    public static Text_scenario room_106_1 = new Text_scenario(1061, "Un vrai geek celui-là. Je laisse tomber, " +
+    public static Text_scenario room_106_1 = new Text_scenario(1061, "  Un vrai geek celui-là. Je laisse tomber, " +
             "faites votre vie mais méfiez vous quand même. Il paraîtrait qu’il ne vaut mieux pas rester seul dans l’ENSSAT!\n" +
             "   FIN DU PROLOGUE \n     Bon, j’imagine que tu as compris. tu donnes ton choix d’actions dans l’interface de " +
             "commande, tu lis l'histoire juste au dessus et tu regardes l’image à droite. Utilises les flèches " +
@@ -104,6 +104,7 @@ public class Scenario {
             "alors, ouvre bien tes mireittes et tes écoutilles, parce que voir et écouter c’est le plus important!" +
             " Fais attention au moindre détail");
 
+    public static Text_scenario room_107_1 = new Text_scenario(1071,"   Votre aventure débute dans la bibliothèque de l'ENSSAT.");
 
             // Scenario Test
     /*// Textes salle 101
