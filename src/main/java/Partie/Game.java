@@ -145,5 +145,14 @@ public class Game {
         }
         return res;
     }
-
+    /**
+     * méthode permettant de nettoyer la game
+     */
+    public static void reset_game(){
+        rooms = new ArrayList<>();
+        enigmas = new ArrayList<>();
+        actions = new ArrayList<>();
+        items = new ArrayList<>();
+        texts = new ArrayList<>();
+    }
 }

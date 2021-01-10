@@ -95,6 +95,7 @@ public class UnsaveAlert {
                 for (int i = 0; i < 10; i++) {
                     if (!saved && Game.player.getPseudo().equals(saves.getSave(i).srgame.player.getPseudo())) {
                         saves.setSave(i, new SaveSlot(i, new Serial_game()));
+
                         saved = true;
                     }
                 }
@@ -103,6 +104,7 @@ public class UnsaveAlert {
 
             }
             // retour écran accueil
+            Game.reset_game();
             LoadMap gl = new LoadMap();
             gl.display_screen_from_id(LoadMap.HOME);
         }

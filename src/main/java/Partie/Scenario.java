@@ -3,7 +3,7 @@ package Partie;
 public class Scenario {
 
     //Texte Entrée de l'ENSSAT prologue - salle numéro 101
-    public static Text_scenario room_101_1 = new Text_scenario(1011, "  Enfin, vous venez d’être admis à l’ENSSAT." +
+    public Text_scenario room_101_1 = new Text_scenario(1011, "  Enfin, vous venez d’être admis à l’ENSSAT." +
             " L’Ecole Nationale Supérieur des Sciences Appliquées et de Technologie. C’est génial n’est-ce pas ? " +
             "Peu importe, commençons. \n" +
             "   Vous vous tenez dans le hall d'entrée de l'ENSSAT entouré par un groupe de nouveaux élèves tels que vous. " +
@@ -11,19 +11,19 @@ public class Scenario {
             "qui pourrait vous arrivez de pire, n'est-ce pas? Quelle naïveté... \n" +
             "   Par contre vous êtes perdu, vous devez rejoindre une salle libellée 137C mais vous n'avez aucune idée du " +
             "chemin à suivre. \n    ");
-    public static Text_scenario room_101_2 = new Text_scenario(1012, "Vous regardez autour de vous. " +
+    public Text_scenario room_101_2 = new Text_scenario(1012, "Vous regardez autour de vous. " +
             "Vous identifiez les mêmes stéréotypes d'élèves présents dans toutes les classes. " +
             "Il y a un petit de groupe de geeks sur votre droite, les gars sûrs d'eux, du moins en façade, devant vous " +
             "et un groupe de filles sur votre gauche. Vous vous faites plusieurs réflections. D'abord il n'y a pas beaucoup " +
             "de filles, pire qu'en prépa...quelle idée de choisir une école de geek aussi. Ensuite, altruiste que vous " +
             "êtes, vous espérez que chacun pourra évoluer au cours de ses années ici...Cependant, cela nous vous aide en" +
             " rien à trouver votre chemin. \n   ");
-    public static Text_scenario room_101_3 = new Text_scenario(1013,"Vous demandez votre chemin à l'accueil qui" +
+    public Text_scenario room_101_3 = new Text_scenario(1013,"Vous demandez votre chemin à l'accueil qui" +
             " est sur votre droite. Derrière une vitre une jeune femme vous répond gentillement, même si vous pouvez " +
             "sentir son agacement face à cette question qu'elle a déjà dû beaucoup trop entendre aujourd'hui : \"Suivez " +
             "simplement les panneaux, ils sont là pour vous.\". Effectivement, il y avait un panneau que vous n'aviez" +
             " pas vu, caché par la foule. \n    ");
-    public static Text_scenario room_101_4 = new Text_scenario(1014, "Vous lisez le panneau face à vous : " +
+    public Text_scenario room_101_4 = new Text_scenario(1014, "Vous lisez le panneau face à vous : " +
             "\"1A, Amphi 137C\" suivi d'une fléche pointant un couloir face à vous, un peu sur votre gauche." +
             "Vous vous dites que 1A ça doit être pour 1ère année...ils ne font quand même pas d'effort avec leur jargon...\n    " +
             "[Notez que cette action vous a débloqué la flèche de déplacement du haut vous permettant de passer à la " +
@@ -32,7 +32,7 @@ public class Scenario {
             "auraient pu se débloquer depuis votre dernier passage.] \n  ");
 
     //Texte amphithéâtre avant conférence
-    public static Text_scenario room_102_1 = new Text_scenario(1021,"   Vous avez suivi les panneaux, pris un couloir " +
+    public Text_scenario room_102_1 = new Text_scenario(1021,"   Vous avez suivi les panneaux, pris un couloir " +
             "éclairé par des parties vitrées sur votre gauche puis vous avez tourné à droite, puis monté un escalier, " +
             "puis tourné à gauche pour enfin arriver à cette amphithéâtre...Cette école à l'air d'être un vrai labyrinthe," +
             " ça pourrait être intéressant de l'explorer plus tard. \n  " +
@@ -43,7 +43,7 @@ public class Scenario {
             "Les intervenants, déjà présents dans la salle à votre arrivée demande le silence et commence leur présentation.");
 
     //Texte amphithéâtre après conférence
-    public static Text_scenario room_103_1 = new Text_scenario(1031, "  Vous voilà arrivé à la fin de la conférence." +
+    public Text_scenario room_103_1 = new Text_scenario(1031, "  Vous voilà arrivé à la fin de la conférence." +
             " Rien d'extravagant, des consignes de sécurités, des présentations de locaux, des présentations des " +
             "différentes formations. C'est exactement ce à quoi vous vous attendiez. \n     " +
             "Cependant, pendant la conférence vous avez sympathisé avec Maxime, votre voisin. Lui vient de l'IUT de " +
@@ -52,21 +52,21 @@ public class Scenario {
             " effectivement ce n'est pas la vôtre. Vous voyez Maxime se servir dedans. \"Fais donc pareil, on ramènera le" +
             " reste à l'accueil l'air de rien.\" \n     ");
 
-    public static Text_scenario room_103_2 = new Text_scenario(1032, "Après vous être servi, Maxime récupère la " +
+    public Text_scenario room_103_2 = new Text_scenario(1032, "Après vous être servi, Maxime récupère la " +
             "trousse. Il compte sûrement la ramener à l'accueil. Commencer l'année en volant à un autre élève que vous" +
             " ne connaissait même pas...Vous vous sentez un peu mal mais bon c'est pas grand chose et puis les fin de " +
             "mois sont compliquées en ce moment. Peu importe, vous n'avez plus rien aujourd'hui, qu'allez-vous faire? \n    ");
 
 
     //Texte trousse
-    public static Text_scenario room_201_1 = new Text_scenario(2011, "  Vous regardez à l'intérieur de la trousse. " +
+    public Text_scenario room_201_1 = new Text_scenario(2011, "  Vous regardez à l'intérieur de la trousse. " +
             "Il y a le contenu habituel : quelques stylos, un blanco, une gomme, un compas etc...Mais il y a aussi des" +
             " choses plus inhabituelles : un petit opinel et une petite loupe. Le propriétaire de cette trousse à l'air" +
             " bizarre, vous préféreriez ne pas faire sa connaissance.");
 
 
     //Texte Cafétaria
-    public static Text_scenario room_104_1 = new Text_scenario(1041, "  Vous sortez de la salle, bifurquez à gauche," +
+    public Text_scenario room_104_1 = new Text_scenario(1041, "  Vous sortez de la salle, bifurquez à gauche," +
             " prenez l’escalier et descendez de un étage. Vous arrivez à sortir du bâtiment sans difficulté. " +
             "Vous vous dirigez vers la cafétéria de substitution. Dû à une fuite qui s’est transformée en important " +
             "dégât (le toit s’est écroulé, c’est pour dire !), vous rejoignez la salle de sport transformée en cafétéria.\n" +
@@ -82,7 +82,7 @@ public class Scenario {
 
 
     //Texte Extérieur
-    public static Text_scenario room_105_1 = new Text_scenario(1051, "  Vous sortez de la salle, bifurquez à gauche, " +
+    public Text_scenario room_105_1 = new Text_scenario(1051, "  Vous sortez de la salle, bifurquez à gauche, " +
             "prenez l’escalier et descendez de un étage. Vous arrivez à sortir du bâtiment sans difficulté. " +
             "Vous êtes dehors et vous vous y sentez bien. Il ne fait pas trop froid, il y a du soleil. Vous rentrez chez" +
             " vous.\n" +
@@ -95,7 +95,7 @@ public class Scenario {
 
 
     //Texte PC
-    public static Text_scenario room_106_1 = new Text_scenario(1061, "  Un vrai geek celui-là. Je laisse tomber, " +
+    public Text_scenario room_106_1 = new Text_scenario(1061, "  Un vrai geek celui-là. Je laisse tomber, " +
             "faites votre vie mais méfiez vous quand même. Il paraîtrait qu’il ne vaut mieux pas rester seul dans l’ENSSAT!\n" +
             "   FIN DU PROLOGUE \n     Bon, j’imagine que tu as compris. tu donnes ton choix d’actions dans l’interface de " +
             "commande, tu lis l'histoire juste au dessus et tu regardes l’image à droite. Utilises les flèches " +
@@ -104,7 +104,7 @@ public class Scenario {
             "alors, ouvre bien tes mireittes et tes écoutilles, parce que voir et écouter c’est le plus important!" +
             " Fais attention au moindre détail");
 
-    public static Text_scenario room_107_1 = new Text_scenario(1071,"   Votre aventure débute dans la bibliothèque de l'ENSSAT.");
+    public Text_scenario room_107_1 = new Text_scenario(1071,"   Votre aventure débute dans la bibliothèque de l'ENSSAT.");
 
             // Scenario Test
     /*// Textes salle 101
