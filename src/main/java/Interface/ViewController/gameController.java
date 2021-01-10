@@ -38,7 +38,6 @@ public class gameController implements Controller {
     // Déclaration objets
     // ==========================================================
 
-    public static Game game;
     private ObservableList<Action> actionObservableList;
 
     // zones de l'écran -----------------------------------------

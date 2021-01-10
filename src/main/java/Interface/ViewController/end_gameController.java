@@ -4,6 +4,7 @@ import Interface.CellRenderer.EndGameRankCell;
 import Interface.ScreenLoader.Controller;
 import Interface.ScreenLoader.LoadMap;
 import Interface.Settings.Settings;
+import Partie.Game;
 import Score.Ranking;
 import Score.Score;
 import Serialization.Memoire;
@@ -93,10 +94,10 @@ public class end_gameController implements Controller {
 
         // affichage des données de la partie
         // nom joueur
-        player_name_lbl.setText(gameController.game.player.getPseudo());
+        player_name_lbl.setText(Game.player.getPseudo());
 
         // difficulté partie
-        switch (gameController.game.getDifficulty()) {
+        switch (Game.difficulty) {
             case 0 : difficulty_lbl.setText("Facile"); break;
             case 1 : difficulty_lbl.setText("Normale"); break;
             case 2 : difficulty_lbl.setText("Difficile"); break;

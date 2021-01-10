@@ -127,8 +127,7 @@ public class new_game_formController implements Controller {
         // SI le formulaire est correcte on crée la partie, SINON rien tant que pas correct
         if ( nameWritten && saveSlotSelected) {
             // === Création de la partie === //
-            Game game = creer_partie(pseudo, difficulty);
-            gameController.game = game;
+            creer_partie(pseudo, difficulty);
             Engine.engine.refreshRoom();
 
             // === Sauvegarde de la partie === //
@@ -197,14 +196,15 @@ public class new_game_formController implements Controller {
         }
     }
 
-    public Game creer_partie(String pseudo, int difficulty){
+    public void creer_partie(String pseudo, int difficulty){
 
-        Player player1 = new Player(pseudo);
-        Game game_test = new Game(player1,difficulty);
+        // Pseudo et difficulté choisis à la création
+        Game.player = new Player(pseudo);
+        Game.difficulty = difficulty;
+
         Scenario scenar = new Scenario();
 
         // Prologue
-
         Room room1 = new Room(101,102,-1,-1,-1,true,1011,"pictures/Entree.png"); //Entrée enssat
         Room room2 = new Room(102,-1,-1,-1,-1, false,1021,"pictures/Amphi.png"); //Amphi
         Room room3 = new Room(103,-1,-1,-1,-1, true,1031,"pictures/Amphi.png"); //Amphi post-conférence
@@ -401,8 +401,6 @@ public class new_game_formController implements Controller {
         // Son ambiance
         WorldBoxDisc.pause(Son.feu);
         WorldBoxDisc.play(Son.wind);
-
-        return game_test;
     }
 
 

@@ -29,14 +29,13 @@ public class Serial_game {
 
     }
 
-    public Game createGameFromMemory() {
+    public void createGameFromMemory() {
         Game game = new Game(player,difficulty);
-        game.rooms = rooms;
-        game.actions = actions;
-        game.enigmas = enigmas;
-        game.items = items;
-        game.texts = texts;
-        game.timer = timer;
-        return game;
+        Game.rooms = rooms;
+        Game.actions = actions;
+        Game.enigmas = enigmas;
+        Game.items = items;
+        Game.texts = texts;
+        Game.timer = timer;
     }
 }

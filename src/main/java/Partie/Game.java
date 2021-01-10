@@ -28,7 +28,6 @@ public class Game {
         timer = 0;
     }
 
-
     public static Player getPlayer() {
         return player;
     }

@@ -3,6 +3,8 @@ import Interface.Settings.Engine;
 import Interface.Settings.Settings;
 import Interface.ViewController.home_screenController;
 import Music.Systems.WorldBoxDisc;
+import Partie.Game;
+import Partie.Player;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -45,6 +47,7 @@ public class Main extends Application {
         Settings.setSettingsFromFile();
 
         Engine oui = new Engine();
+        Game non = new Game(new Player(""),0);
 
         // lancement application
         launch(args);

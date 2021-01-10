@@ -95,7 +95,7 @@ public class load_saveController implements Controller {
         }
         if (saveSlotSelected) {
             Serial_game srg = save_to_load.srgame;
-            gameController.game =  srg.createGameFromMemory();
+            srg.createGameFromMemory();
             Engine.engine.refreshRoom();
 
             // lancement
