@@ -30,7 +30,7 @@ public class UnsaveAlert {
      */
     public void exitGame() throws IOException {
         alert.setTitle("OLD'SAT");
-        alert.setHeaderText("Vous allez quittez l'application.\nSouhaitez vous sauvegarder ?");
+        alert.setHeaderText("Vous allez quitter l'application.\nSouhaitez vous sauvegarder ?");
 
         // Remove default ButtonTypes
         alert.getButtonTypes().clear();
@@ -72,7 +72,7 @@ public class UnsaveAlert {
     public void homeScreen() throws IOException {
 
         alert.setTitle("OLD'SAT");
-        alert.setHeaderText("Vous allez quittez l'application.\nSouhaitez vous sauvegarder ?");
+        alert.setHeaderText("Vous allez quitter l'application.\nSouhaitez vous sauvegarder ?");
 
         // Remove default ButtonTypes
         alert.getButtonTypes().clear();
