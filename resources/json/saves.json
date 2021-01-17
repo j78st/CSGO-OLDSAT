@@ -1,7 +1,362 @@
 {
   "saves": [
     {
-      "no": 0
+      "no": 0,
+      "srgame": {
+        "player": {
+          "pseudo": "aa",
+          "inventory": [],
+          "position": 101
+        },
+        "rooms": [
+          {
+            "id": 101,
+            "neighbours": [
+              -1,
+              -1,
+              -1,
+              102
+            ],
+            "access": true,
+            "id_text": 1011,
+            "path_image": "pictures/Entree.png",
+            "id_actions": [
+              1011,
+              1012
+            ]
+          },
+          {
+            "id": 102,
+            "neighbours": [
+              -1,
+              -1,
+              -1,
+              -1
+            ],
+            "access": false,
+            "id_text": 1021,
+            "path_image": "pictures/Amphi.png",
+            "id_actions": [
+              1021
+            ]
+          },
+          {
+            "id": 103,
+            "neighbours": [
+              -1,
+              -1,
+              -1,
+              -1
+            ],
+            "access": true,
+            "id_text": 1031,
+            "path_image": "pictures/Amphi.png",
+            "id_actions": [
+              1031,
+              1032
+            ]
+          },
+          {
+            "id": 201,
+            "neighbours": [
+              -1,
+              -1,
+              103,
+              -1
+            ],
+            "access": true,
+            "id_text": 2011,
+            "path_image": "pictures/Trousse.png",
+            "id_actions": [
+              2011,
+              2012,
+              2013
+            ]
+          },
+          {
+            "id": 104,
+            "neighbours": [
+              -1,
+              -1,
+              -1,
+              -1
+            ],
+            "access": true,
+            "id_text": 1041,
+            "path_image": "pictures/Bibliotheque.png",
+            "id_actions": []
+          }
+        ],
+        "actions": [
+          {
+            "id": 1011,
+            "available": true,
+            "text": "Demander son chemin",
+            "consequences": [
+              [
+                7,
+                1012
+              ],
+              [
+                3,
+                1011
+              ],
+              [
+                2,
+                1012
+              ]
+            ]
+          },
+          {
+            "id": 1012,
+            "available": false,
+            "text": "Lire le panneau",
+            "consequences": [
+              [
+                7,
+                1013
+              ],
+              [
+                3,
+                1012
+              ],
+              [
+                9,
+                102
+              ]
+            ]
+          },
+          {
+            "id": 1021,
+            "available": true,
+            "text": "Écouter la conférence (Vous n\u0027avez pas vraiment le choix...)",
+            "consequences": [
+              [
+                1,
+                103
+              ]
+            ]
+          },
+          {
+            "id": 1031,
+            "available": true,
+            "text": "Fouiller dans la trousse",
+            "consequences": [
+              [
+                1,
+                201
+              ]
+            ]
+          },
+          {
+            "id": 1032,
+            "available": false,
+            "text": "FINIR LE PROLOGUE",
+            "consequences": [
+              [
+                1,
+                104
+              ]
+            ]
+          },
+          {
+            "id": 2011,
+            "available": true,
+            "text": "Prendre le compas",
+            "consequences": [
+              [
+                4,
+                1
+              ],
+              [
+                1,
+                103
+              ],
+              [
+                3,
+                1031
+              ],
+              [
+                2,
+                1032
+              ],
+              [
+                7,
+                1032
+              ],
+              [
+                7,
+                1033
+              ],
+              [
+                7,
+                1036
+              ]
+            ]
+          },
+          {
+            "id": 2012,
+            "available": true,
+            "text": "Prendre la petite loupe",
+            "consequences": [
+              [
+                4,
+                2
+              ],
+              [
+                1,
+                103
+              ],
+              [
+                3,
+                1031
+              ],
+              [
+                2,
+                1032
+              ],
+              [
+                7,
+                1032
+              ],
+              [
+                7,
+                1034
+              ],
+              [
+                7,
+                1036
+              ]
+            ]
+          },
+          {
+            "id": 2013,
+            "available": true,
+            "text": "Prendre le petit opinel",
+            "consequences": [
+              [
+                4,
+                3
+              ],
+              [
+                1,
+                103
+              ],
+              [
+                3,
+                1031
+              ],
+              [
+                2,
+                1032
+              ],
+              [
+                7,
+                1032
+              ],
+              [
+                7,
+                1035
+              ],
+              [
+                7,
+                1036
+              ]
+            ]
+          }
+        ],
+        "enigmas": [],
+        "items": [
+          {
+            "id": 1,
+            "name": "Compas",
+            "description": "Compas pouvant être bien pratique",
+            "path_image": "objects/Compas.png",
+            "max_usage": -1,
+            "current_usage": 0,
+            "id_actions": []
+          },
+          {
+            "id": 2,
+            "name": "Loupe",
+            "description": "Petite loupe pouvant être bien pratique",
+            "path_image": "objects/Loupe.png",
+            "max_usage": -1,
+            "current_usage": 0,
+            "id_actions": []
+          },
+          {
+            "id": 3,
+            "name": "Petit opinel",
+            "description": "Petit couteau pouvant être bien pratique",
+            "path_image": "objects/Opinel.png",
+            "max_usage": -1,
+            "current_usage": 0,
+            "id_actions": []
+          },
+          {
+            "id": 42,
+            "name": "Couteau Suisse de l\u0027Admin",
+            "description": "Couteau Suisse de l\u0027Admin - Tout est possible avec ça",
+            "path_image": "objects/Compas.png",
+            "max_usage": -1,
+            "current_usage": 0,
+            "id_actions": []
+          }
+        ],
+        "texts": [
+          {
+            "id": 1011,
+            "text": "Salutations aa.\n\nVous avez été admis à l’ENSSAT, l’École Nationale Supérieure des Sciences Appliquées et de Technologie, c’est génial n’est-ce pas ?\nC\u0027est votre premier jour et vous arrivez dans le hall d\u0027entrée de l\u0027ENSSAT dans lequel vous trouvez un groupe de nouveaux élèves, vous êtes un peu stressé.\nVous savez que vous devez rejoindre une salle libellée 137C mais vous n\u0027avez aucune idée de comment vous y rendre.\n\n[Tutoriel]\nRemarquez la liste des actions disponibles sur votre écran, vous pouvez en sélectionner une en cliquant dessus puis appuyer sur le bouton \"Valider action\" pour l\u0027exécuter.\n\n"
+          },
+          {
+            "id": 1012,
+            "text": "Vous demandez votre chemin à l\u0027accueil qui est sur votre droite. À travers la vitre une jeune femme vous répond gentillement : \"Suivez simplement les panneaux, ils sont là pour vous guider.\"\nEffectivement, il y avait un panneau au milieu du hall que vous n\u0027aviez pas vu, il était caché par la foule.\n\n[Tutoriel]\nL\u0027action que vous avez effectué a déverouillée une nouvelle action, celle de lire le panneau.\n\n"
+          },
+          {
+            "id": 1013,
+            "text": "Vous lisez le panneau face à vous : \"Amphi 137C\" suivi d\u0027une fléche pointant un couloir sur votre gauche.\n\n[Tutoriel]\nVous pouvez noter que cette action a débloqué la flèche de déplacement vers la gauche vous permettant d\u0027accéder à la salle suivante.\nLes actions peuvent avoir une multitude de conséquences diverses comme vous donner accès à de nouveaux lieux ou encore débloquer d\u0027autres actions. Ainsi, pensez à parfois revenir sur vos pas, certaines choses auraient pu se débloquer depuis votre dernier passage."
+          },
+          {
+            "id": 1021,
+            "text": "Vous suivez les flèches qui vous mènent dans un couloir duquel vous pouvez apercevoir sur votre gauche une cour intérieure à travers des baies vitrées, puis vous tournez à droite avant d\u0027emprunter un escalier. Arrivé au premier étage vous prenez à gauche pour enfin découvrir l\u0027amphithéâtre 137C.\nCette école à l\u0027air d\u0027être un vrai labyrinthe. Cela pourrait être intéressant de revenir plus tard pour l\u0027explorer.\n\nVous vous installez dans les gradins, ni trop bas ni trop haut. Après votre arrivée la salle se remplie progressivement.\nAu bout d\u0027un moment, les intervenants demandent le silence avant de commencer leur présentation."
+          },
+          {
+            "id": 1031,
+            "text": "La conférence touche à sa fin. Rien d\u0027extravagant, des consignes de sécurité, des présentations de locaux et une introduction aux différentes formations proposées par l\u0027école, exactement ce à quoi vous vous attendiez.\nL\u0027amphithéâtre commence à se vider, vous jetez un coup d\u0027oeil rapide dans la salle et vous apercevez une trousse abandonnée sur une table, c\u0027est étrange car vous êtes convaincu que personne n\u0027était assis à cette place pendant la conférence.\nPour passer votre curiosité, vous vous approchez de cette trousse avant de partir.\n\n"
+          },
+          {
+            "id": 1032,
+            "text": "Après avoir récupéré "
+          },
+          {
+            "id": 1033,
+            "text": "un compas "
+          },
+          {
+            "id": 1034,
+            "text": "une loupe "
+          },
+          {
+            "id": 1035,
+            "text": "un petit opinel "
+          },
+          {
+            "id": 1036,
+            "text": "vous quittez la salle.\nVotre journée de cours est finie, vous pouvez vous balader dans l\u0027ENSSAT ou bien finir le prologue."
+          },
+          {
+            "id": 2011,
+            "text": "Vous regardez à l\u0027intérieur de la trousse.\nVous y trouvez des objets habituels : quelques stylos, un surligneur, une gomme, un compas ... Mais il y a aussi des choses plus étonnantes : une loupe et un opinel. Le propriétaire de cette trousse doit être bizarre. Qui garde une loupe et un opinel dans sa trousse ?\n\n[Tutoriel]\nVous pouvez prendre un objet dans cette trousse. Attention ce choix est définitif et aura un impact sur la suite de votre aventure.\nVous pouvez aussi revenir en arrière en appuyant sur la flèche de déplacement."
+          },
+          {
+            "id": 1041,
+            "text": "   Votre aventure débute dans la bibliothèque de l\u0027ENSSAT."
+          }
+        ],
+        "difficulty": 1,
+        "timer": 0
+      }
     },
     {
       "no": 1

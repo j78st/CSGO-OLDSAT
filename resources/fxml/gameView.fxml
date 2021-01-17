@@ -151,7 +151,7 @@
                                     </ListView>
                                  </children>
                               </VBox>
-                              <Button fx:id="valid_action" mnemonicParsing="false" onAction="#do_selected_action" text="valider action" />
+                              <Button fx:id="valid_action" mnemonicParsing="false" onAction="#do_selected_action" text="Valider action" />
                            </children>
                         </HBox>
                      </center>
