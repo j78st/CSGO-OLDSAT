@@ -128,6 +128,13 @@ public class Action {
                     Game.set_object_actions_available();
                     Engine.engine.refreshRoom();
                     break;
+                case 13: // faire évoluer texte affiché par une action, consequence[i][1] correspond à l'action à modifier, consequence[i][2] correspond à l'id du nouveau texte
+                   for(int j = 0; j<Game.search_action(getConsequences().get(i)[1]).consequences.size(); j++){
+                       if(Game.search_action(getConsequences().get(i)[1]).consequences.get(j)[0] == 7){ //cherche la conséquence écrivant du texte, on part du principe qu'il ne peut y en avoir qu'une par action
+                           Game.search_action(getConsequences().get(i)[1]).consequences.get(j)[1] = getConsequences().get(i)[2];
+                       }
+                   }
+                   break;
              }
         }
     }
