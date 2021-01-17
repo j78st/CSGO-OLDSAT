@@ -69,10 +69,9 @@ public class home_screenController implements Controller {
      * @param event
      */
     @FXML
-    void display_multiplayer_mode(ActionEvent event) throws IOException {
-        Alert alert = new Alert(Alert.AlertType.WARNING, "Work in progress", ButtonType.OK);
-        alert.showAndWait();
-        WorldBoxDisc.play(Son.erreur);
+    void display_admin_mode(ActionEvent event) throws IOException {
+        LoadMap gl = new LoadMap();
+        gl.display_screen_from_id(LoadMap.ADMIN);
     }
 
     /**

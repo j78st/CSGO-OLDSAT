@@ -18,7 +18,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="800.0" styleClass="Custom_label" stylesheets="@../CSS/blue.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Interface.ViewController.gameController">
+<AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="800.0" styleClass="Custom_label" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Interface.ViewController.gameController">
    <children>
       <AnchorPane fx:id="background_menu" opacity="0.75" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #000000;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
       <BorderPane fx:id="vbox_menu" layoutX="224.0" layoutY="48.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
@@ -89,8 +89,8 @@
                               <HBox alignment="CENTER" prefHeight="100.0" prefWidth="350.0" spacing="20.0">
                                  <children>
                                     <Button fx:id="item_slot_1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onMouseEntered="#show_description" onMouseExited="#hide_description" prefHeight="100.0" prefWidth="100.0" styleClass="GameButton" />
-                                    <Button fx:id="item_slot_2" mnemonicParsing="false" onMouseEntered="#show_description" onMouseExited="#hide_description" prefHeight="100.0" prefWidth="100.0" styleClass="GameButton" />
-                                    <Button fx:id="item_slot_3" mnemonicParsing="false" onMouseEntered="#show_description" onMouseExited="#hide_description" prefHeight="100.0" prefWidth="100.0" styleClass="GameButton" />
+                                    <Button fx:id="item_slot_2" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onMouseEntered="#show_description" onMouseExited="#hide_description" prefHeight="100.0" prefWidth="100.0" styleClass="GameButton" />
+                                    <Button fx:id="item_slot_3" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onMouseEntered="#show_description" onMouseExited="#hide_description" prefHeight="100.0" prefWidth="100.0" styleClass="GameButton" />
                                  </children>
                               </HBox>
                            </children>
