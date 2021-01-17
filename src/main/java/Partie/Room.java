@@ -129,11 +129,34 @@ public class Room {
             if (Game.getTexts().get(i).getId() == getId_text()) {
                 Game.texts.get(i).text = Game.texts.get(i).text + more_text;
                 found = true;
-
             }
             i++;
         }
         Engine.engine.refreshText();
+    }
+
+    /**
+     * méthode permettant de bloquer l'accès à tous les voisins (sert pour le mode bac à sable)
+     */
+    public void close_neighboors(){
+        for(int i = 0; i<4; i++) {
+            if (neighbours[i] != -1) {
+                Game.search_room(neighbours[i]).setAccess(false);
+            }
+        }
+    }
+
+    /**
+     * méthode permettant de savoir, à partir de son id, si une salle est une salle voisine ou pas
+     */
+    public boolean is_a_neighboor(int id_room){
+        boolean res = false;
+        for(int i=0; i<4; i++){
+            if(id_room == neighbours[i]){
+                res = true;
+            }
+        }
+        return res;
     }
 
 }

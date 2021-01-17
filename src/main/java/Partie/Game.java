@@ -11,11 +11,13 @@ public class Game {
     public static ArrayList<Text_scenario> texts; // liste de tous les scénarios
     public static int difficulty; // difficulté choisie pour la partie
     public static int timer;
+    public static int bas;
 
     /**
      * Constructeur de la partie
      * @param player information liées au joueur
      * @param difficulty la difficulté de la partie, 0 pour facile, 1 pour normale, 2 pour difficile
+     * @param bas entier renseignant l'id de la salle traitée en mode bac à sable, 0 si mode de jeu normal
      */
     public Game(Player player, int difficulty) {
         Game.player = player;
@@ -26,6 +28,7 @@ public class Game {
         texts = new ArrayList<>();
         Game.difficulty = difficulty;
         timer = 0;
+        bas = 0;
     }
 
     public static Player getPlayer() {
@@ -52,6 +55,7 @@ public class Game {
         return timer;
     }
 
+    public static int getBas() { return bas; }
 
     public static void setPlayer(Player player) {
         Game.player = player;
@@ -64,6 +68,8 @@ public class Game {
     public static void setTimer(int timer) {
         Game.timer = timer;
     }
+
+    public static void setBas(int bas) { Game.bas = bas; }
 
     /**
      * méthode recherchant une salle
@@ -154,5 +160,14 @@ public class Game {
         actions = new ArrayList<>();
         items = new ArrayList<>();
         texts = new ArrayList<>();
+    }
+
+    /**
+     * méthode permettant de débloquer toutes les actions liées à un objet (sert pour le mode bac à sable)
+     */
+    public static void set_object_actions_available(){
+        for(int i = 0; i<items.size(); i++){
+            items.get(i).set_actions_available(true);
+        }
     }
 }

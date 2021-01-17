@@ -80,4 +80,12 @@ public class Player {
         Engine.engine.refreshInventory();
     }
 
+    /**
+     * méthode permettant de vider complètement l'inventaire du joueur
+     */
+    public void clear_inventory(){
+        inventory.clear();
+        Engine.engine.refreshInventory();
+    }
+
 }

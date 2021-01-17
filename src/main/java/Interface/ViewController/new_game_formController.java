@@ -212,13 +212,15 @@ public class new_game_formController implements Controller {
         Room room4 = new Room(104,-1,-1,-1,-1, true,1041,"pictures/Cafeteria.png"); //Cafétaria
         Room room5 = new Room(105,-1,-1,-1,-1, true,1051,"pictures/Exterieur.png"); //Extérieur
         Room room6 = new Room(106,-1,-1,-1,-1, true,1061,"pictures/PC.png"); //PC
-        Room room7 = new Room(107,-1,-1,-1,-1, true,1071,"pictures/Bibliotheque.png"); //Début aventure
+        Room room7 = new Room(107,108,-1,-1,-1, true,1071,"pictures/Bibliotheque.png"); //Début aventure
+        // Room room8 = new Room(108,-1,-1,107,-1, true,1071,"pictures/Bibliotheque.png"); //Test bac à sable
 
 
         //Création des objets
         Item opinel = new Item(1,"Petit opinel","Petit couteau pouvant être bien pratique",-1, "objects/Opinel.png");
         Item loupe = new Item(2,"Loupe","Petite loupe pouvant être bien pratique",-1, "objects/Loupe.png");
         Item compas = new Item(3,"Compas","Compas pouvant être bien pratique",-1, "objects/Compas.png");
+        Item couteau_suisse = new Item(42, "Couteau Suisse de l'Admin", "Couteau Suisse de l'Admin - Tout est possible avec ça", -1, "objects/Compas.png");
 
         //Actions de la salle 101 - Entrée de l'enssat
 
@@ -264,6 +266,12 @@ public class new_game_formController implements Controller {
         consequences_action103_4.add(new int[]{1,106}); //Bouge le joueur dans la salle suivante
         Action action103_4 = new Action(1034,false,"Trouver une salle avec un PC", consequences_action103_4, 103);
 
+
+        /*------------------------Action test mode bac à sable-------------------------------------------
+        ArrayList<int[]> consequences_action103_5 = new ArrayList<>();
+        consequences_action103_5.add(new int[]{12,107}); //Bouge le joueur dans la salle suivante
+        Action action103_5 = new Action(1035,true,"Test bac à sable", consequences_action103_5, 103);
+        -----------------------------------------------------------------------------------------------*/
 
         //Actions de la salle 201 - Trousse
 
@@ -327,6 +335,28 @@ public class new_game_formController implements Controller {
         ArrayList<int[]> consequences_action106_2 = new ArrayList<>();
         consequences_action106_2.add(new int[]{11});
         Action action106_2 = new Action(1062,true,"J'ai pas envie, je préfère rester chez moi...", consequences_action106_2, 106);
+
+
+        /*------------------------------------Test mode bac à sable-------------------------------------------
+        ArrayList<int[]> consequences_action107_1 = new ArrayList<>();
+        consequences_action107_1.add(new int[]{7,1071});
+        Action action107_1 = new Action(1071,"Action[opinel]",consequences_action107_1,107,1);
+
+        ArrayList<int[]> consequences_action107_2 = new ArrayList<>();
+        consequences_action107_2.add(new int[]{7,1071});
+        Action action107_2 = new Action(1072,"Action[loupe]",consequences_action107_2,107,2);
+
+        ArrayList<int[]> consequences_action107_3 = new ArrayList<>();
+        consequences_action107_3.add(new int[]{7,1071});
+        Action action107_3 = new Action(1073,"Action[compas]",consequences_action107_3,107,3);
+
+        ArrayList<int[]> consequences_action107_4 = new ArrayList<>();
+        consequences_action107_4.add(new int[]{1,108});
+        Action action107_4 = new Action(1074,true,"108", consequences_action107_4, 107);
+
+        ArrayList<int[]> consequences_action108_1 = new ArrayList<>();
+        consequences_action108_1.add(new int[]{9,108});
+        Action action108_1 = new Action(1081,"Action[compas]",consequences_action108_1,108,3);*/
 
        /* // Niveau Test
         Room room1 = new Room(1001,1002,-1,-1,-1,true,10011,"pictures/Salle1.png"); //première salle
