@@ -1,6 +1,9 @@
 package Partie;
 
 import Interface.Settings.Engine;
+import javafx.scene.control.Alert;
+import javafx.scene.control.ButtonType;
+
 import java.util.ArrayList;
 
 public class Player {
@@ -57,7 +60,8 @@ public class Player {
             Engine.engine.refreshInventory();
             return true;
         }else{
-            // message "Inventaire plein revenez plus tard"
+            Alert alert = new Alert(Alert.AlertType.WARNING, "Votre inventaire est plein, revenez plus tard", ButtonType.OK);
+            alert.showAndWait();
             return false;
         }
     }
