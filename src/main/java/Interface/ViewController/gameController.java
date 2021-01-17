@@ -28,6 +28,7 @@ import javafx.scene.input.KeyCombination;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.*;
 import javafx.scene.text.Text;
+import javafx.util.Callback;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -38,7 +39,7 @@ public class gameController implements Controller {
     // Déclaration objets
     // ==========================================================
 
-    private ObservableList<Action> actionObservableList;
+    //private ObservableList<Action> actionObservableList;
 
     // zones de l'écran -----------------------------------------
     @FXML
@@ -323,7 +324,7 @@ public class gameController implements Controller {
         for(int i = 0; i< id_list.size(); i++){
             list.add(Game.search_action(id_list.get(i)));
         }
-        actionObservableList = FXCollections.observableArrayList();
+        ObservableList<Action> actionObservableList = FXCollections.observableArrayList();
         for (int i = 0; i<list.size(); i++) {
             if (list.get(i).isAvailable()) {
                 actionObservableList.add(list.get(i));
@@ -545,6 +546,7 @@ public class gameController implements Controller {
      */
     @Override
     public void apply_settings() {
+        // changement de police pour les textes
         for (Node n: LoadMap.scene.getRoot().lookupAll(".Custom_label")) {
             if (Settings.icon_color.equals("white")){
                 narration.setStyle("-fx-fill: white; -fx-font-size: " + Settings.fontSize + "px;");

@@ -14,7 +14,7 @@ public class SaveListCell extends ListCell<SaveSlot> {
     Label lp = new Label(); // label avec le pseudo du joueur
 
     /**
-     * Constructeur. Paramètre le contenu de la cellule
+     * Constructeur. Paramètre l'apparence de la cellule
      */
     public SaveListCell() {
 
@@ -45,11 +45,6 @@ public class SaveListCell extends ListCell<SaveSlot> {
 
     }
 
-    /**
-     * Mets a jour les données de la cellule
-     * @param save élément dispensé dans la cellule
-     * @param empty booléen indiquant si la case est vide
-     */
     @Override
     public void updateItem (SaveSlot save, boolean empty) {
 

@@ -18,5 +18,19 @@ public class SaveSlot {
        this.no = no;
     }
 
+    public int getNo() {
+        return no;
+    }
 
+    public Serial_game getSrgame() {
+        return srgame;
+    }
+
+    public void setNo(int no) {
+        this.no = no;
+    }
+
+    public void setSrgame(Serial_game srgame) {
+        this.srgame = srgame;
+    }
 }
