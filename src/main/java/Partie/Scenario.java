@@ -67,7 +67,7 @@ public class Scenario {
             "Vous pouvez aussi revenir en arrière en appuyant sur la flèche de déplacement.");
 
 
-    public Text_scenario room_104_1 = new Text_scenario(1041,"   Votre aventure débute dans la bibliothèque de l'ENSSAT.");
+    public Text_scenario room_107_1 = new Text_scenario(1071,"   Votre aventure débute dans la bibliothèque de l'ENSSAT.");
 
             // Scenario Test
     /*// Textes salle 101

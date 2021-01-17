@@ -135,6 +135,9 @@ public class Action {
                        }
                    }
                    break;
+                case 14: // retirer du temps (en seconde) au timer (sert pour demande d'indice)
+                    Engine.chrono.penaltyTime(getConsequences().get(i)[1]);
+                    break;
              }
         }
     }

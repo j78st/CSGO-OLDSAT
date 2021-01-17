@@ -172,7 +172,7 @@ public class gameController implements Controller {
      */
     @FXML
     void check_answer(ActionEvent event) throws IOException {
-        int ans = Integer.parseInt(answer_prompt.getText());
+        String ans = answer_prompt.getText();
         Game.search_enigma(Game.player.getPosition()).check_solution(ans);
     }
 
