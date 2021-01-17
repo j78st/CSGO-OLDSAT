@@ -89,8 +89,7 @@ public class admin_screenController implements Controller {
 
     @Override
     public void setShortcut() {
-        // drop shortcuts
-        LoadMap.scene.getAccelerators().clear();
+
     }
 
     @Override

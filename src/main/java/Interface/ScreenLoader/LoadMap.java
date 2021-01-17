@@ -25,6 +25,7 @@ public class LoadMap {
     public static final int GAME = 7;
     public static final int END_GAME = 8;
     public static final int ADMIN = 9;
+    public static final int AUTHENTIFICATION = 10;
 
     /**
      * L'appel a cette fonction permet d'avoir une structure "LoaderKit" qui correspond a l'ecran que l'on souhaite afficher.
@@ -121,6 +122,14 @@ public class LoadMap {
                 loader.setLocation(getClass().getResource("/fxml/admin_screenView.fxml"));
                 root = loader.load();
                 controller = (admin_screenController) loader.getController();
+                kit.setNext_root(root);
+                kit.setNext_controller(controller);
+                break;
+            case AUTHENTIFICATION:
+                loader = new FXMLLoader();
+                loader.setLocation(getClass().getResource("/fxml/id_adminView.fxml"));
+                root = loader.load();
+                controller = (idAdminController) loader.getController();
                 kit.setNext_root(root);
                 kit.setNext_controller(controller);
                 break;

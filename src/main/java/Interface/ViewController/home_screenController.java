@@ -71,7 +71,7 @@ public class home_screenController implements Controller {
     @FXML
     void display_admin_mode(ActionEvent event) throws IOException {
         LoadMap gl = new LoadMap();
-        gl.display_screen_from_id(LoadMap.ADMIN);
+        gl.display_screen_from_id(LoadMap.AUTHENTIFICATION);
     }
 
     /**
