@@ -56,18 +56,6 @@ public class Scenario_structure {
         consequences_action103_2.add(new int[]{1,104}); //Bouge le joueur dans la salle suivante
         Action action103_2 = new Action(1032,false,"Quitter la salle", consequences_action103_2, 103);
 
-        //Actions de la salle 104 - Exterieur
-
-        ArrayList<int[]> consequences_action104_1 = new ArrayList<>();
-        consequences_action104_1.add(new int[]{7,1042}); //Texte
-        consequences_action104_1.add(new int[]{3,1041}); //faisable qu'une fois
-        Action action104_1 = new Action(1041,true,"Parler à un groupe", consequences_action104_1, 104);
-
-        ArrayList<int[]> consequences_action104_2 = new ArrayList<>();
-        consequences_action104_2.add(new int[]{15}); //Lance la cinématique
-        consequences_action104_2.add(new int[]{1,107}); //Bouge le joueur dans la salle suivante
-        Action action104_2 = new Action(1042,true,"Rentrer chez vous [FIN DU PROLOGUE]", consequences_action104_2, 104);
-
         //Actions de la salle 201 - Trousse
 
         ArrayList<int[]> consequences_action201_1 = new ArrayList<>();
@@ -99,6 +87,20 @@ public class Scenario_structure {
         consequences_action201_3.add(new int[]{7,1035}); //Affiche du texte supplémentaire
         consequences_action201_3.add(new int[]{7,1036}); //Affiche du texte supplémentaire
         Action action201_3 = new Action(2013,true,"Prendre le petit opinel", consequences_action201_3, 201);
+
+        //Actions de la salle 104 - Exterieur
+
+        ArrayList<int[]> consequences_action104_1 = new ArrayList<>();
+        consequences_action104_1.add(new int[]{7,1042}); //Texte
+        consequences_action104_1.add(new int[]{3,1041}); //faisable qu'une fois
+        Action action104_1 = new Action(1041,true,"Parler à un groupe", consequences_action104_1, 104);
+
+        ArrayList<int[]> consequences_action104_2 = new ArrayList<>();
+        consequences_action104_2.add(new int[]{15}); //Lance la cinématique
+        consequences_action104_2.add(new int[]{1,107}); //Bouge le joueur dans la salle suivante
+        Action action104_2 = new Action(1042,true,"Rentrer chez vous [FIN DU PROLOGUE]", consequences_action104_2, 104);
+
+
 
 
 
@@ -140,8 +142,14 @@ public class Scenario_structure {
         //Actions de la salle 107 - Début de l'aventure
 
         ArrayList<int[]> consequences_action107_1 = new ArrayList<>();
-        consequences_action107_1.add(new int[]{1,108}); //Bouge joueur vers salle 108
-        Action action107_1 = new Action(1071,true,"Inspecter la salle", consequences_action107_1, 107);
+        consequences_action107_1.add(new int[]{7,1072}); //text
+        consequences_action107_1.add(new int[]{2,1072}); //debloque
+        consequences_action107_1.add(new int[]{3,1071}); //faisable qu'une fois
+        Action action107_1 = new Action(1071,true,"Ouvrir la porte", consequences_action107_1, 107);
+
+        ArrayList<int[]> consequences_action107_2 = new ArrayList<>();
+        consequences_action107_2.add(new int[]{1,108}); //Bouge joueur vers salle 108
+        Action action107_2 = new Action(1072,false,"Inspecter la salle", consequences_action107_2, 107);
 
 
         //Actions de la salle 108 - RDC bibliothèque

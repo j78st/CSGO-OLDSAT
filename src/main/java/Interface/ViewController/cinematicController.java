@@ -27,23 +27,22 @@ public class cinematicController implements Controller {
     // ==========================================================
     private int no_text;
 
-    private String text1 = "Dans la soirée, vous vous rendez à l'ENSSAT pour " +
-            "visiter l'école.\n" +
-            "C'est ici que commence votre véritable aventure.\n"+
-            "vous arrivez dans le hall d'accueil de l'ENSSAT.";
+    private String text1 = "Dans la soirée, vous vous rendez à l'ENSSAT pour visiter l'école.\n\n" +
+            "C'est ici que commence votre véritable aventure.\n\n"+
+            "Vous arrivez dans le hall d'accueil de l'ENSSAT.";
 
-    private String text2 = "Vous regardez autour de vous l'endroit est désert, " +
-            "toutefois vous retrouvez le panneau indiquant la salle" +
-            "137C, celui qui vous a guidé le matin même. Personne " +
-            "n'a pris le temps de le ranger, bizarre ...\n" +
-            "Un silence assez oppressant vous pousse à ne pas rester là, pourquoi ne pas suivre " +
-            "la direction indiquée par le panneau, après tout vous " +
-            "connaissez déjà ce chemin.";
+    private String text2 = "Vous regardez autour de vous, l'endroit est désert,\n" +
+            "toutefois vous retrouvez le panneau indiquant la salle 137C, celui qui vous a guidé le matin même.\n" +
+            "Personne n'a pris le temps de le ranger, bizarre ...\n\n" +
+            "Un silence assez oppressant vous pousse à ne pas rester là.\n" +
+            "Pourquoi ne pas suivre la direction indiquée par le panneau,\n" +
+            "après tout vous connaissez déjà ce chemin.";
 
-    private String text3 = "Vous vous dirigez vers le couloir. " +
-            "Après quelques pas vous vous arrêtez net, vous êtes interpellé par une faible lueur. " +
-            "Elle vient de votre droite. Vous remarquez une porte entrouverte sur laquelle\n" +
-            "vous lisez \"Bibliothèque\".\n";
+    private String text3 = "Vous vous dirigez vers le couloir.\n\n " +
+            "Après quelques pas vous vous arrêtez net,\n" +
+            "vous êtes interpellé par une faible lueur.\n" +
+            "Elle vient de votre droite.\n" +
+            "Vous remarquez une porte entrouverte sur laquelle vous lisez \"Bibliothèque\".";
 
     @FXML
     private Label narration;
