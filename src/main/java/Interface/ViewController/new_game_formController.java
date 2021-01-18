@@ -145,10 +145,7 @@ public class new_game_formController implements Controller {
             // son validation
             WorldBoxDisc.play(Son.valid);
 
-            // lancement timer
-            Engine.engine.timer_lbl.setVisible(true);
-            Engine.chrono = new TimerController(60*25);
-            Engine.chrono.start();
+            Engine.engine.timer_lbl.setVisible(false);
         }
     }
 

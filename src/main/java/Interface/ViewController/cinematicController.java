@@ -6,6 +6,7 @@ import Interface.Settings.Engine;
 import Interface.Settings.Settings;
 import Music.Systems.Son;
 import Music.Systems.WorldBoxDisc;
+import Timer.TimerController;
 import javafx.animation.FadeTransition;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -59,6 +60,9 @@ public class cinematicController implements Controller {
         no_text += 1;
         if(no_text == 2){
             next.setText("Entrer dans la bibliothèque");
+            Engine.engine.timer_lbl.setVisible(true);
+            Engine.chrono = new TimerController(60*25);
+            Engine.chrono.start();
         }
         if (no_text == 3) {
             fadeOutTransition(narration);

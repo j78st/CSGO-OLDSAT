@@ -60,6 +60,7 @@ public class Scenario_structure {
 
         ArrayList<int[]> consequences_action104_1 = new ArrayList<>();
         consequences_action104_1.add(new int[]{7,1042}); //Texte
+        consequences_action104_1.add(new int[]{3,1041}); //faisable qu'une fois
         Action action104_1 = new Action(1041,true,"Parler à un groupe", consequences_action104_1, 104);
 
         ArrayList<int[]> consequences_action104_2 = new ArrayList<>();
