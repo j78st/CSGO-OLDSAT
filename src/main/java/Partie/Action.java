@@ -108,7 +108,7 @@ public class Action {
                         Game.search_room(getConsequences().get(i)[1]).setAccess(true);
                         Engine.engine.refreshRoom();
                     }else{ // on est en mode bac à sable et on tente de débloquer l'accès à un voisin
-                        Game.search_room(Game.getBas()).text_evolve("[Vous avez bien débloqué une salle voisine mais" +
+                        Game.search_room(Game.getBas()).text_evolve("\n\n[Vous avez bien débloqué une salle voisine mais" +
                                 ", étant en mode bac à sable, l'accès à celle-ci ne vous est pas autorisé.]\n");
                     }
                     break;
