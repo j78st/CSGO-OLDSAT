@@ -264,6 +264,7 @@ public class Scenario_structure {
 
         ArrayList<int[]> consequences_action207_1 = new ArrayList<>();
         consequences_action207_1.add(new int[]{7,2072}); //Rajoute texte
+        consequences_action207_1.add(new int[]{3,2071}); //Bloque cette action (faisable qu'une fois)
         Action action207_1 = new Action(2071,true,"Lire le livre sur la cryptographie", consequences_action207_1, 207);
 
 
