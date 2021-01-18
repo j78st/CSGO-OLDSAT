@@ -11,6 +11,7 @@ import Partie.Action;
 import Partie.Game;
 import Partie.Item;
 import Timer.TimerController;
+import javafx.animation.FadeTransition;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
@@ -29,6 +30,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.*;
 import javafx.scene.text.Text;
 import javafx.util.Callback;
+import javafx.util.Duration;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -55,6 +57,9 @@ public class gameController implements Controller {
 
     @FXML
     private Region reference;
+
+    @FXML
+    private AnchorPane root;
 
     // inventaire -----------------------------------------------
     @FXML
@@ -473,7 +478,6 @@ public class gameController implements Controller {
         // Mise en place scroller
         scroller.setFitToWidth(true);
         scroller.setContent(narration);
-
     }
 
     /**

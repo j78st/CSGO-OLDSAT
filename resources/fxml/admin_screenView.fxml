@@ -47,7 +47,10 @@
                         <ListView fx:id="save_list" maxHeight="400.0" maxWidth="400.0" minHeight="400.0" minWidth="400.0" styleClass="List" BorderPane.alignment="CENTER" />
                      </center>
                   </BorderPane>
-                  <BorderPane fx:id="test_mode_view" layoutX="10.0" layoutY="10.0" prefHeight="200.0" prefWidth="200.0" styleClass="BackPane" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                  <BorderPane fx:id="test_mode_view" layoutX="10.0" layoutY="10.0" prefHeight="200.0" prefWidth="200.0" styleClass="BackPane" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <center>
+                        <ListView fx:id="room_list" maxHeight="400.0" maxWidth="400.0" minHeight="400.0" minWidth="400.0" styleClass="List" BorderPane.alignment="CENTER" />
+                     </center></BorderPane>
                </children>
             </AnchorPane>
          </children>

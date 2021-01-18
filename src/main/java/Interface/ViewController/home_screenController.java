@@ -59,7 +59,7 @@ public class home_screenController implements Controller {
     @FXML
     void display_game_launcher(ActionEvent event) throws IOException {
         LoadMap gl = new LoadMap();
-        gl.display_screen_from_id(LoadMap.LAUNCHER);
+        gl.display_screen_from_id(LoadMap.CUTSCENE);
         WorldBoxDisc.play(Son.menuOpen);
     }
 
