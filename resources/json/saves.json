@@ -4,7 +4,7 @@
       "no": 0,
       "srgame": {
         "player": {
-          "pseudo": "aa",
+          "pseudo": "aaa",
           "inventory": [],
           "position": 101
         },
@@ -12,17 +12,18 @@
           {
             "id": 101,
             "neighbours": [
+              102,
               -1,
               -1,
-              -1,
-              102
+              -1
             ],
             "access": true,
             "id_text": 1011,
-            "path_image": "pictures/Entree.png",
+            "path_image": "pictures/Hall.png",
             "id_actions": [
               1011,
-              1012
+              1012,
+              10169
             ]
           },
           {
@@ -74,9 +75,24 @@
             ]
           },
           {
-            "id": 104,
+            "id": 107,
             "neighbours": [
               -1,
+              -1,
+              -1,
+              105
+            ],
+            "access": false,
+            "id_text": 1071,
+            "path_image": "pictures/Bibliotheque.png",
+            "id_actions": [
+              1071
+            ]
+          },
+          {
+            "id": 104,
+            "neighbours": [
+              105,
               -1,
               -1,
               -1
@@ -84,6 +100,293 @@
             "access": true,
             "id_text": 1041,
             "path_image": "pictures/Bibliotheque.png",
+            "id_actions": [
+              1041
+            ]
+          },
+          {
+            "id": 105,
+            "neighbours": [
+              -1,
+              107,
+              104,
+              -1
+            ],
+            "access": false,
+            "id_text": 1051,
+            "path_image": "pictures/Bibliotheque.png",
+            "id_actions": [
+              1051
+            ]
+          },
+          {
+            "id": 211,
+            "neighbours": [
+              -1,
+              -1,
+              105,
+              -1
+            ],
+            "access": true,
+            "id_text": 2111,
+            "path_image": "pictures/Trousse.png",
+            "id_actions": [
+              2111
+            ]
+          },
+          {
+            "id": 108,
+            "neighbours": [
+              110,
+              -1,
+              -1,
+              -1
+            ],
+            "access": false,
+            "id_text": 1081,
+            "path_image": "pictures/Bibliotheque.png",
+            "id_actions": [
+              1081,
+              1082,
+              1083,
+              1084,
+              1085,
+              1086
+            ]
+          },
+          {
+            "id": 202,
+            "neighbours": [
+              -1,
+              -1,
+              108,
+              -1
+            ],
+            "access": true,
+            "id_text": 2021,
+            "path_image": "pictures/Trousse.png",
+            "id_actions": [
+              2021,
+              2022,
+              2023,
+              2024,
+              2025
+            ]
+          },
+          {
+            "id": 203,
+            "neighbours": [
+              -1,
+              -1,
+              202,
+              -1
+            ],
+            "access": true,
+            "id_text": 2031,
+            "path_image": "pictures/Trousse.png",
+            "id_actions": [
+              2031
+            ]
+          },
+          {
+            "id": 204,
+            "neighbours": [
+              -1,
+              -1,
+              202,
+              -1
+            ],
+            "access": true,
+            "id_text": 2041,
+            "path_image": "pictures/Trousse.png",
+            "id_actions": [
+              2041,
+              2042,
+              2043
+            ]
+          },
+          {
+            "id": 205,
+            "neighbours": [
+              -1,
+              -1,
+              202,
+              -1
+            ],
+            "access": true,
+            "id_text": 2051,
+            "path_image": "pictures/Trousse.png",
+            "id_actions": [
+              2051
+            ]
+          },
+          {
+            "id": 206,
+            "neighbours": [
+              -1,
+              -1,
+              202,
+              -1
+            ],
+            "access": true,
+            "id_text": 2061,
+            "path_image": "pictures/Trousse.png",
+            "id_actions": [
+              2061,
+              2062
+            ]
+          },
+          {
+            "id": 207,
+            "neighbours": [
+              -1,
+              -1,
+              108,
+              -1
+            ],
+            "access": true,
+            "id_text": 2071,
+            "path_image": "pictures/Trousse.png",
+            "id_actions": []
+          },
+          {
+            "id": 208,
+            "neighbours": [
+              -1,
+              -1,
+              108,
+              -1
+            ],
+            "access": true,
+            "id_text": 2081,
+            "path_image": "pictures/Trousse.png",
+            "id_actions": []
+          },
+          {
+            "id": 209,
+            "neighbours": [
+              -1,
+              -1,
+              108,
+              -1
+            ],
+            "access": true,
+            "id_text": 2091,
+            "path_image": "pictures/Trousse.png",
+            "id_actions": []
+          },
+          {
+            "id": 109,
+            "neighbours": [
+              -1,
+              -1,
+              -1,
+              -1
+            ],
+            "access": true,
+            "id_text": 1091,
+            "path_image": "pictures/Bibliotheque.png",
+            "id_actions": []
+          },
+          {
+            "id": 210,
+            "neighbours": [
+              -1,
+              -1,
+              109,
+              -1
+            ],
+            "access": true,
+            "id_text": 2101,
+            "path_image": "pictures/Trousse.png",
+            "id_actions": []
+          },
+          {
+            "id": 110,
+            "neighbours": [
+              -1,
+              -1,
+              -1,
+              -1
+            ],
+            "access": false,
+            "id_text": 1101,
+            "path_image": "pictures/Bibliotheque.png",
+            "id_actions": []
+          },
+          {
+            "solution": "Le Cid",
+            "consequences": [
+              [
+                9,
+                110
+              ],
+              [
+                7,
+                3012
+              ]
+            ],
+            "nb_error": 0,
+            "id": 301,
+            "neighbours": [
+              -1,
+              -1,
+              108,
+              -1
+            ],
+            "access": true,
+            "id_text": 3011,
+            "path_image": "pictures/Tableau.png",
+            "id_actions": []
+          },
+          {
+            "solution": "974",
+            "consequences": [
+              [
+                2,
+                2024
+              ],
+              [
+                1,
+                203
+              ]
+            ],
+            "nb_error": 0,
+            "id": 302,
+            "neighbours": [
+              -1,
+              -1,
+              202,
+              -1
+            ],
+            "access": true,
+            "id_text": 3021,
+            "path_image": "pictures/Tableau.png",
+            "id_actions": []
+          },
+          {
+            "solution": "motdepasse",
+            "consequences": [
+              [
+                2,
+                2025
+              ],
+              [
+                1,
+                206
+              ]
+            ],
+            "nb_error": 0,
+            "id": 303,
+            "neighbours": [
+              -1,
+              -1,
+              202,
+              -1
+            ],
+            "access": true,
+            "id_text": 3031,
+            "path_image": "pictures/Tableau.png",
             "id_actions": []
           }
         ],
@@ -123,6 +426,17 @@
               [
                 9,
                 102
+              ]
+            ]
+          },
+          {
+            "id": 10169,
+            "available": true,
+            "text": "Saut admin début d\u0027aventure",
+            "consequences": [
+              [
+                12,
+                107
               ]
             ]
           },
@@ -197,7 +511,7 @@
           {
             "id": 2012,
             "available": true,
-            "text": "Prendre la petite loupe",
+            "text": "Prendre la loupe",
             "consequences": [
               [
                 4,
@@ -263,9 +577,389 @@
                 1036
               ]
             ]
+          },
+          {
+            "id": 1041,
+            "available": true,
+            "text": "Regardez autour de vous",
+            "consequences": [
+              [
+                7,
+                1042
+              ],
+              [
+                9,
+                105
+              ],
+              [
+                3,
+                1041
+              ]
+            ]
+          },
+          {
+            "id": 1051,
+            "available": true,
+            "text": "Examiner la porte",
+            "consequences": [
+              [
+                1,
+                211
+              ]
+            ]
+          },
+          {
+            "id": 2111,
+            "available": true,
+            "text": "Essayer d\u0027ouvrir la porte",
+            "consequences": [
+              [
+                1,
+                105
+              ],
+              [
+                7,
+                1052
+              ],
+              [
+                9,
+                107
+              ],
+              [
+                3,
+                1051
+              ]
+            ]
+          },
+          {
+            "id": 1071,
+            "available": true,
+            "text": "Inspecter la salle",
+            "consequences": [
+              [
+                1,
+                108
+              ]
+            ]
+          },
+          {
+            "id": 1081,
+            "available": true,
+            "text": "Inspecter le bureau",
+            "consequences": [
+              [
+                1,
+                202
+              ]
+            ]
+          },
+          {
+            "id": 1082,
+            "available": true,
+            "text": "S\u0027approcher de l\u0027étagère de gauche",
+            "consequences": [
+              [
+                1,
+                207
+              ]
+            ]
+          },
+          {
+            "id": 1083,
+            "available": true,
+            "text": "S\u0027approcher de l\u0027étagère face à vous",
+            "consequences": [
+              [
+                1,
+                208
+              ]
+            ]
+          },
+          {
+            "id": 1084,
+            "available": true,
+            "text": "S\u0027approcher de l\u0027étagère de droite",
+            "consequences": [
+              [
+                1,
+                209
+              ]
+            ]
+          },
+          {
+            "id": 1085,
+            "available": true,
+            "text": "S\u0027assoir sur la chaise [Obtention d\u0027un indice, diminution du temps]",
+            "consequences": [
+              [
+                7,
+                4006
+              ],
+              [
+                3,
+                1085
+              ],
+              [
+                14,
+                30
+              ]
+            ]
+          },
+          {
+            "id": 1086,
+            "available": true,
+            "text": "Aller à l\u0027étage",
+            "consequences": [
+              [
+                1,
+                109
+              ]
+            ]
+          },
+          {
+            "id": 2021,
+            "available": true,
+            "text": "Inspecter la note",
+            "consequences": [
+              [
+                1,
+                205
+              ]
+            ]
+          },
+          {
+            "id": 2022,
+            "available": true,
+            "text": "Examiner le tiroir",
+            "consequences": [
+              [
+                1,
+                302
+              ],
+              [
+                10
+              ]
+            ]
+          },
+          {
+            "id": 2023,
+            "available": true,
+            "text": "Examiner le PC",
+            "consequences": [
+              [
+                1,
+                303
+              ],
+              [
+                10
+              ]
+            ]
+          },
+          {
+            "id": 2024,
+            "available": false,
+            "text": "Fouiller dans le tiroir",
+            "consequences": [
+              [
+                1,
+                204
+              ]
+            ]
+          },
+          {
+            "id": 2025,
+            "available": false,
+            "text": "Examiner le contenu du PC",
+            "consequences": [
+              [
+                1,
+                206
+              ]
+            ]
+          },
+          {
+            "id": 2031,
+            "available": true,
+            "text": "Récupérer la clef",
+            "consequences": [
+              [
+                4,
+                4
+              ],
+              [
+                3,
+                2041
+              ]
+            ]
+          },
+          {
+            "id": 2041,
+            "available": true,
+            "text": "Récupérer la clef",
+            "consequences": [
+              [
+                4,
+                4
+              ],
+              [
+                3,
+                2041
+              ]
+            ]
+          },
+          {
+            "id": 2042,
+            "available": false,
+            "text": "Casser le double fond [Compas]",
+            "consequences": [
+              [
+                7,
+                2042
+              ],
+              [
+                3,
+                2042
+              ]
+            ]
+          },
+          {
+            "id": 2043,
+            "available": false,
+            "text": "Enlever le double fond [Opinel]",
+            "consequences": [
+              [
+                7,
+                2043
+              ],
+              [
+                3,
+                2043
+              ]
+            ]
+          },
+          {
+            "id": 2051,
+            "available": true,
+            "text": "Examiner ce qui est illisible [Loupe]",
+            "consequences": [
+              [
+                7,
+                2052
+              ],
+              [
+                3,
+                2051
+              ]
+            ]
+          },
+          {
+            "id": 2061,
+            "available": true,
+            "text": "Passer à la page suivante",
+            "consequences": [
+              [
+                2,
+                2062
+              ],
+              [
+                3,
+                2061
+              ]
+            ]
+          },
+          {
+            "id": 2062,
+            "available": false,
+            "text": "Retour à la page précédente",
+            "consequences": [
+              [
+                2,
+                2061
+              ],
+              [
+                3,
+                2062
+              ]
+            ]
           }
         ],
-        "enigmas": [],
+        "enigmas": [
+          {
+            "solution": "Le Cid",
+            "consequences": [
+              [
+                9,
+                110
+              ],
+              [
+                7,
+                3012
+              ]
+            ],
+            "nb_error": 0,
+            "id": 301,
+            "neighbours": [
+              -1,
+              -1,
+              108,
+              -1
+            ],
+            "access": true,
+            "id_text": 3011,
+            "path_image": "pictures/Tableau.png",
+            "id_actions": []
+          },
+          {
+            "solution": "974",
+            "consequences": [
+              [
+                2,
+                2024
+              ],
+              [
+                1,
+                203
+              ]
+            ],
+            "nb_error": 0,
+            "id": 302,
+            "neighbours": [
+              -1,
+              -1,
+              202,
+              -1
+            ],
+            "access": true,
+            "id_text": 3021,
+            "path_image": "pictures/Tableau.png",
+            "id_actions": []
+          },
+          {
+            "solution": "motdepasse",
+            "consequences": [
+              [
+                2,
+                2025
+              ],
+              [
+                1,
+                206
+              ]
+            ],
+            "nb_error": 0,
+            "id": 303,
+            "neighbours": [
+              -1,
+              -1,
+              202,
+              -1
+            ],
+            "access": true,
+            "id_text": 3031,
+            "path_image": "pictures/Tableau.png",
+            "id_actions": []
+          }
+        ],
         "items": [
           {
             "id": 1,
@@ -274,7 +968,9 @@
             "path_image": "objects/Compas.png",
             "max_usage": -1,
             "current_usage": 0,
-            "id_actions": []
+            "id_actions": [
+              2043
+            ]
           },
           {
             "id": 2,
@@ -292,7 +988,9 @@
             "path_image": "objects/Opinel.png",
             "max_usage": -1,
             "current_usage": 0,
-            "id_actions": []
+            "id_actions": [
+              2042
+            ]
           },
           {
             "id": 42,
@@ -302,12 +1000,21 @@
             "max_usage": -1,
             "current_usage": 0,
             "id_actions": []
+          },
+          {
+            "id": 4,
+            "name": "Clef",
+            "description": "Ancienne clef - Elle va sûrement vous permettre de sortir d\u0027ici",
+            "path_image": "objects/key.png",
+            "max_usage": 1,
+            "current_usage": 0,
+            "id_actions": []
           }
         ],
         "texts": [
           {
             "id": 1011,
-            "text": "Salutations aa.\n\nVous avez été admis à l’ENSSAT, l’École Nationale Supérieure des Sciences Appliquées et de Technologie, c’est génial n’est-ce pas ?\nC\u0027est votre premier jour et vous arrivez dans le hall d\u0027entrée de l\u0027ENSSAT dans lequel vous trouvez un groupe de nouveaux élèves, vous êtes un peu stressé.\nVous savez que vous devez rejoindre une salle libellée 137C mais vous n\u0027avez aucune idée de comment vous y rendre.\n\n[Tutoriel]\nRemarquez la liste des actions disponibles sur votre écran, vous pouvez en sélectionner une en cliquant dessus puis appuyer sur le bouton \"Valider action\" pour l\u0027exécuter.\n\n"
+            "text": "Salutations aaa.\n\nVous avez été admis à l’ENSSAT, l’École Nationale Supérieure des Sciences Appliquées et de Technologie, c’est génial n’est-ce pas ?\nC\u0027est votre premier jour et vous arrivez dans le hall d\u0027entrée de l\u0027ENSSAT dans lequel vous trouvez un groupe de nouveaux élèves, vous êtes un peu stressé.\nVous savez que vous devez rejoindre une salle libellée 137C mais vous n\u0027avez aucune idée de comment vous y rendre.\n\n[Tutoriel]\nRemarquez la liste des actions disponibles sur votre écran, vous pouvez en sélectionner une en cliquant dessus puis appuyer sur le bouton \"Valider action\" pour l\u0027exécuter.\n\n"
           },
           {
             "id": 1012,
@@ -323,7 +1030,11 @@
           },
           {
             "id": 1031,
-            "text": "La conférence touche à sa fin. Rien d\u0027extravagant, des consignes de sécurité, des présentations de locaux et une introduction aux différentes formations proposées par l\u0027école, exactement ce à quoi vous vous attendiez.\nL\u0027amphithéâtre commence à se vider, vous jetez un coup d\u0027oeil rapide dans la salle et vous apercevez une trousse abandonnée sur une table, c\u0027est étrange car vous êtes convaincu que personne n\u0027était assis à cette place pendant la conférence.\nPour passer votre curiosité, vous vous approchez de cette trousse avant de partir.\n\n"
+            "text": "La conférence touche à sa fin. Rien d\u0027extravagant, des consignes de sécurité, des présentations de locaux et une introduction aux différentes formations proposées par l\u0027école, exactement ce à quoi vous vous attendiez.\nL\u0027amphithéâtre commence à se vider, vous jetez un coup d\u0027oeil rapide dans la salle et vous apercevez une trousse abandonnée sur une table, c\u0027est étrange car vous êtes convaincu que personne n\u0027était assis à cette place pendant la conférence.\nPour satisfaire votre curiosité, vous vous approchez de cette trousse avant de partir.\n\n"
+          },
+          {
+            "id": 2011,
+            "text": "Vous regardez à l\u0027intérieur de la trousse.\nVous y trouvez des objets habituels : quelques stylos, un surligneur, une gomme, un compas ... Mais il y a aussi des choses plus étonnantes : une loupe et un opinel. Le propriétaire de cette trousse doit être bizarre. Qui garde une loupe et un opinel dans sa trousse ?\n\n[Tutoriel]\nVous pouvez prendre un objet dans cette trousse. Attention ce choix est définitif et aura un impact sur la suite de votre aventure.\nVous pouvez aussi revenir en arrière en appuyant sur la flèche de déplacement."
           },
           {
             "id": 1032,
@@ -346,12 +1057,28 @@
             "text": "vous quittez la salle.\nVotre journée de cours est finie, vous pouvez vous balader dans l\u0027ENSSAT ou bien finir le prologue."
           },
           {
-            "id": 2011,
-            "text": "Vous regardez à l\u0027intérieur de la trousse.\nVous y trouvez des objets habituels : quelques stylos, un surligneur, une gomme, un compas ... Mais il y a aussi des choses plus étonnantes : une loupe et un opinel. Le propriétaire de cette trousse doit être bizarre. Qui garde une loupe et un opinel dans sa trousse ?\n\n[Tutoriel]\nVous pouvez prendre un objet dans cette trousse. Attention ce choix est définitif et aura un impact sur la suite de votre aventure.\nVous pouvez aussi revenir en arrière en appuyant sur la flèche de déplacement."
+            "id": 1041,
+            "text": "Ici commence votre véritable aventure.\nVous vous rendez à l\u0027ENSSAT pour visiter l\u0027école. Il est 20 heures exactement, vous le savez car vous entendez les bruits de cloche provenant de l\u0027église voisine, le son vous semble d\u0027ailleurs anormalement proche.\nQuoi qu\u0027il en soit, vous reconnaissez les lieux, vous êtes dans le hall d\u0027accueil de l\u0027ENSSAT\n\n"
           },
           {
-            "id": 1041,
-            "text": "   Votre aventure débute dans la bibliothèque de l\u0027ENSSAT."
+            "id": 1042,
+            "text": "Il n\u0027y a pas grand chose à voir, l\u0027endroit est désert, toutefois vous retrouvez le panneau indiquant la salle 137C, celui qui vous a guidé le matin même. Personne n\u0027a pris le temps de le ranger, bizarre ...\nSoudain, les bruits de cloche s\u0027arrêtent et laissent place à un silence assez pensant. Vous décidez de ne pas rester là, pourquoi ne pas suivre la direction indiquée par le panneau, après tout vous connaissez déjà ce chemin"
+          },
+          {
+            "id": 1051,
+            "text": "Vous vous dirigez vers le couloir, vos bruits de pas sont anormalement forts.\nAprès quelques pas vous vous arrêtez net, vous êtes stupéfait, ce couloir n\u0027est pas le même que celui que vous avez emprunté ce matin. Celui-ci est bien plus grand, l\u0027ambiance y est assez pesante.\nSur votre droite, vous remarquez une porte sur laquelle vous lisez \"Bibliothèque\".\n\n"
+          },
+          {
+            "id": 2111,
+            "text": "La porte est ancienne, elle détonne complétement avec le reste du bâtiment.\nVous apercevez une légère lueur émanant par-dessous la porte."
+          },
+          {
+            "id": 1052,
+            "text": "La porte n\u0027est pas fernée mais elle est très lourde.\nEn vous aidant de votre épaule, vous arrivez à l\u0027ouvrir"
+          },
+          {
+            "id": 1071,
+            "text": "Votre êtes dans la bibliothèque de l\u0027ENSSAT."
           }
         ],
         "difficulty": 1,

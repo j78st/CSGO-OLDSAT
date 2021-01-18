@@ -44,7 +44,16 @@ public class Scenario {
             "une introduction aux différentes formations proposées par l'école, exactement ce à quoi vous vous attendiez.\n" +
             "L'amphithéâtre commence à se vider, vous jetez un coup d'oeil rapide dans la salle et vous apercevez une trousse abandonnée sur une table, " +
             "c'est étrange car vous êtes convaincu que personne n'était assis à cette place pendant la conférence.\n" +
-            "Pour passer votre curiosité, vous vous approchez de cette trousse avant de partir.\n\n");
+            "Pour satisfaire votre curiosité, vous vous approchez de cette trousse avant de partir.\n\n");
+
+    //Texte trousse
+    public Text_scenario room_201_1 = new Text_scenario(2011,"Vous regardez à l'intérieur de la trousse.\n" +
+            "Vous y trouvez des objets habituels : quelques stylos, un surligneur, une gomme, un compas ... " +
+            "Mais il y a aussi des choses plus étonnantes : une loupe et un opinel. Le propriétaire de cette trousse doit être bizarre. " +
+            "Qui garde une loupe et un opinel dans sa trousse ?\n\n" +
+            "[Tutoriel]\n" +
+            "Vous pouvez prendre un objet dans cette trousse. Attention ce choix est définitif et aura un impact sur la suite de votre aventure.\n" +
+            "Vous pouvez aussi revenir en arrière en appuyant sur la flèche de déplacement.");
 
     public Text_scenario room_103_2 = new Text_scenario(1032,"Après avoir récupéré ");
 
@@ -57,17 +66,33 @@ public class Scenario {
     public Text_scenario room_103_6 = new Text_scenario(1036,"vous quittez la salle.\n" +
             "Votre journée de cours est finie, vous pouvez vous balader dans l'ENSSAT ou bien finir le prologue.");
 
-    //Texte trousse
-    public Text_scenario room_201_1 = new Text_scenario(2011, "Vous regardez à l'intérieur de la trousse.\n" +
-            "Vous y trouvez des objets habituels : quelques stylos, un surligneur, une gomme, un compas ... " +
-            "Mais il y a aussi des choses plus étonnantes : une loupe et un opinel. Le propriétaire de cette trousse doit être bizarre. " +
-            "Qui garde une loupe et un opinel dans sa trousse ?\n\n" +
-            "[Tutoriel]\n" +
-            "Vous pouvez prendre un objet dans cette trousse. Attention ce choix est définitif et aura un impact sur la suite de votre aventure.\n" +
-            "Vous pouvez aussi revenir en arrière en appuyant sur la flèche de déplacement.");
 
 
-    public Text_scenario room_107_1 = new Text_scenario(1071,"   Votre aventure débute dans la bibliothèque de l'ENSSAT.");
+    //Texte hall enssat de nuit
+    public Text_scenario room_104_1 = new Text_scenario(1041,"Ici commence votre véritable aventure.\n" +
+            "Vous vous rendez à l'ENSSAT pour visiter l'école. Il est 20 heures exactement, " +
+            "vous le savez car vous entendez les bruits de cloche provenant de l'église voisine, " +
+            "le son vous semble d'ailleurs anormalement proche.\n" +
+            "Quoi qu'il en soit, vous reconnaissez les lieux, vous êtes dans le hall d'accueil de l'ENSSAT\n\n");
+
+    public Text_scenario room_104_2 = new Text_scenario(1042,"Il n'y a pas grand chose à voir, " +
+            "l'endroit est désert, toutefois vous retrouvez le panneau indiquant la salle 137C, celui qui vous a guidé le matin même. " +
+            "Personne n'a pris le temps de le ranger, bizarre ...\n" +
+            "Soudain, les bruits de cloche s'arrêtent et laissent place à un silence assez pensant. " +
+            "Vous décidez de ne pas rester là, pourquoi ne pas suivre la direction indiquée par le panneau, après tout vous connaissez déjà ce chemin");
+
+    public Text_scenario room_105_1 = new Text_scenario(1051, "Vous vous dirigez vers le couloir, vos bruits de pas sont anormalement forts.\n" +
+            "Après quelques pas vous vous arrêtez net, vous êtes stupéfait, ce couloir n'est pas le même que celui que vous avez emprunté ce matin. " +
+            "Celui-ci est bien plus grand, l'ambiance y est assez pesante.\n" +
+            "Sur votre droite, vous remarquez une porte sur laquelle vous lisez \"Bibliothèque\".\n\n");
+
+    public Text_scenario room_211_1 = new Text_scenario(2111, "La porte est ancienne, elle détonne complétement avec le reste du bâtiment.\n" +
+            "Vous apercevez une légère lueur émanant par-dessous la porte.");
+
+    public Text_scenario room_105_3 = new Text_scenario(1052, "La porte n'est pas fernée mais elle est très lourde.\n" +
+            "En vous aidant de votre épaule, vous arrivez à l'ouvrir");
+
+    public Text_scenario room_107_1 = new Text_scenario(1071,"Votre êtes dans la bibliothèque de l'ENSSAT.");
 
             // Scenario Test
     /*// Textes salle 101
