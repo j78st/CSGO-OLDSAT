@@ -14,8 +14,7 @@ public class Scenario_structure {
         Room room2 = new Room(102,-1,-1,-1,-1, false,1021,"pictures/Amphi.png", "Prologue - Amphithéâtre"); //Amphi
         Room room3 = new Room(103,-1,-1,-1,-1, true,1031,"pictures/Amphi.png"); //Amphi post-conférence
         Room room3_1 = new Room(201,103,2011,"pictures/Trousse.png"); //trousse
-
-
+        Room room4 = new Room(104,-1,-1,-1,-1,true,1041,"pictures/Exterieur.png");
 
         //Objets
         Item compas = new Item(1,"Compas","Compas pouvant être bien pratique",-1, "objects/Compas.png");
@@ -55,8 +54,18 @@ public class Scenario_structure {
 
         ArrayList<int[]> consequences_action103_2 = new ArrayList<>();
         consequences_action103_2.add(new int[]{1,104}); //Bouge le joueur dans la salle suivante
-        consequences_action103_2.add(new int[]{15}); //Lance la cinématique
-        Action action103_2 = new Action(1032,false,"FINIR LE PROLOGUE", consequences_action103_2, 103);
+        Action action103_2 = new Action(1032,false,"Quitter la salle", consequences_action103_2, 103);
+
+        //Actions de la salle 104 - Exterieur
+
+        ArrayList<int[]> consequences_action104_1 = new ArrayList<>();
+        consequences_action104_1.add(new int[]{7,1042}); //Texte
+        Action action104_1 = new Action(1041,true,"Parler à un groupe", consequences_action104_1, 104);
+
+        ArrayList<int[]> consequences_action104_2 = new ArrayList<>();
+        consequences_action104_2.add(new int[]{15}); //Lance la cinématique
+        consequences_action104_2.add(new int[]{1,107}); //Bouge le joueur dans la salle suivante
+        Action action104_2 = new Action(1042,true,"Rentrer chez vous [FIN DU PROLOGUE]", consequences_action104_2, 104);
 
         //Actions de la salle 201 - Trousse
 
@@ -95,10 +104,6 @@ public class Scenario_structure {
         /*-----------------------------------------Scène 1-------------------------------------------*/
 
         Room room7 = new Room(107,-1,-1,-1,105,false,1071,"pictures/Bibliotheque.png", "Acte 1 - Bibliothèque");
-
-        Room room4 = new Room(104,105,-1,-1,-1,true,1041,"pictures/Bibliotheque.png"); // Hall de nuit
-        Room room5 = new Room(105,-1,107,104,-1,false,1051,"pictures/Bibliotheque.png"); // Couloir
-        Room room5_1 = new Room(211,105,2111,"pictures/Trousse.png"); // porte bibliotheque
         Room room8 = new Room(108,110,-1,-1,-1, true,1081,"pictures/Bibliotheque.png"); // RDC bibliothèque
         Room room8_1 = new Room(202,108,2021,"pictures/Trousse.png"); // Bureau
         Room room8_1_1 = new Room(203,202,2031,"pictures/Trousse.png"); // Tiroir post-énigme
@@ -111,24 +116,6 @@ public class Scenario_structure {
         Room room9 = new Room(109,-1,-1,-1,-1, true,1091,"pictures/Bibliotheque.png"); // Étage bibliothèque
         Room room9_1 = new Room(210,109,2101,"pictures/Trousse.png"); // Plafond
         Room room10 = new Room(110,-1,-1,-1,-1, false,1101,"pictures/Bibliotheque.png"); // Début scène 2
-
-        ArrayList<int[]> consequences_action104_1 = new ArrayList<>();
-        consequences_action104_1.add(new int[]{7,1042});
-        consequences_action104_1.add(new int[]{9,105});
-        consequences_action104_1.add(new int[]{3,1041});
-        Action action104_1 = new Action(1041,true,"Regardez autour de vous", consequences_action104_1, 104);
-
-        ArrayList<int[]> consequences_action105_1 = new ArrayList<>();
-        consequences_action105_1.add(new int[]{1,211});
-        Action action105_1 = new Action(1051,true,"Examiner la porte", consequences_action105_1, 105);
-
-        ArrayList<int[]> consequences_action211_1 = new ArrayList<>();
-        consequences_action211_1.add(new int[]{1,105});
-        consequences_action211_1.add(new int[]{7,1052});
-        consequences_action211_1.add(new int[]{9,107});
-        consequences_action211_1.add(new int[]{3,1051});
-        Action action211_1 = new Action(2111,true,"Essayer d'ouvrir la porte", consequences_action211_1, 211);
-
 
         ArrayList<int[]> consequences_enigme1 = new ArrayList<>();
         consequences_enigme1.add(new int[]{9,110}); // Débloque salle suivante

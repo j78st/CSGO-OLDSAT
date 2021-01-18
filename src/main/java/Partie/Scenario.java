@@ -21,9 +21,9 @@ public class Scenario {
             "L'action que vous avez effectué a déverouillée une nouvelle action, celle de lire le panneau.\n\n");
 
     public Text_scenario room_101_3 = new Text_scenario(1013,"Vous lisez le panneau face à vous : \"Amphi 137C\" " +
-            "suivi d'une fléche pointant un couloir sur votre gauche.\n\n" +
+            "suivi d'une fléche pointant un couloir en face de vous.\n\n" +
             "[Tutoriel]\n" +
-            "Vous pouvez noter que cette action a débloqué la flèche de déplacement vers la gauche vous permettant d'accéder à la salle suivante.\n" +
+            "Vous pouvez noter que cette action a débloqué la flèche de déplacement vers le haut vous permettant d'accéder à la salle suivante.\n" +
             "Les actions peuvent avoir une multitude de conséquences diverses comme vous donner accès à de nouveaux lieux " +
             "ou encore débloquer d'autres actions. Ainsi, pensez à parfois revenir sur vos pas, " +
             "certaines choses auraient pu se débloquer depuis votre dernier passage.");
@@ -63,34 +63,21 @@ public class Scenario {
 
     public Text_scenario room_103_5 = new Text_scenario(1035,"un petit opinel ");
 
-    public Text_scenario room_103_6 = new Text_scenario(1036,"vous quittez la salle.\n" +
-            "Votre journée de cours est finie, vous pouvez vous balader dans l'ENSSAT ou bien finir le prologue.");
+    public Text_scenario room_103_6 = new Text_scenario(1036,"vous vous rendez à la sortie de l'amphithéâtre.\n");
+
+    //Texte extérieur
+    public Text_scenario room_104_1 = new Text_scenario(1041,"Vous sortez du bâtiment.\n" +
+            "À l'extérieur, les étudiants se regroupent en petit comité pour débriefer cette conférence.\n" +
+            "Votre journée de cours est finie.\n" +
+            "Vous pouvez vous joindre à l'un des groupes pour discuter ou bien rentrer chez vous directement.\n\n");
+
+    public Text_scenario room_104_2 = new Text_scenario(1042,"Vous rejoignez un groupe d'étudiant et " +
+            "parler de tout et de rien pendant une dizaine de minutes.\n\n" +
+            "[Tutoriel]\n" +
+            "Certaines actions comme celle-ci ne dévérouillent rien et n'ont aucune incidence sur le déroulement de l'histoire.");
 
 
 
-    //Texte hall enssat de nuit
-    public Text_scenario room_104_1 = new Text_scenario(1041,"Ici commence votre véritable aventure.\n" +
-            "Vous vous rendez à l'ENSSAT pour visiter l'école. Il est 20 heures exactement, " +
-            "vous le savez car vous entendez les bruits de cloche provenant de l'église voisine, " +
-            "le son vous semble d'ailleurs anormalement proche.\n" +
-            "Quoi qu'il en soit, vous reconnaissez les lieux, vous êtes dans le hall d'accueil de l'ENSSAT\n\n");
-
-    public Text_scenario room_104_2 = new Text_scenario(1042,"Il n'y a pas grand chose à voir, " +
-            "l'endroit est désert, toutefois vous retrouvez le panneau indiquant la salle 137C, celui qui vous a guidé le matin même. " +
-            "Personne n'a pris le temps de le ranger, bizarre ...\n" +
-            "Soudain, les bruits de cloche s'arrêtent et laissent place à un silence assez pensant. " +
-            "Vous décidez de ne pas rester là, pourquoi ne pas suivre la direction indiquée par le panneau, après tout vous connaissez déjà ce chemin");
-
-    public Text_scenario room_105_1 = new Text_scenario(1051, "Vous vous dirigez vers le couloir, vos bruits de pas sont anormalement forts.\n" +
-            "Après quelques pas vous vous arrêtez net, vous êtes stupéfait, ce couloir n'est pas le même que celui que vous avez emprunté ce matin. " +
-            "Celui-ci est bien plus grand, l'ambiance y est assez pesante.\n" +
-            "Sur votre droite, vous remarquez une porte sur laquelle vous lisez \"Bibliothèque\".\n\n");
-
-    public Text_scenario room_211_1 = new Text_scenario(2111, "La porte est ancienne, elle détonne complétement avec le reste du bâtiment.\n" +
-            "Vous apercevez une légère lueur émanant par-dessous la porte.");
-
-    public Text_scenario room_105_3 = new Text_scenario(1052, "La porte n'est pas fernée mais elle est très lourde.\n" +
-            "En vous aidant de votre épaule, vous arrivez à l'ouvrir");
 
     public Text_scenario room_107_1 = new Text_scenario(1071,"Votre êtes dans la bibliothèque de l'ENSSAT.");
 

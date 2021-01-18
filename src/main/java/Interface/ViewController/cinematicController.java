@@ -57,6 +57,9 @@ public class cinematicController implements Controller {
     void set_text(ActionEvent event) throws IOException {
 
         no_text += 1;
+        if(no_text == 2){
+            next.setText("Entrer dans la bibliothèque");
+        }
         if (no_text == 3) {
             fadeOutTransition(narration);
             go_to_game(); // pour terminer la cinématique
