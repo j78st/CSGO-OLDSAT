@@ -170,4 +170,17 @@ public class Game {
             items.get(i).set_actions_available(true);
         }
     }
+
+    /**
+     * méthode retournant une liste de toutes les salles accessibles depuis le mode bac à sable
+     */
+    public static ArrayList<Room> room_bas_access_available(){
+        ArrayList<Room> res = new ArrayList<>();
+        for(int i = 0; i<rooms.size(); i++){
+           if(rooms.get(i).isBas()){
+               res.add(rooms.get(i));
+           }
+        }
+        return res;
+    }
 }
