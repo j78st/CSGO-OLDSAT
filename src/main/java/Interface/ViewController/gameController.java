@@ -188,7 +188,11 @@ public class gameController implements Controller {
         // suspension du timer et récuération du temps restant
         Engine.chrono.toogleTimer();
         Engine.gamePaused = true;
-        timer_pause.setText(Engine.chrono.getRemainingTime());
+        if (Engine.chrono != null) {
+            timer_pause.setText(Engine.chrono.getRemainingTime());
+        } else {
+            timer_pause.setText(" ");
+        }
     }
 
     /**

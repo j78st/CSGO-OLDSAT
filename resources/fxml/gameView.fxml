@@ -28,7 +28,7 @@
                <center>
                   <VBox alignment="CENTER" prefHeight="300.0" prefWidth="240.0" spacing="10.0">
                      <children>
-                        <Text fx:id="timer_pause" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Title" text="Timer">
+                        <Text fx:id="timer_pause" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Title">
                            <font>
                               <Font size="64.0" />
                            </font>

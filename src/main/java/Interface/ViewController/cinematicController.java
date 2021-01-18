@@ -15,6 +15,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.BorderPane;
 import javafx.util.Duration;
 
 import java.io.IOException;
@@ -47,9 +48,17 @@ public class cinematicController implements Controller {
     @FXML
     private Label narration;
 
-
     @FXML
     private Button next;
+
+    @FXML
+    private Button end;
+
+    @FXML
+    private BorderPane end_pane;
+
+    @FXML
+    private BorderPane arrow_pane;
 
     // ==========================================================
     // Méthodes de changement de texte
@@ -59,14 +68,22 @@ public class cinematicController implements Controller {
 
         no_text += 1;
         if(no_text == 2){
-            next.setText("Entrer dans la bibliothèque");
-            Engine.engine.timer_lbl.setVisible(true);
-            Engine.chrono = new TimerController(60*25);
-            Engine.chrono.start();
+            end.setPrefSize(200, 50);
+            end.setText("Entrer dans la bibliothèque");
+            end.setStyle("-fx-text-fill: black; " +
+                    "-fx-border-color: transparent; " +
+                    "-fx-background-color: white; " +
+                    "-fx-background-radius: 100");
+            end_pane.toFront();
+            end_pane.setVisible(true);
+            arrow_pane.setVisible(false);
         }
         if (no_text == 3) {
             fadeOutTransition(narration);
             go_to_game(); // pour terminer la cinématique
+            Engine.engine.timer_lbl.setVisible(true);
+            Engine.chrono = new TimerController(60*25);
+            Engine.chrono.start();
         }
 
         fadeOutTransition(narration);
@@ -119,7 +136,8 @@ public class cinematicController implements Controller {
     @Override
     public void initialize() {
         next.setGraphic(new ImageView(new Image("/icons/black/arrow_right.png")));
-
+        end_pane.toBack();
+        end_pane.setVisible(false);
         no_text = 0;
         narration.setWrapText(true);
         narration.setText(text1);
