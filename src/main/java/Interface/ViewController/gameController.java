@@ -10,15 +10,10 @@ import Music.Systems.WorldBoxDisc;
 import Partie.Action;
 import Partie.Game;
 import Partie.Item;
-import Timer.TimerController;
-import javafx.animation.FadeTransition;
-import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.Group;
 import javafx.scene.Node;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
@@ -29,8 +24,6 @@ import javafx.scene.input.KeyCombination;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.*;
 import javafx.scene.text.Text;
-import javafx.util.Callback;
-import javafx.util.Duration;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -59,7 +52,7 @@ public class gameController implements Controller {
     private Region reference;
 
     @FXML
-    private AnchorPane root;
+    public AnchorPane root;
 
     // inventaire -----------------------------------------------
     @FXML
@@ -294,6 +287,7 @@ public class gameController implements Controller {
      */
     @FXML
     void exit_app(ActionEvent event) throws InterruptedException, IOException {
+        // Message d'alerte sur la sauvegarde
         UnsaveAlert alert = new UnsaveAlert();
         alert.exitGame();
     }

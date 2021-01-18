@@ -4,7 +4,7 @@
       "no": 0,
       "srgame": {
         "player": {
-          "pseudo": "aaa",
+          "pseudo": "azert",
           "inventory": [],
           "position": 101
         },
@@ -24,7 +24,9 @@
               1011,
               1012,
               10169
-            ]
+            ],
+            "room_name": "Prologue - Hall d\u0027entrée",
+            "bas": true
           },
           {
             "id": 102,
@@ -39,7 +41,9 @@
             "path_image": "pictures/Amphi.png",
             "id_actions": [
               1021
-            ]
+            ],
+            "room_name": "Prologue - Amphithéâtre",
+            "bas": true
           },
           {
             "id": 103,
@@ -55,7 +59,9 @@
             "id_actions": [
               1031,
               1032
-            ]
+            ],
+            "room_name": "Sans_Nom",
+            "bas": false
           },
           {
             "id": 201,
@@ -72,7 +78,9 @@
               2011,
               2012,
               2013
-            ]
+            ],
+            "room_name": "Sans_Nom",
+            "bas": false
           },
           {
             "id": 107,
@@ -87,7 +95,9 @@
             "path_image": "pictures/Bibliotheque.png",
             "id_actions": [
               1071
-            ]
+            ],
+            "room_name": "Acte 1 - Bibliothèque",
+            "bas": true
           },
           {
             "id": 104,
@@ -102,7 +112,9 @@
             "path_image": "pictures/Bibliotheque.png",
             "id_actions": [
               1041
-            ]
+            ],
+            "room_name": "Sans_Nom",
+            "bas": false
           },
           {
             "id": 105,
@@ -117,7 +129,9 @@
             "path_image": "pictures/Bibliotheque.png",
             "id_actions": [
               1051
-            ]
+            ],
+            "room_name": "Sans_Nom",
+            "bas": false
           },
           {
             "id": 211,
@@ -132,7 +146,9 @@
             "path_image": "pictures/Trousse.png",
             "id_actions": [
               2111
-            ]
+            ],
+            "room_name": "Sans_Nom",
+            "bas": false
           },
           {
             "id": 108,
@@ -142,7 +158,7 @@
               -1,
               -1
             ],
-            "access": false,
+            "access": true,
             "id_text": 1081,
             "path_image": "pictures/Bibliotheque.png",
             "id_actions": [
@@ -152,7 +168,9 @@
               1084,
               1085,
               1086
-            ]
+            ],
+            "room_name": "Sans_Nom",
+            "bas": false
           },
           {
             "id": 202,
@@ -171,7 +189,9 @@
               2023,
               2024,
               2025
-            ]
+            ],
+            "room_name": "Sans_Nom",
+            "bas": false
           },
           {
             "id": 203,
@@ -186,7 +206,9 @@
             "path_image": "pictures/Trousse.png",
             "id_actions": [
               2031
-            ]
+            ],
+            "room_name": "Sans_Nom",
+            "bas": false
           },
           {
             "id": 204,
@@ -203,7 +225,9 @@
               2041,
               2042,
               2043
-            ]
+            ],
+            "room_name": "Sans_Nom",
+            "bas": false
           },
           {
             "id": 205,
@@ -218,7 +242,9 @@
             "path_image": "pictures/Trousse.png",
             "id_actions": [
               2051
-            ]
+            ],
+            "room_name": "Sans_Nom",
+            "bas": false
           },
           {
             "id": 206,
@@ -234,7 +260,9 @@
             "id_actions": [
               2061,
               2062
-            ]
+            ],
+            "room_name": "Sans_Nom",
+            "bas": false
           },
           {
             "id": 207,
@@ -247,7 +275,9 @@
             "access": true,
             "id_text": 2071,
             "path_image": "pictures/Trousse.png",
-            "id_actions": []
+            "id_actions": [],
+            "room_name": "Sans_Nom",
+            "bas": false
           },
           {
             "id": 208,
@@ -260,7 +290,9 @@
             "access": true,
             "id_text": 2081,
             "path_image": "pictures/Trousse.png",
-            "id_actions": []
+            "id_actions": [],
+            "room_name": "Sans_Nom",
+            "bas": false
           },
           {
             "id": 209,
@@ -273,7 +305,9 @@
             "access": true,
             "id_text": 2091,
             "path_image": "pictures/Trousse.png",
-            "id_actions": []
+            "id_actions": [],
+            "room_name": "Sans_Nom",
+            "bas": false
           },
           {
             "id": 109,
@@ -286,7 +320,9 @@
             "access": true,
             "id_text": 1091,
             "path_image": "pictures/Bibliotheque.png",
-            "id_actions": []
+            "id_actions": [],
+            "room_name": "Sans_Nom",
+            "bas": false
           },
           {
             "id": 210,
@@ -299,7 +335,9 @@
             "access": true,
             "id_text": 2101,
             "path_image": "pictures/Trousse.png",
-            "id_actions": []
+            "id_actions": [],
+            "room_name": "Sans_Nom",
+            "bas": false
           },
           {
             "id": 110,
@@ -312,7 +350,9 @@
             "access": false,
             "id_text": 1101,
             "path_image": "pictures/Bibliotheque.png",
-            "id_actions": []
+            "id_actions": [],
+            "room_name": "Sans_Nom",
+            "bas": false
           },
           {
             "solution": "Le Cid",
@@ -337,7 +377,9 @@
             "access": true,
             "id_text": 3011,
             "path_image": "pictures/Tableau.png",
-            "id_actions": []
+            "id_actions": [],
+            "room_name": "Sans_Nom",
+            "bas": false
           },
           {
             "solution": "974",
@@ -362,7 +404,9 @@
             "access": true,
             "id_text": 3021,
             "path_image": "pictures/Tableau.png",
-            "id_actions": []
+            "id_actions": [],
+            "room_name": "Sans_Nom",
+            "bas": false
           },
           {
             "solution": "motdepasse",
@@ -387,7 +431,9 @@
             "access": true,
             "id_text": 3031,
             "path_image": "pictures/Tableau.png",
-            "id_actions": []
+            "id_actions": [],
+            "room_name": "Sans_Nom",
+            "bas": false
           }
         ],
         "actions": [
@@ -470,6 +516,9 @@
               [
                 1,
                 104
+              ],
+              [
+                15
               ]
             ]
           },
@@ -907,7 +956,9 @@
             "access": true,
             "id_text": 3011,
             "path_image": "pictures/Tableau.png",
-            "id_actions": []
+            "id_actions": [],
+            "room_name": "Sans_Nom",
+            "bas": false
           },
           {
             "solution": "974",
@@ -932,7 +983,9 @@
             "access": true,
             "id_text": 3021,
             "path_image": "pictures/Tableau.png",
-            "id_actions": []
+            "id_actions": [],
+            "room_name": "Sans_Nom",
+            "bas": false
           },
           {
             "solution": "motdepasse",
@@ -957,7 +1010,9 @@
             "access": true,
             "id_text": 3031,
             "path_image": "pictures/Tableau.png",
-            "id_actions": []
+            "id_actions": [],
+            "room_name": "Sans_Nom",
+            "bas": false
           }
         ],
         "items": [
@@ -1014,7 +1069,7 @@
         "texts": [
           {
             "id": 1011,
-            "text": "Salutations aaa.\n\nVous avez été admis à l’ENSSAT, l’École Nationale Supérieure des Sciences Appliquées et de Technologie, c’est génial n’est-ce pas ?\nC\u0027est votre premier jour et vous arrivez dans le hall d\u0027entrée de l\u0027ENSSAT dans lequel vous trouvez un groupe de nouveaux élèves, vous êtes un peu stressé.\nVous savez que vous devez rejoindre une salle libellée 137C mais vous n\u0027avez aucune idée de comment vous y rendre.\n\n[Tutoriel]\nRemarquez la liste des actions disponibles sur votre écran, vous pouvez en sélectionner une en cliquant dessus puis appuyer sur le bouton \"Valider action\" pour l\u0027exécuter.\n\n"
+            "text": "Salutations azert.\n\nVous avez été admis à l’ENSSAT, l’École Nationale Supérieure des Sciences Appliquées et de Technologie, c’est génial n’est-ce pas ?\nC\u0027est votre premier jour et vous arrivez dans le hall d\u0027entrée de l\u0027ENSSAT dans lequel vous trouvez un groupe de nouveaux élèves, vous êtes un peu stressé.\nVous savez que vous devez rejoindre une salle libellée 137C mais vous n\u0027avez aucune idée de comment vous y rendre.\n\n[Tutoriel]\nRemarquez la liste des actions disponibles sur votre écran, vous pouvez en sélectionner une en cliquant dessus puis appuyer sur le bouton \"Valider action\" pour l\u0027exécuter.\n\n"
           },
           {
             "id": 1012,

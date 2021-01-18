@@ -4,6 +4,8 @@ import Interface.ScreenLoader.LoadMap;
 import Interface.Settings.Engine;
 import Music.Systems.Son;
 import Music.Systems.WorldBoxDisc;
+import javafx.animation.FadeTransition;
+import javafx.util.Duration;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -114,8 +116,7 @@ public class Action {
                     Engine.engine.answer_box_visible(true);
                     break;
                 case 11: // affiche écran fin de partie
-                    LoadMap gl = new LoadMap();
-                    gl.display_screen_from_id(LoadMap.END_GAME);
+                    (new LoadMap()).display_screen_from_id(LoadMap.END_GAME);
                     WorldBoxDisc.play(Son.hibou);
                     WorldBoxDisc.play(Son.valid);
                     break;
@@ -126,6 +127,7 @@ public class Action {
                     Game.player.add_to_inventory(42); // donne l'objet d'id 42 (id normalisée pour le couteau suisse admin)
                     Game.search_room(Game.getPlayer().position).close_neighboors(); // bloque l'accès à tous les voisins
                     Game.set_object_actions_available();
+                    Engine.engine.timer_lbl.setVisible(false);
                     Engine.engine.refreshRoom();
                     break;
                 case 13: // faire évoluer texte affiché par une action, consequence[i][1] correspond à l'action à modifier, consequence[i][2] correspond à l'id du nouveau texte
@@ -138,6 +140,14 @@ public class Action {
                 case 14: // retirer du temps (en seconde) au timer (sert pour demande d'indice)
                     Engine.chrono.penaltyTime(getConsequences().get(i)[1]);
                     break;
+                case 15: // lance une cinématique
+                    FadeTransition fadeOUT = new FadeTransition();
+                    fadeOUT.setDuration(Duration.seconds(5));
+                    fadeOUT.setNode(Engine.engine.root);
+                    fadeOUT.setFromValue(1);
+                    fadeOUT.setToValue(0);
+                    fadeOUT.play();
+                    (new LoadMap()).display_screen_from_id(LoadMap.CUTSCENE); break;
              }
         }
     }

@@ -7,7 +7,14 @@ import Interface.Save.SaveSlot;
 import Interface.Save.Saves;
 import Interface.ScreenLoader.Controller;
 import Interface.ScreenLoader.LoadMap;
+import Interface.Settings.Engine;
 import Interface.Settings.Settings;
+import Music.Systems.Son;
+import Music.Systems.WorldBoxDisc;
+import Partie.Game;
+import Partie.Player;
+import Partie.Room;
+import Partie.Scenario_structure;
 import Serialization.Memoire;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -30,7 +37,7 @@ public class admin_screenController implements Controller {
     // Déclaration des objets
     // ==========================================================
     private ObservableList<SaveSlot> saveObservableList1;
-    private ObservableList<String> saveObservableList2;
+    private ObservableList<Room> saveObservableList2;
 
     @FXML
     private BorderPane save_view;
@@ -45,7 +52,7 @@ public class admin_screenController implements Controller {
     private Button return_btn;
 
     @FXML
-    private ListView<String> room_list;
+    private ListView<Room> room_list;
 
     // ==========================================================
     // Méthodes d'initialisation
@@ -73,12 +80,16 @@ public class admin_screenController implements Controller {
         // mise en place de la liste des sauvegarde
         saveObservableList2 = FXCollections.observableArrayList();
 
-        ArrayList<String> rooms = new ArrayList<>();
-        rooms.add("Prologue - Hall d'entrée");
-        rooms.add("Prologue - Amphithéâtre");
-        rooms.add("Acte 1 - Bibliothèque");
+        // création partie
+        Game.player = new Player("admin");
+        Game.difficulty = 1;
+        Scenario_structure scenar_struct = new Scenario_structure();
+        WorldBoxDisc.pause(Son.feu);
+        WorldBoxDisc.play(Son.wind);
 
-        for (int i = 0; i<10; i++) {
+        ArrayList<Room> rooms = Game.room_bas_access_available();
+
+        for (int i = 0; i<rooms.size(); i++) {
             saveObservableList2.add(rooms.get(i));
         }
 

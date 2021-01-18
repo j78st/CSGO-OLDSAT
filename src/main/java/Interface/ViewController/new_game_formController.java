@@ -146,6 +146,7 @@ public class new_game_formController implements Controller {
             WorldBoxDisc.play(Son.valid);
 
             // lancement timer
+            Engine.engine.timer_lbl.setVisible(true);
             Engine.chrono = new TimerController(60*25);
             Engine.chrono.start();
         }
@@ -201,7 +202,7 @@ public class new_game_formController implements Controller {
         // Pseudo et difficulté choisis à la création
         Game.player = new Player(pseudo);
         Game.difficulty = difficulty;
-
+        Game.setBas(0);
         Scenario_structure scenar_struct = new Scenario_structure();
 
         // Son ambiance

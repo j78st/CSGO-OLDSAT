@@ -55,6 +55,7 @@ public class Scenario_structure {
 
         ArrayList<int[]> consequences_action103_2 = new ArrayList<>();
         consequences_action103_2.add(new int[]{1,104}); //Bouge le joueur dans la salle suivante
+        consequences_action103_2.add(new int[]{15}); //Lance la cinématique
         Action action103_2 = new Action(1032,false,"FINIR LE PROLOGUE", consequences_action103_2, 103);
 
         //Actions de la salle 201 - Trousse
