@@ -135,6 +135,8 @@ public class Room {
 
     public boolean isBas() { return bas; }
 
+    public void setPath_image(String path_image) { this.path_image = path_image; }
+
     public void add_action(int id_action){ // ajoute une action à la liste des actions possibles de la salle
         this.id_actions.add(id_action);
     }
@@ -176,7 +178,7 @@ public class Room {
     /**
      * méthode permettant de bloquer l'accès à tous les voisins (sert pour le mode bac à sable)
      */
-    public void close_neighboors(){
+    public void close_neighbours(){
         for(int i = 0; i<4; i++) {
             if (neighbours[i] != -1) {
                 Game.search_room(neighbours[i]).setAccess(false);
@@ -187,7 +189,7 @@ public class Room {
     /**
      * méthode permettant de savoir, à partir de son id, si une salle est une salle voisine ou pas
      */
-    public boolean is_a_neighboor(int id_room){
+    public boolean is_a_neighbour(int id_room){
         boolean res = false;
         for(int i=0; i<4; i++){
             if(id_room == neighbours[i]){

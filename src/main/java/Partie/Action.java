@@ -106,7 +106,7 @@ public class Action {
                     Engine.engine.refreshRoom();
                     break;
                 case 9: // rend une salle accessible
-                    if(Game.getBas() == 0 || !Game.search_room(Game.getBas()).is_a_neighboor(getConsequences().get(i)[1])) { // si on n'est pas en mode bac à sable ou si la salle à débloquer n'est pas un voisin de la salle testée en mode bac à sable (car on veut bloquer le joueur dans la salle testée dans ce mode)
+                    if(Game.getBas() == 0 || !Game.search_room(Game.getBas()).is_a_neighbour(getConsequences().get(i)[1])) { // si on n'est pas en mode bac à sable ou si la salle à débloquer n'est pas un voisin de la salle testée en mode bac à sable (car on veut bloquer le joueur dans la salle testée dans ce mode)
                         Game.search_room(getConsequences().get(i)[1]).setAccess(true);
                         Engine.engine.refreshRoom();
                     }else{ // on est en mode bac à sable et on tente de débloquer l'accès à un voisin
@@ -127,7 +127,7 @@ public class Action {
                     Game.player.move(getConsequences().get(i)[1]); // bouge le joueur dans la salle à tester
                     Game.getPlayer().clear_inventory(); // vide l'inventaire du joueur
                     Game.player.add_to_inventory(42); // donne l'objet d'id 42 (id normalisée pour le couteau suisse admin)
-                    Game.search_room(Game.getPlayer().position).close_neighboors(); // bloque l'accès à tous les voisins
+                    Game.search_room(Game.getPlayer().position).close_neighbours(); // bloque l'accès à tous les voisins
                     Game.set_object_actions_available();
                     Engine.engine.timer_lbl.setVisible(false);
                     Engine.engine.refreshRoom();
