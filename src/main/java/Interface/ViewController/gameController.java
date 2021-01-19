@@ -254,9 +254,11 @@ public class gameController implements Controller {
         background_menu.toBack();
         vbox_menu.toBack();
 
-        // reprise du timer
-        Engine.chrono.toogleTimer();
-        Engine.gamePaused = false;
+        if (Engine.chrono != null) {
+            // reprise du timer
+            Engine.chrono.toogleTimer();
+            Engine.gamePaused = false;
+        }
     }
 
     /**
