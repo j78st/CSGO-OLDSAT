@@ -1,5 +1,6 @@
 package Partie;
 
+import java.io.IOException;
 import java.util.ArrayList;
 
 public class Game {
@@ -17,7 +18,7 @@ public class Game {
      * Constructeur de la partie
      * @param player information liées au joueur
      * @param difficulty la difficulté de la partie, 0 pour facile, 1 pour normale, 2 pour difficile
-     * @param bas entier renseignant l'id de la salle traitée en mode bac à sable, 0 si mode de jeu normal
+     //* @param bas entier renseignant l'id de la salle traitée en mode bac à sable, 0 si mode de jeu normal
      */
     public Game(Player player, int difficulty) {
         Game.player = player;
@@ -46,6 +47,8 @@ public class Game {
     public static ArrayList<Text_scenario> getTexts() {
         return texts;
     }
+
+    public static ArrayList<Enigma> getEnigmas() { return enigmas; }
 
     public int getDifficulty() {
         return difficulty;
@@ -182,5 +185,12 @@ public class Game {
            }
         }
         return res;
+    }
+
+    public static void mouse_clicked(double x, double y) throws IOException {
+        if(Game.getEnigmas().contains(Game.search_enigma(Game.getPlayer().getPosition()))
+                && Game.search_enigma(Game.getPlayer().getPosition()).gest != 0){ //gest!=0 signifie que c'est une énigme cliquable
+            Game.search_enigma(Game.getPlayer().getPosition()).check_click(x,y);
+        }
     }
 }

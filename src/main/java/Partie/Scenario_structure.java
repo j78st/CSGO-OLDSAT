@@ -37,8 +37,12 @@ public class Scenario_structure {
         Action action101_2 = new Action(1012,false,"Lire le panneau", consequences_action101_2, 101);
 
         ArrayList<int[]> consequences_action101_69 = new ArrayList<>();
-        consequences_action101_69.add(new int[]{12,107}); //Affichage nouveau texte
+        consequences_action101_69.add(new int[]{12,107});
         Action action101_69 = new Action(10169,true,"Saut admin début d'aventure", consequences_action101_69, 101);
+
+        ArrayList<int[]> consequences_action101_70 = new ArrayList<>();
+        consequences_action101_70.add(new int[]{1,304});
+        Action action101_70 = new Action(10170,true,"Saut admin enigme 304", consequences_action101_70, 101);
 
         //Actions de la salle 102 - Amphi pré-conférence
 
@@ -118,9 +122,9 @@ public class Scenario_structure {
         Room room8_2 = new Room(207,108,2071,"pictures/Trousse.png"); // Étagère 1
         Room room8_3 = new Room(208,108,2081,"pictures/Trousse.png"); // Étagère 2 pré-utilisation de la clef
         Room room8_4 = new Room(209,108,2091,"pictures/Trousse.png"); // Étagère 3
+        Room room8_5 = new Room(211,108,2111,"pictures/Trousse.png"); // Porte
         Room room9 = new Room(109,-1,-1,-1,-1, true,1091,"pictures/Bibliotheque.png"); // Étage bibliothèque
         Room room9_1 = new Room(210,109,2101,"pictures/Trousse.png"); // Plafond
-        Room room8_5 = new Room(211,108,2111,"pictures/Trousse.png"); // Porte
         Room room10 = new Room(110,-1,-1,-1,-1, false,1101,"pictures/Bibliotheque.png", "Acte 2 - Début"); // Début scène 2
 
         ArrayList<int[]> consequences_enigme1 = new ArrayList<>();
@@ -137,6 +141,13 @@ public class Scenario_structure {
         consequences_enigme3.add(new int[]{2,2025}); // Débloque l'action accès PC dévérouillé depuis le bureau
         consequences_enigme3.add(new int[]{1,206}); // Déplace le joueur vers le PC dévérouillé
         Enigma enigme3 = new Enigma(303,202,3031,"pictures/Tableau.png","motdepasse",consequences_enigme3);
+
+        ArrayList<int[]> consequences_enigme4 = new ArrayList<>();
+        consequences_enigme4.add(new int[]{7,1011,304}); // Rajoute texte de fin d'énigme à la salle d'origine
+        ArrayList<double[]> zone_click_304 = new ArrayList<>();
+        zone_click_304.add(new double[]{1,0.6,0.75,0.24,0.58});
+        zone_click_304.add(new double[]{2,0.75,0.9,0.24,0.58});
+        Enigma enigme4 = new Enigma(304,109,3041,"pictures/304_12.png","3421",consequences_enigme4,zone_click_304,1);
 
 
         Item clef = new Item(4,"Clef","Ancienne clef - Elle va sûrement vous permettre de sortir d'ici",-1, "objects/key.png");

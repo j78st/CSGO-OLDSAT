@@ -6,10 +6,13 @@ import Music.Systems.WorldBoxDisc;
 import Partie.Game;
 import Partie.Player;
 import javafx.application.Application;
+import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+
+import java.awt.event.MouseEvent;
 import java.io.IOException;
 
 public class Main extends Application {
@@ -49,6 +52,21 @@ public class Main extends Application {
         primaryStage.setScene(LoadMap.scene);
         primaryStage.setTitle("OLD'SAT");
         primaryStage.show();
+
+
+        // EventHandler pour récupérer la zone de clic (sert aux énigmes point and click)
+
+        EventHandler<javafx.scene.input.MouseEvent> eventHandler = new EventHandler<javafx.scene.input.MouseEvent>() {
+            @Override
+            public void handle(javafx.scene.input.MouseEvent mouseEvent) {
+                try {
+                    Game.mouse_clicked((mouseEvent.getX()/LoadMap.scene.getWidth()), (mouseEvent.getY()/LoadMap.scene.getHeight()));
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        };
+        LoadMap.scene.addEventFilter(javafx.scene.input.MouseEvent.MOUSE_CLICKED, eventHandler);
     }
 
     public static void main(String[] args) throws InterruptedException, IOException {
