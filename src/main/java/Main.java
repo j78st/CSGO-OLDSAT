@@ -17,6 +17,18 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception{
+        //Deplacement de la partie initialisation pour le lancement du jar
+        //Initialise le système de son
+        WorldBoxDisc.init();
+        Thread.sleep(1000);
+
+        // Récupération des paramètres
+        Settings.setSettingsFromFile();
+
+        Engine oui = new Engine();
+        Game non = new Game(new Player(""),0);
+
+
         // Déclaration de la fenêtre utilisée pour l'application
         LoadMap.stage = primaryStage;
         FXMLLoader loader = new FXMLLoader();
@@ -39,15 +51,6 @@ public class Main extends Application {
     }
 
     public static void main(String[] args) throws InterruptedException, IOException {
-        //Initialise le système de son
-        WorldBoxDisc.init();
-        Thread.sleep(1000);
-
-        // Récupération des paramètres
-        Settings.setSettingsFromFile();
-
-        Engine oui = new Engine();
-        Game non = new Game(new Player(""),0);
 
         // lancement application
         launch(args);
