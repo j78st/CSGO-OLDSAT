@@ -118,6 +118,7 @@ public class Scenario_structure {
         Room room8_4 = new Room(209,108,2091,"pictures/Trousse.png"); // Étagère 3
         Room room9 = new Room(109,-1,-1,-1,-1, true,1091,"pictures/Bibliotheque.png"); // Étage bibliothèque
         Room room9_1 = new Room(210,109,2101,"pictures/Trousse.png"); // Plafond
+        Room room8_5 = new Room(211,108,2111,"pictures/Trousse.png"); // Porte
         Room room10 = new Room(110,-1,-1,-1,-1, false,1101,"pictures/Bibliotheque.png", "Acte 2 - Début"); // Début scène 2
 
         ArrayList<int[]> consequences_enigme1 = new ArrayList<>();
@@ -136,7 +137,7 @@ public class Scenario_structure {
         Enigma enigme3 = new Enigma(303,202,3031,"pictures/Tableau.png","motdepasse",consequences_enigme3);
 
 
-        Item clef = new Item(4,"Clef","Ancienne clef - Elle va sûrement vous permettre de sortir d'ici",1, "objects/key.png");
+        Item clef = new Item(4,"Clef","Ancienne clef - Elle va sûrement vous permettre de sortir d'ici",-1, "objects/key.png");
 
 
         //Actions de la salle 107 - Début de l'aventure
@@ -154,9 +155,9 @@ public class Scenario_structure {
 
         //Actions de la salle 108 - RDC bibliothèque
 
-        ArrayList<int[]> consequences_action108_1 = new ArrayList<>();
-        consequences_action108_1.add(new int[]{1,202}); //Bouge joueur vers le bureau
-        Action action108_1 = new Action(1081,true,"Inspecter le bureau", consequences_action108_1, 108);
+        ArrayList<int[]> consequences_action108_8 = new ArrayList<>();
+        consequences_action108_8.add(new int[]{1,211}); //Bouge joueur vers la porte
+        Action action108_8 = new Action(1088,true,"Examiner la porte", consequences_action108_8, 108);
 
         ArrayList<int[]> consequences_action108_2 = new ArrayList<>();
         consequences_action108_2.add(new int[]{1,207}); //Bouge joueur vers l'étagère 1
@@ -174,6 +175,10 @@ public class Scenario_structure {
         ArrayList<int[]> consequences_action108_4 = new ArrayList<>();
         consequences_action108_4.add(new int[]{1,209}); //Bouge joueur vers l'étagère 3
         Action action108_4 = new Action(1084,true,"S'approcher de l'étagère de droite", consequences_action108_4, 108);
+
+        ArrayList<int[]> consequences_action108_1 = new ArrayList<>();
+        consequences_action108_1.add(new int[]{1,202}); //Bouge joueur vers le bureau
+        Action action108_1 = new Action(1081,true,"Inspecter le bureau", consequences_action108_1, 108);
 
         ArrayList<int[]> consequences_action108_5 = new ArrayList<>();
         consequences_action108_5.add(new int[]{7,4006}); //Texte indice
@@ -274,8 +279,22 @@ public class Scenario_structure {
         consequences_action208_1.add(new int[]{1,301}); //Rajoute texte
         consequences_action208_1.add(new int[]{2,1087}); //Dévérouille l'action l'accès à l'énigme de l'étagère
         consequences_action208_1.add(new int[]{3,1083}); //Vérouille l'accès à l'étagère pré-utilisation clef
+        consequences_action208_1.add(new int[]{5,4}); // Supprimer la clef de l'inventaire après l'utilisation
         consequences_action208_1.add(new int[]{10}); //Affiche boîte de dialogue
         Action action208_1 = new Action(2081, "Essayer la clef dans la serrure [Clef]", consequences_action208_1, 208, 4);
+
+
+        //Actions de la salle 210 - Porte
+
+        ArrayList<int[]> consequences_action211_1 = new ArrayList<>();
+        consequences_action211_1.add(new int[]{7,2112}); //Rajoute texte
+        consequences_action211_1.add(new int[]{3,2111}); //Bloque cette action (faisable qu'une fois)
+        Action action211_1 = new Action(2111,true,"Essayer d'enfoncer la porte", consequences_action211_1, 211);
+
+        ArrayList<int[]> consequences_action211_2 = new ArrayList<>();
+        consequences_action211_2.add(new int[]{7,2113}); //Rajoute texte
+        consequences_action211_2.add(new int[]{3,2112}); //Bloque cette action (faisable qu'une fois)
+        Action action211_2 = new Action(2112, "Essayer la clef dans la serrure [Clef]", consequences_action211_2, 211, 4);
 
 
         //Actions de la salle 109 - Étage
