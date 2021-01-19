@@ -35,4 +35,9 @@ public class Son {
     public static final String tick = "tick";
     public static final String errorEnigma = "errorEnigma";
     public static final String bonusTime = "bonusTime";
+    public static final String doorSlam = "doorSlam";
+    public static final String steps = "steps";
+    public static final String creakingDoor = "creakingDoor";
+    public static final String creakingDoor2 = "creakingDoor2";
+    public static final String creakingDoor3 = "creakingDoor3";
 }

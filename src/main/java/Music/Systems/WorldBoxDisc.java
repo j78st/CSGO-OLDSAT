@@ -6,6 +6,7 @@ import java.util.HashMap;
 
 import Music.TinySound.Music;
 import Music.TinySound.TinySound;
+import Timer.Timer;
 
 /**
  * Cette classe représente le système de musique.
@@ -215,6 +216,31 @@ public class WorldBoxDisc extends Thread {
         Music bonusTimeM = TinySound.loadMusic(bonusTimeF);
         Disc bonusTime = new Disc(bonusTimeM, "bonusTime", false, MusicType.SoundFx);
         add(bonusTime);
+
+        File doorSlamF = new File("resources/sounds/rooms/BigSlamDoor.wav");
+        Music doorSlamM = TinySound.loadMusic(doorSlamF);
+        Disc doorSlam = new Disc(doorSlamM, "doorSlam", false, MusicType.SoundFx);
+        add(doorSlam);
+
+        File stepsF = new File("resources/sounds/rooms/steps.wav");
+        Music stepsM = TinySound.loadMusic(stepsF);
+        Disc steps = new Disc(stepsM, "steps", false, MusicType.SoundFx);
+        add(steps);
+
+        File creakingDoorF = new File("resources/sounds/rooms/creakingDoor.wav");
+        Music creakingDoorM = TinySound.loadMusic(creakingDoorF);
+        Disc creakingDoor = new Disc(creakingDoorM, "creakingDoor", false, MusicType.SoundFx);
+        add(creakingDoor);
+
+        File creakingDoor2F = new File("resources/sounds/rooms/creakingDoor2.wav");
+        Music creakingDoor2M = TinySound.loadMusic(creakingDoor2F);
+        Disc creakingDoor2 = new Disc(creakingDoor2M, "creakingDoor2", false, MusicType.SoundFx);
+        add(creakingDoor2);
+
+        File creakingDoor3F = new File("resources/sounds/rooms/creakingDoor3.wav");
+        Music creakingDoor3M = TinySound.loadMusic(creakingDoor3F);
+        Disc creakingDoor3 = new Disc(creakingDoor3M, "creakingDoor3", false, MusicType.SoundFx);
+        add(creakingDoor3);
     }
 
 
@@ -460,4 +486,9 @@ public class WorldBoxDisc extends Thread {
         }
     }
 
+    public static void main(String[] args) {
+        init();
+        testFromAllSound("doorSlam");
+        Timer.sleep(8000);
+    }
 }

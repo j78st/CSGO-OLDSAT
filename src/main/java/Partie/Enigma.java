@@ -77,9 +77,11 @@ public class Enigma extends Room{
                     break;
                 case 2: // dévérrouillage d'une action de numéro d'identification consequence[1]
                     Game.search_action(getConsequences().get(i)[1]).setAvailable(true);
+                    Engine.engine.refreshRoom();
                     break;
                 case 3: // vérrouillage d'une action de numéro d'identification consequence[1]
                     Game.search_action(getConsequences().get(i)[1]).setAvailable(false);
+                    Engine.engine.refreshRoom();
                     break;
                 case 5: // suppression de l'objet de numéro d'identification consequence[1] de l'inventaire
                     Game.player.remove_from_inventory(Game.search_item(getConsequences().get(i)[1]).id);
@@ -89,12 +91,15 @@ public class Enigma extends Room{
                     break;
                 case 7: // affichage d'un nouveau texte consequence[i][1] dans la salle consequence[i][2]
                     Game.search_room(getConsequences().get(i)[2]).text_evolve(Game.search_text(getConsequences().get(i)[1]));
+                    Engine.engine.refreshRoom();
                     break;
                 case 8: // rend une salle inaccessible
                     Game.search_room(getConsequences().get(i)[1]).setAccess(false);
+                    Engine.engine.refreshRoom();
                     break;
                 case 9: // rend une salle accessible
                     Game.search_room(getConsequences().get(i)[1]).setAccess(true);
+                    Engine.engine.refreshRoom();
                     break;
                 case 10: // affiche écran fin de partie
                     LoadMap gl = new LoadMap();
