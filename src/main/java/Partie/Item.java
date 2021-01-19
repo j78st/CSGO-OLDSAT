@@ -86,6 +86,4 @@ public class Item {
             Game.search_action(id_actions.get(i)).setAvailable(bool);
         }
     }
-
-
 }

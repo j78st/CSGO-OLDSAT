@@ -97,6 +97,7 @@ public class load_saveController implements Controller {
             Serial_game srg = save_to_load.srgame;
             srg.createGameFromMemory();
             Engine.engine.refreshRoom();
+            Game.setBas(0);
 
             // lancement
             LoadMap gl = new LoadMap();
@@ -104,6 +105,7 @@ public class load_saveController implements Controller {
             WorldBoxDisc.play(Son.valid);
 
             // init chrono
+            Engine.engine.timer_lbl.setVisible(true);
             Engine.chrono = new TimerController(Game.timer);
             Engine.chrono.start();
         }

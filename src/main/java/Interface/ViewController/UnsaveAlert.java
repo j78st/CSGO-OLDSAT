@@ -37,32 +37,35 @@ public class UnsaveAlert {
         alert.getButtonTypes().addAll(yes, no, undo);
 
         // traitement de la réponse
-        Optional<ButtonType> option = alert.showAndWait();
-        if (option.get() != undo) {
+        if (Game.getBas() == 0) {
+            Optional<ButtonType> option = alert.showAndWait();
 
-            // Option de sauvegarde quand appui sur OUI
-            if (option.get() == yes) {
+            if (option.get() != undo) {
 
-                // VVV sauvegarde VVV
-                File file = new File("resources/json/saves.json");
-                Memoire m = new Memoire();
-                Saves saves = (Saves) m.read_data(file); // récupération des saves
+                // Option de sauvegarde quand appui sur OUI
+                if (option.get() == yes) {
 
-                // recherche du bon slot par pseudo /!\ -> ca peut generer des problemes
-                boolean saved = false;
-                for (int i = 0; i < 10; i++) {
-                    if (!saved && Game.player.getPseudo().equals(saves.getSave(i).srgame.player.getPseudo())) {
-                        saves.setSave(i, new SaveSlot(i, new Serial_game()));
-                        saved = true;
+                    // VVV sauvegarde VVV
+                    File file = new File("resources/json/saves.json");
+                    Memoire m = new Memoire();
+                    Saves saves = (Saves) m.read_data(file); // récupération des saves
+
+                    // recherche du bon slot par pseudo /!\ -> ca peut generer des problemes
+                    boolean saved = false;
+                    for (int i = 0; i < 10; i++) {
+                        if (!saved && Game.player.getPseudo().equals(saves.getSave(i).srgame.player.getPseudo())) {
+                            saves.setSave(i, new SaveSlot(i, new Serial_game()));
+                            saved = true;
+                        }
                     }
+
+                    m.write_data(saves, file);
+
                 }
-
-                m.write_data(saves, file);
-
             }
-            // fermeture de l'application
-            LoadMap.stage.close();
         }
+        // fermeture de l'application
+        LoadMap.stage.close();
     }
 
     /**
@@ -79,34 +82,37 @@ public class UnsaveAlert {
         alert.getButtonTypes().addAll(yes, no, undo);
 
         // traitement de la réponse
-        Optional<ButtonType> option = alert.showAndWait();
-        if (option.get() != undo) {
+        if (Game.getBas() == 0) {
+            Optional<ButtonType> option = alert.showAndWait();
+            if (option.get() != undo) {
 
-            // Option de sauvegarde quand appui sur OUI
-            if (option.get() == yes) {
+                // Option de sauvegarde quand appui sur OUI
+                if (option.get() == yes) {
 
-                // VVV sauvegarde VVV
-                File file = new File("resources/json/saves.json");
-                Memoire m = new Memoire();
-                Saves saves = (Saves) m.read_data(file); // récupération des saves
+                    // VVV sauvegarde VVV
+                    File file = new File("resources/json/saves.json");
+                    Memoire m = new Memoire();
+                    Saves saves = (Saves) m.read_data(file); // récupération des saves
 
-                // recherche du bon slot par pseudo /!\ -> ca peut generer des problemes
-                boolean saved = false;
-                for (int i = 0; i < 10; i++) {
-                    if (!saved && Game.player.getPseudo().equals(saves.getSave(i).srgame.player.getPseudo())) {
-                        saves.setSave(i, new SaveSlot(i, new Serial_game()));
+                    // recherche du bon slot par pseudo /!\ -> ca peut generer des problemes
+                    boolean saved = false;
+                    for (int i = 0; i < 10; i++) {
+                        if (!saved && Game.player.getPseudo().equals(saves.getSave(i).srgame.player.getPseudo())) {
+                            saves.setSave(i, new SaveSlot(i, new Serial_game()));
 
-                        saved = true;
+                            saved = true;
+                        }
                     }
+
+                    m.write_data(saves, file);
+
                 }
-
-                m.write_data(saves, file);
-
             }
-            // retour écran accueil
-            Game.reset_game();
-            LoadMap gl = new LoadMap();
-            gl.display_screen_from_id(LoadMap.HOME);
         }
+
+        // retour écran accueil
+        Game.reset_game();
+        LoadMap gl = new LoadMap();
+        gl.display_screen_from_id(LoadMap.HOME);
     }
 }

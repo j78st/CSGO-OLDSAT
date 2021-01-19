@@ -14,6 +14,37 @@ public class Room {
     String path_image; // url de l'image liée à la salle
     // ArrayList<String> sounds;
     ArrayList<Integer> id_actions; // identifiants des actions réalisables dans cette salle
+    String room_name; // nom de la salle, sert pour le bac à sable
+    boolean bas; // boolean indiquant si la salle est accessible depuis le mode bac à sable ou non
+
+    /**
+     * Constructeur d'une salle
+     * @param id identifiant de la salle
+     * @param neighbour_north identifiant de son voisin nord, -1 s'il n'existe pas
+     * @param neighbour_east identifiant de son voisin est, -1 s'il n'existe pas
+     * @param neighbour_south identifiant de son voisin sud, -1 s'il n'existe pas
+     * @param neighbour_west identifiant de son voisin ouest, -1 s'il n'existe pas
+     * @param access indique si la salle est accessible
+     * @param id_text identifiant du texte de la salle
+     * @param path_image URL de l'image de la salle
+     * @param room_name nom de la salle, une salle nommée est accessible depuis le mode bac à sable
+     */
+    public Room(int id, int neighbour_north, int neighbour_east, int neighbour_south, int neighbour_west,
+                boolean access, int id_text, String path_image/*, ArrayList<String> sounds*/, String room_name){
+        this.id = id;
+        this.neighbours[0] = neighbour_north;
+        this.neighbours[1] = neighbour_east;
+        this.neighbours[2] = neighbour_south;
+        this.neighbours[3] = neighbour_west;
+        this.access = access;
+        this.id_text = id_text;
+        this.path_image = path_image;
+        this.id_actions = new ArrayList<>();
+        // this.sounds = sounds;
+        this.room_name = room_name;
+        this.bas = true;
+        Game.rooms.add(this); // ajoute la salle à la liste des salles/lieux d'interaction disponibles dans le jeu
+    }
 
     /**
      * Constructeur d'une salle
@@ -38,6 +69,8 @@ public class Room {
         this.path_image = path_image;
         this.id_actions = new ArrayList<>();
         // this.sounds = sounds;
+        this.room_name = "Sans_Nom";
+        this.bas = false;
         Game.rooms.add(this); // ajoute la salle à la liste des salles/lieux d'interaction disponibles dans le jeu
     }
 
@@ -59,6 +92,8 @@ public class Room {
         this.id_text = id_text;
         this.path_image = path_image;
         this.id_actions = new ArrayList<>();
+        this.room_name = "Sans_Nom";
+        this.bas = false;
         // this.sounds = sounds;
         Game.rooms.add(this); // ajoute la salle à la liste des salles/lieux d'interaction disponibles dans le jeu
     }
@@ -96,6 +131,9 @@ public class Room {
         return id_actions;
     }
 
+    public String getRoom_name() { return room_name; }
+
+    public boolean isBas() { return bas; }
 
     public void add_action(int id_action){ // ajoute une action à la liste des actions possibles de la salle
         this.id_actions.add(id_action);
@@ -129,11 +167,34 @@ public class Room {
             if (Game.getTexts().get(i).getId() == getId_text()) {
                 Game.texts.get(i).text = Game.texts.get(i).text + more_text;
                 found = true;
-
             }
             i++;
         }
         Engine.engine.refreshText();
+    }
+
+    /**
+     * méthode permettant de bloquer l'accès à tous les voisins (sert pour le mode bac à sable)
+     */
+    public void close_neighboors(){
+        for(int i = 0; i<4; i++) {
+            if (neighbours[i] != -1) {
+                Game.search_room(neighbours[i]).setAccess(false);
+            }
+        }
+    }
+
+    /**
+     * méthode permettant de savoir, à partir de son id, si une salle est une salle voisine ou pas
+     */
+    public boolean is_a_neighboor(int id_room){
+        boolean res = false;
+        for(int i=0; i<4; i++){
+            if(id_room == neighbours[i]){
+                res = true;
+            }
+        }
+        return res;
     }
 
 }

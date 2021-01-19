@@ -10,14 +10,10 @@ import Music.Systems.WorldBoxDisc;
 import Partie.Action;
 import Partie.Game;
 import Partie.Item;
-import Timer.TimerController;
-import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.Group;
 import javafx.scene.Node;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
@@ -38,7 +34,7 @@ public class gameController implements Controller {
     // Déclaration objets
     // ==========================================================
 
-    private ObservableList<Action> actionObservableList;
+    //private ObservableList<Action> actionObservableList;
 
     // zones de l'écran -----------------------------------------
     @FXML
@@ -54,6 +50,9 @@ public class gameController implements Controller {
 
     @FXML
     private Region reference;
+
+    @FXML
+    public AnchorPane root;
 
     // inventaire -----------------------------------------------
     @FXML
@@ -171,7 +170,7 @@ public class gameController implements Controller {
      */
     @FXML
     void check_answer(ActionEvent event) throws IOException {
-        int ans = Integer.parseInt(answer_prompt.getText());
+        String ans = answer_prompt.getText();
         Game.search_enigma(Game.player.getPosition()).check_solution(ans);
     }
 
@@ -189,7 +188,11 @@ public class gameController implements Controller {
         // suspension du timer et récuération du temps restant
         Engine.chrono.toogleTimer();
         Engine.gamePaused = true;
-        timer_pause.setText(Engine.chrono.getRemainingTime());
+        if (Engine.chrono != null) {
+            timer_pause.setText(Engine.chrono.getRemainingTime());
+        } else {
+            timer_pause.setText(" ");
+        }
     }
 
     /**
@@ -288,6 +291,7 @@ public class gameController implements Controller {
      */
     @FXML
     void exit_app(ActionEvent event) throws InterruptedException, IOException {
+        // Message d'alerte sur la sauvegarde
         UnsaveAlert alert = new UnsaveAlert();
         alert.exitGame();
     }
@@ -323,7 +327,7 @@ public class gameController implements Controller {
         for(int i = 0; i< id_list.size(); i++){
             list.add(Game.search_action(id_list.get(i)));
         }
-        actionObservableList = FXCollections.observableArrayList();
+        ObservableList<Action> actionObservableList = FXCollections.observableArrayList();
         for (int i = 0; i<list.size(); i++) {
             if (list.get(i).isAvailable()) {
                 actionObservableList.add(list.get(i));
@@ -472,7 +476,6 @@ public class gameController implements Controller {
         // Mise en place scroller
         scroller.setFitToWidth(true);
         scroller.setContent(narration);
-
     }
 
     /**
@@ -545,6 +548,7 @@ public class gameController implements Controller {
      */
     @Override
     public void apply_settings() {
+        // changement de police pour les textes
         for (Node n: LoadMap.scene.getRoot().lookupAll(".Custom_label")) {
             if (Settings.icon_color.equals("white")){
                 narration.setStyle("-fx-fill: white; -fx-font-size: " + Settings.fontSize + "px;");

@@ -24,6 +24,9 @@ public class LoadMap {
     public static final int NEW_GAME_FORM = 6;
     public static final int GAME = 7;
     public static final int END_GAME = 8;
+    public static final int ADMIN = 9;
+    public static final int AUTHENTIFICATION = 10;
+    public static final int CUTSCENE = 11;
 
     /**
      * L'appel a cette fonction permet d'avoir une structure "LoaderKit" qui correspond a l'ecran que l'on souhaite afficher.
@@ -116,6 +119,32 @@ public class LoadMap {
                 kit.setNext_controller(controller);
                 break;
 
+            case ADMIN:
+                loader = new FXMLLoader();
+                loader.setLocation(getClass().getResource("/fxml/admin_screenView.fxml"));
+                root = loader.load();
+                controller = (admin_screenController) loader.getController();
+                kit.setNext_root(root);
+                kit.setNext_controller(controller);
+                break;
+
+            case AUTHENTIFICATION:
+                loader = new FXMLLoader();
+                loader.setLocation(getClass().getResource("/fxml/id_adminView.fxml"));
+                root = loader.load();
+                controller = (idAdminController) loader.getController();
+                kit.setNext_root(root);
+                kit.setNext_controller(controller);
+                break;
+
+            case CUTSCENE:
+                loader = new FXMLLoader();
+                loader.setLocation(getClass().getResource("/fxml/cinematicView.fxml"));
+                root = loader.load();
+                controller = (cinematicController) loader.getController();
+                kit.setNext_root(root);
+                kit.setNext_controller(controller);
+                break;
         }
         return kit;
     }
@@ -134,7 +163,6 @@ public class LoadMap {
         Controller controller = kit.getNext_controller();
         controller.initialize();
         controller.setShortcut();
-
 
         // affichage
         stage.setTitle("OLD'SAT");
@@ -159,7 +187,7 @@ public class LoadMap {
         settings_menuController controller = loader.getController();
         controller.provide_current_screen_id(previous_id); // ID de l'écran ou on appelle les paramètres
         controller.setShortcut();
-        
+
         stage.setTitle("OLD'SAT");
         stage.getScene().setRoot(parent);
 

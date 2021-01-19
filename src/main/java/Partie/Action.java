@@ -4,6 +4,8 @@ import Interface.ScreenLoader.LoadMap;
 import Interface.Settings.Engine;
 import Music.Systems.Son;
 import Music.Systems.WorldBoxDisc;
+import javafx.animation.FadeTransition;
+import javafx.util.Duration;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -102,18 +104,50 @@ public class Action {
                     Engine.engine.refreshRoom();
                     break;
                 case 9: // rend une salle accessible
-                    Game.search_room(getConsequences().get(i)[1]).setAccess(true);
-                    Engine.engine.refreshRoom();
+                    if(Game.getBas() == 0 || !Game.search_room(Game.getBas()).is_a_neighboor(getConsequences().get(i)[1])) { // si on n'est pas en mode bac à sable ou si la salle à débloquer n'est pas un voisin de la salle testée en mode bac à sable (car on veut bloquer le joueur dans la salle testée dans ce mode)
+                        Game.search_room(getConsequences().get(i)[1]).setAccess(true);
+                        Engine.engine.refreshRoom();
+                    }else{ // on est en mode bac à sable et on tente de débloquer l'accès à un voisin
+                        Game.search_room(Game.getBas()).text_evolve("\n\n[Vous avez bien débloqué une salle voisine mais" +
+                                ", étant en mode bac à sable, l'accès à celle-ci ne vous est pas autorisé.]\n");
+                    }
                     break;
                 case 10: // affiche la boite à réponses
                     Engine.engine.answer_box_visible(true);
                     break;
                 case 11: // affiche écran fin de partie
-                    LoadMap gl = new LoadMap();
-                    gl.display_screen_from_id(LoadMap.END_GAME);
+                    (new LoadMap()).display_screen_from_id(LoadMap.END_GAME);
                     WorldBoxDisc.play(Son.hibou);
                     WorldBoxDisc.play(Son.valid);
                     break;
+                case 12: // mouvement particulier du joueur pour le mode bac à sable
+                    Game.setBas(getConsequences().get(i)[1]); // on met le numéro de la salle traitée dans game.bas
+                    Game.player.move(getConsequences().get(i)[1]); // bouge le joueur dans la salle à tester
+                    Game.getPlayer().clear_inventory(); // vide l'inventaire du joueur
+                    Game.player.add_to_inventory(42); // donne l'objet d'id 42 (id normalisée pour le couteau suisse admin)
+                    Game.search_room(Game.getPlayer().position).close_neighboors(); // bloque l'accès à tous les voisins
+                    Game.set_object_actions_available();
+                    Engine.engine.timer_lbl.setVisible(false);
+                    Engine.engine.refreshRoom();
+                    break;
+                case 13: // faire évoluer texte affiché par une action, consequence[i][1] correspond à l'action à modifier, consequence[i][2] correspond à l'id du nouveau texte
+                   for(int j = 0; j<Game.search_action(getConsequences().get(i)[1]).consequences.size(); j++){
+                       if(Game.search_action(getConsequences().get(i)[1]).consequences.get(j)[0] == 7){ //cherche la conséquence écrivant du texte, on part du principe qu'il ne peut y en avoir qu'une par action
+                           Game.search_action(getConsequences().get(i)[1]).consequences.get(j)[1] = getConsequences().get(i)[2];
+                       }
+                   }
+                   break;
+                case 14: // retirer du temps (en seconde) au timer (sert pour demande d'indice)
+                    Engine.chrono.penaltyTime(getConsequences().get(i)[1]);
+                    break;
+                case 15: // lance une cinématique
+                    FadeTransition fadeOUT = new FadeTransition();
+                    fadeOUT.setDuration(Duration.seconds(5));
+                    fadeOUT.setNode(Engine.engine.root);
+                    fadeOUT.setFromValue(1);
+                    fadeOUT.setToValue(0);
+                    fadeOUT.play();
+                    (new LoadMap()).display_screen_from_id(LoadMap.CUTSCENE); break;
              }
         }
     }
