@@ -28,9 +28,9 @@ public class Main extends Application {
         Engine oui = new Engine();
         Game non = new Game(new Player(""),0);
 
-
         // Déclaration de la fenêtre utilisée pour l'application
         LoadMap.stage = primaryStage;
+        LoadMap.stage.setMaximized(true);
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(getClass().getResource("/fxml/home_screenView.fxml"));
 
@@ -51,7 +51,6 @@ public class Main extends Application {
     }
 
     public static void main(String[] args) throws InterruptedException, IOException {
-
         // lancement application
         launch(args);
     }

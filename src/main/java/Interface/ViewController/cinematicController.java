@@ -63,7 +63,11 @@ public class cinematicController implements Controller {
     // Méthodes de changement de texte
     // ==========================================================
     @FXML
-    void set_text(ActionEvent event) throws IOException {
+    void set_text(ActionEvent event) throws IOException, InterruptedException {
+
+        FadeTransition ft = new FadeTransition();
+        ft.setDuration(Duration.seconds(2));
+        ft.setNode(narration);
 
         no_text += 1;
         if(no_text == 2){
@@ -85,7 +89,10 @@ public class cinematicController implements Controller {
             Engine.chrono.start();
         }
 
+        System.out.println("avant fade");
         fadeOutTransition(narration);
+        System.out.println("apres fade");
+
 
         switch (no_text) {
             case 0 :
@@ -102,31 +109,31 @@ public class cinematicController implements Controller {
         }
 
         fadeInTransition(narration);
-
     }
 
     private void fadeInTransition (Node node) {
         FadeTransition fadeIN = new FadeTransition();
         fadeIN.setDuration(Duration.seconds(2));
         fadeIN.setNode(node);
-        fadeIN.setFromValue(0);
-        fadeIN.setToValue(1);
+        fadeIN.setFromValue(0.0);
+        fadeIN.setToValue(1.0);
         fadeIN.play();
     }
 
     private void fadeOutTransition (Node node) {
-        FadeTransition fadeOUT = new FadeTransition();
-        fadeOUT.setDuration(Duration.seconds(2));
-        fadeOUT.setNode(node);
-        fadeOUT.setFromValue(1);
-        fadeOUT.setToValue(0);
-        fadeOUT.play();
+        FadeTransition alo = new FadeTransition();
+        alo.setDuration(Duration.seconds(200));
+        alo.setNode(node);
+        alo.setFromValue(1.0);
+        alo.setToValue(0.0);
+        alo.play();
     }
 
-    public void go_to_game() throws IOException {
+    public void go_to_game() throws IOException, InterruptedException {
         LoadMap gl = new LoadMap();
         gl.display_screen_from_id(LoadMap.GAME);
         fadeInTransition(Engine.engine.root);
+        Thread.sleep(500);
     }
 
     // ==========================================================
