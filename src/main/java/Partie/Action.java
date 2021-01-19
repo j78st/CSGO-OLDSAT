@@ -5,6 +5,8 @@ import Interface.Settings.Engine;
 import Music.Systems.Son;
 import Music.Systems.WorldBoxDisc;
 import javafx.animation.FadeTransition;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.util.Duration;
 
 import java.io.IOException;
@@ -142,12 +144,21 @@ public class Action {
                     break;
                 case 15: // lance une cinématique
                     FadeTransition fadeOUT = new FadeTransition();
-                    fadeOUT.setDuration(Duration.seconds(5));
+                    fadeOUT.setDuration(Duration.seconds(4));
                     fadeOUT.setNode(Engine.engine.root);
                     fadeOUT.setFromValue(1);
                     fadeOUT.setToValue(0);
-                    fadeOUT.play();
-                    (new LoadMap()).display_screen_from_id(LoadMap.CUTSCENE); break;
+                    fadeOUT.setOnFinished(new EventHandler<ActionEvent>() {
+                        @Override
+                        public void handle(ActionEvent event) {
+                            try {
+                                (new LoadMap()).display_screen_from_id(LoadMap.CUTSCENE);
+                            } catch (IOException e) {
+                                e.printStackTrace();
+                            }
+                        }
+                    });
+                    fadeOUT.play(); break;
              }
         }
     }

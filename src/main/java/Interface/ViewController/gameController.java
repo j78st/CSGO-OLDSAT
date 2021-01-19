@@ -185,10 +185,10 @@ public class gameController implements Controller {
         background_menu.toFront();
         vbox_menu.toFront();
 
-        // suspension du timer et récuération du temps restant
-        Engine.chrono.toogleTimer();
+        // suspension du timer et récupération du temps restant
         Engine.gamePaused = true;
         if (Engine.chrono != null) {
+            Engine.chrono.toogleTimer();
             timer_pause.setText(Engine.chrono.getRemainingTime());
         } else {
             timer_pause.setText(" ");

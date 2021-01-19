@@ -97,9 +97,11 @@ public class Scenario_structure {
 
         ArrayList<int[]> consequences_action104_2 = new ArrayList<>();
         consequences_action104_2.add(new int[]{15}); //Lance la cinématique
-        consequences_action104_2.add(new int[]{1,107}); //Bouge le joueur dans la salle suivante
         Action action104_2 = new Action(1042,true,"Rentrer chez vous [FIN DU PROLOGUE]", consequences_action104_2, 104);
 
+        ArrayList<int[]> consequences_action104_3 = new ArrayList<>();
+        consequences_action104_3.add(new int[]{1,107}); //Bouge le joueur dans la salle suivante
+        Action action104_3 = new Action(1043,false,"Rentrer chez vous [FIN DU PROLOGUE]", consequences_action104_3, 104);
 
 
 

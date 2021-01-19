@@ -6,9 +6,11 @@ import Interface.Settings.Engine;
 import Interface.Settings.Settings;
 import Music.Systems.Son;
 import Music.Systems.WorldBoxDisc;
+import Partie.Game;
 import Timer.TimerController;
 import javafx.animation.FadeTransition;
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
 import javafx.scene.control.Button;
@@ -31,16 +33,16 @@ public class cinematicController implements Controller {
             "C'est ici que commence votre véritable aventure.\n\n"+
             "Vous arrivez dans le hall d'accueil de l'ENSSAT.";
 
-    private String text2 = "Vous regardez autour de vous, l'endroit est désert,\n" +
-            "toutefois vous retrouvez le panneau indiquant la salle 137C, celui qui vous a guidé le matin même.\n" +
+    private String text2 = "Vous regardez autour de vous, l'endroit est désert.\n" +
+            "Toutefois vous retrouvez le panneau indiquant la salle 137C, celui qui vous a guidé le matin même.\n" +
             "Personne n'a pris le temps de le ranger, bizarre ...\n\n" +
             "Un silence assez oppressant vous pousse à ne pas rester là.\n" +
             "Pourquoi ne pas suivre la direction indiquée par le panneau,\n" +
             "après tout vous connaissez déjà ce chemin.";
 
-    private String text3 = "Vous vous dirigez vers le couloir.\n\n " +
-            "Après quelques pas vous vous arrêtez net,\n" +
-            "vous êtes interpellé par une faible lueur.\n" +
+    private String text3 = "Vous vous dirigez vers le couloir.\n\n" +
+            "Après quelques pas vous vous arrêtez net...\n" +
+            "Vous êtes interpellé par une faible lueur.\n" +
             "Elle vient de votre droite.\n" +
             "Vous remarquez une porte entrouverte sur laquelle vous lisez \"Bibliothèque\".";
 
@@ -63,77 +65,81 @@ public class cinematicController implements Controller {
     // Méthodes de changement de texte
     // ==========================================================
     @FXML
-    void set_text(ActionEvent event) throws IOException, InterruptedException {
-
-        FadeTransition ft = new FadeTransition();
-        ft.setDuration(Duration.seconds(2));
-        ft.setNode(narration);
-
+    void set_text(ActionEvent event) throws IOException {
         no_text += 1;
+        text_transition();
+
         if(no_text == 2){
-            end.setPrefSize(200, 50);
-            end.setText("Entrer dans la bibliothèque");
-            end.setStyle("-fx-text-fill: black; " +
-                    "-fx-border-color: transparent; " +
-                    "-fx-background-color: white; " +
-                    "-fx-background-radius: 100");
             end_pane.toFront();
             end_pane.setVisible(true);
             arrow_pane.setVisible(false);
+        } else if (no_text == 3) {
+            Game.search_action(1043).do_consequences();
+            screen_transition();
         }
-        if (no_text == 3) {
-            fadeOutTransition(narration);
-            go_to_game(); // pour terminer la cinématique
-            Engine.engine.timer_lbl.setVisible(true);
-            Engine.chrono = new TimerController(60*25);
-            Engine.chrono.start();
-        }
+    }
 
-        System.out.println("avant fade");
-        fadeOutTransition(narration);
-        System.out.println("apres fade");
+    private void text_transition () {
+        FadeTransition fadeOUT = new FadeTransition();
+        fadeOUT.setDuration(Duration.seconds(2));
+        fadeOUT.setNode(narration);
+        fadeOUT.setFromValue(1);
+        fadeOUT.setToValue(0);
+        fadeOUT.play();
 
+        fadeOUT.setOnFinished(event -> {
+            if (no_text == 1) { // affichage texte 2
 
-        switch (no_text) {
-            case 0 :
-                WorldBoxDisc.play(Son.hibou);
-                narration.setText(text1); break;
-            case 1 :
                 WorldBoxDisc.play(Son.wind);
-                narration.setText(text2); break;
-            case 2 :
+                narration.setText(text2);
+
+            } else if (no_text == 2) { // affichage texte 3
+
                 WorldBoxDisc.play(Son.tick); // bruit de pas
                 WorldBoxDisc.play(Son.tick); // grincement
                 WorldBoxDisc.play(Son.porte1); // claquement de porte
-                narration.setText(text3); break;
-        }
+                narration.setText(text3);
 
-        fadeInTransition(narration);
+            }
+            // réaffichage texte
+            FadeTransition fadeIN = new FadeTransition();
+            fadeIN.setDuration(Duration.seconds(2));
+            fadeIN.setNode(narration);
+            fadeIN.setFromValue(0);
+            fadeIN.setToValue(1);
+            fadeIN.play();
+        });
+
+        fadeOUT.play();
     }
 
-    private void fadeInTransition (Node node) {
-        FadeTransition fadeIN = new FadeTransition();
-        fadeIN.setDuration(Duration.seconds(2));
-        fadeIN.setNode(node);
-        fadeIN.setFromValue(0.0);
-        fadeIN.setToValue(1.0);
-        fadeIN.play();
-    }
+    private void screen_transition(){
+        FadeTransition fadeOUT = new FadeTransition();
+        fadeOUT.setDuration(Duration.seconds(2));
+        fadeOUT.setNode(narration);
+        fadeOUT.setFromValue(1);
+        fadeOUT.setToValue(0);
 
-    private void fadeOutTransition (Node node) {
-        FadeTransition alo = new FadeTransition();
-        alo.setDuration(Duration.seconds(200));
-        alo.setNode(node);
-        alo.setFromValue(1.0);
-        alo.setToValue(0.0);
-        alo.play();
-    }
+        fadeOUT.setOnFinished(event -> {
+            LoadMap gl = new LoadMap();
+            try {
+                gl.display_screen_from_id(LoadMap.GAME);
+                Engine.engine.timer_lbl.setVisible(true);
+                Engine.chrono = new TimerController(60*25);
+                Engine.chrono.start();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
 
-    public void go_to_game() throws IOException, InterruptedException {
-        LoadMap gl = new LoadMap();
-        gl.display_screen_from_id(LoadMap.GAME);
-        fadeInTransition(Engine.engine.root);
-        Thread.sleep(500);
+            FadeTransition ft = new FadeTransition();
+            ft.setDuration(Duration.seconds(2));
+            ft.setNode(Engine.engine.root);
+            ft.setFromValue(0);
+            ft.setToValue(1);
+            ft.play();
+        });
+
+        fadeOUT.play();
     }
 
     // ==========================================================
@@ -144,9 +150,12 @@ public class cinematicController implements Controller {
         next.setGraphic(new ImageView(new Image("/icons/black/arrow_right.png")));
         end_pane.toBack();
         end_pane.setVisible(false);
-        no_text = 0;
+
         narration.setWrapText(true);
         narration.setText(text1);
+
+        no_text = 0;
+        WorldBoxDisc.play(Son.hibou);
     }
 
     @Override
@@ -161,3 +170,66 @@ public class cinematicController implements Controller {
         }
     }
 }
+/*FadeTransition fadeOUT = new FadeTransition();
+        fadeOUT.setDuration(Duration.seconds(1));
+        fadeOUT.setNode(narration);
+
+        no_text += 1;
+        if(no_text == 2){
+            text_transition();
+            end_pane.toFront();
+            end_pane.setVisible(true);
+            arrow_pane.setVisible(false);
+        }
+
+        if (no_text == 3) {
+            FadeTransition ft = new FadeTransition();
+            ft.setDuration(Duration.seconds(2));
+            ft.setNode(Engine.engine.root);
+            ft.setFromValue(1.0);
+            ft.setToValue(0.0);
+            ft.setOnFinished(new EventHandler<ActionEvent>() {
+                @Override
+                public void handle(ActionEvent event){
+                    try {
+                        go_to_game(); // pour terminer la cinématique
+                        Engine.engine.timer_lbl.setVisible(true);
+                        Engine.chrono = new TimerController(60*25);
+                        Engine.chrono.start();
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                }
+            });
+        }
+
+        // disparition du texte
+        fadeOUT.setFromValue(1);
+        fadeOUT.setToValue(0);
+
+        fadeOUT.setOnFinished(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                //modification du texte
+                switch (no_text) {
+                    case 1 :
+                        WorldBoxDisc.play(Son.wind);
+                        narration.setText(text2); break;
+                    case 2 :
+                        WorldBoxDisc.play(Son.tick); // bruit de pas
+                        WorldBoxDisc.play(Son.tick); // grincement
+                        WorldBoxDisc.play(Son.porte1); // claquement de porte
+                        narration.setText(text3); break;
+                }
+                // reapparition du texte
+                FadeTransition fadeIN = new FadeTransition();
+                fadeIN.setDuration(Duration.seconds(1));
+                fadeIN.setNode(narration);
+                fadeIN.setFromValue(0);
+                fadeIN.setToValue(1);
+                fadeIN.play();
+            }
+        });
+        fadeOUT.play();*/

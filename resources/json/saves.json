@@ -4,7 +4,7 @@
       "no": 0,
       "srgame": {
         "player": {
-          "pseudo": "nfq",
+          "pseudo": "wxcvb",
           "inventory": [],
           "position": 101
         },
@@ -95,7 +95,8 @@
             "path_image": "pictures/Exterieur.png",
             "id_actions": [
               1041,
-              1042
+              1042,
+              1043
             ],
             "room_name": "Sans_Nom",
             "bas": false
@@ -130,11 +131,12 @@
             "id_text": 1081,
             "path_image": "pictures/Bibliotheque.png",
             "id_actions": [
-              1081,
+              1088,
               1082,
               1083,
               1087,
               1084,
+              1081,
               1085,
               1086
             ],
@@ -312,6 +314,24 @@
             "id_text": 2101,
             "path_image": "pictures/Trousse.png",
             "id_actions": [],
+            "room_name": "Sans_Nom",
+            "bas": false
+          },
+          {
+            "id": 211,
+            "neighbours": [
+              -1,
+              -1,
+              108,
+              -1
+            ],
+            "access": true,
+            "id_text": 2111,
+            "path_image": "pictures/Trousse.png",
+            "id_actions": [
+              2111,
+              2112
+            ],
             "room_name": "Sans_Nom",
             "bas": false
           },
@@ -623,7 +643,14 @@
             "consequences": [
               [
                 15
-              ],
+              ]
+            ]
+          },
+          {
+            "id": 1043,
+            "available": false,
+            "text": "Rentrer chez vous [FIN DU PROLOGUE]",
+            "consequences": [
               [
                 1,
                 107
@@ -661,13 +688,13 @@
             ]
           },
           {
-            "id": 1081,
+            "id": 1088,
             "available": true,
-            "text": "Inspecter le bureau",
+            "text": "Examiner la porte",
             "consequences": [
               [
                 1,
-                202
+                211
               ]
             ]
           },
@@ -715,6 +742,17 @@
               [
                 1,
                 209
+              ]
+            ]
+          },
+          {
+            "id": 1081,
+            "available": true,
+            "text": "Inspecter le bureau",
+            "consequences": [
+              [
+                1,
+                202
               ]
             ]
           },
@@ -947,7 +985,41 @@
                 1083
               ],
               [
+                5,
+                4
+              ],
+              [
                 10
+              ]
+            ]
+          },
+          {
+            "id": 2111,
+            "available": true,
+            "text": "Essayer d\u0027enfoncer la porte",
+            "consequences": [
+              [
+                7,
+                2112
+              ],
+              [
+                3,
+                2111
+              ]
+            ]
+          },
+          {
+            "id": 2112,
+            "available": false,
+            "text": "Essayer la clef dans la serrure [Clef]",
+            "consequences": [
+              [
+                7,
+                2113
+              ],
+              [
+                3,
+                2112
               ]
             ]
           },
@@ -1104,17 +1176,18 @@
             "name": "Clef",
             "description": "Ancienne clef - Elle va sûrement vous permettre de sortir d\u0027ici",
             "path_image": "objects/key.png",
-            "max_usage": 1,
+            "max_usage": -1,
             "current_usage": 0,
             "id_actions": [
-              2081
+              2081,
+              2112
             ]
           }
         ],
         "texts": [
           {
             "id": 1011,
-            "text": "Salutations nfq.\n\nVous avez été admis à l’ENSSAT, l’École Nationale Supérieure des Sciences Appliquées et de Technologie, c’est génial n’est-ce pas ?\nC\u0027est votre premier jour et vous arrivez dans le hall d\u0027entrée de l\u0027ENSSAT dans lequel vous trouvez un groupe de nouveaux élèves, vous êtes un peu stressé.\nVous savez que vous devez rejoindre une salle libellée 137C mais vous n\u0027avez aucune idée de comment vous y rendre.\n\n[Tutoriel]\nRemarquez la liste des actions disponibles sur votre écran, vous pouvez en sélectionner une en cliquant dessus puis appuyer sur le bouton \"Valider action\" pour l\u0027exécuter.\n\n"
+            "text": "Salutations wxcvb.\n\nVous avez été admis à l’ENSSAT, l’École Nationale Supérieure des Sciences Appliquées et de Technologie, c’est génial n’est-ce pas ?\nC\u0027est votre premier jour et vous arrivez dans le hall d\u0027entrée de l\u0027ENSSAT dans lequel vous trouvez un groupe de nouveaux élèves, vous êtes un peu stressé.\nVous savez que vous devez rejoindre une salle libellée 137C mais vous n\u0027avez aucune idée de comment vous y rendre.\n\n[Tutoriel]\nRemarquez la liste des actions disponibles sur votre écran, vous pouvez en sélectionner une en cliquant dessus puis appuyer sur le bouton \"Valider action\" pour l\u0027exécuter.\n\n"
           },
           {
             "id": 1012,

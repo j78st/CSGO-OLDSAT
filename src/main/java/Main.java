@@ -31,6 +31,7 @@ public class Main extends Application {
         // Déclaration de la fenêtre utilisée pour l'application
         LoadMap.stage = primaryStage;
         LoadMap.stage.setMaximized(true);
+
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(getClass().getResource("/fxml/home_screenView.fxml"));
 
