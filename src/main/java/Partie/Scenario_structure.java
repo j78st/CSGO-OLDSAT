@@ -12,7 +12,7 @@ public class Scenario_structure {
         //Salles
         Room room1 = new Room(101,102,-1,-1,-1,true,1011,"pictures/Hall.png", "Prologue - Hall d'entrée"); //Hall enssat
         Room room2 = new Room(102,-1,-1,-1,-1, false,1021,"pictures/Amphi.png", "Prologue - Amphithéâtre"); //Amphi
-        Room room3 = new Room(103,-1,-1,-1,-1, true,1031,"pictures/Amphi.png"); //Amphi post-conférence
+        Room room3 = new Room(103,-1,-1,-1,-1, true,1031,"pictures/Amphi2.png"); //Amphi post-conférence
         Room room3_1 = new Room(201,103,2011,"pictures/Trousse.png"); //trousse
         Room room4 = new Room(104,-1,-1,-1,-1,true,1041,"pictures/Exterieur.png");
 

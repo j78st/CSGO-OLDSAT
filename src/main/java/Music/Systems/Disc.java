@@ -26,10 +26,16 @@ public class Disc {
      */
     public MusicType type;
 
-    public Disc(Music inMusic, String inName, boolean inLoop, MusicType inType){
+    /**
+     * Durée en secondes de la piste sonore
+     */
+    public int duration;
+
+    public Disc(Music inMusic, String inName, boolean inLoop, MusicType inType, int inDuration){
         this.aMusic = inMusic;
         this.name = inName;
         this.loop = inLoop;
         this.type = inType;
+        this.duration = inDuration;
     }
 }
