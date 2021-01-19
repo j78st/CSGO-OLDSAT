@@ -57,189 +57,189 @@ public class WorldBoxDisc extends Thread {
         //musique de jeu
         File windF = new File("resources/sounds/ambiant/wind.wav");
         Music windM = TinySound.loadMusic(windF);
-        Disc wind = new Disc(windM, "wind", true, MusicType.Background);
+        Disc wind = new Disc(windM, "wind", true, MusicType.Background, 26);
         add(wind);
 
         //sons effets speciaux
         File opinel1F = new File("resources/sounds/opinel/opinel1.wav");
         Music opinel1M = TinySound.loadMusic(opinel1F);
-        Disc opinel1 = new Disc(opinel1M, "opinel1", false, MusicType.SoundFx);
+        Disc opinel1 = new Disc(opinel1M, "opinel1", false, MusicType.SoundFx, 2);
         add(opinel1);
 
         File opinel2F = new File("resources/sounds/opinel/opinel2.wav");
         Music opinel2M = TinySound.loadMusic(opinel2F);
-        Disc opinel2 = new Disc(opinel2M, "opinel2", false, MusicType.SoundFx);
+        Disc opinel2 = new Disc(opinel2M, "opinel2", false, MusicType.SoundFx, 2);
         add(opinel2);
 
         File humanHeartF = new File("resources/sounds/paranormal/human_heart_beat.wav");
         Music humanHeartM = TinySound.loadMusic(humanHeartF);
-        Disc humanHeart = new Disc(humanHeartM, "coeur", true, MusicType.SoundFx);
+        Disc humanHeart = new Disc(humanHeartM, "coeur", true, MusicType.SoundFx, 64);
         add(humanHeart);
 
         File errorF = new File("resources/sounds/ui/error.wav");
         Music errorM = TinySound.loadMusic(errorF);
-        Disc error = new Disc(errorM, "erreur", false, MusicType.SoundFx);
+        Disc error = new Disc(errorM, "erreur", false, MusicType.SoundFx, 1);
         add(error);
 
         File validationF = new File("resources/sounds/ui/validation.wav");
         Music validationM = TinySound.loadMusic(validationF);
-        Disc validation = new Disc(validationM, "valid", false, MusicType.SoundFx);
+        Disc validation = new Disc(validationM, "valid", false, MusicType.SoundFx, 2);
         add(validation);
 
         File porteDebloque1F = new File("resources/sounds/rooms/doorOpeningSound.wav");
         Music porteDebloque1M = TinySound.loadMusic(porteDebloque1F);
-        Disc porteDebloque1 = new Disc(porteDebloque1M, "porte1", false, MusicType.SoundFx);
+        Disc porteDebloque1 = new Disc(porteDebloque1M, "porte1", false, MusicType.SoundFx, 2);
         add(porteDebloque1);
 
         File porteDebloque2F = new File("resources/sounds/rooms/doorOpened.wav");
         Music porteDebloque2M = TinySound.loadMusic(porteDebloque2F);
-        Disc porteDebloque2 = new Disc(porteDebloque2M, "porte2", false, MusicType.SoundFx);
+        Disc porteDebloque2 = new Disc(porteDebloque2M, "porte2", false, MusicType.SoundFx, 1);
         add(porteDebloque2);
 
         File screamF = new File("resources/sounds/paranormal/scream1.wav");
         Music screamM = TinySound.loadMusic(screamF);
-        Disc scream = new Disc(screamM, "cris1", false, MusicType.SoundFx);
+        Disc scream = new Disc(screamM, "cris1", false, MusicType.SoundFx, 2);
         add(scream);
 
         File chatMsgF = new File("resources/sounds/ui/chatMsg.wav");
         Music chatMsgM = TinySound.loadMusic(chatMsgF);
-        Disc chatMsg = new Disc(chatMsgM, "msgChat", false, MusicType.SoundFx);
+        Disc chatMsg = new Disc(chatMsgM, "msgChat", false, MusicType.SoundFx, 2);
         add(chatMsg);
 
         File paraWords1F = new File("resources/sounds/paranormal/paranormalWords1.wav");
         Music paraWords1M = TinySound.loadMusic(paraWords1F);
-        Disc paraWords1 = new Disc(paraWords1M, "paraMot1", false, MusicType.SoundFx);
+        Disc paraWords1 = new Disc(paraWords1M, "paraMot1", false, MusicType.SoundFx, 4);
         add(paraWords1);
 
         File paraWords2F = new File("resources/sounds/paranormal/paranormalWords2.wav");
         Music paraWords2M = TinySound.loadMusic(paraWords2F);
-        Disc paraWords2 = new Disc(paraWords2M, "paraMot2", false, MusicType.SoundFx);
+        Disc paraWords2 = new Disc(paraWords2M, "paraMot2", false, MusicType.SoundFx, 3);
         add(paraWords2);
 
         File paraWords3F = new File("resources/sounds/paranormal/paranormalSound.wav");
         Music paraWords3M = TinySound.loadMusic(paraWords3F);
-        Disc paraWords3 = new Disc(paraWords3M, "paraMot3", false, MusicType.SoundFx);
+        Disc paraWords3 = new Disc(paraWords3M, "paraMot3", false, MusicType.SoundFx, 3);
         add(paraWords3);
 
         File disappearF = new File("resources/sounds/paranormal/disappearFx.wav");
         Music disappearM = TinySound.loadMusic(disappearF);
-        Disc disappear = new Disc(disappearM, "disparaitre", false, MusicType.SoundFx);
+        Disc disappear = new Disc(disappearM, "disparaitre", false, MusicType.SoundFx, 1);
         add(disappear);
 
         File owlF = new File("resources/sounds/ambiant/owl.wav");
         Music owlM = TinySound.loadMusic(owlF);
-        Disc owl = new Disc(owlM, "hibou", false, MusicType.Background);
+        Disc owl = new Disc(owlM, "hibou", false, MusicType.Background, 2);
         add(owl);
 
         File splashF = new File("resources/sounds/ambiant/Splash_0.wav");
         Music splashM = TinySound.loadMusic(splashF);
-        Disc splash = new Disc(splashM, "splash", false, MusicType.SoundFx);
+        Disc splash = new Disc(splashM, "splash", false, MusicType.SoundFx, 2);
         add(splash);
 
         File thunder0F = new File("resources/sounds/ambiant/Thunder_0.wav");
         Music thunder0M = TinySound.loadMusic(thunder0F);
-        Disc thunder0 = new Disc(thunder0M, "eclair0", false, MusicType.Background);
+        Disc thunder0 = new Disc(thunder0M, "eclair0", false, MusicType.Background, 3);
         add(thunder0);
 
         File thunder1F = new File("resources/sounds/ambiant/Thunder_1.wav");
         Music thunder1M = TinySound.loadMusic(thunder1F);
-        Disc thunder1 = new Disc(thunder1M, "eclair1", false, MusicType.Background);
+        Disc thunder1 = new Disc(thunder1M, "eclair1", false, MusicType.Background, 3);
         add(thunder1);
 
         File thunder2F = new File("resources/sounds/ambiant/Thunder_2.wav");
         Music thunder2M = TinySound.loadMusic(thunder2F);
-        Disc thunder2 = new Disc(thunder2M, "eclair2", false, MusicType.Background);
+        Disc thunder2 = new Disc(thunder2M, "eclair2", false, MusicType.Background, 2);
         add(thunder2);
 
         File thunder3F = new File("resources/sounds/ambiant/Thunder_3.wav");
         Music thunder3M = TinySound.loadMusic(thunder3F);
-        Disc thunder3 = new Disc(thunder3M, "eclair3", false, MusicType.Background);
+        Disc thunder3 = new Disc(thunder3M, "eclair3", false, MusicType.Background, 6);
         add(thunder3);
 
         File menuCLoseF = new File("resources/sounds/ui/menuClose.wav");
         Music menuCLoseM = TinySound.loadMusic(menuCLoseF);
-        Disc menuClose = new Disc(menuCLoseM, "menuClose", false, MusicType.SoundFx);
+        Disc menuClose = new Disc(menuCLoseM, "menuClose", false, MusicType.SoundFx, 1);
         add(menuClose);
 
         File menuOpenF = new File("resources/sounds/ui/menuOpen.wav");
         Music menuOpenM = TinySound.loadMusic(menuOpenF);
-        Disc menuOpen = new Disc(menuOpenM, "menuOpen", false, MusicType.SoundFx);
+        Disc menuOpen = new Disc(menuOpenM, "menuOpen", false, MusicType.SoundFx, 1);
         add(menuOpen);
 
         File liquid0F = new File("resources/sounds/ambiant/Liquid_0.wav");
         Music liquid0M = TinySound.loadMusic(liquid0F);
-        Disc liquid0 = new Disc(liquid0M, "liquid0", false, MusicType.Background);
+        Disc liquid0 = new Disc(liquid0M, "liquid0", false, MusicType.Background, 46);
         add(liquid0);
 
         File liquid1F = new File("resources/sounds/ambiant/liquid_1.wav");
         Music liquid1M = TinySound.loadMusic(liquid1F);
-        Disc liquid1 = new Disc(liquid1M, "liquid1", false, MusicType.Background);
+        Disc liquid1 = new Disc(liquid1M, "liquid1", false, MusicType.Background, 49);
         add(liquid1);
 
         File metalSF = new File("resources/sounds/ambiant/metalSound.wav");
         Music metalSM = TinySound.loadMusic(metalSF);
-        Disc metalS = new Disc(metalSM, "metalSound", false, MusicType.SoundFx);
+        Disc metalS = new Disc(metalSM, "metalSound", false, MusicType.SoundFx, 1);
         add(metalS);
 
         File glassSF = new File("resources/sounds/ambiant/glassSound.wav");
         Music glassSM = TinySound.loadMusic(glassSF);
-        Disc glassS = new Disc(glassSM, "glassSound", false, MusicType.SoundFx);
+        Disc glassS = new Disc(glassSM, "glassSound", false, MusicType.SoundFx, 1);
         add(glassS);
 
         File darkAmbianceSoundF = new File("resources/sounds/ambiant/darkAmbianceStart.wav");
         Music darkAmbianceSoundM = TinySound.loadMusic(darkAmbianceSoundF);
-        Disc darkAmbianceSound = new Disc(darkAmbianceSoundM, "darkSound", false, MusicType.Background);
+        Disc darkAmbianceSound = new Disc(darkAmbianceSoundM, "darkSound", false, MusicType.Background, 7);
         add(darkAmbianceSound);
 
         File cracklingFireF = new File("resources/sounds/ambiant/cracklingFire.wav");
         Music cracklingFireM = TinySound.loadMusic(cracklingFireF);
-        Disc cracklingFire = new Disc(cracklingFireM, "feu", true, MusicType.Background);
+        Disc cracklingFire = new Disc(cracklingFireM, "feu", true, MusicType.Background, 10);
         add(cracklingFire);
 
         File grabObjectF = new File("resources/sounds/objects/grabItem.wav");
         Music grabObjectM = TinySound.loadMusic(grabObjectF);
-        Disc grabObject = new Disc(grabObjectM, "prendre", false, MusicType.Background);
+        Disc grabObject = new Disc(grabObjectM, "prendre", false, MusicType.Background, 1);
         add(grabObject);
 
         //Son sprint 2
         File tickF = new File("resources/sounds/ambiant/clock-ticking.wav");
         Music tickM = TinySound.loadMusic(tickF);
-        Disc tick = new Disc(tickM, "tick", false, MusicType.SoundFx);
+        Disc tick = new Disc(tickM, "tick", false, MusicType.SoundFx, 1);
         add(tick);
 
         File errorEnigmaF = new File("resources/sounds/rooms/errorEnigma.wav");
         Music errorEnigmaM = TinySound.loadMusic(errorEnigmaF);
-        Disc errorEnigma = new Disc(errorEnigmaM, "errorEnigma", false, MusicType.SoundFx);
+        Disc errorEnigma = new Disc(errorEnigmaM, "errorEnigma", false, MusicType.SoundFx, 1);
         add(errorEnigma);
 
         File bonusTimeF = new File("resources/sounds/rooms/bonusTime.wav");
         Music bonusTimeM = TinySound.loadMusic(bonusTimeF);
-        Disc bonusTime = new Disc(bonusTimeM, "bonusTime", false, MusicType.SoundFx);
+        Disc bonusTime = new Disc(bonusTimeM, "bonusTime", false, MusicType.SoundFx, 1);
         add(bonusTime);
 
         File doorSlamF = new File("resources/sounds/rooms/BigSlamDoor.wav");
         Music doorSlamM = TinySound.loadMusic(doorSlamF);
-        Disc doorSlam = new Disc(doorSlamM, "doorSlam", false, MusicType.SoundFx);
+        Disc doorSlam = new Disc(doorSlamM, "doorSlam", false, MusicType.SoundFx, 1);
         add(doorSlam);
 
         File stepsF = new File("resources/sounds/rooms/steps.wav");
         Music stepsM = TinySound.loadMusic(stepsF);
-        Disc steps = new Disc(stepsM, "steps", false, MusicType.SoundFx);
+        Disc steps = new Disc(stepsM, "steps", false, MusicType.SoundFx, 2);
         add(steps);
 
         File creakingDoorF = new File("resources/sounds/rooms/creakingDoor.wav");
         Music creakingDoorM = TinySound.loadMusic(creakingDoorF);
-        Disc creakingDoor = new Disc(creakingDoorM, "creakingDoor", false, MusicType.SoundFx);
+        Disc creakingDoor = new Disc(creakingDoorM, "creakingDoor", false, MusicType.SoundFx, 1);
         add(creakingDoor);
 
         File creakingDoor2F = new File("resources/sounds/rooms/creakingDoor2.wav");
         Music creakingDoor2M = TinySound.loadMusic(creakingDoor2F);
-        Disc creakingDoor2 = new Disc(creakingDoor2M, "creakingDoor2", false, MusicType.SoundFx);
+        Disc creakingDoor2 = new Disc(creakingDoor2M, "creakingDoor2", false, MusicType.SoundFx, 3);
         add(creakingDoor2);
 
         File creakingDoor3F = new File("resources/sounds/rooms/creakingDoor3.wav");
         Music creakingDoor3M = TinySound.loadMusic(creakingDoor3F);
-        Disc creakingDoor3 = new Disc(creakingDoor3M, "creakingDoor3", false, MusicType.SoundFx);
+        Disc creakingDoor3 = new Disc(creakingDoor3M, "creakingDoor3", false, MusicType.SoundFx, 5);
         add(creakingDoor3);
     }
 
