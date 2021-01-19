@@ -27,6 +27,9 @@ java -jar target/CSGO-OLDSAT.jar
 ./lauchUnix.bat
 ``
 
+
 ## Lancement du jeu sous Windows
+**En cours de developpement**
+
 Double-cliquez sur le fichier launchWin.bat
 
