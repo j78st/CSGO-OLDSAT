@@ -16,6 +16,7 @@ public class Enigma extends Room{
     ArrayList<double[]> click_zones; //Liste des zones cliquables, forme [id_zone,X_min,X_max,Y_min,Y_max] avec les X et Y en pourcentage de l'écran (entre 0 et 1)
     ArrayList<Integer> clicks_memory; //Liste servant de mémoire des id des zones cliquées
     int gest; //Numéro du gestionnaire choisi. 0 si énigmee ne nécessitant pas de clics
+    boolean resolved; //Booléen renseignant si l'énigme a été résolue ou non. false si non-résolu, true sinon
 
     /**
      * Constructeur d'énigme
@@ -34,6 +35,7 @@ public class Enigma extends Room{
         this.click_zones = new ArrayList<>();
         this.clicks_memory =  new ArrayList<>();
         this.gest = 0;
+        this.resolved = false;
         Game.enigmas.add(this); // ajoute l'énigme à la liste de toutes les énigmes du jeu
     }
 
@@ -58,6 +60,7 @@ public class Enigma extends Room{
         this.click_zones = click_zones;
         this.clicks_memory = new ArrayList<>();
         this.gest = gest;
+        this.resolved = false;
         Game.enigmas.add(this); // ajoute l'énigme à la liste de toutes les énigmes du jeu
     }
 
@@ -114,6 +117,9 @@ public class Enigma extends Room{
                     Game.search_action(getConsequences().get(i)[1]).setAvailable(false);
                     Engine.engine.refreshRoom();
                     break;
+                case 4: // ajout de l'objet de numéro d'identification arg_consequence à l'inventaire
+                    Game.player.add_to_inventory((getConsequences().get(i)[1]));
+                    break;
                 case 5: // suppression de l'objet de numéro d'identification consequence[1] de l'inventaire
                     Game.player.remove_from_inventory(Game.search_item(getConsequences().get(i)[1]).id);
                     break;
@@ -138,27 +144,36 @@ public class Enigma extends Room{
                     WorldBoxDisc.play(Son.hibou);
                     WorldBoxDisc.play(Son.valid);
                     break;
+                case 11: // faire évoluer texte affiché par une action, consequence[i][1] correspond à l'action à modifier, consequence[i][2] correspond à l'id du nouveau texte
+                    for (int j = 0; j < Game.search_action(getConsequences().get(i)[1]).consequences.size(); j++) {
+                        if (Game.search_action(getConsequences().get(i)[1]).consequences.get(j)[0] == 7) { //cherche la conséquence écrivant du texte, on part du principe qu'il ne peut y en avoir qu'une par action
+                            Game.search_action(getConsequences().get(i)[1]).consequences.get(j)[1] = getConsequences().get(i)[2];
+                        }
+                    }
+                    break;
             }
         }
     }
 
     //Méthodes spécifiques aux énigmes cliquables
 
-    public void check_click(double x, double y){
+    public void check_click(double x, double y) throws IOException {
         boolean found = false;
         int i = 0;
-        while(i<click_zones.size() && !found){ //parcourir liste des zones cliquable
-            //vérifier si le clic est dans une zone cliquable
-            if(click_zones.get(i)[1]<x && x<click_zones.get(i)[2] && click_zones.get(i)[3]<y && y<click_zones.get(i)[4]){ //On est dans une zone cliqualbe
-                found = true;
-                //envoyer vers le gestionnaire voulu
-                if(gest == 1){
-                    gest_1((int)click_zones.get(i)[0]);
-                }else if(gest ==2){
-                    gest_2((int)click_zones.get(i)[0]);
+        if(resolved == false) { //Si l'énigme n'est pas résolue, sinon un clic ne doit pas avoir d'effet
+            while (i < click_zones.size() && !found) { //parcourir liste des zones cliquable
+                //vérifier si le clic est dans une zone cliquable
+                if (click_zones.get(i)[1] < x && x < click_zones.get(i)[2] && click_zones.get(i)[3] < y && y < click_zones.get(i)[4]) { //On est dans une zone cliqualbe
+                    found = true;
+                    //envoyer vers le gestionnaire voulu
+                    if (gest == 1) {
+                        gest_1((int) click_zones.get(i)[0]);
+                    } else if (gest == 2) {
+                        gest_2((int) click_zones.get(i)[0]);
+                    }
                 }
+                i++;
             }
-            i++;
         }
     }
 
@@ -167,7 +182,7 @@ public class Enigma extends Room{
      * elle permet de créer des énigmes où ils faut cliquer sur 2 éléments pour les faire changer de place
      * @param id_zone id de la zone cliquée
      */
-    public void gest_1(int id_zone){
+    public void gest_1(int id_zone) throws IOException {
         String sol = "";
         String picture;
         String sol_prec = "";
@@ -206,22 +221,49 @@ public class Enigma extends Room{
 
             //Si nouvel ordre différent de l'ordre précédent (i.e : on n'a pas cliqué de fois sur la même case), mis à jour de l'image
             if(!(sol.equals(sol_prec))) {
-                picture = "pictures/" + this.id + "_" + sol + ".png";
+                picture = "pictures/" + this.id + "/" + sol + ".png";
                 Game.search_room(Game.player.getPosition()).setPath_image(picture);
-                Engine.engine.refreshRoom();
+                Engine.engine.refreshPicture();
             }else { //Sinon (on a cliqué deux fois sur la même zone)
                 WorldBoxDisc.play(Son.errorEnigma);
             }
+
+            //Vérifier si la solution au puzzle est la bonne
+            check_solution_clickable(sol);
+
         }else{ //Normalement inutile, sert si clicks_memory n'a pas était vidé. Ainsi, pas bloquant
             clicks_memory.clear();
         }
 
     }
 
-    public void gest_2(int id_zone){
+    public void gest_2(int id_zone) throws IOException {
+        String sol = "";
+
+        //Ajoute le click fais à la mémoire
+        clicks_memory.add(id_zone);
+
+        //Récupère la solution composé par la suite de clic
+        for(int i = 0; i<clicks_memory.size(); i++) {
+            sol = sol + clicks_memory.get(i);
+        }
+
+        //Si assez de clics ont été faits, on vérifie si c'est la bonne solution
+        if(sol.length() == getSolution().length()){
+            check_solution_clickable(sol);
+            clicks_memory.clear(); //Nettoie la mémoire pour permettre de retenter ensuite
+        }
 
     }
 
-
+    public void check_solution_clickable(String sol) throws IOException {
+        if (getSolution().equals(sol)){
+            this.do_consequences();
+            WorldBoxDisc.play(Son.bonusTime);
+            resolved = true;
+        } else if(gest !=1){
+            WorldBoxDisc.play(Son.errorEnigma);
+        }
+    }
 
 }

@@ -41,8 +41,8 @@ public class Scenario_structure {
         Action action101_69 = new Action(10169,true,"Saut admin début d'aventure", consequences_action101_69, 101);
 
         ArrayList<int[]> consequences_action101_70 = new ArrayList<>();
-        consequences_action101_70.add(new int[]{1,304});
-        Action action101_70 = new Action(10170,true,"Saut admin enigme 304", consequences_action101_70, 101);
+        consequences_action101_70.add(new int[]{1,305});
+        Action action101_70 = new Action(10170,true,"Saut admin enigme 305", consequences_action101_70, 101);
 
         //Actions de la salle 102 - Amphi pré-conférence
 
@@ -130,25 +130,40 @@ public class Scenario_structure {
         ArrayList<int[]> consequences_enigme1 = new ArrayList<>();
         consequences_enigme1.add(new int[]{9,110}); // Débloque salle suivante
         consequences_enigme1.add(new int[]{7,3012,108}); // Rajoute texte de fin d'énigme à la salle d'origine
-        Enigma enigme1 = new Enigma(301,108,3011,"pictures/Tableau.png","Le Cid",consequences_enigme1);
+        Enigma enigme1 = new Enigma(301,108,3011,"pictures/Trousse.png","Le Cid",consequences_enigme1); // Étagère 2 - Énigme
 
         ArrayList<int[]> consequences_enigme2 = new ArrayList<>();
         consequences_enigme2.add(new int[]{2,2024}); // Débloque l'action accès tiroir depuis le bureau
         consequences_enigme2.add(new int[]{1,203}); // Déplace le joueur vers le tiroir
-        Enigma enigme2 = new Enigma(302,202,3021,"pictures/Tableau.png","974",consequences_enigme2);
+        consequences_enigme2.add(new int[]{2,1085}); // Débloque la demande d'indice si elle a été utilisée avant
+        consequences_enigme2.add(new int[]{11,1085,4003}); // Fais évoluer le texte de l'indice
+        Enigma enigme2 = new Enigma(302,202,3021,"pictures/Trousse.png","974",consequences_enigme2); // Tiroir vérouillé
 
         ArrayList<int[]> consequences_enigme3 = new ArrayList<>();
         consequences_enigme3.add(new int[]{2,2025}); // Débloque l'action accès PC dévérouillé depuis le bureau
         consequences_enigme3.add(new int[]{1,206}); // Déplace le joueur vers le PC dévérouillé
-        Enigma enigme3 = new Enigma(303,202,3031,"pictures/Tableau.png","motdepasse",consequences_enigme3);
+        Enigma enigme3 = new Enigma(303,202,3031,"pictures/Trousse.png","motdepasse",consequences_enigme3); // PC vérouillé
 
         ArrayList<int[]> consequences_enigme4 = new ArrayList<>();
-        consequences_enigme4.add(new int[]{7,1011,304}); // Rajoute texte de fin d'énigme à la salle d'origine
+        consequences_enigme4.add(new int[]{7,3042,304}); // Rajoute texte de fin d'énigme à la salle de l'énigme
+        consequences_enigme4.add(new int[]{2,1085}); // Débloque la demande d'indice si elle a été utilisée avant
+        consequences_enigme4.add(new int[]{11,1085,4005}); // Fais évoluer le texte de l'indice
         ArrayList<double[]> zone_click_304 = new ArrayList<>();
-        zone_click_304.add(new double[]{1,0.6,0.75,0.24,0.58});
-        zone_click_304.add(new double[]{2,0.75,0.9,0.24,0.58});
-        Enigma enigme4 = new Enigma(304,109,3041,"pictures/304_12.png","3421",consequences_enigme4,zone_click_304,1);
+        zone_click_304.add(new double[]{3,0.55,0.65,0.135,0.68});
+        zone_click_304.add(new double[]{4,0.658,0.74,0.135,0.68});
+        zone_click_304.add(new double[]{2,0.758,0.84,0.135,0.68});
+        zone_click_304.add(new double[]{1,0.857,0.94,0.135,0.68});
+        Enigma enigme4 = new Enigma(304,109,3041,"pictures/304/3421.png","1234",consequences_enigme4,zone_click_304,1); // Étagère centrale étage
 
+        ArrayList<int[]> consequences_enigme5 = new ArrayList<>();
+        consequences_enigme5.add(new int[]{4,42});
+        ArrayList<double[]> zone_click_305 = new ArrayList<>();
+        zone_click_305.add(new double[]{1,0.60,0.67,0.64,0.74});
+        zone_click_305.add(new double[]{2,0.75,0.81,0.50,0.61});
+        zone_click_305.add(new double[]{3,0.85,0.91,0.14,0.25});
+        zone_click_305.add(new double[]{4,0.63,0.70,0.22,0.33});
+        zone_click_305.add(new double[]{5,0.875,0.93,0.65,0.76});
+        Enigma enigme5 = new Enigma(305,101,3051,"pictures/305.png","12345",consequences_enigme5,zone_click_305,2); // Énigme suite de clics test
 
         Item clef = new Item(4,"Clef","Ancienne clef - Elle va sûrement vous permettre de sortir d'ici",-1, "objects/key.png");
 
@@ -194,7 +209,7 @@ public class Scenario_structure {
         Action action108_1 = new Action(1081,true,"Inspecter le bureau", consequences_action108_1, 108);
 
         ArrayList<int[]> consequences_action108_5 = new ArrayList<>();
-        consequences_action108_5.add(new int[]{7,4006}); //Texte indice
+        consequences_action108_5.add(new int[]{7,4001}); //Texte indice
         consequences_action108_5.add(new int[]{3,1085});
         consequences_action108_5.add(new int[]{14,30});
         Action action108_5 = new Action(1085,true,"S'assoir sur la chaise [Obtention d'un indice, diminution du temps]", consequences_action108_5, 108);
@@ -208,6 +223,8 @@ public class Scenario_structure {
 
         ArrayList<int[]> consequences_action202_1 = new ArrayList<>();
         consequences_action202_1.add(new int[]{1,205}); //Bouge joueur vers la note
+        consequences_action202_1.add(new int[]{2,1085});
+        consequences_action202_1.add(new int[]{13,1085,4002});
         Action action202_1 = new Action(2021,true,"Inspecter la note", consequences_action202_1, 202);
 
         ArrayList<int[]> consequences_action202_2 = new ArrayList<>();
@@ -293,6 +310,8 @@ public class Scenario_structure {
         consequences_action208_1.add(new int[]{2,1087}); //Dévérouille l'action l'accès à l'énigme de l'étagère
         consequences_action208_1.add(new int[]{3,1083}); //Vérouille l'accès à l'étagère pré-utilisation clef
         consequences_action208_1.add(new int[]{5,4}); // Supprimer la clef de l'inventaire après l'utilisation
+        consequences_action208_1.add(new int[]{2,1085});
+        consequences_action208_1.add(new int[]{13,1085,4004});
         consequences_action208_1.add(new int[]{10}); //Affiche boîte de dialogue
         Action action208_1 = new Action(2081, "Essayer la clef dans la serrure [Clef]", consequences_action208_1, 208, 4);
 
@@ -313,12 +332,15 @@ public class Scenario_structure {
         //Actions de la salle 109 - Étage
 
         ArrayList<int[]> consequences_action109_1 = new ArrayList<>();
-        consequences_action109_1.add(new int[]{1,108}); //Bouge le joueur vers RDC
-        Action action109_1 = new Action(1091,true,"Descendre au rez-de-chaussée", consequences_action109_1, 109);
+        consequences_action109_1.add(new int[]{1,210}); //Bouge le joueur vers RDC
+        Action action109_1 = new Action(1091,true,"Regarder le plafond", consequences_action109_1, 109);
 
         ArrayList<int[]> consequences_action109_2 = new ArrayList<>();
-        consequences_action109_2.add(new int[]{1,210}); //Bouge le joueur vers RDC
-        Action action109_2 = new Action(1092,true,"Regarder le plafond", consequences_action109_2, 109);
+        consequences_action109_2.add(new int[]{1,304}); //Bouge le joueur vers RDC
+        Action action109_2 = new Action(1092,true,"S'approcher de l'étagère centrale", consequences_action109_2, 109);
 
+        ArrayList<int[]> consequences_action109_3 = new ArrayList<>();
+        consequences_action109_3.add(new int[]{1,108}); //Bouge le joueur vers RDC
+        Action action109_3 = new Action(1093,true,"Descendre au rez-de-chaussée", consequences_action109_3, 109);
     }
 }
