@@ -9,6 +9,7 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 import java.io.IOException;
 
@@ -30,6 +31,8 @@ public class Main extends Application {
 
         // Déclaration de la fenêtre utilisée pour l'application
         LoadMap.stage = primaryStage;
+
+        LoadMap.stage.getIcons().add(new Image("/icons/icon_csgo.png"));
         LoadMap.stage.setMaximized(true);
 
         FXMLLoader loader = new FXMLLoader();
