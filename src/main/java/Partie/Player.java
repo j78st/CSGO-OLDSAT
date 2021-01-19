@@ -74,8 +74,8 @@ public class Player {
         Game.search_item(id_item).set_actions_available(false);
         int i = 0;
         boolean found = false;
-        while(i<Game.getItems().size() && !found){
-            if(Game.getItems().get(i).getId()==id_item){
+        while(i<inventory.size() && !found){
+            if(inventory.get(i)==id_item){
                 Game.player.inventory.remove(i);
                 found = true;
             }
