@@ -222,10 +222,10 @@ public class WorldBoxDisc extends Thread {
         Disc doorSlam = new Disc(doorSlamM, "doorSlam", false, MusicType.SoundFx, 1);
         add(doorSlam);
 
-        File stepsF = new File("resources/sounds/rooms/steps.wav");
-        Music stepsM = TinySound.loadMusic(stepsF);
-        Disc steps = new Disc(stepsM, "steps", false, MusicType.SoundFx, 2);
-        add(steps);
+        File steps1F = new File("resources/sounds/rooms/steps.wav");
+        Music steps1M = TinySound.loadMusic(steps1F);
+        Disc steps1 = new Disc(steps1M, "steps1", false, MusicType.SoundFx, 2);
+        add(steps1);
 
         File creakingDoorF = new File("resources/sounds/rooms/creakingDoor.wav");
         Music creakingDoorM = TinySound.loadMusic(creakingDoorF);
@@ -241,6 +241,77 @@ public class WorldBoxDisc extends Thread {
         Music creakingDoor3M = TinySound.loadMusic(creakingDoor3F);
         Disc creakingDoor3 = new Disc(creakingDoor3M, "creakingDoor3", false, MusicType.SoundFx, 5);
         add(creakingDoor3);
+
+        //Nouveau
+        File breakingWoodF = new File("resources/sounds/interactions/breakingWood.wav");
+        Music breakingWoodM = TinySound.loadMusic(breakingWoodF);
+        Disc breakingWood = new Disc(breakingWoodM, "breakingWood", false, MusicType.SoundFx, 5);
+        add(breakingWood);
+
+        File closingBookF = new File("resources/sounds/interactions/closingBook.wav");
+        Music closingBookM = TinySound.loadMusic(closingBookF);
+        Disc closingBook = new Disc(closingBookM, "closingBook", false, MusicType.SoundFx, 1);
+        add(closingBook);
+
+        File doorKnocking1F = new File("resources/sounds/interactions/Door_Knocking1.wav");
+        Music doorKnocking1M = TinySound.loadMusic(doorKnocking1F);
+        Disc doorKnocking1 = new Disc(doorKnocking1M, "doorKnocking1", false, MusicType.SoundFx, 2);
+        add(doorKnocking1);
+
+        File doorKnocking2F = new File("resources/sounds/interactions/DoorKnowking2.wav");
+        Music doorKnocking2M = TinySound.loadMusic(doorKnocking2F);
+        Disc doorKnocking2 = new Disc(doorKnocking2M, "doorKnocking2", false, MusicType.SoundFx, 2);
+        add(doorKnocking2);
+
+        File drawerOpeningF = new File("resources/sounds/interactions/drawerOpening1.wav");
+        Music drawerOpeningM = TinySound.loadMusic(drawerOpeningF);
+        Disc drawerOpening = new Disc(drawerOpeningM, "drawerOpening", false, MusicType.SoundFx, 2);
+        add(drawerOpening);
+
+        File footsteps2F = new File("resources/sounds/interactions/footsteeps1.wav");
+        Music footsteps2M = TinySound.loadMusic(footsteps2F);
+        Disc footsteps2 = new Disc(footsteps2M, "steps2", false, MusicType.SoundFx, 3);
+        add(footsteps2);
+
+        File footsteps3F = new File("resources/sounds/interactions/footsteps2.wav");
+        Music footsteps3M = TinySound.loadMusic(footsteps3F);
+        Disc footsteps3 = new Disc(footsteps3M, "steps3", false, MusicType.SoundFx, 2);
+        add(footsteps3);
+
+        File keyTurning1F = new File("resources/sounds/interactions/keyTurning.wav");
+        Music keyTurning1M = TinySound.loadMusic(keyTurning1F);
+        Disc keyTurning1 = new Disc(keyTurning1M, "keyTurning1", false, MusicType.SoundFx, 3);
+        add(keyTurning1);
+
+        File keyTurning2F = new File("resources/sounds/interactions/keyTurning2.wav");
+        Music keyTurning2M = TinySound.loadMusic(keyTurning2F);
+        Disc keyTurning2 = new Disc(keyTurning2M, "keyTurning2", false, MusicType.SoundFx, 4);
+        add(keyTurning2);
+
+        File leverRatchetF = new File("resources/sounds/interactions/leverRatchet.wav");
+        Music leverRatchetM = TinySound.loadMusic(leverRatchetF);
+        Disc leverRatchet = new Disc(leverRatchetM, "leverRatchet", false, MusicType.SoundFx, 3);
+        add(leverRatchet);
+
+        File leverSoundF = new File("resources/sounds/interactions/leverSound.wav");
+        Music leverSoundM = TinySound.loadMusic(leverSoundF);
+        Disc leverSound = new Disc(leverSoundM, "leverSound", false, MusicType.SoundFx, 3);
+        add(leverSound);
+
+        File oneKnockF = new File("resources/sounds/interactions/oneKnock.wav");
+        Music oneKnockM = TinySound.loadMusic(oneKnockF);
+        Disc oneKnock = new Disc(oneKnockM, "oneKnock", false, MusicType.SoundFx, 1);
+        add(oneKnock);
+
+        File openingBookF = new File("resources/sounds/interactions/openingBook.wav");
+        Music openingBookM = TinySound.loadMusic(openingBookF);
+        Disc openingBook = new Disc(openingBookM, "openingBook", false, MusicType.SoundFx, 2);
+        add(openingBook);
+
+        File turningPageF = new File("resources/sounds/interactions/pageTurning.wav");
+        Music turningPageM = TinySound.loadMusic(turningPageF);
+        Disc turningPage = new Disc(turningPageM, "turningPage", false, MusicType.SoundFx, 1);
+        add(turningPage);
     }
 
 

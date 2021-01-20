@@ -1,5 +1,7 @@
 package Music.Systems;
 
+import Timer.Timer;
+
 /**
  * Cette classe centralise le nom de toutes les pistes sonores
  */
@@ -36,8 +38,30 @@ public class Son {
     public static final String errorEnigma = "errorEnigma";
     public static final String bonusTime = "bonusTime";
     public static final String doorSlam = "doorSlam";
-    public static final String steps = "steps";
+    //Nouveau sons ajoutés
+    public static final String steps1 = "steps1";
     public static final String creakingDoor = "creakingDoor";
     public static final String creakingDoor2 = "creakingDoor2";
     public static final String creakingDoor3 = "creakingDoor3";
+    public static final String breakingWood = "breakingWood";
+    public static final String closingBook = "closingBook";
+    public static final String doorKnocking1 = "doorKnocking1";
+    public static final String doorKnocking2 = "doorKnocking2";
+    public static final String drawerOpening = "drawerOpening";
+    public static final String steps2 = "steps2";
+    public static final String steps3 = "steps3";
+    public static final String keyTurning1 = "keyTurning1";
+    public static final String keyTurning2 = "keyTurning2";
+    public static final String leverRatchet = "leverRatchet";
+    public static final String leverSound = "leverSound";
+    public static final String oneKnock = "oneKnock";
+    public static final String openingBook = "openingBook";
+    public static final String turningPage = "turningPage";
+
+    public static void main(String[] args) {
+        WorldBoxDisc.init();
+        Timer.sleep(3000);
+        WorldBoxDisc.testFromAllSound(doorSlam);
+        Timer.sleep(2000);
+    }
 }
