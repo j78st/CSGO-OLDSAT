@@ -312,6 +312,11 @@ public class WorldBoxDisc extends Thread {
         Music turningPageM = TinySound.loadMusic(turningPageF);
         Disc turningPage = new Disc(turningPageM, "turningPage", false, MusicType.SoundFx, 1);
         add(turningPage);
+
+        File ambiance1F = new File("resources/sounds/ambiant/ambiance1.wav");
+        Music ambiance1M = TinySound.loadMusic(ambiance1F);
+        Disc ambiance1 = new Disc(ambiance1M, "ambiance1", false, MusicType.SoundFx, 10);
+        add(ambiance1);
     }
 
 

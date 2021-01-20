@@ -57,11 +57,12 @@ public class Son {
     public static final String oneKnock = "oneKnock";
     public static final String openingBook = "openingBook";
     public static final String turningPage = "turningPage";
+    public static final String ambiance1 = "ambiance1";
 
     public static void main(String[] args) {
         WorldBoxDisc.init();
         Timer.sleep(3000);
-        WorldBoxDisc.testFromAllSound(doorSlam);
-        Timer.sleep(2000);
+        WorldBoxDisc.testFromAllSound(turningPage);
+        Timer.sleep(51000);
     }
 }
