@@ -123,6 +123,9 @@ public class gameController implements Controller {
      */
     @FXML
     void go_down(ActionEvent event) {
+        if(Game.getPlayer().getPosition()/100 == 1){
+            WorldBoxDisc.play(Son.steps3);
+        }
         Game.player.move(Game.search_room(Game.player.getPosition()).getNeighbours()[2]);
     }
 
@@ -132,6 +135,9 @@ public class gameController implements Controller {
      */
     @FXML
     void go_left(ActionEvent event) {
+        if(Game.getPlayer().getPosition()/100 == 1){
+            WorldBoxDisc.play(Son.steps3);
+        }
         Game.player.move(Game.search_room(Game.player.getPosition()).getNeighbours()[3]);
     }
 
@@ -141,6 +147,9 @@ public class gameController implements Controller {
      */
     @FXML
     void go_right(ActionEvent event) {
+        if(Game.getPlayer().getPosition()/100 == 1){
+            WorldBoxDisc.play(Son.steps3);
+        }
         Game.player.move(Game.search_room(Game.player.getPosition()).getNeighbours()[1]);;
     }
 
@@ -150,6 +159,9 @@ public class gameController implements Controller {
      */
     @FXML
     void go_up(ActionEvent event) {
+        if(Game.getPlayer().getPosition()/100 == 1){
+            WorldBoxDisc.play(Son.steps3);
+        }
         Game.player.move(Game.search_room(Game.player.getPosition()).getNeighbours()[0]);
     }
 

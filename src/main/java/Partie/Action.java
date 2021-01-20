@@ -172,8 +172,7 @@ public class Action {
                         sounds_playlist.add(Game.search_sounds(String.valueOf(getConsequences().get(i)[j])));
                     }
                     PlayList playlist = new PlayList(sounds_playlist);
-                    playlist.run();
-
+                    playlist.start();
             }
         }
     }
