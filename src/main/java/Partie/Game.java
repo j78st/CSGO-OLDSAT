@@ -9,7 +9,8 @@ public class Game {
     public static ArrayList<Enigma> enigmas; // liste de toutes les énigmes
     public static ArrayList<Action> actions; // liste de toutes les actions
     public static ArrayList<Item> items; // liste de tous les objets
-    public static ArrayList<Text_scenario> texts; // liste de tous les scénarios
+    public static ArrayList<Text_scenario> texts; // liste de tous les textes du scénario
+    public static ArrayList<String[]> sounds; //liste de tous les sons
     public static int difficulty; // difficulté choisie pour la partie
     public static int timer;
     public static int bas;
@@ -27,6 +28,7 @@ public class Game {
         actions = new ArrayList<>();
         items = new ArrayList<>();
         texts = new ArrayList<>();
+        sounds = new ArrayList<>();
         Game.difficulty = difficulty;
         timer = 0;
         bas = 0;
@@ -70,6 +72,10 @@ public class Game {
 
     public static void setTimer(int timer) {
         Game.timer = timer;
+    }
+
+    public static void setSounds(ArrayList<String[]> sounds) {
+        Game.sounds = sounds;
     }
 
     public static void setBas(int bas) { Game.bas = bas; }
@@ -154,6 +160,19 @@ public class Game {
         }
         return res;
     }
+
+    public static String search_sounds(String id){ // recherche un son à partir de son numéro d'identification
+        String res = null;
+        if (!sounds.isEmpty()){
+            for(int i=0;i<sounds.size();i++){
+                if(sounds.get(i)[0].equals(id)) {
+                    res = sounds.get(i)[1];
+                }
+            }
+        }
+        return res;
+    }
+
     /**
      * méthode permettant de nettoyer la game
      */

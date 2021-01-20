@@ -6,6 +6,7 @@ public class Scenario_structure {
 
     public Scenario_structure() {
         Scenario scenar = new Scenario();
+        Sounds_list sounds_list = new Sounds_list();
 
         /*-----------------------------------------Prologue-------------------------------------------*/
 
@@ -35,6 +36,10 @@ public class Scenario_structure {
         consequences_action101_2.add(new int[]{3,1012}); //Rend l'action innaccessible (faisable qu'une fois)
         consequences_action101_2.add(new int[]{9,102}); //Débloque salle suivante
         Action action101_2 = new Action(1012,false,"Lire le panneau", consequences_action101_2, 101);
+
+        ArrayList<int[]> consequences_action101_67 = new ArrayList<>();
+        consequences_action101_67.add(new int[]{17,44,47});
+        Action action101_67 = new Action(10167,true,"Test son", consequences_action101_67, 101);
 
         ArrayList<int[]> consequences_action101_68 = new ArrayList<>();
         consequences_action101_68.add(new int[]{12,206});
