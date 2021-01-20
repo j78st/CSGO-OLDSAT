@@ -95,7 +95,7 @@ public class gameController implements Controller {
     private Button pause_btn;
 
     @FXML
-    private TextField answer_prompt;
+    public TextField answer_prompt;
 
     // gestion menu pause ---------------------------------------
     @FXML

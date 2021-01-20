@@ -88,6 +88,7 @@ public class Enigma extends Room{
             Game.search_room(this.neighbours[2]).search_action_with_enigma(this.getId()).setAvailable(false); // rend l'accès à cette énigme impossible
             Game.player.move(this.neighbours[2]); // renvoie le joueur à l'écran précédent l'énigme
             Engine.engine.answer_box_visible(false);
+            Engine.engine.answer_prompt.setText("");
             this.do_consequences(); // met en place les conséquences de la résolution de l'énigme
         }else{
             nb_error++;
