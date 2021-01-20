@@ -1,6 +1,7 @@
 package Music.Systems;
 
 import Timer.Timer;
+import Timer.Lock;
 import java.util.ArrayList;
 import java.util.Random;
 
@@ -24,6 +25,11 @@ public class PlayList extends Thread {
     private int timeInBetween;
 
     /**
+     * Indice de la piste actuellement jouée
+     */
+    private volatile int currentlyPlaying = 0;
+
+    /**
      * Mode de lecture de la playlist
      * mode = false : mode régulier
      * mode = true : mode irégulier
@@ -32,6 +38,14 @@ public class PlayList extends Thread {
     /**
      * Initialise une playlist vide en mode régulier.
      */
+
+    /**
+     * Booleen indiquant si la playlist est en cours de lecture
+     */
+    private volatile boolean running = false;
+
+    private Lock lock;
+
     public PlayList(){
         this.playlist = new ArrayList<>();
         this.timeInBetween = 0;
@@ -84,10 +98,42 @@ public class PlayList extends Thread {
         }
     }
 
+    /**
+     * Met en pause une playlist
+     */
+    public synchronized void toogle(){
+        synchronized (lock) {
+            if (running) {
+                //WorldBoxDisc.pause(playlist.get(currentlyPlaying));
+                this.running = false;
+
+            } else {
+                this.lock.notify();
+                //WorldBoxDisc.play(playlist.get(currentlyPlaying));
+                this.running = true;
+            }
+        }
+    }
+
     @Override
     public void run() {
+        this.lock = new Lock();
+        this.running = true;
+
         for(int i = 0; i < playlist.size(); i++){
-            WorldBoxDisc.play(playlist.get(i));
+
+            try{
+                if(running) {
+                    WorldBoxDisc.play(playlist.get(i));
+                    this.currentlyPlaying = i;
+                } else {
+                    synchronized (lock){
+                        lock.wait();
+                    }
+                }
+            } catch (InterruptedException e){
+                e.printStackTrace();
+            }
 
             //Mode de lecture
             if(!mode) { //mode régulier où les pistes sont espacés par timeInBetween secondes
@@ -121,8 +167,17 @@ public class PlayList extends Thread {
         }
         oracle.remove(oracle.size()-1);
 
-        PlayList playList = new PlayList(testo, oracle);
+        PlayList playList = new PlayList(testo);
 
+
+        System.out.println("DELIMITER=================================");
         playList.start();
+        Timer.sleep(5000);
+        System.out.println("DELIMITER=================================");
+        playList.toogle();
+        System.out.println("pause");
+        Timer.sleep(15000);
+        System.out.println("play");
+        playList.toogle();
     }
 }
