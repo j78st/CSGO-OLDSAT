@@ -232,14 +232,14 @@ public class Scenario_structure {
         consequences_action202_2.add(new int[]{10}); //Affiche boîte de dialogue
         Action action202_2 = new Action(2022,true,"Examiner le tiroir", consequences_action202_2, 202);
 
+        ArrayList<int[]> consequences_action202_4 = new ArrayList<>();
+        consequences_action202_4.add(new int[]{1,204}); //Bouge joueur vers le tiroir dévérouillé
+        Action action202_4 = new Action(2024,false,"Fouiller dans le tiroir", consequences_action202_4, 202);
+
         ArrayList<int[]> consequences_action202_3 = new ArrayList<>();
         consequences_action202_3.add(new int[]{1,303}); //Bouge joueur vers le PC vérouillé (énigme)
         consequences_action202_3.add(new int[]{10}); //Affiche boîte de dialogue
         Action action202_3 = new Action(2023,true,"Examiner le PC", consequences_action202_3, 202);
-
-        ArrayList<int[]> consequences_action202_4 = new ArrayList<>();
-        consequences_action202_4.add(new int[]{1,204}); //Bouge joueur vers le tiroir dévérouillé
-        Action action202_4 = new Action(2024,false,"Fouiller dans le tiroir", consequences_action202_4, 202);
 
         ArrayList<int[]> consequences_action202_5 = new ArrayList<>();
         consequences_action202_5.add(new int[]{1,206}); //Bouge joueur vers le PC dévérouillé
@@ -295,7 +295,6 @@ public class Scenario_structure {
         Action action206_2 = new Action(2062,false,"Retour à la page précédente", consequences_action206_2, 206);
 
 
-
         //Actions de la salle 207 - Étagère 1
 
         ArrayList<int[]> consequences_action207_1 = new ArrayList<>();
@@ -317,7 +316,7 @@ public class Scenario_structure {
         Action action208_1 = new Action(2081, "Essayer la clef dans la serrure [Clef]", consequences_action208_1, 208, 4);
 
 
-        //Actions de la salle 210 - Porte
+        //Actions de la salle 211 - Porte
 
         ArrayList<int[]> consequences_action211_1 = new ArrayList<>();
         consequences_action211_1.add(new int[]{7,2112}); //Rajoute texte
