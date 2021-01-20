@@ -69,17 +69,15 @@ public class cinematicController implements Controller {
         no_text += 1;
         text_transition();
 
-        if(no_text == 2){
-            end_pane.toFront();
-            end_pane.setVisible(true);
-            arrow_pane.setVisible(false);
-        } else if (no_text == 3) {
+        if (no_text == 3) {
             Game.search_action(1043).do_consequences();
             screen_transition();
         }
     }
 
     private void text_transition () {
+        next.setDisable(true);
+
         FadeTransition fadeOUT = new FadeTransition();
         fadeOUT.setDuration(Duration.seconds(2));
         fadeOUT.setNode(narration);
@@ -100,6 +98,11 @@ public class cinematicController implements Controller {
                 WorldBoxDisc.play(Son.porte1); // claquement de porte
                 narration.setText(text3);
 
+                //changement bouton
+                end_pane.toFront();
+                end_pane.setVisible(true);
+                arrow_pane.setVisible(false);
+
             }
             // réaffichage texte
             FadeTransition fadeIN = new FadeTransition();
@@ -107,6 +110,10 @@ public class cinematicController implements Controller {
             fadeIN.setNode(narration);
             fadeIN.setFromValue(0);
             fadeIN.setToValue(1);
+            fadeIN.setOnFinished(event1 -> {
+                next.setDisable(false);
+            });
+
             fadeIN.play();
         });
 
@@ -114,6 +121,8 @@ public class cinematicController implements Controller {
     }
 
     private void screen_transition(){
+        next.setDisable(true);
+
         FadeTransition fadeOUT = new FadeTransition();
         fadeOUT.setDuration(Duration.seconds(2));
         fadeOUT.setNode(narration);
@@ -136,6 +145,9 @@ public class cinematicController implements Controller {
             ft.setNode(Engine.engine.root);
             ft.setFromValue(0);
             ft.setToValue(1);
+            ft.setOnFinished(event1 -> {
+                next.setDisable(false);
+            });
             ft.play();
         });
 
@@ -154,8 +166,23 @@ public class cinematicController implements Controller {
         narration.setWrapText(true);
         narration.setText(text1);
 
-        no_text = 0;
-        WorldBoxDisc.play(Son.hibou);
+        narration.setOpacity(0);
+        next.setOpacity(0);
+
+        FadeTransition f1 = new FadeTransition();
+        f1.setDuration(Duration.seconds(2));
+        f1.setNode(narration);
+        f1.setFromValue(0);
+        f1.setToValue(1);
+
+        FadeTransition f2 = new FadeTransition();
+        f2.setDuration(Duration.seconds(2));
+        f2.setNode(next);
+        f2.setFromValue(0);
+        f2.setToValue(1);
+
+        f1.play();
+        f2.play();
     }
 
     @Override
@@ -170,66 +197,3 @@ public class cinematicController implements Controller {
         }
     }
 }
-/*FadeTransition fadeOUT = new FadeTransition();
-        fadeOUT.setDuration(Duration.seconds(1));
-        fadeOUT.setNode(narration);
-
-        no_text += 1;
-        if(no_text == 2){
-            text_transition();
-            end_pane.toFront();
-            end_pane.setVisible(true);
-            arrow_pane.setVisible(false);
-        }
-
-        if (no_text == 3) {
-            FadeTransition ft = new FadeTransition();
-            ft.setDuration(Duration.seconds(2));
-            ft.setNode(Engine.engine.root);
-            ft.setFromValue(1.0);
-            ft.setToValue(0.0);
-            ft.setOnFinished(new EventHandler<ActionEvent>() {
-                @Override
-                public void handle(ActionEvent event){
-                    try {
-                        go_to_game(); // pour terminer la cinématique
-                        Engine.engine.timer_lbl.setVisible(true);
-                        Engine.chrono = new TimerController(60*25);
-                        Engine.chrono.start();
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    } catch (InterruptedException e) {
-                        e.printStackTrace();
-                    }
-                }
-            });
-        }
-
-        // disparition du texte
-        fadeOUT.setFromValue(1);
-        fadeOUT.setToValue(0);
-
-        fadeOUT.setOnFinished(new EventHandler<ActionEvent>() {
-            @Override
-            public void handle(ActionEvent event) {
-                //modification du texte
-                switch (no_text) {
-                    case 1 :
-                        WorldBoxDisc.play(Son.wind);
-                        narration.setText(text2); break;
-                    case 2 :
-                        WorldBoxDisc.play(Son.tick); // bruit de pas
-                        WorldBoxDisc.play(Son.tick); // grincement
-                        WorldBoxDisc.play(Son.porte1); // claquement de porte
-                        narration.setText(text3); break;
-                }
-                // reapparition du texte
-                FadeTransition fadeIN = new FadeTransition();
-                fadeIN.setDuration(Duration.seconds(1));
-                fadeIN.setNode(narration);
-                fadeIN.setFromValue(0);
-                fadeIN.setToValue(1);
-                fadeIN.play();
-            }
-        });
-        fadeOUT.play();*/
