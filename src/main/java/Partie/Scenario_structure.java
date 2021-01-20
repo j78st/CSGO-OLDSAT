@@ -36,6 +36,10 @@ public class Scenario_structure {
         consequences_action101_2.add(new int[]{9,102}); //Débloque salle suivante
         Action action101_2 = new Action(1012,false,"Lire le panneau", consequences_action101_2, 101);
 
+        ArrayList<int[]> consequences_action101_68 = new ArrayList<>();
+        consequences_action101_68.add(new int[]{12,206});
+        Action action101_68 = new Action(10168,true,"Saut admin PC", consequences_action101_68, 101);
+
         ArrayList<int[]> consequences_action101_69 = new ArrayList<>();
         consequences_action101_69.add(new int[]{12,107});
         Action action101_69 = new Action(10169,true,"Saut admin début d'aventure", consequences_action101_69, 101);
@@ -101,6 +105,7 @@ public class Scenario_structure {
 
         ArrayList<int[]> consequences_action104_2 = new ArrayList<>();
         consequences_action104_2.add(new int[]{15}); //Lance la cinématique
+        consequences_action104_2.add(new int[]{3,1042});
         Action action104_2 = new Action(1042,true,"Rentrer chez vous [FIN DU PROLOGUE]", consequences_action104_2, 104);
 
         ArrayList<int[]> consequences_action104_3 = new ArrayList<>();
@@ -118,7 +123,7 @@ public class Scenario_structure {
         Room room8_1_1 = new Room(203,202,2031,"pictures/Trousse.png"); // Tiroir post-énigme
         Room room8_1_2 = new Room(204,202,2041,"pictures/Trousse.png"); // Tiroir
         Room room8_1_3 = new Room(205,202,2051,"pictures/Trousse.png"); // Note sur le bureau
-        Room room8_1_4 = new Room(206,202,2061,"pictures/Trousse.png"); // PC dévérouillé
+        //Room room8_1_4 = new Room(206,202,2061,"pictures/Trousse.png"); // PC dévérouillé
         Room room8_2 = new Room(207,108,2071,"pictures/Trousse.png"); // Étagère 1
         Room room8_3 = new Room(208,108,2081,"pictures/Trousse.png"); // Étagère 2 pré-utilisation de la clef
         Room room8_4 = new Room(209,108,2091,"pictures/Trousse.png"); // Étagère 3
@@ -164,6 +169,67 @@ public class Scenario_structure {
         zone_click_305.add(new double[]{4,0.63,0.70,0.22,0.33});
         zone_click_305.add(new double[]{5,0.875,0.93,0.65,0.76});
         Enigma enigme5 = new Enigma(305,101,3051,"pictures/305.png","12345",consequences_enigme5,zone_click_305,2); // Énigme suite de clics test
+
+
+        //PC cliquable
+
+        ArrayList<double[]> zone_click_206 = new ArrayList<>();
+        zone_click_206.add(new double[]{1,0.60,0.67,0.64,0.74});
+        zone_click_206.add(new double[]{2,0.75,0.81,0.50,0.61});
+        zone_click_206.add(new double[]{3,0.85,0.91,0.14,0.25});
+        Enigma pc_ecran1 = new Enigma(206,202,2061,"pictures/206/206.png","",new ArrayList<>(),zone_click_206,3); // PC cliquable bureau
+
+        ArrayList<double[]> zone_click_2062 = new ArrayList<>();
+        zone_click_2062.add(new double[]{6,0.9,0.99,0.9,0.99});
+        Enigma pc_ecran2 = new Enigma(2062,202,2061,"pictures/206/2062.png","",new ArrayList<>(),zone_click_2062,3); // PC cliquable écran commandes
+
+        ArrayList<double[]> zone_click_2063 = new ArrayList<>();
+        zone_click_2063.add(new double[]{5,0.875,0.93,0.65,0.76});
+        zone_click_2063.add(new double[]{6,0.9,0.99,0.9,0.99});
+        Enigma pc_ecran3 = new Enigma(2063,202,2061,"pictures/206/2063.png","",new ArrayList<>(),zone_click_2063,3); // PC cliquable écran emprunt 1
+
+        ArrayList<double[]> zone_click_2064 = new ArrayList<>();
+        zone_click_2064.add(new double[]{4,0.63,0.70,0.22,0.33});
+        zone_click_2064.add(new double[]{6,0.9,0.99,0.9,0.99});
+        Enigma pc_ecran4 = new Enigma(2064,202,2061,"pictures/206/2064.png","",new ArrayList<>(),zone_click_2064,3); // PC cliquable écran emprunt 2
+
+        ArrayList<double[]> zone_click_2065 = new ArrayList<>();
+        zone_click_2065.add(new double[]{5,0.875,0.93,0.65,0.76});
+        zone_click_2065.add(new double[]{6,0.9,0.99,0.9,0.99});
+        Enigma pc_ecran5 = new Enigma(2065,202,2061,"pictures/206/2065.png","",new ArrayList<>(),zone_click_2065,3); // PC cliquable écran catalogue 1
+
+        ArrayList<double[]> zone_click_2066 = new ArrayList<>();
+        zone_click_2066.add(new double[]{4,0.63,0.70,0.22,0.33});
+        zone_click_2066.add(new double[]{5,0.875,0.93,0.65,0.76});
+        zone_click_2066.add(new double[]{6,0.9,0.99,0.9,0.99});
+        Enigma pc_ecran6 = new Enigma(2066,202,2061,"pictures/206/2066.png","",new ArrayList<>(),zone_click_2066,3); // PC cliquable écran emprunt 2
+
+        ArrayList<double[]> zone_click_2067 = new ArrayList<>();
+        zone_click_2067.add(new double[]{4,0.63,0.70,0.22,0.33});
+        zone_click_2067.add(new double[]{6,0.9,0.99,0.9,0.99});
+        Enigma pc_ecran7 = new Enigma(2067,202,2061,"pictures/206/2067.png","",new ArrayList<>(),zone_click_2067,3); // PC cliquable écran emprunt 2
+
+
+        //Actions de la salle 206 - PC dévérouillé
+
+        ArrayList<int[]> consequences_action206_1 = new ArrayList<>();
+        //consequences_action206_1.add(new int[]{?}); //Fait évoluer l'image
+        consequences_action206_1.add(new int[]{2,2062}); //Dévérouille l'action "Retour page précédente"
+        consequences_action206_1.add(new int[]{3,2061}); //Vérouille cette action
+        Action action206_1 = new Action(2061,true,"Passer à la page suivante", consequences_action206_1, 206);
+
+        ArrayList<int[]> consequences_action206_2 = new ArrayList<>();
+        //consequences_action206_2.add(new int[]{?}); //Fait évoluer l'image
+        consequences_action206_2.add(new int[]{2,2061}); //Dévérouille l'action "Passer à la page suivante"
+        consequences_action206_2.add(new int[]{3,2062}); //Vérouille cette action
+        Action action206_2 = new Action(2062,false,"Retour à la page précédente", consequences_action206_2, 206);
+
+        Action action206_3 = new Action(2063,false,"", new ArrayList<>(), 206); // Action servant à la gestion du pc interactif
+
+
+
+
+
 
         Item clef = new Item(4,"Clef","Ancienne clef - Elle va sûrement vous permettre de sortir d'ici",-1, "objects/key.png");
 
@@ -278,21 +344,6 @@ public class Scenario_structure {
         consequences_action205_1.add(new int[]{7,2052}); //Ajoute du texte
         consequences_action205_1.add(new int[]{3,2051}); //Bloque l'action (faisable qu'une fois)
         Action action205_1 = new Action(2051,true,"Examiner ce qui est illisible [Loupe]", consequences_action205_1, 205);
-
-
-        //Actions de la salle 206 - PC dévérouillé
-
-        ArrayList<int[]> consequences_action206_1 = new ArrayList<>();
-        //consequences_action206_1.add(new int[]{?}); //Fait évoluer l'image
-        consequences_action206_1.add(new int[]{2,2062}); //Dévérouille l'action "Retour page précédente"
-        consequences_action206_1.add(new int[]{3,2061}); //Vérouille cette action
-        Action action206_1 = new Action(2061,true,"Passer à la page suivante", consequences_action206_1, 206);
-
-        ArrayList<int[]> consequences_action206_2 = new ArrayList<>();
-        //consequences_action206_2.add(new int[]{?}); //Fait évoluer l'image
-        consequences_action206_2.add(new int[]{2,2061}); //Dévérouille l'action "Passer à la page suivante"
-        consequences_action206_2.add(new int[]{3,2062}); //Vérouille cette action
-        Action action206_2 = new Action(2062,false,"Retour à la page précédente", consequences_action206_2, 206);
 
 
         //Actions de la salle 207 - Étagère 1

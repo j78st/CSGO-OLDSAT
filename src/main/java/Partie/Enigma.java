@@ -171,6 +171,8 @@ public class Enigma extends Room{
                         gest_1((int) click_zones.get(i)[0]);
                     } else if (gest == 2) {
                         gest_2((int) click_zones.get(i)[0]);
+                    } else if (gest == 3) {
+                        gest_3((int) click_zones.get(i)[0]);
                     }
                 }
                 i++;
@@ -238,6 +240,12 @@ public class Enigma extends Room{
 
     }
 
+
+    /**
+     * deuxième méthode permettant de gérer le comportement des énigmes cliquables
+     * elle permet de créer des énigmes où ils faut cliquer sur des éléments de l'image dans l'ordre
+     * @param id_zone id de la zone cliquée
+     */
     public void gest_2(int id_zone) throws IOException {
         String sol = "";
 
@@ -255,6 +263,48 @@ public class Enigma extends Room{
             clicks_memory.clear(); //Nettoie la mémoire pour permettre de retenter ensuite
         }
 
+    }
+
+
+    /**
+     * troisième méthode permettant de gérer le comportement des énigmes cliquables
+     * elle est réservée à la gestion du PC interactif présent dans la bibliothèque
+     * @param id_zone id de la zone cliquée
+     */
+    public void gest_3(int id_zone) throws IOException {
+
+        switch (id_zone){
+            case 1: //Icône 1 du bureau
+                Game.search_action(2063).getConsequences().clear();
+                Game.search_action(2063).getConsequences().add(new int[]{1,2062});
+                Game.search_action(2063).do_consequences();
+                break;
+            case 2:
+                Game.search_action(2063).getConsequences().clear();
+                Game.search_action(2063).getConsequences().add(new int[]{1,2063});
+                Game.search_action(2063).do_consequences();
+                break;
+            case 3:
+                Game.search_action(2063).getConsequences().clear();
+                Game.search_action(2063).getConsequences().add(new int[]{1,2065});
+                Game.search_action(2063).do_consequences();
+                break;
+            case 4:
+                Game.search_action(2063).getConsequences().clear();
+                Game.search_action(2063).getConsequences().add(new int[]{1,(Game.getPlayer().getPosition())-1});
+                Game.search_action(2063).do_consequences();
+                break;
+            case 5:
+                Game.search_action(2063).getConsequences().clear();
+                Game.search_action(2063).getConsequences().add(new int[]{1,(Game.getPlayer().getPosition())+1});
+                Game.search_action(2063).do_consequences();
+                break;
+            case 6:
+                Game.search_action(2063).getConsequences().clear();
+                Game.search_action(2063).getConsequences().add(new int[]{1,206});
+                Game.search_action(2063).do_consequences();
+                break;
+        }
     }
 
     public void check_solution_clickable(String sol) throws IOException {
