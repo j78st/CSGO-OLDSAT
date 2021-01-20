@@ -295,6 +295,7 @@ public class Scenario_structure {
         Action action206_2 = new Action(2062,false,"Retour à la page précédente", consequences_action206_2, 206);
 
 
+
         //Actions de la salle 207 - Étagère 1
 
         ArrayList<int[]> consequences_action207_1 = new ArrayList<>();

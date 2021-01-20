@@ -77,12 +77,105 @@ public class Scenario {
             "Certaines actions comme celle-ci ne dévérouillent rien et n'ont aucune incidence sur le déroulement de l'histoire.");
 
 
-
-
     public Text_scenario room_107_1 = new Text_scenario(1071,"Vous êtes dans la bibliothèque de l'ENSSAT.\n" +
             "La porte s'est refermée derrière vous. C'est surement dû à un courant d'air.\n\n");
 
     public Text_scenario room_107_2 = new Text_scenario(1072,"La porte est vérrouillée : impossible de l'ouvrir.\n" +
             "Il va vous falloir trouver un autre moyen de sortir d'ici, mais vous ne voyez aucune autre porte...");
 
+    public Text_scenario room_108_1 = new Text_scenario(1081,"La bibliothèque est plus grande que vous ne l'imaginiez.\n" +
+            "Malgrè l'espace, vous vous sentez opréssé. L'atmosphère est assez lourde.\n" +
+            "Vous resentez clairement que l'endroit est imprégné d'un fort passé, à cause des vieux murs décorés de vitraux " +
+            "et une odeur désagréble de bouquins usés.\n\n" +
+            "Cependant l'endroit est assez bien éclairé, ce qui vous permez d'inspecter la salle.\n\n" +
+            "Au centre du rez-de-chaussée, il y 3 étagères pleines à craquer d'ouvrages en tout genre." +
+            "À côté de ces étagères se trouve un bureau et une chaise, appartenant surement au gestionnaire de la bibliothèque." +
+            "Pas loin de la porte par laquelle vous êtes entrez ,vous remarquez un escalier en colimaçon menant à un étage.");
+
+    public Text_scenario room_211_1 = new Text_scenario(2111,"La porte est fermée mais elle ne semble pas très robuste " +
+            "peut-être ne résistera t-elle pas à votre épaule ?\n\n");
+
+    public Text_scenario room_211_2 = new Text_scenario(2112,"La porte n'a pas bougé et vous vous êtes fait mal, " +
+            "ça ne semble pas être une bonne idée.");
+
+    public Text_scenario room_202_1 = new Text_scenario(2021,"Le bureau semble normal.\n" +
+            "Un ordinateur est posé dessus. Il y a un tiroir sur la gauche du meuble.\n" +
+            "Vous voyez aussi un morceau de papier déchiré mis en évidence sous une lampe.");
+
+    public Text_scenario room_303_1 = new Text_scenario(3031,"Vous allumez l'ordinateur, peut-être y trouverez vous quelque chose d'utile.\n" +
+            "Il faut un mot de passe pour pouvoir se connecter à la session du gestionnaire, vous vous y attendiez mais vous êtes quand même décu.\n" +
+            "Il y a un post-it accroché sur l'écran. Vous pouvez y lire \"RTYIJVFXXJ César +5\". Qu-est ce que cela peut bien signifier?");
+
+    public Text_scenario room_206_1 = new Text_scenario(2061,"Le mot de passe est correct, vous avez maintenant accès à la session du gestionnaire." +
+            "Un dossier en particulier attire votre attention, il est intitulé \"Informations Bibliothèque\"." +
+            "Vous l'ouvrez et vous trouvez à l'intérieur 3 documents :\n" +
+            "- le premier s'appelle \"Historique des emprunts\".\n" +
+            "- le second s'appelle \"Commandes pour la bibliothèque\".\n" +
+            "- le troisième s'appelle \"Catalogue de la bibliothèque\".");
+
+    public Text_scenario room_206_2 = new Text_scenario(2062,"Vous lisez le document :\n\n" +
+            "Historique des emprunts\n\n" +
+            "Les Fleurs du mal - Charles Baudelaire - emprunté jusqu'au 05/03/21\n" +
+            "L'Étranger - Albert Camus - emprunté jusqu'au 05/03/21\n" +
+            "Les Misérables - Victor Hugo - emprunté jusqu'au 05/03/21\n" +
+            "Les Liaisons dangereuses - Choderlos de Laclos - emprunté jusqu'au 05/03/21\n" +
+            "Le Petit Prince - Antoine de Saint-Exupéry - emprunté jusqu'au 05/03/21");
+
+    public Text_scenario room_206_3 = new Text_scenario(2063,"Vous lisez le document :\n\n" +
+            "Commandes pour la bibliothèque\n\n" +
+            "Madame Bovary - Gustave Flaubert - livraison prévue pour le 05/03/21\n" +
+            "Cyrano de Bergerac - Edmond Rostand - livraison prévue pour le 05/03/21\n" +
+            "Voyage au bout de la nuit - Louis-Ferdinand Céline - livraison prévue pour le 05/03/21\n" +
+            "Candide ou l'optimisme - Voltaire - livraison prévue pour le 05/03/21\n" +
+            "Bel-Ami - Guy de Maupassant - livraison prévue pour le 05/03/21");
+
+    public Text_scenario room_206_4 = new Text_scenario(2064,"Vous lisez le document :\n\n" +
+            "Catalogue de la bibliothèque\n\n" +
+            "12345 - Le Rouge et le Noir - Stendhal" +
+            "12345 - Les Trois Mousquetaires - Alexandre Dumas" +
+            "12345 - Antigone - Jean Anouilh" +
+            "12345 - Le Comte de Monte-Cristo - Alexandre Dumas" +
+            "12345 - Le Cid - Pierre Corneille");
+
+    public Text_scenario room_302_1 = new Text_scenario(3021,"Un cadena protège le tiroir. " +
+            "Il faut un code à 3 chiffres pour pouvoir l'ouvrir. Quel code les gestionnaire a t-il pu utiliser ?");
+
+    public Text_scenario room_203_1 = new Text_scenario(2031,"Le cadena est ouvert. Vous ouvrez le tiroir.\n" +
+            "Vous trouvez une clef, elle vous servira bien à quelque chose.");
+
+    public Text_scenario room_204_1 = new Text_scenario(2041,"Le cadena est ouvert. Vous ouvrez le tiroir.\n" +
+            "Vous trouvez une clef, elle vous servira bien à quelque chose.\n\n" +
+            "En inspectant avec plus d'insistance, vous constatez que les dimensions du tiroir ne sont pas cohérentes." +
+            "Il y a un double fond !");
+
+    public Text_scenario room_204_2 = new Text_scenario(2042,"En utilisant votre compas, vous parvenez à enlevez le double fond.\n" +
+            "Il cachait un morceau de papier brulé, vous pouvez y lire l'insciption suivante :\n" +
+            "\"À vaincre sans péril on triomphe sans gloire.\" Qu'est-ce cela peut bien signifier ?");
+
+    public Text_scenario room_204_3 = new Text_scenario(2043,"En utilisant votre petit opinel, vous parvenez à enlevez le double fond.\n" +
+            "Il cachait un morceau de papier brulé, vous pouvez y lire l'insciption suivante :\n" +
+            "\"À vaincre sans péril on triomphe sans gloire.\" Qu'est-ce cela peut bien signifier ?");
+
+    public Text_scenario room_205_1 = new Text_scenario(2051,"Le morceau de papier est en fait une ordonnance médicale arrachée.\n" +
+            "Vous lisez l'ordonnance :\n\n" +
+            "Professionnel de la santé : HARSCOET Geraldine\n" +
+            "Patient : Mme POINSU\n" +
+            "Profession : Libraire\n" +
+            "Pathologie : Violentes pertes de mémoires\n" +
+            "Résumé de la consultation :\n" +
+            "Au vu de votre profession, je vous conseille d'utiliser au maximum des éléments visuels pour retenir les éléments importants." +
+            "Cela soulagera votre mémoire.\n" +
+            "Médicaments prescrits : Galantamine (500 mg)");
+
+    public Text_scenario room_205_2 = new Text_scenario(2052,"Gràce à votre loupe, vous parvenez à déchifrer l'inscription, " +
+            "elle dit : \"À vaincre sans péril on triomphe sans gloire.\" Qu'est-ce cela peut bien signifier ?");
+
+    public Text_scenario room_207_1 = new Text_scenario(2071,"Une étagère de bibliothèque, tout ce qu'il y a de plus classique.\n" +
+            "Celle-ci contient surtout des livres sur les mathématiques et les sciences.");
+
+    public Text_scenario room_208_1 = new Text_scenario(2081,"Une étagère de bibliothèque, tout ce qu'il y a de plus classique.\n" +
+            "Celle-ci contient surtout des classiques de la littérature française.");
+
+    public Text_scenario room_209_1 = new Text_scenario(2091,"Une étagère de bibliothèque, tout ce qu'il y a de plus classique.\n" +
+            "Celle-ci contient surtout des livres sur l'histoire française et la géo-politique.");
 }

@@ -36,7 +36,7 @@ public class cinematicController implements Controller {
     private String text2 = "Vous regardez autour de vous, l'endroit est désert.\n" +
             "Toutefois vous retrouvez le panneau indiquant la salle 137C, celui qui vous a guidé le matin même.\n" +
             "Personne n'a pris le temps de le ranger, bizarre ...\n\n" +
-            "Un silence assez oppressant vous pousse à ne pas rester là.\n" +
+            "Un silence assez pesant vous pousse à ne pas rester là.\n" +
             "Pourquoi ne pas suivre la direction indiquée par le panneau,\n" +
             "après tout vous connaissez déjà ce chemin.";
 

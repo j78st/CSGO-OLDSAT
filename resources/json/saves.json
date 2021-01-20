@@ -4,7 +4,7 @@
       "no": 0,
       "srgame": {
         "player": {
-          "pseudo": "zert",
+          "pseudo": "aa",
           "inventory": [],
           "position": 101
         },
@@ -23,7 +23,8 @@
             "id_actions": [
               1011,
               1012,
-              10169
+              10169,
+              10170
             ],
             "room_name": "Prologue - Hall d\u0027entrée",
             "bas": true
@@ -285,6 +286,24 @@
             "bas": false
           },
           {
+            "id": 211,
+            "neighbours": [
+              -1,
+              -1,
+              108,
+              -1
+            ],
+            "access": true,
+            "id_text": 2111,
+            "path_image": "pictures/Trousse.png",
+            "id_actions": [
+              2111,
+              2112
+            ],
+            "room_name": "Sans_Nom",
+            "bas": false
+          },
+          {
             "id": 109,
             "neighbours": [
               -1,
@@ -297,7 +316,8 @@
             "path_image": "pictures/Bibliotheque.png",
             "id_actions": [
               1091,
-              1092
+              1092,
+              1093
             ],
             "room_name": "Sans_Nom",
             "bas": false
@@ -314,24 +334,6 @@
             "id_text": 2101,
             "path_image": "pictures/Trousse.png",
             "id_actions": [],
-            "room_name": "Sans_Nom",
-            "bas": false
-          },
-          {
-            "id": 211,
-            "neighbours": [
-              -1,
-              -1,
-              108,
-              -1
-            ],
-            "access": true,
-            "id_text": 2111,
-            "path_image": "pictures/Trousse.png",
-            "id_actions": [
-              2111,
-              2112
-            ],
             "room_name": "Sans_Nom",
             "bas": false
           },
@@ -364,6 +366,10 @@
               ]
             ],
             "nb_error": 0,
+            "click_zones": [],
+            "clicks_memory": [],
+            "gest": 0,
+            "resolved": false,
             "id": 301,
             "neighbours": [
               -1,
@@ -373,7 +379,7 @@
             ],
             "access": true,
             "id_text": 3011,
-            "path_image": "pictures/Tableau.png",
+            "path_image": "pictures/Trousse.png",
             "id_actions": [],
             "room_name": "Sans_Nom",
             "bas": false
@@ -388,9 +394,22 @@
               [
                 1,
                 203
+              ],
+              [
+                2,
+                1085
+              ],
+              [
+                11,
+                1085,
+                4003
               ]
             ],
             "nb_error": 0,
+            "click_zones": [],
+            "clicks_memory": [],
+            "gest": 0,
+            "resolved": false,
             "id": 302,
             "neighbours": [
               -1,
@@ -400,7 +419,7 @@
             ],
             "access": true,
             "id_text": 3021,
-            "path_image": "pictures/Tableau.png",
+            "path_image": "pictures/Trousse.png",
             "id_actions": [],
             "room_name": "Sans_Nom",
             "bas": false
@@ -418,6 +437,10 @@
               ]
             ],
             "nb_error": 0,
+            "click_zones": [],
+            "clicks_memory": [],
+            "gest": 0,
+            "resolved": false,
             "id": 303,
             "neighbours": [
               -1,
@@ -427,7 +450,136 @@
             ],
             "access": true,
             "id_text": 3031,
-            "path_image": "pictures/Tableau.png",
+            "path_image": "pictures/Trousse.png",
+            "id_actions": [],
+            "room_name": "Sans_Nom",
+            "bas": false
+          },
+          {
+            "solution": "1234",
+            "consequences": [
+              [
+                7,
+                3042,
+                304
+              ],
+              [
+                2,
+                1085
+              ],
+              [
+                11,
+                1085,
+                4005
+              ]
+            ],
+            "nb_error": 0,
+            "click_zones": [
+              [
+                3.0,
+                0.55,
+                0.65,
+                0.135,
+                0.68
+              ],
+              [
+                4.0,
+                0.658,
+                0.74,
+                0.135,
+                0.68
+              ],
+              [
+                2.0,
+                0.758,
+                0.84,
+                0.135,
+                0.68
+              ],
+              [
+                1.0,
+                0.857,
+                0.94,
+                0.135,
+                0.68
+              ]
+            ],
+            "clicks_memory": [],
+            "gest": 1,
+            "resolved": false,
+            "id": 304,
+            "neighbours": [
+              -1,
+              -1,
+              109,
+              -1
+            ],
+            "access": true,
+            "id_text": 3041,
+            "path_image": "pictures/304/3421.png",
+            "id_actions": [],
+            "room_name": "Sans_Nom",
+            "bas": false
+          },
+          {
+            "solution": "12345",
+            "consequences": [
+              [
+                4,
+                42
+              ]
+            ],
+            "nb_error": 0,
+            "click_zones": [
+              [
+                1.0,
+                0.6,
+                0.67,
+                0.64,
+                0.74
+              ],
+              [
+                2.0,
+                0.75,
+                0.81,
+                0.5,
+                0.61
+              ],
+              [
+                3.0,
+                0.85,
+                0.91,
+                0.14,
+                0.25
+              ],
+              [
+                4.0,
+                0.63,
+                0.7,
+                0.22,
+                0.33
+              ],
+              [
+                5.0,
+                0.875,
+                0.93,
+                0.65,
+                0.76
+              ]
+            ],
+            "clicks_memory": [],
+            "gest": 2,
+            "resolved": false,
+            "id": 305,
+            "neighbours": [
+              -1,
+              -1,
+              101,
+              -1
+            ],
+            "access": true,
+            "id_text": 3051,
+            "path_image": "pictures/305.png",
             "id_actions": [],
             "room_name": "Sans_Nom",
             "bas": false
@@ -480,6 +632,17 @@
               [
                 12,
                 107
+              ]
+            ]
+          },
+          {
+            "id": 10170,
+            "available": true,
+            "text": "Saut admin enigme 305",
+            "consequences": [
+              [
+                1,
+                305
               ]
             ]
           },
@@ -763,7 +926,7 @@
             "consequences": [
               [
                 7,
-                4006
+                4001
               ],
               [
                 3,
@@ -794,6 +957,15 @@
               [
                 1,
                 205
+              ],
+              [
+                2,
+                1085
+              ],
+              [
+                13,
+                1085,
+                4002
               ]
             ]
           },
@@ -989,6 +1161,15 @@
                 4
               ],
               [
+                2,
+                1085
+              ],
+              [
+                13,
+                1085,
+                4004
+              ],
+              [
                 10
               ]
             ]
@@ -1026,22 +1207,33 @@
           {
             "id": 1091,
             "available": true,
-            "text": "Descendre au rez-de-chaussée",
+            "text": "Regarder le plafond",
             "consequences": [
               [
                 1,
-                108
+                210
               ]
             ]
           },
           {
             "id": 1092,
             "available": true,
-            "text": "Regarder le plafond",
+            "text": "S\u0027approcher de l\u0027étagère centrale",
             "consequences": [
               [
                 1,
-                210
+                304
+              ]
+            ]
+          },
+          {
+            "id": 1093,
+            "available": true,
+            "text": "Descendre au rez-de-chaussée",
+            "consequences": [
+              [
+                1,
+                108
               ]
             ]
           }
@@ -1061,6 +1253,10 @@
               ]
             ],
             "nb_error": 0,
+            "click_zones": [],
+            "clicks_memory": [],
+            "gest": 0,
+            "resolved": false,
             "id": 301,
             "neighbours": [
               -1,
@@ -1070,7 +1266,7 @@
             ],
             "access": true,
             "id_text": 3011,
-            "path_image": "pictures/Tableau.png",
+            "path_image": "pictures/Trousse.png",
             "id_actions": [],
             "room_name": "Sans_Nom",
             "bas": false
@@ -1085,9 +1281,22 @@
               [
                 1,
                 203
+              ],
+              [
+                2,
+                1085
+              ],
+              [
+                11,
+                1085,
+                4003
               ]
             ],
             "nb_error": 0,
+            "click_zones": [],
+            "clicks_memory": [],
+            "gest": 0,
+            "resolved": false,
             "id": 302,
             "neighbours": [
               -1,
@@ -1097,7 +1306,7 @@
             ],
             "access": true,
             "id_text": 3021,
-            "path_image": "pictures/Tableau.png",
+            "path_image": "pictures/Trousse.png",
             "id_actions": [],
             "room_name": "Sans_Nom",
             "bas": false
@@ -1115,6 +1324,10 @@
               ]
             ],
             "nb_error": 0,
+            "click_zones": [],
+            "clicks_memory": [],
+            "gest": 0,
+            "resolved": false,
             "id": 303,
             "neighbours": [
               -1,
@@ -1124,7 +1337,136 @@
             ],
             "access": true,
             "id_text": 3031,
-            "path_image": "pictures/Tableau.png",
+            "path_image": "pictures/Trousse.png",
+            "id_actions": [],
+            "room_name": "Sans_Nom",
+            "bas": false
+          },
+          {
+            "solution": "1234",
+            "consequences": [
+              [
+                7,
+                3042,
+                304
+              ],
+              [
+                2,
+                1085
+              ],
+              [
+                11,
+                1085,
+                4005
+              ]
+            ],
+            "nb_error": 0,
+            "click_zones": [
+              [
+                3.0,
+                0.55,
+                0.65,
+                0.135,
+                0.68
+              ],
+              [
+                4.0,
+                0.658,
+                0.74,
+                0.135,
+                0.68
+              ],
+              [
+                2.0,
+                0.758,
+                0.84,
+                0.135,
+                0.68
+              ],
+              [
+                1.0,
+                0.857,
+                0.94,
+                0.135,
+                0.68
+              ]
+            ],
+            "clicks_memory": [],
+            "gest": 1,
+            "resolved": false,
+            "id": 304,
+            "neighbours": [
+              -1,
+              -1,
+              109,
+              -1
+            ],
+            "access": true,
+            "id_text": 3041,
+            "path_image": "pictures/304/3421.png",
+            "id_actions": [],
+            "room_name": "Sans_Nom",
+            "bas": false
+          },
+          {
+            "solution": "12345",
+            "consequences": [
+              [
+                4,
+                42
+              ]
+            ],
+            "nb_error": 0,
+            "click_zones": [
+              [
+                1.0,
+                0.6,
+                0.67,
+                0.64,
+                0.74
+              ],
+              [
+                2.0,
+                0.75,
+                0.81,
+                0.5,
+                0.61
+              ],
+              [
+                3.0,
+                0.85,
+                0.91,
+                0.14,
+                0.25
+              ],
+              [
+                4.0,
+                0.63,
+                0.7,
+                0.22,
+                0.33
+              ],
+              [
+                5.0,
+                0.875,
+                0.93,
+                0.65,
+                0.76
+              ]
+            ],
+            "clicks_memory": [],
+            "gest": 2,
+            "resolved": false,
+            "id": 305,
+            "neighbours": [
+              -1,
+              -1,
+              101,
+              -1
+            ],
+            "access": true,
+            "id_text": 3051,
+            "path_image": "pictures/305.png",
             "id_actions": [],
             "room_name": "Sans_Nom",
             "bas": false
@@ -1187,7 +1529,7 @@
         "texts": [
           {
             "id": 1011,
-            "text": "Salutations zert.\n\nVous avez été admis à l’ENSSAT, l’École Nationale Supérieure des Sciences Appliquées et de Technologie, c’est génial n’est-ce pas ?\nC\u0027est votre premier jour et vous arrivez dans le hall d\u0027entrée de l\u0027ENSSAT dans lequel vous trouvez un groupe de nouveaux élèves, vous êtes un peu stressé.\nVous savez que vous devez rejoindre une salle libellée 137C mais vous n\u0027avez aucune idée de comment vous y rendre.\n\n[Tutoriel]\nRemarquez la liste des actions disponibles sur votre écran, vous pouvez en sélectionner une en cliquant dessus puis appuyer sur le bouton \"Valider action\" pour l\u0027exécuter.\n\n"
+            "text": "Salutations aa.\n\nVous avez été admis à l’ENSSAT, l’École Nationale Supérieure des Sciences Appliquées et de Technologie, c’est génial n’est-ce pas ?\nC\u0027est votre premier jour et vous arrivez dans le hall d\u0027entrée de l\u0027ENSSAT dans lequel vous trouvez un groupe de nouveaux élèves, vous êtes un peu stressé.\nVous savez que vous devez rejoindre une salle libellée 137C mais vous n\u0027avez aucune idée de comment vous y rendre.\n\n[Tutoriel]\nRemarquez la liste des actions disponibles sur votre écran, vous pouvez en sélectionner une en cliquant dessus puis appuyer sur le bouton \"Valider action\" pour l\u0027exécuter.\n\n"
           },
           {
             "id": 1012,
@@ -1244,6 +1586,78 @@
           {
             "id": 1072,
             "text": "La porte est vérrouillée : impossible de l\u0027ouvrir.\nIl va vous falloir trouver un autre moyen de sortir d\u0027ici, mais vous ne voyez aucune autre porte..."
+          },
+          {
+            "id": 1081,
+            "text": "La bibliothèque est plus grande que vous ne l\u0027imaginiez.\nMalgrè l\u0027espace, vous vous sentez opréssé. L\u0027atmosphère est assez lourde.\nVous resentez clairement que l\u0027endroit est imprégné d\u0027un fort passé, à cause des vieux murs décorés de vitraux et une odeur désagréble de bouquins usés.\n\nCependant l\u0027endroit est assez bien éclairé, ce qui vous permez d\u0027inspecter la salle.\n\nAu centre du rez-de-chaussée, il y 3 étagères pleines à craquer d\u0027ouvrages en tout genre.À côté de ces étagères se trouve un bureau et une chaise, appartenant surement au gestionnaire de la bibliothèque.Pas loin de la porte par laquelle vous êtes entrez ,vous remarquez un escalier en colimaçon menant à un étage."
+          },
+          {
+            "id": 2111,
+            "text": "La porte est fermée mais elle ne semble pas très robuste peut-être ne résistera t-elle pas à votre épaule ?\n\n"
+          },
+          {
+            "id": 2112,
+            "text": "La porte n\u0027a pas bougé et vous vous êtes fait mal, ça ne semble pas être une bonne idée."
+          },
+          {
+            "id": 2021,
+            "text": "Le bureau semble normal.\nUn ordinateur est posé dessus. Il y a un tiroir sur la gauche du meuble.\nVous voyez aussi un morceau de papier déchiré mis en évidence sous une lampe."
+          },
+          {
+            "id": 3031,
+            "text": "Vous allumez l\u0027ordinateur, peut-être y trouverez vous quelque chose d\u0027utile.\nIl faut un mot de passe pour pouvoir se connecter à la session du gestionnaire, vous vous y attendiez mais vous êtes quand même décu.\nIl y a un post-it accroché sur l\u0027écran. Vous pouvez y lire \"RTYIJVFXXJ César +5\". Qu-est ce que cela peut bien signifier?"
+          },
+          {
+            "id": 2061,
+            "text": "Le mot de passe est correct, vous avez maintenant accès à la session du gestionnaire.Un dossier en particulier attire votre attention, il est intitulé \"Informations Bibliothèque\".Vous l\u0027ouvrez et vous trouvez à l\u0027intérieur 3 documents :\n- le premier s\u0027appelle \"Historique des emprunts\".\n- le second s\u0027appelle \"Commandes pour la bibliothèque\".\n- le troisième s\u0027appelle \"Catalogue de la bibliothèque\"."
+          },
+          {
+            "id": 2062,
+            "text": "Vous lisez le document :\n\nHistorique des emprunts\n\nLes Fleurs du mal - Charles Baudelaire - emprunté jusqu\u0027au 05/03/21\nL\u0027Étranger - Albert Camus - emprunté jusqu\u0027au 05/03/21\nLes Misérables - Victor Hugo - emprunté jusqu\u0027au 05/03/21\nLes Liaisons dangereuses - Choderlos de Laclos - emprunté jusqu\u0027au 05/03/21\nLe Petit Prince - Antoine de Saint-Exupéry - emprunté jusqu\u0027au 05/03/21"
+          },
+          {
+            "id": 2063,
+            "text": "Vous lisez le document :\n\nCommandes pour la bibliothèque\n\nMadame Bovary - Gustave Flaubert - livraison prévue pour le 05/03/21\nCyrano de Bergerac - Edmond Rostand - livraison prévue pour le 05/03/21\nVoyage au bout de la nuit - Louis-Ferdinand Céline - livraison prévue pour le 05/03/21\nCandide ou l\u0027optimisme - Voltaire - livraison prévue pour le 05/03/21\nBel-Ami - Guy de Maupassant - livraison prévue pour le 05/03/21"
+          },
+          {
+            "id": 2064,
+            "text": "Vous lisez le document :\n\nCatalogue de la bibliothèque\n\n12345 - Le Rouge et le Noir - Stendhal12345 - Les Trois Mousquetaires - Alexandre Dumas12345 - Antigone - Jean Anouilh12345 - Le Comte de Monte-Cristo - Alexandre Dumas12345 - Le Cid - Pierre Corneille"
+          },
+          {
+            "id": 3021,
+            "text": "Un cadena protège le tiroir. Il faut un code à 3 chiffres pour pouvoir l\u0027ouvrir. Quel code les gestionnaire a t-il pu utiliser ?"
+          },
+          {
+            "id": 2031,
+            "text": "Le cadena est ouvert. Vous ouvrez le tiroir.\nVous trouvez une clef, elle vous servira bien à quelque chose."
+          },
+          {
+            "id": 2041,
+            "text": "Le cadena est ouvert. Vous ouvrez le tiroir.\nVous trouvez une clef, elle vous servira bien à quelque chose.\n\nEn inspectant avec plus d\u0027insistance, vous constatez que les dimensions du tiroir ne sont pas cohérentes.Il y a un double fond !"
+          },
+          {
+            "id": 2042,
+            "text": "En utilisant votre compas, vous parvenez à enlevez le double fond.\nIl cachait un morceau de papier brulé, vous pouvez y lire l\u0027insciption suivante :\n\"À vaincre sans péril on triomphe sans gloire.\" Qu\u0027est-ce cela peut bien signifier ?"
+          },
+          {
+            "id": 2043,
+            "text": "En utilisant votre petit opinel, vous parvenez à enlevez le double fond.\nIl cachait un morceau de papier brulé, vous pouvez y lire l\u0027insciption suivante :\n\"À vaincre sans péril on triomphe sans gloire.\" Qu\u0027est-ce cela peut bien signifier ?"
+          },
+          {
+            "id": 2051,
+            "text": "Le morceau de papier est en fait une ordonnance médicale arrachée.\nVous lisez l\u0027ordonnance :\n\nProfessionnel de la santé : HARSCOET Geraldine\nPatient : Mme POINSU\nProfession : Libraire\nPathologie : Violentes pertes de mémoires\nRésumé de la consultation :\nAu vu de votre profession, je vous conseille d\u0027utiliser au maximum des éléments visuels pour retenir les éléments importants.Cela soulagera votre mémoire.\nMédicaments prescrits : Galantamine (500 mg)"
+          },
+          {
+            "id": 2071,
+            "text": "Une étagère de bibliothèque, tout ce qu\u0027il y a de plus classique.Celle-ci contient surtout des livres sur les mathématiques et les sciences."
+          },
+          {
+            "id": 2081,
+            "text": "Une étagère de bibliothèque, tout ce qu\u0027il y a de plus classique.Celle-ci contient surtout des classiques de la littérature française."
+          },
+          {
+            "id": 2091,
+            "text": "Une étagère de bibliothèque, tout ce qu\u0027il y a de plus classique.Celle-ci contient surtout des livres sur l\u0027histoire française et la géo-politique."
           }
         ],
         "difficulty": 1,
