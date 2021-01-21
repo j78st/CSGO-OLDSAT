@@ -35,14 +35,14 @@ public class cinematicController implements Controller {
             "Vous arrivez dans le hall d'accueil de l'ENSSAT.";
 
     private String text2 = "Vous regardez autour de vous, l'endroit est désert.\n" +
-            "Toutefois vous retrouvez le panneau indiquant la salle 137C, celui qui vous a guidé le matin même.\n" +
-            "Personne n'a pris le temps de le ranger, bizarre ...\n\n" +
+            "Toutefois, vous retrouvez le panneau indiquant la salle 137C, celui qui vous a guidé le matin même.\n" +
+            "Personne n'a pris le temps de le ranger, bizarre...\n\n" +
             "Un silence assez pesant vous pousse à ne pas rester là.\n" +
             "Pourquoi ne pas suivre la direction indiquée par le panneau ?\n" +
             "Après tout vous connaissez déjà ce chemin.";
 
     private String text3 = "Vous vous dirigez vers le couloir.\n\n" +
-            "Après quelques pas vous vous arrêtez net ...\n" +
+            "Après quelques pas vous vous arrêtez net.\n" +
             "Vous êtes interpellé par une faible lueur. Elle vient de votre droite.\n" +
             "Vous remarquez une porte entrouverte sur laquelle vous lisez \"Bibliothèque\".";
 

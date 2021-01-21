@@ -57,7 +57,7 @@ public class Scenario_structure {
         //Amphi pré-conférence
         ArrayList<int[]> consequences_action102_1 = new ArrayList<>();
         consequences_action102_1.add(new int[]{1,103}); //Bouge le joueur dans la salle suivante
-        Action action102_1 = new Action(1021,true,"Écouter la conférence (Vous n'avez pas vraiment le choix ...)", consequences_action102_1, 102);
+        Action action102_1 = new Action(1021,true,"Écouter la conférence (Vous n'avez pas vraiment le choix...)", consequences_action102_1, 102);
 
         //Amphi post-conférence
         ArrayList<int[]> consequences_action103_1 = new ArrayList<>();
@@ -354,13 +354,13 @@ public class Scenario_structure {
         consequences_action204_2.add(new int[]{7,2042}); //Rajoute du texte
         consequences_action204_2.add(new int[]{3,2042}); //Bloque action (faisable qu'une fois)
         consequences_action204_2.add(new int[]{17,37}); //Bruit de bois qui craque
-        Action action204_2 = new Action(2042, "Casser le double fond [Compas]", consequences_action204_2, 204, 3);
+        Action action204_2 = new Action(2042, "Casser le double fond [Compas]", consequences_action204_2, 204, 1);
 
         ArrayList<int[]> consequences_action204_3 = new ArrayList<>();
         consequences_action204_3.add(new int[]{7,2043}); //Rajoute du texte
         consequences_action204_3.add(new int[]{3,2043}); //Bloque action (faisable qu'une fois)
         consequences_action204_3.add(new int[]{17,3}); //Bruit opinel
-        Action action204_3 = new Action(2043, "Enlever le double fond [Opinel]", consequences_action204_3, 204, 1);
+        Action action204_3 = new Action(2043, "Enlever le double fond [Opinel]", consequences_action204_3, 204, 3);
 
 
         //Actions de la salle 205 - Note
