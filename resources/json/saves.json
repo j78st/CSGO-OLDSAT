@@ -2283,15 +2283,15 @@
           },
           {
             "id": 2041,
-            "text": "Le cadena est ouvert. Vous ouvrez le tiroir.\nVous trouvez une clef, elle vous servira bien à quelque chose.\n\nVous revenez pour inspecter plus en profondeur le tiroir et vous remarquez un double fond."
+            "text": "Le cadena est ouvert. Vous ouvrez le tiroir.\nVous trouvez une clef, elle vous servira bien à quelque chose.\n\nVous revenez pour inspecter plus en profondeur le tiroir."
           },
           {
             "id": 2042,
-            "text": "En utilisant votre compas, vous parvenez à l\u0027enlevez.\nIl cachait un morceau de papier brulé, vous pouvez y lire l\u0027inscription suivante :\n\"À vaincre sans péril on triomphe sans gloire.\" Qu\u0027est-ce cela peut bien signifier ?"
+            "text": "Vous remarquez un double fond.\nEn utilisant votre compas, vous parvenez à l\u0027enlevez.\nIl cachait un morceau de papier brulé, vous pouvez y lire l\u0027inscription suivante :\n\"À vaincre sans péril on triomphe sans gloire.\" Qu\u0027est-ce cela peut bien signifier ?"
           },
           {
             "id": 2043,
-            "text": "En utilisant votre petit opinel, vous parvenez à l\u0027enlevez.\nIl cachait un morceau de papier brulé, vous pouvez y lire l\u0027inscription suivante :\n\"À vaincre sans péril on triomphe sans gloire.\"\nQu\u0027est-ce cela peut bien signifier ?"
+            "text": "Vous remarquez un double fond.\nEn utilisant votre petit opinel, vous parvenez à l\u0027enlevez.\nIl cachait un morceau de papier brulé, vous pouvez y lire l\u0027inscription suivante :\n\"À vaincre sans péril on triomphe sans gloire.\"\nQu\u0027est-ce cela peut bien signifier ?"
           },
           {
             "id": 3031,
@@ -2303,7 +2303,7 @@
           },
           {
             "id": 4001,
-            "text": "Peut-être devriez inspecter plus en détail le bureau du gestionnaire,\nvous y trouverez peut-être quelque chose d\u0027intéressant.\n\n"
+            "text": "Peut-être devriez vous inspecter plus en détail le bureau du gestionnaire,\nvous y trouverez peut-être quelque chose d\u0027intéressant.\n\n"
           },
           {
             "id": 4002,
@@ -2339,7 +2339,7 @@
           }
         ],
         "difficulty": 1,
-        "timer": 0
+        "timer": 1297
       }
     },
     {

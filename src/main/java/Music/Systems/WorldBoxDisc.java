@@ -317,6 +317,11 @@ public class WorldBoxDisc extends Thread {
         Music ambiance1M = TinySound.loadMusic(ambiance1F);
         Disc ambiance1 = new Disc(ambiance1M, "ambiance1", false, MusicType.SoundFx, 10);
         add(ambiance1);
+
+        File menuThemeF = new File("resources/sounds/theme/main_theme.wav");
+        Music menuThemeM = TinySound.loadMusic(menuThemeF);
+        Disc menuTheme = new Disc(menuThemeM, "menuTheme", true, MusicType.Background, 52);
+        add(menuTheme);
     }
 
 

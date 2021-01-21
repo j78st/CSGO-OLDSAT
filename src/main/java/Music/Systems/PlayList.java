@@ -116,6 +116,10 @@ public class PlayList extends Thread {
         }
     }
 
+    /**
+     * Ne pas mettre de fonds sonores ou d'effets sonores qui bouclent
+     * sans quoi la méthode toogle ne marche pas
+     */
     @Override
     public void run() {
         this.lock = new Lock();
