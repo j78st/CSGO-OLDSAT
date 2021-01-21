@@ -586,7 +586,7 @@ public class WorldBoxDisc extends Thread {
 
     public static void main(String[] args) {
         init();
-        WorldBoxDisc.play(Son.classRoom);
+        //WorldBoxDisc.play(Son.classRoom);
         //testFromAllSound("doorSlam");
         Timer.sleep(8000);
     }
