@@ -217,7 +217,7 @@ public class WorldBoxDisc extends Thread {
         Disc bonusTime = new Disc(bonusTimeM, "bonusTime", false, MusicType.SoundFx, 1);
         add(bonusTime);
 
-        File doorSlamF = new File("resources/sounds/rooms/BigSlamDoor.wav");
+        File doorSlamF = new File("resources/sounds/interactions/slammingDoor.wav");
         Music doorSlamM = TinySound.loadMusic(doorSlamF);
         Disc doorSlam = new Disc(doorSlamM, "doorSlam", false, MusicType.SoundFx, 1);
         add(doorSlam);
@@ -322,6 +322,11 @@ public class WorldBoxDisc extends Thread {
         Music menuThemeM = TinySound.loadMusic(menuThemeF);
         Disc menuTheme = new Disc(menuThemeM, "menuTheme", true, MusicType.Background, 52);
         add(menuTheme);
+
+        File zipCloseF = new File("resources/sounds/interactions/zipClose.wav");
+        Music zipCloseM = TinySound.loadMusic(zipCloseF);
+        Disc zipClose = new Disc(zipCloseM, "zip", false, MusicType.SoundFx, 1);
+        add(zipClose);
     }
 
 
@@ -569,6 +574,7 @@ public class WorldBoxDisc extends Thread {
 
     public static void main(String[] args) {
         init();
+        WorldBoxDisc.play(Son.zip);
         testFromAllSound("doorSlam");
         Timer.sleep(8000);
     }
