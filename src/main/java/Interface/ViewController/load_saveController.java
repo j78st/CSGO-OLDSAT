@@ -105,9 +105,13 @@ public class load_saveController implements Controller {
             WorldBoxDisc.play(Son.valid);
 
             // init chrono
-            Engine.engine.timer_lbl.setVisible(true);
-            Engine.chrono = new TimerController(Game.timer);
-            Engine.chrono.start();
+            Engine.engine.timer_lbl.setVisible(false);
+            if (Game.timer != 0 && Engine.chrono != null) {
+                Engine.engine.timer_lbl.setVisible(true);
+                Engine.chrono = new TimerController(Game.timer);
+                Engine.chrono.start();
+            }
+
         }
         
     }

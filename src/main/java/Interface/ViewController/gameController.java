@@ -451,6 +451,7 @@ public class gameController implements Controller {
      */
     public void initialize () {
         // gestion menu pause
+        System.out.println(Engine.gamePaused);
         if (!Engine.gamePaused) {
             background_menu.toBack();
             vbox_menu.toBack();
