@@ -333,6 +333,12 @@ public class WorldBoxDisc extends Thread {
         Disc switch1 = new Disc(switch1M, "switch", false, MusicType.SoundFx, 1);
         add(switch1);
 
+        File classRoomF = new File("resources/sounds/ambiant/classroomNoises.wav");
+        Music classRoomM = TinySound.loadMusic(classRoomF);
+        Disc classRoom = new Disc(classRoomM, "classRoom", true, MusicType.Background, 60);
+        add(classRoom);
+
+
     }
 
 
@@ -580,7 +586,7 @@ public class WorldBoxDisc extends Thread {
 
     public static void main(String[] args) {
         init();
-        WorldBoxDisc.play(Son.switch1);
+        WorldBoxDisc.play(Son.classRoom);
         //testFromAllSound("doorSlam");
         Timer.sleep(8000);
     }
