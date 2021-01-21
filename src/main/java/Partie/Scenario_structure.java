@@ -21,7 +21,7 @@ public class Scenario_structure {
         Item compas = new Item(1,"Compas","Compas pouvant être bien pratique",-1, "objects/Compas.png");
         Item loupe = new Item(2,"Loupe","Petite loupe pouvant être bien pratique",-1, "objects/Loupe.png");
         Item opinel = new Item(3,"Petit opinel","Petit couteau pouvant être bien pratique",-1, "objects/Opinel.png");
-        Item couteau_suisse = new Item(42, "Couteau Suisse de l'Admin", "Couteau Suisse de l'Admin - Tout est possible avec ça", -1, "objects/Compas.png");
+        Item couteau_suisse = new Item(42, "Couteau Suisse de l'Admin", "Couteau Suisse de l'Admin - Tout est possible avec ça", -1, "objects/couteau_suisse.png");
 
         //Actions
 
@@ -38,7 +38,7 @@ public class Scenario_structure {
         consequences_action101_2.add(new int[]{9,102}); //Débloque salle suivante
         Action action101_2 = new Action(1012,false,"Lire le panneau", consequences_action101_2, 101);
 
-        ArrayList<int[]> consequences_action101_67 = new ArrayList<>();
+        /*ArrayList<int[]> consequences_action101_67 = new ArrayList<>();
         consequences_action101_67.add(new int[]{17,44,47});
         Action action101_67 = new Action(10167,true,"Test son", consequences_action101_67, 101);
 
@@ -52,7 +52,7 @@ public class Scenario_structure {
 
         ArrayList<int[]> consequences_action101_70 = new ArrayList<>();
         consequences_action101_70.add(new int[]{1,305});
-        Action action101_70 = new Action(10170,true,"Saut admin enigme 305", consequences_action101_70, 101);
+        Action action101_70 = new Action(10170,true,"Saut admin enigme 305", consequences_action101_70, 101);*/
 
         //Amphi pré-conférence
         ArrayList<int[]> consequences_action102_1 = new ArrayList<>();
@@ -62,7 +62,7 @@ public class Scenario_structure {
         //Amphi post-conférence
         ArrayList<int[]> consequences_action103_1 = new ArrayList<>();
         consequences_action103_1.add(new int[]{1,201}); //Bouge le joueur dans la salle suivante
-        //rajouter bruit zip fermeture eclair
+        consequences_action103_1.add(new int[]{17,53}); //Bruit de zip
         Action action103_1 = new Action(1031,true,"Fouiller dans la trousse", consequences_action103_1, 103);
 
         ArrayList<int[]> consequences_action103_2 = new ArrayList<>();
@@ -118,7 +118,7 @@ public class Scenario_structure {
 
         ArrayList<int[]> consequences_action104_3 = new ArrayList<>();
         consequences_action104_3.add(new int[]{1,107}); //Bouge le joueur dans la salle suivante
-        Action action104_3 = new Action(1043,false,"Rentrer chez vous [FIN DU PROLOGUE]", consequences_action104_3, 104);
+        Action action104_3 = new Action(1043,false,"", consequences_action104_3, 104); //Utilisé en fin de cinématique
 
 
 
@@ -127,7 +127,7 @@ public class Scenario_structure {
         //Salles
         Room room7 = new Room(107,-1,-1,-1,-1,false,1071,"pictures/Bibliotheque.png", "Acte 1 - Bibliothèque");
         Room room8 = new Room(108,110,-1,-1,-1, true,1081,"pictures/Bibliotheque.png"); // RDC bibliothèque
-        Room room8_1 = new Room(202,108,2021,"pictures/Bureau.png"); // Bureau
+        Room room8_1 = new Room(202,108,2021,"pictures/202/1.png"); // Bureau
         Room room8_1_1 = new Room(203,202,2031,"pictures/Trousse.png"); // Tiroir post-énigme
         Room room8_1_2 = new Room(204,202,2041,"pictures/Trousse.png"); // Tiroir
         Room room8_1_3 = new Room(205,202,2051,"pictures/Trousse.png"); // Note sur le bureau
@@ -157,7 +157,7 @@ public class Scenario_structure {
         consequences_enigme2.add(new int[]{2,1085}); // Débloque la demande d'indice si elle a été utilisée avant
         consequences_enigme2.add(new int[]{11,1085,4003}); // Fais évoluer le texte de l'indice
         consequences_enigme2.add(new int[]{13,41}); //Bruit du tiroir qui s'ouvre
-        //consequences_enigme2.add(new int[]{12,108,2}); //Change image de la bibliothèque
+        consequences_enigme2.add(new int[]{12,202,2}); //Change image de la bibliothèque
         Enigma enigme2 = new Enigma(302,202,3021,"pictures/Trousse.png","974",consequences_enigme2); // Tiroir vérouillé
 
         ArrayList<int[]> consequences_enigme3 = new ArrayList<>();
@@ -261,7 +261,7 @@ public class Scenario_structure {
 
         ArrayList<int[]> consequences_action107_2 = new ArrayList<>();
         consequences_action107_2.add(new int[]{1,108}); //Bouge joueur vers salle 108
-        //ajouter bruit interrupteur
+        //consequences_action107_2.add(new int[]{17,54}); //Bruit interrupteur
         Action action107_2 = new Action(1072,false,"Appuyer sur l'interrupteur", consequences_action107_2, 107);
 
 

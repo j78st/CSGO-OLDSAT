@@ -156,7 +156,7 @@
             ],
             "access": true,
             "id_text": 2021,
-            "path_image": "pictures/Bureau.png",
+            "path_image": "pictures/202/1.png",
             "id_actions": [
               2021,
               2022,
@@ -394,6 +394,10 @@
                 7,
                 3012,
                 108
+              ],
+              [
+                13,
+                35
               ]
             ],
             "nb_error": 0,
@@ -434,6 +438,15 @@
                 11,
                 1085,
                 4003
+              ],
+              [
+                13,
+                41
+              ],
+              [
+                12,
+                202,
+                2
               ]
             ],
             "nb_error": 0,
@@ -1000,6 +1013,10 @@
               [
                 1,
                 104
+              ],
+              [
+                17,
+                43
               ]
             ]
           },
@@ -1035,6 +1052,10 @@
               [
                 7,
                 1036
+              ],
+              [
+                17,
+                28
               ]
             ]
           },
@@ -1070,6 +1091,10 @@
               [
                 7,
                 1036
+              ],
+              [
+                17,
+                28
               ]
             ]
           },
@@ -1105,6 +1130,10 @@
               [
                 7,
                 1036
+              ],
+              [
+                17,
+                28
               ]
             ]
           },
@@ -1134,6 +1163,12 @@
               [
                 3,
                 1042
+              ],
+              [
+                18,
+                43,
+                2,
+                15
               ]
             ]
           },
@@ -1150,7 +1185,7 @@
           },
           {
             "id": 2061,
-            "available": true,
+            "available": false,
             "text": "Passer à la page suivante",
             "consequences": [
               [
@@ -1200,6 +1235,10 @@
               [
                 3,
                 1071
+              ],
+              [
+                17,
+                7
               ]
             ]
           },
@@ -1310,6 +1349,10 @@
               [
                 1,
                 109
+              ],
+              [
+                17,
+                43
               ]
             ]
           },
@@ -1330,6 +1373,10 @@
                 13,
                 1085,
                 4002
+              ],
+              [
+                17,
+                50
               ]
             ]
           },
@@ -1355,6 +1402,10 @@
               [
                 1,
                 204
+              ],
+              [
+                17,
+                41
               ]
             ]
           },
@@ -1395,6 +1446,10 @@
               [
                 3,
                 2041
+              ],
+              [
+                17,
+                28
               ]
             ]
           },
@@ -1410,6 +1465,10 @@
               [
                 3,
                 2041
+              ],
+              [
+                17,
+                28
               ]
             ]
           },
@@ -1425,6 +1484,10 @@
               [
                 3,
                 2042
+              ],
+              [
+                17,
+                37
               ]
             ]
           },
@@ -1440,6 +1503,10 @@
               [
                 3,
                 2043
+              ],
+              [
+                17,
+                3
               ]
             ]
           },
@@ -1466,6 +1533,10 @@
               [
                 1,
                 212
+              ],
+              [
+                17,
+                49
               ]
             ]
           },
@@ -1477,6 +1548,10 @@
               [
                 1,
                 213
+              ],
+              [
+                17,
+                50
               ]
             ]
           },
@@ -1488,6 +1563,10 @@
               [
                 1,
                 214
+              ],
+              [
+                17,
+                49
               ]
             ]
           },
@@ -1523,6 +1602,11 @@
               ],
               [
                 10
+              ],
+              [
+                17,
+                45,
+                47
               ]
             ]
           },
@@ -1538,6 +1622,10 @@
               [
                 3,
                 2111
+              ],
+              [
+                17,
+                38
               ]
             ]
           },
@@ -1553,6 +1641,10 @@
               [
                 3,
                 2112
+              ],
+              [
+                17,
+                45
               ]
             ]
           },
@@ -1586,6 +1678,10 @@
               [
                 1,
                 108
+              ],
+              [
+                17,
+                43
               ]
             ]
           }
@@ -1602,6 +1698,10 @@
                 7,
                 3012,
                 108
+              ],
+              [
+                13,
+                35
               ]
             ],
             "nb_error": 0,
@@ -1642,6 +1742,15 @@
                 11,
                 1085,
                 4003
+              ],
+              [
+                13,
+                41
+              ],
+              [
+                12,
+                202,
+                2
               ]
             ],
             "nb_error": 0,
@@ -2130,7 +2239,7 @@
             "id": 42,
             "name": "Couteau Suisse de l\u0027Admin",
             "description": "Couteau Suisse de l\u0027Admin - Tout est possible avec ça",
-            "path_image": "objects/Compas.png",
+            "path_image": "objects/couteau_suisse.png",
             "max_usage": -1,
             "current_usage": 0,
             "id_actions": []
@@ -2247,7 +2356,7 @@
           },
           {
             "id": 3011,
-            "text": "La clef vous a permi de débloquer quelque chose, \nmais rien ne semble s\u0027être ouvert. Avec votre connaissance des films d\u0027espionnage, vous connaissez ce mécanisme : il faut surement tirer sur un livre pour ouvrir une sorte de passage secret, mais lequel ?"
+            "text": "La clef vous a permi de débloquer quelque chose, mais rien ne semble s\u0027être ouvert. Avec votre connaissance des films d\u0027espionnage, vous connaissez ce mécanisme : il faut surement tirer sur un livre pour ouvrir une sorte de passage secret, mais lequel ?"
           },
           {
             "id": 3012,
