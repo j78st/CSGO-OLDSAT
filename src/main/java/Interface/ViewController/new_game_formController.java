@@ -203,8 +203,7 @@ public class new_game_formController implements Controller {
         Scenario_structure scenar_struct = new Scenario_structure();
 
         // Son ambiance
-        //
-        WorldBoxDisc.pause(Son.feu);
+        WorldBoxDisc.pause(Son.menuTheme);
     }
 
 

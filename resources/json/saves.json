@@ -156,7 +156,7 @@
             ],
             "access": true,
             "id_text": 2021,
-            "path_image": "pictures/Trousse.png",
+            "path_image": "pictures/Bureau.png",
             "id_actions": [
               2021,
               2022,
@@ -2339,7 +2339,7 @@
           }
         ],
         "difficulty": 1,
-        "timer": 1297
+        "timer": 0
       }
     },
     {

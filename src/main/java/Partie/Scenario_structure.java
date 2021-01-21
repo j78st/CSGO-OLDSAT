@@ -127,7 +127,7 @@ public class Scenario_structure {
         //Salles
         Room room7 = new Room(107,-1,-1,-1,-1,false,1071,"pictures/Bibliotheque.png", "Acte 1 - Bibliothèque");
         Room room8 = new Room(108,110,-1,-1,-1, true,1081,"pictures/Bibliotheque.png"); // RDC bibliothèque
-        Room room8_1 = new Room(202,108,2021,"pictures/Trousse.png"); // Bureau
+        Room room8_1 = new Room(202,108,2021,"pictures/Bureau.png"); // Bureau
         Room room8_1_1 = new Room(203,202,2031,"pictures/Trousse.png"); // Tiroir post-énigme
         Room room8_1_2 = new Room(204,202,2041,"pictures/Trousse.png"); // Tiroir
         Room room8_1_3 = new Room(205,202,2051,"pictures/Trousse.png"); // Note sur le bureau
