@@ -167,6 +167,7 @@ public class PlayList extends Thread {
         ArrayList<Integer> timeTest = new ArrayList<>();
         ArrayList<Integer> oracle = new ArrayList<>();
 
+        /*
         for(int i = 0; i < WorldBoxDisc.total; i++){
             if(WorldBoxDisc.worldBoxMusic.get(i).type == MusicType.SoundFx && WorldBoxDisc.worldBoxMusic.get(i).name != "coeur"){
                 testo.add(WorldBoxDisc.worldBoxMusic.get(i).name);
@@ -174,8 +175,12 @@ public class PlayList extends Thread {
             }
         }
         oracle.remove(oracle.size()-1);
+        */
+        testo.add(Son.steps3);
+        testo.add(Son.hibou);
 
-        PlayList playList = new PlayList(testo);
+        timeTest.add(2);
+        PlayList playList = new PlayList(testo, timeTest);
 
 
         System.out.println("DELIMITER=================================");
