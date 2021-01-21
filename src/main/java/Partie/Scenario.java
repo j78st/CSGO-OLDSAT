@@ -216,13 +216,15 @@ public class Scenario {
 
     public Text_scenario room_204_1 = new Text_scenario(2041,"Le cadena est ouvert. Vous ouvrez le tiroir.\n" +
             "Vous trouvez une clef, elle vous servira bien à quelque chose.\n\n" +
-            "Vous revenez pour inspecter plus en profondeur le tiroir et vous remarquez un double fond.");
+            "Vous revenez pour inspecter plus en profondeur le tiroir.");
 
-    public Text_scenario room_204_2 = new Text_scenario(2042,"En utilisant votre compas, vous parvenez à l'enlevez.\n" +
+    public Text_scenario room_204_2 = new Text_scenario(2042,"Vous remarquez un double fond.\n" +
+            "En utilisant votre compas, vous parvenez à l'enlevez.\n" +
             "Il cachait un morceau de papier brulé, vous pouvez y lire l'inscription suivante :\n" +
             "\"À vaincre sans péril on triomphe sans gloire.\" Qu'est-ce cela peut bien signifier ?");
 
-    public Text_scenario room_204_3 = new Text_scenario(2043, "En utilisant votre petit opinel, vous parvenez à l'enlevez.\n" +
+    public Text_scenario room_204_3 = new Text_scenario(2043, "Vous remarquez un double fond.\n" +
+            "En utilisant votre petit opinel, vous parvenez à l'enlevez.\n" +
             "Il cachait un morceau de papier brulé, vous pouvez y lire l'inscription suivante :\n" +
             "\"À vaincre sans péril on triomphe sans gloire.\"\n" +
             "Qu'est-ce cela peut bien signifier ?");
@@ -260,7 +262,7 @@ public class Scenario {
 
     //Indices
 
-    public Text_scenario room_400_1 = new Text_scenario(4001,"Peut-être devriez inspecter plus en détail le bureau du gestionnaire,\n" +
+    public Text_scenario room_400_1 = new Text_scenario(4001,"Peut-être devriez vous inspecter plus en détail le bureau du gestionnaire,\n" +
             "vous y trouverez peut-être quelque chose d'intéressant.\n\n");
 
     public Text_scenario room_400_2 = new Text_scenario(4002,"Vous savez que le gestionnaire utilise des éléments viseuls pour soulager sa mémoire.\n" +
