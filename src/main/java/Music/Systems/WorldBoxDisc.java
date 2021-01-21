@@ -338,6 +338,15 @@ public class WorldBoxDisc extends Thread {
         Disc classRoom = new Disc(classRoomM, "classRoom", true, MusicType.Background, 60);
         add(classRoom);
 
+        File outsideF = new File("resources/sounds/ambiant/outside.wav");
+        Music outsideM = TinySound.loadMusic(outsideF);
+        Disc outside = new Disc(outsideM, "outside", true, MusicType.Background, 39+2*60);
+        add(outside);
+
+        File finEnigmeF = new File("resources/sounds/interactions/fin_enigme.wav");
+        Music finEnigmeM = TinySound.loadMusic(finEnigmeF);
+        Disc finEnigme = new Disc(finEnigmeM, "finEnigme", false, MusicType.SoundFx, 3);
+        add(finEnigme);
 
     }
 
@@ -586,7 +595,7 @@ public class WorldBoxDisc extends Thread {
 
     public static void main(String[] args) {
         init();
-        //WorldBoxDisc.play(Son.classRoom);
+        WorldBoxDisc.play(Son.finEnigme);
         //testFromAllSound("doorSlam");
         Timer.sleep(8000);
     }

@@ -62,6 +62,8 @@ public class Son {
     public static final String zip = "zip";
     public static final String switch1 = "switch";
     public static final String classRoom = "classRoom";
+    public static final String outside = "outside";
+    public static final String finEnigme = "finEnigme";
 
     public static void main(String[] args) {
         WorldBoxDisc.init();
