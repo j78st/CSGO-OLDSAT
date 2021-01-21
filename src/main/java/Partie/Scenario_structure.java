@@ -21,7 +21,7 @@ public class Scenario_structure {
         Item compas = new Item(1,"Compas","Compas pouvant être bien pratique",-1, "objects/Compas.png");
         Item loupe = new Item(2,"Loupe","Petite loupe pouvant être bien pratique",-1, "objects/Loupe.png");
         Item opinel = new Item(3,"Petit opinel","Petit couteau pouvant être bien pratique",-1, "objects/Opinel.png");
-        Item couteau_suisse = new Item(42, "Couteau Suisse de l'Admin", "Couteau Suisse de l'Admin - Tout est possible avec ça", -1, "objects/Compas.png");
+        Item couteau_suisse = new Item(42, "Couteau Suisse de l'Admin", "Couteau Suisse de l'Admin - Tout est possible avec ça", -1, "objects/couteau_suisse.png");
 
         //Actions
 
@@ -127,7 +127,7 @@ public class Scenario_structure {
         //Salles
         Room room7 = new Room(107,-1,-1,-1,-1,false,1071,"pictures/Bibliotheque.png", "Acte 1 - Bibliothèque");
         Room room8 = new Room(108,110,-1,-1,-1, true,1081,"pictures/Bibliotheque.png"); // RDC bibliothèque
-        Room room8_1 = new Room(202,108,2021,"pictures/Bureau.png"); // Bureau
+        Room room8_1 = new Room(202,108,2021,"pictures/202/1.png"); // Bureau
         Room room8_1_1 = new Room(203,202,2031,"pictures/Trousse.png"); // Tiroir post-énigme
         Room room8_1_2 = new Room(204,202,2041,"pictures/Trousse.png"); // Tiroir
         Room room8_1_3 = new Room(205,202,2051,"pictures/Trousse.png"); // Note sur le bureau
@@ -157,7 +157,7 @@ public class Scenario_structure {
         consequences_enigme2.add(new int[]{2,1085}); // Débloque la demande d'indice si elle a été utilisée avant
         consequences_enigme2.add(new int[]{11,1085,4003}); // Fais évoluer le texte de l'indice
         consequences_enigme2.add(new int[]{13,41}); //Bruit du tiroir qui s'ouvre
-        //consequences_enigme2.add(new int[]{12,108,2}); //Change image de la bibliothèque
+        consequences_enigme2.add(new int[]{12,202,2}); //Change image de la bibliothèque
         Enigma enigme2 = new Enigma(302,202,3021,"pictures/Trousse.png","974",consequences_enigme2); // Tiroir vérouillé
 
         ArrayList<int[]> consequences_enigme3 = new ArrayList<>();
