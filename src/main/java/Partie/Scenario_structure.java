@@ -145,10 +145,10 @@ public class Scenario_structure {
         Room room8_5 = new Room(211,108,2111,"pictures/Trousse.png"); // Porte
         Room room9 = new Room(109,-1,-1,-1,-1, true,1091,"pictures/Bibliotheque.png"); // Étage bibliothèque
         Room room9_1 = new Room(210,109,2101,"pictures/Trousse.png"); // Plafond
-        Room room10 = new Room(110,-1,-1,-1,-1, false,1101,"pictures/Bibliotheque.png", "Acte 2 - Début"); // Début scène 2
         Room room8_2_1 = new Room(212,207,2121,"pictures/Trousse.png"); // Livre 1-1
         Room room8_2_2 = new Room(213,207,2131,"pictures/Trousse.png"); // Livre 1-2
         Room room8_2_3 = new Room(214,207,2141,"pictures/Trousse.png"); // Livre 1-3
+        Room room10 = new Room(110,-1,-1,108,-1, false,1101,"pictures/Bibliotheque.png", "Acte 1 - Salle derrière étagère"); // Début scène 2
 
 
 
@@ -441,5 +441,11 @@ public class Scenario_structure {
         consequences_action109_3.add(new int[]{1,108}); //Bouge le joueur vers RDC
         consequences_action109_3.add(new int[]{17,43}); //Bruit de pas
         Action action109_3 = new Action(1093,true,"Descendre au rez-de-chaussée", consequences_action109_3, 109);
+
+        //Actions salle 110 - Salle derrière l'étagère
+
+        ArrayList<int[]> consequences_action110_1 = new ArrayList<>();
+        consequences_action110_1.add(new int[]{1,305}); //Bouge le joueur vers RDC
+        Action action110_1 = new Action(1101,true,"Analyser le mur face à vous", consequences_action110_1, 110);
     }
 }
