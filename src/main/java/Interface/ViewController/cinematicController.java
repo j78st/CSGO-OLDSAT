@@ -79,6 +79,7 @@ public class cinematicController implements Controller {
             playlist.addSound(Son.creakingDoor2);
             playlist.addSound(Son.steps3);
             playlist.addSound(Son.doorSlam);
+            playlist.start();
 
 
         }

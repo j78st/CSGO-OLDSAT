@@ -38,7 +38,7 @@ public class Scenario_structure {
         consequences_action101_2.add(new int[]{9,102}); //Débloque salle suivante
         Action action101_2 = new Action(1012,false,"Lire le panneau", consequences_action101_2, 101);
 
-        ArrayList<int[]> consequences_action101_67 = new ArrayList<>();
+        /*ArrayList<int[]> consequences_action101_67 = new ArrayList<>();
         consequences_action101_67.add(new int[]{17,44,47});
         Action action101_67 = new Action(10167,true,"Test son", consequences_action101_67, 101);
 
@@ -52,7 +52,7 @@ public class Scenario_structure {
 
         ArrayList<int[]> consequences_action101_70 = new ArrayList<>();
         consequences_action101_70.add(new int[]{1,305});
-        Action action101_70 = new Action(10170,true,"Saut admin enigme 305", consequences_action101_70, 101);
+        Action action101_70 = new Action(10170,true,"Saut admin enigme 305", consequences_action101_70, 101);*/
 
         //Amphi pré-conférence
         ArrayList<int[]> consequences_action102_1 = new ArrayList<>();
@@ -62,7 +62,7 @@ public class Scenario_structure {
         //Amphi post-conférence
         ArrayList<int[]> consequences_action103_1 = new ArrayList<>();
         consequences_action103_1.add(new int[]{1,201}); //Bouge le joueur dans la salle suivante
-        //rajouter bruit zip fermeture eclair
+        consequences_action103_1.add(new int[]{17,53}); //Bruit de zip
         Action action103_1 = new Action(1031,true,"Fouiller dans la trousse", consequences_action103_1, 103);
 
         ArrayList<int[]> consequences_action103_2 = new ArrayList<>();
@@ -118,7 +118,7 @@ public class Scenario_structure {
 
         ArrayList<int[]> consequences_action104_3 = new ArrayList<>();
         consequences_action104_3.add(new int[]{1,107}); //Bouge le joueur dans la salle suivante
-        Action action104_3 = new Action(1043,false,"Rentrer chez vous [FIN DU PROLOGUE]", consequences_action104_3, 104);
+        Action action104_3 = new Action(1043,false,"", consequences_action104_3, 104); //Utilisé en fin de cinématique
 
 
 
@@ -261,7 +261,7 @@ public class Scenario_structure {
 
         ArrayList<int[]> consequences_action107_2 = new ArrayList<>();
         consequences_action107_2.add(new int[]{1,108}); //Bouge joueur vers salle 108
-        //ajouter bruit interrupteur
+        //consequences_action107_2.add(new int[]{17,54}); //Bruit interrupteur
         Action action107_2 = new Action(1072,false,"Appuyer sur l'interrupteur", consequences_action107_2, 107);
 
 
