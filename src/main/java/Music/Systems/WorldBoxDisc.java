@@ -128,7 +128,7 @@ public class WorldBoxDisc extends Thread {
 
         File owlF = new File("resources/sounds/ambiant/owl.wav");
         Music owlM = TinySound.loadMusic(owlF);
-        Disc owl = new Disc(owlM, "hibou", false, MusicType.Background, 2);
+        Disc owl = new Disc(owlM, "hibou", false, MusicType.SoundFx, 2);
         add(owl);
 
         File splashF = new File("resources/sounds/ambiant/Splash_0.wav");

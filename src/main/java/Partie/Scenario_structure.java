@@ -62,10 +62,12 @@ public class Scenario_structure {
         //Amphi post-conférence
         ArrayList<int[]> consequences_action103_1 = new ArrayList<>();
         consequences_action103_1.add(new int[]{1,201}); //Bouge le joueur dans la salle suivante
+        //rajouter bruit zip fermeture eclair
         Action action103_1 = new Action(1031,true,"Fouiller dans la trousse", consequences_action103_1, 103);
 
         ArrayList<int[]> consequences_action103_2 = new ArrayList<>();
         consequences_action103_2.add(new int[]{1,104}); //Bouge le joueur dans la salle suivante
+        consequences_action103_2.add(new int[]{17,43}); //Bruit de pas
         Action action103_2 = new Action(1032,false,"Quitter la salle", consequences_action103_2, 103);
 
         //Trousse
@@ -77,6 +79,7 @@ public class Scenario_structure {
         consequences_action201_1.add(new int[]{7,1032}); //Affiche du texte supplémentaire
         consequences_action201_1.add(new int[]{7,1033}); //Affiche du texte supplémentaire
         consequences_action201_1.add(new int[]{7,1036}); //Affiche du texte supplémentaire
+        consequences_action201_1.add(new int[]{17,28}); //Bruit de prise d'objet
         Action action201_1 = new Action(2011,true,"Prendre le compas", consequences_action201_1, 201);
 
         ArrayList<int[]> consequences_action201_2 = new ArrayList<>();
@@ -87,6 +90,7 @@ public class Scenario_structure {
         consequences_action201_2.add(new int[]{7,1032}); //Affiche du texte supplémentaire
         consequences_action201_2.add(new int[]{7,1034}); //Affiche du texte supplémentaire
         consequences_action201_2.add(new int[]{7,1036}); //Affiche du texte supplémentaire
+        consequences_action201_2.add(new int[]{17,28}); //Bruit de prise d'objet
         Action action201_2 = new Action(2012,true,"Prendre la loupe", consequences_action201_2, 201);
 
         ArrayList<int[]> consequences_action201_3 = new ArrayList<>();
@@ -97,6 +101,7 @@ public class Scenario_structure {
         consequences_action201_3.add(new int[]{7,1032}); //Affiche du texte supplémentaire
         consequences_action201_3.add(new int[]{7,1035}); //Affiche du texte supplémentaire
         consequences_action201_3.add(new int[]{7,1036}); //Affiche du texte supplémentaire
+        consequences_action201_3.add(new int[]{17,28}); //Bruit de prise d'objet
         Action action201_3 = new Action(2013,true,"Prendre le petit opinel", consequences_action201_3, 201);
 
         //Exterieur
@@ -107,7 +112,8 @@ public class Scenario_structure {
 
         ArrayList<int[]> consequences_action104_2 = new ArrayList<>();
         consequences_action104_2.add(new int[]{15}); //Lance la cinématique
-        consequences_action104_2.add(new int[]{3,1042});
+        consequences_action104_2.add(new int[]{3,1042}); //Bloque l'action pour qu'on ne puisse pas la spam clic
+        consequences_action104_2.add(new int[]{18,43,2,15});
         Action action104_2 = new Action(1042,true,"Rentrer chez vous [FIN DU PROLOGUE]", consequences_action104_2, 104);
 
         ArrayList<int[]> consequences_action104_3 = new ArrayList<>();
@@ -121,7 +127,7 @@ public class Scenario_structure {
         //Salles
         Room room7 = new Room(107,-1,-1,-1,-1,false,1071,"pictures/Bibliotheque.png", "Acte 1 - Bibliothèque");
         Room room8 = new Room(108,110,-1,-1,-1, true,1081,"pictures/Bibliotheque.png"); // RDC bibliothèque
-        Room room8_1 = new Room(202,108,2021,"pictures/Trousse.png"); // Bureau
+        Room room8_1 = new Room(202,108,2021,"pictures/Bureau.png"); // Bureau
         Room room8_1_1 = new Room(203,202,2031,"pictures/Trousse.png"); // Tiroir post-énigme
         Room room8_1_2 = new Room(204,202,2041,"pictures/Trousse.png"); // Tiroir
         Room room8_1_3 = new Room(205,202,2051,"pictures/Trousse.png"); // Note sur le bureau
@@ -142,6 +148,7 @@ public class Scenario_structure {
         ArrayList<int[]> consequences_enigme1 = new ArrayList<>();
         consequences_enigme1.add(new int[]{9,110}); // Débloque salle suivante
         consequences_enigme1.add(new int[]{7,3012,108}); // Rajoute texte de fin d'énigme à la salle d'origine
+        consequences_enigme1.add(new int[]{13,35}); //Bruit de porte qui craque
         Enigma enigme1 = new Enigma(301,108,3011,"pictures/Trousse.png","Le Cid",consequences_enigme1); // Étagère 2 - Énigme
 
         ArrayList<int[]> consequences_enigme2 = new ArrayList<>();
@@ -149,6 +156,8 @@ public class Scenario_structure {
         consequences_enigme2.add(new int[]{1,203}); // Déplace le joueur vers le tiroir
         consequences_enigme2.add(new int[]{2,1085}); // Débloque la demande d'indice si elle a été utilisée avant
         consequences_enigme2.add(new int[]{11,1085,4003}); // Fais évoluer le texte de l'indice
+        consequences_enigme2.add(new int[]{13,41}); //Bruit du tiroir qui s'ouvre
+        //consequences_enigme2.add(new int[]{12,108,2}); //Change image de la bibliothèque
         Enigma enigme2 = new Enigma(302,202,3021,"pictures/Trousse.png","974",consequences_enigme2); // Tiroir vérouillé
 
         ArrayList<int[]> consequences_enigme3 = new ArrayList<>();
@@ -223,7 +232,7 @@ public class Scenario_structure {
         //consequences_action206_1.add(new int[]{?}); //Fait évoluer l'image
         consequences_action206_1.add(new int[]{2,2062}); //Dévérouille l'action "Retour page précédente"
         consequences_action206_1.add(new int[]{3,2061}); //Vérouille cette action
-        Action action206_1 = new Action(2061,true,"Passer à la page suivante", consequences_action206_1, 206);
+        Action action206_1 = new Action(2061,false,"Passer à la page suivante", consequences_action206_1, 206);
 
         ArrayList<int[]> consequences_action206_2 = new ArrayList<>();
         //consequences_action206_2.add(new int[]{?}); //Fait évoluer l'image
@@ -247,10 +256,12 @@ public class Scenario_structure {
         consequences_action107_1.add(new int[]{7,1072}); //text
         consequences_action107_1.add(new int[]{2,1072}); //debloque
         consequences_action107_1.add(new int[]{3,1071}); //faisable qu'une fois
+        consequences_action107_1.add(new int[]{17,7}); //Bruit de porte qu'on essaye d'ouvrir
         Action action107_1 = new Action(1071,true,"Ouvrir la porte", consequences_action107_1, 107);
 
         ArrayList<int[]> consequences_action107_2 = new ArrayList<>();
         consequences_action107_2.add(new int[]{1,108}); //Bouge joueur vers salle 108
+        //ajouter bruit interrupteur
         Action action107_2 = new Action(1072,false,"Appuyer sur l'interrupteur", consequences_action107_2, 107);
 
 
@@ -289,6 +300,7 @@ public class Scenario_structure {
 
         ArrayList<int[]> consequences_action108_6 = new ArrayList<>();
         consequences_action108_6.add(new int[]{1,109}); //Bouge joueur vers l'étagère 1
+        consequences_action108_6.add(new int[]{17,43}); //Bruit de pas
         Action action108_6 = new Action(1086,true,"Aller à l'étage", consequences_action108_6, 108);
 
 
@@ -296,8 +308,9 @@ public class Scenario_structure {
 
         ArrayList<int[]> consequences_action202_1 = new ArrayList<>();
         consequences_action202_1.add(new int[]{1,205}); //Bouge joueur vers la note
-        consequences_action202_1.add(new int[]{2,1085});
-        consequences_action202_1.add(new int[]{13,1085,4002});
+        consequences_action202_1.add(new int[]{2,1085}); //Débloque la demande d'indice si elle a déjà été utilisée
+        consequences_action202_1.add(new int[]{13,1085,4002}); //Change le texte de l'indice
+        consequences_action202_1.add(new int[]{17,50}); //Bruit de page tournée
         Action action202_1 = new Action(2021,true,"Inspecter la note", consequences_action202_1, 202);
 
         ArrayList<int[]> consequences_action202_2 = new ArrayList<>();
@@ -307,6 +320,7 @@ public class Scenario_structure {
 
         ArrayList<int[]> consequences_action202_4 = new ArrayList<>();
         consequences_action202_4.add(new int[]{1,204}); //Bouge joueur vers le tiroir dévérouillé
+        consequences_action202_4.add(new int[]{17,41}); //Bruit de tiroir qui s'ouvre
         Action action202_4 = new Action(2024,false,"Fouiller dans le tiroir", consequences_action202_4, 202);
 
         ArrayList<int[]> consequences_action202_3 = new ArrayList<>();
@@ -324,6 +338,7 @@ public class Scenario_structure {
         ArrayList<int[]> consequences_action203_1 = new ArrayList<>();
         consequences_action203_1.add(new int[]{4,4}); //Ajoute objet clef
         consequences_action203_1.add(new int[]{3,2041}); //Bloque action (récupérable qu'une fois)
+        consequences_action203_1.add(new int[]{17,28}); //Bruit de prise d'objet
         Action action203_1 = new Action(2031,true,"Récupérer la clef", consequences_action203_1, 203);
 
 
@@ -332,16 +347,19 @@ public class Scenario_structure {
         ArrayList<int[]> consequences_action204_1 = new ArrayList<>();
         consequences_action204_1.add(new int[]{4,4}); //Ajoute objet clef
         consequences_action204_1.add(new int[]{3,2041}); //Bloque action (récupérable qu'une fois)
+        consequences_action204_1.add(new int[]{17,28}); //Bruit de prise d'objet
         Action action204_1 = new Action(2041,true,"Récupérer la clef", consequences_action204_1, 204);
 
         ArrayList<int[]> consequences_action204_2 = new ArrayList<>();
         consequences_action204_2.add(new int[]{7,2042}); //Rajoute du texte
         consequences_action204_2.add(new int[]{3,2042}); //Bloque action (faisable qu'une fois)
+        consequences_action204_2.add(new int[]{17,37}); //Bruit de bois qui craque
         Action action204_2 = new Action(2042, "Casser le double fond [Compas]", consequences_action204_2, 204, 3);
 
         ArrayList<int[]> consequences_action204_3 = new ArrayList<>();
         consequences_action204_3.add(new int[]{7,2043}); //Rajoute du texte
         consequences_action204_3.add(new int[]{3,2043}); //Bloque action (faisable qu'une fois)
+        consequences_action204_3.add(new int[]{17,3}); //Bruit opinel
         Action action204_3 = new Action(2043, "Enlever le double fond [Opinel]", consequences_action204_3, 204, 1);
 
 
@@ -357,14 +375,17 @@ public class Scenario_structure {
 
         ArrayList<int[]> consequences_action207_1 = new ArrayList<>();
         consequences_action207_1.add(new int[]{1,212}); //Rajoute texte
+        consequences_action207_1.add(new int[]{17,49}); //Bruit d'ouverture de livre
         Action action207_1 = new Action(2071,true,"Regarder le premier livre", consequences_action207_1, 207);
 
         ArrayList<int[]> consequences_action207_2 = new ArrayList<>();
         consequences_action207_2.add(new int[]{1,213}); //Rajoute texte
+        consequences_action207_2.add(new int[]{17,50}); //Bruit de page tournée
         Action action207_2 = new Action(2072,true,"Regarder le second livre", consequences_action207_2, 207);
 
         ArrayList<int[]> consequences_action207_3 = new ArrayList<>();
         consequences_action207_3.add(new int[]{1,214}); //Rajoute texte
+        consequences_action207_3.add(new int[]{17,49}); //Bruit d'ouverture de livre
         Action action207_3 = new Action(2073,true,"Regarder le troisième livre", consequences_action207_3, 207);
 
         //Actions de la salle 208 - Étagère 2 pré-utilisation clef
@@ -377,6 +398,7 @@ public class Scenario_structure {
         consequences_action208_1.add(new int[]{2,1085});
         consequences_action208_1.add(new int[]{13,1085,4004});
         consequences_action208_1.add(new int[]{10}); //Affiche boîte de dialogue
+        consequences_action208_1.add(new int[]{17,45,47}); //Bruit de clef tournée dans une serrure suivi d'un bruit de méchanisme qui s'active
         Action action208_1 = new Action(2081, "Essayer la clef dans la serrure [Clef]", consequences_action208_1, 208, 4);
 
 
@@ -385,11 +407,13 @@ public class Scenario_structure {
         ArrayList<int[]> consequences_action211_1 = new ArrayList<>();
         consequences_action211_1.add(new int[]{7,2112}); //Rajoute texte
         consequences_action211_1.add(new int[]{3,2111}); //Bloque cette action (faisable qu'une fois)
+        consequences_action211_1.add(new int[]{17,38}); //Bruit de fermeture de livre (jusqu'à ce qu'on trouve mieux)
         Action action211_1 = new Action(2111,true,"Essayer d'enfoncer la porte", consequences_action211_1, 211);
 
         ArrayList<int[]> consequences_action211_2 = new ArrayList<>();
         consequences_action211_2.add(new int[]{7,2113}); //Rajoute texte
         consequences_action211_2.add(new int[]{3,2112}); //Bloque cette action (faisable qu'une fois)
+        consequences_action211_2.add(new int[]{17,45}); //Bruit d'une clef tournée dans une serrure
         Action action211_2 = new Action(2112, "Essayer la clef dans la serrure [Clef]", consequences_action211_2, 211, 4);
 
 
@@ -405,6 +429,7 @@ public class Scenario_structure {
 
         ArrayList<int[]> consequences_action109_3 = new ArrayList<>();
         consequences_action109_3.add(new int[]{1,108}); //Bouge le joueur vers RDC
+        consequences_action109_3.add(new int[]{17,43}); //Bruit de pas
         Action action109_3 = new Action(1093,true,"Descendre au rez-de-chaussée", consequences_action109_3, 109);
     }
 }

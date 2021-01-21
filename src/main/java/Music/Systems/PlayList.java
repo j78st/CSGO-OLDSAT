@@ -61,6 +61,7 @@ public class PlayList extends Thread {
         this.playlist = inPlaylist;
         this.timeInBetween = 0;
         this.mode = false;
+        this.timeInBetweenA = new ArrayList<>();
     }
 
     /**
@@ -140,10 +141,12 @@ public class PlayList extends Thread {
             }
 
             //Mode de lecture
-            if(!mode) { //mode régulier où les pistes sont espacés par timeInBetween secondes
+            if (!mode) { //mode régulier où les pistes sont espacés par timeInBetween secondes
                 Timer.sleep(timeInBetween * 1000 + WorldBoxDisc.worldBoxMusic.get(WorldBoxDisc.idWorldBoxMusic.get(playlist.get(i))).duration * 1000);
             } else {//mode où les musiques sont espacé par des temps irréguliers
-                Timer.sleep(timeInBetweenA.get(i) * 1000 + WorldBoxDisc.worldBoxMusic.get(WorldBoxDisc.idWorldBoxMusic.get(playlist.get(i))).duration * 1000);
+                if (i < timeInBetweenA.size()) {
+                    Timer.sleep(timeInBetweenA.get(i) * 1000 + WorldBoxDisc.worldBoxMusic.get(WorldBoxDisc.idWorldBoxMusic.get(playlist.get(i))).duration * 1000);
+                }
             }
 
             //Coupe le son de certaines musiques qui loop ou de fonds sonores
@@ -152,6 +155,7 @@ public class PlayList extends Thread {
             } else if (WorldBoxDisc.worldBoxMusic.get(WorldBoxDisc.idWorldBoxMusic.get(playlist.get(i))).loop) {
                 WorldBoxDisc.stop(playlist.get(i));
             }
+
 
         }
     }
@@ -163,6 +167,7 @@ public class PlayList extends Thread {
         ArrayList<Integer> timeTest = new ArrayList<>();
         ArrayList<Integer> oracle = new ArrayList<>();
 
+        /*
         for(int i = 0; i < WorldBoxDisc.total; i++){
             if(WorldBoxDisc.worldBoxMusic.get(i).type == MusicType.SoundFx && WorldBoxDisc.worldBoxMusic.get(i).name != "coeur"){
                 testo.add(WorldBoxDisc.worldBoxMusic.get(i).name);
@@ -170,8 +175,12 @@ public class PlayList extends Thread {
             }
         }
         oracle.remove(oracle.size()-1);
+        */
+        testo.add(Son.steps3);
+        testo.add(Son.hibou);
 
-        PlayList playList = new PlayList(testo);
+        timeTest.add(2);
+        PlayList playList = new PlayList(testo, timeTest);
 
 
         System.out.println("DELIMITER=================================");
