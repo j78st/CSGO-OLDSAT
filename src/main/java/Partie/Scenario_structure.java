@@ -11,11 +11,11 @@ public class Scenario_structure {
         /*-----------------------------------------Prologue-------------------------------------------*/
 
         //Salles
-        Room room1 = new Room(101,102,-1,-1,-1,true,1011,"pictures/Hall.png", "Prologue - Hall d'entrée"); //Hall enssat
+        Room room1 = new Room(101,102,-1,-1,-1,true,1011,"pictures/Hall.png", "Prologue - Hall d'entrée"); //Hall
         Room room2 = new Room(102,-1,-1,-1,-1, false,1021,"pictures/Amphi.png", "Prologue - Amphithéâtre"); //Amphi
         Room room3 = new Room(103,-1,-1,-1,-1, true,1031,"pictures/Amphi2.png"); //Amphi post-conférence
         Room room3_1 = new Room(201,103,2011,"pictures/Trousse.png"); //trousse
-        Room room4 = new Room(104,-1,-1,-1,-1,true,1041,"pictures/Exterieur.png");
+        Room room4 = new Room(104,-1,-1,-1,-1,true,1041,"pictures/Exterieur.png"); //Exterieur
 
         //Objets
         Item compas = new Item(1,"Compas","Compas pouvant être bien pratique",-1, "objects/Compas.png");
@@ -23,17 +23,18 @@ public class Scenario_structure {
         Item opinel = new Item(3,"Petit opinel","Petit couteau pouvant être bien pratique",-1, "objects/Opinel.png");
         Item couteau_suisse = new Item(42, "Couteau Suisse de l'Admin", "Couteau Suisse de l'Admin - Tout est possible avec ça", -1, "objects/Compas.png");
 
-        //Actions salle 101 - Hall de l'enssat
+        //Actions
 
+        //Hall
         ArrayList<int[]> consequences_action101_1 = new ArrayList<>();
-        consequences_action101_1.add(new int[]{7,1012}); //Affichage nouveau texte
-        consequences_action101_1.add(new int[]{3,1011}); //Rend l'action innaccessible (faisable qu'une fois)
+        consequences_action101_1.add(new int[]{7,1012}); //Texte
+        consequences_action101_1.add(new int[]{3,1011}); //Faisable qu'une fois
         consequences_action101_1.add(new int[]{2,1012}); //Déblocage action
         Action action101_1 = new Action(1011,true,"Demander son chemin", consequences_action101_1, 101);
 
         ArrayList<int[]> consequences_action101_2 = new ArrayList<>();
-        consequences_action101_2.add(new int[]{7,1013}); //Affichage nouveau texte
-        consequences_action101_2.add(new int[]{3,1012}); //Rend l'action innaccessible (faisable qu'une fois)
+        consequences_action101_2.add(new int[]{7,1013}); //Texte
+        consequences_action101_2.add(new int[]{3,1012}); //Faisable qu'une fois
         consequences_action101_2.add(new int[]{9,102}); //Débloque salle suivante
         Action action101_2 = new Action(1012,false,"Lire le panneau", consequences_action101_2, 101);
 
@@ -53,14 +54,12 @@ public class Scenario_structure {
         consequences_action101_70.add(new int[]{1,305});
         Action action101_70 = new Action(10170,true,"Saut admin enigme 305", consequences_action101_70, 101);
 
-        //Actions de la salle 102 - Amphi pré-conférence
-
+        //Amphi pré-conférence
         ArrayList<int[]> consequences_action102_1 = new ArrayList<>();
         consequences_action102_1.add(new int[]{1,103}); //Bouge le joueur dans la salle suivante
-        Action action102_1 = new Action(1021,true,"Écouter la conférence (Vous n'avez pas vraiment le choix...)", consequences_action102_1, 102);
+        Action action102_1 = new Action(1021,true,"Écouter la conférence (Vous n'avez pas vraiment le choix ...)", consequences_action102_1, 102);
 
-        //Actions de la salle 103 - Amphi post-conférence
-
+        //Amphi post-conférence
         ArrayList<int[]> consequences_action103_1 = new ArrayList<>();
         consequences_action103_1.add(new int[]{1,201}); //Bouge le joueur dans la salle suivante
         Action action103_1 = new Action(1031,true,"Fouiller dans la trousse", consequences_action103_1, 103);
@@ -69,8 +68,7 @@ public class Scenario_structure {
         consequences_action103_2.add(new int[]{1,104}); //Bouge le joueur dans la salle suivante
         Action action103_2 = new Action(1032,false,"Quitter la salle", consequences_action103_2, 103);
 
-        //Actions de la salle 201 - Trousse
-
+        //Trousse
         ArrayList<int[]> consequences_action201_1 = new ArrayList<>();
         consequences_action201_1.add(new int[]{4,1}); //Ajoute l'objet à l'inventaire
         consequences_action201_1.add(new int[]{1,103}); //Bouge le joueur dans la salle précédente
@@ -101,11 +99,10 @@ public class Scenario_structure {
         consequences_action201_3.add(new int[]{7,1036}); //Affiche du texte supplémentaire
         Action action201_3 = new Action(2013,true,"Prendre le petit opinel", consequences_action201_3, 201);
 
-        //Actions de la salle 104 - Exterieur
-
+        //Exterieur
         ArrayList<int[]> consequences_action104_1 = new ArrayList<>();
         consequences_action104_1.add(new int[]{7,1042}); //Texte
-        consequences_action104_1.add(new int[]{3,1041}); //faisable qu'une fois
+        consequences_action104_1.add(new int[]{3,1041}); //Faisable qu'une fois
         Action action104_1 = new Action(1041,true,"Parler à un groupe", consequences_action104_1, 104);
 
         ArrayList<int[]> consequences_action104_2 = new ArrayList<>();
@@ -119,9 +116,9 @@ public class Scenario_structure {
 
 
 
+        /*-----------------------------------------Acte 1-------------------------------------------*/
 
-        /*-----------------------------------------Scène 1-------------------------------------------*/
-
+        //Salles
         Room room7 = new Room(107,-1,-1,-1,-1,false,1071,"pictures/Bibliotheque.png", "Acte 1 - Bibliothèque");
         Room room8 = new Room(108,110,-1,-1,-1, true,1081,"pictures/Bibliotheque.png"); // RDC bibliothèque
         Room room8_1 = new Room(202,108,2021,"pictures/Trousse.png"); // Bureau
@@ -136,6 +133,11 @@ public class Scenario_structure {
         Room room9 = new Room(109,-1,-1,-1,-1, true,1091,"pictures/Bibliotheque.png"); // Étage bibliothèque
         Room room9_1 = new Room(210,109,2101,"pictures/Trousse.png"); // Plafond
         Room room10 = new Room(110,-1,-1,-1,-1, false,1101,"pictures/Bibliotheque.png", "Acte 2 - Début"); // Début scène 2
+        Room room8_2_1 = new Room(212,207,2121,"pictures/Trousse.png"); // Livre 1-1
+        Room room8_2_2 = new Room(213,207,2131,"pictures/Trousse.png"); // Livre 1-2
+        Room room8_2_3 = new Room(214,207,2141,"pictures/Trousse.png"); // Livre 1-3
+
+
 
         ArrayList<int[]> consequences_enigme1 = new ArrayList<>();
         consequences_enigme1.add(new int[]{9,110}); // Débloque salle suivante
@@ -249,7 +251,7 @@ public class Scenario_structure {
 
         ArrayList<int[]> consequences_action107_2 = new ArrayList<>();
         consequences_action107_2.add(new int[]{1,108}); //Bouge joueur vers salle 108
-        Action action107_2 = new Action(1072,false,"Inspecter la salle", consequences_action107_2, 107);
+        Action action107_2 = new Action(1072,false,"Appuyer sur l'interrupteur", consequences_action107_2, 107);
 
 
         //Actions de la salle 108 - RDC bibliothèque
@@ -354,10 +356,16 @@ public class Scenario_structure {
         //Actions de la salle 207 - Étagère 1
 
         ArrayList<int[]> consequences_action207_1 = new ArrayList<>();
-        consequences_action207_1.add(new int[]{7,2072}); //Rajoute texte
-        consequences_action207_1.add(new int[]{3,2071}); //Bloque cette action (faisable qu'une fois)
-        Action action207_1 = new Action(2071,true,"Lire le livre sur la cryptographie", consequences_action207_1, 207);
+        consequences_action207_1.add(new int[]{1,212}); //Rajoute texte
+        Action action207_1 = new Action(2071,true,"Regarder le premier livre", consequences_action207_1, 207);
 
+        ArrayList<int[]> consequences_action207_2 = new ArrayList<>();
+        consequences_action207_2.add(new int[]{1,213}); //Rajoute texte
+        Action action207_2 = new Action(2072,true,"Regarder le second livre", consequences_action207_2, 207);
+
+        ArrayList<int[]> consequences_action207_3 = new ArrayList<>();
+        consequences_action207_3.add(new int[]{1,214}); //Rajoute texte
+        Action action207_3 = new Action(2073,true,"Regarder le troisième livre", consequences_action207_3, 207);
 
         //Actions de la salle 208 - Étagère 2 pré-utilisation clef
 
