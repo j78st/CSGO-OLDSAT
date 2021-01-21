@@ -2,6 +2,7 @@ package Partie;
 
 import Interface.ScreenLoader.LoadMap;
 import Interface.Settings.Engine;
+import Music.Systems.PlayList;
 import Music.Systems.Son;
 import Music.Systems.WorldBoxDisc;
 
@@ -151,6 +152,30 @@ public class Enigma extends Room{
                             Game.search_action(getConsequences().get(i)[1]).consequences.get(j)[1] = getConsequences().get(i)[2];
                         }
                     }
+                    break;
+                case 12: // changer image de la salle consequence[i][1] par l'image d'url "pictures/" + id_room + "/" + consequence[i][2], cela implique une normalisation du nom des images
+                    Game.search_room(getConsequences().get(i)[1]).setPath_image("pictures/" + getConsequences().get(i)[1] + "/" + getConsequences().get(i)[2]);
+                    Engine.engine.refreshPicture();
+                    break;
+                case 13: //jouer plusieurs sons les uns après les autres
+                    ArrayList<String> sounds_playlist = new ArrayList<>();
+                    for (int j = 1; j < getConsequences().get(i).length; j++) {
+                        sounds_playlist.add(Game.search_sounds(String.valueOf(getConsequences().get(i)[j])));
+                    }
+                    PlayList playlist = new PlayList(sounds_playlist);
+                    playlist.start();
+                    break;
+                case 14: //jouer plusieurs sons les uns après les autres avec un délai entre chaque
+                    ArrayList<String> sounds_playlist2 = new ArrayList<>();
+                    for (int j = 1; j < getConsequences().get(i).length; j=j+2) {
+                        sounds_playlist2.add(Game.search_sounds(String.valueOf(getConsequences().get(i)[j])));
+                    }
+                    ArrayList<Integer> sounds_playlist_delay = new ArrayList<>();
+                    for (int k = 2; k < getConsequences().get(i).length; k=k+2) {
+                        sounds_playlist_delay.add(getConsequences().get(i)[k]);
+                    }
+                    PlayList playlist2 = new PlayList(sounds_playlist2,sounds_playlist_delay);
+                    playlist2.start();
                     break;
             }
         }

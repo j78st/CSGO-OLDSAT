@@ -173,6 +173,19 @@ public class Action {
                     }
                     PlayList playlist = new PlayList(sounds_playlist);
                     playlist.start();
+                    break;
+                case 18: //jouer plusieurs sons les uns après les autres avec un délai entre chaque. Forme de la conséquence : [18, id_son1, delay, id_son2, delay, id_son3,...]
+                    ArrayList<String> sounds_playlist2 = new ArrayList<>();
+                    for (int j = 1; j < getConsequences().get(i).length; j=j+2) {
+                        sounds_playlist2.add(Game.search_sounds(String.valueOf(getConsequences().get(i)[j])));
+                    }
+                    ArrayList<Integer> sounds_playlist_delay = new ArrayList<>();
+                    for (int k = 2; k < getConsequences().get(i).length; k=k+2) {
+                        sounds_playlist_delay.add(getConsequences().get(i)[k]);
+                    }
+                    PlayList playlist2 = new PlayList(sounds_playlist2,sounds_playlist_delay);
+                    playlist2.start();
+                    break;
             }
         }
     }

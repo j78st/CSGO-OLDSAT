@@ -204,7 +204,6 @@ public class new_game_formController implements Controller {
 
         // Son ambiance
         WorldBoxDisc.pause(Son.feu);
-        WorldBoxDisc.play(Son.wind);
     }
 
 

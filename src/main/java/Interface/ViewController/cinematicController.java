@@ -4,6 +4,7 @@ import Interface.ScreenLoader.Controller;
 import Interface.ScreenLoader.LoadMap;
 import Interface.Settings.Engine;
 import Interface.Settings.Settings;
+import Music.Systems.PlayList;
 import Music.Systems.Son;
 import Music.Systems.WorldBoxDisc;
 import Partie.Game;
@@ -65,16 +66,26 @@ public class cinematicController implements Controller {
     // ==========================================================
     @FXML
     void set_text(ActionEvent event) throws IOException {
+        PlayList playlist = new PlayList();
         no_text += 1;
         text_transition();
 
         if (no_text == 3) {
             Game.search_action(1043).do_consequences();
             screen_transition();
+            WorldBoxDisc.play(Son.wind);
+
+            playlist.addSound(Son.porte1);
+            playlist.addSound(Son.creakingDoor2);
+            playlist.addSound(Son.steps3);
+            playlist.addSound(Son.doorSlam);
+
+
         }
     }
 
     private void text_transition () {
+        PlayList playlist = new PlayList();
         next.setDisable(true);
 
         FadeTransition fadeOUT = new FadeTransition();
@@ -87,14 +98,10 @@ public class cinematicController implements Controller {
         fadeOUT.setOnFinished(event -> {
             if (no_text == 1) { // affichage texte 2
 
-                WorldBoxDisc.play(Son.wind);
                 narration.setText(text2);
 
             } else if (no_text == 2) { // affichage texte 3
-
-                WorldBoxDisc.play(Son.tick); // bruit de pas
-                WorldBoxDisc.play(Son.tick); // grincement
-                WorldBoxDisc.play(Son.porte1); // claquement de porte
+                WorldBoxDisc.play(Son.steps3);
                 narration.setText(text3);
 
                 //changement bouton

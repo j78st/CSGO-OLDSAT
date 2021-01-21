@@ -169,7 +169,7 @@ public class Scenario {
     public Text_scenario room_208_1 = new Text_scenario(2081,"Une étagère de bibliothèque, tout ce qu'il y a de plus classique.\n" +
             "Celle-ci contient surtout des classiques de la littérature française.");
 
-    public Text_scenario room_301_1 = new Text_scenario(3011,"La clef vous a permi de débloquer quelque chose, \n" +
+    public Text_scenario room_301_1 = new Text_scenario(3011,"La clef vous a permi de débloquer quelque chose, " +
             "mais rien ne semble s'être ouvert. Avec votre connaissance des films d'espionnage, vous connaissez ce mécanisme : " +
             "il faut surement tirer sur un livre pour ouvrir une sorte de passage secret, mais lequel ?");
 
