@@ -59,6 +59,10 @@ public class Sounds_list extends ArrayList {
         Game.sounds.add(new String[]{"52","menuTheme"});
         Game.sounds.add(new String[]{"53","zip"});
         Game.sounds.add(new String[]{"54","switch1"});
+        Game.sounds.add(new String[]{"55","classRoom"});
+        Game.sounds.add(new String[]{"56","outside"});
+        Game.sounds.add(new String[]{"57","finEnigme"});
+
     }
 
 

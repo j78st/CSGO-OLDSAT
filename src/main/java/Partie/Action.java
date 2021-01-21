@@ -186,6 +186,12 @@ public class Action {
                     PlayList playlist2 = new PlayList(sounds_playlist2,sounds_playlist_delay);
                     playlist2.start();
                     break;
+                case 19: //lancer un son d'ambiance
+                    WorldBoxDisc.play(Game.search_sounds(String.valueOf(getConsequences().get(i)[1])));
+                    break;
+                case 20: //mettre en pause un son d'ambiance
+                    WorldBoxDisc.pause(Game.search_sounds(String.valueOf(getConsequences().get(i)[1])));
+                    break;
             }
         }
     }

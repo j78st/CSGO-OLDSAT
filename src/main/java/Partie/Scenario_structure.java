@@ -1,5 +1,8 @@
 package Partie;
 
+import Music.Systems.Son;
+import Music.Systems.WorldBoxDisc;
+
 import java.util.ArrayList;
 
 public class Scenario_structure {
@@ -38,7 +41,7 @@ public class Scenario_structure {
         consequences_action101_2.add(new int[]{9,102}); //Débloque salle suivante
         Action action101_2 = new Action(1012,false,"Lire le panneau", consequences_action101_2, 101);
 
-        /*ArrayList<int[]> consequences_action101_67 = new ArrayList<>();
+        ArrayList<int[]> consequences_action101_67 = new ArrayList<>();
         consequences_action101_67.add(new int[]{17,44,47});
         Action action101_67 = new Action(10167,true,"Test son", consequences_action101_67, 101);
 
@@ -52,11 +55,12 @@ public class Scenario_structure {
 
         ArrayList<int[]> consequences_action101_70 = new ArrayList<>();
         consequences_action101_70.add(new int[]{1,305});
-        Action action101_70 = new Action(10170,true,"Saut admin enigme 305", consequences_action101_70, 101);*/
+        Action action101_70 = new Action(10170,true,"Saut admin enigme 305", consequences_action101_70, 101);
 
         //Amphi pré-conférence
         ArrayList<int[]> consequences_action102_1 = new ArrayList<>();
         consequences_action102_1.add(new int[]{1,103}); //Bouge le joueur dans la salle suivante
+        //consequences_action102_1.add(new int[]{20,55}); //Arrête le bruit de classe
         Action action102_1 = new Action(1021,true,"Écouter la conférence (Vous n'avez pas vraiment le choix...)", consequences_action102_1, 102);
 
         //Amphi post-conférence
@@ -68,6 +72,8 @@ public class Scenario_structure {
         ArrayList<int[]> consequences_action103_2 = new ArrayList<>();
         consequences_action103_2.add(new int[]{1,104}); //Bouge le joueur dans la salle suivante
         consequences_action103_2.add(new int[]{17,43}); //Bruit de pas
+        consequences_action103_2.add(new int[]{20,55}); //Arrête le bruit de classe
+        consequences_action103_2.add(new int[]{19,56}); //Démarre son ambiant extérieur
         Action action103_2 = new Action(1032,false,"Quitter la salle", consequences_action103_2, 103);
 
         //Trousse
@@ -113,6 +119,7 @@ public class Scenario_structure {
         ArrayList<int[]> consequences_action104_2 = new ArrayList<>();
         consequences_action104_2.add(new int[]{15}); //Lance la cinématique
         consequences_action104_2.add(new int[]{3,1042}); //Bloque l'action pour qu'on ne puisse pas la spam clic
+        consequences_action103_2.add(new int[]{20,56}); //Arrête le son d'ambiance extérieur
         consequences_action104_2.add(new int[]{18,43,2,15});
         Action action104_2 = new Action(1042,true,"Rentrer chez vous [FIN DU PROLOGUE]", consequences_action104_2, 104);
 
@@ -128,9 +135,9 @@ public class Scenario_structure {
         Room room7 = new Room(107,-1,-1,-1,-1,false,1071,"pictures/Bibliotheque.png", "Acte 1 - Bibliothèque");
         Room room8 = new Room(108,110,-1,-1,-1, true,1081,"pictures/Bibliotheque.png"); // RDC bibliothèque
         Room room8_1 = new Room(202,108,2021,"pictures/202/1.png"); // Bureau
-        Room room8_1_1 = new Room(203,202,2031,"pictures/Trousse.png"); // Tiroir post-énigme
-        Room room8_1_2 = new Room(204,202,2041,"pictures/Trousse.png"); // Tiroir
-        Room room8_1_3 = new Room(205,202,2051,"pictures/Trousse.png"); // Note sur le bureau
+        Room room8_1_1 = new Room(203,202,2031,"pictures/tiroir_ouvert_clé.png"); // Tiroir post-énigme
+        Room room8_1_2 = new Room(204,202,2041,"pictures/tiroir_ouvert_clé.png"); // Tiroir
+        Room room8_1_3 = new Room(205,202,2051,"pictures/ordonnance.png"); // Note sur le bureau
         //Room room8_1_4 = new Room(206,202,2061,"pictures/Trousse.png"); // PC dévérouillé
         Room room8_2 = new Room(207,108,2071,"pictures/Trousse.png"); // Étagère 1
         Room room8_3 = new Room(208,108,2081,"pictures/Trousse.png"); // Étagère 2 pré-utilisation de la clef
@@ -158,12 +165,12 @@ public class Scenario_structure {
         consequences_enigme2.add(new int[]{11,1085,4003}); // Fais évoluer le texte de l'indice
         consequences_enigme2.add(new int[]{13,41}); //Bruit du tiroir qui s'ouvre
         consequences_enigme2.add(new int[]{12,202,2}); //Change image de la bibliothèque
-        Enigma enigme2 = new Enigma(302,202,3021,"pictures/Trousse.png","974",consequences_enigme2); // Tiroir vérouillé
+        Enigma enigme2 = new Enigma(302,202,3021,"pictures/tiroir_fermé.png","974",consequences_enigme2); // Tiroir vérouillé
 
         ArrayList<int[]> consequences_enigme3 = new ArrayList<>();
         consequences_enigme3.add(new int[]{2,2025}); // Débloque l'action accès PC dévérouillé depuis le bureau
         consequences_enigme3.add(new int[]{1,206}); // Déplace le joueur vers le PC dévérouillé
-        Enigma enigme3 = new Enigma(303,202,3031,"pictures/Trousse.png","motdepasse",consequences_enigme3); // PC vérouillé
+        Enigma enigme3 = new Enigma(303,202,3031,"pictures/pc_verrouille.png","motdepasse",consequences_enigme3); // PC vérouillé
 
         ArrayList<int[]> consequences_enigme4 = new ArrayList<>();
         consequences_enigme4.add(new int[]{7,3042,304}); // Rajoute texte de fin d'énigme à la salle de l'énigme
@@ -190,39 +197,39 @@ public class Scenario_structure {
         //PC cliquable
 
         ArrayList<double[]> zone_click_206 = new ArrayList<>();
-        zone_click_206.add(new double[]{1,0.60,0.67,0.64,0.74});
-        zone_click_206.add(new double[]{2,0.75,0.81,0.50,0.61});
-        zone_click_206.add(new double[]{3,0.85,0.91,0.14,0.25});
+        zone_click_206.add(new double[]{1,0.56,0.61,0.20,0.28});
+        zone_click_206.add(new double[]{2,0.56,0.61,0.30,0.38});
+        zone_click_206.add(new double[]{3,0.56,0.61,0.40,0.49});
         Enigma pc_ecran1 = new Enigma(206,202,2061,"pictures/206/206.png","",new ArrayList<>(),zone_click_206,3); // PC cliquable bureau
 
         ArrayList<double[]> zone_click_2062 = new ArrayList<>();
-        zone_click_2062.add(new double[]{6,0.9,0.99,0.9,0.99});
+        zone_click_2062.add(new double[]{6,0.9,0.94,0.17,0.21});
         Enigma pc_ecran2 = new Enigma(2062,202,2061,"pictures/206/2062.png","",new ArrayList<>(),zone_click_2062,3); // PC cliquable écran commandes
 
         ArrayList<double[]> zone_click_2063 = new ArrayList<>();
-        zone_click_2063.add(new double[]{5,0.875,0.93,0.65,0.76});
-        zone_click_2063.add(new double[]{6,0.9,0.99,0.9,0.99});
+        zone_click_2063.add(new double[]{5,0.755,0.79,0.51,0.54});
+        zone_click_2063.add(new double[]{6,0.9,0.94,0.17,0.21});
         Enigma pc_ecran3 = new Enigma(2063,202,2061,"pictures/206/2063.png","",new ArrayList<>(),zone_click_2063,3); // PC cliquable écran emprunt 1
 
         ArrayList<double[]> zone_click_2064 = new ArrayList<>();
-        zone_click_2064.add(new double[]{4,0.63,0.70,0.22,0.33});
-        zone_click_2064.add(new double[]{6,0.9,0.99,0.9,0.99});
+        zone_click_2064.add(new double[]{4,0.70,0.74,0.51,0.54});
+        zone_click_2064.add(new double[]{6,0.9,0.94,0.17,0.21});
         Enigma pc_ecran4 = new Enigma(2064,202,2061,"pictures/206/2064.png","",new ArrayList<>(),zone_click_2064,3); // PC cliquable écran emprunt 2
 
         ArrayList<double[]> zone_click_2065 = new ArrayList<>();
-        zone_click_2065.add(new double[]{5,0.875,0.93,0.65,0.76});
-        zone_click_2065.add(new double[]{6,0.9,0.99,0.9,0.99});
+        zone_click_2065.add(new double[]{5,0.755,0.79,0.51,0.54});
+        zone_click_2065.add(new double[]{6,0.9,0.94,0.17,0.21});
         Enigma pc_ecran5 = new Enigma(2065,202,2061,"pictures/206/2065.png","",new ArrayList<>(),zone_click_2065,3); // PC cliquable écran catalogue 1
 
         ArrayList<double[]> zone_click_2066 = new ArrayList<>();
-        zone_click_2066.add(new double[]{4,0.63,0.70,0.22,0.33});
-        zone_click_2066.add(new double[]{5,0.875,0.93,0.65,0.76});
-        zone_click_2066.add(new double[]{6,0.9,0.99,0.9,0.99});
+        zone_click_2066.add(new double[]{4,0.70,0.74,0.51,0.54});
+        zone_click_2066.add(new double[]{5,0.755,0.79,0.51,0.54});
+        zone_click_2066.add(new double[]{6,0.9,0.94,0.17,0.21});
         Enigma pc_ecran6 = new Enigma(2066,202,2061,"pictures/206/2066.png","",new ArrayList<>(),zone_click_2066,3); // PC cliquable écran emprunt 2
 
         ArrayList<double[]> zone_click_2067 = new ArrayList<>();
-        zone_click_2067.add(new double[]{4,0.63,0.70,0.22,0.33});
-        zone_click_2067.add(new double[]{6,0.9,0.99,0.9,0.99});
+        zone_click_2067.add(new double[]{4,0.70,0.74,0.51,0.54});
+        zone_click_2067.add(new double[]{6,0.9,0.94,0.17,0.21});
         Enigma pc_ecran7 = new Enigma(2067,202,2061,"pictures/206/2067.png","",new ArrayList<>(),zone_click_2067,3); // PC cliquable écran emprunt 2
 
 
@@ -244,9 +251,6 @@ public class Scenario_structure {
 
 
 
-
-
-
         Item clef = new Item(4,"Clef","Ancienne clef - Elle va sûrement vous permettre de sortir d'ici",-1, "objects/key.png");
 
 
@@ -261,7 +265,7 @@ public class Scenario_structure {
 
         ArrayList<int[]> consequences_action107_2 = new ArrayList<>();
         consequences_action107_2.add(new int[]{1,108}); //Bouge joueur vers salle 108
-        //consequences_action107_2.add(new int[]{17,54}); //Bruit interrupteur
+        consequences_action107_2.add(new int[]{17,54}); //Bruit interrupteur
         Action action107_2 = new Action(1072,false,"Appuyer sur l'interrupteur", consequences_action107_2, 107);
 
 
@@ -294,8 +298,9 @@ public class Scenario_structure {
 
         ArrayList<int[]> consequences_action108_5 = new ArrayList<>();
         consequences_action108_5.add(new int[]{7,4001}); //Texte indice
-        consequences_action108_5.add(new int[]{3,1085});
+        consequences_action108_5.add(new int[]{3,1085}); //Rend la demande d'indice indisponible
         consequences_action108_5.add(new int[]{14,30});
+        consequences_action108_5.add(new int[]{17,6});
         Action action108_5 = new Action(1085,true,"S'assoir sur la chaise [Obtention d'un indice, diminution du temps]", consequences_action108_5, 108);
 
         ArrayList<int[]> consequences_action108_6 = new ArrayList<>();
@@ -339,6 +344,8 @@ public class Scenario_structure {
         consequences_action203_1.add(new int[]{4,4}); //Ajoute objet clef
         consequences_action203_1.add(new int[]{3,2041}); //Bloque action (récupérable qu'une fois)
         consequences_action203_1.add(new int[]{17,28}); //Bruit de prise d'objet
+        consequences_action203_1.add(new int[]{16,203,2}); //Change image de cette salle
+        consequences_action203_1.add(new int[]{16,204,2}); //Change image du tiroir accessible plus tard
         Action action203_1 = new Action(2031,true,"Récupérer la clef", consequences_action203_1, 203);
 
 
@@ -348,18 +355,21 @@ public class Scenario_structure {
         consequences_action204_1.add(new int[]{4,4}); //Ajoute objet clef
         consequences_action204_1.add(new int[]{3,2041}); //Bloque action (récupérable qu'une fois)
         consequences_action204_1.add(new int[]{17,28}); //Bruit de prise d'objet
+        consequences_action204_1.add(new int[]{16,204,2}); //Change image de cette salle
         Action action204_1 = new Action(2041,true,"Récupérer la clef", consequences_action204_1, 204);
 
         ArrayList<int[]> consequences_action204_2 = new ArrayList<>();
         consequences_action204_2.add(new int[]{7,2042}); //Rajoute du texte
         consequences_action204_2.add(new int[]{3,2042}); //Bloque action (faisable qu'une fois)
         consequences_action204_2.add(new int[]{17,37}); //Bruit de bois qui craque
+        consequences_action204_2.add(new int[]{16,204,3}); //Change image de cette salle
         Action action204_2 = new Action(2042, "Casser le double fond [Compas]", consequences_action204_2, 204, 1);
 
         ArrayList<int[]> consequences_action204_3 = new ArrayList<>();
         consequences_action204_3.add(new int[]{7,2043}); //Rajoute du texte
         consequences_action204_3.add(new int[]{3,2043}); //Bloque action (faisable qu'une fois)
         consequences_action204_3.add(new int[]{17,3}); //Bruit opinel
+        consequences_action204_3.add(new int[]{16,204,3}); //Change image de cette salle
         Action action204_3 = new Action(2043, "Enlever le double fond [Opinel]", consequences_action204_3, 204, 3);
 
 

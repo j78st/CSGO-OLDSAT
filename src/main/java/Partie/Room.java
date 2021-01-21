@@ -12,7 +12,6 @@ public class Room {
     boolean access; // indique si la salle ou le lieu d'interaction est accessible
     int id_text; // identifiant du texte lié à la salle
     String path_image; // url de l'image liée à la salle
-    // ArrayList<String> sounds;
     ArrayList<Integer> id_actions; // identifiants des actions réalisables dans cette salle
     String room_name; // nom de la salle, sert pour le bac à sable
     boolean bas; // boolean indiquant si la salle est accessible depuis le mode bac à sable ou non
@@ -30,7 +29,7 @@ public class Room {
      * @param room_name nom de la salle, une salle nommée est accessible depuis le mode bac à sable
      */
     public Room(int id, int neighbour_north, int neighbour_east, int neighbour_south, int neighbour_west,
-                boolean access, int id_text, String path_image/*, ArrayList<String> sounds*/, String room_name){
+                boolean access, int id_text, String path_image, String room_name){
         this.id = id;
         this.neighbours[0] = neighbour_north;
         this.neighbours[1] = neighbour_east;
@@ -40,7 +39,6 @@ public class Room {
         this.id_text = id_text;
         this.path_image = path_image;
         this.id_actions = new ArrayList<>();
-        // this.sounds = sounds;
         this.room_name = room_name;
         this.bas = true;
         Game.rooms.add(this); // ajoute la salle à la liste des salles/lieux d'interaction disponibles dans le jeu
@@ -58,7 +56,7 @@ public class Room {
      * @param path_image URL de l'image de la salle
      */
     public Room(int id, int neighbour_north, int neighbour_east, int neighbour_south, int neighbour_west,
-                boolean access, int id_text, String path_image/*, ArrayList<String> sounds*/){
+                boolean access, int id_text, String path_image){
         this.id = id;
         this.neighbours[0] = neighbour_north;
         this.neighbours[1] = neighbour_east;
@@ -68,7 +66,6 @@ public class Room {
         this.id_text = id_text;
         this.path_image = path_image;
         this.id_actions = new ArrayList<>();
-        // this.sounds = sounds;
         this.room_name = "Sans_Nom";
         this.bas = false;
         Game.rooms.add(this); // ajoute la salle à la liste des salles/lieux d'interaction disponibles dans le jeu
@@ -82,7 +79,7 @@ public class Room {
      * @param path_image URL de l'image du lieu d'intarcation
      */
     public Room(int id, int origin_room,
-                int id_text, String path_image/*, ArrayList<String> sounds*/){
+                int id_text, String path_image){
         this.id = id;
         this.neighbours[0] = -1;
         this.neighbours[1] = -1;
@@ -94,7 +91,6 @@ public class Room {
         this.id_actions = new ArrayList<>();
         this.room_name = "Sans_Nom";
         this.bas = false;
-        // this.sounds = sounds;
         Game.rooms.add(this); // ajoute la salle à la liste des salles/lieux d'interaction disponibles dans le jeu
     }
 

@@ -90,6 +90,7 @@ public class Enigma extends Room{
             Game.player.move(this.neighbours[2]); // renvoie le joueur à l'écran précédent l'énigme
             Engine.engine.answer_box_visible(false);
             Engine.engine.answer_prompt.setText("");
+            WorldBoxDisc.play(Son.bonusTime);
             this.do_consequences(); // met en place les conséquences de la résolution de l'énigme
         }else{
             nb_error++;

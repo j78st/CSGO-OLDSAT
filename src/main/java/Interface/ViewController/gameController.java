@@ -163,6 +163,11 @@ public class gameController implements Controller {
             WorldBoxDisc.play(Son.steps3);
         }
         Game.player.move(Game.search_room(Game.player.getPosition()).getNeighbours()[0]);
+
+        //Cas particulier salle de classe, pas de généralisation car seul cas où une musique d'ambiance doit démarrer sur le clic d'une flèche
+        if(Game.getPlayer().getPosition() == 102){
+            WorldBoxDisc.play(Son.classRoom);
+        }
     }
 
     /**
@@ -451,7 +456,6 @@ public class gameController implements Controller {
      */
     public void initialize () {
         // gestion menu pause
-        System.out.println(Engine.gamePaused);
         if (!Engine.gamePaused) {
             background_menu.toBack();
             vbox_menu.toBack();
