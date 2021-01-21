@@ -154,7 +154,7 @@ public class Enigma extends Room{
                     }
                     break;
                 case 12: // changer image de la salle consequence[i][1] par l'image d'url "pictures/" + id_room + "/" + consequence[i][2], cela implique une normalisation du nom des images
-                    Game.search_room(getConsequences().get(i)[1]).setPath_image("pictures/" + getConsequences().get(i)[1] + "/" + getConsequences().get(i)[2]);
+                    Game.search_room(getConsequences().get(i)[1]).setPath_image("pictures/" + getConsequences().get(i)[1] + "/" + getConsequences().get(i)[2] +".png");
                     Engine.engine.refreshPicture();
                     break;
                 case 13: //jouer plusieurs sons les uns après les autres
