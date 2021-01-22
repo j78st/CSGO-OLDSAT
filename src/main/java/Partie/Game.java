@@ -1,5 +1,7 @@
 package Partie;
 
+import Interface.Settings.Engine;
+
 import java.io.IOException;
 import java.util.ArrayList;
 
@@ -211,5 +213,12 @@ public class Game {
                 && Game.search_enigma(Game.getPlayer().getPosition()).gest != 0){ //gest!=0 signifie que c'est une énigme cliquable
             Game.search_enigma(Game.getPlayer().getPosition()).check_click(x,y);
         }
+        if((x>0.16 && x<0.214 && y>0.74 && y<0.84 && Game.player.inventory.get(0) == 5)
+                || (x>0.224 && x<0.277 && y>0.74 && y<0.84 && Game.player.inventory.get(1) == 5)
+                || (x>0.286 && x<0.339 && y>0.74 && y<0.84 && Game.player.inventory.get(2) == 5)){
+            Engine.engine.refresh_map("pictures/map/carnet.png");
+            Engine.engine.show_map();
+        }
+
     }
 }

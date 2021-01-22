@@ -464,6 +464,7 @@ public class gameController implements Controller {
     @FXML
     public void hide_map () {
         map_pane.toBack();
+        refresh_map("pictures/map/map.png");
     }
 
     /**

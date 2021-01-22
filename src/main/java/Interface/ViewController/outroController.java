@@ -29,21 +29,24 @@ public class outroController implements Controller {
     // ==========================================================
     private int no_text;
 
-    private String text1 = "Dans la soirée, vous vous rendez à l'ENSSAT pour visiter l'école.\n\n" +
-            "C'est ici que commence votre véritable aventure.\n\n"+
-            "Vous arrivez dans le hall d'accueil de l'ENSSAT.";
+    private String text1 = "Une sensation étrange vous parcourt tout le corps.\n" +
+            "Une lumière vive vous éblouie. Vos yeux mettent quelques secondes à s'habituer\n\n"+
+            "Quand vous arrivez enfin à distinguer les choses, vous vous rendez compte que \n" +
+            "vous êtes maintenant à l'extérieur et que le soleil est au zénith.";
 
-    private String text2 = "Vous regardez autour de vous, l'endroit est désert.\n" +
-            "Toutefois, vous retrouvez le panneau indiquant la salle 137C, celui qui vous a guidé le matin même.\n" +
-            "Personne n'a pris le temps de le ranger, bizarre...\n\n" +
-            "Un silence assez pesant vous pousse à ne pas rester là.\n" +
-            "Pourquoi ne pas suivre la direction indiquée par le panneau ?\n" +
-            "Après tout vous connaissez déjà ce chemin.";
+    private String text2 = "Après quelques longues secondes, vous reprenez vos esprits et regardez autour de vous.\n" +
+            "Vous reconnaissez les lieux, vous êtes devant l'ENSSAT. Cependant, beaucoup de choses sont différentes.\n" +
+            "L'ENSSAT n'a pas encore ses extensions modernes et il n'y a aucune voiture dans la rue.\n\n" +
+            "C'est comme si vous aviez fait un bond dans le temps mais cela est impossible...\n\n" +
+            "Il y a une carte à vos pieds. Vous la ramassez.";
 
-    private String text3 = "Vous vous dirigez vers le couloir.\n\n" +
-            "Après quelques pas vous vous arrêtez net.\n" +
-            "Vous êtes interpellé par une faible lueur. Elle vient de votre droite.\n" +
-            "Vous remarquez une porte entrouverte sur laquelle vous lisez \"Bibliothèque\".";
+    private String text3 = "[Fin de l'escape game]\n\n" +
+            "Vous allez maintenant accéder à un mode exploration. Prenez votre temps,\n" +
+            "le chrono s'est arrêté et votre score a été sauvegardé.\n" +
+            "Ce mode est pour nous un prétexte de démonstration de la carte des salle\n" +
+            "qui n'avait pas de sens précédemment étant donné que l'escape game se passait dans une seule grande salle. \n\n" +
+            "Vous pouvez quitter ce mode à tout moment et accéder à l'écran des scores\n" +
+            "grâce à l'action \"Quitter le mode exploration\" disponible partout.";
 
     @FXML
     private Label narration;
@@ -65,27 +68,17 @@ public class outroController implements Controller {
     // ==========================================================
     @FXML
     void set_text(ActionEvent event) throws IOException {
-        PlayList playlist = new PlayList();
         no_text += 1;
         text_transition();
 
         if (no_text == 3) {
-            Game.search_action(1043).do_consequences();
+            Game.search_action(1104).do_consequences();
             screen_transition();
-            WorldBoxDisc.play(Son.wind);
-
-            playlist.addSound(Son.porte1);
-            playlist.addSound(Son.creakingDoor2);
-            playlist.addSound(Son.steps3);
-            playlist.addSound(Son.doorSlam);
-            playlist.start();
-
-
+            WorldBoxDisc.play(Son.outside);
         }
     }
 
     private void text_transition () {
-        PlayList playlist = new PlayList();
         next.setDisable(true);
 
         FadeTransition fadeOUT = new FadeTransition();
@@ -139,13 +132,11 @@ public class outroController implements Controller {
             LoadMap gl = new LoadMap();
             try {
                 gl.display_screen_from_id(LoadMap.GAME);
-                Engine.engine.timer_lbl.setVisible(true);
-                Engine.chrono = new TimerController(60*25);
-                Engine.chrono.start();
             } catch (IOException e) {
                 e.printStackTrace();
             }
 
+            Engine.engine.set_map_available(true);
             FadeTransition ft = new FadeTransition();
             ft.setDuration(Duration.seconds(2));
             ft.setNode(Engine.engine.root);

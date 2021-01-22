@@ -80,7 +80,6 @@ public class cinematicController implements Controller {
             playlist.addSound(Son.doorSlam);
             playlist.start();
 
-
         }
     }
 

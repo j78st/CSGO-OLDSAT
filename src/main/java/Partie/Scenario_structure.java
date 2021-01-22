@@ -41,7 +41,7 @@ public class Scenario_structure {
         consequences_action101_2.add(new int[]{9,102}); //Débloque salle suivante
         Action action101_2 = new Action(1012,false,"Lire le panneau", consequences_action101_2, 101);
 
-        ArrayList<int[]> consequences_action101_67 = new ArrayList<>();
+        /*ArrayList<int[]> consequences_action101_67 = new ArrayList<>();
         consequences_action101_67.add(new int[]{17,44,47});
         Action action101_67 = new Action(10167,true,"Test son", consequences_action101_67, 101);
 
@@ -55,7 +55,16 @@ public class Scenario_structure {
 
         ArrayList<int[]> consequences_action101_70 = new ArrayList<>();
         consequences_action101_70.add(new int[]{1,305});
-        Action action101_70 = new Action(10170,true,"Saut admin enigme 305", consequences_action101_70, 101);
+        Action action101_70 = new Action(10170,true,"Saut admin enigme 305", consequences_action101_70, 101);*/
+
+        ArrayList<int[]> consequences_action101_71 = new ArrayList<>();
+        consequences_action101_71.add(new int[]{22});
+        consequences_action101_71.add(new int[]{4,5});
+        Action action101_71 = new Action(10171,true,"Map", consequences_action101_71, 101);
+
+        ArrayList<int[]> consequences_action101_72 = new ArrayList<>();
+        consequences_action101_72.add(new int[]{12,110});
+        Action action101_72 = new Action(10172,true,"Saut salle 110", consequences_action101_72, 101);
 
         //Amphi pré-conférence
         ArrayList<int[]> consequences_action102_1 = new ArrayList<>();
@@ -117,11 +126,11 @@ public class Scenario_structure {
         Action action104_1 = new Action(1041,true,"Parler à un groupe", consequences_action104_1, 104);
 
         ArrayList<int[]> consequences_action104_2 = new ArrayList<>();
-        consequences_action104_2.add(new int[]{15}); //Lance la cinématique
+        consequences_action104_2.add(new int[]{15,1}); //Lance la cinématique
         consequences_action104_2.add(new int[]{3,1042}); //Bloque l'action pour qu'on ne puisse pas la spam clic
         consequences_action104_2.add(new int[]{3,1041}); //Bloque l'action de "Parler à un groupe" pour qu'on ne puisse pas faire évoluer le texte de la salle pendant que la cinématique se lance
         consequences_action104_2.add(new int[]{20,56}); //Arrête le son d'ambiance extérieur
-        consequences_action104_2.add(new int[]{18,43,2,15});
+        consequences_action104_2.add(new int[]{18,43,2,15}); //Joue son bruit de pas puis hibou 2 secondes après
         Action action104_2 = new Action(1042,true,"Rentrer chez vous [FIN DU PROLOGUE]", consequences_action104_2, 104);
 
         ArrayList<int[]> consequences_action104_3 = new ArrayList<>();
@@ -447,14 +456,17 @@ public class Scenario_structure {
         Action action110_1 = new Action(1101,true,"Analyser le mur face à vous", consequences_action110_1, 110);
 
         ArrayList<int[]> consequences_action110_2 = new ArrayList<>();
-        consequences_action110_2.add(new int[]{1,111}); //Bouge le joueur vers RDC
-        //lancer cinématique 2
+        consequences_action110_2.add(new int[]{15,2}); //Lance cinématique 2
         consequences_action110_2.add(new int[]{3,1101}); //Bloque action mur pour ne pas que le joueur puisse bouger pendant le lancement de la cinématique
         consequences_action110_2.add(new int[]{3,1102}); //Bloque cette action (faisable qu'une fois)
         consequences_action110_2.add(new int[]{3,1103}); //Bloque action récurérer le carnet au cas où le joueur réussi l'énigme sans le carnet (normalement impossible)
+        consequences_action104_2.add(new int[]{18,43}); //Joue son bruit de pas
         Action action110_2 = new Action(1102,false,"Passer à travers l'ouverture [Fin de l'escape game, mode exploration]", consequences_action110_2, 110);
 
 
+        ArrayList<int[]> consequences_action110_4 = new ArrayList<>();
+        consequences_action110_4.add(new int[]{1,111}); //Bouge le joueur en salle 111 (début exploration)
+        Action action110_4 = new Action(1104,false,"", consequences_action110_4, 110); //Sert pour cinématique 2
 
         /*-------------------------------------------Mode exploration-------------------------------------------*/
 

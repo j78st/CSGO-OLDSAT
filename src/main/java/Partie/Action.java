@@ -131,6 +131,7 @@ public class Action {
                     Game.player.add_to_inventory(42); // donne l'objet d'id 42 (id normalisée pour le couteau suisse admin)
                     Game.search_room(Game.getPlayer().position).close_neighbours(); // bloque l'accès à tous les voisins
                     Game.set_object_actions_available();
+                    Game.search_room(getConsequences().get(i)[1]).setAccess(true);
                     Engine.engine.timer_lbl.setVisible(false);
                     Engine.engine.refreshRoom();
                     break;
@@ -150,16 +151,29 @@ public class Action {
                     fadeOUT.setNode(Engine.engine.root);
                     fadeOUT.setFromValue(1);
                     fadeOUT.setToValue(0);
-                    fadeOUT.setOnFinished(new EventHandler<ActionEvent>() {
-                        @Override
-                        public void handle(ActionEvent event) {
-                            try {
-                                (new LoadMap()).display_screen_from_id(LoadMap.CUTSCENE);
-                            } catch (IOException e) {
-                                e.printStackTrace();
+                    if(getConsequences().get(i)[1] == 1) {
+                        fadeOUT.setOnFinished(new EventHandler<ActionEvent>() {
+                            @Override
+                            public void handle(ActionEvent event) {
+                                try {
+                                    (new LoadMap()).display_screen_from_id(LoadMap.CUTSCENE);
+                                } catch (IOException e) {
+                                    e.printStackTrace();
+                                }
                             }
-                        }
-                    });
+                        });
+                    }else if(getConsequences().get(i)[1] == 2) {
+                        fadeOUT.setOnFinished(new EventHandler<ActionEvent>() {
+                            @Override
+                            public void handle(ActionEvent event) {
+                                try {
+                                    (new LoadMap()).display_screen_from_id(LoadMap.OUTRO);
+                                } catch (IOException e) {
+                                    e.printStackTrace();
+                                }
+                            }
+                        });
+                    }
                     fadeOUT.play();
                     break;
                 case 16: // changer image de la salle consequence[i][1] par l'image d'url "pictures/" + id_room + "/" + consequence[i][2], cela implique une normalisation du nom des images
@@ -196,6 +210,13 @@ public class Action {
                     Engine.chrono.toogleTimer();
                     Engine.engine.timer_lbl.setVisible(false);
                     break;
+                case 22:
+                    Engine.engine.set_map_available(true);
+                    Engine.engine.refresh_map("pictures/map/map.png");
+                    Engine.engine.refreshRoom();
+                    break;
+
+
             }
         }
     }
