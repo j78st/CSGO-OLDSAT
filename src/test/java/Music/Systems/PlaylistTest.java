@@ -49,7 +49,7 @@ public class PlaylistTest {
     }
 
     /**
-     * Vérifie la modification du temps entre pistes d'une playlist s'est bien déroulé
+     * Vérifie la modification du temps entre pistes d'une playlist en mode régulier s'est bien déroulé
      */
     @Test
     public void modifyTimeInBetweenRegularMode(){
