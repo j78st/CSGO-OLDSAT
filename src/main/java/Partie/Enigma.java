@@ -8,6 +8,7 @@ import Music.Systems.WorldBoxDisc;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Locale;
 
 public class Enigma extends Room{
     String solution; // solution "encode" le résultat de l'énigme
@@ -85,7 +86,7 @@ public class Enigma extends Room{
      * @throws IOException
      */
     public void check_solution(String suggestion) throws IOException { // vérifie si la suggestion donnée correspond ou non au résultat attendu de l'énigme
-        if (getSolution().equals(suggestion)){
+        if (getSolution() .equals(suggestion.toLowerCase(Locale.ROOT))){
             Game.search_room(this.neighbours[2]).search_action_with_enigma(this.getId()).setAvailable(false); // rend l'accès à cette énigme impossible
             Game.player.move(this.neighbours[2]); // renvoie le joueur à l'écran précédent l'énigme
             Engine.engine.answer_box_visible(false);
@@ -93,12 +94,13 @@ public class Enigma extends Room{
             WorldBoxDisc.play(Son.bonusTime);
             this.do_consequences(); // met en place les conséquences de la résolution de l'énigme
         }else{
-            nb_error++;
+            /*nb_error++;
             if(nb_error == 1){
                 this.text_evolve(Game.search_text(4004)); // fait évoluer le texte de l'énigme pour que le joueur sâche que sa solution n'est pas la bonne
             }else if(nb_error == 3){
                 this.text_evolve(Game.search_text(4005)); // propose au joueur de prendre un indice
-            }
+            }*/
+            WorldBoxDisc.play(Son.errorEnigma);
         }
     }
 

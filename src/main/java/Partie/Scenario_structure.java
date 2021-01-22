@@ -119,6 +119,7 @@ public class Scenario_structure {
         ArrayList<int[]> consequences_action104_2 = new ArrayList<>();
         consequences_action104_2.add(new int[]{15}); //Lance la cinématique
         consequences_action104_2.add(new int[]{3,1042}); //Bloque l'action pour qu'on ne puisse pas la spam clic
+        consequences_action104_2.add(new int[]{3,1041}); //Bloque l'action de "Parler à un groupe" pour qu'on ne puisse pas faire évoluer le texte de la salle pendant que la cinématique se lance
         consequences_action103_2.add(new int[]{20,56}); //Arrête le son d'ambiance extérieur
         consequences_action104_2.add(new int[]{18,43,2,15});
         Action action104_2 = new Action(1042,true,"Rentrer chez vous [FIN DU PROLOGUE]", consequences_action104_2, 104);
@@ -148,7 +149,7 @@ public class Scenario_structure {
         Room room8_2_1 = new Room(212,207,2121,"pictures/Trousse.png"); // Livre 1-1
         Room room8_2_2 = new Room(213,207,2131,"pictures/Trousse.png"); // Livre 1-2
         Room room8_2_3 = new Room(214,207,2141,"pictures/Trousse.png"); // Livre 1-3
-        Room room10 = new Room(110,-1,-1,108,-1, false,1101,"pictures/Bibliotheque.png", "Acte 1 - Salle derrière étagère"); // Début scène 2
+        Room room10 = new Room(110,111,-1,108,-1, false,1101,"pictures/Bibliotheque.png", "Acte 1 - Salle derrière étagère"); // Fin scène 1
 
 
 
@@ -156,7 +157,7 @@ public class Scenario_structure {
         consequences_enigme1.add(new int[]{9,110}); // Débloque salle suivante
         consequences_enigme1.add(new int[]{7,3012,108}); // Rajoute texte de fin d'énigme à la salle d'origine
         consequences_enigme1.add(new int[]{13,35}); //Bruit de porte qui craque
-        Enigma enigme1 = new Enigma(301,108,3011,"pictures/Trousse.png","Le Cid",consequences_enigme1); // Étagère 2 - Énigme
+        Enigma enigme1 = new Enigma(301,108,3011,"pictures/Trousse.png","le cid",consequences_enigme1); // Étagère 2 - Énigme
 
         ArrayList<int[]> consequences_enigme2 = new ArrayList<>();
         consequences_enigme2.add(new int[]{2,2024}); // Débloque l'action accès tiroir depuis le bureau
@@ -442,10 +443,32 @@ public class Scenario_structure {
         consequences_action109_3.add(new int[]{17,43}); //Bruit de pas
         Action action109_3 = new Action(1093,true,"Descendre au rez-de-chaussée", consequences_action109_3, 109);
 
+
         //Actions salle 110 - Salle derrière l'étagère
 
         ArrayList<int[]> consequences_action110_1 = new ArrayList<>();
         consequences_action110_1.add(new int[]{1,305}); //Bouge le joueur vers RDC
         Action action110_1 = new Action(1101,true,"Analyser le mur face à vous", consequences_action110_1, 110);
+
+        ArrayList<int[]> consequences_action110_2 = new ArrayList<>();
+        consequences_action110_2.add(new int[]{1,111}); //Bouge le joueur vers RDC
+        //lancer cinématique 2
+        //bloquer actions
+        Action action110_2 = new Action(1102,false,"Passer à travers l'ouverture", consequences_action110_2, 110);
+
+
+
+        /*-------------------------------------------Mode exploration-------------------------------------------*/
+
+        Room room11 = new Room(111,113,-1,-1,112,true,1111,"pictures/exploration/enssat.png", "Exploration - Enssat");
+        Room room12 = new Room(112,115,111,-1,-1,true,1121,"pictures/exploration/bord_eau.png", "Exploration - Bord de l'eau");
+        Room room13 = new Room(113,-1,114,111,115,true,1131,"pictures/exploration/rue_enssat.png", "Exploration - Rue de l'ENSSAT");
+        Room room14 = new Room(114,-1,-1,-1,113,true,1141,"pictures/exploration/gare.png", "Exploration - Gare");
+        Room room15 = new Room(115,117,113,112,116,true,1151,"pictures/exploration/quai_aiguillon.png", "Exploration - Quai de l'aiguillon");
+        Room room16 = new Room(116,118,115,-1,-1,true,1161,"pictures/exploration/marché.png", "Exploration - Marché");
+        Room room17 = new Room(117,-1,-1,115,118,true,1171,"pictures/exploration/rue_capucins.png", "Exploration - Rue des Capucins");
+        Room room18 = new Room(118,-1,117,116,-1,true,1181,"pictures/exploration/place_centre.png", "Exploration - Place Hôtel de Ville");
+
+
     }
 }
