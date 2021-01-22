@@ -60,7 +60,7 @@ public class Son {
     public static final String ambiance1 = "ambiance1";
     public static final String menuTheme = "menuTheme";
     public static final String zip = "zip";
-    public static final String switch1 = "switch";
+    public static final String switch1 = "switch1";
     public static final String classRoom = "classRoom";
     public static final String outside = "outside";
     public static final String finEnigme = "finEnigme";

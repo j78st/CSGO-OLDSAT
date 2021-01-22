@@ -175,7 +175,8 @@ public class Scenario {
 
     public Text_scenario room_301_2 = new Text_scenario(3012,"Vous avez réussi !\n" +
             "L'étagère s'ouvre et vous découvrez une salle " +
-            "qui était cachée derrière.");
+            "qui était cachée derrière. \n" +
+            "[La flèche de déplacement nord s'est débloquée]\n\n");
 
     //Etegere3
 

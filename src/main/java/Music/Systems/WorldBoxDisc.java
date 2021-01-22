@@ -337,7 +337,7 @@ public class WorldBoxDisc extends Thread {
 
         File switch1F = new File("resources/sounds/interactions/switch4.wav");
         Music switch1M = TinySound.loadMusic(switch1F);
-        Disc switch1 = new Disc(switch1M, "switch", false, MusicType.SoundFx, 1);
+        Disc switch1 = new Disc(switch1M, "switch1", false, MusicType.SoundFx, 1);
         add(switch1);
 
         File classRoomF = new File("resources/sounds/ambiant/classroomNoises.wav");

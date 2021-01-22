@@ -50,7 +50,6 @@ public class TimerController extends Thread {
      * @param secondsTaken
      */
     public synchronized void penaltyTime(int secondsTaken){
-        WorldBoxDisc.play(Son.errorEnigma);
         timer.substractTime(secondsTaken);
     }
 

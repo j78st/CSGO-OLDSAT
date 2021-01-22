@@ -1,6 +1,8 @@
 package Partie;
 
 import Interface.Settings.Engine;
+import Music.Systems.Son;
+import Music.Systems.WorldBoxDisc;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
 

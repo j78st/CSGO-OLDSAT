@@ -8,6 +8,7 @@ import Music.Systems.WorldBoxDisc;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Locale;
 
 public class Enigma extends Room{
     String solution; // solution "encode" le résultat de l'énigme
@@ -85,19 +86,21 @@ public class Enigma extends Room{
      * @throws IOException
      */
     public void check_solution(String suggestion) throws IOException { // vérifie si la suggestion donnée correspond ou non au résultat attendu de l'énigme
-        if (getSolution().equals(suggestion)){
+        if (getSolution() .equals(suggestion.toLowerCase(Locale.ROOT))){
             Game.search_room(this.neighbours[2]).search_action_with_enigma(this.getId()).setAvailable(false); // rend l'accès à cette énigme impossible
             Game.player.move(this.neighbours[2]); // renvoie le joueur à l'écran précédent l'énigme
             Engine.engine.answer_box_visible(false);
             Engine.engine.answer_prompt.setText("");
+            WorldBoxDisc.play(Son.bonusTime);
             this.do_consequences(); // met en place les conséquences de la résolution de l'énigme
         }else{
-            nb_error++;
+            /*nb_error++;
             if(nb_error == 1){
                 this.text_evolve(Game.search_text(4004)); // fait évoluer le texte de l'énigme pour que le joueur sâche que sa solution n'est pas la bonne
             }else if(nb_error == 3){
                 this.text_evolve(Game.search_text(4005)); // propose au joueur de prendre un indice
-            }
+            }*/
+            WorldBoxDisc.play(Son.errorEnigma);
         }
     }
 
@@ -143,8 +146,7 @@ public class Enigma extends Room{
                 case 10: // affiche écran fin de partie
                     LoadMap gl = new LoadMap();
                     gl.display_screen_from_id(LoadMap.END_GAME);
-                    WorldBoxDisc.play(Son.hibou);
-                    WorldBoxDisc.play(Son.valid);
+                    WorldBoxDisc.play(Son.finEnigme);
                     break;
                 case 11: // faire évoluer texte affiché par une action, consequence[i][1] correspond à l'action à modifier, consequence[i][2] correspond à l'id du nouveau texte
                     for (int j = 0; j < Game.search_action(getConsequences().get(i)[1]).consequences.size(); j++) {
@@ -274,8 +276,11 @@ public class Enigma extends Room{
     public void gest_2(int id_zone) throws IOException {
         String sol = "";
 
-        //Ajoute le click fais à la mémoire
+        //Ajoute le click fait à la mémoire
         clicks_memory.add(id_zone);
+
+        //Joue un son pour que le joueur comprenne que son clic est valid
+        WorldBoxDisc.play(Son.oneKnock);
 
         //Récupère la solution composé par la suite de clic
         for(int i = 0; i<clicks_memory.size(); i++) {
