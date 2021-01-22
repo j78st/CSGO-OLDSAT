@@ -3,6 +3,7 @@ package Music.Systems;
 import Timer.Timer;
 import Timer.Lock;
 import java.util.ArrayList;
+import java.util.Objects;
 import java.util.Random;
 
 /**
@@ -19,6 +20,7 @@ public class PlayList extends Thread {
      * Valable en mode régulier/mode = false. Durée entre chaque piste de musique correspond aux éléments du tableau.
      */
     private ArrayList<Integer> timeInBetweenA;
+
     /**
      * Valable en mode irrégulier/mode = true. Durée entre chaque piste est de timeInBetween secondes.
      */
@@ -77,11 +79,38 @@ public class PlayList extends Thread {
     }
 
     /**
+     * Retourne le temps entre piste dans le cas d'une playlist en mode régulier.
+     * @return
+     */
+    public int getTimeInBetween() {
+        if(!mode){
+            return timeInBetween;
+        } else {
+            throw new IllegalArgumentException("Methode valable en mode régulier uniquement.");
+        }
+    }
+
+    /**
      * Ajoute une piste à la playlist
      * @param aSound nom de la piste
      */
     public void addSound(String aSound){
         playlist.add(aSound);
+    }
+
+    /**
+     * Ajoute un temps intérmédiaires dans le cas du mode irrégulier (utilisable en test JUnit seulement)
+     */
+    public void addTime(int time){
+        if(mode){
+            if(playlist.size()-1 > timeInBetweenA.size()){
+                timeInBetweenA.add(time);
+            } else {
+                throw new IllegalArgumentException("Opération d'ajout interdit : pas assez de case de pistes sonores.");
+            }
+        } else {
+            throw new IllegalArgumentException("Opération d'ajout de temps en mode régulier est interdite.");
+        }
     }
 
     /**
@@ -158,6 +187,19 @@ public class PlayList extends Thread {
 
 
         }
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        PlayList playList = (PlayList) o;
+        return timeInBetween == playList.timeInBetween && currentlyPlaying == playList.currentlyPlaying && mode == playList.mode && running == playList.running && playlist.equals(playList.playlist) && timeInBetweenA.equals(playList.timeInBetweenA);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(playlist, timeInBetweenA, timeInBetween, currentlyPlaying, mode, running);
     }
 
     public static void main(String[] args) {
