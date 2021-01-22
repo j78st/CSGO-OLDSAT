@@ -27,6 +27,7 @@ public class LoadMap {
     public static final int ADMIN = 9;
     public static final int AUTHENTIFICATION = 10;
     public static final int CUTSCENE = 11;
+    public static final int OUTRO = 12;
 
     /**
      * L'appel a cette fonction permet d'avoir une structure "LoaderKit" qui correspond a l'ecran que l'on souhaite afficher.
@@ -142,6 +143,15 @@ public class LoadMap {
                 loader.setLocation(getClass().getResource("/fxml/cinematicView.fxml"));
                 root = loader.load();
                 controller = (cinematicController) loader.getController();
+                kit.setNext_root(root);
+                kit.setNext_controller(controller);
+                break;
+
+            case OUTRO:
+                loader = new FXMLLoader();
+                loader.setLocation(getClass().getResource("/fxml/outroView.fxml"));
+                root = loader.load();
+                controller = (outroController) loader.getController();
                 kit.setNext_root(root);
                 kit.setNext_controller(controller);
                 break;
