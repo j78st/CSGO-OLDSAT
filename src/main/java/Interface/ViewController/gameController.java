@@ -97,6 +97,14 @@ public class gameController implements Controller {
     @FXML
     public TextField answer_prompt;
 
+    // gestion carte --------------------------------------------
+
+    @FXML
+    private AnchorPane map_pane;
+
+    @FXML
+    private Button map_btn;
+
     // gestion menu pause ---------------------------------------
     @FXML
     private Button resume_btn;
@@ -109,9 +117,6 @@ public class gameController implements Controller {
 
     @FXML
     private Text timer_pause;
-
-    @FXML
-    private GridPane map;
 
     // ==========================================================
     // Methodes liées au déroulement du jeu
@@ -448,6 +453,38 @@ public class gameController implements Controller {
     }
 
     // ==========================================================
+    // Gestion de la carte
+    // ==========================================================
+
+    @FXML
+    public void show_map() {
+        map_pane.toFront();
+    }
+
+    @FXML
+    public void hide_map () {
+        map_pane.toBack();
+    }
+
+    /**
+     * Raffraichit l'image affichée lorsque le joueur consulte la carte
+     */
+    public void refresh_map (String URL) {
+        Background bg = new Background(new BackgroundImage(
+                new Image(URL,true),
+                BackgroundRepeat.NO_REPEAT,
+                BackgroundRepeat.NO_REPEAT,
+                BackgroundPosition.DEFAULT,
+                new BackgroundSize(1.0, 1.0, true, true, false, false)));
+        map_pane.setBackground(bg);
+    }
+
+    public void set_map_available(boolean bool){
+        map_btn.setVisible(bool);
+        map_btn.setDisable(!bool);
+    }
+
+    // ==========================================================
     // Methodes d'initialisation
     // ==========================================================
 
@@ -495,6 +532,9 @@ public class gameController implements Controller {
         // Mise en place scroller
         scroller.setFitToWidth(true);
         scroller.setContent(narration);
+
+        set_map_available(false);
+        hide_map();
     }
 
     /**
