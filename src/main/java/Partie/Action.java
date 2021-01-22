@@ -5,6 +5,7 @@ import Interface.Settings.Engine;
 import Music.Systems.PlayList;
 import Music.Systems.Son;
 import Music.Systems.WorldBoxDisc;
+import Timer.Timer;
 import javafx.animation.FadeTransition;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -121,8 +122,7 @@ public class Action {
                     break;
                 case 11: // affiche écran fin de partie
                     (new LoadMap()).display_screen_from_id(LoadMap.END_GAME);
-                    WorldBoxDisc.play(Son.hibou);
-                    WorldBoxDisc.play(Son.valid);
+                    WorldBoxDisc.play(Son.finEnigme);
                     break;
                 case 12: // mouvement particulier du joueur pour le mode bac à sable
                     Game.setBas(getConsequences().get(i)[1]); // on met le numéro de la salle traitée dans game.bas
@@ -191,6 +191,10 @@ public class Action {
                     break;
                 case 20: //mettre en pause un son d'ambiance
                     WorldBoxDisc.pause(Game.search_sounds(String.valueOf(getConsequences().get(i)[1])));
+                    break;
+                case 21: //arrêter le timer et faire disparaitre l'encadré servant à l'afficher (sert quand on passe en mode exploration)
+                    Engine.chrono.toogleTimer();
+                    Engine.engine.timer_lbl.setVisible(false);
                     break;
             }
         }

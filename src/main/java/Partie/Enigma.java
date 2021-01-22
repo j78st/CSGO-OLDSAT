@@ -146,8 +146,7 @@ public class Enigma extends Room{
                 case 10: // affiche écran fin de partie
                     LoadMap gl = new LoadMap();
                     gl.display_screen_from_id(LoadMap.END_GAME);
-                    WorldBoxDisc.play(Son.hibou);
-                    WorldBoxDisc.play(Son.valid);
+                    WorldBoxDisc.play(Son.finEnigme);
                     break;
                 case 11: // faire évoluer texte affiché par une action, consequence[i][1] correspond à l'action à modifier, consequence[i][2] correspond à l'id du nouveau texte
                     for (int j = 0; j < Game.search_action(getConsequences().get(i)[1]).consequences.size(); j++) {
@@ -277,8 +276,11 @@ public class Enigma extends Room{
     public void gest_2(int id_zone) throws IOException {
         String sol = "";
 
-        //Ajoute le click fais à la mémoire
+        //Ajoute le click fait à la mémoire
         clicks_memory.add(id_zone);
+
+        //Joue un son pour que le joueur comprenne que son clic est valid
+        WorldBoxDisc.play(Son.oneKnock);
 
         //Récupère la solution composé par la suite de clic
         for(int i = 0; i<clicks_memory.size(); i++) {

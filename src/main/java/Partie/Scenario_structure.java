@@ -21,9 +21,9 @@ public class Scenario_structure {
         Room room4 = new Room(104,-1,-1,-1,-1,true,1041,"pictures/Exterieur.png"); //Exterieur
 
         //Objets
-        Item compas = new Item(1,"Compas","Compas pouvant être bien pratique",-1, "objects/Compas.png");
-        Item loupe = new Item(2,"Loupe","Petite loupe pouvant être bien pratique",-1, "objects/Loupe.png");
-        Item opinel = new Item(3,"Petit opinel","Petit couteau pouvant être bien pratique",-1, "objects/Opinel.png");
+        Item compas = new Item(1,"Compas","Compas - Peut être bien pratique",-1, "objects/Compas.png");
+        Item loupe = new Item(2,"Loupe","Petite loupe - Peut être bien pratique",-1, "objects/Loupe.png");
+        Item opinel = new Item(3,"Petit opinel","Petit couteau - Peut être bien pratique",-1, "objects/Opinel.png");
         Item couteau_suisse = new Item(42, "Couteau Suisse de l'Admin", "Couteau Suisse de l'Admin - Tout est possible avec ça", -1, "objects/couteau_suisse.png");
 
         //Actions
@@ -120,7 +120,7 @@ public class Scenario_structure {
         consequences_action104_2.add(new int[]{15}); //Lance la cinématique
         consequences_action104_2.add(new int[]{3,1042}); //Bloque l'action pour qu'on ne puisse pas la spam clic
         consequences_action104_2.add(new int[]{3,1041}); //Bloque l'action de "Parler à un groupe" pour qu'on ne puisse pas faire évoluer le texte de la salle pendant que la cinématique se lance
-        consequences_action103_2.add(new int[]{20,56}); //Arrête le son d'ambiance extérieur
+        consequences_action104_2.add(new int[]{20,56}); //Arrête le son d'ambiance extérieur
         consequences_action104_2.add(new int[]{18,43,2,15});
         Action action104_2 = new Action(1042,true,"Rentrer chez vous [FIN DU PROLOGUE]", consequences_action104_2, 104);
 
@@ -149,7 +149,11 @@ public class Scenario_structure {
         Room room8_2_1 = new Room(212,207,2121,"pictures/Trousse.png"); // Livre 1-1
         Room room8_2_2 = new Room(213,207,2131,"pictures/Trousse.png"); // Livre 1-2
         Room room8_2_3 = new Room(214,207,2141,"pictures/Trousse.png"); // Livre 1-3
-        Room room10 = new Room(110,111,-1,108,-1, false,1101,"pictures/Bibliotheque.png", "Acte 1 - Salle derrière étagère"); // Fin scène 1
+        Room room10 = new Room(110,-1,-1,108,-1, false,1101,"pictures/Bibliotheque.png", "Acte 1 - Salle derrière étagère"); // Fin scène 1
+
+
+        Item clef = new Item(4,"Clef","Ancienne clef - Elle va sûrement vous permettre de sortir d'ici",-1, "objects/key.png");
+        Item carnet = new Item(5,"Carnet vieilli","Vieux carnet - Peut être trouverez-vous un indice à l'intérieur",-1, "objects/key2.png");
 
 
 
@@ -186,13 +190,15 @@ public class Scenario_structure {
 
         ArrayList<int[]> consequences_enigme5 = new ArrayList<>();
         consequences_enigme5.add(new int[]{4,42});
+        consequences_enigme5.add(new int[]{7,1103,110});
+        consequences_enigme5.add(new int[]{2,1102});
         ArrayList<double[]> zone_click_305 = new ArrayList<>();
         zone_click_305.add(new double[]{1,0.60,0.67,0.64,0.74});
         zone_click_305.add(new double[]{2,0.75,0.81,0.50,0.61});
         zone_click_305.add(new double[]{3,0.85,0.91,0.14,0.25});
         zone_click_305.add(new double[]{4,0.63,0.70,0.22,0.33});
         zone_click_305.add(new double[]{5,0.875,0.93,0.65,0.76});
-        Enigma enigme5 = new Enigma(305,101,3051,"pictures/305.png","12345",consequences_enigme5,zone_click_305,2); // Énigme suite de clics test
+        Enigma enigme5 = new Enigma(305,110,3051,"pictures/305.png","12345",consequences_enigme5,zone_click_305,2); // Énigme suite de clics test
 
 
         //PC cliquable
@@ -236,23 +242,7 @@ public class Scenario_structure {
 
         //Actions de la salle 206 - PC dévérouillé
 
-        ArrayList<int[]> consequences_action206_1 = new ArrayList<>();
-        //consequences_action206_1.add(new int[]{?}); //Fait évoluer l'image
-        consequences_action206_1.add(new int[]{2,2062}); //Dévérouille l'action "Retour page précédente"
-        consequences_action206_1.add(new int[]{3,2061}); //Vérouille cette action
-        Action action206_1 = new Action(2061,false,"Passer à la page suivante", consequences_action206_1, 206);
-
-        ArrayList<int[]> consequences_action206_2 = new ArrayList<>();
-        //consequences_action206_2.add(new int[]{?}); //Fait évoluer l'image
-        consequences_action206_2.add(new int[]{2,2061}); //Dévérouille l'action "Passer à la page suivante"
-        consequences_action206_2.add(new int[]{3,2062}); //Vérouille cette action
-        Action action206_2 = new Action(2062,false,"Retour à la page précédente", consequences_action206_2, 206);
-
         Action action206_3 = new Action(2063,false,"", new ArrayList<>(), 206); // Action servant à la gestion du pc interactif
-
-
-
-        Item clef = new Item(4,"Clef","Ancienne clef - Elle va sûrement vous permettre de sortir d'ici",-1, "objects/key.png");
 
 
         //Actions de la salle 107 - Début de l'aventure
@@ -278,20 +268,20 @@ public class Scenario_structure {
 
         ArrayList<int[]> consequences_action108_2 = new ArrayList<>();
         consequences_action108_2.add(new int[]{1,207}); //Bouge joueur vers l'étagère 1
-        Action action108_2 = new Action(1082,true,"S'approcher de l'étagère de gauche", consequences_action108_2, 108);
+        Action action108_2 = new Action(1082,true,"S'approcher de l'étagère de gauche face à vous", consequences_action108_2, 108);
 
         ArrayList<int[]> consequences_action108_3 = new ArrayList<>();
         consequences_action108_3.add(new int[]{1,208}); //Bouge joueur vers l'étagère 2
-        Action action108_3 = new Action(1083,true,"S'approcher de l'étagère face à vous", consequences_action108_3, 108);
+        Action action108_3 = new Action(1083,true,"S'approcher de l'étagère au centre face à vous", consequences_action108_3, 108);
 
         ArrayList<int[]> consequences_action108_7 = new ArrayList<>();
         consequences_action108_7.add(new int[]{1,301}); //Bouge joueur vers l'étagère 2
         consequences_action108_7.add(new int[]{10}); //Affiche boîte de dialogue
-        Action action108_7 = new Action(1087,false,"S'approcher de l'étagère face à vous", consequences_action108_7, 108);
+        Action action108_7 = new Action(1087,false,"S'approcher de l'étagère au centre face à vous", consequences_action108_7, 108);
 
         ArrayList<int[]> consequences_action108_4 = new ArrayList<>();
         consequences_action108_4.add(new int[]{1,209}); //Bouge joueur vers l'étagère 3
-        Action action108_4 = new Action(1084,true,"S'approcher de l'étagère de droite", consequences_action108_4, 108);
+        Action action108_4 = new Action(1084,true,"S'approcher de l'étagère de droite face à vous", consequences_action108_4, 108);
 
         ArrayList<int[]> consequences_action108_1 = new ArrayList<>();
         consequences_action108_1.add(new int[]{1,202}); //Bouge joueur vers le bureau
@@ -446,6 +436,12 @@ public class Scenario_structure {
 
         //Actions salle 110 - Salle derrière l'étagère
 
+        ArrayList<int[]> consequences_action110_3 = new ArrayList<>();
+        consequences_action110_3.add(new int[]{4,5}); //Rajoute le carnet à l'inventaire
+        consequences_action110_3.add(new int[]{7,1102}); //Rajoute texte (tuto objet cliquable)
+        consequences_action110_3.add(new int[]{3,1103}); //Bloque cette action (faisable qu'une fois)
+        Action action110_3 = new Action(1103,true,"Récupérer le carnet à vos pieds", consequences_action110_3, 110);
+
         ArrayList<int[]> consequences_action110_1 = new ArrayList<>();
         consequences_action110_1.add(new int[]{1,305}); //Bouge le joueur vers RDC
         Action action110_1 = new Action(1101,true,"Analyser le mur face à vous", consequences_action110_1, 110);
@@ -453,8 +449,10 @@ public class Scenario_structure {
         ArrayList<int[]> consequences_action110_2 = new ArrayList<>();
         consequences_action110_2.add(new int[]{1,111}); //Bouge le joueur vers RDC
         //lancer cinématique 2
-        //bloquer actions
-        Action action110_2 = new Action(1102,false,"Passer à travers l'ouverture", consequences_action110_2, 110);
+        consequences_action110_2.add(new int[]{3,1101}); //Bloque action mur pour ne pas que le joueur puisse bouger pendant le lancement de la cinématique
+        consequences_action110_2.add(new int[]{3,1102}); //Bloque cette action (faisable qu'une fois)
+        consequences_action110_2.add(new int[]{3,1103}); //Bloque action récurérer le carnet au cas où le joueur réussi l'énigme sans le carnet (normalement impossible)
+        Action action110_2 = new Action(1102,false,"Passer à travers l'ouverture [Fin de l'escape game, mode exploration]", consequences_action110_2, 110);
 
 
 
@@ -468,6 +466,24 @@ public class Scenario_structure {
         Room room16 = new Room(116,118,115,-1,-1,true,1161,"pictures/exploration/marché.png", "Exploration - Marché");
         Room room17 = new Room(117,-1,-1,115,118,true,1171,"pictures/exploration/rue_capucins.png", "Exploration - Rue des Capucins");
         Room room18 = new Room(118,-1,117,116,-1,true,1181,"pictures/exploration/place_centre.png", "Exploration - Place Hôtel de Ville");
+
+
+        //Toutes ces salles n'ont qu'une action qui est celle de quitter le mode exploration et d'afficher l'écran des scores
+
+        ArrayList<int[]> consequences_exploration = new ArrayList<>();
+        consequences_exploration.add(new int[]{20,56}); //Arrête le son d'ambiance extérieur
+        consequences_exploration.add(new int[]{11}); //Affiche l'écran de fin de jeu
+
+        Action action111_1 = new Action(1111,true,"Quitter le mode exploration [Écran de fin de jeu]", consequences_exploration, 111);
+        Action action112_1 = new Action(1121,true,"Quitter le mode exploration [Écran de fin de jeu]", consequences_exploration, 112);
+        Action action113_1 = new Action(1131,true,"Quitter le mode exploration [Écran de fin de jeu]", consequences_exploration, 113);
+        Action action114_1 = new Action(1141,true,"Quitter le mode exploration [Écran de fin de jeu]", consequences_exploration, 114);
+        Action action115_1 = new Action(1151,true,"Quitter le mode exploration [Écran de fin de jeu]", consequences_exploration, 115);
+        Action action116_1 = new Action(1161,true,"Quitter le mode exploration [Écran de fin de jeu]", consequences_exploration, 116);
+        Action action117_1 = new Action(1171,true,"Quitter le mode exploration [Écran de fin de jeu]", consequences_exploration, 117);
+        Action action118_1 = new Action(1181,true,"Quitter le mode exploration [Écran de fin de jeu]", consequences_exploration, 118);
+
+
 
 
     }
