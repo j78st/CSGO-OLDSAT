@@ -610,9 +610,9 @@ public class gameController implements Controller {
         // changement de police pour les textes
         for (Node n: LoadMap.scene.getRoot().lookupAll(".Custom_label")) {
             if (Settings.icon_color.equals("white")){
-                narration.setStyle("-fx-fill: white; -fx-font-size: " + Settings.fontSize + "px;");
+                narration.setStyle("-fx-fill: white; -fx-font-size: " + (Settings.fontSize+5) + "px;");
             } else {
-                narration.setStyle("-fx-fill: black; -fx-font-size: " + Settings.fontSize + "px;");
+                narration.setStyle("-fx-fill: black; -fx-font-size: " + (Settings.fontSize+5) + "px;");
             }
         }
     }

@@ -9,9 +9,9 @@ import java.io.File;
 public class Settings {
 
     // Constantes globales
-    public static final int SMALL = 10;
-    public static final int MEDIUM = 15;
-    public static final int BIG = 20;
+    public static final int SMALL = 15;
+    public static final int MEDIUM = 20;
+    public static final int BIG = 25;
 
     // Variables globales
     // Volume

@@ -172,13 +172,31 @@
     -fx-background-color: transparent;
 }
 
-.scroll-pane .scroll-bar:vertical {
-    -fx-opacity: 0;
+.scroll-pane .scroll-bar:vertical .track {
+    -fx-background-color: #1C2833;
+}
+
+.scroll-pane .scroll-bar:vertical .thumb {
+    -fx-background-color: #415e79;
 }
 
 
+.scroll-pane *.scroll-bar:vertical *.increment-button,
+.scroll-pane *.scroll-bar:vertical *.decrement-button {
+    -fx-background-color: null;
+    -fx-background-radius: 0;
+    -fx-background-insets: 0;
+    -fx-padding: 0;
+}
 
-
+.scroll-pane *.scroll-bar:vertical *.increment-arrow,
+.scroll-pane *.scroll-bar:vertical *.decrement-arrow {
+    -fx-background-color: null;
+    -fx-background-radius: 0;
+    -fx-background-insets: 0;
+    -fx-padding: 0;
+    -fx-shape: null;
+}
 
 
 
