@@ -44,6 +44,12 @@ public class Timer extends Thread {
      */
     private volatile boolean done = false;
 
+    /**
+     * Booléen qui permet le testJUnit
+     * Par défaut, il est mis à faux.
+     */
+    private boolean testMode = false;
+
     public Timer(int tempsSecondes, Lock inLock){
         this.tempsSecondes = tempsSecondes;
         this.stateTimer = false; //par défaut, le timer est à l'arret
@@ -78,7 +84,11 @@ public class Timer extends Thread {
      * @param secondes
      */
     public synchronized void substractTime(int secondes){ //Exclusion mutuelle requise : le thread peut tourner & la méthode substractTime peut être appelé depuis le main
-        this.tempsSecondes -= secondes;
+        if(this.tempsSecondes - secondes < 0) {
+            this.tempsSecondes = 0;
+        } else {
+            this.tempsSecondes -= secondes;
+        }
     }
 
     /**
@@ -213,12 +223,21 @@ public class Timer extends Thread {
         done = true;
     }
 
+    /**
+     * Permet le test JUnit
+     */
+    public void junit(){
+        this.testMode = true;
+    }
+
     @Override
     public void run() {
         while (this.tempsSecondes > 0 && !done){
             if(stateTimer) {
                 // Update affichage GUI
-                Platform.runLater(() -> Engine.engine.timer_lbl.setText(getRemainingTime()));
+                if(!this.testMode) { //Si on est pas en mode test, maj des éléments graphiques
+                    Platform.runLater(() -> Engine.engine.timer_lbl.setText(getRemainingTime()));
+                }
 
                 // Déclenchement tick horloge (3 min restantes)
                 if(this.tempsSecondes < tickTime && stateTimer) {

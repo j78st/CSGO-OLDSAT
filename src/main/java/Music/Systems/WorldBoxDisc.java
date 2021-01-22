@@ -25,6 +25,14 @@ public class WorldBoxDisc extends Thread {
      */
     public static double defaultSoundVolume = 2;
     /**
+     * Niveau sonore par défaut des effets sonore
+     */
+    public static double defaultSoundFx = defaultSoundVolume;
+    /**
+     * Niveau sonore par défaut des fonds sonores
+     */
+    public static double defaultSoundBg = defaultSoundVolume;
+    /**
      * Nombre total de pistes chargées
      */
     public static int total = -1;
@@ -36,7 +44,6 @@ public class WorldBoxDisc extends Thread {
      * Booléen autorisant la lecture de fonds sonores
      */
     private static boolean soundBackground;
-
     /**
      * Initialise les pistes sonores
      */
@@ -374,7 +381,7 @@ public class WorldBoxDisc extends Thread {
         if((typeToEvaluate == MusicType.SoundFx && soundFx) || (typeToEvaluate == MusicType.Background && soundBackground) ){
             Disc discToPlay = worldBoxMusic.get(idWorldBoxMusic.get(name));
             discToPlay.aMusic.play(discToPlay.loop);
-            discToPlay.aMusic.rewind(); //permet a une piste d'etre joue plusiseurs fois
+            discToPlay.aMusic.rewind(); //permet a une piste d'etre joue plusieurs fois
         }
     }
 
@@ -525,6 +532,7 @@ public class WorldBoxDisc extends Thread {
                 worldBoxMusic.get(i).aMusic.setVolume(value);
             }
         }
+        defaultSoundFx = value;
     }
 
     /**
@@ -537,6 +545,7 @@ public class WorldBoxDisc extends Thread {
                 worldBoxMusic.get(i).aMusic.setVolume(value); //Les musiques seront joue avec un niveau de 0, ce qui permet de reprendre la où elles sont en train de jouer
             }
         }
+        defaultSoundBg = value;
     }
 
     /**
@@ -547,6 +556,7 @@ public class WorldBoxDisc extends Thread {
         for (int i = 0; i < worldBoxMusic.size(); i++) {
             worldBoxMusic.get(i).aMusic.setVolume(value);
         }
+        defaultSoundVolume = value;
     }
 
 
@@ -558,6 +568,32 @@ public class WorldBoxDisc extends Thread {
             if(worldBoxMusic.get(i).aMusic.playing()){
                 System.out.println(worldBoxMusic.get(i).name + " is playing : " + worldBoxMusic.get(i).aMusic.getVolume());
             }
+        }
+    }
+
+    /**
+     * Indique si une piste est en cours de lecture
+     * @param name
+     * @return
+     */
+    public static boolean isPlaying(String name){
+        if(worldBoxMusic.get(idWorldBoxMusic.get(name)).aMusic.playing()){
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    /**
+     * Indique si une piste est terminée
+     * @param name
+     * @return
+     */
+    public static boolean isDone(String name){
+        if(worldBoxMusic.get(idWorldBoxMusic.get(name)).aMusic.done()){
+            return true;
+        } else {
+            return false;
         }
     }
 

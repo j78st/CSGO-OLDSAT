@@ -55,7 +55,9 @@
           </execution>
         </executions>
         <configuration>
+          <sourcepath>src/main/java</sourcepath>
           <javadocExecutable>${java.home}/bin/javadoc</javadocExecutable>
+          <additionalJOption>-Xdoclint:none</additionalJOption>
         </configuration>
       </plugin>
       <plugin>

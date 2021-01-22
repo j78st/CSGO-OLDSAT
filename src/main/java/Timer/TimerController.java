@@ -137,4 +137,11 @@ public class TimerController extends Thread {
             return timer.getTimeFullSeconds();
     }
 
+    /**
+     * Permet de désactiver une composante JavaFX pour les tests JUnit
+     */
+    public void junit(){
+        this.timer.junit();
+    }
+
 }
