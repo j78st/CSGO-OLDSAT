@@ -552,6 +552,9 @@ public class gameController implements Controller {
     public void setShortcut() {
         refreshInventory();
 
+        // reset des anciens shortcut
+        LoadMap.scene.getAccelerators().clear();
+
         // Clear shortcut
         LoadMap.scene.getAccelerators().clear();
 
