@@ -4,6 +4,8 @@ import Interface.CellRenderer.EndGameRankCell;
 import Interface.ScreenLoader.Controller;
 import Interface.ScreenLoader.LoadMap;
 import Interface.Settings.Settings;
+import Music.Systems.Son;
+import Music.Systems.WorldBoxDisc;
 import Partie.Game;
 import Score.Ranking;
 import Score.Score;
@@ -66,6 +68,8 @@ public class end_gameController implements Controller {
     void go_to_home_screen(ActionEvent event) throws IOException {
         LoadMap gl = new LoadMap();
         gl.display_screen_from_id(LoadMap.HOME);
+        WorldBoxDisc.pauseAllBackgroundSound();
+        WorldBoxDisc.play(Son.menuTheme);
     }
 
     // ========================================== //

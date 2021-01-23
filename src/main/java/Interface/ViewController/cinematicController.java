@@ -139,7 +139,13 @@ public class cinematicController implements Controller {
             try {
                 gl.display_screen_from_id(LoadMap.GAME);
                 Engine.engine.timer_lbl.setVisible(true);
-                Engine.chrono = new TimerController(60*25);
+                if (Game.getDifficulty() == 0){
+                    Engine.chrono = new TimerController(60 * 35);
+                }else if(Game.getDifficulty() == 1){
+                    Engine.chrono = new TimerController(60 * 25);
+                }else if(Game.getDifficulty() == 2){
+                    Engine.chrono = new TimerController(60 * 20);
+                }
                 Engine.chrono.start();
             } catch (IOException e) {
                 e.printStackTrace();

@@ -1,7 +1,9 @@
 package Partie;
 
+import Interface.Settings.Engine;
 import Music.Systems.Son;
 import Music.Systems.WorldBoxDisc;
+import Timer.TimerController;
 
 import java.util.ArrayList;
 
@@ -63,8 +65,10 @@ public class Scenario_structure {
         Action action101_71 = new Action(10171,true,"Map", consequences_action101_71, 101);
 
         ArrayList<int[]> consequences_action101_72 = new ArrayList<>();
-        consequences_action101_72.add(new int[]{12,110});
-        Action action101_72 = new Action(10172,true,"Saut salle 110", consequences_action101_72, 101);
+        consequences_action101_72.add(new int[]{1,111});
+        Engine.chrono = new TimerController(60 * 25);
+        Engine.chrono.start();
+        Action action101_72 = new Action(10172,true,"Saut test score", consequences_action101_72, 101);
 
         //Amphi pré-conférence
         ArrayList<int[]> consequences_action102_1 = new ArrayList<>();
@@ -197,7 +201,6 @@ public class Scenario_structure {
         Enigma enigme4 = new Enigma(304,109,3041,"pictures/304/3421.png","1234",consequences_enigme4,zone_click_304,1); // Étagère centrale étage
 
         ArrayList<int[]> consequences_enigme5 = new ArrayList<>();
-        consequences_enigme5.add(new int[]{4,42});
         consequences_enigme5.add(new int[]{7,1103,110});
         consequences_enigme5.add(new int[]{2,1102});
         ArrayList<double[]> zone_click_305 = new ArrayList<>();
