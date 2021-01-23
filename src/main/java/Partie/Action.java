@@ -125,6 +125,7 @@ public class Action {
                     WorldBoxDisc.play(Son.finEnigme);
                     break;
                 case 12: // mouvement particulier du joueur pour le mode bac à sable
+                    WorldBoxDisc.pause(Son.menuTheme);
                     Game.setBas(getConsequences().get(i)[1]); // on met le numéro de la salle traitée dans game.bas
                     Game.player.move(getConsequences().get(i)[1]); // bouge le joueur dans la salle à tester
                     Game.getPlayer().clear_inventory(); // vide l'inventaire du joueur
@@ -134,6 +135,30 @@ public class Action {
                     Game.search_room(getConsequences().get(i)[1]).setAccess(true);
                     Engine.engine.timer_lbl.setVisible(false);
                     Engine.engine.refreshRoom();
+
+                    //Son ambiant à charger ( pas de solution n'impliquant pas de gros changements trouvées donc on le code "en dur") et possibilité d'ouvrir ou non la carte
+                    if(Game.getPlayer().getPosition() == 102
+                            ||Game.getPlayer().getPosition() == 103
+                            ||Game.getPlayer().getPosition() == 201){
+                        WorldBoxDisc.play(Son.classRoom);
+                        Engine.engine.set_map_available(false);
+                        Engine.engine.hide_map();
+                    }else if(Game.getPlayer().getPosition() == 104){
+                        WorldBoxDisc.play(Son.outside);
+                        Engine.engine.set_map_available(false);
+                        Engine.engine.hide_map();
+                    }else if((Game.getPlayer().getPosition() >= 107 && Game.getPlayer().getPosition() <= 110)
+                            ||(Game.getPlayer().getPosition() >= 202 && Game.getPlayer().getPosition() <= 211)
+                            ||(Game.getPlayer().getPosition() >= 301 && Game.getPlayer().getPosition() <= 305)
+                            ||(Game.getPlayer().getPosition() >= 2062 && Game.getPlayer().getPosition() <= 2067)){
+                        WorldBoxDisc.play(Son.wind);
+                        Engine.engine.set_map_available(false);
+                        Engine.engine.hide_map();
+                    }else if((Game.getPlayer().getPosition() >= 111 && Game.getPlayer().getPosition() <= 118)){
+                    WorldBoxDisc.play(Son.outside);
+                    Engine.engine.set_map_available(true);
+                    Engine.engine.hide_map();
+                    }
                     break;
                 case 13: // faire évoluer texte affiché par une action, consequence[i][1] correspond à l'action à modifier, consequence[i][2] correspond à l'id du nouveau texte
                     for (int j = 0; j < Game.search_action(getConsequences().get(i)[1]).consequences.size(); j++) {

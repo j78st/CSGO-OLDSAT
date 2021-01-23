@@ -50,19 +50,20 @@ public class RoomCell extends ListCell<Room> {
                 // téléportation dans la salle
                 ArrayList<int[]> consequences_action4 = new ArrayList<>();
                 consequences_action4.add(new int[]{12, getItem().getId()});
-
-                Action action = new Action(9,false,"Demander son chemin", consequences_action4, 101);
-                try {
-                    action.do_consequences();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
+                Action action = new Action(9,false,"", consequences_action4, 101);
 
                 try {
                     (new LoadMap()).display_screen_from_id(LoadMap.GAME);
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
+                try {
+                    action.do_consequences();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+
+
             }
 
         });

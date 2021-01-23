@@ -10,6 +10,7 @@ import Interface.Settings.Settings;
 import Music.Systems.Son;
 import Music.Systems.WorldBoxDisc;
 import Partie.Game;
+import Partie.Sounds_list;
 import Serialization.Memoire;
 import Serialization.Serial_game;
 import Timer.TimerController;
@@ -111,6 +112,35 @@ public class load_saveController implements Controller {
                 Engine.chrono = new TimerController(Game.timer);
                 Engine.chrono.start();
             }
+
+            //Gestion du son
+
+            WorldBoxDisc.pause(Son.menuTheme); //Arrêt du thème du menu
+            Sounds_list sounds_list = new Sounds_list();  //Rajout de la sound_list à game (sert à pouvoir lancer des sons en conséquences d'actions)
+            //Son ambiant à charger ( pas de solution n'impliquant pas de gros changements trouvées donc on le code "en dur") et possibilité d'ouvrir ou non la carte
+            if(Game.getPlayer().getPosition() == 102
+                    ||Game.getPlayer().getPosition() == 103
+                    ||Game.getPlayer().getPosition() == 201){
+                WorldBoxDisc.play(Son.classRoom);
+                Engine.engine.set_map_available(false);
+                Engine.engine.hide_map();
+            }else if(Game.getPlayer().getPosition() == 104){
+                WorldBoxDisc.play(Son.outside);
+                Engine.engine.set_map_available(false);
+                Engine.engine.hide_map();
+            }else if((Game.getPlayer().getPosition() >= 107 && Game.getPlayer().getPosition() <= 110)
+                    ||(Game.getPlayer().getPosition() >= 202 && Game.getPlayer().getPosition() <= 211)
+                    ||(Game.getPlayer().getPosition() >= 301 && Game.getPlayer().getPosition() <= 305)
+                    ||(Game.getPlayer().getPosition() >= 2062 && Game.getPlayer().getPosition() <= 2067)){
+                WorldBoxDisc.play(Son.wind);
+                Engine.engine.set_map_available(false);
+                Engine.engine.hide_map();
+            }else if((Game.getPlayer().getPosition() >= 111 && Game.getPlayer().getPosition() <= 118)){
+                WorldBoxDisc.play(Son.outside);
+                Engine.engine.set_map_available(true);
+                Engine.engine.hide_map();
+            }
+
 
         }
         

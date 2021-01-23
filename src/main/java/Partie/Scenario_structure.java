@@ -18,7 +18,7 @@ public class Scenario_structure {
         Room room2 = new Room(102,-1,-1,-1,-1, false,1021,"pictures/Amphi.png", "Prologue - Amphithéâtre"); //Amphi
         Room room3 = new Room(103,-1,-1,-1,-1, true,1031,"pictures/Amphi2.png"); //Amphi post-conférence
         Room room3_1 = new Room(201,103,2011,"pictures/Trousse.png"); //trousse
-        Room room4 = new Room(104,-1,-1,-1,-1,true,1041,"pictures/Exterieur.png"); //Exterieur
+        Room room4 = new Room(104,-1,-1,-1,-1,true,1041,"pictures/Exterieur.png", "Prologue - Extérieur"); //Exterieur
 
         //Objets
         Item compas = new Item(1,"Compas","Compas - Peut être bien pratique",-1, "objects/Compas.png");
@@ -148,7 +148,6 @@ public class Scenario_structure {
         Room room8_1_1 = new Room(203,202,2031,"pictures/tiroir_ouvert_clé.png"); // Tiroir post-énigme
         Room room8_1_2 = new Room(204,202,2041,"pictures/tiroir_ouvert_clé.png"); // Tiroir
         Room room8_1_3 = new Room(205,202,2051,"pictures/ordonnance.png"); // Note sur le bureau
-        //Room room8_1_4 = new Room(206,202,2061,"pictures/Trousse.png"); // PC dévérouillé
         Room room8_2 = new Room(207,108,2071,"pictures/Trousse.png"); // Étagère 1
         Room room8_3 = new Room(208,108,2081,"pictures/Trousse.png"); // Étagère 2 pré-utilisation de la clef
         Room room8_4 = new Room(209,108,2091,"pictures/Trousse.png"); // Étagère 3

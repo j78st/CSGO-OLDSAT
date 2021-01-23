@@ -306,6 +306,8 @@ public class gameController implements Controller {
         UnsaveAlert alert = new UnsaveAlert();
         alert.homeScreen();
         Engine.gamePaused = false; // quitter partie depuis ecran pause demande d'enlever pause
+        WorldBoxDisc.pauseAllBackgroundSound();
+        WorldBoxDisc.play(Son.menuTheme);
     }
 
     /**

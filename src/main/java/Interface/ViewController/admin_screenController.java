@@ -84,8 +84,6 @@ public class admin_screenController implements Controller {
         Game.player = new Player("admin");
         Game.difficulty = 1;
         Scenario_structure scenar_struct = new Scenario_structure();
-        WorldBoxDisc.pause(Son.feu);
-        WorldBoxDisc.play(Son.wind);
 
         ArrayList<Room> rooms = Game.room_bas_access_available();
 

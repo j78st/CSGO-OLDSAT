@@ -2,6 +2,7 @@ import Interface.ScreenLoader.LoadMap;
 import Interface.Settings.Engine;
 import Interface.Settings.Settings;
 import Interface.ViewController.home_screenController;
+import Music.Systems.Son;
 import Music.Systems.WorldBoxDisc;
 import Partie.Game;
 import Partie.Player;
@@ -71,6 +72,8 @@ public class Main extends Application {
             }
         };
         LoadMap.scene.addEventFilter(javafx.scene.input.MouseEvent.MOUSE_CLICKED, eventHandler);
+
+        WorldBoxDisc.play(Son.menuTheme);
     }
 
     public static void main(String[] args) throws InterruptedException, IOException {
