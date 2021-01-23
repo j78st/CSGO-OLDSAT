@@ -21,11 +21,11 @@ public class SaveListCell extends ListCell<SaveSlot> {
         super();
 
         // taille du conteneur
-        hbox.setPrefSize(360, 20);
+        hbox.setPrefSize(360, 30);
 
         // parametrage des tailles des labels
-        ln.setPrefSize(120, 10);
-        lp.setPrefSize(150, 10);
+        ln.setPrefSize(180, 10);
+        lp.setPrefSize(200, 10);
 
         // couleur du texte
         if (Settings.icon_color.equals("white")){

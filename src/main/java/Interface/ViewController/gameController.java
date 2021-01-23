@@ -54,6 +54,9 @@ public class gameController implements Controller {
     @FXML
     public AnchorPane root;
 
+    @FXML
+    private VBox game_pane;
+
     // inventaire -----------------------------------------------
     @FXML
     private Button item_slot_1;
@@ -499,9 +502,11 @@ public class gameController implements Controller {
         if (!Engine.gamePaused) {
             background_menu.toBack();
             vbox_menu.toBack();
+            game_pane.toFront();
         } else {
             background_menu.toFront();
             vbox_menu.toFront();
+            game_pane.toBack();
         }
 
         // masquage par defaut de la description des objets

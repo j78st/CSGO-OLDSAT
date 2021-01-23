@@ -21,7 +21,7 @@ public class AdminSaveCell extends ListCell<SaveSlot> {
     HBox hbox = new HBox();
     Label ln = new Label(); // label avec le numero de l'emplacement de sauvegarde
     Label lp = new Label(); // label avec le pseudo du joueur
-    Button del = new Button("supprimer"); // bouton de suppression de sauvegarde
+    Button del = new Button("Supprimer"); // bouton de suppression de sauvegarde
 
     /**
      * Constructeur. Paramètre l'apparence de la cellule
@@ -31,10 +31,10 @@ public class AdminSaveCell extends ListCell<SaveSlot> {
         super();
 
         // taille du conteneur
-        hbox.setPrefSize(360, 40);
+        hbox.setPrefSize(400, 40);
 
         // parametrage des tailles des labels
-        ln.setPrefSize(120, 10);
+        ln.setPrefSize(150, 10);
         lp.setPrefSize(150, 10);
 
         // esthétique des éléments

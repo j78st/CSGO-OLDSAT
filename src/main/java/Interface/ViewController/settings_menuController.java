@@ -151,7 +151,7 @@ public class settings_menuController implements Controller {
         });
 
         // Choix de la taille des caractères
-        ObservableList<String> sizes = FXCollections.observableArrayList("petit", "normal", "gros");
+        ObservableList<String> sizes = FXCollections.observableArrayList("Petit", "Normal", "Gros");
         text_size_prompt.setItems(sizes);
         text_size_prompt.valueProperty().addListener(new ChangeListener<String>() {
             @Override
@@ -159,11 +159,11 @@ public class settings_menuController implements Controller {
 
                 // Inscrit la nouvelle taille de texte dans les paramètres
                 String value = text_size_prompt.getValue();
-                if ("petit".equals(value)) {
+                if ("Petit".equals(value)) {
                     Settings.fontSize = Settings.SMALL;
-                } else if ("normal".equals(value)) {
+                } else if ("Normal".equals(value)) {
                     Settings.fontSize = Settings.MEDIUM;
-                } else if ("gros".equals(value)) {
+                } else if ("Gros".equals(value)) {
                     Settings.fontSize = Settings.BIG;
                 } else {
                     throw new IllegalStateException("Unexpected value: " + text_size_prompt.getValue());
@@ -193,11 +193,11 @@ public class settings_menuController implements Controller {
         // taille texte
         switch (Settings.fontSize) {
             case Settings.SMALL :
-                text_size_prompt.setValue("petit"); break;
+                text_size_prompt.setValue("Petit"); break;
             case Settings.MEDIUM :
-                text_size_prompt.setValue("normal"); break;
+                text_size_prompt.setValue("Normal"); break;
             case Settings.BIG :
-                text_size_prompt.setValue("gros"); break;
+                text_size_prompt.setValue("Gros"); break;
         }
 
     }

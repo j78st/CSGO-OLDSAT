@@ -3,6 +3,8 @@ package Interface.ViewController;
 import Interface.ScreenLoader.Controller;
 import Interface.ScreenLoader.LoadMap;
 import Interface.Settings.Settings;
+import Music.Systems.Son;
+import Music.Systems.WorldBoxDisc;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
@@ -55,6 +57,7 @@ public class idAdminController implements Controller {
     void go_back(ActionEvent event) throws IOException {
         LoadMap gl = new LoadMap();
         gl.display_screen_from_id(LoadMap.HOME);
+        WorldBoxDisc.play(Son.menuClose);
     }
 
     // ==========================================================

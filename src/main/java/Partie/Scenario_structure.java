@@ -1,7 +1,9 @@
 package Partie;
 
+import Interface.Settings.Engine;
 import Music.Systems.Son;
 import Music.Systems.WorldBoxDisc;
+import Timer.TimerController;
 
 import java.util.ArrayList;
 
@@ -62,9 +64,11 @@ public class Scenario_structure {
         consequences_action101_71.add(new int[]{4,5});
         Action action101_71 = new Action(10171,true,"Map", consequences_action101_71, 101);
 
-        ArrayList<int[]> consequences_action101_72 = new ArrayList<>();
-        consequences_action101_72.add(new int[]{12,110});
-        Action action101_72 = new Action(10172,true,"Saut salle 110", consequences_action101_72, 101);
+        /*ArrayList<int[]> consequences_action101_72 = new ArrayList<>();
+        consequences_action101_72.add(new int[]{1,111});
+        Engine.chrono = new TimerController(60 * 25);
+        Engine.chrono.start();
+        Action action101_72 = new Action(10172,true,"Saut test score", consequences_action101_72, 101);*/
 
         //Amphi pré-conférence
         ArrayList<int[]> consequences_action102_1 = new ArrayList<>();
@@ -142,8 +146,8 @@ public class Scenario_structure {
         /*-----------------------------------------Acte 1-------------------------------------------*/
 
         //Salles
-        Room room7 = new Room(107,-1,-1,-1,-1,false,1071,"pictures/Bibliotheque.png", "Acte 1 - Bibliothèque");
-        Room room8 = new Room(108,110,-1,-1,-1, true,1081,"pictures/Bibliotheque.png"); // RDC bibliothèque
+        Room room7 = new Room(107,-1,-1,-1,-1,false,1071,"pictures/biblio_nuit.png", "Acte 1 - Bibliothèque");
+        Room room8 = new Room(108,110,-1,-1,-1, true,1081,"pictures/108/1.png"); // RDC bibliothèque
         Room room8_1 = new Room(202,108,2021,"pictures/202/1.png"); // Bureau
         Room room8_1_1 = new Room(203,202,2031,"pictures/tiroir_ouvert_clé.png"); // Tiroir post-énigme
         Room room8_1_2 = new Room(204,202,2041,"pictures/tiroir_ouvert_clé.png"); // Tiroir
@@ -169,6 +173,7 @@ public class Scenario_structure {
         consequences_enigme1.add(new int[]{9,110}); // Débloque salle suivante
         consequences_enigme1.add(new int[]{7,3012,108}); // Rajoute texte de fin d'énigme à la salle d'origine
         consequences_enigme1.add(new int[]{13,35}); //Bruit de porte qui craque
+        consequences_enigme1.add(new int[]{12,108,2});
         Enigma enigme1 = new Enigma(301,108,3011,"pictures/Trousse.png","le cid",consequences_enigme1); // Étagère 2 - Énigme
 
         ArrayList<int[]> consequences_enigme2 = new ArrayList<>();
@@ -197,7 +202,6 @@ public class Scenario_structure {
         Enigma enigme4 = new Enigma(304,109,3041,"pictures/304/3421.png","1234",consequences_enigme4,zone_click_304,1); // Étagère centrale étage
 
         ArrayList<int[]> consequences_enigme5 = new ArrayList<>();
-        consequences_enigme5.add(new int[]{4,42});
         consequences_enigme5.add(new int[]{7,1103,110});
         consequences_enigme5.add(new int[]{2,1102});
         ArrayList<double[]> zone_click_305 = new ArrayList<>();
