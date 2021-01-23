@@ -22,7 +22,7 @@ public class RecordListCell extends ListCell<Score> {
         super();
 
         // instanciation de la Hbox
-        hbox.setPrefSize(460, 20);
+        hbox.setPrefSize(460, 30);
 
         if (Settings.icon_color.equals("white")){
             lr.setStyle("-fx-text-fill: white; -fx-font-size: " + Settings.fontSize + "px;");

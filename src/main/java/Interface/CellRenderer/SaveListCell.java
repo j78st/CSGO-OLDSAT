@@ -21,7 +21,7 @@ public class SaveListCell extends ListCell<SaveSlot> {
         super();
 
         // taille du conteneur
-        hbox.setPrefSize(360, 20);
+        hbox.setPrefSize(360, 30);
 
         // parametrage des tailles des labels
         ln.setPrefSize(120, 10);
