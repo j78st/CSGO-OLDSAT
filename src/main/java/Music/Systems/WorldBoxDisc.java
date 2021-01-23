@@ -559,6 +559,28 @@ public class WorldBoxDisc extends Thread {
         defaultSoundVolume = value;
     }
 
+    /**
+     * Met en pause toutes musiques de fonds sonores
+     */
+    public static void pauseAllBackgroundSound(){
+        for(int i = 0; i< worldBoxMusic.size(); i++){
+            if(worldBoxMusic.get(i).type == MusicType.Background){
+                WorldBoxDisc.pause(worldBoxMusic.get(i).name);
+            }
+        }
+    }
+
+    /**
+     * Met en pause toutes musiques qui bouclent
+     */
+    public static void pauseAllLoopingSound(){
+        for(int i = 0; i < worldBoxMusic.size(); i++){
+            if(worldBoxMusic.get(i).loop){
+                WorldBoxDisc.pause(worldBoxMusic.get(i).name);
+            }
+        }
+    }
+
 
     /**
      * Affiche les pistes sonores en cours d'executions
@@ -631,8 +653,13 @@ public class WorldBoxDisc extends Thread {
 
     public static void main(String[] args) {
         init();
-        WorldBoxDisc.play(Son.finEnigme);
-        //testFromAllSound("doorSlam");
+        WorldBoxDisc.play(Son.menuTheme);
+        Timer.sleep(8000);
+        System.out.println("pause");
+        WorldBoxDisc.pauseAllLoopingSound();
+        Timer.sleep(8000);
+        System.out.println("play");
+        WorldBoxDisc.play(Son.menuTheme);
         Timer.sleep(8000);
     }
 }
