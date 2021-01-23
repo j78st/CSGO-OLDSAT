@@ -109,7 +109,7 @@ public class admin_screenController implements Controller {
     // Méthodes d'initialisation
     // ==========================================================
     @Override
-    public void initialize() {
+    public void init() {
         return_btn.setGraphic(new ImageView(new Image("/icons/"+ Settings.icon_color +"/return.png")));
 
         // affichage des sauvegardes par defaut

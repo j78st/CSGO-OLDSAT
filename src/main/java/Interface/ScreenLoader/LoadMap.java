@@ -171,7 +171,11 @@ public class LoadMap {
 
         // initialisation de la nouvelle vue
         Controller controller = kit.getNext_controller();
-        controller.initialize();
+        if(nextID == END_GAME){
+            System.out.println("avant init");
+        }
+
+        controller.init();
         controller.setShortcut();
 
         // affichage
@@ -196,6 +200,7 @@ public class LoadMap {
 
         settings_menuController controller = loader.getController();
         controller.provide_current_screen_id(previous_id); // ID de l'écran ou on appelle les paramètres
+        controller.init();
         controller.setShortcut();
 
         stage.setTitle("OLD'SAT");

@@ -91,7 +91,7 @@ public class game_launcherController implements Controller {
      * Initialise la scène lors de l'appel
      */
     @Override
-    public void initialize () {
+    public void init () {
         settings_btn.setGraphic(new ImageView(new Image("icons/"+ Settings.icon_color +"/settings_icon.png")));
         return_btn.setGraphic(new ImageView(new Image("icons/"+ Settings.icon_color +"/return.png")));
     }

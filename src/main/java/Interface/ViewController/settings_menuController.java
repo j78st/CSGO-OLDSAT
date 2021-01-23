@@ -99,7 +99,7 @@ public class settings_menuController implements Controller {
      * Initalise la scène
      */
     @Override
-    public void initialize() {
+    public void init() {
         // icone de retour
         resume_btn.setGraphic(new ImageView(new Image("/icons/"+ Settings.icon_color +"/return.png")));
 

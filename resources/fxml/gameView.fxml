@@ -25,7 +25,7 @@
             <AnchorPane fx:id="background_menu" opacity="0.75" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #000000;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
             <AnchorPane fx:id="map_pane" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="50.0" AnchorPane.topAnchor="50.0">
                <children>
-                  <Button layoutX="262.0" layoutY="54.0" mnemonicParsing="false" onAction="#hide_map" text="X" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                  <Button layoutX="262.0" layoutY="54.0" minHeight="50.0" minWidth="75.0" mnemonicParsing="false" onAction="#hide_map" text="X" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
                </children>
             </AnchorPane>
             <BorderPane fx:id="vbox_menu" layoutX="224.0" layoutY="48.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">

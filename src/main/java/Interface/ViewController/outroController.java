@@ -155,7 +155,7 @@ public class outroController implements Controller {
     // Méthodes d'initialisation
     // ==========================================================
     @Override
-    public void initialize() {
+    public void init() {
         next.setGraphic(new ImageView(new Image("/icons/black/arrow_right.png")));
         end_pane.toBack();
         end_pane.setVisible(false);

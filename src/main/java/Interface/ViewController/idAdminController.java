@@ -64,7 +64,7 @@ public class idAdminController implements Controller {
     // Méthodes d'initialisation
     // ==========================================================
     @Override
-    public void initialize() {
+    public void init() {
         return_btn.setGraphic(new ImageView(new Image("icons/"+ Settings.icon_color +"/return.png")));
         lock_icon.setImage(new Image("icons/"+ Settings.icon_color +"/lock.png"));
         error_msg.setVisible(false);

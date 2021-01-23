@@ -85,7 +85,7 @@ public class score_screenController implements Controller {
     /**
      * initialise de la scene + memoristaion ancien écran
      */
-    public void initialize () {
+    public void init () {
         // icones
         settings_btn.setGraphic(new ImageView(new Image("icons/"+ Settings.icon_color +"/settings_icon.png")));
         return_btn.setGraphic(new ImageView(new Image("icons/"+ Settings.icon_color +"/return.png")));

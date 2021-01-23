@@ -19,14 +19,14 @@ public class Ranking implements Serializable {
     public void add_score(Score score){
         Score tmp = new Score();
         boolean added = false;
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i < RANKING_SIZE; i++) {
             if (score.value > ranking[i].value && !added) {
                 tmp = ranking[i];
                 tmp.rank += 1;
                 score.rank = i+1;
                 ranking[i] = score;
                 added = true;
-            } else if (added && i<9){
+            } else if (added && i<RANKING_SIZE-1){
                 ranking[i] = tmp;
                 tmp = ranking[i+1];
                 tmp.rank = i+2;

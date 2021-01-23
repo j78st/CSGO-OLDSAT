@@ -107,7 +107,7 @@ public class home_screenController implements Controller {
     /**
      * initialise la scene
      */
-    public void initialize () {
+    public void init () {
         settings_btn.setGraphic(new ImageView(new Image("icons/"+ Settings.icon_color +"/settings_icon.png")));
         game_icon.setImage(new Image("icons/"+ Settings.icon_color +"/arcade.png"));
         //WorldBoxDisc.pauseAllBackgroundSound();

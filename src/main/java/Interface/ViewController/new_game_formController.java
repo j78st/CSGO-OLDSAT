@@ -162,7 +162,7 @@ public class new_game_formController implements Controller {
     }
 
     @Override
-    public void initialize() {
+    public void init() {
 
         // mise en place des icones
         settings_btn.setGraphic(new ImageView(new Image("icons/"+ Settings.icon_color +"/settings_icon.png")));

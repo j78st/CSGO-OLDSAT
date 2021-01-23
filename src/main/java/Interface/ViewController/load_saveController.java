@@ -151,7 +151,7 @@ public class load_saveController implements Controller {
     // ==========================================================
 
     @Override
-    public void initialize() {
+    public void init() {
         // image du bouton paramètre
         settings_btn.setGraphic(new ImageView(new Image("icons/"+ Settings.icon_color +"/settings_icon.png")));
         return_btn.setGraphic(new ImageView(new Image("icons/"+ Settings.icon_color +"/return.png")));

@@ -497,7 +497,7 @@ public class gameController implements Controller {
     /**
      * initialisation dela scene avant affichage lors du chargement
      */
-    public void initialize () {
+    public void init () {
         // gestion menu pause
         if (!Engine.gamePaused) {
             background_menu.toBack();

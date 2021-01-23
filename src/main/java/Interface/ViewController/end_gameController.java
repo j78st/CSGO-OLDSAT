@@ -78,7 +78,9 @@ public class end_gameController implements Controller {
     // ========================================== //
 
     @Override
-    public void initialize() {
+    public void init() {
+        System.out.println("initialisation end view");
+
         // icones
         player_icon.setImage(new Image("icons/"+ Settings.icon_color +"/user.png"));
         diff_icon.setImage(new Image("icons/"+ Settings.icon_color +"/shield.png"));
@@ -133,7 +135,7 @@ public class end_gameController implements Controller {
         }
         // sinon
         else {
-            rank_lbl.setText("Vous n'êtes pas dans le top \npeut-être la prochaine fois !");
+            rank_lbl.setText("Vous n'êtes pas dans le top \nPeut-être la prochaine fois !");
         }
 
         // affichage du classement
@@ -147,7 +149,7 @@ public class end_gameController implements Controller {
 
     @Override
     public void setShortcut() {
-
+        // nothing
     }
 
     @Override

@@ -48,7 +48,7 @@ public class Main extends Application {
         LoadMap.scene = new Scene(root);
 
         home_screenController controller = loader.getController();
-        controller.initialize();
+        controller.init();
         controller.setShortcut();
 
         LoadMap.scene.getStylesheets().add("/CSS/"+ Settings.theme +".css");

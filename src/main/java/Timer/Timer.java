@@ -285,7 +285,7 @@ public class Timer extends Thread {
         }
         WorldBoxDisc.pause(Son.coeur);
 
-        if(!done) { //Sortit lie à la terminaison du timer
+        if(!done) { //Sortie lie à la terminaison du timer
             // affichage écran de fin
             Platform.runLater(() -> {
                 try {
