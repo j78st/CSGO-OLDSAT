@@ -90,10 +90,22 @@ public class new_game_formController implements Controller {
     void create_game(ActionEvent event) throws IOException {
         boolean saveSlotSelected = false;
         boolean nameWritten = false;
+        boolean nameNotUsed = true;
 
         String pseudo = "";
         int difficulty;
         SaveSlot save = new SaveSlot();
+
+        Memoire m = new Memoire();
+        Saves verif = (Saves) m.read_data(new File("resources/json/saves.json"));
+
+        for (int i = 0; i < 10; i++) {
+            if (verif.getSave(i).srgame != null && name_selector.getText().equals(verif.getSave(i).srgame.player.getPseudo())) {
+                Alert nameAlert = new Alert(Alert.AlertType.WARNING, "Pseudo déjà utilisé !", ButtonType.OK);
+                nameAlert.showAndWait();
+                nameNotUsed = false;
+            }
+        }
 
         // récupère le pseudo s'il est renseigné et teste sa validité
         pseudo = name_selector.getText();
@@ -125,13 +137,13 @@ public class new_game_formController implements Controller {
         }
 
         // SI le formulaire est correcte on crée la partie, SINON rien tant que pas correct
-        if ( nameWritten && saveSlotSelected) {
+        if ( nameWritten && nameNotUsed && saveSlotSelected) {
             // === Création de la partie === //
             creer_partie(pseudo, difficulty);
             Engine.engine.refreshRoom();
 
             // === Sauvegarde de la partie === //
-            Memoire m = new Memoire();
+
             Saves saves = (Saves) m.read_data(new File("resources/json/saves.json"));
             save.srgame = new Serial_game();
             saves.setSave(save.no,save);

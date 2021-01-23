@@ -21,9 +21,9 @@ import java.util.Optional;
 public class UnsaveAlert {
 
     Alert alert = new Alert(Alert.AlertType.WARNING);
-    ButtonType yes = new ButtonType("oui");
-    ButtonType no = new ButtonType("non");
-    ButtonType undo = new ButtonType("annuler");
+    ButtonType yes = new ButtonType("Oui");
+    ButtonType no = new ButtonType("Non");
+    ButtonType undo = new ButtonType("Annuler");
 
     /**
      * Pop up demandant si le joueur veut sauvegarder sa partie avant de quitter l'application
@@ -53,7 +53,7 @@ public class UnsaveAlert {
                     // recherche du bon slot par pseudo /!\ -> ca peut generer des problemes
                     boolean saved = false;
                     for (int i = 0; i < 10; i++) {
-                        if (!saved && Game.player.getPseudo().equals(saves.getSave(i).srgame.player.getPseudo())) {
+                        if ((saves.getSave(i).srgame != null )|| (!saved && Game.player.getPseudo().equals(saves.getSave(i).srgame.player.getPseudo()))) {
                             saves.setSave(i, new SaveSlot(i, new Serial_game()));
                             saved = true;
                         }

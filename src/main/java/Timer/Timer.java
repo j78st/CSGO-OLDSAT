@@ -1,11 +1,17 @@
 package Timer;
 
+import Interface.Save.SaveSlot;
+import Interface.Save.Saves;
 import Interface.ScreenLoader.LoadMap;
 import Interface.Settings.Engine;
 import Music.Systems.Son;
 import Music.Systems.WorldBoxDisc;
+import Partie.Game;
+import Serialization.Memoire;
+import Serialization.Serial_game;
 import javafx.application.Platform;
 
+import java.io.File;
 import java.io.IOException;
 import java.util.Objects;
 import java.util.Random;
@@ -252,6 +258,27 @@ public class Timer extends Thread {
 
                 sleep(1000); //Deplacement de la soustraction pour régler des problèmes de synchronisation entre écrans paramètres et de jeu
                 substractTime(1);
+                if(this.tempsSecondes % 60 == 0){
+                    // VVV sauvegarde VVV
+                    File file = new File("resources/json/saves.json");
+                    Memoire m = new Memoire();
+                    Saves saves = (Saves) m.read_data(file); // récupération des saves
+
+                    // recherche du bon slot par pseudo /!\ -> ca peut generer des problemes
+                    boolean saved = false;
+                    for (int i = 0; i < 10; i++) {
+                        if ((saves.getSave(i).srgame != null) || (!saved && Game.player.getPseudo().equals(saves.getSave(i).srgame.player.getPseudo()))) {
+                            saves.setSave(i, new SaveSlot(i, new Serial_game()));
+                            saved = true;
+                        }
+                    }
+
+                    try {
+                        m.write_data(saves, file);
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                }
             } else {
                 waitTimer(); //bloque le tread pour économiser le cpu
             }
