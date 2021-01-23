@@ -64,6 +64,8 @@ public class Son {
     public static final String classRoom = "classRoom";
     public static final String outside = "outside";
     public static final String finEnigme = "finEnigme";
+    public static final String doorShoulder = "doorShoulder";
+
 
     public static void main(String[] args) {
         WorldBoxDisc.init();

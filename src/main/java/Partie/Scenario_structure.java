@@ -57,14 +57,14 @@ public class Scenario_structure {
 
         ArrayList<int[]> consequences_action101_70 = new ArrayList<>();
         consequences_action101_70.add(new int[]{1,305});
-        Action action101_70 = new Action(10170,true,"Saut admin enigme 305", consequences_action101_70, 101);*/
+        Action action101_70 = new Action(10170,true,"Saut admin enigme 305", consequences_action101_70, 101);
 
         ArrayList<int[]> consequences_action101_71 = new ArrayList<>();
         consequences_action101_71.add(new int[]{22});
         consequences_action101_71.add(new int[]{4,5});
         Action action101_71 = new Action(10171,true,"Map", consequences_action101_71, 101);
 
-        /*ArrayList<int[]> consequences_action101_72 = new ArrayList<>();
+        ArrayList<int[]> consequences_action101_72 = new ArrayList<>();
         consequences_action101_72.add(new int[]{1,111});
         Engine.chrono = new TimerController(60 * 25);
         Engine.chrono.start();
@@ -420,7 +420,7 @@ public class Scenario_structure {
         ArrayList<int[]> consequences_action211_1 = new ArrayList<>();
         consequences_action211_1.add(new int[]{7,2112}); //Rajoute texte
         consequences_action211_1.add(new int[]{3,2111}); //Bloque cette action (faisable qu'une fois)
-        consequences_action211_1.add(new int[]{17,38}); //Bruit de fermeture de livre (jusqu'à ce qu'on trouve mieux)
+        consequences_action211_1.add(new int[]{17,58}); //Bruit de fermeture de livre (jusqu'à ce qu'on trouve mieux)
         Action action211_1 = new Action(2111,true,"Essayer d'enfoncer la porte", consequences_action211_1, 211);
 
         ArrayList<int[]> consequences_action211_2 = new ArrayList<>();
