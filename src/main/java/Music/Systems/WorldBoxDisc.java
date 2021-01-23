@@ -662,10 +662,6 @@ public class WorldBoxDisc extends Thread {
         WorldBoxDisc.play(Son.doorShoulder);
         Timer.sleep(8000);
         System.out.println("pause");
-        WorldBoxDisc.pauseAllLoopingSound();
-        Timer.sleep(8000);
-        System.out.println("play");
-        WorldBoxDisc.play(Son.menuTheme);
         Timer.sleep(8000);
     }
 }
