@@ -79,8 +79,6 @@ public class end_gameController implements Controller {
 
     @Override
     public void init() {
-        System.out.println("initialisation end view");
-
         // icones
         player_icon.setImage(new Image("icons/"+ Settings.icon_color +"/user.png"));
         diff_icon.setImage(new Image("icons/"+ Settings.icon_color +"/shield.png"));

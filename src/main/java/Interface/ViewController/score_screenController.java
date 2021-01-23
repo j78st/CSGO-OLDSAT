@@ -111,6 +111,9 @@ public class score_screenController implements Controller {
      */
     @Override
     public void setShortcut() {
+        // reset des anciens shortcut
+        LoadMap.scene.getAccelerators().clear();
+
         // Acces au paramètres via ESC
         KeyCombination kc = new KeyCodeCombination(KeyCode.ESCAPE, KeyCombination.SHIFT_ANY);
         Runnable rn = ()-> settings_btn.fire();

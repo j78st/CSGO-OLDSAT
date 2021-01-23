@@ -184,7 +184,8 @@ public class outroController implements Controller {
 
     @Override
     public void setShortcut() {
-        // pas de shortcut
+        // reset des anciens shortcut
+        LoadMap.scene.getAccelerators().clear();
     }
 
     @Override

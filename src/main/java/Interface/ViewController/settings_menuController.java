@@ -207,6 +207,9 @@ public class settings_menuController implements Controller {
      */
     @Override
     public void setShortcut() {
+        // reset des anciens shortcut
+        LoadMap.scene.getAccelerators().clear();
+
         // Fermeture paramètre via ESC
         KeyCombination kc = new KeyCodeCombination(KeyCode.ESCAPE, KeyCombination.SHIFT_ANY);
         Runnable rn = ()-> {resume_btn.fire();};
