@@ -54,7 +54,9 @@ public class Game {
 
     public static ArrayList<Enigma> getEnigmas() { return enigmas; }
 
-    public static int getDifficulty() { return difficulty; }
+    public static int getDifficulty() {
+        return difficulty;
+    }
 
     public int getTimer() {
         return timer;

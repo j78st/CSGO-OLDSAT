@@ -3,6 +3,7 @@ package Interface.ViewController;
 import Interface.CellRenderer.EndGameRankCell;
 import Interface.ScreenLoader.Controller;
 import Interface.ScreenLoader.LoadMap;
+import Interface.Settings.Engine;
 import Interface.Settings.Settings;
 import Music.Systems.Son;
 import Music.Systems.WorldBoxDisc;
@@ -84,33 +85,33 @@ public class end_gameController implements Controller {
         trophy_icon.setImage(new Image("icons/"+ Settings.icon_color+ "/trophy.png"));
         rank_icon.setImage(new Image("icons/"+ Settings.icon_color+ "/ranking.png"));
 
-        // Affichage du classement du scérnario joué
+        // Affichage du classement du scénario joué
         Memoire m = new Memoire();
         Ranking ranking = (Ranking) m.read_data(new File("resources/json/ranking.json"));
-
-        // affichage du classement
-        ObservableList<Score> recordObservableList = FXCollections.observableArrayList();
-        for (int i = 0; i<10; i++) {
-            recordObservableList.add(ranking.ranking[i]);
-        }
-        ranking_list.setItems(recordObservableList);
-        ranking_list.setCellFactory(param -> new EndGameRankCell());
 
         // affichage des données de la partie
         // nom joueur
         player_name_lbl.setText(Game.player.getPseudo());
 
         // difficulté partie
-        switch (Game.difficulty) {
+        switch (Game.getDifficulty()) {
             case 0 : difficulty_lbl.setText("Facile"); break;
             case 1 : difficulty_lbl.setText("Normale"); break;
             case 2 : difficulty_lbl.setText("Difficile"); break;
         }
 
         // score de la partie
-        score_lbl.setText("0");
+        if(Game.getDifficulty() == 0) {
+            score_lbl.setText(String.valueOf(Engine.chrono.getTimeFullSeconds()));
+        }
+        if(Game.getDifficulty() == 1) {
+            score_lbl.setText(String.valueOf(Engine.chrono.getTimeFullSeconds()*5));
+        }
+        if(Game.getDifficulty() == 2) {
+            score_lbl.setText(String.valueOf(Engine.chrono.getTimeFullSeconds()*10));
+        }
 
-        // classement joueur dans la catégorie concernée
+        // classement joueur
         int rank = -1; // non classé
         int score = Integer.parseInt(score_lbl.getText());
         for (int i = Ranking.RANKING_SIZE-1; i >= 0 ; i--) {
@@ -122,13 +123,26 @@ public class end_gameController implements Controller {
         rank_lbl.setWrapText(true);
         // si classé
         if (rank != -1) {
-            ranking.add_score(new Score(player_name_lbl.getText(),score/10));
-            rank_lbl.setText("Vous êtes "+ (rank+1) +"e ! Bravo !");
+            ranking.add_score(new Score(player_name_lbl.getText(),score));
+            rank_lbl.setText("Vous êtes "+ rank +"e ! Bravo !");
+            try {
+                m.write_data(ranking,new File("resources/json/ranking.json"));
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
         // sinon
         else {
             rank_lbl.setText("Vous n'êtes pas dans le top \npeut-être la prochaine fois !");
         }
+
+        // affichage du classement
+        ObservableList<Score> recordObservableList = FXCollections.observableArrayList();
+        for (int i = 0; i<10; i++) {
+            recordObservableList.add(ranking.ranking[i]);
+        }
+        ranking_list.setItems(recordObservableList);
+        ranking_list.setCellFactory(param -> new EndGameRankCell());
     }
 
     @Override
