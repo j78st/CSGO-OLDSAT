@@ -355,6 +355,12 @@ public class WorldBoxDisc extends Thread {
         Disc finEnigme = new Disc(finEnigmeM, "finEnigme", false, MusicType.SoundFx, 3);
         add(finEnigme);
 
+        File doorShoulderF = new File("resources/sounds/interactions/bangDoor.wav");
+        Music doorShoulderM = TinySound.loadMusic(doorShoulderF);
+        Disc doorShoulder = new Disc(doorShoulderM, "doorShoulder", false, MusicType.SoundFx, 1);
+        add(doorShoulder);
+
+
     }
 
 
@@ -653,7 +659,7 @@ public class WorldBoxDisc extends Thread {
 
     public static void main(String[] args) {
         init();
-        WorldBoxDisc.play(Son.menuTheme);
+        WorldBoxDisc.play(Son.doorShoulder);
         Timer.sleep(8000);
         System.out.println("pause");
         WorldBoxDisc.pauseAllLoopingSound();
