@@ -18,6 +18,7 @@ public class Ranking implements Serializable {
      */
     public void add_score(Score score){
         Score tmp = new Score();
+        Score tmp2 = new Score();
         boolean added = false;
         for (int i = 0; i < RANKING_SIZE; i++) {
             if (score.value > ranking[i].value && !added) {
@@ -26,11 +27,13 @@ public class Ranking implements Serializable {
                 score.rank = i+1;
                 ranking[i] = score;
                 added = true;
-            } else if (added && i<RANKING_SIZE-1){
+            } else if (added){
+                tmp2 = ranking[i];
                 ranking[i] = tmp;
-                tmp = ranking[i+1];
+                tmp = tmp2;
                 tmp.rank = i+2;
             }
         }
     }
+
 }

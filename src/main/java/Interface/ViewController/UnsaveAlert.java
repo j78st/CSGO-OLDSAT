@@ -53,7 +53,7 @@ public class UnsaveAlert {
                     // recherche du bon slot par pseudo /!\ -> ca peut generer des problemes
                     boolean saved = false;
                     for (int i = 0; i < 10; i++) {
-                        if ((saves.getSave(i).srgame != null )|| (!saved && Game.player.getPseudo().equals(saves.getSave(i).srgame.player.getPseudo()))) {
+                        if ((saves.getSave(i).srgame != null ) && (!saved && Game.player.getPseudo().equals(saves.getSave(i).srgame.player.getPseudo()))) {
                             saves.setSave(i, new SaveSlot(i, new Serial_game()));
                             saved = true;
                         }

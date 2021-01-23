@@ -171,9 +171,6 @@ public class LoadMap {
 
         // initialisation de la nouvelle vue
         Controller controller = kit.getNext_controller();
-        if(nextID == END_GAME){
-            System.out.println("avant init");
-        }
 
         controller.init();
         controller.setShortcut();
