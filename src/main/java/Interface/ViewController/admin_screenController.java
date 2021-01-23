@@ -81,7 +81,7 @@ public class admin_screenController implements Controller {
         saveObservableList2 = FXCollections.observableArrayList();
 
         // création partie
-        Game.player = new Player("admin");
+        Game.player = new Player("Admin");
         Game.difficulty = 1;
         Scenario_structure scenar_struct = new Scenario_structure();
 
@@ -102,6 +102,7 @@ public class admin_screenController implements Controller {
     void go_back(ActionEvent event) throws IOException {
         LoadMap gl = new LoadMap();
         gl.display_screen_from_id(LoadMap.HOME);
+        WorldBoxDisc.play(Son.menuClose);
     }
 
     // ==========================================================

@@ -36,7 +36,7 @@
                               <Insets right="10.0" top="5.0" />
                            </HBox.margin>
                         </ImageView>
-                        <Label alignment="CENTER" styleClass="Custom_label" text="mot de passe :">
+                        <Label alignment="CENTER" styleClass="Custom_label" text="Mot de passe :">
                            <HBox.margin>
                               <Insets top="5.0" />
                            </HBox.margin>
@@ -51,7 +51,7 @@
                   <Region prefHeight="14.0" prefWidth="498.0" />
                   <HBox alignment="CENTER" minHeight="40.0">
                      <children>
-                        <Label fx:id="error_msg" style="-fx-text-fill: red;" text="mot de passe incorrect">
+                        <Label fx:id="error_msg" style="-fx-text-fill: red;" text="Mot de passe incorrect">
                            <font>
                               <Font name="System Italic" size="12.0" />
                            </font>
@@ -61,7 +61,7 @@
                   <Region layoutX="11.0" layoutY="213.0" prefHeight="49.0" prefWidth="498.0" />
                   <BorderPane prefWidth="500.0">
                      <center>
-                        <Button mnemonicParsing="false" onAction="#test_password" text="valider">
+                        <Button mnemonicParsing="false" onAction="#test_password" text="Valider">
                            <BorderPane.margin>
                               <Insets top="10.0" />
                            </BorderPane.margin>
