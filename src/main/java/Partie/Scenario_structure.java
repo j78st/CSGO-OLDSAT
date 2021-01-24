@@ -63,12 +63,12 @@ public class Scenario_structure {
         consequences_action101_71.add(new int[]{22});
         consequences_action101_71.add(new int[]{4,5});
         Action action101_71 = new Action(10171,true,"Map", consequences_action101_71, 101);
-*/
+
         ArrayList<int[]> consequences_action101_72 = new ArrayList<>();
         consequences_action101_72.add(new int[]{1,111});
         Engine.chrono = new TimerController(60 * 25);
         Engine.chrono.start();
-        Action action101_72 = new Action(10172,true,"Saut test score", consequences_action101_72, 101);
+        Action action101_72 = new Action(10172,true,"Saut test score", consequences_action101_72, 101);*/
 
         //Amphi pré-conférence
         ArrayList<int[]> consequences_action102_1 = new ArrayList<>();
