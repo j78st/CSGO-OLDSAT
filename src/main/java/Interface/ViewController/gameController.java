@@ -185,7 +185,9 @@ public class gameController implements Controller {
      */
     @FXML
     void do_selected_action(ActionEvent event) throws IOException {
-        action_list.getSelectionModel().getSelectedItem().do_consequences();
+        if (action_list.getSelectionModel().getSelectedItem() != null) {
+            action_list.getSelectionModel().getSelectedItem().do_consequences();
+        }
     }
 
     /**
