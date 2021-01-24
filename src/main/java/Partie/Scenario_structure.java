@@ -53,18 +53,18 @@ public class Scenario_structure {
 
         ArrayList<int[]> consequences_action101_69 = new ArrayList<>();
         consequences_action101_69.add(new int[]{12,107});
-        Action action101_69 = new Action(10169,true,"Saut admin début d'aventure", consequences_action101_69, 101);
+        Action action101_69 = new Action(10169,true,"Saut admin début d'aventure", consequences_action101_69, 101);*/
 
         ArrayList<int[]> consequences_action101_70 = new ArrayList<>();
-        consequences_action101_70.add(new int[]{1,305});
-        Action action101_70 = new Action(10170,true,"Saut admin enigme 305", consequences_action101_70, 101);
+        consequences_action101_70.add(new int[]{1,110});
+        Action action101_70 = new Action(10170,true,"Saut salle secrète", consequences_action101_70, 101);
 
-        ArrayList<int[]> consequences_action101_71 = new ArrayList<>();
+       /*ArrayList<int[]> consequences_action101_71 = new ArrayList<>();
         consequences_action101_71.add(new int[]{22});
         consequences_action101_71.add(new int[]{4,5});
         Action action101_71 = new Action(10171,true,"Map", consequences_action101_71, 101);
 
-        /*ArrayList<int[]> consequences_action101_72 = new ArrayList<>();
+        ArrayList<int[]> consequences_action101_72 = new ArrayList<>();
         consequences_action101_72.add(new int[]{1,111});
         Engine.chrono = new TimerController(60 * 25);
         Engine.chrono.start();
@@ -167,11 +167,11 @@ public class Scenario_structure {
         Room room8_4_1 = new Room(218,209,2181,"pictures/Trousse.png"); // Livre 3-1
         Room room8_4_2 = new Room(219,209,2191,"pictures/Trousse.png"); // Livre 3-2
         Room room8_4_3 = new Room(220,209,2201,"pictures/Trousse.png"); // Livre 3-3
-        Room room10 = new Room(110,-1,-1,108,-1, false,1101,"pictures/Bibliotheque.png", "Acte 1 - Salle derrière étagère"); // Fin scène 1
+        Room room10 = new Room(110,-1,-1,108,-1, false,1101,"pictures/110/1.png", "Acte 1 - Salle derrière étagère"); // Fin scène 1
 
 
         Item clef = new Item(4,"Clef","Ancienne clef - Elle va sûrement vous permettre de sortir d'ici",-1, "objects/key.png");
-        Item carnet = new Item(5,"Carnet vieilli","Vieux carnet - Peut être trouverez-vous un indice à l'intérieur",-1, "objects/key2.png");
+        Item carnet = new Item(5,"Carnet vieilli","Vieux carnet - Peut être trouverez-vous un indice à l'intérieur",-1, "objects/carnet.png");
 
 
 
@@ -211,12 +211,16 @@ public class Scenario_structure {
         consequences_enigme5.add(new int[]{7,1103,110});
         consequences_enigme5.add(new int[]{2,1102});
         ArrayList<double[]> zone_click_305 = new ArrayList<>();
-        zone_click_305.add(new double[]{1,0.60,0.67,0.64,0.74});
-        zone_click_305.add(new double[]{2,0.75,0.81,0.50,0.61});
-        zone_click_305.add(new double[]{3,0.85,0.91,0.14,0.25});
-        zone_click_305.add(new double[]{4,0.63,0.70,0.22,0.33});
-        zone_click_305.add(new double[]{5,0.875,0.93,0.65,0.76});
-        Enigma enigme5 = new Enigma(305,110,3051,"pictures/305.png","12345",consequences_enigme5,zone_click_305,2); // Énigme suite de clics test
+        zone_click_305.add(new double[]{1,0.71,0.77,0.089,0.14}); //Nord
+        zone_click_305.add(new double[]{2,0.83,0.91,0.21,0.27}); //Nord-Est
+        zone_click_305.add(new double[]{3,0.90,0.99,0.35,0.42}); //Est
+        zone_click_305.add(new double[]{4,0.83,0.90,0.54,0.60}); //Sud-Est
+        zone_click_305.add(new double[]{5,0.71,0.79,0.67,0.735}); //Sud
+        zone_click_305.add(new double[]{6,0.59,0.66,0.54,0.60}); //Sud-Ouest
+        zone_click_305.add(new double[]{7,0.51,0.59,0.38,0.45}); //Ouest
+        zone_click_305.add(new double[]{8,0.59,0.66,0.23,0.29}); //Nord-ouest
+
+        Enigma enigme5 = new Enigma(305,110,3051,"pictures/piece_secrete_mur.png","52671",consequences_enigme5,zone_click_305,2); // Énigme suite de clics test
 
 
         //PC cliquable
@@ -489,6 +493,7 @@ public class Scenario_structure {
         consequences_action110_3.add(new int[]{4,5}); //Rajoute le carnet à l'inventaire
         consequences_action110_3.add(new int[]{7,1102}); //Rajoute texte (tuto objet cliquable)
         consequences_action110_3.add(new int[]{3,1103}); //Bloque cette action (faisable qu'une fois)
+        consequences_action110_3.add(new int[]{16,110,2}); //Change l'image pour faire disparaître le carnet
         Action action110_3 = new Action(1103,true,"Récupérer le carnet à vos pieds", consequences_action110_3, 110);
 
         ArrayList<int[]> consequences_action110_1 = new ArrayList<>();
