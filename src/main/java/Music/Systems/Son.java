@@ -65,12 +65,13 @@ public class Son {
     public static final String outside = "outside";
     public static final String finEnigme = "finEnigme";
     public static final String doorShoulder = "doorShoulder";
+    public static final String gameTheme = "gameTheme";
 
 
     public static void main(String[] args) {
         WorldBoxDisc.init();
         Timer.sleep(3000);
-        WorldBoxDisc.testFromAllSound(turningPage);
+        WorldBoxDisc.play(Son.gameTheme);
         Timer.sleep(51000);
     }
 }

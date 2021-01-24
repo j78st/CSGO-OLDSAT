@@ -360,7 +360,10 @@ public class WorldBoxDisc extends Thread {
         Disc doorShoulder = new Disc(doorShoulderM, "doorShoulder", false, MusicType.SoundFx, 1);
         add(doorShoulder);
 
-
+        File gameThemeF = new File("resources/sounds/theme/theme_jeu_2_w.wav");
+        Music gameThemeM = TinySound.loadMusic(gameThemeF);
+        Disc gameTheme = new Disc(gameThemeM, "gameTheme", true, MusicType.Background, 60 + 7);
+        add(gameTheme);
     }
 
 
