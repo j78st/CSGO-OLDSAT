@@ -519,6 +519,8 @@ public class gameController implements Controller {
         item_slot_2.setGraphic(new ImageView(bag_icon));
         item_slot_3.setGraphic(new ImageView(bag_icon));
 
+        map_btn.setGraphic(new ImageView(new Image("pictures/icone_carte.png")));
+
         //icone mouvement
         down_move_btn.setGraphic(new ImageView(new Image("/icons/"+ Settings.icon_color +"/arrow_down.png")));
         left_move_btn.setGraphic(new ImageView(new Image("/icons/"+ Settings.icon_color +"/arrow_left.png")));
@@ -551,9 +553,6 @@ public class gameController implements Controller {
     @Override
     public void setShortcut() {
         refreshInventory();
-
-        // reset des anciens shortcut
-        LoadMap.scene.getAccelerators().clear();
 
         // Clear shortcut
         LoadMap.scene.getAccelerators().clear();

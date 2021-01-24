@@ -1,6 +1,8 @@
 package Interface.ViewController;
 
 import Interface.CellRenderer.EndGameRankCell;
+import Interface.Save.SaveSlot;
+import Interface.Save.Saves;
 import Interface.ScreenLoader.Controller;
 import Interface.ScreenLoader.LoadMap;
 import Interface.Settings.Engine;
@@ -143,11 +145,26 @@ public class end_gameController implements Controller {
         }
         ranking_list.setItems(recordObservableList);
         ranking_list.setCellFactory(param -> new EndGameRankCell());
+
+        // suppression de l'emplacement de sauvegarde
+        Saves saves = (Saves) m.read_data(new File("resources/json/saves.json"));
+        for (int i = 0; i < saves.getSaves().size(); i++) {
+            if (saves.getSave(i).getSrgame() != null && saves.getSave(i).getSrgame().player.getPseudo().equals(Game.player.getPseudo())) {
+                saves.setSave(i, new SaveSlot(i, null));
+            }
+        }
+
+        try {
+            m.write_data(saves, new File("resources/json/saves.json"));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     @Override
     public void setShortcut() {
-        // nothing
+        // reset des anciens shortcut
+        LoadMap.scene.getAccelerators().clear();
     }
 
     @Override

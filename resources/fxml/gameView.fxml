@@ -222,7 +222,7 @@
                               </GridPane>
                            </left>
                            <right>
-                              <Button fx:id="map_btn" mnemonicParsing="false" onAction="#show_map" text="Carte" BorderPane.alignment="CENTER">
+                              <Button fx:id="map_btn" mnemonicParsing="false" onAction="#show_map" text="" BorderPane.alignment="CENTER">
                                  <BorderPane.margin>
                                     <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
                                  </BorderPane.margin>
