@@ -62,10 +62,9 @@ public class UnsaveAlert {
                     m.write_data(saves, file);
 
                 }
+                LoadMap.stage.close(); // fermeture de l'application
             }
         }
-        // fermeture de l'application
-        LoadMap.stage.close();
     }
 
     /**
@@ -107,12 +106,11 @@ public class UnsaveAlert {
                     m.write_data(saves, file);
 
                 }
+                // retour écran accueil
+                Game.reset_game();
+                LoadMap gl = new LoadMap();
+                gl.display_screen_from_id(LoadMap.HOME);
             }
         }
-
-        // retour écran accueil
-        Game.reset_game();
-        LoadMap gl = new LoadMap();
-        gl.display_screen_from_id(LoadMap.HOME);
     }
 }

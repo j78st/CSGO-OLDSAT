@@ -64,7 +64,7 @@ public class Scenario_structure {
         consequences_action101_71.add(new int[]{4,5});
         Action action101_71 = new Action(10171,true,"Map", consequences_action101_71, 101);
 
-        ArrayList<int[]> consequences_action101_72 = new ArrayList<>();
+        /*ArrayList<int[]> consequences_action101_72 = new ArrayList<>();
         consequences_action101_72.add(new int[]{1,111});
         Engine.chrono = new TimerController(60 * 25);
         Engine.chrono.start();
@@ -161,6 +161,12 @@ public class Scenario_structure {
         Room room8_2_1 = new Room(212,207,2121,"pictures/Trousse.png"); // Livre 1-1
         Room room8_2_2 = new Room(213,207,2131,"pictures/Trousse.png"); // Livre 1-2
         Room room8_2_3 = new Room(214,207,2141,"pictures/Trousse.png"); // Livre 1-3
+        Room room8_3_1 = new Room(215,208,2151,"pictures/Trousse.png"); // Livre 2-1
+        Room room8_3_2 = new Room(216,208,2161,"pictures/Trousse.png"); // Livre 2-2
+        Room room8_3_3 = new Room(217,208,2171,"pictures/Trousse.png"); // Livre 2-3
+        Room room8_4_1 = new Room(218,209,2181,"pictures/Trousse.png"); // Livre 3-1
+        Room room8_4_2 = new Room(219,209,2191,"pictures/Trousse.png"); // Livre 3-2
+        Room room8_4_3 = new Room(220,209,2201,"pictures/Trousse.png"); // Livre 3-3
         Room room10 = new Room(110,-1,-1,108,-1, false,1101,"pictures/Bibliotheque.png", "Acte 1 - Salle derrière étagère"); // Fin scène 1
 
 
@@ -304,7 +310,7 @@ public class Scenario_structure {
         consequences_action108_5.add(new int[]{3,1085}); //Rend la demande d'indice indisponible
         consequences_action108_5.add(new int[]{14,30});
         consequences_action108_5.add(new int[]{17,6});
-        Action action108_5 = new Action(1085,true,"S'assoir sur la chaise [Obtention d'un indice, diminution du temps]", consequences_action108_5, 108);
+        Action action108_5 = new Action(1085,true,"S'asseoir sur la chaise [Obtention d'un indice, diminution du temps]", consequences_action108_5, 108);
 
         ArrayList<int[]> consequences_action108_6 = new ArrayList<>();
         consequences_action108_6.add(new int[]{1,109}); //Bouge joueur vers l'étagère 1
@@ -388,7 +394,7 @@ public class Scenario_structure {
 
         ArrayList<int[]> consequences_action207_1 = new ArrayList<>();
         consequences_action207_1.add(new int[]{1,212}); //Rajoute texte
-        consequences_action207_1.add(new int[]{17,49}); //Bruit d'ouverture de livre
+        consequences_action207_1.add(new int[]{17,50}); //Bruit d'ouverture de livre
         Action action207_1 = new Action(2071,true,"Regarder le premier livre", consequences_action207_1, 207);
 
         ArrayList<int[]> consequences_action207_2 = new ArrayList<>();
@@ -398,7 +404,7 @@ public class Scenario_structure {
 
         ArrayList<int[]> consequences_action207_3 = new ArrayList<>();
         consequences_action207_3.add(new int[]{1,214}); //Rajoute texte
-        consequences_action207_3.add(new int[]{17,49}); //Bruit d'ouverture de livre
+        consequences_action207_3.add(new int[]{17,50}); //Bruit d'ouverture de livre
         Action action207_3 = new Action(2073,true,"Regarder le troisième livre", consequences_action207_3, 207);
 
         //Actions de la salle 208 - Étagère 2 pré-utilisation clef
@@ -414,6 +420,37 @@ public class Scenario_structure {
         consequences_action208_1.add(new int[]{17,45,47}); //Bruit de clef tournée dans une serrure suivi d'un bruit de méchanisme qui s'active
         Action action208_1 = new Action(2081, "Essayer la clef dans la serrure [Clef]", consequences_action208_1, 208, 4);
 
+        ArrayList<int[]> consequences_action208_2 = new ArrayList<>();
+        consequences_action208_2.add(new int[]{1,215}); //Rajoute texte
+        consequences_action208_2.add(new int[]{17,50}); //Bruit d'ouverture de livre
+        Action action208_2 = new Action(2082,true,"Regarder le premier livre", consequences_action208_2, 208);
+
+        ArrayList<int[]> consequences_action208_3 = new ArrayList<>();
+        consequences_action208_3.add(new int[]{1,216}); //Rajoute texte
+        consequences_action208_3.add(new int[]{17,50}); //Bruit de page tournée
+        Action action208_3 = new Action(2083,true,"Regarder le second livre", consequences_action208_3, 208);
+
+        ArrayList<int[]> consequences_action208_4 = new ArrayList<>();
+        consequences_action208_4.add(new int[]{1,217}); //Rajoute texte
+        consequences_action208_4.add(new int[]{17,50}); //Bruit d'ouverture de livre
+        Action action208_4 = new Action(2084,true,"Regarder le troisième livre", consequences_action208_4, 208);
+
+        //Actions de la salle 209 - étagère3
+
+        ArrayList<int[]> consequences_action209_1 = new ArrayList<>();
+        consequences_action209_1.add(new int[]{1,218}); //Rajoute texte
+        consequences_action209_1.add(new int[]{17,50}); //Bruit d'ouverture de livre
+        Action action209_1 = new Action(2091,true,"Regarder le premier livre", consequences_action209_1, 209);
+
+        ArrayList<int[]> consequences_action209_2 = new ArrayList<>();
+        consequences_action209_2.add(new int[]{1,218}); //Rajoute texte
+        consequences_action209_2.add(new int[]{17,50}); //Bruit de page tournée
+        Action action209_2 = new Action(2092,true,"Regarder le second livre", consequences_action209_2, 209);
+
+        ArrayList<int[]> consequences_action209_3 = new ArrayList<>();
+        consequences_action209_3.add(new int[]{1,219}); //Rajoute texte
+        consequences_action209_3.add(new int[]{17,50}); //Bruit d'ouverture de livre
+        Action action209_3 = new Action(2093,true,"Regarder le troisième livre", consequences_action209_3, 209);
 
         //Actions de la salle 211 - Porte
 
