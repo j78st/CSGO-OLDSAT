@@ -166,7 +166,12 @@ public class Scenario {
     //Etagere2
 
     public Text_scenario room_208_1 = new Text_scenario(2081,"Une étagère de bibliothèque, tout ce qu'il y a de plus normal.\n" +
-            "Celle-ci contient surtout des classiques de la littérature française.");
+            "Celle-ci contient surtout des classiques de la littérature française.\n\n" +
+            "3 ouvrages en particulier attirent votre attention car, contrairement aux autres, ils ne sont pas recouverts d'un amas de poussière.\n\n" +
+            "Le premier est le roman \"La Chartreuse de Parme\" de Stendhal.\n" +
+            "Le second est la pièce de théâtre \"L'Avare\" de Molière.\n" +
+            "Le troisième le recueil de poèmes \"Alcools\" de Guillaume Apollinaire.\n\n");
+
 
     public Text_scenario room_301_1 = new Text_scenario(3011,"La clef vous a permis de débloquer quelque chose, " +
             "mais rien ne semble s'être ouvert.\n" +
@@ -174,18 +179,44 @@ public class Scenario {
             "il faut sûrement tirer sur un livre pour ouvrir une sorte de passage secret.");
 
     public Text_scenario room_301_2 = new Text_scenario(3012,"Vous avez réussi !\n" +
-            "L'étagère s'ouvre et vous découvrez une salle " +
-            "qui était cachée derrière. \n" +
-            "[La flèche de déplacement nord s'est débloquée]\n\n");
+            "L'étagère s'ouvre et vous découvrez une salle qui était cachée derrière.");
+
+    //Livre 2-1
+
+    public Text_scenario room_215_1 = new Text_scenario(2151,"Vous lisez la quatrième de couverture :\n\n" +
+            "\"De Waterloo à la cour de Parme, le jeune Fabrice del Dongo, rêvant de gloire, amoureux de l'amour, " +
+            "se laisse entraîner dans d'aventureuses passions, qui le mèneront à la captivité au sommet de la tour Farnèse.\n" +
+            "C'est là, auprès de Clélia, la fille du gouverneur de la forteresse, qu'il ira chercher le bonheur, loin du pouvoir et de la cour...\n\n" +
+            "Ainsi que l'écrit le romancier Vincent Delecroix : «Je crois que tant qu'on lit La Chartreuse de Parme, on ne renonce pas tout à fait à sa propre jeunesse, " +
+            "à son exaltation, à son innocence, à ce que l'on exigeait de soi.\n" +
+            "Je ne voulais pas être Fabrice, mais aimer la vie qu'il aimait.\n" +
+            "J'y ai vu le plus souverain antidote à la mesquinerie de la vie bourgeoise et la plus joyeuse introduction à l'amour de l'art et de la beauté.\"");
+
+    //Livre 2-2
+
+    public Text_scenario room_216_1 = new Text_scenario(2161,"Vous lisez la quatrième de couverture :\n\n");
+
+    //Livre 2-3
+
+    public Text_scenario room_217_1 = new Text_scenario(2171,"Vous lisez la quatrième de couverture :\n\n");
 
     //Etegere3
 
     public Text_scenario room_209_1 = new Text_scenario(2091,"Une étagère de bibliothèque, tout ce qu'il y a de plus classique.\n" +
             "Celle-ci contient surtout des livres sur l'Histoire de France et la géopolitique.\n\n");
 
+    //Livre 3-1
 
-    public Text_scenario room_220_1 = new Text_scenario(2201,"Une étagère de bibliothèque, tout ce qu'il y a de plus classique.\n" +
-            "Celle-ci contient surtout des livres sur l'histoire française et la géo-politique.\n\n");
+    public Text_scenario room_218_1 = new Text_scenario(2181,"Vous lisez la quatrième de couverture :\n\n");
+
+    //Livre 3-2
+
+    public Text_scenario room_219_1 = new Text_scenario(2191,"Vous lisez la quatrième de couverture :\n\n");
+
+    //Livre 3-3
+
+    public Text_scenario room_220_1 = new Text_scenario(2201,"Vous lisez la quatrième de couverture :\n\n");
+
 
     //Bureau
 
@@ -239,30 +270,6 @@ public class Scenario {
             "Il faut un mot de passe pour pouvoir se connecter à la session du gestionnaire, vous vous y attendiez mais vous êtes quand même déçu.");
 
     public Text_scenario room_206_1 = new Text_scenario(2061,"Le mot de passe est correct, vous avez maintenant accès à la session du gestionnaire.");
-
-    /*public Text_scenario room_206_2 = new Text_scenario(2062,"Vous lisez le document :\n\n" +
-            "Historique des emprunts\n\n" +
-            "Les Fleurs du mal - Charles Baudelaire - emprunté jusqu'au 05/03/21\n" +
-            "L'Étranger - Albert Camus - emprunté jusqu'au 05/03/21\n" +
-            "Les Misérables - Victor Hugo - emprunté jusqu'au 05/03/21\n" +
-            "Les Liaisons dangereuses - Choderlos de Laclos - emprunté jusqu'au 05/03/21\n" +
-            "Le Petit Prince - Antoine de Saint-Exupéry - emprunté jusqu'au 05/03/21\n\n");
-
-    public Text_scenario room_206_3 = new Text_scenario(2063,"Vous lisez le document :\n\n" +
-            "Commandes pour la bibliothèque\n\n" +
-            "Madame Bovary - Gustave Flaubert - livraison prévue pour le 05/03/21\n" +
-            "Cyrano de Bergerac - Edmond Rostand - livraison prévue pour le 05/03/21\n" +
-            "Voyage au bout de la nuit - Louis-Ferdinand Céline - livraison prévue pour le 05/03/21\n" +
-            "Candide ou l'optimisme - Voltaire - livraison prévue pour le 05/03/21\n" +
-            "Bel-Ami - Guy de Maupassant - livraison prévue pour le 05/03/21\n\n");
-
-    public Text_scenario room_206_4 = new Text_scenario(2064,"Vous lisez le document :\n\n" +
-            "Catalogue de la bibliothèque\n\n" +
-            "12345 - Le Rouge et le Noir - Stendhal" +
-            "12345 - Les Trois Mousquetaires - Alexandre Dumas" +
-            "12345 - Antigone - Jean Anouilh" +
-            "12345 - Le Comte de Monte-Cristo - Alexandre Dumas" +
-            "12345 - Le Cid - Pierre Corneille\n\n");*/
 
     //Indices
 

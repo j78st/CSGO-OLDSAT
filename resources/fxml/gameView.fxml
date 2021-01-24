@@ -50,7 +50,7 @@
                               <Insets left="30.0" right="30.0" />
                            </VBox.margin>
                         </Button>
-                        <Button mnemonicParsing="false" onAction="#go_to_home_screen" prefHeight="40.0" prefWidth="180.0" text="Retour  à l'accueil">
+                        <Button mnemonicParsing="false" onAction="#go_to_home_screen" prefHeight="40.0" prefWidth="180.0" text="Retour à l'accueil">
                            <VBox.margin>
                               <Insets left="30.0" right="30.0" />
                            </VBox.margin>

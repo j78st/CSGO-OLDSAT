@@ -258,13 +258,12 @@ public class Timer extends Thread {
 
                 sleep(1000); //Deplacement de la soustraction pour régler des problèmes de synchronisation entre écrans paramètres et de jeu
                 substractTime(1);
-                if(this.tempsSecondes % 60 == 0){
+                if(this.tempsSecondes % 60*5 == 0){
                     // VVV sauvegarde VVV
                     File file = new File("resources/json/saves.json");
                     Memoire m = new Memoire();
                     Saves saves = (Saves) m.read_data(file); // récupération des saves
 
-                    // recherche du bon slot par pseudo /!\ -> ca peut generer des problemes
                     boolean saved = false;
                     for (int i = 0; i < 10; i++) {
                         if ((saves.getSave(i).srgame != null) && (!saved && Game.player.getPseudo().equals(saves.getSave(i).srgame.player.getPseudo()))) {
