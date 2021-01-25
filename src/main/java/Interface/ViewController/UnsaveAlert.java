@@ -64,6 +64,8 @@ public class UnsaveAlert {
                 }
                 LoadMap.stage.close(); // fermeture de l'application
             }
+        } else {
+            LoadMap.stage.close(); // fermeture de l'application
         }
     }
 
@@ -93,7 +95,7 @@ public class UnsaveAlert {
                     Memoire m = new Memoire();
                     Saves saves = (Saves) m.read_data(file); // récupération des saves
 
-                    // recherche du bon slot par pseudo /!\ -> ca peut generer des problemes
+                    // recherche du bon slot par pseudo /!\ les pseudos sont uniques
                     boolean saved = false;
                     for (int i = 0; i < 10; i++) {
                         if (!saved && Game.player.getPseudo().equals(saves.getSave(i).srgame.player.getPseudo())) {
@@ -111,6 +113,11 @@ public class UnsaveAlert {
                 LoadMap gl = new LoadMap();
                 gl.display_screen_from_id(LoadMap.HOME);
             }
+        } else {
+            // retour écran accueil
+            Game.reset_game();
+            LoadMap gl = new LoadMap();
+            gl.display_screen_from_id(LoadMap.HOME);
         }
     }
 }

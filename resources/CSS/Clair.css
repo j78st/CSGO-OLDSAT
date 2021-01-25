@@ -4,13 +4,13 @@
 
 /* ====== Design arrière plan ====== */
 .BackPane{
-    -fx-background-color: #d9d9d9;
+    -fx-background-color: #eaeaea;
 }
 
 /* ====== Design des couches supérieures ====== */
 .UpperLayerPane{
     /* --- forme et couleur --- */
-    -fx-background-color: #ffffff;
+    -fx-background-color: #f6f6f6;
     -fx-background-radius: 10;
     /* --- bordure --- */
     -fx-border-color: #00ecff;
@@ -20,7 +20,7 @@
 /* ====== Design interface de jeu ====== */
 .GamePane {
     /* --- couleur --- */
-    -fx-background-color: #ffffff;
+    -fx-background-color: #eaeaea;
     /* --- bordure --- */
     -fx-border-color: #005364;
 }
@@ -28,7 +28,7 @@
 /* ====== Design des bouton ====== */
 .button {
     /* --- forme et couleur --- */
-    -fx-background-color: #ffffff;
+    -fx-background-color: #eaeaea;
     -fx-background-radius: 20;
     /* --- bordure du bouton --- */
     -fx-border-width: 2;
@@ -46,7 +46,7 @@
 
 .GameButton {
     /* --- forme et couleur --- */
-    -fx-background-color: #484848;
+    -fx-background-color: #a9c3cd;
     -fx-background-radius: 20;
     /* --- bordure du bouton --- */
     -fx-border-width: 2;
@@ -86,8 +86,20 @@
 }
 
 /* ====== Design des textes ====== */
-.Text {
+.Title {
     -fx-fill: #00c1ff;
+}
+
+.Custom_text {
+    -fx-fill: #00c1ff;
+}
+
+.Custom_label {
+    -fx-text-fill: black ;
+}
+
+.Narration_text {
+    -fx-text-fill: black ;
 }
 
 /* ====== Design des lignes ====== */
@@ -114,3 +126,60 @@
     -fx-tick-label-fill: black;
 }
 
+/* ====== Design des combo box =======*/
+.combo-box .combo-box-popup .list-view, .combo-box .combo-box-popup .list-cell {
+    -fx-background-color: #2C3E50 ;
+    -fx-text-fill: #eaeaea ;
+}
+.combo-box .combo-box-popup .list-cell:hover {
+    -fx-text-fill: black ;
+    -fx-background-color: #4ca2d7;
+}
+
+.combo-box .list-cell:filled:selected {
+    -fx-text-fill: white;
+    -fx-background-color: #2C3E50 ;
+}
+
+.Item_description {
+    -fx-background-color: black;
+    -fx-background-radius: 10;
+
+    -fx-border-color: #4ca2d7;
+    -fx-border-radius: 10;
+}
+
+/* ====== Design des ScrollPane =======*/
+.scroll-pane {
+    -fx-background-color: transparent;
+}
+
+.scroll-pane .viewport {
+    -fx-background-color: transparent;
+}
+
+.scroll-pane .scroll-bar:vertical .track {
+    -fx-background-color: #1C2833;
+}
+
+.scroll-pane .scroll-bar:vertical .thumb {
+    -fx-background-color: #415e79;
+}
+
+
+.scroll-pane *.scroll-bar:vertical *.increment-button,
+.scroll-pane *.scroll-bar:vertical *.decrement-button {
+    -fx-background-color: null;
+    -fx-background-radius: 0;
+    -fx-background-insets: 0;
+    -fx-padding: 0;
+}
+
+.scroll-pane *.scroll-bar:vertical *.increment-arrow,
+.scroll-pane *.scroll-bar:vertical *.decrement-arrow {
+    -fx-background-color: null;
+    -fx-background-radius: 0;
+    -fx-background-insets: 0;
+    -fx-padding: 0;
+    -fx-shape: null;
+}

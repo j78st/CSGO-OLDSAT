@@ -26,29 +26,41 @@
                         <Font size="64.0" />
                      </font>
                   </Text>
-                  <Button mnemonicParsing="false" onAction="#display_game_launcher" prefHeight="75.0" prefWidth="180.0" text="JOUER">
+                  <Button mnemonicParsing="false" onAction="#display_game_launcher" prefHeight="75.0" prefWidth="200.0" text="JOUER">
                      <VBox.margin>
                         <Insets left="30.0" right="30.0" />
                      </VBox.margin>
                      <graphic>
                         <ImageView fx:id="game_icon" fitHeight="28.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true" />
                      </graphic>
+                     <font>
+                        <Font size="15.0" />
+                     </font>
                   </Button>
-                  <Button mnemonicParsing="false" onAction="#display_admin_mode" prefHeight="40.0" prefWidth="180.0" text="Administrateur">
+                  <Button mnemonicParsing="false" onAction="#display_admin_mode" prefHeight="40.0" prefWidth="200.0" text="Administrateur">
                      <VBox.margin>
                         <Insets left="30.0" right="30.0" />
                      </VBox.margin>
+                     <font>
+                        <Font size="15.0" />
+                     </font>
                   </Button>
-                  <Button mnemonicParsing="false" onAction="#display_score_screen" prefHeight="40.0" prefWidth="180.0" text="Scores">
+                  <Button mnemonicParsing="false" onAction="#display_score_screen" prefHeight="40.0" prefWidth="200.0" text="Scores">
                      <VBox.margin>
                         <Insets left="30.0" right="30.0" />
                      </VBox.margin>
+                     <font>
+                        <Font size="15.0" />
+                     </font>
                   </Button>
                </children>
             </VBox>
          </center>
       </BorderPane>
       <Button fx:id="settings_btn" layoutX="502.0" layoutY="16.0" mnemonicParsing="false" onAction="#display_settings_screen" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="14.0" />
-      <Button layoutX="463.0" layoutY="354.0" mnemonicParsing="false" onAction="#close_app" text="Quitter application" AnchorPane.bottomAnchor="14.0" AnchorPane.rightAnchor="14.0" />
+      <Button layoutX="463.0" layoutY="354.0" mnemonicParsing="false" onAction="#close_app" text="Quitter application" AnchorPane.bottomAnchor="14.0" AnchorPane.rightAnchor="14.0">
+         <font>
+            <Font size="15.0" />
+         </font></Button>
    </children>
 </AnchorPane>

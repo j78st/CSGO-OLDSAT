@@ -44,9 +44,6 @@ public class settings_menuController implements Controller {
     private RadioButton theme1_btn;
 
     @FXML
-    private RadioButton theme2_btn;
-
-    @FXML
     private RadioButton theme3_btn;
 
     @FXML
@@ -105,7 +102,6 @@ public class settings_menuController implements Controller {
 
         // paramètre du thème utilisé
         theme1_btn.setToggleGroup(themeGroup);
-        theme2_btn.setToggleGroup(themeGroup);
         theme3_btn.setToggleGroup(themeGroup);
 
         //listener
@@ -121,11 +117,16 @@ public class settings_menuController implements Controller {
                         LoadMap.scene.getStylesheets().add("/CSS/"+ Settings.theme +".css");
 
                         // liste des themes qui necessitent des icones blanches
-                        if (Settings.theme.equals("blue")
-                                ||Settings.theme.equals("green")) {
+                        if (Settings.theme.equals("Sombre")) {
                             Settings.icon_color = "white";
+                            resume_btn.setGraphic(new ImageView(new Image("/icons/white/return.png")));
+                            theme1_btn.setStyle("-fx-text-fill: white");
+                            theme3_btn.setStyle("-fx-text-fill: white");
                         } else {
                             Settings.icon_color = "black";
+                            resume_btn.setGraphic(new ImageView(new Image("/icons/black/return.png")));
+                            theme1_btn.setStyle("-fx-text-fill: black");
+                            theme3_btn.setStyle("-fx-text-fill: black");
                         }
                     }
                 }
@@ -185,8 +186,6 @@ public class settings_menuController implements Controller {
         // theme
         if (theme1_btn.getText().equals(Settings.theme)){
             theme1_btn.setSelected(true);
-        } else if (theme2_btn.getText().equals(Settings.theme)){
-            theme2_btn.setSelected(true);
         } else {
             theme3_btn.setSelected(true);
         }

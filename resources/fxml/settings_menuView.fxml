@@ -117,11 +117,10 @@
                               <RowConstraints minHeight="10.0" prefHeight="60.0" valignment="CENTER" vgrow="ALWAYS" />
                           </rowConstraints>
                            <children>
-                              <HBox stylesheets="@../CSS/themeSelector.css" GridPane.columnIndex="1">
+                              <HBox alignment="CENTER_RIGHT" stylesheets="@../CSS/themeSelector.css" GridPane.columnIndex="1">
                                  <children>
-                                    <RadioButton fx:id="theme1_btn" contentDisplay="TOP" mnemonicParsing="false" prefHeight="50.0" prefWidth="80.0" styleClass="BlueRadio" text="blue" HBox.hgrow="ALWAYS" />
-                                    <RadioButton fx:id="theme2_btn" mnemonicParsing="false" prefHeight="50.0" prefWidth="80.0" styleClass="GreenRadio" text="green" HBox.hgrow="ALWAYS" />
-                                    <RadioButton fx:id="theme3_btn" contentDisplay="TOP" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="80.0" styleClass="RedRadio" text="light" />
+                                    <RadioButton fx:id="theme1_btn" contentDisplay="TOP" mnemonicParsing="false" prefHeight="50.0" prefWidth="80.0" styleClass="BlueRadio" text="Sombre" HBox.hgrow="ALWAYS" />
+                                    <RadioButton fx:id="theme3_btn" contentDisplay="TOP" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="80.0" styleClass="RedRadio" text="Clair" />
                                  </children>
                               </HBox>
                               <HBox alignment="CENTER_RIGHT" spacing="35.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">

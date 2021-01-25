@@ -6,6 +6,7 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="400.0" minWidth="600.0" prefHeight="500.0" prefWidth="800.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Interface.ViewController.cinematicController">
    <children>
@@ -15,7 +16,10 @@
                <children>
                   <VBox alignment="CENTER" spacing="20.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                      <children>
-                        <Label fx:id="narration" alignment="TOP_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="350.0" minWidth="750.0" styleClass="Custom_label" />
+                        <Label fx:id="narration" alignment="TOP_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="350.0" minWidth="750.0" style="-fx-text-fill: white;">
+                           <font>
+                              <Font size="30.0" />
+                           </font></Label>
                         <HBox alignment="CENTER" spacing="50.0">
                            <children>
                               <AnchorPane>
