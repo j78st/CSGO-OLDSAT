@@ -340,7 +340,7 @@ public class Scenario {
             "Il est assez similaire au rez-de-chaussée.\n" +
             "Au centre une étagère se distingue des autres.\n" +
             "De l'étage, vous parvenez à mieux observer le plafond, il paraît très bien décoré.\n" +
-            "Sur le mur en face de vous, vous pouvez contempler une magnifique peinture.");
+            "Sur le mur en face de vous, vous pouvez contempler une magnifique peinture.\n\n");
 
     //Plafond
 
@@ -350,11 +350,11 @@ public class Scenario {
 
     public Text_scenario room_304_1 = new Text_scenario(3041,"Dans cette étagère, 4 livres sortent du lot de part les illustrations " +
             "sur leurs rainures.\n" +
-            "Mais cela vous parait étrange car ils ne semblent pas dans le bon ordre, peut-être pouvez-vous remedier au problème ?\n\n" +
+            "Mais cela vous parait étrange car ils ne semblent pas dans le bon ordre, peut-être pouvez-vous remédier au problème ?\n\n" +
             "[Tutoriel]\n" +
-            "Attention, cette image est cliquable.");
+            "Attention, cette image est cliquable.\n\n");
 
-    public Text_scenario room_304_2 = new Text_scenario(3042,"Vous avez replacé les livres dans le bon ordre.");
+    public Text_scenario room_304_2 = new Text_scenario(3042,"Vous avez replacé les livres dans le bon ordre.\n\n");
 
     //Salle secrète
 
@@ -371,7 +371,7 @@ public class Scenario {
 
     public Text_scenario room_110_3 = new Text_scenario(1103, "Vous avez réussi. Les briques se sont mises à bouger " +
             "devant vos yeux jusqu'à laisser un trou béant dans le mur. Une lumière aveuglante émane de l'ouverture " +
-            "de sorte que vous nous pouvez pas voir ce qu'il y a de l'autre côté.");
+            "de sorte que vous nous pouvez pas voir ce qu'il y a de l'autre côté.\n\n");
 
     //Énigme salle secrète
 
@@ -379,5 +379,5 @@ public class Scenario {
             "remarqué en entrant dans la salle, il y a une rose des vents au centre de celui-ci. Il y a aussi certaines " +
             "briques qui ressortent par rapport aux autres\n\n" +
             "[Tutoriel]\n" +
-            "Attention, cette image est cliquable.");
+            "Attention, cette image est cliquable.\n\n");
 }

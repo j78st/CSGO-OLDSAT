@@ -402,7 +402,7 @@ public class Scenario_structure {
         ArrayList<int[]> consequences_action205_1 = new ArrayList<>();
         consequences_action205_1.add(new int[]{7,2052}); //Ajoute du texte
         consequences_action205_1.add(new int[]{3,2051}); //Bloque l'action (faisable qu'une fois)
-        Action action205_1 = new Action(2051,true,"Examiner ce qui est illisible [Loupe]", consequences_action205_1, 205);
+        Action action205_1 = new Action(2051,"Examiner ce qui est illisible [Loupe]", consequences_action205_1, 205,2);
 
 
         //Actions de la salle 207 - Étagère 1
