@@ -132,7 +132,7 @@ public class load_saveController implements Controller {
                     ||(Game.getPlayer().getPosition() >= 202 && Game.getPlayer().getPosition() <= 211)
                     ||(Game.getPlayer().getPosition() >= 301 && Game.getPlayer().getPosition() <= 305)
                     ||(Game.getPlayer().getPosition() >= 2062 && Game.getPlayer().getPosition() <= 2067)){
-                WorldBoxDisc.play(Son.wind);
+                WorldBoxDisc.play(Son.gameTheme);
                 Engine.engine.set_map_available(false);
                 Engine.engine.hide_map();
             }else if((Game.getPlayer().getPosition() >= 111 && Game.getPlayer().getPosition() <= 118)){

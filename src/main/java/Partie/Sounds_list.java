@@ -63,6 +63,7 @@ public class Sounds_list extends ArrayList {
         Game.sounds.add(new String[]{"56","outside"});
         Game.sounds.add(new String[]{"57","finEnigme"});
         Game.sounds.add(new String[]{"58","doorShoulder"});
+        Game.sounds.add(new String[]{"59","gameTheme"});
     }
 
 

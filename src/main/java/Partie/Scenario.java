@@ -57,7 +57,12 @@ public class Scenario {
 
     public Text_scenario room_103_5 = new Text_scenario(1035,"un petit opinel, ");
 
-    public Text_scenario room_103_6 = new Text_scenario(1036,"vous vous rendez à la sortie de l'amphithéâtre.\n");
+    public Text_scenario room_103_6 = new Text_scenario(1036,"vous vous rendez à la sortie de l'amphithéâtre.\n\n" +
+            "[Tutoriel]\n" +
+            "Vous pouvez récupérer des objets. Ceux-ci vous permettent de débloquer des actions jusque là innaccessibles. " +
+            "Ainsi, pensez à explorer pour trouver où l'objet fraichement récupéré peut être utile. " +
+            "Vous pouvez à tout moment voir quels objets vous possédez grâce à votre inventaire. " +
+            "Vous ne pouvez avoir que trois objets en même temps. Certains sont à usage unique.\n\n");
 
     //Texte trousse
 
@@ -102,7 +107,8 @@ public class Scenario {
             "Vous resentez clairement que l'endroit est imprégné d'un fort passé, à cause des vieux murs décorés de vitraux " +
             "et une odeur désagréable de bouquins usés.\n\n" +
             "Cependant l'endroit est assez bien éclairé, ce qui vous permet d'inspecter la salle plus en détail.\n\n" +
-            "Au centre du rez-de-chaussée, il y 3 étagères pleines à craquer d'ouvrages en tout genre.\n" +
+            "Au centre du rez-de-chaussée, face à vous, il y 3 étagères pleines à craquer d'ouvrages en tout genre. " +
+            "Elles sont surplombées de gargouilles représentant des têtes de différents animaux.\n" +
             "À côté de ces étagères se trouve un bureau et une chaise, appartenant sûrement au gestionnaire de la bibliothèque.\n" +
             "Non loin de la porte par laquelle vous êtes entré, vous remarquez un escalier en colimaçon menant à un étage.\n\n");
 
@@ -179,7 +185,7 @@ public class Scenario {
             "il faut sûrement tirer sur un livre pour ouvrir une sorte de passage secret.");
 
     public Text_scenario room_301_2 = new Text_scenario(3012,"Vous avez réussi !\n" +
-            "L'étagère s'ouvre et vous découvrez une salle qui était cachée derrière.");
+            "L'étagère s'ouvre et vous découvrez une salle qui était cachée derrière.\n\n");
 
     //Livre 2-1
 
@@ -269,7 +275,9 @@ public class Scenario {
     public Text_scenario room_303_1 = new Text_scenario(3031,"Vous allumez l'ordinateur, peut-être y trouverez vous quelque chose d'utile.\n" +
             "Il faut un mot de passe pour pouvoir se connecter à la session du gestionnaire, vous vous y attendiez mais vous êtes quand même déçu.");
 
-    public Text_scenario room_206_1 = new Text_scenario(2061,"Le mot de passe est correct, vous avez maintenant accès à la session du gestionnaire.");
+    public Text_scenario room_206_1 = new Text_scenario(2061,"Le mot de passe est correct, vous avez maintenant accès à la session du gestionnaire.\n\n" +
+            "[Tutoriel]\n" +
+            "Cette image est cliquable. Naviguez dans l'ordinateur du gestionnaire en cliquant sur l'écran de celui-ci.");
 
     //Indices
 
@@ -288,6 +296,12 @@ public class Scenario {
     public Text_scenario room_400_5 = new Text_scenario(4005,"À quoi peut bien servir ce code ?\n" +
             "Vous n'avez pas besoin d'un code mais d'un livre, il faudrait une correspondance.\n\n");
 
+    public Text_scenario room_400_6 = new Text_scenario(4006,"Vous avez ouvert un passage. Vous devriez " +
+            "aller voir ce qu'il y a dedans. \n\n");
+
+    public Text_scenario room_400_7 = new Text_scenario(4007,"Vous avez récupéré un carnet dans cette salle secrète. " +
+            "Il y a peut être un indice dedans pour vous sortir d'ici. \n\n");
+
     //Etage
 
     public Text_scenario room_109_1 = new Text_scenario(1091,"Après avoir emprunté l'escalier, vous vous retrouvez à l'étage de la bibliothèque.\n" +
@@ -304,8 +318,34 @@ public class Scenario {
 
     public Text_scenario room_304_1 = new Text_scenario(3041,"Dans cette étagère, 4 livres sortent du lot de part les illustrations " +
             "sur leurs rainures.\n" +
-            "Mais cela vous parait étrange car ils ne semblent pas dans le bon ordre, peut-être pouvez-vous remedier au problème ?\n\n");
+            "Mais cela vous parait étrange car ils ne semblent pas dans le bon ordre, peut-être pouvez-vous remedier au problème ?\n\n" +
+            "[Tutoriel]\n" +
+            "Attention, cette image est cliquable.");
 
     public Text_scenario room_304_2 = new Text_scenario(3042,"Vous avez replacé les livres dans le bon ordre.");
 
+    //Salle secrète
+
+    public Text_scenario room_110_1 = new Text_scenario(1101,"Vous entrez dans cette petite salle derrière l'étagère.\n" +
+            "Il n'y a pas d'éclairage, seule la lumière venant de la bibliothèque derrière vous vous éclaire.\n" +
+            "L'atmosphère est encore plus pesante ici.\n\n" +
+            "Face à vous se trouve un mur avec une rose des vents en son centre.\n" +
+            "Vous voyez un vieux carnet au sol.\n\n");
+
+    public Text_scenario room_110_2 = new Text_scenario(1102,"Vous avez ramassé le vieux carnet.\n\n" +
+            "[Tutoriel]\n" +
+            "Ce carnet est le premier objet cliquable que vous rencontrez. Cliquez dessus dans votre inventaire afin " +
+            "de le regarder de plus prêt.\n\n");
+
+    public Text_scenario room_110_3 = new Text_scenario(1103, "Vous avez réussi. Les briques se sont mises à bouger " +
+            "devant vos yeux jusqu'à laisser un trou béant dans le mur. Une lumière aveuglante émane de l'ouverture " +
+            "de sorte que vous nous pouvez pas voir ce qu'il y a de l'autre côté.");
+
+    //Énigme salle secrète
+
+    public Text_scenario room_305_1 = new Text_scenario(3051, "Vous vous approchez du mur. Comme vous l'aviez " +
+            "remarqué en entrant dans la salle, il y a une rose des vents au centre de celui-ci. Il y a aussi certaines " +
+            "briques qui ressortent par rapport aux autres\n\n" +
+            "[Tutoriel]\n" +
+            "Attention, cette image est cliquable.");
 }

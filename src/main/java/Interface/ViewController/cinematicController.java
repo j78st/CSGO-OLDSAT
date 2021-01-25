@@ -72,7 +72,7 @@ public class cinematicController implements Controller {
         if (no_text == 3) {
             Game.search_action(1043).do_consequences();
             screen_transition();
-            WorldBoxDisc.play(Son.wind);
+            WorldBoxDisc.play(Son.gameTheme);
 
             playlist.addSound(Son.porte1);
             playlist.addSound(Son.creakingDoor2);

@@ -151,7 +151,7 @@ public class Action {
                             ||(Game.getPlayer().getPosition() >= 202 && Game.getPlayer().getPosition() <= 211)
                             ||(Game.getPlayer().getPosition() >= 301 && Game.getPlayer().getPosition() <= 305)
                             ||(Game.getPlayer().getPosition() >= 2062 && Game.getPlayer().getPosition() <= 2067)){
-                        WorldBoxDisc.play(Son.wind);
+                        WorldBoxDisc.play(Son.gameTheme);
                         Engine.engine.set_map_available(false);
                         Engine.engine.hide_map();
                     }else if((Game.getPlayer().getPosition() >= 111 && Game.getPlayer().getPosition() <= 118)){
@@ -160,7 +160,7 @@ public class Action {
                     Engine.engine.hide_map();
                     }
                     break;
-                case 13: // faire évoluer texte affiché par une action, consequence[i][1] correspond à l'action à modifier, consequence[i][2] correspond à l'id du nouveau texte
+                case 13: // faire évoluer texte affiché par une action, consequence[i][1] correspond à l'action à modifier, consequence[i][2] correspond à l'id du nouveau texte (sert à faire évoluer le texte de l'indice)
                     for (int j = 0; j < Game.search_action(getConsequences().get(i)[1]).consequences.size(); j++) {
                         if (Game.search_action(getConsequences().get(i)[1]).consequences.get(j)[0] == 7) { //cherche la conséquence écrivant du texte, on part du principe qu'il ne peut y en avoir qu'une par action
                             Game.search_action(getConsequences().get(i)[1]).consequences.get(j)[1] = getConsequences().get(i)[2];
