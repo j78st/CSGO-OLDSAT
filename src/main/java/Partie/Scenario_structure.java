@@ -158,15 +158,15 @@ public class Scenario_structure {
         Room room8_5 = new Room(211,108,2111,"pictures/Trousse.png"); // Porte
         Room room9 = new Room(109,-1,-1,-1,-1, true,1091,"pictures/Bibliotheque.png"); // Étage bibliothèque
         Room room9_1 = new Room(210,109,2101,"pictures/plafond.png"); // Plafond
-        Room room8_2_1 = new Room(212,207,2121,"pictures/Trousse.png"); // Livre 1-1
-        Room room8_2_2 = new Room(213,207,2131,"pictures/Trousse.png"); // Livre 1-2
-        Room room8_2_3 = new Room(214,207,2141,"pictures/Trousse.png"); // Livre 1-3
-        Room room8_3_1 = new Room(215,208,2151,"pictures/Trousse.png"); // Livre 2-1
-        Room room8_3_2 = new Room(216,208,2161,"pictures/Trousse.png"); // Livre 2-2
-        Room room8_3_3 = new Room(217,208,2171,"pictures/Trousse.png"); // Livre 2-3
-        Room room8_4_1 = new Room(218,209,2181,"pictures/Trousse.png"); // Livre 3-1
-        Room room8_4_2 = new Room(219,209,2191,"pictures/Trousse.png"); // Livre 3-2
-        Room room8_4_3 = new Room(220,209,2201,"pictures/Trousse.png"); // Livre 3-3
+        Room room8_2_1 = new Room(212,207,2121,"pictures/livre1.png"); // Livre 1-1
+        Room room8_2_2 = new Room(213,207,2131,"pictures/livre1.png"); // Livre 1-2
+        Room room8_2_3 = new Room(214,207,2141,"pictures/livre1.png"); // Livre 1-3
+        Room room8_3_1 = new Room(215,208,2151,"pictures/livre2.png"); // Livre 2-1
+        Room room8_3_2 = new Room(216,208,2161,"pictures/livre2.png"); // Livre 2-2
+        Room room8_3_3 = new Room(217,208,2171,"pictures/livre2.png"); // Livre 2-3
+        Room room8_4_1 = new Room(218,209,2181,"pictures/livre3.png"); // Livre 3-1
+        Room room8_4_2 = new Room(219,209,2191,"pictures/livre3.png"); // Livre 3-2
+        Room room8_4_3 = new Room(220,209,2201,"pictures/livre3.png"); // Livre 3-3
         Room room10 = new Room(110,-1,-1,108,-1, false,1101,"pictures/110/1.png", "Acte 1 - Salle derrière étagère"); // Fin scène 1
 
 
