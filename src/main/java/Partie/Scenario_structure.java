@@ -457,12 +457,12 @@ public class Scenario_structure {
         Action action209_1 = new Action(2091,true,"Regarder le premier livre", consequences_action209_1, 209);
 
         ArrayList<int[]> consequences_action209_2 = new ArrayList<>();
-        consequences_action209_2.add(new int[]{1,218}); //Rajoute texte
+        consequences_action209_2.add(new int[]{1,219}); //Rajoute texte
         consequences_action209_2.add(new int[]{17,50}); //Bruit de page tournée
         Action action209_2 = new Action(2092,true,"Regarder le second livre", consequences_action209_2, 209);
 
         ArrayList<int[]> consequences_action209_3 = new ArrayList<>();
-        consequences_action209_3.add(new int[]{1,219}); //Rajoute texte
+        consequences_action209_3.add(new int[]{1,220}); //Rajoute texte
         consequences_action209_3.add(new int[]{17,50}); //Bruit d'ouverture de livre
         Action action209_3 = new Action(2093,true,"Regarder le troisième livre", consequences_action209_3, 209);
 

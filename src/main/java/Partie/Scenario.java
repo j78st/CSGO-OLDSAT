@@ -196,33 +196,65 @@ public class Scenario {
             "Ainsi que l'écrit le romancier Vincent Delecroix : «Je crois que tant qu'on lit La Chartreuse de Parme, on ne renonce pas tout à fait à sa propre jeunesse, " +
             "à son exaltation, à son innocence, à ce que l'on exigeait de soi.\n" +
             "Je ne voulais pas être Fabrice, mais aimer la vie qu'il aimait.\n" +
-            "J'y ai vu le plus souverain antidote à la mesquinerie de la vie bourgeoise et la plus joyeuse introduction à l'amour de l'art et de la beauté.\"");
+            "J'y ai vu le plus souverain antidote à la mesquinerie de la vie bourgeoise et la plus joyeuse introduction à l'amour de l'art et de la beauté.»\"");
 
     //Livre 2-2
 
-    public Text_scenario room_216_1 = new Text_scenario(2161,"Vous lisez la quatrième de couverture :\n\n");
+    public Text_scenario room_216_1 = new Text_scenario(2161,"Vous lisez la quatrième de couverture :\n\n" +
+            "\"Dans cette grande comédie, Molière a affirmé son indépendance et son étrangeté.\n" +
+            "Ambiguïté, ironie, conventions bravées, plaisir de la fiction, féerie, et derrière tout cela, une réalité sordide.\n" +
+            "Harpagon est prisonnier d'une obsession qui nourrit les chimères d'un esprit déréglé.\n" +
+            "C'est aussi une figure moderne, malgré ce qu'il emprunte à la tradition comique.\n" +
+            "Cette édition fera date.\n" +
+            "Elle propose une nouvelle interprétation de la pièce, par-delà une longue tradition critique : L'Avare n'a pas livré tous ses secrets, " +
+            "sa part d'innovation, de risque et d'aventure, sa dramaturgie audacieuse, sa satire grinçante, voici tous les moyens de la science au service d'une pièce nouvelle.\"");
 
     //Livre 2-3
 
-    public Text_scenario room_217_1 = new Text_scenario(2171,"Vous lisez la quatrième de couverture :\n\n");
+    public Text_scenario room_217_1 = new Text_scenario(2171,"Vous lisez la quatrième de couverture :\n\n" +
+            "\"En 1913, Apollinaire publie Alcools, son premier recueil, qui rassemble quinze ans de poésie.\n" +
+            "S'il est alors influencé par un symbolisme sur le déclin, il s'en démarque par d'audacieuses innovations : la ponctuation disparaît et des inventions récentes, " +
+            "comme l'avion ou l'automobile, font leur entrée en poésie.\n" +
+            "Mais Alcools est aussi une oeuvre contrastée, où la tour Eiffel et le pont Mirabeau côtoient des champs de colchiques et des forêts légendaires, " +
+            "où l'agitation du progrès se mêle aux motifs consacrés de l'amour perdu et du temps qui passe.\n" +
+            "Tantôt clairs comme le son des cloches rhénanes, tantôt sombres comme les geôles de la prison de la Santé, ces poèmes ouvrent la voie à un nouveau lyrisme.\n" +
+            "Partagés entre tradition et modernité, ils reflètent la créativité bouillonnante d'une époque sur le point de basculer dans le chaos de la Grande Guerre.\"");
 
     //Etegere3
 
     public Text_scenario room_209_1 = new Text_scenario(2091,"Une étagère de bibliothèque, tout ce qu'il y a de plus classique.\n" +
-            "Celle-ci contient surtout des livres sur l'Histoire de France et la géopolitique.\n\n");
+            "Celle-ci contient surtout des livres sur l'Histoire de France et la philosophie.\n\n" +
+            "Le premier est un livre vulgarisant l'Histoire de France.\n" +
+            "Le second retrace l'histoire de la langue française.\n" +
+            "Le troisième est un classique de la philosophie française.");
 
     //Livre 3-1
 
-    public Text_scenario room_218_1 = new Text_scenario(2181,"Vous lisez la quatrième de couverture :\n\n");
+    public Text_scenario room_218_1 = new Text_scenario(2181,"Vous lisez la quatrième de couverture :\n\n" +
+            "\"Un champ de ruines ! Voilà ce que risquent de devenir vos connaissances en Histoire de France si vous n’y prenez pas garde !\n" +
+            "Mais, rassurez-vous, nous allons tout reconstruire : depuis les fondations, il y a deux millions d’années, lorsque le premier homme met le pied sur le futur territoire français, jusqu’à nos jours.\n" +
+            "Au cours de votre voyage, vous allez croiser Cro-Magnon, Clovis, Louis XIV, Napoléon, de Gaulle, tomber sous le charme d’Aliénor d’Aquitaine…\n" +
+            "De plus, cette troisième édition inclut les derniers événements historiques incontournables, comme l’élection d’Emmanuel Macron.\n" +
+            "Découvrez comment la Gaule est devenue la France, la Révolution a mis fin aux privilèges, la nuit du 4 août a fait naître un rêve, Napoléon Ier a conquis l’Europe, les deux guerres mondiales ont profondément marqué le XXe siècle, " +
+            "la Ve République a vu se succéder des hommes de pouvoir de De Gaulle à Macron en passant par Mitterrand.\"");
 
     //Livre 3-2
 
-    public Text_scenario room_219_1 = new Text_scenario(2191,"Vous lisez la quatrième de couverture :\n\n");
+    public Text_scenario room_219_1 = new Text_scenario(2191,"Vous lisez la quatrième de couverture :\n\n" +
+            "\"Première surprise : l'ancêtre du français, ce n'est pas le gaulois mais le \"roman\", la langue romaine issue du latin de Jules César, le vainqueur de la Gaule !\n" +
+            "En effet, au fil des invasions et de nos propres conquêtes, ce latin s'est transformé et enrichi de multiples apports : germaniques avec les Francs, nordiques avec les Vikings, arabes au moment des croisades, italiens à la Renaissance... avant de devenir un français triomphant dans toutes les cours d'Europe au xviiie siècle, grâce à nos philosophes.\n" +
+            "Entre-temps les troubadours ont inventé l'amour et les femmes écrivains réclamé leur émancipation, les grammairiens se sont occupés de la syntaxe et la réforme de l'orthographe a déjà rendu quelques linguistes fous !\n" +
+            "Enfin, l'école obligatoire acheva de permettre à tous les citoyens français de communiquer.\n" +
+            "Aujourd'hui, l'abus des termes anglais, les mots issus de la culture urbaine et les raccourcis de nos Smartphones inquiètent les puristes...\n" +
+            "Ils ont tort : le temps fera le tri. Et de ce bouillonnement créatif continuera d'émerger une langue vivante, ouverte à tous : la langue française est une langue d'accueil.\"");
 
     //Livre 3-3
 
-    public Text_scenario room_220_1 = new Text_scenario(2201,"Vous lisez la quatrième de couverture :\n\n");
-
+    public Text_scenario room_220_1 = new Text_scenario(2201,"Vous lisez la quatrième de couverture :\n\n" +
+            "\"Manifeste de la philosophie cartésienne, le Discours de la méthode (1637) est tout à la fois le récit d'un cheminement intellectuel et l'illustration magistrale d'un projet : fonder l'unité des sciences et constituer une science universelle.\n" +
+            "Foyer d'une oeuvre foisonnante, le Discours revendique les droits de la raison contre toute tradition et toute autorité.\n" +
+            "C'est pourquoi il assigne à la philosophie une tâche : s'élever à la certitude.\n" +
+            "La présente édition, augmentée d'un dossier, entend mettre en évidence le jeu de résonances qui relie le Discours aux autres textes de Descartes.\"");
 
     //Bureau
 
