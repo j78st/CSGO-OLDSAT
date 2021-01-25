@@ -57,6 +57,9 @@ public class gameController implements Controller {
     @FXML
     private VBox game_pane;
 
+    @FXML
+    public AnchorPane fond_vue;
+
     // inventaire -----------------------------------------------
     @FXML
     private Button item_slot_1;

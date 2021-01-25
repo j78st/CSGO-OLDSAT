@@ -171,12 +171,14 @@ public class Action {
                     Engine.chrono.penaltyTime(getConsequences().get(i)[1]);
                     break;
                 case 15: // lance une cinématique
+
                     FadeTransition fadeOUT = new FadeTransition();
                     fadeOUT.setDuration(Duration.seconds(4));
                     fadeOUT.setNode(Engine.engine.root);
                     fadeOUT.setFromValue(1);
                     fadeOUT.setToValue(0);
                     if(getConsequences().get(i)[1] == 1) {
+                        Engine.engine.fond_vue.setStyle("-fx-background-color: black");
                         fadeOUT.setOnFinished(new EventHandler<ActionEvent>() {
                             @Override
                             public void handle(ActionEvent event) {
@@ -188,6 +190,7 @@ public class Action {
                             }
                         });
                     }else if(getConsequences().get(i)[1] == 2) {
+                        Engine.engine.fond_vue.setStyle("-fx-background-color: white");
                         fadeOUT.setOnFinished(new EventHandler<ActionEvent>() {
                             @Override
                             public void handle(ActionEvent event) {
