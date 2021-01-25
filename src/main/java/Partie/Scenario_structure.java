@@ -213,6 +213,7 @@ public class Scenario_structure {
         consequences_enigme5.add(new int[]{7,1103,110}); // Rajoute texte dans salle secrète
         consequences_enigme5.add(new int[]{2,1102}); // Débloque l'action pour finir l'escape game
         consequences_enigme5.add(new int[]{3,1101}); // Bloque l'action d'analyser le mur
+        consequences_enigme5.add(new int[]{12,110,3}); // Change image de la salle secrète
         consequences_enigme5.add(new int[]{1,110}); // Bouge le joueur dans la salle secrète
         ArrayList<double[]> zone_click_305 = new ArrayList<>();
         zone_click_305.add(new double[]{1,0.71,0.77,0.089,0.14}); //Nord
