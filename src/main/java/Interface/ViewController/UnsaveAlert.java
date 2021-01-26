@@ -3,6 +3,8 @@ package Interface.ViewController;
 import Interface.Save.SaveSlot;
 import Interface.Save.Saves;
 import Interface.ScreenLoader.LoadMap;
+import Music.Systems.Son;
+import Music.Systems.WorldBoxDisc;
 import Partie.Game;
 import Serialization.Memoire;
 import Serialization.Serial_game;
@@ -112,12 +114,16 @@ public class UnsaveAlert {
                 Game.reset_game();
                 LoadMap gl = new LoadMap();
                 gl.display_screen_from_id(LoadMap.HOME);
+                WorldBoxDisc.pauseAllBackgroundSound();
+                WorldBoxDisc.play(Son.menuTheme);
             }
         } else {
             // retour écran accueil
             Game.reset_game();
             LoadMap gl = new LoadMap();
             gl.display_screen_from_id(LoadMap.HOME);
+            WorldBoxDisc.pauseAllBackgroundSound();
+            WorldBoxDisc.play(Son.menuTheme);
         }
     }
 }
