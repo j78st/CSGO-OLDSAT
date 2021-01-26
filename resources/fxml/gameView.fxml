@@ -199,7 +199,7 @@
                                  <children>
                                     <AnchorPane>
                                        <children>
-                                          <Button fx:id="left_move_btn" layoutX="5.0" layoutY="5.0" mnemonicParsing="false" onAction="#go_left" styleClass="GameButton" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="5.0" />
+                                          <Button fx:id="left_move_btn" layoutX="5.0" layoutY="5.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#go_left" prefHeight="80.0" prefWidth="75.0" styleClass="GameButton" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="5.0" />
                                        </children>
                                        <GridPane.margin>
                                           <Insets />
@@ -216,7 +216,7 @@
                                        <children>
                                           <AnchorPane>
                                              <children>
-                                                <Button fx:id="up_move_btn" layoutX="4.099999904632568" layoutY="3.1000003814697266" mnemonicParsing="false" onAction="#go_up" styleClass="GameButton" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="5.0" />
+                                                <Button fx:id="up_move_btn" layoutX="4.099999904632568" layoutY="3.1000003814697266" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#go_up" prefHeight="35.0" prefWidth="75.0" styleClass="GameButton" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="5.0" />
                                              </children>
                                              <GridPane.margin>
                                                 <Insets />
@@ -224,14 +224,14 @@
                                           </AnchorPane>
                                           <AnchorPane GridPane.rowIndex="1">
                                              <children>
-                                                <Button fx:id="down_move_btn" layoutX="4.099999904632568" layoutY="3.0999999046325684" mnemonicParsing="false" onAction="#go_down" styleClass="GameButton" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="5.0" />
+                                                <Button fx:id="down_move_btn" layoutX="4.099999904632568" layoutY="3.0999999046325684" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#go_down" prefHeight="35.0" prefWidth="75.0" styleClass="GameButton" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="5.0" />
                                              </children>
                                           </AnchorPane>
                                        </children>
                                     </GridPane>
                                     <AnchorPane GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
                                        <children>
-                                          <Button fx:id="right_move_btn" layoutX="4.100006103515625" layoutY="3.0999999046325684" mnemonicParsing="false" onAction="#go_right" styleClass="GameButton" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="5.0" />
+                                          <Button fx:id="right_move_btn" layoutX="4.100006103515625" layoutY="3.0999999046325684" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#go_right" prefHeight="80.0" prefWidth="75.0" styleClass="GameButton" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="5.0" />
                                        </children>
                                        <GridPane.margin>
                                           <Insets />

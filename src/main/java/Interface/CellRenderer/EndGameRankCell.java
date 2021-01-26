@@ -22,7 +22,7 @@ public class EndGameRankCell extends ListCell<Score> {
         super();
 
         // instanciation de la Hbox
-        hbox.setPrefSize(200, 20);
+        hbox.setPrefSize(200, 40);
 
         if (Settings.icon_color.equals("white")) {
             lr.setStyle("-fx-text-fill: white; -fx-font-size: " + Settings.fontSize + "px;");
