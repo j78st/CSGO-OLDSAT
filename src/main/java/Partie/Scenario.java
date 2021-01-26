@@ -379,5 +379,8 @@ public class Scenario {
             "remarqué en entrant dans la salle, il y a une rose des vents au centre de celui-ci. Il y a aussi certaines " +
             "briques qui ressortent par rapport aux autres\n\n" +
             "[Tutoriel]\n" +
-            "Attention, cette image est cliquable.\n\n");
+            "Attention, cette image est cliquable. Si votre clic a été pris en compte, vous entendrez une effet sonore. " +
+            "A la fin de la séquence de clic, il y aura un autre effet qui dépendra de votre réussite ou non. " +
+            "Si vous faites une erreur dans votre séquence de clics, continuez jusqu'au son d'erreur afin de pouvoir " +
+            "recommencer. \n\n");
 }
