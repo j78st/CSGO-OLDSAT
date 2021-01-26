@@ -6,6 +6,7 @@ import Interface.Settings.Engine;
 import Interface.Settings.Settings;
 import Music.Systems.Son;
 import Music.Systems.WorldBoxDisc;
+import Partie.Game;
 import Serialization.Memoire;
 import Serialization.Serial_settings;
 import javafx.beans.value.ChangeListener;
@@ -75,6 +76,10 @@ public class settings_menuController implements Controller {
 
         LoadMap gl = new LoadMap();
         gl.display_screen_from_id(previous_screen_ID);
+
+        if(previous_screen_ID == 7 && (Game.getPlayer().getPosition()>=111 && Game.getPlayer().getPosition()<=118)){
+            Engine.engine.set_map_available(true);
+        }
 
         WorldBoxDisc.play(Son.menuClose);
     }

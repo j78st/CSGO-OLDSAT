@@ -519,7 +519,7 @@ public class Scenario_structure {
         consequences_action110_2.add(new int[]{3,1102}); //Bloque cette action (faisable qu'une fois)
         consequences_action110_2.add(new int[]{3,1103}); //Bloque action récurérer le carnet au cas où le joueur réussi l'énigme sans le carnet (normalement impossible)
         consequences_action110_2.add(new int[]{18,43}); //Joue son bruit de pas
-        consequences_action110_2.add(new int[]{20,1}); //Arrête le son d'ambiance de la bibliothèque
+        consequences_action110_2.add(new int[]{20,59}); //Arrête le son d'ambiance de la bibliothèque
         consequences_action110_2.add(new int[]{21}); //Arrête le timer
         Action action110_2 = new Action(1102,false,"Passer à travers l'ouverture [Fin de l'escape game, mode exploration]", consequences_action110_2, 110);
 

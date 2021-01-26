@@ -217,7 +217,7 @@ public class gameController implements Controller {
 
         // suspension du timer et récupération du temps restant
         Engine.gamePaused = true;
-        if (Engine.chrono != null) {
+        if (Engine.chrono != null && !(Game.getPlayer().getPosition()>=111 && Game.getPlayer().getPosition()<=118)) { //Le timer ne doit pas reprendre quand on met la pause en mode exploration
             Engine.chrono.toogleTimer();
             timer_pause.setText(Engine.chrono.getRemainingTime());
         } else {
@@ -284,7 +284,7 @@ public class gameController implements Controller {
         background_menu.toBack();
         vbox_menu.toBack();
 
-        if (Engine.chrono != null) {
+        if (Engine.chrono != null && !(Game.getPlayer().getPosition()>=111 && Game.getPlayer().getPosition()<=118)) {
             // reprise du timer
             Engine.chrono.toogleTimer();
             Engine.gamePaused = false;
