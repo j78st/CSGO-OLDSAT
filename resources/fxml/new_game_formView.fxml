@@ -40,7 +40,7 @@
                               <Insets top="5.0" />
                            </HBox.margin>
                         </Label>
-                        <TextField fx:id="name_selector" prefWidth="300.0" promptText="écrivez votre pseudo">
+                        <TextField fx:id="name_selector" prefWidth="300.0" promptText="Écrivez votre pseudo">
                            <HBox.margin>
                               <Insets left="20.0" />
                            </HBox.margin>

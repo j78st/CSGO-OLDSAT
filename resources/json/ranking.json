@@ -22,32 +22,32 @@
     },
     {
       "rank": 5,
+      "pseudo": "A",
+      "value": 4660
+    },
+    {
+      "rank": 6,
       "pseudo": "1",
       "value": 0
     },
     {
-      "rank": 6,
+      "rank": 7,
       "pseudo": "2",
       "value": 0
     },
     {
-      "rank": 7,
+      "rank": 8,
       "pseudo": "3",
       "value": 0
     },
     {
-      "rank": 8,
+      "rank": 9,
       "pseudo": "4",
       "value": 0
     },
     {
-      "rank": 9,
-      "pseudo": "5",
-      "value": 0
-    },
-    {
       "rank": 10,
-      "pseudo": "6",
+      "pseudo": "5",
       "value": 0
     }
   ]

@@ -155,8 +155,8 @@ public class Scenario_structure {
         Room room8_2 = new Room(207,108,2071,"pictures/etagere1.png"); // Étagère 1
         Room room8_3 = new Room(208,108,2081,"pictures/etagere2.png"); // Étagère 2 pré-utilisation de la clef
         Room room8_4 = new Room(209,108,2091,"pictures/etagere3.png"); // Étagère 3
-        Room room8_5 = new Room(211,108,2111,"pictures/Trousse.png"); // Porte
-        Room room9 = new Room(109,-1,-1,-1,-1, true,1091,"pictures/Bibliotheque.png"); // Étage bibliothèque
+        Room room8_5 = new Room(211,108,2111,"pictures/porte.png"); // Porte
+        Room room9 = new Room(109,-1,-1,-1,-1, true,1091,"pictures/etage.png"); // Étage bibliothèque
         Room room9_1 = new Room(210,109,2101,"pictures/plafond.png"); // Plafond
         Room room8_2_1 = new Room(212,207,2121,"pictures/livre1.png"); // Livre 1-1
         Room room8_2_2 = new Room(213,207,2131,"pictures/livre1.png"); // Livre 1-2
@@ -507,11 +507,11 @@ public class Scenario_structure {
         consequences_action110_3.add(new int[]{16,110,2}); //Change l'image pour faire disparaître le carnet
         consequences_action110_3.add(new int[]{2,1085}); //Débloque la demande d'indice si elle a déjà été utilisée
         consequences_action110_3.add(new int[]{13,1085,4007}); // Fais évoluer le texte de l'indice
-        Action action110_3 = new Action(1103,true,"Récupérer le carnet à vos pieds", consequences_action110_3, 110);
+        Action action110_3 = new Action(1103,true,"Récupérer le carnet", consequences_action110_3, 110);
 
         ArrayList<int[]> consequences_action110_1 = new ArrayList<>();
         consequences_action110_1.add(new int[]{1,305}); //Bouge le joueur vers RDC
-        Action action110_1 = new Action(1101,true,"Analyser le mur face à vous", consequences_action110_1, 110);
+        Action action110_1 = new Action(1101,true,"Analyser le mur", consequences_action110_1, 110);
 
         ArrayList<int[]> consequences_action110_2 = new ArrayList<>();
         consequences_action110_2.add(new int[]{15,2}); //Lance cinématique 2
@@ -521,7 +521,7 @@ public class Scenario_structure {
         consequences_action110_2.add(new int[]{18,43}); //Joue son bruit de pas
         consequences_action110_2.add(new int[]{20,59}); //Arrête le son d'ambiance de la bibliothèque
         consequences_action110_2.add(new int[]{21}); //Arrête le timer
-        Action action110_2 = new Action(1102,false,"Passer à travers l'ouverture [Fin de l'escape game, mode exploration]", consequences_action110_2, 110);
+        Action action110_2 = new Action(1102,false,"Passer à travers l'ouverture [Fin de l'escape game, début du mode exploration]", consequences_action110_2, 110);
 
 
         ArrayList<int[]> consequences_action110_4 = new ArrayList<>();
@@ -546,14 +546,14 @@ public class Scenario_structure {
         consequences_exploration.add(new int[]{20,56}); //Arrête le son d'ambiance extérieur
         consequences_exploration.add(new int[]{11}); //Affiche l'écran de fin de jeu
 
-        Action action111_1 = new Action(1111,true,"Quitter le mode exploration [Écran de fin de jeu]", consequences_exploration, 111);
-        Action action112_1 = new Action(1121,true,"Quitter le mode exploration [Écran de fin de jeu]", consequences_exploration, 112);
-        Action action113_1 = new Action(1131,true,"Quitter le mode exploration [Écran de fin de jeu]", consequences_exploration, 113);
-        Action action114_1 = new Action(1141,true,"Quitter le mode exploration [Écran de fin de jeu]", consequences_exploration, 114);
-        Action action115_1 = new Action(1151,true,"Quitter le mode exploration [Écran de fin de jeu]", consequences_exploration, 115);
-        Action action116_1 = new Action(1161,true,"Quitter le mode exploration [Écran de fin de jeu]", consequences_exploration, 116);
-        Action action117_1 = new Action(1171,true,"Quitter le mode exploration [Écran de fin de jeu]", consequences_exploration, 117);
-        Action action118_1 = new Action(1181,true,"Quitter le mode exploration [Écran de fin de jeu]", consequences_exploration, 118);
+        Action action111_1 = new Action(1111,true,"Quitter le mode exploration [Fin de la partie]", consequences_exploration, 111);
+        Action action112_1 = new Action(1121,true,"Quitter le mode exploration [Fin de la partie]", consequences_exploration, 112);
+        Action action113_1 = new Action(1131,true,"Quitter le mode exploration [Fin de la partie]", consequences_exploration, 113);
+        Action action114_1 = new Action(1141,true,"Quitter le mode exploration [Fin de la partie]", consequences_exploration, 114);
+        Action action115_1 = new Action(1151,true,"Quitter le mode exploration [Fin de la partie]", consequences_exploration, 115);
+        Action action116_1 = new Action(1161,true,"Quitter le mode exploration [Fin de la partie]", consequences_exploration, 116);
+        Action action117_1 = new Action(1171,true,"Quitter le mode exploration [Fin de la partie]", consequences_exploration, 117);
+        Action action118_1 = new Action(1181,true,"Quitter le mode exploration [Fin de la partie]", consequences_exploration, 118);
 
 
 

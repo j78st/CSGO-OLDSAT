@@ -19,7 +19,7 @@ public class RoomCell extends ListCell<Room> {
 
     HBox hbox = new HBox();
     Label nom_salle = new Label(); //nom salle
-    Button del = new Button("tester"); // bouton de suppression de sauvegarde
+    Button del = new Button("Tester"); // bouton de suppression de sauvegarde
 
     /**
      * Constructeur. Paramètre l'apparence de la cellule

@@ -28,23 +28,21 @@ public class outroController implements Controller {
     private int no_text;
 
     private String text1 = "Une sensation étrange vous parcourt tout le corps.\n" +
-            "Une lumière vive vous éblouie. Vos yeux mettent quelques secondes à s'habituer\n\n"+
+            "Une lumière vive vous éblouit. Vos yeux mettent quelques secondes à s'habituer.\n\n"+
             "Quand vous arrivez enfin à distinguer les choses, vous vous rendez compte que \n" +
             "vous êtes maintenant à l'extérieur et que le soleil est au zénith.";
 
     private String text2 = "Après quelques longues secondes, vous reprenez vos esprits et regardez autour de vous.\n" +
             "Vous reconnaissez les lieux, vous êtes devant l'ENSSAT. Cependant, beaucoup de choses sont différentes.\n" +
             "L'ENSSAT n'a pas encore ses extensions modernes et il n'y a aucune voiture dans la rue.\n\n" +
-            "C'est comme si vous aviez fait un bond dans le temps mais cela est impossible...\n\n" +
+            "C'est comme si vous aviez fait un bond dans le temps.\n\n" +
             "Il y a une carte à vos pieds. Vous la ramassez.";
 
     private String text3 = "[Fin de l'escape game]\n\n" +
-            "Vous allez maintenant accéder à un mode exploration. Prenez votre temps,\n" +
-            "le chrono s'est arrêté et votre score a été sauvegardé.\n" +
-            "Ce mode est pour nous un prétexte de démonstration de la carte des salle\n" +
-            "qui n'avait pas de sens précédemment étant donné que l'escape game se passait dans une seule grande salle. \n\n" +
-            "Vous pouvez quitter ce mode à tout moment et accéder à l'écran des scores\n" +
-            "grâce à l'action \"Quitter le mode exploration\" disponible partout.";
+            "Vous allez maintenant accéder à un mode exploration.\n" +
+            "Prenez votre temps, le chronomètre s'est arrêté et votre score a été sauvegardé.\n" +
+            "Vous pouvez quitter ce mode à tout moment grâce à l'action \"Quitter le mode exploration\"\n" +
+            "disponible partout pour finir définitivement votre partie.";
 
     @FXML
     private Label narration;
