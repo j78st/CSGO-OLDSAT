@@ -37,19 +37,19 @@ public class end_gameController implements Controller {
     private ImageView player_icon;
 
     @FXML
-    private Text player_name_lbl;
+    private Label player_name_lbl;
 
     @FXML
     private ImageView diff_icon;
 
     @FXML
-    private Text difficulty_lbl;
+    private Label difficulty_lbl;
 
     @FXML
     private ImageView trophy_icon;
 
     @FXML
-    private Text score_lbl;
+    private Label score_lbl;
 
     @FXML
     private ImageView rank_icon;
