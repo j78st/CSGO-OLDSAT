@@ -67,8 +67,8 @@
                         </HBox>
                         <GridPane maxWidth="500.0" prefHeight="80.0" prefWidth="450.0">
                           <columnConstraints>
-                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="253.5" minWidth="10.0" prefWidth="227.5" />
-                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="276.5" minWidth="10.0" prefWidth="272.5" />
+                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="264.5" minWidth="10.0" prefWidth="264.5" />
+                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="276.5" minWidth="10.0" prefWidth="235.5" />
                           </columnConstraints>
                           <rowConstraints>
                             <RowConstraints minHeight="10.0" prefHeight="40.0" vgrow="SOMETIMES" />
