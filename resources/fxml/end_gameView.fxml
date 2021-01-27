@@ -44,7 +44,7 @@
                                     <Insets left="25.0" />
                                  </HBox.margin>
                               </ImageView>
-                              <Label fx:id="player_name_lbl">
+                              <Label fx:id="player_name_lbl" styleClass="Custom_label">
                                  <font>
                                     <Font size="20.0" />
                                  </font></Label>
@@ -60,7 +60,7 @@
                                     <Insets left="25.0" />
                                  </HBox.margin>
                               </ImageView>
-                              <Label fx:id="difficulty_lbl">
+                              <Label fx:id="difficulty_lbl" styleClass="Custom_label">
                                  <font>
                                     <Font size="20.0" />
                                  </font></Label>
@@ -76,21 +76,21 @@
                                     <Insets left="25.0" />
                                  </HBox.margin>
                               </ImageView>
-                              <Label fx:id="score_lbl">
+                              <Label fx:id="score_lbl" styleClass="Custom_label">
                                  <font>
                                     <Font size="20.0" />
                                  </font></Label>
                            </children>
                         </HBox>
-                        <Region prefHeight="28.0" prefWidth="297.0" />
-                        <HBox layoutX="10.0" layoutY="216.0" prefHeight="90.0" spacing="20.0">
+                        <Region prefHeight="8.0" prefWidth="297.0" />
+                        <HBox layoutX="10.0" layoutY="216.0" prefHeight="119.0" prefWidth="297.0" spacing="20.0">
                            <children>
                               <ImageView fx:id="rank_icon" fitHeight="28.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
                                  <HBox.margin>
                                     <Insets left="25.0" />
                                  </HBox.margin>
                               </ImageView>
-                              <Label fx:id="rank_lbl" alignment="TOP_LEFT" prefHeight="90.0" prefWidth="220.0" styleClass="Custom_label" />
+                              <Label fx:id="rank_lbl" alignment="TOP_LEFT" prefHeight="103.0" prefWidth="219.0" styleClass="Custom_label" />
                            </children>
                         </HBox>
                         <Button fx:id="OK" alignment="CENTER" mnemonicParsing="false" onAction="#go_to_home_screen" text="OK">

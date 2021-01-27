@@ -14,6 +14,8 @@ public class ActionListCell extends ListCell<Action> {
      */
     public ActionListCell() {
         super();
+        action_title.setPrefSize(700, 25);
+
         // couleur du texte
         if (Settings.icon_color.equals("white")){
             action_title.setStyle("-fx-text-fill: white; -fx-font-size: " + Settings.fontSize + "px;");
