@@ -89,10 +89,12 @@ public class load_saveController implements Controller {
         // Récupère l'emplacement de sauvegarde pour stocker la partie
         if (save_list.getSelectionModel().getSelectedItem()!=null) {
             save_to_load = save_list.getSelectionModel().getSelectedItem();
-            saveSlotSelected = true;
-        } else {
-            Alert alert = new Alert(Alert.AlertType.WARNING, "Selectionnez une partie à charger !", ButtonType.OK);
-            alert.showAndWait();
+            if (save_list.getSelectionModel().getSelectedItem().srgame == null) {
+                Alert alert = new Alert(Alert.AlertType.WARNING, "Selectionnez une partie à charger !", ButtonType.OK);
+                alert.showAndWait();
+            } else {
+                saveSlotSelected = true;
+            }
         }
         if (saveSlotSelected) {
             Serial_game srg = save_to_load.srgame;
