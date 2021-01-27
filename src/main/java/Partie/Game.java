@@ -184,6 +184,7 @@ public class Game {
         actions = new ArrayList<>();
         items = new ArrayList<>();
         texts = new ArrayList<>();
+        timer = 0;
         Engine.chrono = null;
         Engine.gamePaused = false;
     }

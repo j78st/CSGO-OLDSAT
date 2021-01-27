@@ -25,12 +25,15 @@ public class Serial_game {
         difficulty = Game.difficulty;
         if (Engine.chrono != null) {
             timer = Engine.chrono.getTimeFullSeconds();
+        }else{
+            timer = 0;
         }
 
     }
 
     public void createGameFromMemory() {
-        Game game = new Game(player,difficulty);
+        Game.player = player;
+        Game.difficulty = difficulty;
         Game.rooms = rooms;
         Game.actions = actions;
         Game.enigmas = enigmas;
