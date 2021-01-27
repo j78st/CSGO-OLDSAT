@@ -92,7 +92,7 @@ public class Scenario {
 
     public Text_scenario room_107_1 = new Text_scenario(1071,"La porte s'est violemment refermée derrière vous. " +
             "Il fait très sombre, vous ne voyez presque rien. Vous avez peur.\n" +
-            "Votre premier réflexe est de réouvrir la porte, elle a dû claquer à cause d'un courant d'air.\n\n");
+            "Votre premier réflexe est de rouvrir la porte, elle a dû claquer à cause d'un courant d'air.\n\n");
 
     public Text_scenario room_107_2 = new Text_scenario(1072,"La porte est bloquée : impossible de l'ouvrir.\n" +
             "Vous paniquez, vous ne savez plus quoi faire.\n" +

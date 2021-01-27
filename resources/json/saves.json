@@ -4,11 +4,11 @@
       "no": 0,
       "srgame": {
         "player": {
-          "pseudo": "test",
+          "pseudo": "ABG ",
           "inventory": [
-            1
+            2
           ],
-          "position": 202
+          "position": 107
         },
         "rooms": [
           {
@@ -893,7 +893,7 @@
           },
           {
             "id": 2011,
-            "available": false,
+            "available": true,
             "text": "Prendre le compas",
             "consequences": [
               [
@@ -932,7 +932,7 @@
           },
           {
             "id": 2012,
-            "available": true,
+            "available": false,
             "text": "Prendre la loupe",
             "consequences": [
               [
@@ -1071,7 +1071,7 @@
           },
           {
             "id": 1071,
-            "available": false,
+            "available": true,
             "text": "Ouvrir la porte",
             "consequences": [
               [
@@ -1094,7 +1094,7 @@
           },
           {
             "id": 1072,
-            "available": true,
+            "available": false,
             "text": "Appuyer sur l\u0027interrupteur",
             "consequences": [
               [
@@ -1292,7 +1292,7 @@
           },
           {
             "id": 2023,
-            "available": false,
+            "available": true,
             "text": "Examiner le PC",
             "consequences": [
               [
@@ -1306,7 +1306,7 @@
           },
           {
             "id": 2025,
-            "available": true,
+            "available": false,
             "text": "Examiner le contenu du PC",
             "consequences": [
               [
@@ -1370,7 +1370,7 @@
           },
           {
             "id": 2042,
-            "available": true,
+            "available": false,
             "text": "Casser le double fond [Compas]",
             "consequences": [
               [
@@ -1418,7 +1418,7 @@
           },
           {
             "id": 2051,
-            "available": false,
+            "available": true,
             "text": "Examiner ce qui est illisible [Loupe]",
             "consequences": [
               [
@@ -2509,7 +2509,7 @@
           {
             "id": 5,
             "name": "Carnet vieilli",
-            "description": "Vieux carnet - Peut être trouverez-vous un indice à l\u0027intérieur\n[Objet cliquable]",
+            "description": "Vieux carnet - Peut être trouverez-vous un indice à l\u0027intérieur",
             "path_image": "objects/carnet.png",
             "max_usage": -1,
             "current_usage": 0,
@@ -2519,7 +2519,7 @@
         "texts": [
           {
             "id": 1011,
-            "text": "Salutations test.\n\nVous avez été admis à l’ENSSAT, l’École Nationale Supérieure des Sciences Appliquées et de Technologie, c’est génial n’est-ce pas ?\nC\u0027est votre premier jour et vous arrivez dans le hall d\u0027entrée de l\u0027ENSSAT dans lequel vous trouvez un groupe de nouveaux élèves, vous êtes un peu stressé.\nVous savez que vous devez rejoindre une salle libellée 137C mais vous n\u0027avez aucune idée de comment vous y rendre.\n\n[Tutoriel]\nRemarquez la liste des actions disponibles sur votre écran, vous pouvez en sélectionner une en cliquant dessus puis appuyer sur le bouton \"Valider action\" pour l\u0027exécuter.\n\nVous demandez votre chemin à l\u0027accueil qui est sur votre droite.\nÀ travers la vitre une jeune femme vous répond gentillement : \"Suivez simplement les panneaux, ils sont là pour vous guider\".\nEffectivement, il y avait un panneau au milieu du hall que vous n\u0027aviez pas vu, il était caché par la foule.\n\n[Tutoriel]\nL\u0027action que vous avez effectuée en a déverrouillé une autre, celle de lire le panneau.\n\nVous lisez le panneau face à vous indiquant : \"Amphi 137C\" suivi d\u0027une flèche pointant un couloir en face de vous.\n\n[Tutoriel]\nVous pouvez noter que cette action a débloqué la flèche de déplacement vers le haut vous permettant d\u0027accéder à la salle suivante.\nLes actions peuvent avoir une multitude de conséquences comme vous donner accès à de nouveaux lieux ou encore débloquer d\u0027autres actions. Ainsi, pensez à parfois revenir sur vos pas, certaines choses auraient pu se débloquer depuis votre dernier passage."
+            "text": "Salutations ABG .\n\nVous avez été admis à l’ENSSAT, l’École Nationale Supérieure des Sciences Appliquées et de Technologie, c’est génial n’est-ce pas ?\nC\u0027est votre premier jour et vous arrivez dans le hall d\u0027entrée de l\u0027ENSSAT dans lequel vous trouvez un groupe de nouveaux élèves, vous êtes un peu stressé.\nVous savez que vous devez rejoindre une salle libellée 137C mais vous n\u0027avez aucune idée de comment vous y rendre.\n\n[Tutoriel]\nRemarquez la liste des actions disponibles sur votre écran, vous pouvez en sélectionner une en cliquant dessus puis appuyer sur le bouton \"Valider action\" pour l\u0027exécuter.\n\nVous demandez votre chemin à l\u0027accueil qui est sur votre droite.\nÀ travers la vitre une jeune femme vous répond gentillement : \"Suivez simplement les panneaux, ils sont là pour vous guider\".\nEffectivement, il y avait un panneau au milieu du hall que vous n\u0027aviez pas vu, il était caché par la foule.\n\n[Tutoriel]\nL\u0027action que vous avez effectuée en a déverrouillé une autre, celle de lire le panneau.\n\nVous lisez le panneau face à vous indiquant : \"Amphi 137C\" suivi d\u0027une flèche pointant un couloir en face de vous.\n\n[Tutoriel]\nVous pouvez noter que cette action a débloqué la flèche de déplacement vers le haut vous permettant d\u0027accéder à la salle suivante.\nLes actions peuvent avoir une multitude de conséquences comme vous donner accès à de nouveaux lieux ou encore débloquer d\u0027autres actions. Ainsi, pensez à parfois revenir sur vos pas, certaines choses auraient pu se débloquer depuis votre dernier passage."
           },
           {
             "id": 1012,
@@ -2535,7 +2535,7 @@
           },
           {
             "id": 1031,
-            "text": "La conférence touche à sa fin. Rien d\u0027extravagant, des consignes de sécurité, des présentations de locaux et une introduction aux différentes formations proposées par l\u0027école, exactement ce à quoi vous vous attendiez.\nL\u0027amphithéâtre commence à se vider, vous jetez un coup d\u0027oeil rapide dans la salle et vous apercevez une trousse abandonnée sur une table, c\u0027est étrange car vous êtes convaincu que personne n\u0027était assis à cette place pendant la conférence.\nPour satisfaire votre curiosité, vous vous approchez de cette trousse avant de partir.\n\nAprès avoir récupéré un compas, vous vous rendez à la sortie de l\u0027amphithéâtre.\n\n[Tutoriel]\nVous pouvez récupérer des objets. Ceux-ci vous permettent de débloquer des actions jusque là innaccessibles. Ainsi, pensez à explorer pour trouver où l\u0027objet fraichement récupéré peut être utile. Vous pouvez à tout moment voir quels objets vous possédez grâce à votre inventaire. Vous ne pouvez avoir que trois objets en même temps. Certains sont à usage unique.\n\n"
+            "text": "La conférence touche à sa fin. Rien d\u0027extravagant, des consignes de sécurité, des présentations de locaux et une introduction aux différentes formations proposées par l\u0027école, exactement ce à quoi vous vous attendiez.\nL\u0027amphithéâtre commence à se vider, vous jetez un coup d\u0027oeil rapide dans la salle et vous apercevez une trousse abandonnée sur une table, c\u0027est étrange car vous êtes convaincu que personne n\u0027était assis à cette place pendant la conférence.\nPour satisfaire votre curiosité, vous vous approchez de cette trousse avant de partir.\n\nAprès avoir récupéré une loupe, vous vous rendez à la sortie de l\u0027amphithéâtre.\n\n[Tutoriel]\nVous pouvez récupérer des objets. Ceux-ci vous permettent de débloquer des actions jusque là innaccessibles. Ainsi, pensez à explorer pour trouver où l\u0027objet fraichement récupéré peut être utile. Vous pouvez à tout moment voir quels objets vous possédez grâce à votre inventaire. Vous ne pouvez avoir que trois objets en même temps. Certains sont à usage unique.\n\n"
           },
           {
             "id": 1032,
@@ -2571,7 +2571,7 @@
           },
           {
             "id": 1071,
-            "text": "La porte s\u0027est violemment refermée derrière vous. Il fait très sombre, vous ne voyez presque rien. Vous avez peur.\nVotre premier réflexe est de réouvrir la porte, elle a dû claquer à cause d\u0027un courant d\u0027air.\n\nLa porte est bloquée : impossible de l\u0027ouvrir.\nVous paniquez, vous ne savez plus quoi faire.\nDans le noir, vous parvenez à distinguer un interrupteur proche de la porte."
+            "text": "La porte s\u0027est violemment refermée derrière vous. Il fait très sombre, vous ne voyez presque rien. Vous avez peur.\nVotre premier réflexe est de réouvrir la porte, elle a dû claquer à cause d\u0027un courant d\u0027air.\n\n"
           },
           {
             "id": 1072,
@@ -2783,7 +2783,7 @@
           }
         ],
         "difficulty": 1,
-        "timer": 1440
+        "timer": 1380
       }
     },
     {
