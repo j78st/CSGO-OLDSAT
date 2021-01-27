@@ -158,7 +158,7 @@ public class load_saveController implements Controller {
         settings_btn.setGraphic(new ImageView(new Image("icons/"+ Settings.icon_color +"/settings_icon.png")));
         return_btn.setGraphic(new ImageView(new Image("icons/"+ Settings.icon_color +"/return.png")));
 
-        // mise en place de la liste des sauvegarde
+        // mise en place de la liste des sauvegardes
         saveObservableList = FXCollections.observableArrayList();
         Memoire m = new Memoire();
         Saves saves = (Saves) m.read_data(new File("resources/json/saves.json"));
