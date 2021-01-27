@@ -109,7 +109,7 @@ public class load_saveController implements Controller {
 
             // init chrono
             Engine.engine.timer_lbl.setVisible(false);
-            if (Game.timer != 0 && Engine.chrono == null) {
+            if (Game.timer != 0 && Engine.chrono.getDone()) {
                 Engine.engine.timer_lbl.setVisible(true);
                 Engine.chrono = new TimerController(Game.timer);
                 Engine.chrono.start();

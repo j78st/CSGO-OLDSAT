@@ -143,4 +143,8 @@ public class TimerController extends Thread {
         this.timer.junit();
     }
 
+    public boolean getDone(){
+        return this.timer.isDone();
+    }
+
 }

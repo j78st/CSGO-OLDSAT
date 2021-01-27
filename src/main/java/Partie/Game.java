@@ -185,7 +185,9 @@ public class Game {
         items = new ArrayList<>();
         texts = new ArrayList<>();
         timer = 0;
-        Engine.chrono = null;
+        if(Engine.chrono != null){
+            Engine.chrono.killTimer();
+        }
         Engine.gamePaused = false;
     }
 
