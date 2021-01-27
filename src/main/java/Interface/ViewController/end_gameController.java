@@ -135,7 +135,7 @@ public class end_gameController implements Controller {
         }
         // sinon
         else {
-            rank_lbl.setText("Vous n'êtes pas dans le top \nPeut-être la prochaine fois !");
+            rank_lbl.setText("Vous ferez mieux la prochaine fois !");
         }
 
         // affichage du classement

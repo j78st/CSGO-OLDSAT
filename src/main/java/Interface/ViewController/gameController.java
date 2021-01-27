@@ -1,6 +1,7 @@
 package Interface.ViewController;
 
-import Interface.CellRenderer.ActionListCell;
+import Interface.CellRenderer.ActionDarkCell;
+import Interface.CellRenderer.ActionLightCell;
 import Interface.ScreenLoader.Controller;
 import Interface.ScreenLoader.LoadMap;
 import Interface.Settings.Engine;
@@ -95,7 +96,16 @@ public class gameController implements Controller {
 
     // affichage actions posibles -------------------------------
     @FXML
-    private ListView<Action> action_list;
+    public VBox dark_action_container;
+
+    @FXML
+    private ListView<Action> dark_action_list;
+
+    @FXML
+    public VBox light_action_container;
+
+    @FXML
+    private ListView<Action> light_action_list;
 
     @FXML
     private Button pause_btn;
@@ -188,9 +198,16 @@ public class gameController implements Controller {
      */
     @FXML
     void do_selected_action(ActionEvent event) throws IOException {
-        if (action_list.getSelectionModel().getSelectedItem() != null) {
-            action_list.getSelectionModel().getSelectedItem().do_consequences();
+        if (Settings.theme.equals("Sombre")) {
+            if (dark_action_list.getSelectionModel().getSelectedItem() != null) {
+                dark_action_list.getSelectionModel().getSelectedItem().do_consequences();
+            }
+        } else {
+            if (light_action_list.getSelectionModel().getSelectedItem() != null) {
+                light_action_list.getSelectionModel().getSelectedItem().do_consequences();
+            }
         }
+
     }
 
     /**
@@ -365,8 +382,10 @@ public class gameController implements Controller {
                 actionObservableList.add(list.get(i));
             }
         }
-        action_list.setItems(actionObservableList);
-        action_list.setCellFactory(param -> new ActionListCell());
+        light_action_list.setItems(actionObservableList);
+        light_action_list.setCellFactory(param -> new ActionLightCell());
+        dark_action_list.setItems(actionObservableList);
+        dark_action_list.setCellFactory(param -> new ActionDarkCell());
     }
 
     /**

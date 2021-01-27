@@ -18,7 +18,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane fx:id="fond_vue" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="800.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Interface.ViewController.gameController">
+<AnchorPane fx:id="fond_vue" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="605.0" prefWidth="887.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Interface.ViewController.gameController">
    <children>
       <AnchorPane fx:id="root" styleClass="Custom_label" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
@@ -168,18 +168,31 @@
                      <children>
                         <BorderPane layoutX="2.0" layoutY="2.0" prefHeight="98.0" prefWidth="818.0" AnchorPane.bottomAnchor="1.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="1.0">
                            <center>
-                              <HBox alignment="CENTER" maxWidth="920.0" BorderPane.alignment="CENTER">
+                              <HBox alignment="CENTER" maxWidth="950.0" prefHeight="100.0" BorderPane.alignment="CENTER">
                                  <children>
-                                    <VBox alignment="CENTER" HBox.hgrow="ALWAYS">
+                                    <AnchorPane HBox.hgrow="ALWAYS">
                                        <children>
-                                          <ListView fx:id="action_list" maxHeight="-Infinity" maxWidth="900.0" prefHeight="200.0" prefWidth="200.0">
-                                             <VBox.margin>
-                                                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-                                             </VBox.margin>
-                                          </ListView>
+                                          <VBox fx:id="light_action_container" alignment="CENTER" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                             <children>
+                                                <ListView fx:id="light_action_list" maxHeight="-Infinity" maxWidth="900.0" prefHeight="120.0" prefWidth="200.0" styleClass="List" stylesheets="@../CSS/light_list.css">
+                                                   <VBox.margin>
+                                                      <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                                   </VBox.margin>
+                                                </ListView>
+                                             </children>
+                                          </VBox>
+                                          <VBox fx:id="dark_action_container" alignment="CENTER" layoutX="10.0" layoutY="10.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                             <children>
+                                                <ListView fx:id="dark_action_list" maxHeight="-Infinity" maxWidth="900.0" prefHeight="120.0" prefWidth="200.0" styleClass="List" stylesheets="@../CSS/dark_list.css">
+                                                   <VBox.margin>
+                                                      <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                                   </VBox.margin>
+                                                </ListView>
+                                             </children>
+                                          </VBox>
                                        </children>
-                                    </VBox>
-                                    <Button fx:id="valid_action" mnemonicParsing="false" onAction="#do_selected_action" text="Valider action">
+                                    </AnchorPane>
+                                    <Button fx:id="valid_action" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#do_selected_action" prefHeight="35.0" prefWidth="120.0" text="Valider action">
                                        <font>
                                           <Font size="15.0" />
                                        </font></Button>

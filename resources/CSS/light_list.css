@@ -1,0 +1,27 @@
+/* ====== Design des listes ====== */
+.List{
+    -fx-background-color: #4D5656;
+    -fx-background-radius: 5;
+    -fx-border-color: #00c1ff;
+    -fx-border-width: 3;
+    -fx-border-radius: 5;
+}
+
+/* --- Apparence cellule paire --- */
+.list-cell:even {
+    -fx-background-color: #ffffff;
+}
+/* --- Apparence cellule impaire --- */
+.list-cell:odd {
+    -fx-background-color: #d9d9d9;
+}
+
+/* --- Apparence en survol d'une cellule --- */
+.list-cell:filled:hover {
+    -fx-background-color: #93d2ff;
+}
+
+/* --- Apparence cellule sélectionnée --- */
+.list-cell:filled:selected:focused, .list-cell:filled:selected {
+    -fx-background-color: #00c1ff;
+}

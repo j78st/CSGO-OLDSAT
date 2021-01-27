@@ -127,11 +127,15 @@ public class settings_menuController implements Controller {
                             resume_btn.setGraphic(new ImageView(new Image("/icons/white/return.png")));
                             theme1_btn.setStyle("-fx-text-fill: white");
                             theme3_btn.setStyle("-fx-text-fill: white");
+                            Engine.engine.light_action_container.toBack();
+                            Engine.engine.dark_action_container.toFront();
                         } else {
                             Settings.icon_color = "black";
                             resume_btn.setGraphic(new ImageView(new Image("/icons/black/return.png")));
                             theme1_btn.setStyle("-fx-text-fill: black");
                             theme3_btn.setStyle("-fx-text-fill: black");
+                            Engine.engine.light_action_container.toFront();
+                            Engine.engine.dark_action_container.toBack();
                         }
                     }
                 }

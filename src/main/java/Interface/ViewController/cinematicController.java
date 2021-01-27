@@ -143,7 +143,7 @@ public class cinematicController implements Controller {
                 if (Game.getDifficulty() == 0){
                     Engine.chrono = new TimerController(60 * 35);
                 }else if(Game.getDifficulty() == 1){
-                    Engine.chrono = new TimerController(10);
+                    Engine.chrono = new TimerController(60*25);
                 }else if(Game.getDifficulty() == 2){
                     Engine.chrono = new TimerController(60 * 20);
                 }

@@ -12,6 +12,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 
 import java.awt.event.MouseEvent;
@@ -31,6 +32,11 @@ public class Main extends Application {
         Settings.setSettingsFromFile();
 
         Engine oui = new Engine();
+        if (Settings.theme.equals("Sombre")) {
+            Engine.engine.dark_action_container.toFront();
+        } else {
+            Engine.engine.light_action_container.toFront();
+        }
         Game non = new Game(new Player(""),0);
 
         // Déclaration de la fenêtre utilisée pour l'application
