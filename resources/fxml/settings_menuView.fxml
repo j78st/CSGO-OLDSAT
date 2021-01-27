@@ -137,7 +137,7 @@
                               </HBox>
                               <HBox alignment="CENTER_RIGHT" spacing="35.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
                                  <children>
-                                    <ComboBox fx:id="text_size_prompt" maxWidth="100.0" />
+                                    <ComboBox fx:id="text_size_prompt" />
                                  </children>
                               </HBox>
                               <Label styleClass="Custom_label" text="Thème " />

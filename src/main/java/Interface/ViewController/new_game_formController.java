@@ -174,6 +174,7 @@ public class new_game_formController implements Controller {
         difficulty = FXCollections.observableArrayList("Facile", "Normale", "Difficile");
         difficulty_selector.setItems(difficulty);
         difficulty_selector.setValue("Normale");
+        difficulty_selector.setStyle("-fx-font-size: 15 px;");
 
         // mise en place de la liste des sauvegarde
         saveObservableList = FXCollections.observableArrayList();

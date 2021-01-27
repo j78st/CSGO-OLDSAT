@@ -159,6 +159,7 @@ public class settings_menuController implements Controller {
         // Choix de la taille des caractères
         ObservableList<String> sizes = FXCollections.observableArrayList("Petit", "Normal", "Gros");
         text_size_prompt.setItems(sizes);
+        text_size_prompt.setStyle("-fx-font-size: 15 px;");
         text_size_prompt.valueProperty().addListener(new ChangeListener<String>() {
             @Override
             public void changed(ObservableValue<? extends String> observableValue, String old_value, String new_value) {
