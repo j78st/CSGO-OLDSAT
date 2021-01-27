@@ -34,8 +34,8 @@ public class AdminSaveCell extends ListCell<SaveSlot> {
         hbox.setPrefSize(400, 40);
 
         // parametrage des tailles des labels
-        ln.setPrefSize(160, 10);
-        lp.setPrefSize(150, 10);
+        ln.setPrefSize(200, 10);
+        lp.setPrefSize(120, 10);
 
         // esthétique des éléments
         if (Settings.icon_color.equals("white")){

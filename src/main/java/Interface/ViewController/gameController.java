@@ -286,6 +286,11 @@ public class gameController implements Controller {
         description_label.setVisible(false);
     }
 
+    public void hide_settings () {
+        background_menu.toBack();
+        vbox_menu.toBack();
+    }
+
     // ==========================================================
     // Methodes liées au menu pause
     // ==========================================================

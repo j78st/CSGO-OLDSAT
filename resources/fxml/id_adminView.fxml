@@ -13,7 +13,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane minHeight="400.0" minWidth="600.0" prefHeight="500.0" prefWidth="800.0" styleClass="BackPane" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Interface.ViewController.idAdminController">
+<AnchorPane minHeight="400.0" minWidth="600.0" prefHeight="500.0" prefWidth="800.0" styleClass="BackPane" stylesheets="@../CSS/Sombre.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Interface.ViewController.idAdminController">
    <children>
       <BorderPane prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <center>
@@ -41,7 +41,7 @@
                               <Insets top="5.0" />
                            </HBox.margin>
                         </Label>
-                        <TextField fx:id="password" prefWidth="287.0">
+                        <TextField fx:id="password" prefHeight="26.0" prefWidth="242.0">
                            <HBox.margin>
                               <Insets left="20.0" />
                            </HBox.margin>

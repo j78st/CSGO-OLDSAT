@@ -32,7 +32,7 @@ public class RoomCell extends ListCell<Room> {
         hbox.setPrefSize(360, 40);
 
         // parametrage des tailles des labels
-        nom_salle.setPrefSize(300, 10);
+        nom_salle.setPrefSize(350, 10);
 
         // esthétique des éléments
         if (Settings.icon_color.equals("white")){

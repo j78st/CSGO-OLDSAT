@@ -220,7 +220,7 @@ public class settings_menuController implements Controller {
         LoadMap.scene.getAccelerators().clear();
 
         // Fermeture paramètre via ESC
-        KeyCombination kc = new KeyCodeCombination(KeyCode.ESCAPE, KeyCombination.SHIFT_ANY);
+        KeyCombination kc = new KeyCodeCombination(KeyCode.ESCAPE);
         Runnable rn = ()-> {resume_btn.fire();};
         LoadMap.scene.getAccelerators().put(kc, rn);
     }

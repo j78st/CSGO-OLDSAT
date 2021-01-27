@@ -12,7 +12,7 @@ public class ActionDarkCell extends ListCell<Action> {
      * Constructeur. Paramètre le contenu de la cellule
      */
     public ActionDarkCell() {
-        action_title.setPrefSize(600, 20);
+        action_title.setPrefSize(700, 20);
         action_title.setStyle("-fx-text-fill: white; -fx-font-size: 20 px;");
     }
 
