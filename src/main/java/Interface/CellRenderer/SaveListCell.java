@@ -24,7 +24,7 @@ public class SaveListCell extends ListCell<SaveSlot> {
         hbox.setPrefSize(360, 30);
 
         // parametrage des tailles des labels
-        ln.setPrefSize(180, 10);
+        ln.setPrefSize(225, 10);
         lp.setPrefSize(200, 10);
 
         // couleur du texte
