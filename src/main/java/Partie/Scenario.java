@@ -380,7 +380,7 @@ public class Scenario {
             "[Tutoriel]\n" +
             "Cette image est cliquable.\n" +
             "Si votre clic a été pris en compte, vous entendrez un effet sonore.\n" +
-            "A la fin de votre séquence de clic, il y aura un autre effet qui dépendra de votre réussite ou non.\n" +
+            "À la fin de votre séquence de clic, il y aura un autre effet qui dépendra de votre réussite ou non.\n" +
             "Si vous faites une erreur dans votre séquence de clics, continuez jusqu'au son d'erreur afin de pouvoir " +
             "recommencer.");
 
@@ -388,34 +388,49 @@ public class Scenario {
 
     //ENSSAT
 
-    public Text_scenario room_111_1 = new Text_scenario(1111, "");
+    public Text_scenario room_111_1 = new Text_scenario(1111, "Vous voici donc des années en arrière! \n" +
+            "Vous vous retrouvez devant une vieille chapelle, qui est l'ancien bâtiment de l'ENSSAT.\n" +
+            "Entre-temps, elle a aussi servi d'hôpital lors de la Seconde Guerre mondiale.\n" +
+            "Que de péripéties pour cette vieille école !\n\n" +
+            "Dans la suite de l'exploration, vous pourrez découvrir les lieux emblématiques de Lannion du début du 20ème siècle.");
 
     //Bord de l'eau
 
-    public Text_scenario room_112_1 = new Text_scenario(1121, "");
+    public Text_scenario room_112_1 = new Text_scenario(1121, "Ici vous reconnaissez sans trop de difficultés les quais de Lannion.\n" +
+            "Ils n'ont pas tant changé que cela, cependant le cours d'eau est bien plus imposant qu'aujourd'hui, " +
+            "l'évolution de la ville a mené à ce rétrécissement.");
 
     //Rue de l'ENSSAT
 
-    public Text_scenario room_113_1 = new Text_scenario(1131, "");
+    public Text_scenario room_113_1 = new Text_scenario(1131, "La rue vous semble si familière et pourtant si différente.\n" +
+            "La chaussée est en terre et les maisons sont en pierre. Les passants portent des vieux habits traditionnels.");
 
     //Gare
 
-    public Text_scenario room_114_1 = new Text_scenario(1141, "");
+    public Text_scenario room_114_1 = new Text_scenario(1141, "Vous êtes ici à gare de Lannion.\n" +
+            "Les calèches et les chevaux ont remplacé les trains et les taxis.\n" +
+            "Les gares sont toujours reconnaissables de part leur architecture, et celle-ci ne déroge pas à la règle.");
 
     //Quai de l'aiguillon
 
-    public Text_scenario room_115_1 = new Text_scenario(1151, "");
+    public Text_scenario room_115_1 = new Text_scenario(1151, "Vous voilà sur le quai de l'Aiguillon, " +
+            "vous y retrouvez le bâtiment servant actuellement de bureau de poste.\n" +
+            "À l'époque, les quais étaient bien moins aménagés, le Léguer prenait beaucoup plus de place dans la ville.");
 
     //Marché
 
-    public Text_scenario room_116_1 = new Text_scenario(1161, "");
+    public Text_scenario room_116_1 = new Text_scenario(1161, "Vous avez de la chance, c'est un jour agité dans le vieux Lannion aujourd'hui !\n" +
+            "Vous arrivez dans l'un des lieux les plus emblématiques de Lannion : le marché sur les quais de l'Aiguillon.\n" +
+            "La rue n'a pas changé, et les stands de vente non plus.");
 
     //Rue des capucins
 
-    public Text_scenario room_117_1 = new Text_scenario(1171, "");
+    public Text_scenario room_117_1 = new Text_scenario(1171, "Si quelque chose n'a pas changé à Lannion, ce sont bien ses rues vallonnées.\n" +
+            "Ces rues qui donnent un charme si particulier à ce décor déjà très singulier.");
 
     //Place de l'hôtel de ville
 
-    public Text_scenario room_118_1 = new Text_scenario(1181, "");
+    public Text_scenario room_118_1 = new Text_scenario(1181, "Que serait une ville sans son hôtel de ville et sa place principale ?\n" +
+            "C'est dans ce genre d'endroit, que l'on pourrait assimiler au coeur historique de Lannion, que l'on constate l'héritage culturel de cette ville.");
 
 }
