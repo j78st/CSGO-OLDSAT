@@ -159,6 +159,8 @@ public class end_gameController implements Controller {
         } catch (IOException e) {
             e.printStackTrace();
         }
+
+        Game.reset_game();
     }
 
     @Override

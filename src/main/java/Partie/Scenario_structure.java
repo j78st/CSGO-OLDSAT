@@ -171,7 +171,7 @@ public class Scenario_structure {
 
 
         Item clef = new Item(4,"Clef","Ancienne clef - Elle va sûrement vous permettre de sortir d'ici",-1, "objects/key.png");
-        Item carnet = new Item(5,"Carnet vieilli","Vieux carnet - Peut être trouverez-vous un indice à l'intérieur\n[Objet cliquable]",-1, "objects/carnet.png");
+        Item carnet = new Item(5,"Carnet vieilli","Vieux carnet - Peut être trouverez-vous un indice à l'intérieur",-1, "objects/carnet.png");
 
 
 

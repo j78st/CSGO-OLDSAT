@@ -119,7 +119,7 @@ public class admin_screenController implements Controller {
     @Override
     public void setShortcut() {
         // reset des anciens shortcut
-        LoadMap.scene.getAccelerators().clear();
+        //LoadMap.scene.getAccelerators().clear();
     }
 
     @Override

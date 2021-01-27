@@ -256,7 +256,6 @@ public class gameController implements Controller {
                 description_label.setVisible(true);
             }
         }
-
     }
 
     /**
@@ -622,10 +621,14 @@ public class gameController implements Controller {
     public void apply_settings() {
         // changement de police pour les textes
         for (Node n: LoadMap.scene.getRoot().lookupAll(".Custom_label")) {
-            if (Settings.icon_color.equals("white")){
-                narration.setStyle("-fx-fill: white; -fx-font-size: " + (Settings.fontSize+5) + "px;");
+            if (n == narration) {
+                if (Settings.icon_color.equals("white")) {
+                    narration.setStyle("-fx-fill: white; -fx-font-size: " + (Settings.fontSize + 5) + "px;");
+                } else {
+                    narration.setStyle("-fx-fill: black; -fx-font-size: " + (Settings.fontSize + 5) + "px;");
+                }
             } else {
-                narration.setStyle("-fx-fill: black; -fx-font-size: " + (Settings.fontSize+5) + "px;");
+                n.setStyle("-fx-font-size: " + Settings.fontSize + "px;");
             }
         }
     }

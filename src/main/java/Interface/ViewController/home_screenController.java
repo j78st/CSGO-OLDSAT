@@ -121,7 +121,7 @@ public class home_screenController implements Controller {
         LoadMap.scene.getAccelerators().clear();
 
         // Acces au paramètres via ESC
-        KeyCombination kc = new KeyCodeCombination(KeyCode.ESCAPE, KeyCombination.SHIFT_ANY);
+        KeyCombination kc = new KeyCodeCombination(KeyCode.ESCAPE);
         Runnable rn = ()-> settings_btn.fire();
         LoadMap.scene.getAccelerators().put(kc, rn);
     }

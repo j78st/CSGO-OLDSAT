@@ -78,6 +78,12 @@ public class idAdminController implements Controller {
     public void setShortcut() {
         // reset des anciens shortcut
         LoadMap.scene.getAccelerators().clear();
+
+        KeyCombination kc = new KeyCodeCombination(KeyCode.ENTER);
+        Runnable rn = ()-> {
+            validate_btn.fire();
+        };
+        LoadMap.scene.getAccelerators().put(kc, rn);
     }
 
     @Override
