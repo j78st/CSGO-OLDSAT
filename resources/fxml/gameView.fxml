@@ -157,7 +157,7 @@
                                           <String fx:value="UpperLayerPane" />
                                        </styleClass>
                                     </Label>
-                                    <Button fx:id="pause_btn" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#pause_game" prefHeight="40.0" prefWidth="40.0" styleClass="GameButton" text="| |" />
+                                    <Button fx:id="pause_btn" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#pause_game" prefHeight="50.0" prefWidth="50.0" styleClass="GameButton" />
                                  </children>
                               </HBox>
                            </children>

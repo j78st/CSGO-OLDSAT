@@ -523,6 +523,7 @@ public class gameController implements Controller {
         item_slot_3.setGraphic(new ImageView(bag_icon));
 
         map_btn.setGraphic(new ImageView(new Image("pictures/icone_carte.png")));
+        pause_btn.setGraphic(new ImageView(new Image("/icons/"+ Settings.icon_color +"/pause.png")));
 
         //icone mouvement
         down_move_btn.setGraphic(new ImageView(new Image("/icons/"+ Settings.icon_color +"/arrow_down.png")));
