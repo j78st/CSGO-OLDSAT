@@ -109,8 +109,8 @@
 
 /* ====== Design des sliders =======*/
 .slider {
-    -fx-show-tick-labels: true;
-    -fx-show-tick-marks: true;
+    -fx-show-tick-labels: false;
+    -fx-show-tick-marks: false;
 }
 
 .slider .track {

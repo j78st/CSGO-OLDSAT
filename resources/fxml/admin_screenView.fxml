@@ -7,8 +7,9 @@
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane minHeight="400.0" minWidth="600.0" prefHeight="500.0" prefWidth="800.0" styleClass="BackPane" stylesheets="@../CSS/Sombre.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Interface.ViewController.admin_screenController">
+<AnchorPane minHeight="400.0" minWidth="600.0" prefHeight="500.0" prefWidth="800.0" styleClass="BackPane" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Interface.ViewController.admin_screenController">
    <children>
       <GridPane layoutX="226.0" layoutY="48.0" prefHeight="452.0" prefWidth="612.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         <columnConstraints>
@@ -30,12 +31,18 @@
                <children>
                   <BorderPane>
                      <center>
-                        <Button alignment="CENTER" contentDisplay="CENTER" maxHeight="100.0" maxWidth="100.0" minHeight="100.0" minWidth="100.0" mnemonicParsing="false" onAction="#display_save_list" text="Sauvegardes" />
+                        <Button alignment="CENTER" contentDisplay="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#display_save_list" prefHeight="120.0" prefWidth="120.0" text="Sauvegardes">
+                           <font>
+                              <Font size="15.0" />
+                           </font></Button>
                      </center>
                   </BorderPane>
                   <BorderPane layoutX="10.0" layoutY="10.0" GridPane.rowIndex="1">
                      <center>
-                        <Button alignment="CENTER" contentDisplay="CENTER" maxHeight="100.0" maxWidth="100.0" minHeight="100.0" minWidth="100.0" mnemonicParsing="false" onAction="#display_test_mode" text="Bac à sable" BorderPane.alignment="CENTER" />
+                        <Button alignment="CENTER" contentDisplay="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#display_test_mode" prefHeight="120.0" prefWidth="120.0" text="Bac à sable" BorderPane.alignment="CENTER">
+                           <font>
+                              <Font size="15.0" />
+                           </font></Button>
                      </center>
                   </BorderPane>
                </children>

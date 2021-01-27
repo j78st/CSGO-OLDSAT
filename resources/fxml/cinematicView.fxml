@@ -26,7 +26,10 @@
                                  <children>
                                     <BorderPane fx:id="end_pane" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                        <center>
-                                          <Button fx:id="end" alignment="CENTER" maxHeight="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#set_text" prefHeight="50.0" prefWidth="189.0" style="-fx-background-radius: 100; -fx-background-color: white; -fx-border-color: transparent; -fx-text-fill: black;" text="Entrer dans la bibliothèque" />
+                                          <Button fx:id="end" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#set_text" prefHeight="50.0" prefWidth="220.0" style="-fx-background-radius: 100; -fx-background-color: white; -fx-border-color: transparent; -fx-text-fill: black;" text="Entrer dans la bibliothèque">
+                                             <font>
+                                                <Font size="15.0" />
+                                             </font></Button>
                                        </center>
                                     </BorderPane>
                                     <BorderPane fx:id="arrow_pane" layoutX="6.198883056640625E-6" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">

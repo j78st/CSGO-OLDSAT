@@ -61,7 +61,7 @@
                   <Region layoutX="11.0" layoutY="213.0" prefHeight="49.0" prefWidth="498.0" />
                   <BorderPane prefWidth="500.0">
                      <center>
-                        <Button mnemonicParsing="false" onAction="#test_password" text="Valider">
+                        <Button fx:id="validate_btn" mnemonicParsing="false" onAction="#test_password" text="Valider">
                            <BorderPane.margin>
                               <Insets top="10.0" />
                            </BorderPane.margin>

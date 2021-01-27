@@ -38,6 +38,9 @@ public class idAdminController implements Controller {
     @FXML
     private Button return_btn;
 
+    @FXML
+    private Button validate_btn;
+
     // ==========================================================
     // Méthodes FXML
     // ==========================================================
@@ -75,16 +78,6 @@ public class idAdminController implements Controller {
     public void setShortcut() {
         // reset des anciens shortcut
         LoadMap.scene.getAccelerators().clear();
-
-        KeyCombination kc = new KeyCodeCombination(KeyCode.ENTER, KeyCombination.SHIFT_ANY);
-        Runnable rn = ()-> {
-            try {
-                test_password(new ActionEvent());
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        };
-        LoadMap.scene.getAccelerators().put(kc, rn);
     }
 
     @Override
