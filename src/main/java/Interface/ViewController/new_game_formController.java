@@ -215,6 +215,7 @@ public class new_game_formController implements Controller {
         Game.player = new Player(pseudo);
         Game.difficulty = difficulty;
         Game.setBas(0);
+        Game.setTimer(0);
         Scenario_structure scenar_struct = new Scenario_structure();
 
         // Son ambiance
