@@ -417,7 +417,7 @@ public class gameController implements Controller {
     }
 
     /**
-     * Rafraiciht l'affichage de l'inventaire de l'inventaire
+     * Rafraichit l'affichage de l'inventaire de l'inventaire
      */
     public void refreshInventory() {
         ArrayList<Integer> id_objects = Game.player.getInventory();
