@@ -517,6 +517,11 @@ public class gameController implements Controller {
         map_btn.setDisable(!bool);
     }
 
+    public void show_content() {
+        Engine.engine.refresh_map("pictures/map/carnet.png");
+        Engine.engine.show_map();
+    }
+
     // ==========================================================
     // Methodes d'initialisation
     // ==========================================================
