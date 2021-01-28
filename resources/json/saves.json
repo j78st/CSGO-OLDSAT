@@ -4,12 +4,9 @@
       "no": 0,
       "srgame": {
         "player": {
-          "pseudo": "bonjour",
-          "inventory": [
-            2,
-            5
-          ],
-          "position": 111
+          "pseudo": "yt",
+          "inventory": [],
+          "position": 101
         },
         "rooms": [
           {
@@ -25,7 +22,8 @@
             "path_image": "pictures/Hall.png",
             "id_actions": [
               1011,
-              1012
+              1012,
+              10170
             ],
             "room_name": "Prologue - Hall d\u0027entrée",
             "bas": true
@@ -38,7 +36,7 @@
               -1,
               -1
             ],
-            "access": true,
+            "access": false,
             "id_text": 1021,
             "path_image": "pictures/Amphi.png",
             "id_actions": [
@@ -131,7 +129,7 @@
             ],
             "access": true,
             "id_text": 1081,
-            "path_image": "pictures/108/2.png",
+            "path_image": "pictures/108/1.png",
             "id_actions": [
               1088,
               1082,
@@ -155,7 +153,7 @@
             ],
             "access": true,
             "id_text": 2021,
-            "path_image": "pictures/202/2.png",
+            "path_image": "pictures/202/1.png",
             "id_actions": [
               2021,
               2026,
@@ -177,7 +175,7 @@
             ],
             "access": true,
             "id_text": 2031,
-            "path_image": "pictures/203/2.png",
+            "path_image": "pictures/203/1.png",
             "id_actions": [
               2031
             ],
@@ -194,7 +192,7 @@
             ],
             "access": true,
             "id_text": 2041,
-            "path_image": "pictures/204/2.png",
+            "path_image": "pictures/204/1.png",
             "id_actions": [
               2041,
               2042,
@@ -473,9 +471,9 @@
               108,
               -1
             ],
-            "access": true,
+            "access": false,
             "id_text": 1101,
-            "path_image": "pictures/110/3.png",
+            "path_image": "pictures/110/1.png",
             "id_actions": [
               1103,
               1101,
@@ -486,6 +484,41 @@
             "bas": true
           },
           {
+            "solution": "le cid",
+            "consequences": [
+              [
+                9,
+                110
+              ],
+              [
+                7,
+                3012,
+                108
+              ],
+              [
+                13,
+                35
+              ],
+              [
+                12,
+                108,
+                2
+              ],
+              [
+                2,
+                1085
+              ],
+              [
+                11,
+                1085,
+                4006
+              ]
+            ],
+            "nb_error": 0,
+            "click_zones": [],
+            "clicks_memory": [],
+            "gest": 0,
+            "resolved": false,
             "id": 301,
             "neighbours": [
               -1,
@@ -501,6 +534,40 @@
             "bas": false
           },
           {
+            "solution": "974",
+            "consequences": [
+              [
+                2,
+                2024
+              ],
+              [
+                1,
+                203
+              ],
+              [
+                2,
+                1085
+              ],
+              [
+                11,
+                1085,
+                4003
+              ],
+              [
+                13,
+                41
+              ],
+              [
+                12,
+                202,
+                2
+              ]
+            ],
+            "nb_error": 0,
+            "click_zones": [],
+            "clicks_memory": [],
+            "gest": 0,
+            "resolved": false,
             "id": 302,
             "neighbours": [
               -1,
@@ -516,6 +583,22 @@
             "bas": false
           },
           {
+            "solution": "motdepasse",
+            "consequences": [
+              [
+                2,
+                2025
+              ],
+              [
+                1,
+                206
+              ]
+            ],
+            "nb_error": 0,
+            "click_zones": [],
+            "clicks_memory": [],
+            "gest": 0,
+            "resolved": false,
             "id": 303,
             "neighbours": [
               -1,
@@ -531,6 +614,57 @@
             "bas": false
           },
           {
+            "solution": "1234",
+            "consequences": [
+              [
+                7,
+                3042,
+                304
+              ],
+              [
+                2,
+                1085
+              ],
+              [
+                11,
+                1085,
+                4005
+              ]
+            ],
+            "nb_error": 0,
+            "click_zones": [
+              [
+                3.0,
+                0.55,
+                0.65,
+                0.14,
+                0.9
+              ],
+              [
+                4.0,
+                0.658,
+                0.74,
+                0.14,
+                0.9
+              ],
+              [
+                2.0,
+                0.758,
+                0.84,
+                0.14,
+                0.9
+              ],
+              [
+                1.0,
+                0.857,
+                0.94,
+                0.14,
+                0.9
+              ]
+            ],
+            "clicks_memory": [],
+            "gest": 1,
+            "resolved": false,
             "id": 304,
             "neighbours": [
               -1,
@@ -546,6 +680,93 @@
             "bas": false
           },
           {
+            "solution": "53286",
+            "consequences": [
+              [
+                7,
+                1103,
+                110
+              ],
+              [
+                2,
+                1102
+              ],
+              [
+                3,
+                1101
+              ],
+              [
+                12,
+                110,
+                3
+              ],
+              [
+                1,
+                110
+              ]
+            ],
+            "nb_error": 0,
+            "click_zones": [
+              [
+                1.0,
+                0.71,
+                0.77,
+                0.09,
+                0.175
+              ],
+              [
+                2.0,
+                0.83,
+                0.91,
+                0.24,
+                0.33
+              ],
+              [
+                3.0,
+                0.9,
+                0.99,
+                0.42,
+                0.51
+              ],
+              [
+                4.0,
+                0.83,
+                0.9,
+                0.63,
+                0.71
+              ],
+              [
+                5.0,
+                0.71,
+                0.79,
+                0.78,
+                0.86
+              ],
+              [
+                6.0,
+                0.59,
+                0.66,
+                0.62,
+                0.72
+              ],
+              [
+                7.0,
+                0.51,
+                0.59,
+                0.44,
+                0.53
+              ],
+              [
+                8.0,
+                0.59,
+                0.66,
+                0.27,
+                0.35
+              ]
+            ],
+            "clicks_memory": [],
+            "gest": 2,
+            "resolved": false,
             "id": 305,
             "neighbours": [
               -1,
@@ -561,6 +782,35 @@
             "bas": false
           },
           {
+            "solution": "",
+            "consequences": [],
+            "nb_error": 0,
+            "click_zones": [
+              [
+                1.0,
+                0.56,
+                0.61,
+                0.23,
+                0.339
+              ],
+              [
+                2.0,
+                0.56,
+                0.61,
+                0.341,
+                0.46
+              ],
+              [
+                3.0,
+                0.56,
+                0.61,
+                0.462,
+                0.59
+              ]
+            ],
+            "clicks_memory": [],
+            "gest": 3,
+            "resolved": false,
             "id": 206,
             "neighbours": [
               -1,
@@ -578,6 +828,21 @@
             "bas": false
           },
           {
+            "solution": "",
+            "consequences": [],
+            "nb_error": 0,
+            "click_zones": [
+              [
+                6.0,
+                0.9,
+                0.94,
+                0.2,
+                0.242
+              ]
+            ],
+            "clicks_memory": [],
+            "gest": 3,
+            "resolved": false,
             "id": 2062,
             "neighbours": [
               -1,
@@ -593,6 +858,28 @@
             "bas": false
           },
           {
+            "solution": "",
+            "consequences": [],
+            "nb_error": 0,
+            "click_zones": [
+              [
+                5.0,
+                0.755,
+                0.79,
+                0.59,
+                0.64
+              ],
+              [
+                6.0,
+                0.9,
+                0.94,
+                0.2,
+                0.242
+              ]
+            ],
+            "clicks_memory": [],
+            "gest": 3,
+            "resolved": false,
             "id": 2063,
             "neighbours": [
               -1,
@@ -608,6 +895,28 @@
             "bas": false
           },
           {
+            "solution": "",
+            "consequences": [],
+            "nb_error": 0,
+            "click_zones": [
+              [
+                4.0,
+                0.7,
+                0.74,
+                0.59,
+                0.64
+              ],
+              [
+                6.0,
+                0.9,
+                0.94,
+                0.2,
+                0.242
+              ]
+            ],
+            "clicks_memory": [],
+            "gest": 3,
+            "resolved": false,
             "id": 2064,
             "neighbours": [
               -1,
@@ -623,6 +932,28 @@
             "bas": false
           },
           {
+            "solution": "",
+            "consequences": [],
+            "nb_error": 0,
+            "click_zones": [
+              [
+                5.0,
+                0.755,
+                0.79,
+                0.59,
+                0.64
+              ],
+              [
+                6.0,
+                0.9,
+                0.94,
+                0.2,
+                0.242
+              ]
+            ],
+            "clicks_memory": [],
+            "gest": 3,
+            "resolved": false,
             "id": 2065,
             "neighbours": [
               -1,
@@ -638,6 +969,35 @@
             "bas": false
           },
           {
+            "solution": "",
+            "consequences": [],
+            "nb_error": 0,
+            "click_zones": [
+              [
+                4.0,
+                0.7,
+                0.74,
+                0.59,
+                0.64
+              ],
+              [
+                5.0,
+                0.755,
+                0.79,
+                0.59,
+                0.64
+              ],
+              [
+                6.0,
+                0.9,
+                0.94,
+                0.2,
+                0.242
+              ]
+            ],
+            "clicks_memory": [],
+            "gest": 3,
+            "resolved": false,
             "id": 2066,
             "neighbours": [
               -1,
@@ -653,6 +1013,28 @@
             "bas": false
           },
           {
+            "solution": "",
+            "consequences": [],
+            "nb_error": 0,
+            "click_zones": [
+              [
+                4.0,
+                0.7,
+                0.74,
+                0.59,
+                0.64
+              ],
+              [
+                6.0,
+                0.9,
+                0.94,
+                0.17,
+                0.242
+              ]
+            ],
+            "clicks_memory": [],
+            "gest": 3,
+            "resolved": false,
             "id": 2067,
             "neighbours": [
               -1,
@@ -807,7 +1189,7 @@
         "actions": [
           {
             "id": 1011,
-            "available": false,
+            "available": true,
             "text": "Demander son chemin",
             "consequences": [
               [
@@ -844,6 +1226,17 @@
             ]
           },
           {
+            "id": 10170,
+            "available": true,
+            "text": "Saut salle secrète",
+            "consequences": [
+              [
+                1,
+                110
+              ]
+            ]
+          },
+          {
             "id": 1021,
             "available": true,
             "text": "Écouter la conférence (Vous n\u0027avez pas vraiment le choix...)",
@@ -856,7 +1249,7 @@
           },
           {
             "id": 1031,
-            "available": false,
+            "available": true,
             "text": "Fouiller dans la trousse",
             "consequences": [
               [
@@ -871,7 +1264,7 @@
           },
           {
             "id": 1032,
-            "available": true,
+            "available": false,
             "text": "Quitter la salle",
             "consequences": [
               [
@@ -933,7 +1326,7 @@
           },
           {
             "id": 2012,
-            "available": false,
+            "available": true,
             "text": "Prendre la loupe",
             "consequences": [
               [
@@ -1011,7 +1404,7 @@
           },
           {
             "id": 1041,
-            "available": false,
+            "available": true,
             "text": "Parler à un groupe",
             "consequences": [
               [
@@ -1026,7 +1419,7 @@
           },
           {
             "id": 1042,
-            "available": false,
+            "available": true,
             "text": "Rentrer chez vous [FIN DU PROLOGUE]",
             "consequences": [
               [
@@ -1072,7 +1465,7 @@
           },
           {
             "id": 1071,
-            "available": false,
+            "available": true,
             "text": "Ouvrir la porte",
             "consequences": [
               [
@@ -1095,7 +1488,7 @@
           },
           {
             "id": 1072,
-            "available": true,
+            "available": false,
             "text": "Appuyer sur l\u0027interrupteur",
             "consequences": [
               [
@@ -1132,7 +1525,7 @@
           },
           {
             "id": 1083,
-            "available": false,
+            "available": true,
             "text": "S\u0027approcher de l\u0027étagère au centre face à vous",
             "consequences": [
               [
@@ -1184,7 +1577,7 @@
             "consequences": [
               [
                 7,
-                4007
+                4001
               ],
               [
                 3,
@@ -1264,7 +1657,7 @@
           },
           {
             "id": 2022,
-            "available": false,
+            "available": true,
             "text": "Examiner le tiroir",
             "consequences": [
               [
@@ -1278,7 +1671,7 @@
           },
           {
             "id": 2024,
-            "available": true,
+            "available": false,
             "text": "Fouiller dans le tiroir",
             "consequences": [
               [
@@ -1318,7 +1711,7 @@
           },
           {
             "id": 2031,
-            "available": false,
+            "available": true,
             "text": "Récupérer la clef",
             "consequences": [
               [
@@ -1347,7 +1740,7 @@
           },
           {
             "id": 2041,
-            "available": false,
+            "available": true,
             "text": "Récupérer la clef",
             "consequences": [
               [
@@ -1419,7 +1812,7 @@
           },
           {
             "id": 2051,
-            "available": true,
+            "available": false,
             "text": "Examiner ce qui est illisible [Loupe]",
             "consequences": [
               [
@@ -1684,7 +2077,7 @@
           },
           {
             "id": 1103,
-            "available": false,
+            "available": true,
             "text": "Récupérer le carnet",
             "consequences": [
               [
@@ -1717,7 +2110,7 @@
           },
           {
             "id": 1101,
-            "available": false,
+            "available": true,
             "text": "Analyser le mur",
             "consequences": [
               [
@@ -2039,29 +2432,29 @@
                 3.0,
                 0.55,
                 0.65,
-                0.135,
-                0.68
+                0.14,
+                0.9
               ],
               [
                 4.0,
                 0.658,
                 0.74,
-                0.135,
-                0.68
+                0.14,
+                0.9
               ],
               [
                 2.0,
                 0.758,
                 0.84,
-                0.135,
-                0.68
+                0.14,
+                0.9
               ],
               [
                 1.0,
                 0.857,
                 0.94,
-                0.135,
-                0.68
+                0.14,
+                0.9
               ]
             ],
             "clicks_memory": [],
@@ -2113,62 +2506,62 @@
                 1.0,
                 0.71,
                 0.77,
-                0.089,
-                0.14
+                0.09,
+                0.175
               ],
               [
                 2.0,
                 0.83,
                 0.91,
-                0.21,
-                0.27
+                0.24,
+                0.33
               ],
               [
                 3.0,
                 0.9,
                 0.99,
-                0.35,
-                0.42
+                0.42,
+                0.51
               ],
               [
                 4.0,
                 0.83,
                 0.9,
-                0.54,
-                0.6
+                0.63,
+                0.71
               ],
               [
                 5.0,
                 0.71,
                 0.79,
-                0.67,
-                0.735
+                0.78,
+                0.86
               ],
               [
                 6.0,
                 0.59,
                 0.66,
-                0.54,
-                0.6
+                0.62,
+                0.72
               ],
               [
                 7.0,
                 0.51,
                 0.59,
-                0.38,
-                0.45
+                0.44,
+                0.53
               ],
               [
                 8.0,
                 0.59,
                 0.66,
-                0.23,
-                0.29
+                0.27,
+                0.35
               ]
             ],
             "clicks_memory": [],
             "gest": 2,
-            "resolved": true,
+            "resolved": false,
             "id": 305,
             "neighbours": [
               -1,
@@ -2192,22 +2585,22 @@
                 1.0,
                 0.56,
                 0.61,
-                0.2,
-                0.28
+                0.23,
+                0.339
               ],
               [
                 2.0,
                 0.56,
                 0.61,
-                0.3,
-                0.38
+                0.341,
+                0.46
               ],
               [
                 3.0,
                 0.56,
                 0.61,
-                0.4,
-                0.49
+                0.462,
+                0.59
               ]
             ],
             "clicks_memory": [],
@@ -2238,8 +2631,8 @@
                 6.0,
                 0.9,
                 0.94,
-                0.17,
-                0.21
+                0.2,
+                0.242
               ]
             ],
             "clicks_memory": [],
@@ -2268,15 +2661,15 @@
                 5.0,
                 0.755,
                 0.79,
-                0.51,
-                0.54
+                0.59,
+                0.64
               ],
               [
                 6.0,
                 0.9,
                 0.94,
-                0.17,
-                0.21
+                0.2,
+                0.242
               ]
             ],
             "clicks_memory": [],
@@ -2305,15 +2698,15 @@
                 4.0,
                 0.7,
                 0.74,
-                0.51,
-                0.54
+                0.59,
+                0.64
               ],
               [
                 6.0,
                 0.9,
                 0.94,
-                0.17,
-                0.21
+                0.2,
+                0.242
               ]
             ],
             "clicks_memory": [],
@@ -2342,15 +2735,15 @@
                 5.0,
                 0.755,
                 0.79,
-                0.51,
-                0.54
+                0.59,
+                0.64
               ],
               [
                 6.0,
                 0.9,
                 0.94,
-                0.17,
-                0.21
+                0.2,
+                0.242
               ]
             ],
             "clicks_memory": [],
@@ -2379,22 +2772,22 @@
                 4.0,
                 0.7,
                 0.74,
-                0.51,
-                0.54
+                0.59,
+                0.64
               ],
               [
                 5.0,
                 0.755,
                 0.79,
-                0.51,
-                0.54
+                0.59,
+                0.64
               ],
               [
                 6.0,
                 0.9,
                 0.94,
-                0.17,
-                0.21
+                0.2,
+                0.242
               ]
             ],
             "clicks_memory": [],
@@ -2423,15 +2816,15 @@
                 4.0,
                 0.7,
                 0.74,
-                0.51,
-                0.54
+                0.59,
+                0.64
               ],
               [
                 6.0,
                 0.9,
                 0.94,
                 0.17,
-                0.21
+                0.242
               ]
             ],
             "clicks_memory": [],
@@ -2520,7 +2913,7 @@
         "texts": [
           {
             "id": 1011,
-            "text": "Salutations bonjour.\n\nVous avez été admis à l’ENSSAT, l’École Nationale Supérieure des Sciences Appliquées et de Technologie, c’est génial n’est-ce pas ?\nC\u0027est votre premier jour et vous arrivez dans le hall d\u0027entrée de l\u0027ENSSAT dans lequel vous trouvez un groupe de nouveaux élèves, vous êtes un peu stressé.\nVous savez que vous devez rejoindre une salle libellée 137C mais vous n\u0027avez aucune idée de comment vous y rendre.\n\n[Tutoriel]\nRemarquez la liste des actions disponibles sur votre écran, vous pouvez en sélectionner une en cliquant dessus puis appuyer sur le bouton \"Valider action\" pour l\u0027exécuter.\n\nVous demandez votre chemin à l\u0027accueil qui est sur votre droite.\nÀ travers la vitre une jeune femme vous répond gentillement : \"Suivez simplement les panneaux, ils sont là pour vous guider\".\nEffectivement, il y avait un panneau au milieu du hall que vous n\u0027aviez pas vu, il était caché par la foule.\n\n[Tutoriel]\nL\u0027action que vous avez effectuée en a déverrouillé une autre, celle de lire le panneau.\n\nVous lisez le panneau face à vous indiquant : \"Amphi 137C\" suivi d\u0027une flèche pointant un couloir en face de vous.\n\n[Tutoriel]\nVous pouvez noter que cette action a débloqué la flèche de déplacement vers le haut vous permettant d\u0027accéder à la salle suivante.\nLes actions peuvent avoir une multitude de conséquences comme vous donner accès à de nouveaux lieux ou encore débloquer d\u0027autres actions. Ainsi, pensez à parfois revenir sur vos pas, certaines choses auraient pu se débloquer depuis votre dernier passage."
+            "text": "Salutations yt.\n\nVous avez été admis à l’ENSSAT, l’École Nationale Supérieure des Sciences Appliquées et de Technologie, c’est génial n’est-ce pas ?\nC\u0027est votre premier jour et vous arrivez dans le hall d\u0027entrée de l\u0027ENSSAT dans lequel vous trouvez un groupe de nouveaux élèves, vous êtes un peu stressé.\nVous savez que vous devez rejoindre une salle libellée 137C mais vous n\u0027avez aucune idée de comment vous y rendre.\n\n[Tutoriel]\nRemarquez la liste des actions disponibles sur votre écran, vous pouvez en sélectionner une en cliquant dessus puis appuyer sur le bouton \"Valider action\" pour l\u0027exécuter.\n\n"
           },
           {
             "id": 1012,
@@ -2536,7 +2929,7 @@
           },
           {
             "id": 1031,
-            "text": "La conférence touche à sa fin. Rien d\u0027extravagant, des consignes de sécurité, des présentations de locaux et une introduction aux différentes formations proposées par l\u0027école, exactement ce à quoi vous vous attendiez.\nL\u0027amphithéâtre commence à se vider, vous jetez un coup d\u0027oeil rapide dans la salle et vous apercevez une trousse abandonnée sur une table, c\u0027est étrange car vous êtes convaincu que personne n\u0027était assis à cette place pendant la conférence.\nPour satisfaire votre curiosité, vous vous approchez de cette trousse avant de partir.\n\nAprès avoir récupéré une loupe, vous vous rendez à la sortie de l\u0027amphithéâtre.\n\n[Tutoriel]\nVous pouvez récupérer des objets. Ceux-ci vous permettent de débloquer des actions jusque là innaccessibles. Ainsi, pensez à explorer pour trouver où l\u0027objet fraichement récupéré peut être utile. Vous pouvez à tout moment voir quels objets vous possédez grâce à votre inventaire. Vous ne pouvez avoir que trois objets en même temps. Certains sont à usage unique.\n\n"
+            "text": "La conférence touche à sa fin. Rien d\u0027extravagant, des consignes de sécurité, des présentations de locaux et une introduction aux différentes formations proposées par l\u0027école, exactement ce à quoi vous vous attendiez.\nL\u0027amphithéâtre commence à se vider, vous jetez un coup d\u0027oeil rapide dans la salle et vous apercevez une trousse abandonnée sur une table, c\u0027est étrange car vous êtes convaincu que personne n\u0027était assis à cette place pendant la conférence.\nPour satisfaire votre curiosité, vous vous approchez de cette trousse avant de partir.\n\n"
           },
           {
             "id": 1032,
@@ -2572,7 +2965,7 @@
           },
           {
             "id": 1071,
-            "text": "La porte s\u0027est violemment refermée derrière vous. Il fait très sombre, vous ne voyez presque rien. Vous avez peur.\nVotre premier réflexe est de rouvrir la porte, elle a dû claquer à cause d\u0027un courant d\u0027air.\n\nLa porte est bloquée : impossible de l\u0027ouvrir.\nVous paniquez, vous ne savez plus quoi faire.\nDans le noir, vous parvenez à distinguer un interrupteur proche de la porte."
+            "text": "La porte s\u0027est violemment refermée derrière vous. Il fait très sombre, vous ne voyez presque rien. Vous avez peur.\nVotre premier réflexe est de rouvrir la porte, elle a dû claquer à cause d\u0027un courant d\u0027air.\n\n"
           },
           {
             "id": 1072,
@@ -2580,7 +2973,7 @@
           },
           {
             "id": 1081,
-            "text": "La lumière s\u0027allume.\nVous êtes soulagé et reprenez vos esprits. Vous prenez le temps de regarder autour de vous.\n\nLa bibliothèque est plus grande que vous ne l\u0027imaginiez.\nMalgré tout cet espace, vous vous sentez encore opressé. L\u0027atmosphère est lourde.\nVous resentez clairement que l\u0027endroit est imprégné d\u0027un fort passé, à cause des vieux murs décorés de vitraux et une odeur désagréable de bouquins usés.\n\nCependant l\u0027endroit est assez bien éclairé, ce qui vous permet d\u0027inspecter la salle plus en détail.\n\nAu centre du rez-de-chaussée, face à vous, il y a 3 étagères pleines à craquer d\u0027ouvrages en tout genre. Elles sont surplombées de gargouilles représentant des têtes de différents animaux.\nÀ côté de ces étagères se trouve un bureau et une chaise, appartenant sûrement au gestionnaire de la bibliothèque.\nNon loin de la porte par laquelle vous êtes entré, vous remarquez un escalier en colimaçon menant à un étage.\n\nVous avez réussi !\nL\u0027étagère s\u0027ouvre et vous découvrez une salle qui était cachée derrière.\n\n"
+            "text": "La lumière s\u0027allume.\nVous êtes soulagé et reprenez vos esprits. Vous prenez le temps de regarder autour de vous.\n\nLa bibliothèque est plus grande que vous ne l\u0027imaginiez.\nMalgré tout cet espace, vous vous sentez encore opressé. L\u0027atmosphère est lourde.\nVous resentez clairement que l\u0027endroit est imprégné d\u0027un fort passé, à cause des vieux murs décorés de vitraux et une odeur désagréable de bouquins usés.\n\nCependant l\u0027endroit est assez bien éclairé, ce qui vous permet d\u0027inspecter la salle plus en détail.\n\nAu centre du rez-de-chaussée, face à vous, il y a 3 étagères pleines à craquer d\u0027ouvrages en tout genre. Elles sont surplombées de gargouilles représentant des têtes de différents animaux.\nÀ côté de ces étagères se trouve un bureau et une chaise, appartenant sûrement au gestionnaire de la bibliothèque.\nNon loin de la porte par laquelle vous êtes entré, vous remarquez un escalier en colimaçon menant à un étage.\n\n"
           },
           {
             "id": 2111,
@@ -2616,7 +3009,7 @@
           },
           {
             "id": 3011,
-            "text": "La clef vous a permis de débloquer quelque chose, mais rien ne semble s\u0027être ouvert.\nGrâce à votre intérêt pour les films d\u0027espionnage, vous connaissez ce mécanisme :\nil faut sûrement tirer sur un livre pour ouvrir une sorte de passage secret."
+            "text": "La clef vous a permis de débloquer quelque chose, mais rien ne semble s\u0027être ouvert.\nGrâce à votre intérêt pour les films d\u0027espionnage, vous connaissez ce mécanisme :\nil faut sûrement tirer sur un livre pour ouvrir une sorte de passage secret.\n\n[Indication]\nEcrivez dans la boîte de dialogue le titre du livre que vous souhaitez tirer."
           },
           {
             "id": 3012,
@@ -2736,7 +3129,7 @@
           },
           {
             "id": 1101,
-            "text": "Vous entrez dans la petite salle derrière l\u0027étagère.\nIl n\u0027y a pas d\u0027éclairage, seule la lumière venant de la bibliothèque derrière vous vous éclaire.\nL\u0027atmosphère est encore plus pesante ici.\n\nFace à vous se trouve un mur avec une rose des vents en son centre.\nVous voyez un vieux carnet au sol.\n\nVous avez ramassé le vieux carnet.\n\n[Tutoriel]\nCe carnet est un objet cliquable.\nCliquez dessus dans votre inventaire afin de le regarder de plus près.\n\nVous avez réussi !\nLes briques se sont mises à bouger devant vos yeux jusqu\u0027à laisser un trou dans le mur.\nUne lumière aveuglante émane de l\u0027ouverture de sorte que vous nous pouvez pas voir ce qu\u0027il y a de l\u0027autre côté."
+            "text": "Vous entrez dans la petite salle derrière l\u0027étagère.\nIl n\u0027y a pas d\u0027éclairage, seule la lumière venant de la bibliothèque derrière vous vous éclaire.\nL\u0027atmosphère est encore plus pesante ici.\n\nFace à vous se trouve un mur avec une rose des vents en son centre.\nVous voyez un vieux carnet au sol.\n\n"
           },
           {
             "id": 1102,
@@ -2764,7 +3157,7 @@
           },
           {
             "id": 1141,
-            "text": "Vous êtes ici à gare de Lannion.\nLes calèches et les chevaux ont remplacé les trains et les taxis.\nLes gares sont toujours reconnaissables de part leur architecture, et celle-ci ne déroge pas à la règle."
+            "text": "Vous êtes ici à la gare de Lannion.\nLes calèches et les chevaux ont remplacé les trains et les taxis.\nLes gares sont toujours reconnaissables de part leur architecture, et celle-ci ne déroge pas à la règle."
           },
           {
             "id": 1151,
@@ -2784,7 +3177,7 @@
           }
         ],
         "difficulty": 1,
-        "timer": 3463
+        "timer": 0
       }
     },
     {
