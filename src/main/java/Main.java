@@ -70,9 +70,9 @@ public class Main extends Application {
         EventHandler<javafx.scene.input.MouseEvent> eventHandler = new EventHandler<javafx.scene.input.MouseEvent>() {
             @Override
             public void handle(javafx.scene.input.MouseEvent mouseEvent) {
-                //System.out.println(mouseEvent.getX()/LoadMap.scene.getWidth() + "," + mouseEvent.getY()/LoadMap.scene.getHeight());
+                System.out.println(mouseEvent.getX()/LoadMap.scene.getWidth() + "," + (mouseEvent.getY())/(LoadMap.scene.getHeight()-150));
                 try {
-                    Game.mouse_clicked((mouseEvent.getX()/LoadMap.scene.getWidth()), (mouseEvent.getY()/LoadMap.scene.getHeight()));
+                    Game.mouse_clicked(mouseEvent.getX()/LoadMap.scene.getWidth(), (mouseEvent.getY())/(LoadMap.scene.getHeight()-150));
                 } catch (IOException e) {
                     e.printStackTrace();
                 }

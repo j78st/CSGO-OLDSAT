@@ -43,32 +43,11 @@ public class Scenario_structure {
         consequences_action101_2.add(new int[]{9,102}); //Débloque salle suivante
         Action action101_2 = new Action(1012,false,"Lire le panneau", consequences_action101_2, 101);
 
-        /*ArrayList<int[]> consequences_action101_67 = new ArrayList<>();
-        consequences_action101_67.add(new int[]{17,44,47});
-        Action action101_67 = new Action(10167,true,"Test son", consequences_action101_67, 101);
-
-        ArrayList<int[]> consequences_action101_68 = new ArrayList<>();
-        consequences_action101_68.add(new int[]{12,206});
-        Action action101_68 = new Action(10168,true,"Saut admin PC", consequences_action101_68, 101);
-
-        ArrayList<int[]> consequences_action101_69 = new ArrayList<>();
-        consequences_action101_69.add(new int[]{12,107});
-        Action action101_69 = new Action(10169,true,"Saut admin début d'aventure", consequences_action101_69, 101);
-
         ArrayList<int[]> consequences_action101_70 = new ArrayList<>();
         consequences_action101_70.add(new int[]{1,110});
         Action action101_70 = new Action(10170,true,"Saut salle secrète", consequences_action101_70, 101);
 
-        ArrayList<int[]> consequences_action101_71 = new ArrayList<>();
-        consequences_action101_71.add(new int[]{22});
-        consequences_action101_71.add(new int[]{4,5});
-        Action action101_71 = new Action(10171,true,"Map", consequences_action101_71, 101);
 
-        ArrayList<int[]> consequences_action101_72 = new ArrayList<>();
-        consequences_action101_72.add(new int[]{1,111});
-        Engine.chrono = new TimerController(60 * 25);
-        Engine.chrono.start();
-        Action action101_72 = new Action(10172,true,"Saut test score", consequences_action101_72, 101);*/
 
         //Amphi pré-conférence
         ArrayList<int[]> consequences_action102_1 = new ArrayList<>();
@@ -203,10 +182,10 @@ public class Scenario_structure {
         consequences_enigme4.add(new int[]{2,1085}); // Débloque la demande d'indice si elle a été utilisée avant
         consequences_enigme4.add(new int[]{11,1085,4005}); // Fais évoluer le texte de l'indice
         ArrayList<double[]> zone_click_304 = new ArrayList<>();
-        zone_click_304.add(new double[]{3,0.55,0.65,0.135,0.68});
-        zone_click_304.add(new double[]{4,0.658,0.74,0.135,0.68});
-        zone_click_304.add(new double[]{2,0.758,0.84,0.135,0.68});
-        zone_click_304.add(new double[]{1,0.857,0.94,0.135,0.68});
+        zone_click_304.add(new double[]{3,0.55,0.65,0.14,0.90});
+        zone_click_304.add(new double[]{4,0.658,0.74,0.14,0.90});
+        zone_click_304.add(new double[]{2,0.758,0.84,0.14,0.90});
+        zone_click_304.add(new double[]{1,0.857,0.94,0.14,0.90});
         Enigma enigme4 = new Enigma(304,109,3041,"pictures/304/3421.png","1234",consequences_enigme4,zone_click_304,1); // Étagère centrale étage
 
         ArrayList<int[]> consequences_enigme5 = new ArrayList<>();
@@ -216,53 +195,53 @@ public class Scenario_structure {
         consequences_enigme5.add(new int[]{12,110,3}); // Change image de la salle secrète
         consequences_enigme5.add(new int[]{1,110}); // Bouge le joueur dans la salle secrète
         ArrayList<double[]> zone_click_305 = new ArrayList<>();
-        zone_click_305.add(new double[]{1,0.71,0.77,0.089,0.14}); //Nord
-        zone_click_305.add(new double[]{2,0.83,0.91,0.21,0.27}); //Nord-Est
-        zone_click_305.add(new double[]{3,0.90,0.99,0.35,0.42}); //Est
-        zone_click_305.add(new double[]{4,0.83,0.90,0.54,0.60}); //Sud-Est
-        zone_click_305.add(new double[]{5,0.71,0.79,0.67,0.735}); //Sud
-        zone_click_305.add(new double[]{6,0.59,0.66,0.54,0.60}); //Sud-Ouest
-        zone_click_305.add(new double[]{7,0.51,0.59,0.38,0.45}); //Ouest
-        zone_click_305.add(new double[]{8,0.59,0.66,0.23,0.29}); //Nord-Ouest
+        zone_click_305.add(new double[]{1,0.71,0.77,0.09,0.175}); //Nord
+        zone_click_305.add(new double[]{2,0.83,0.91,0.24,0.33}); //Nord-Est
+        zone_click_305.add(new double[]{3,0.90,0.99,0.42,0.51}); //Est
+        zone_click_305.add(new double[]{4,0.83,0.90,0.63,0.71}); //Sud-Est
+        zone_click_305.add(new double[]{5,0.71,0.79,0.78,0.86}); //Sud
+        zone_click_305.add(new double[]{6,0.59,0.66,0.62,0.72}); //Sud-Ouest
+        zone_click_305.add(new double[]{7,0.51,0.59,0.44,0.53}); //Ouest
+        zone_click_305.add(new double[]{8,0.59,0.66,0.27,0.35}); //Nord-Ouest
         Enigma enigme5 = new Enigma(305,110,3051,"pictures/piece_secrete_mur.png","53286",consequences_enigme5,zone_click_305,2); // Énigme suite de clics test
 
 
         //PC cliquable
 
         ArrayList<double[]> zone_click_206 = new ArrayList<>();
-        zone_click_206.add(new double[]{1,0.56,0.61,0.20,0.28});
-        zone_click_206.add(new double[]{2,0.56,0.61,0.30,0.38});
-        zone_click_206.add(new double[]{3,0.56,0.61,0.40,0.49});
+        zone_click_206.add(new double[]{1,0.56,0.61,0.23,0.339});
+        zone_click_206.add(new double[]{2,0.56,0.61,0.341,0.46});
+        zone_click_206.add(new double[]{3,0.56,0.61,0.462,0.59});
         Enigma pc_ecran1 = new Enigma(206,202,2061,"pictures/206/206.png","",new ArrayList<>(),zone_click_206,3); // PC cliquable bureau
 
         ArrayList<double[]> zone_click_2062 = new ArrayList<>();
-        zone_click_2062.add(new double[]{6,0.9,0.94,0.17,0.21});
+        zone_click_2062.add(new double[]{6,0.9,0.94,0.20,0.242});
         Enigma pc_ecran2 = new Enigma(2062,202,2061,"pictures/206/2062.png","",new ArrayList<>(),zone_click_2062,3); // PC cliquable écran commandes
 
         ArrayList<double[]> zone_click_2063 = new ArrayList<>();
-        zone_click_2063.add(new double[]{5,0.755,0.79,0.51,0.54});
-        zone_click_2063.add(new double[]{6,0.9,0.94,0.17,0.21});
+        zone_click_2063.add(new double[]{5,0.755,0.79,0.59,0.64});
+        zone_click_2063.add(new double[]{6,0.9,0.94,0.20,0.242});
         Enigma pc_ecran3 = new Enigma(2063,202,2061,"pictures/206/2063.png","",new ArrayList<>(),zone_click_2063,3); // PC cliquable écran emprunt 1
 
         ArrayList<double[]> zone_click_2064 = new ArrayList<>();
-        zone_click_2064.add(new double[]{4,0.70,0.74,0.51,0.54});
-        zone_click_2064.add(new double[]{6,0.9,0.94,0.17,0.21});
+        zone_click_2064.add(new double[]{4,0.70,0.74,0.59,0.64});
+        zone_click_2064.add(new double[]{6,0.9,0.94,0.20,0.242});
         Enigma pc_ecran4 = new Enigma(2064,202,2061,"pictures/206/2064.png","",new ArrayList<>(),zone_click_2064,3); // PC cliquable écran emprunt 2
 
         ArrayList<double[]> zone_click_2065 = new ArrayList<>();
-        zone_click_2065.add(new double[]{5,0.755,0.79,0.51,0.54});
-        zone_click_2065.add(new double[]{6,0.9,0.94,0.17,0.21});
+        zone_click_2065.add(new double[]{5,0.755,0.79,0.59,0.64});
+        zone_click_2065.add(new double[]{6,0.9,0.94,0.20,0.242});
         Enigma pc_ecran5 = new Enigma(2065,202,2061,"pictures/206/2065.png","",new ArrayList<>(),zone_click_2065,3); // PC cliquable écran catalogue 1
 
         ArrayList<double[]> zone_click_2066 = new ArrayList<>();
-        zone_click_2066.add(new double[]{4,0.70,0.74,0.51,0.54});
-        zone_click_2066.add(new double[]{5,0.755,0.79,0.51,0.54});
-        zone_click_2066.add(new double[]{6,0.9,0.94,0.17,0.21});
+        zone_click_2066.add(new double[]{4,0.70,0.74,0.59,0.64});
+        zone_click_2066.add(new double[]{5,0.755,0.79,0.59,0.64});
+        zone_click_2066.add(new double[]{6,0.9,0.94,0.20,0.242});
         Enigma pc_ecran6 = new Enigma(2066,202,2061,"pictures/206/2066.png","",new ArrayList<>(),zone_click_2066,3); // PC cliquable écran emprunt 2
 
         ArrayList<double[]> zone_click_2067 = new ArrayList<>();
-        zone_click_2067.add(new double[]{4,0.70,0.74,0.51,0.54});
-        zone_click_2067.add(new double[]{6,0.9,0.94,0.17,0.21});
+        zone_click_2067.add(new double[]{4,0.70,0.74,0.59,0.64});
+        zone_click_2067.add(new double[]{6,0.9,0.94,0.17,0.242});
         Enigma pc_ecran7 = new Enigma(2067,202,2061,"pictures/206/2067.png","",new ArrayList<>(),zone_click_2067,3); // PC cliquable écran emprunt 2
 
 
