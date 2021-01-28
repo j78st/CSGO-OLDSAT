@@ -95,6 +95,7 @@ public class admin_screenController implements Controller {
         LoadMap gl = new LoadMap();
         gl.display_screen_from_id(LoadMap.HOME);
         WorldBoxDisc.play(Son.menuClose);
+        Game.reset_game();
     }
 
     // ==========================================================

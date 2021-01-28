@@ -290,13 +290,13 @@ public class Scenario {
             "Vous revenez pour inspecter plus en profondeur le tiroir.\n\n");
 
     public Text_scenario room_204_2 = new Text_scenario(2042,"Vous remarquez un double fond.\n" +
-            "En utilisant votre compas, vous parvenez à l'enlevez.\n" +
+            "En utilisant votre compas, vous parvenez à l'enlever.\n" +
             "Il cachait un morceau de papier abîmé, vous pouvez y lire l'inscription suivante :\n" +
             "\"À vaincre sans péril on triomphe sans gloire\".\n" +
             "Qu'est-ce cela peut bien signifier ?");
 
     public Text_scenario room_204_3 = new Text_scenario(2043, "Vous remarquez un double fond.\n" +
-            "En utilisant votre petit opinel, vous parvenez à l'enlevez.\n" +
+            "En utilisant votre petit opinel, vous parvenez à l'enlever.\n" +
             "Il cachait un morceau de papier abîmé, vous pouvez y lire l'inscription suivante :\n" +
             "\"À vaincre sans péril on triomphe sans gloire\".\n" +
             "Qu'est-ce cela peut bien signifier ?");
