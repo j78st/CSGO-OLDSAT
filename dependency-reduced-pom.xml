@@ -83,6 +83,49 @@
           </execution>
         </executions>
       </plugin>
+      <plugin>
+        <groupId>com.akathist.maven.plugins.launch4j</groupId>
+        <artifactId>launch4j-maven-plugin</artifactId>
+        <version>1.5.2</version>
+        <executions>
+          <execution>
+            <id>l4j-gui</id>
+            <phase>package</phase>
+            <goals>
+              <goal>launch4j</goal>
+            </goals>
+            <configuration>
+              <headerType>gui</headerType>
+              <outfile>./target/CSGO-OLDSAT.exe</outfile>
+              <jar>./target/CSGO-OLDSAT.jar</jar>
+              <dontWrapJar>false</dontWrapJar>
+              <errTitle>Error in launch4j plugin</errTitle>
+              <classPath>
+                <mainClass>SuperMain</mainClass>
+              </classPath>
+              <icon>./resources/icons/icon_csgo.ico</icon>
+              <jre>
+                <minVersion>1.8.0</minVersion>
+                <maxVersion>1.9.0</maxVersion>
+                <initialHeapSize>2048</initialHeapSize>
+                <maxHeapSize>4096</maxHeapSize>
+              </jre>
+              <versionInfo>
+                <fileVersion>1.0</fileVersion>
+                <txtFileVersion>1.0</txtFileVersion>
+                <fileDescription>OLDSAT Le jeu</fileDescription>
+                <copyright>Copyright (c) 2021</copyright>
+                <companyName>L.D.B.</companyName>
+                <productVersion>9.9.9.9</productVersion>
+                <txtProductVersion>1.0</txtProductVersion>
+                <productName>OLDSAT</productName>
+                <internalName>OLDSAT</internalName>
+                <originalFilename>OLDSAT.exe</originalFilename>
+              </versionInfo>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
     </plugins>
   </build>
   <dependencies>
