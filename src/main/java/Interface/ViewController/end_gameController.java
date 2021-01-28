@@ -107,10 +107,10 @@ public class end_gameController implements Controller {
             score_lbl.setText(String.valueOf(Engine.chrono.getTimeFullSeconds()));
         }
         if(Game.getDifficulty() == 1) {
-            score_lbl.setText(String.valueOf(Engine.chrono.getTimeFullSeconds()*5));
+            score_lbl.setText(String.valueOf(Engine.chrono.getTimeFullSeconds()));
         }
         if(Game.getDifficulty() == 2) {
-            score_lbl.setText(String.valueOf(Engine.chrono.getTimeFullSeconds()*10));
+            score_lbl.setText(String.valueOf(Engine.chrono.getTimeFullSeconds()));
         }
 
         // classement joueur

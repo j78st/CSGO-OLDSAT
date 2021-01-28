@@ -142,11 +142,11 @@ public class cinematicController implements Controller {
                 Engine.engine.timer_lbl.setVisible(true);
                 Engine.engine.hide_settings();
                 if (Game.getDifficulty() == 0){
-                    Engine.chrono = new TimerController(60 * 35);
+                    Engine.chrono = new TimerController(60 * 60);
                 }else if(Game.getDifficulty() == 1){
-                    Engine.chrono = new TimerController(60*25);
+                    Engine.chrono = new TimerController(60 * 60);
                 }else if(Game.getDifficulty() == 2){
-                    Engine.chrono = new TimerController(60 * 20);
+                    Engine.chrono = new TimerController(60 * 60);
                 }
                 Engine.chrono.start();
             } catch (IOException e) {
