@@ -559,9 +559,9 @@ public class gameController implements Controller {
         narration.wrappingWidthProperty().bind(reference.widthProperty());
         narration.getStyleClass().add("Custom_label");
         if (Settings.icon_color.equals("white")){
-            narration.setStyle("-fx-fill: white; -fx-font-size: " + Settings.fontSize + "px;");
+            narration.setStyle("-fx-fill: white; -fx-font-size: " + (Settings.fontSize + 5) + "px;");
         } else {
-            narration.setStyle("-fx-fill: black; -fx-font-size: " + Settings.fontSize + "px;");
+            narration.setStyle("-fx-fill: black; -fx-font-size: " + (Settings.fontSize + 5) + "px;");
         }
 
         // Mise en place des textes de description d'item
