@@ -181,7 +181,9 @@ public class Scenario {
     public Text_scenario room_301_1 = new Text_scenario(3011,"La clef vous a permis de débloquer quelque chose, " +
             "mais rien ne semble s'être ouvert.\n" +
             "Grâce à votre intérêt pour les films d'espionnage, vous connaissez ce mécanisme :\n" +
-            "il faut sûrement tirer sur un livre pour ouvrir une sorte de passage secret.");
+            "il faut sûrement tirer sur un livre pour ouvrir une sorte de passage secret.\n\n" +
+            "[Indication]\n" +
+            "Ecrivez dans la boîte de dialogue le titre du livre que vous souhaitez tirer.");
 
     public Text_scenario room_301_2 = new Text_scenario(3012,"Vous avez réussi !\n" +
             "L'étagère s'ouvre et vous découvrez une salle qui était cachée derrière.\n\n");
@@ -407,7 +409,7 @@ public class Scenario {
 
     //Gare
 
-    public Text_scenario room_114_1 = new Text_scenario(1141, "Vous êtes ici à gare de Lannion.\n" +
+    public Text_scenario room_114_1 = new Text_scenario(1141, "Vous êtes ici à la gare de Lannion.\n" +
             "Les calèches et les chevaux ont remplacé les trains et les taxis.\n" +
             "Les gares sont toujours reconnaissables de part leur architecture, et celle-ci ne déroge pas à la règle.");
 

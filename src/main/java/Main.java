@@ -23,7 +23,6 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception{
-        //Deplacement de la partie initialisation pour le lancement du jar
         //Initialise le système de son
         WorldBoxDisc.init();
         Thread.sleep(1000);
@@ -44,6 +43,8 @@ public class Main extends Application {
 
         LoadMap.stage.getIcons().add(new Image("/icons/icon_csgo.png"));
         LoadMap.stage.setMaximized(true);
+        LoadMap.stage.setMinHeight(650);
+        LoadMap.stage.setMinWidth(1000);
 
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(getClass().getResource("/fxml/home_screenView.fxml"));
