@@ -43,7 +43,7 @@ public class Scenario_structure {
         consequences_action101_2.add(new int[]{9,102}); //Débloque salle suivante
         Action action101_2 = new Action(1012,false,"Lire le panneau", consequences_action101_2, 101);
 
-        
+
         //Amphi pré-conférence
         ArrayList<int[]> consequences_action102_1 = new ArrayList<>();
         consequences_action102_1.add(new int[]{1,103}); //Bouge le joueur dans la salle suivante

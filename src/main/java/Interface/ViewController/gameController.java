@@ -517,9 +517,18 @@ public class gameController implements Controller {
         map_btn.setDisable(!bool);
     }
 
-    public void show_content() {
-        Engine.engine.refresh_map("pictures/map/carnet.png");
-        Engine.engine.show_map();
+    @FXML
+    public void show_content(ActionEvent event) {
+        if (Game.getPlayer().getInventory().size()>0 && event.getSource() == item_slot_1 && Game.getPlayer().getInventory().get(0) == 5) {
+            Engine.engine.refresh_map("pictures/map/carnet.png");
+            Engine.engine.show_map();
+        } else if (Game.getPlayer().getInventory().size()>1 && event.getSource() == item_slot_2 && Game.getPlayer().getInventory().get(1) == 5) {
+            Engine.engine.refresh_map("pictures/map/carnet.png");
+            Engine.engine.show_map();
+        } else if (Game.getPlayer().getInventory().size()>2 && event.getSource() == item_slot_3 && Game.getPlayer().getInventory().get(2) == 5) {
+            Engine.engine.refresh_map("pictures/map/carnet.png");
+            Engine.engine.show_map();
+        }
     }
 
     // ==========================================================
