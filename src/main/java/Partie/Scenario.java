@@ -59,7 +59,7 @@ public class Scenario {
 
     public Text_scenario room_103_6 = new Text_scenario(1036,"vous vous rendez à la sortie de l'amphithéâtre.\n\n" +
             "[Tutoriel]\n" +
-            "Vous pouvez récupérer des objets. Ceux-ci vous permettent de débloquer des actions jusque là innaccessibles. " +
+            "Vous pouvez récupérer des objets. Ceux-ci vous permettent de débloquer des actions jusque-là inaccessibles. " +
             "Ainsi, pensez à explorer pour trouver où l'objet fraichement récupéré peut être utile. " +
             "Vous pouvez à tout moment voir quels objets vous possédez grâce à votre inventaire. " +
             "Vous ne pouvez avoir que trois objets en même temps. Certains sont à usage unique.\n\n");
@@ -101,16 +101,16 @@ public class Scenario {
     //Biblio post lumière
 
     public Text_scenario room_108_1 = new Text_scenario(1081,"La lumière s'allume.\n" +
-            "Vous êtes soulagé et reprenez vos esprits. Vous prenez le temps de regarder autour de vous.\n\n" +
+            "Vous êtes soulagés et reprenez vos esprits. Vous prenez le temps de regarder autour de vous.\n\n" +
             "La bibliothèque est plus grande que vous ne l'imaginiez.\n" +
-            "Malgré tout cet espace, vous vous sentez encore opressé. L'atmosphère est lourde.\n" +
-            "Vous resentez clairement que l'endroit est imprégné d'un fort passé, à cause des vieux murs décorés de vitraux " +
+            "Malgré tout cet espace, vous vous sentez encore oppressé. L'atmosphère est lourde.\n" +
+            "Vous ressentez clairement que l'endroit est imprégné d'un fort passé, à cause des vieux murs décorés de vitraux " +
             "et une odeur désagréable de bouquins usés.\n\n" +
             "Cependant l'endroit est assez bien éclairé, ce qui vous permet d'inspecter la salle plus en détail.\n\n" +
             "Au centre du rez-de-chaussée, face à vous, il y a 3 étagères pleines à craquer d'ouvrages en tout genre. " +
             "Elles sont surplombées de gargouilles représentant des têtes de différents animaux.\n" +
             "À côté de ces étagères se trouve un bureau et une chaise, appartenant sûrement au gestionnaire de la bibliothèque.\n" +
-            "Non loin de la porte par laquelle vous êtes entré, vous remarquez un escalier en colimaçon menant à un étage.\n\n");
+            "Non loin de la porte par laquelle vous êtes entrés, vous remarquez un escalier en colimaçon menant à un étage.\n\n");
 
     //Porte
 
@@ -164,8 +164,8 @@ public class Scenario {
             "\"Vous vous demandez peut être comment sécuriser vos messages ? Et bien sachez que vous n'êtes pas le seul. " +
             "Beaucoup de personnes au fil des siècles ont cherché à protéger leurs communications.\n" +
             "Pour se faire, beaucoup ont opté pour la cryptologie, et pas que les mathématiciens.\n" +
-            "Des grands hommes militaires comme Jules César ont utilisé un décalage dans l'alphabet.\n" +
-            "Des soldats nazis ont encrypté leurs messages avec la machine Enigma pendant la seconde guerre mondiale.\n" +
+            "Des grands hommes comme Jules César ont utilisé un décalage dans l'alphabet.\n" +
+            "Les nazis ont encrypté leurs messages avec la machine Enigma pendant la seconde guerre mondiale.\n" +
             "Ce livre a pour but de faire découvrir de manière ludique les bases de la cryptologie à un public non averti.\"");
 
     //Etagere2
@@ -243,7 +243,7 @@ public class Scenario {
 
     public Text_scenario room_219_1 = new Text_scenario(2191,"Vous lisez la quatrième de couverture :\n\n" +
             "\"Première surprise : l'ancêtre du français, ce n'est pas le gaulois mais le \"roman\", la langue romaine issue du latin de Jules César, le vainqueur de la Gaule !\n" +
-            "En effet, au fil des invasions et de nos propres conquêtes, ce latin s'est transformé et enrichi de multiples apports : germaniques avec les Francs, nordiques avec les Vikings, arabes au moment des croisades, italiens à la Renaissance... avant de devenir un français triomphant dans toutes les cours d'Europe au xviiie siècle, grâce à nos philosophes.\n" +
+            "En effet, au fil des invasions et de nos propres conquêtes, ce latin s'est transformé et enrichi de multiples apports : germaniques avec les Francs, nordiques avec les Vikings, arabes au moment des croisades, italiens à la Renaissance... avant de devenir un français triomphant dans toutes les cours d'Europe au XVIIIe siècle, grâce à nos philosophes.\n" +
             "Entre-temps les troubadours ont inventé l'amour et les femmes écrivains réclamé leur émancipation, les grammairiens se sont occupés de la syntaxe et la réforme de l'orthographe a déjà rendu quelques linguistes fous !\n" +
             "Enfin, l'école obligatoire acheva de permettre à tous les citoyens français de communiquer.\n" +
             "Aujourd'hui, l'abus des termes anglais, les mots issus de la culture urbaine et les raccourcis de nos Smartphones inquiètent les puristes...\n" +
