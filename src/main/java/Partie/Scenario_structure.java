@@ -486,13 +486,14 @@ public class Scenario_structure {
         Action action110_1 = new Action(1101,true,"Analyser le mur", consequences_action110_1, 110);
 
         ArrayList<int[]> consequences_action110_2 = new ArrayList<>();
+        consequences_action110_2.add(new int[]{23,111}); //Déplace le joueur
+        consequences_action110_2.add(new int[]{21}); //Arrête le timer
         consequences_action110_2.add(new int[]{15,2}); //Lance cinématique 2
         consequences_action110_2.add(new int[]{3,1101}); //Bloque action mur pour ne pas que le joueur puisse bouger pendant le lancement de la cinématique
         consequences_action110_2.add(new int[]{3,1102}); //Bloque cette action (faisable qu'une fois)
         consequences_action110_2.add(new int[]{3,1103}); //Bloque action récurérer le carnet au cas où le joueur réussi l'énigme sans le carnet (normalement impossible)
         consequences_action110_2.add(new int[]{18,43}); //Joue son bruit de pas
         consequences_action110_2.add(new int[]{20,59}); //Arrête le son d'ambiance de la bibliothèque
-        consequences_action110_2.add(new int[]{21}); //Arrête le timer
         Action action110_2 = new Action(1102,false,"Passer à travers l'ouverture [Fin de l'escape game, début du mode exploration]", consequences_action110_2, 110);
 
 

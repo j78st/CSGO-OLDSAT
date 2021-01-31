@@ -99,6 +99,7 @@ public class load_saveController implements Controller {
         if (saveSlotSelected) {
             Serial_game srg = save_to_load.srgame;
             srg.createGameFromMemory();
+            Sounds_list soundlist = new Sounds_list();
             Engine.engine.refreshRoom();
             Game.setBas(0);
 
@@ -129,7 +130,7 @@ public class load_saveController implements Controller {
     }
 
     // ==========================================================
-    // Autre méthodes
+    // Autres méthodes
     // ==========================================================
 
     @Override

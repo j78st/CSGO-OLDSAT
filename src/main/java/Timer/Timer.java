@@ -258,7 +258,7 @@ public class Timer extends Thread {
 
                 sleep(1000); //Deplacement de la soustraction pour régler des problèmes de synchronisation entre écrans paramètres et de jeu
                 substractTime(1);
-                if(this.tempsSecondes % 60*5 == 0 && this.tempsSecondes!=0){
+                if(this.tempsSecondes % (60*2) == 0 && this.tempsSecondes!=0){ // autosave toutes les 2 mins
                     // VVV sauvegarde VVV
                     File file = new File("resources/json/saves.json");
                     Memoire m = new Memoire();
