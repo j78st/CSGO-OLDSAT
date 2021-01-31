@@ -16,13 +16,13 @@ public class PlaylistTest {
     @Test
     public void addTrackRegularMode(){
         ArrayList<String> arrayOracle = new ArrayList<>();
-        arrayOracle.add(Son.steps1);
+        arrayOracle.add(Son.steps3);
         arrayOracle.add(Son.hibou);
         PlayList oracle = new PlayList(arrayOracle);
 
 
         PlayList playList = new PlayList();
-        playList.addSound(Son.steps1); //Ajout sur la playlist
+        playList.addSound(Son.steps3); //Ajout sur la playlist
         playList.addSound(Son.hibou);
         assertEquals("Cette méthode vérifie que l'ajout d'une piste dans une playlist en mode régulier s'est bien déroulé.", oracle, playList);
     }
@@ -35,13 +35,13 @@ public class PlaylistTest {
         ArrayList<String> arrayOracle = new ArrayList<>();
         ArrayList<Integer> arrayTimeOracle = new ArrayList<>();
         arrayTimeOracle.add(1);
-        arrayOracle.add(Son.steps1);
+        arrayOracle.add(Son.steps3);
         arrayOracle.add(Son.hibou);
         PlayList oracle = new PlayList(arrayOracle, arrayTimeOracle);
 
         ArrayList<String> array = new ArrayList<>();
         ArrayList<Integer> arrayTime = new ArrayList<>();
-        array.add(Son.steps1);
+        array.add(Son.steps3);
         PlayList playList = new PlayList(array, arrayTime);
         playList.addSound(Son.hibou);
         playList.addTime(1);
@@ -72,7 +72,7 @@ public class PlaylistTest {
         ArrayList<Integer> time = new ArrayList<>();
 
         arrayOracle.add(Son.hibou);
-        arrayOracle.add(Son.steps1);
+        arrayOracle.add(Son.steps3);
         timeOracle.add(0);
 
         PlayList oracle = new PlayList(arrayOracle, timeOracle);
@@ -80,7 +80,7 @@ public class PlaylistTest {
         array.add(Son.hibou);
         PlayList playlist = new PlayList(array, time);
 
-        playlist.addSound(Son.steps1);
+        playlist.addSound(Son.steps3);
         playlist.addTime(0);
         assertEquals("Cette méthode vérifie l'ajout d'entre-temps en mode irrégulier de la playlist s'est bien déroulé.", oracle, playlist);
     }

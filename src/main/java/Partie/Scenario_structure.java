@@ -16,11 +16,11 @@ public class Scenario_structure {
         /*-----------------------------------------Prologue-------------------------------------------*/
 
         //Salles
-        Room room1 = new Room(101,102,-1,-1,-1,true,1011,"pictures/Hall.png", "Prologue - Hall d'entrée"); //Hall
-        Room room2 = new Room(102,-1,-1,-1,-1, false,1021,"pictures/Amphi.png", "Prologue - Amphithéâtre"); //Amphi
-        Room room3 = new Room(103,-1,-1,-1,-1, true,1031,"pictures/Amphi2.png"); //Amphi post-conférence
+        Room room1 = new Room(101,102,-1,-1,-1,true,1011,"pictures/Hall.png", "Prologue - Hall d'entrée","",false,false); //Hall
+        Room room2 = new Room(102,-1,-1,-1,-1, false,1021,"pictures/Amphi.png", "Prologue - Amphithéâtre","classRoom",false,false); //Amphi
+        Room room3 = new Room(103,-1,-1,-1,-1, true,1031,"pictures/Amphi2.png","classRoom",false,false); //Amphi post-conférence
         Room room3_1 = new Room(201,103,2011,"pictures/Trousse.png"); //trousse
-        Room room4 = new Room(104,-1,-1,-1,-1,true,1041,"pictures/Exterieur.png", "Prologue - Extérieur"); //Exterieur
+        Room room4 = new Room(104,-1,-1,-1,-1,true,1041,"pictures/Exterieur.png", "Prologue - Extérieur","outside",false,false); //Exterieur
 
         //Objets
         Item compas = new Item(1,"Compas","Compas - Peut être bien pratique",-1, "objects/Compas.png");
@@ -47,7 +47,6 @@ public class Scenario_structure {
         //Amphi pré-conférence
         ArrayList<int[]> consequences_action102_1 = new ArrayList<>();
         consequences_action102_1.add(new int[]{1,103}); //Bouge le joueur dans la salle suivante
-        //consequences_action102_1.add(new int[]{20,55}); //Arrête le bruit de classe
         Action action102_1 = new Action(1021,true,"Écouter la conférence (Vous n'avez pas vraiment le choix...)", consequences_action102_1, 102);
 
         //Amphi post-conférence
@@ -59,8 +58,6 @@ public class Scenario_structure {
         ArrayList<int[]> consequences_action103_2 = new ArrayList<>();
         consequences_action103_2.add(new int[]{1,104}); //Bouge le joueur dans la salle suivante
         consequences_action103_2.add(new int[]{17,43}); //Bruit de pas
-        consequences_action103_2.add(new int[]{20,55}); //Arrête le bruit de classe
-        consequences_action103_2.add(new int[]{19,56}); //Démarre son ambiant extérieur
         Action action103_2 = new Action(1032,false,"Quitter la salle", consequences_action103_2, 103);
 
         //Trousse
@@ -120,8 +117,8 @@ public class Scenario_structure {
         /*-----------------------------------------Acte 1-------------------------------------------*/
 
         //Salles
-        Room room7 = new Room(107,-1,-1,-1,-1,false,1071,"pictures/biblio_nuit.png", "Acte 1 - Bibliothèque");
-        Room room8 = new Room(108,110,-1,-1,-1, true,1081,"pictures/108/1.png"); // RDC bibliothèque
+        Room room7 = new Room(107,-1,-1,-1,-1,false,1071,"pictures/biblio_nuit.png", "Acte 1 - Bibliothèque","gameTheme",true,false);
+        Room room8 = new Room(108,110,-1,-1,-1, true,1081,"pictures/108/1.png","gameTheme",true,false); // RDC bibliothèque
         Room room8_1 = new Room(202,108,2021,"pictures/202/1.png"); // Bureau
         Room room8_1_1 = new Room(203,202,2031,"pictures/203/1.png"); // Tiroir post-énigme
         Room room8_1_2 = new Room(204,202,2041,"pictures/204/1.png"); // Tiroir
@@ -130,7 +127,7 @@ public class Scenario_structure {
         Room room8_3 = new Room(208,108,2081,"pictures/etagere2.png"); // Étagère 2 pré-utilisation de la clef
         Room room8_4 = new Room(209,108,2091,"pictures/etagere3.png"); // Étagère 3
         Room room8_5 = new Room(211,108,2111,"pictures/porte.png"); // Porte
-        Room room9 = new Room(109,-1,-1,-1,-1, true,1091,"pictures/etage.png"); // Étage bibliothèque
+        Room room9 = new Room(109,-1,-1,-1,-1, true,1091,"pictures/etage.png","gameTheme",true,false); // Étage bibliothèque
         Room room9_1 = new Room(210,109,2101,"pictures/plafond.png"); // Plafond
         Room room8_2_1 = new Room(212,207,2121,"pictures/livre1.png"); // Livre 1-1
         Room room8_2_2 = new Room(213,207,2131,"pictures/livre1.png"); // Livre 1-2
@@ -141,7 +138,7 @@ public class Scenario_structure {
         Room room8_4_1 = new Room(218,209,2181,"pictures/livre3.png"); // Livre 3-1
         Room room8_4_2 = new Room(219,209,2191,"pictures/livre3.png"); // Livre 3-2
         Room room8_4_3 = new Room(220,209,2201,"pictures/livre3.png"); // Livre 3-3
-        Room room10 = new Room(110,-1,-1,108,-1, false,1101,"pictures/110/1.png", "Acte 1 - Salle derrière étagère"); // Fin scène 1
+        Room room10 = new Room(110,-1,-1,108,-1, false,1101,"pictures/110/1.png", "Acte 1 - Salle derrière étagère","gameTheme",true,false); // Fin scène 1
 
 
         Item clef = new Item(4,"Clef","Ancienne clef - Elle va sûrement vous permettre de sortir d'ici",-1, "objects/key.png");
@@ -290,8 +287,8 @@ public class Scenario_structure {
         ArrayList<int[]> consequences_action108_5 = new ArrayList<>();
         consequences_action108_5.add(new int[]{7,4001}); //Texte indice
         consequences_action108_5.add(new int[]{3,1085}); //Rend la demande d'indice indisponible
-        consequences_action108_5.add(new int[]{14,30}); // Enlève 30 sec au timer
-        consequences_action108_5.add(new int[]{17,6}); // Joue son demande d'indice
+        consequences_action108_5.add(new int[]{14,30}); //Enlève 30 sec au timer
+        consequences_action108_5.add(new int[]{17,6}); //Joue son demande d'indice
         Action action108_5 = new Action(1085,true,"S'asseoir sur la chaise [Obtention d'un indice, diminution du temps]", consequences_action108_5, 108);
 
         ArrayList<int[]> consequences_action108_6 = new ArrayList<>();
@@ -383,7 +380,7 @@ public class Scenario_structure {
 
         ArrayList<int[]> consequences_action207_1 = new ArrayList<>();
         consequences_action207_1.add(new int[]{1,212}); //Rajoute texte
-        consequences_action207_1.add(new int[]{17,50}); //Bruit d'ouverture de livre
+        consequences_action207_1.add(new int[]{17,50}); //Bruit de page tournée
         Action action207_1 = new Action(2071,true,"Regarder le premier livre", consequences_action207_1, 207);
 
         ArrayList<int[]> consequences_action207_2 = new ArrayList<>();
@@ -393,7 +390,7 @@ public class Scenario_structure {
 
         ArrayList<int[]> consequences_action207_3 = new ArrayList<>();
         consequences_action207_3.add(new int[]{1,214}); //Rajoute texte
-        consequences_action207_3.add(new int[]{17,50}); //Bruit d'ouverture de livre
+        consequences_action207_3.add(new int[]{17,50}); //Bruit de page tournée
         Action action207_3 = new Action(2073,true,"Regarder le troisième livre", consequences_action207_3, 207);
 
         //Actions de la salle 208 - Étagère 2 pré-utilisation clef
@@ -402,16 +399,16 @@ public class Scenario_structure {
         consequences_action208_1.add(new int[]{1,301}); //Rajoute texte
         consequences_action208_1.add(new int[]{2,1087}); //Dévérouille l'action l'accès à l'énigme de l'étagère
         consequences_action208_1.add(new int[]{3,1083}); //Vérouille l'accès à l'étagère pré-utilisation clef
-        consequences_action208_1.add(new int[]{5,4}); // Supprimer la clef de l'inventaire après l'utilisation
-        consequences_action208_1.add(new int[]{2,1085});
-        consequences_action208_1.add(new int[]{13,1085,4004});
+        consequences_action208_1.add(new int[]{5,4}); //Supprimer la clef de l'inventaire après l'utilisation
+        consequences_action208_1.add(new int[]{2,1085}); //Bloque action
+        consequences_action208_1.add(new int[]{13,1085,4004}); //Fait évoluer le texte d'indice
         consequences_action208_1.add(new int[]{10}); //Affiche boîte de dialogue
         consequences_action208_1.add(new int[]{17,45,47}); //Bruit de clef tournée dans une serrure suivi d'un bruit de méchanisme qui s'active
         Action action208_1 = new Action(2081, "Essayer la clef dans la serrure [Clef]", consequences_action208_1, 208, 4);
 
         ArrayList<int[]> consequences_action208_2 = new ArrayList<>();
         consequences_action208_2.add(new int[]{1,215}); //Rajoute texte
-        consequences_action208_2.add(new int[]{17,50}); //Bruit d'ouverture de livre
+        consequences_action208_2.add(new int[]{17,50}); //Bruit de page tournée
         Action action208_2 = new Action(2082,true,"Regarder le premier livre", consequences_action208_2, 208);
 
         ArrayList<int[]> consequences_action208_3 = new ArrayList<>();
@@ -421,14 +418,14 @@ public class Scenario_structure {
 
         ArrayList<int[]> consequences_action208_4 = new ArrayList<>();
         consequences_action208_4.add(new int[]{1,217}); //Rajoute texte
-        consequences_action208_4.add(new int[]{17,50}); //Bruit d'ouverture de livre
+        consequences_action208_4.add(new int[]{17,50}); //Bruit de page tournée
         Action action208_4 = new Action(2084,true,"Regarder le troisième livre", consequences_action208_4, 208);
 
         //Actions de la salle 209 - étagère3
 
         ArrayList<int[]> consequences_action209_1 = new ArrayList<>();
         consequences_action209_1.add(new int[]{1,218}); //Rajoute texte
-        consequences_action209_1.add(new int[]{17,50}); //Bruit d'ouverture de livre
+        consequences_action209_1.add(new int[]{17,50}); //Bruit de page tournée
         Action action209_1 = new Action(2091,true,"Regarder le premier livre", consequences_action209_1, 209);
 
         ArrayList<int[]> consequences_action209_2 = new ArrayList<>();
@@ -438,7 +435,7 @@ public class Scenario_structure {
 
         ArrayList<int[]> consequences_action209_3 = new ArrayList<>();
         consequences_action209_3.add(new int[]{1,220}); //Rajoute texte
-        consequences_action209_3.add(new int[]{17,50}); //Bruit d'ouverture de livre
+        consequences_action209_3.add(new int[]{17,50}); //Bruit de page tournée
         Action action209_3 = new Action(2093,true,"Regarder le troisième livre", consequences_action209_3, 209);
 
         //Actions de la salle 211 - Porte
@@ -446,7 +443,7 @@ public class Scenario_structure {
         ArrayList<int[]> consequences_action211_1 = new ArrayList<>();
         consequences_action211_1.add(new int[]{7,2112}); //Rajoute texte
         consequences_action211_1.add(new int[]{3,2111}); //Bloque cette action (faisable qu'une fois)
-        consequences_action211_1.add(new int[]{17,58}); //Bruit de fermeture de livre (jusqu'à ce qu'on trouve mieux)
+        consequences_action211_1.add(new int[]{17,58}); //Bruit de coup dans la porte
         Action action211_1 = new Action(2111,true,"Essayer d'enfoncer la porte", consequences_action211_1, 211);
 
         ArrayList<int[]> consequences_action211_2 = new ArrayList<>();
@@ -481,6 +478,7 @@ public class Scenario_structure {
         consequences_action110_3.add(new int[]{16,110,2}); //Change l'image pour faire disparaître le carnet
         consequences_action110_3.add(new int[]{2,1085}); //Débloque la demande d'indice si elle a déjà été utilisée
         consequences_action110_3.add(new int[]{13,1085,4007}); // Fais évoluer le texte de l'indice
+        consequences_action110_3.add(new int[]{17,28}); //Bruit de prise d'objet
         Action action110_3 = new Action(1103,true,"Récupérer le carnet", consequences_action110_3, 110);
 
         ArrayList<int[]> consequences_action110_1 = new ArrayList<>();
@@ -504,14 +502,14 @@ public class Scenario_structure {
 
         /*-------------------------------------------Mode exploration-------------------------------------------*/
 
-        Room room11 = new Room(111,113,-1,-1,112,true,1111,"pictures/exploration/enssat.png", "Exploration - Enssat");
-        Room room12 = new Room(112,115,111,-1,-1,true,1121,"pictures/exploration/bord_eau.png", "Exploration - Bord de l'eau");
-        Room room13 = new Room(113,-1,114,111,115,true,1131,"pictures/exploration/rue_enssat.png", "Exploration - Rue de l'ENSSAT");
-        Room room14 = new Room(114,-1,-1,-1,113,true,1141,"pictures/exploration/gare.png", "Exploration - Gare");
-        Room room15 = new Room(115,117,113,112,116,true,1151,"pictures/exploration/quai_aiguillon.png", "Exploration - Quai de l'aiguillon");
-        Room room16 = new Room(116,118,115,-1,-1,true,1161,"pictures/exploration/marché.png", "Exploration - Marché");
-        Room room17 = new Room(117,-1,-1,115,118,true,1171,"pictures/exploration/rue_capucins.png", "Exploration - Rue des Capucins");
-        Room room18 = new Room(118,-1,117,116,-1,true,1181,"pictures/exploration/place_centre.png", "Exploration - Place Hôtel de Ville");
+        Room room11 = new Room(111,113,-1,-1,112,true,1111,"pictures/exploration/enssat.png", "Exploration - Enssat","outside",false,true);
+        Room room12 = new Room(112,115,111,-1,-1,true,1121,"pictures/exploration/bord_eau.png", "Exploration - Bord de l'eau","outside",false,true);
+        Room room13 = new Room(113,-1,114,111,115,true,1131,"pictures/exploration/rue_enssat.png", "Exploration - Rue de l'ENSSAT","outside",false,true);
+        Room room14 = new Room(114,-1,-1,-1,113,true,1141,"pictures/exploration/gare.png", "Exploration - Gare","outside",false,true);
+        Room room15 = new Room(115,117,113,112,116,true,1151,"pictures/exploration/quai_aiguillon.png", "Exploration - Quai de l'aiguillon","outside",false,true);
+        Room room16 = new Room(116,118,115,-1,-1,true,1161,"pictures/exploration/marché.png", "Exploration - Marché","outside",false,true);
+        Room room17 = new Room(117,-1,-1,115,118,true,1171,"pictures/exploration/rue_capucins.png", "Exploration - Rue des Capucins","outside",false,true);
+        Room room18 = new Room(118,-1,117,116,-1,true,1181,"pictures/exploration/place_centre.png", "Exploration - Place Hôtel de Ville","outside",false,true);
 
 
         //Toutes ces salles n'ont qu'une action qui est celle de quitter le mode exploration et d'afficher l'écran des scores

@@ -90,7 +90,6 @@ public class outroController implements Controller {
                 narration.setText(text2);
 
             } else if (no_text == 2) { // affichage texte 3
-                WorldBoxDisc.play(Son.steps3);
                 narration.setText(text3);
 
                 //changement bouton

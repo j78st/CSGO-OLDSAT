@@ -77,8 +77,8 @@ public class settings_menuController implements Controller {
         LoadMap gl = new LoadMap();
         gl.display_screen_from_id(previous_screen_ID);
 
-        if(previous_screen_ID == 7 && (Game.getPlayer().getPosition()>=111 && Game.getPlayer().getPosition()<=118)){
-            Engine.engine.set_map_available(true);
+        if(previous_screen_ID == 7){ //Si on retourne sur l'écran de jeu
+            Game.search_room(Game.getPlayer().getPosition()).access_map(); //Redonne l'accès à la map si nécessaire
         }
 
         WorldBoxDisc.play(Son.menuClose);

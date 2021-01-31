@@ -109,7 +109,7 @@ public class load_saveController implements Controller {
 
             // init chrono
             Engine.engine.timer_lbl.setVisible(false);
-            if (!(Game.getPlayer().getPosition()>=111 &&Game.getPlayer().getPosition()<=118)) {
+            if (Game.search_room(Game.getPlayer().getPosition()).isTimerON()) { //Si le timer doit être actif dans la salle chargée
                 if (Game.timer != 0 && (Engine.chrono== null || (Engine.chrono!= null && Engine.chrono.getDone()))) {
                     Engine.engine.timer_lbl.setVisible(true);
                     Engine.chrono = new TimerController(Game.timer);
@@ -117,35 +117,12 @@ public class load_saveController implements Controller {
                 }
             }
 
-
             //Gestion du son
 
             WorldBoxDisc.pause(Son.menuTheme); //Arrêt du thème du menu
-            Sounds_list sounds_list = new Sounds_list();  //Rajout de la sound_list à game (sert à pouvoir lancer des sons en conséquences d'actions)
-            //Son ambiant à charger ( pas de solution n'impliquant pas de gros changements trouvées donc on le code "en dur") et possibilité d'ouvrir ou non la carte
-            if(Game.getPlayer().getPosition() == 102
-                    ||Game.getPlayer().getPosition() == 103
-                    ||Game.getPlayer().getPosition() == 201){
-                WorldBoxDisc.play(Son.classRoom);
-                Engine.engine.set_map_available(false);
-                Engine.engine.hide_map();
-            }else if(Game.getPlayer().getPosition() == 104){
-                WorldBoxDisc.play(Son.outside);
-                Engine.engine.set_map_available(false);
-                Engine.engine.hide_map();
-            }else if((Game.getPlayer().getPosition() >= 107 && Game.getPlayer().getPosition() <= 110)
-                    ||(Game.getPlayer().getPosition() >= 202 && Game.getPlayer().getPosition() <= 220)
-                    ||(Game.getPlayer().getPosition() >= 301 && Game.getPlayer().getPosition() <= 305)
-                    ||(Game.getPlayer().getPosition() >= 2062 && Game.getPlayer().getPosition() <= 2067)){
-                WorldBoxDisc.play(Son.gameTheme);
-                Engine.engine.set_map_available(false);
-                Engine.engine.hide_map();
-            }else if((Game.getPlayer().getPosition() >= 111 && Game.getPlayer().getPosition() <= 118)){
-                WorldBoxDisc.play(Son.outside);
-                Engine.engine.set_map_available(true);
-                Engine.engine.hide_map();
-            }
 
+            Game.search_room(Game.getPlayer().getPosition()).play_music(); //Lance les sons d'ambiance
+            Game.search_room(Game.getPlayer().getPosition()).access_map(); //Donne l'accès à la map si nécessaire
 
         }
         

@@ -103,14 +103,18 @@ public class end_gameController implements Controller {
         }
 
         // score de la partie
-        if(Game.getDifficulty() == 0) {
-            score_lbl.setText(String.valueOf(Engine.chrono.getTimeFullSeconds()));
-        }
-        if(Game.getDifficulty() == 1) {
-            score_lbl.setText(String.valueOf(Engine.chrono.getTimeFullSeconds()));
-        }
-        if(Game.getDifficulty() == 2) {
-            score_lbl.setText(String.valueOf(Engine.chrono.getTimeFullSeconds()));
+        if(Game.getBas() == 0) {
+            if (Game.getDifficulty() == 0) {
+                score_lbl.setText(String.valueOf(Engine.chrono.getTimeFullSeconds()));
+            }
+            if (Game.getDifficulty() == 1) {
+                score_lbl.setText(String.valueOf(Engine.chrono.getTimeFullSeconds()));
+            }
+            if (Game.getDifficulty() == 2) {
+                score_lbl.setText(String.valueOf(Engine.chrono.getTimeFullSeconds()));
+            }
+        }else{
+            score_lbl.setText("0");
         }
 
         // classement joueur
