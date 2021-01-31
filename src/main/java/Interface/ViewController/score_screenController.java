@@ -73,8 +73,7 @@ public class score_screenController implements Controller {
      */
     @FXML
     void display_settings_screen(ActionEvent event) throws IOException {
-        LoadMap gl = new LoadMap();
-        gl.display_settings_menu(LoadMap.SCORES);
+        (new LoadMap()).display_settings_menu(LoadMap.SCORES);
         WorldBoxDisc.play(Son.menuOpen);
     }
 
@@ -111,11 +110,8 @@ public class score_screenController implements Controller {
      */
     @Override
     public void setShortcut() {
-        // reset des anciens shortcut
-        LoadMap.scene.getAccelerators().clear();
-
         // Acces au paramètres via ESC
-        KeyCombination kc = new KeyCodeCombination(KeyCode.ESCAPE, KeyCombination.SHIFT_ANY);
+        KeyCombination kc = new KeyCodeCombination(KeyCode.ESCAPE);
         Runnable rn = ()-> settings_btn.fire();
         LoadMap.scene.getAccelerators().put(kc, rn);
     }

@@ -74,8 +74,7 @@ public class new_game_formController implements Controller {
      */
     @FXML
     void go_to_settings_menu(ActionEvent event) throws IOException {
-        LoadMap gl = new LoadMap();
-        gl.display_settings_menu(LoadMap.NEW_GAME_FORM);
+        (new LoadMap()).display_settings_menu(LoadMap.NEW_GAME_FORM);
         WorldBoxDisc.play(Son.menuOpen);
     }
 
@@ -194,9 +193,6 @@ public class new_game_formController implements Controller {
      */
     @Override
     public void setShortcut() {
-        // reset des anciens shortcut
-        LoadMap.scene.getAccelerators().clear();
-
         // Acces au paramètres via ESC
         KeyCombination kc = new KeyCodeCombination(KeyCode.ESCAPE, KeyCombination.SHIFT_ANY);
         Runnable rn = ()-> settings_btn.fire();

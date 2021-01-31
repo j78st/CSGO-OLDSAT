@@ -78,8 +78,7 @@ public class game_launcherController implements Controller {
      */
     @FXML
     void display_settings_screen(ActionEvent event) throws IOException {
-        LoadMap gl = new LoadMap();
-        gl.display_settings_menu(LoadMap.LAUNCHER);
+        (new LoadMap()).display_settings_menu(LoadMap.LAUNCHER);
         WorldBoxDisc.play(Son.menuOpen);
     }
 
@@ -102,11 +101,8 @@ public class game_launcherController implements Controller {
      */
     @Override
     public void setShortcut() {
-        // reset des anciens shortcut
-        LoadMap.scene.getAccelerators().clear();
-
         // Acces au paramètres via ESC
-        KeyCombination kc = new KeyCodeCombination(KeyCode.ESCAPE, KeyCombination.SHIFT_ANY);
+        KeyCombination kc = new KeyCodeCombination(KeyCode.ESCAPE);
         Runnable rn = ()-> settings_btn.fire();
         LoadMap.scene.getAccelerators().put(kc, rn);
     }

@@ -213,8 +213,10 @@ public class Action {
                     WorldBoxDisc.pause(Game.search_sounds(String.valueOf(getConsequences().get(i)[1])));
                     break;
                 case 21: //arrêter le timer et faire disparaitre l'encadré servant à l'afficher (sert quand on passe en mode exploration)
-                    Engine.chrono.toogleTimer();
-                    Engine.engine.timer_lbl.setVisible(false);
+                    if(Game.getBas() == 0){
+                        Engine.chrono.toogleTimer();
+                        Engine.engine.timer_lbl.setVisible(false);
+                    }
                     break;
                 case 22:
                     Engine.engine.set_map_available(true);

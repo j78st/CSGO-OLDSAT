@@ -77,7 +77,7 @@ public class settings_menuController implements Controller {
         LoadMap gl = new LoadMap();
         gl.display_screen_from_id(previous_screen_ID);
 
-        if(previous_screen_ID == 7){ //Si on retourne sur l'écran de jeu
+        if(previous_screen_ID == LoadMap.GAME) { //Si on retourne sur l'écran de jeu
             Game.search_room(Game.getPlayer().getPosition()).access_map(); //Redonne l'accès à la map si nécessaire
         }
 
@@ -208,7 +208,6 @@ public class settings_menuController implements Controller {
             case Settings.BIG :
                 text_size_prompt.setValue("Gros"); break;
         }
-
     }
 
     /**
@@ -216,12 +215,11 @@ public class settings_menuController implements Controller {
      */
     @Override
     public void setShortcut() {
-        // reset des anciens shortcut
-        LoadMap.scene.getAccelerators().clear();
+        LoadMap.scene.getAccelerators().remove(KeyCode.ESCAPE);
 
         // Fermeture paramètre via ESC
         KeyCombination kc = new KeyCodeCombination(KeyCode.ESCAPE);
-        Runnable rn = ()-> {resume_btn.fire();};
+        Runnable rn = ()-> resume_btn.fire();
         LoadMap.scene.getAccelerators().put(kc, rn);
     }
 

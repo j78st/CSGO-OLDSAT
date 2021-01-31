@@ -94,9 +94,7 @@ public class home_screenController implements Controller {
      */
     @FXML
     void display_settings_screen(ActionEvent event) throws IOException {
-        LoadMap gl = new LoadMap();
-        Stage stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
-        gl.display_settings_menu(LoadMap.HOME);
+        (new LoadMap()).display_settings_menu(LoadMap.HOME);
         WorldBoxDisc.play(Son.menuOpen);
     }
 
@@ -117,9 +115,6 @@ public class home_screenController implements Controller {
      */
     @Override
     public void setShortcut() {
-        // reset des anciens shortcut
-        LoadMap.scene.getAccelerators().clear();
-
         // Acces au paramètres via ESC
         KeyCombination kc = new KeyCodeCombination(KeyCode.ESCAPE);
         Runnable rn = ()-> settings_btn.fire();
