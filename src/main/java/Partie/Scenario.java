@@ -382,7 +382,7 @@ public class Scenario {
             "[Tutoriel]\n" +
             "Cette image est cliquable.\n" +
             "Si votre clic a été pris en compte, vous entendrez un effet sonore.\n" +
-            "À la fin de votre séquence de clic, il y aura un autre effet qui dépendra de votre réussite ou non.\n" +
+            "À la fin de votre séquence de clics, il y aura un autre effet qui dépendra de votre réussite ou non.\n" +
             "Si vous faites une erreur dans votre séquence de clics, continuez jusqu'au son d'erreur afin de pouvoir " +
             "recommencer.");
 
