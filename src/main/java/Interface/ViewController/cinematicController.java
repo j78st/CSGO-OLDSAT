@@ -42,7 +42,7 @@ public class cinematicController implements Controller {
 
     private String text3 = "Vous vous dirigez vers le couloir.\n\n" +
             "Après quelques pas vous vous arrêtez net.\n" +
-            "Vous êtes interpellés par une faible lueur. Elle vient de votre droite.\n" +
+            "Vous êtes interpellé par une faible lueur. Elle vient de votre droite.\n" +
             "Vous remarquez une porte entrouverte sur laquelle vous lisez \"Bibliothèque\".";
 
     @FXML

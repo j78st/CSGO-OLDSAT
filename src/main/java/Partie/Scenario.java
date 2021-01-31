@@ -36,7 +36,7 @@ public class Scenario {
             "duquel vous pouvez apercevoir sur votre gauche une cour intérieure à travers des baies vitrées, " +
             "puis vous tournez à droite avant d'emprunter un escalier. " +
             "Arrivé au premier étage vous prenez à gauche pour enfin découvrir l'amphithéâtre 137C.\n" +
-            "Cette école à l'air d'être un vrai labyrinthe. Cela pourrait être intéressant de revenir plus tard pour l'explorer.\n\n" +
+            "Cette école a l'air d'être un vrai labyrinthe. Cela pourrait être intéressant de revenir plus tard pour l'explorer.\n\n" +
             "Vous vous installez dans les gradins, ni trop bas ni trop haut. Après votre arrivée la salle se remplit progressivement.\n" +
             "Au bout d'un moment, les intervenants demandent le silence avant de commencer leur présentation.");
 
@@ -101,7 +101,7 @@ public class Scenario {
     //Biblio post lumière
 
     public Text_scenario room_108_1 = new Text_scenario(1081,"La lumière s'allume.\n" +
-            "Vous êtes soulagés et reprenez vos esprits. Vous prenez le temps de regarder autour de vous.\n\n" +
+            "Vous êtes soulagé et reprenez vos esprits. Vous prenez le temps de regarder autour de vous.\n\n" +
             "La bibliothèque est plus grande que vous ne l'imaginiez.\n" +
             "Malgré tout cet espace, vous vous sentez encore oppressé. L'atmosphère est lourde.\n" +
             "Vous ressentez clairement que l'endroit est imprégné d'un fort passé, à cause des vieux murs décorés de vitraux " +
@@ -110,7 +110,7 @@ public class Scenario {
             "Au centre du rez-de-chaussée, face à vous, il y a 3 étagères pleines à craquer d'ouvrages en tout genre. " +
             "Elles sont surplombées de gargouilles représentant des têtes de différents animaux.\n" +
             "À côté de ces étagères se trouve un bureau et une chaise, appartenant sûrement au gestionnaire de la bibliothèque.\n" +
-            "Non loin de la porte par laquelle vous êtes entrés, vous remarquez un escalier en colimaçon menant à un étage.\n\n");
+            "Non loin de la porte par laquelle vous êtes entré, vous remarquez un escalier en colimaçon menant à un étage.\n\n");
 
     //Porte
 
@@ -351,7 +351,7 @@ public class Scenario {
 
     public Text_scenario room_304_1 = new Text_scenario(3041,"Dans cette étagère, 4 livres sortent du lot de part les illustrations " +
             "sur leurs rainures.\n" +
-            "Mais cela vous parait étrange car ils ne semblent pas dans le bon ordre, peut-être pouvez-vous remédier au problème ?\n\n" +
+            "Mais cela vous paraît étrange car ils ne semblent pas dans le bon ordre, peut-être pouvez-vous remédier au problème ?\n\n" +
             "[Tutoriel]\n" +
             "Cette image est cliquable.\n\n");
 
