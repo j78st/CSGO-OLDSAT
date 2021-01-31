@@ -221,7 +221,9 @@ public class Action {
                     Engine.engine.refresh_map("pictures/map/map.png");
                     Engine.engine.refreshRoom();
                     break;
-
+                case 23:
+                   Game.getPlayer().setPosition(getConsequences().get(i)[1]);
+                   break;
 
             }
         }
